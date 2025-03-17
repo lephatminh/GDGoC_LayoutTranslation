@@ -1,3 +1,776 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:51e08e8e7e90c84e2f4c340402c02c3c1f40f93b02efa5b64a0b365412554bf4
-size 25690
+{
+    "metadata": {
+        "page_hash": "814a7f2f0b2485898f251a903dde4dfb6142963e6b8d9c91de0c69fc7bc2ed46",
+        "original_filename": "cm-oreilly-kubernetes-patterns-ebook-f19824-201910-en.pdf",
+        "page_no": 61,
+        "num_pages": 266,
+        "original_width": 504,
+        "original_height": 661.5,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                146.42857142857142,
+                81.03777059712763,
+                732.1429791666667,
+                21.94800037792902
+            ],
+            "text": "tions and lifecycle management capabilities. Some applications need help to warm up,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "tions và khả năng quản lý vòng đời. Một số ứng dụng cần giúp đỡ để làm nóng,"
+        },
+        {
+            "bbox": [
+                146.42256582341267,
+                100.56154913076341,
+                732.1429039186507,
+                21.94800037792902
+            ],
+            "text": "and some applications need a gentle and clean shutdown procedure. For this and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Và một số ứng dụng cần một quy trình tắt máy nhẹ nhàng và sạch sẽ. Cho điều này và"
+        },
+        {
+            "bbox": [
+                146.43784930555557,
+                120.08540513983371,
+                732.1233292658729,
+                21.948000377928906
+            ],
+            "text": "other use cases, some events, as shown in Figure 5-1, are emitted by the platform that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các trường hợp sử dụng khác, một số sự kiện, như trong Hình 5-1, được phát ra bởi nền tảng"
+        },
+        {
+            "bbox": [
+                146.43378387896823,
+                139.6091836734695,
+                416.57705689484123,
+                21.948000377928906
+            ],
+            "text": "the container can listen to and react to if desired.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các thùng chứa có thể nghe và phản ứng nếu muốn."
+        },
+        {
+            "bbox": [
+                146.43378387896823,
+                294.5503529856387,
+                324.8608703869048,
+                22.159523809523762
+            ],
+            "text": "Figure 5-1. Managed container lifecycle",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Hình 5-1. Vòng đời container được quản lý"
+        },
+        {
+            "bbox": [
+                146.4336923611111,
+                332.8797437641724,
+                732.1428205357142,
+                21.94804686318969
+            ],
+            "text": "The deployment unit of an application is a Pod. As you already know, a Pod is com‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Đơn vị triển khai của một ứng dụng là một pod. Như bạn đã biết, một pod là com‐"
+        },
+        {
+            "bbox": [
+                146.42757896825395,
+                352.40361526832953,
+                732.1428530753967,
+                21.94800037792902
+            ],
+            "text": "posed of one or more containers. At the Pod level, there are other constructs such as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "đặt ra một hoặc nhiều container. Ở cấp độ pod, có các cấu trúc khác như"
+        },
+        {
+            "bbox": [
+                146.4214960813492,
+                371.927440287226,
+                413.50541661706336,
+                21.94804686318969
+            ],
+            "text": "init containers, which we cover in Chapter 14, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Initing Container, mà chúng tôi bao gồm trong Chương 14, "
+        },
+        {
+            "bbox": [
+                559.9269126984126,
+                371.7159168556311,
+                120.2350421626985,
+                22.159570294784544
+            ],
+            "text": "Init Container",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Container init"
+        },
+        {
+            "bbox": [
+                680.1619548611111,
+                371.927440287226,
+                198.40239632936505,
+                21.94804686318969
+            ],
+            "text": " (and defer-containers,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " (và những người trì hoãn,"
+        },
+        {
+            "bbox": [
+                146.43676329365078,
+                391.4512498110356,
+                732.1429222222222,
+                21.948000377928906
+            ],
+            "text": "which is still at the proposal stage as of this writing) that can help manage the con‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "vẫn đang ở giai đoạn đề xuất như bài viết này) có thể giúp quản lý Con‐"
+        },
+        {
+            "bbox": [
+                146.4306661706349,
+                410.97507482993205,
+                732.1428774801586,
+                21.94804686318969
+            ],
+            "text": "tainer lifecycle. The events and hooks we describe in this chapter are all applied at an",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Vòng đời Tainer. Các sự kiện và móc mà chúng tôi mô tả trong chương này đều được áp dụng tại một"
+        },
+        {
+            "bbox": [
+                146.42458328373016,
+                430.49888435374146,
+                404.8109395337301,
+                21.948046863189802
+            ],
+            "text": "individual container level rather than Pod level.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Cấp độ container cá nhân hơn là cấp độ pod."
+        },
+        {
+            "bbox": [
+                146.42365183531746,
+                465.53609599395315,
+                163.0215907242063,
+                29.274030990173742
+            ],
+            "text": "SIGTERM Signal",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 15.77000045776367
+            },
+            "text_vi": "Tín hiệu sigterm"
+        },
+        {
+            "bbox": [
+                146.42754642857142,
+                500.86057105064253,
+                732.1429466269841,
+                21.948000377928906
+            ],
+            "text": "Whenever Kubernetes decides to shut down a container, whether that is because the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Bất cứ khi nào Kubernetes quyết định tắt một container, cho dù đó là vì"
+        },
+        {
+            "bbox": [
+                146.4216831845238,
+                520.384396069539,
+                732.1428510416666,
+                21.948000377928963
+            ],
+            "text": "Pod it belongs to is shutting down or simply a failed liveness probe causes the con‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Pod nó thuộc về việc đóng cửa hoặc đơn giản là một đầu dò sống không thành công gây ra sự kết nối"
+        },
+        {
+            "bbox": [
+                146.43702767857144,
+                539.9082055933484,
+                732.1427798611111,
+                21.948000377928906
+            ],
+            "text": "tainer to be restarted, the container receives a SIGTERM signal. SIGTERM is a gentle",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tainer sẽ được khởi động lại, container nhận được tín hiệu sigterm. Sigterm là một nhẹ nhàng"
+        },
+        {
+            "bbox": [
+                146.43094479166666,
+                559.432030612245,
+                732.1428429067461,
+                21.948000377928906
+            ],
+            "text": "poke for the container to shut down cleanly before Kubernetes sends a more abrupt",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Thịt để container tắt một cách sạch sẽ trước khi Kubernetes gửi đột ngột hơn"
+        },
+        {
+            "bbox": [
+                146.42486393849205,
+                578.9558556311414,
+                732.1429649305554,
+                21.94800037792885
+            ],
+            "text": "SIGKILL signal. Once a SIGTERM signal has been received, the application should",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tín hiệu Sigkill. Sau khi nhận được tín hiệu Sigterm, ứng dụng nên"
+        },
+        {
+            "bbox": [
+                146.4187952876984,
+                598.4797116402116,
+                732.1430137400794,
+                21.948000377928963
+            ],
+            "text": "shut down as quickly as possible. For some applications, this might be a quick termi‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tắt càng nhanh càng tốt. Đối với một số ứng dụng, đây có thể là một termi nhanh chóng"
+        },
+        {
+            "bbox": [
+                146.43414181547618,
+                618.003536659108,
+                732.1428795138888,
+                21.94800037792902
+            ],
+            "text": "nation, and some other applications may have to complete their in-flight requests,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "quốc gia và một số ứng dụng khác có thể phải hoàn thành các yêu cầu trên máy bay của họ,"
+        },
+        {
+            "bbox": [
+                146.42813621031746,
+                637.5273616780046,
+                732.1428042658729,
+                21.947984882842036
+            ],
+            "text": "release open connections, and clean up temp files, which can take a slightly longer",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Phát hành các kết nối mở và làm sạch các tệp temp, có thể mất nhiều thời gian hơn"
+        },
+        {
+            "bbox": [
+                146.422146875,
+                657.051171201814,
+                732.142956795635,
+                21.948000377928963
+            ],
+            "text": "time. In all cases, reacting to SIGTERM is the right moment to shut down a container",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "thời gian. Trong mọi trường hợp, phản ứng với sigterm là thời điểm thích hợp để tắt một container"
+        },
+        {
+            "bbox": [
+                146.43741612103176,
+                676.5749962207105,
+                122.61562703373014,
+                21.948000377928963
+            ],
+            "text": "in a clean way.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "một cách sạch sẽ."
+        },
+        {
+            "bbox": [
+                146.44207132936506,
+                711.6121923658352,
+                149.32688501984128,
+                29.274030990173856
+            ],
+            "text": "SIGKILL Signal",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 15.77000045776367
+            },
+            "text_vi": "Tín hiệu Sigkill"
+        },
+        {
+            "bbox": [
+                146.43929325396826,
+                746.9366674225246,
+                732.1428734126985,
+                21.948000377928963
+            ],
+            "text": "If a container process has not shut down after a SIGTERM signal, it is shut down",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Nếu một quy trình container không ngừng hoạt động sau khi tín hiệu Sigterm, nó sẽ bị tắt"
+        },
+        {
+            "bbox": [
+                146.43316359126982,
+                766.460492441421,
+                732.1429222222222,
+                21.948000377928906
+            ],
+            "text": "forcefully by the following SIGKILL signal. Kubernetes does not send the SIGKILL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "mạnh mẽ bởi tín hiệu sigkill sau đây. Kubernetes không gửi Sigkill"
+        },
+        {
+            "bbox": [
+                146.42717425595237,
+                785.9843174603175,
+                732.1428917162698,
+                21.948000377928963
+            ],
+            "text": "signal immediately but waits for a grace period of 30 seconds by default after it has",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "tín hiệu ngay lập tức nhưng chờ đợi thời gian ân hạn là 30 giây theo mặc định sau khi nó có"
+        },
+        {
+            "bbox": [
+                146.42109340277779,
+                805.5081734693878,
+                732.1429527281746,
+                21.948000377928963
+            ],
+            "text": "issued a SIGTERM signal. This grace period can be defined per Pod using",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "ban hành một tín hiệu sigterm. Thời gian ân hạn này có thể được xác định trên mỗi pod bằng cách sử dụng"
+        },
+        {
+            "bbox": [
+                146.4364378968254,
+                825.9512600151172,
+                31.839066567460293,
+                21.948000377928963
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                178.41752390873015,
+                829.2133786848073,
+                355.01299642857145,
+                15.456302721088434
+            ],
+            "text": ".spec.terminationGracePeriodSeconds",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": ".Spec"
+        },
+        {
+            "bbox": [
+                533.4305203373016,
+                825.9512600151172,
+                345.1309226190476,
+                21.948000377928963
+            ],
+            "text": " field, but cannot be guaranteed as it can",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " trường, nhưng không thể được đảm bảo vì nó có thể"
+        },
+        {
+            "bbox": [
+                146.43367609126983,
+                845.4750385487529,
+                732.1428368055555,
+                21.948000377928935
+            ],
+            "text": "be overridden while issuing commands to Kubernetes. The aim here should be to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "được ghi đè trong khi ban hành các lệnh cho Kubernetes. Mục đích ở đây nên là"
+        },
+        {
+            "bbox": [
+                146.42759320436508,
+                864.9988015873016,
+                732.1428998511905,
+                21.948049962207108
+            ],
+            "text": "design and implement containerized applications to be ephemeral with quick startup",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Thiết kế và triển khai các ứng dụng được đóng gói để trở nên phù hợp với khởi động nhanh chóng"
+        },
+        {
+            "bbox": [
+                146.42151235119047,
+                884.5226235071807,
+                212.75156453373017,
+                21.94809489795918
+            ],
+            "text": "and shutdown processes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "và quá trình tắt máy."
+        },
+        {
+            "bbox": [
+                146.4305583829365,
+                945.5380580498866,
+                17.827690773809508,
+                16.70680427059714
+            ],
+            "text": "42 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "42 "
+        },
+        {
+            "bbox": [
+                179.66984613095238,
+                945.5380580498866,
+                6.735722420634914,
+                16.70680427059714
+            ],
+            "text": "| ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "| "
+        },
+        {
+            "bbox": [
+                201.8171817956349,
+                945.5380580498866,
+                175.78746949404763,
+                16.70680427059714
+            ],
+            "text": "Chapter 5: Managed Lifecycle",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "Chương 5: Vòng đời được quản lý"
+        }
+    ]
+}

@@ -1,3 +1,2236 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8f6791bb48aa502bd61c09bdeaa1224cccf24daff5c0cdcd91746edb4bb543d6
-size 64066
+{
+    "metadata": {
+        "page_hash": "d9702907f43d3a5dc28e27666c76ef6f1ebe7ab63f3d32388c230bdd8dd529ee",
+        "original_filename": "python_howto-logging-cookbook.pdf",
+        "page_no": 29,
+        "num_pages": 48,
+        "original_width": 595.28003,
+        "original_height": 841.89001,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                123.97526589292772,
+                88.96999650821374,
+                30.517815161714736,
+                17.466467799041766
+            ],
+            "text": "20",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/RQSEHJ+FreeSansBold",
+                "size": 14.34619998931885
+            },
+            "text_vi": "20"
+        },
+        {
+            "bbox": [
+                167.02021000939672,
+                88.96999650821374,
+                312.76856309962216,
+                17.466467799041766
+            ],
+            "text": "Customizing handlers with",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/RQSEHJ+FreeSansBold",
+                "size": 14.34619998931885
+            },
+            "text_vi": "Tùy chỉnh xử lý với"
+        },
+        {
+            "bbox": [
+                486.65631408800994,
+                91.01351939073368,
+                204.7089232944703,
+                15.719880676574348
+            ],
+            "text": "dictConfig()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 14.34619998931885
+            },
+            "text_vi": "dictconfig ()"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                129.11809999978493,
+                648.7446933168579,
+                12.129428284818346
+            ],
+            "text": "There are times when you want to customize logging handlers in particular ways, and if you use",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AKFNVN+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Có những lúc bạn muốn tùy chỉnh trình xử lý đăng nhập theo những cách cụ thể và nếu bạn sử dụng"
+        },
+        {
+            "bbox": [
+                777.5057316302043,
+                130.53719214461273,
+                142.1584598596395,
+                10.916543896274561
+            ],
+            "text": "dictConfig()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "dictconfig ()"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                143.67450238541255,
+                777.0423224175687,
+                12.129440459805437
+            ],
+            "text": "you may be able to do this without subclassing. As an example, consider that you may want to set the ownership of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AKFNVN+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể làm điều này mà không cần phân lớp. Ví dụ, hãy xem xét rằng bạn có thể muốn đặt quyền sở hữu"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                158.22965074737021,
+                497.5289793443935,
+                12.129501334740894
+            ],
+            "text": "a log file. On POSIX, this is easily done using$_{shutil.chown()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AKFNVN+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "một tập tin nhật ký. Trên Posix, điều này dễ dàng được thực hiện bằng $ _ {swutil.chown ()} $"
+        },
+        {
+            "bbox": [
+                592.8738105828949,
+                158.22965074737021,
+                308.1441909784878,
+                12.129501334740894
+            ],
+            "text": ", but the file handlers in the stdlib don’t offer",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AKFNVN+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", nhưng các trình xử lý tập tin trong đề nghị don don của stdlib"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                172.78485998426322,
+                559.0957679195118,
+                12.12944045980555
+            ],
+            "text": "built-in support. You can customize handler creation using a plain function such as:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AKFNVN+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hỗ trợ tích hợp. Bạn có thể tùy chỉnh việc tạo Handler bằng một hàm đơn giản như:"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                199.41282294108692,
+                29.16437374020427,
+                9.824922379112309
+            ],
+            "text": "def",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "def"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                199.41282294108692,
+                183.70929195289818,
+                9.824922379112309
+            ],
+            "text": "owned_file_handler",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "sở hữu_file_handler"
+        },
+        {
+            "bbox": [
+                327.7699404765854,
+                199.41282294108692,
+                162.1100576815923,
+                9.824922379112309
+            ],
+            "text": "(filename, mode",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "(Tên tệp, chế độ"
+        },
+        {
+            "bbox": [
+                466.7221416784298,
+                199.41282294108692,
+                146.91668222097087,
+                9.824922379112309
+            ],
+            "text": "='a', encoding=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "= 'A', mã hóa ="
+        },
+        {
+            "bbox": [
+                605.6725693452206,
+                199.41282294108692,
+                32.607285683680516,
+                9.824922379112309
+            ],
+            "text": "None",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Không có"
+        },
+        {
+            "bbox": [
+                642.7256425013954,
+                199.41282294108692,
+                82.07420883915768,
+                9.824922379112309
+            ],
+            "text": ", owner=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": ", chủ sở hữu ="
+        },
+        {
+            "bbox": [
+                716.833579567586,
+                199.41282294108692,
+                32.60728568368074,
+                9.824922379112309
+            ],
+            "text": "None",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Không có"
+        },
+        {
+            "bbox": [
+                753.8867043801216,
+                199.41282294108692,
+                34.45995828215507,
+                9.824922379112309
+            ],
+            "text": "):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "):"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                212.75536693920378,
+                17.152792484908304,
+                9.824922379112309
+            ],
+            "text": "if",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "nếu như"
+        },
+        {
+            "bbox": [
+                188.8194955910078,
+                212.75536693920378,
+                65.27631793729077,
+                9.824922379112309
+            ],
+            "text": "owner:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "người sở hữu:"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                226.0979961622303,
+                58.667523669490436,
+                9.824922379112081
+            ],
+            "text": "if not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Nếu không"
+        },
+        {
+            "bbox": [
+                262.9256935597184,
+                226.0979961622303,
+                262.18650825561883,
+                9.824922379112081
+            ],
+            "text": "os.path.exists(filename):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "os.path.exists (tên tệp):"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                239.44054016034704,
+                152.15124510392192,
+                9.824922379112195
+            ],
+            "text": "open(filename,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Mở (tên tệp,"
+        },
+        {
+            "bbox": [
+                374.08675543844464,
+                239.44054016034704,
+                132.25056323491987,
+                9.824922379112195
+            ],
+            "text": "'a').close()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'A'). Đóng ()"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                252.78183013479395,
+                227.1069663633769,
+                9.824995429034743
+            ],
+            "text": "shutil.chown(filename,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Shutil.chown (tên tệp,"
+        },
+        {
+            "bbox": [
+                411.14156769209944,
+                252.7819031847165,
+                74.53835508306906,
+                9.824922379112195
+            ],
+            "text": "*owner)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "*người sở hữu)"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                266.12444718283336,
+                59.19333893159492,
+                9.824934554099173
+            ],
+            "text": "return",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "trở lại"
+        },
+        {
+            "bbox": [
+                225.8726204035435,
+                266.12444718283336,
+                457.49053012915624,
+                9.824934554099173
+            ],
+            "text": "logging.FileHandler(filename, mode, encoding)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "đăng nhập.fileHandler (tên tệp, chế độ, mã hóa)"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                293.83711626415425,
+                541.5723117740066,
+                12.129428284818346
+            ],
+            "text": "You can then specify, in a logging configuration passed to$_{dictConfig()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AKFNVN+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Sau đó, bạn có thể chỉ định, trong một cấu hình đăng nhập được chuyển cho $ _ {dictConfig ()} $"
+        },
+        {
+            "bbox": [
+                646.9012327693908,
+                293.83711626415425,
+                254.12496493457036,
+                12.129428284818346
+            ],
+            "text": ", that a logging handler be created by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AKFNVN+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", rằng một trình xử lý đăng nhập được tạo bởi"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                308.39232550104725,
+                137.20080950808983,
+                12.129440459805437
+            ],
+            "text": "calling this function:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AKFNVN+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Gọi chức năng này:"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                335.02027628288397,
+                40.295932067467476,
+                9.8249345540994
+            ],
+            "text": "LOGGING",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Đăng nhập"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                335.02027628288397,
+                22.817751000314928,
+                9.8249345540994
+            ],
+            "text": "={",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "= {"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                348.3628324559878,
+                128.39102896665287,
+                9.824922379112309
+            ],
+            "text": "'version':1,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'Phiên bản': 1,"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                361.7053764541047,
+                251.30176057644667,
+                9.8249345540994
+            ],
+            "text": "'disable_existing_loggers",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'vô hiệu hóa_existing_loggers"
+        },
+        {
+            "bbox": [
+                392.61417017466545,
+                361.7053764541047,
+                26.493686509188024,
+                9.8249345540994
+            ],
+            "text": "':",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "':"
+        },
+        {
+            "bbox": [
+                420.4035876190908,
+                361.7053764541047,
+                47.18174906690558,
+                9.8249345540994
+            ],
+            "text": "False",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "SAI"
+        },
+        {
+            "bbox": [
+                466.7221416784298,
+                361.7053764541047,
+                17.229927484716825,
+                9.8249345540994
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                375.0480056771312,
+                141.94650175817253,
+                9.824849329189647
+            ],
+            "text": "'formatters': {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'Formatters': {"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                388.39054967524794,
+                114.13994645511627,
+                9.824934554099286
+            ],
+            "text": "'default': {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'mặc định': {"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                401.7331058483519,
+                109.86360906479595,
+                9.824922379112195
+            ],
+            "text": "'format':'",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'định dạng':'"
+        },
+        {
+            "bbox": [
+                337.0336306259089,
+                401.7331058483519,
+                128.8852546422563,
+                9.824922379112195
+            ],
+            "text": "%(asctime)s",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "%(asctime) s"
+        },
+        {
+            "bbox": [
+                448.1947097234221,
+                401.7331058483519,
+                161.49248866957623,
+                9.824922379112195
+            ],
+            "text": "%(levelname)s",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "%(Ốp xe) s"
+        },
+        {
+            "bbox": [
+                577.8814128033155,
+                401.7331058483519,
+                102.29918934119121,
+                9.824922379112195
+            ],
+            "text": "%(name)s",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "%(tên) s"
+        },
+        {
+            "bbox": [
+                661.2530744564032,
+                401.7331058483519,
+                129.74982715277724,
+                9.824922379112195
+            ],
+            "text": "%(message)s",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "%(tin nhắn) s"
+        },
+        {
+            "bbox": [
+                763.150428967019,
+                401.7331058483519,
+                17.229979141077592,
+                9.824922379112195
+            ],
+            "text": "'",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                415.0756863714299,
+                24.470909514636332,
+                9.824934554099286
+            ],
+            "text": "},",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "},"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                428.4170493957994,
+                24.470897461485464,
+                9.824922379112081
+            ],
+            "text": "},",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "},"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                441.75959339391613,
+                123.40538086755572,
+                9.824934554099286
+            ],
+            "text": "'handlers': {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'Trình xử lý': {"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                455.10214956702,
+                77.10257683262108,
+                9.824922379112309
+            ],
+            "text": "'file':{",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'tài liệu':{"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                468.4447300900981,
+                11.707914172763338,
+                9.824934554099286
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                252.69819903079897,
+                468.4447300900981,
+                505.9455912707167,
+                9.824934554099286
+            ],
+            "text": "The values below are popped from this dictionary and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Các giá trị dưới đây được bật từ từ điển này và"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                481.78728626320196,
+                13.081026336462202,
+                9.824922379112309
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                254.75789310452762,
+                481.78728626320196,
+                553.6151313525501,
+                9.824922379112309
+            ],
+            "text": "used to create the handler, set the handler's level and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "được sử dụng để tạo người xử lý, đặt cấp độ của người xử lý và"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                495.1298667862801,
+                14.264697406361819,
+                9.824934554099286
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                256.5333394436228,
+                495.1298667862801,
+                147.38267425164588,
+                9.824934554099286
+            ],
+            "text": "its formatter.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "định dạng của nó."
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                508.47242295938395,
+                43.723665650265474,
+                9.824922379112252
+            ],
+            "text": "'()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'()"
+        },
+        {
+            "bbox": [
+                262.9256935597184,
+                508.47242295938395,
+                236.696418742621,
+                9.824922379112252
+            ],
+            "text": "': owned_file_handler,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "': sở hữu_file_handler,"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                521.8150034824621,
+                68.4570583528562,
+                9.82493455409923
+            ],
+            "text": "'level",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'mức độ"
+        },
+        {
+            "bbox": [
+                290.71685010162355,
+                521.8150034824621,
+                100.59990169668549,
+                9.82493455409923
+            ],
+            "text": "':'DEBUG',",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "':' Debug ',"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                535.1575596555659,
+                221.0246537247352,
+                9.824922379112252
+            ],
+            "text": "'formatter':'default',",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'formatter': 'mặc định',"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                548.500140178644,
+                12.485617903224465,
+                9.824934554099286
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                253.8646857513429,
+                548.500140178644,
+                588.7212590518113,
+                9.824934554099286
+            ],
+            "text": "The values below are passed to the handler creator callable",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Các giá trị bên dưới được chuyển cho người tạo xử lý có thể gọi được"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                561.8415032030134,
+                11.992351314052996,
+                9.824922379112252
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                253.1248633521269,
+                561.8415032030134,
+                221.81077744200485,
+                9.824922379112252
+            ],
+            "text": "as keyword arguments.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/DUZBCH+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "như từ khóa đối số."
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                575.1840472011302,
+                266.7853879627039,
+                9.824934554099286
+            ],
+            "text": "'owner': ['pulse','pulse'],",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'Chủ sở hữu': ['Pulse', 'Pulse'],"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                588.5266398991953,
+                258.58886657091455,
+                9.824922379112252
+            ],
+            "text": "'filename':'chowntest.log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'Tên tệp': 'Chowntest.log"
+        },
+        {
+            "bbox": [
+                475.9840582926996,
+                588.5266398991953,
+                26.493755384335714,
+                9.824922379112252
+            ],
+            "text": "',",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                601.8691838973122,
+                119.1273336516933,
+                9.824934554099286
+            ],
+            "text": "'mode':'w',",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'chế độ': 'w',"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                615.2117765953774,
+                188.32572965701533,
+                9.824922379112252
+            ],
+            "text": "'encoding':'utf-8",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'Mã hóa': 'UTF-8"
+        },
+        {
+            "bbox": [
+                401.87787754277593,
+                615.2117765953774,
+                26.491964630494977,
+                9.824922379112252
+            ],
+            "text": "',",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                628.5543205934941,
+                24.470909514636332,
+                9.824934554099286
+            ],
+            "text": "},",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "},"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                641.8968767665981,
+                24.470897461485464,
+                9.824922379112195
+            ],
+            "text": "},",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "},"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                655.2394572896761,
+                86.3659966469898,
+                9.824934554099286
+            ],
+            "text": "'root': {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'root': {"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                668.5820499877412,
+                201.9411754834107,
+                9.824922379112195
+            ],
+            "text": "'handlers': ['file'],",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'Trình xử lý': ['Tệp'],"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                681.9245939858581,
+                68.45531925537631,
+                9.824922379112252
+            ],
+            "text": "'level",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'mức độ"
+        },
+        {
+            "bbox": [
+                253.66370807030097,
+                681.9245939858581,
+                109.86362628358285,
+                9.824922379112252
+            ],
+            "text": "':'DEBUG',",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "':' Debug ',"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                695.2671501589621,
+                24.470897461485464,
+                9.824922379112138
+            ],
+            "text": "},",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "},"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                708.6085010083443,
+                7.2409097110144955,
+                9.824898029138012
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                736.3212066146266,
+                777.0414786970092,
+                12.129428284818346
+            ],
+            "text": "In this example I am setting the ownership using the$_{pulse}$user and group, just for the purposes of illustration.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AKFNVN+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trong ví dụ này, tôi đang thiết lập quyền sở hữu bằng cách sử dụng người dùng và nhóm $ _ {Pulse} $, chỉ cho mục đích minh họa."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                750.8764158515196,
+                413.1811502226943,
+                12.129440459805437
+            ],
+            "text": "Putting it together into a working script,$_{chowntest.py}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AKFNVN+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đặt nó lại với nhau thành một tập lệnh hoạt động, $ _ {ChownTest.py} $"
+        },
+        {
+            "bbox": [
+                521.4606136711826,
+                750.8764158515196,
+                4.288631604188026,
+                12.129440459805437
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AKFNVN+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                777.5043788083434,
+                137.74743711795605,
+                9.824849329189675
+            ],
+            "text": "import logging",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Nhập nhật ký"
+        },
+        {
+            "bbox": [
+                253.66370807030097,
+                777.5043788083434,
+                17.22997914107748,
+                9.824849329189675
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                272.18941814661576,
+                777.5043788083434,
+                133.28582558027352,
+                9.824849329189675
+            ],
+            "text": "logging.config",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "đăng nhập.config"
+        },
+        {
+            "bbox": [
+                401.87787754277593,
+                777.5043788083434,
+                17.229979141077536,
+                9.824849329189675
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                420.4035876190908,
+                777.5043788083434,
+                18.01737704857993,
+                9.824849329189675
+            ],
+            "text": "os",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "hệ điều hành"
+        },
+        {
+            "bbox": [
+                438.93098513652467,
+                777.5043788083434,
+                17.229979141077536,
+                9.824849329189675
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                457.4584170915325,
+                777.5043788083434,
+                56.59951292167489,
+                9.824849329189675
+            ],
+            "text": "shutil",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "giao thoa"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                804.1895520294865,
+                29.16437374020427,
+                9.824849329189703
+            ],
+            "text": "def",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "def"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                804.1895520294865,
+                183.70929195289818,
+                9.824849329189703
+            ],
+            "text": "owned_file_handler",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "sở hữu_file_handler"
+        },
+        {
+            "bbox": [
+                327.7699404765854,
+                804.1895520294865,
+                162.1100576815923,
+                9.824849329189703
+            ],
+            "text": "(filename, mode",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "(Tên tệp, chế độ"
+        },
+        {
+            "bbox": [
+                466.7221416784298,
+                804.1895520294865,
+                146.91668222097087,
+                9.824849329189703
+            ],
+            "text": "='a', encoding=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "= 'A', mã hóa ="
+        },
+        {
+            "bbox": [
+                605.6725693452206,
+                804.1895520294865,
+                32.607285683680516,
+                9.824849329189703
+            ],
+            "text": "None",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Không có"
+        },
+        {
+            "bbox": [
+                642.7256425013954,
+                804.1895520294865,
+                82.07420883915768,
+                9.824849329189703
+            ],
+            "text": ", owner=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": ", chủ sở hữu ="
+        },
+        {
+            "bbox": [
+                716.833579567586,
+                804.1895520294865,
+                32.60728568368074,
+                9.824849329189703
+            ],
+            "text": "None",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Không có"
+        },
+        {
+            "bbox": [
+                753.8867043801216,
+                804.1895520294865,
+                34.45995828215507,
+                9.824849329189703
+            ],
+            "text": "):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "):"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                817.5320960276034,
+                17.152792484908304,
+                9.824849329189703
+            ],
+            "text": "if",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "nếu như"
+        },
+        {
+            "bbox": [
+                188.8194955910078,
+                817.5320960276034,
+                65.27631793729077,
+                9.824849329189703
+            ],
+            "text": "owner:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "người sở hữu:"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                830.8746522007073,
+                58.667523669490436,
+                9.824849329189703
+            ],
+            "text": "if not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Nếu không"
+        },
+        {
+            "bbox": [
+                262.9256935597184,
+                830.8746522007073,
+                262.18650825561883,
+                9.824849329189703
+            ],
+            "text": "os.path.exists(filename):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "os.path.exists (tên tệp):"
+        },
+        {
+            "bbox": [
+                235.136310552867,
+                844.2171961988241,
+                152.15124510392192,
+                9.824849329189703
+            ],
+            "text": "open(filename,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Mở (tên tệp,"
+        },
+        {
+            "bbox": [
+                374.08675543844464,
+                844.2171961988241,
+                132.25056323491987,
+                9.824849329189703
+            ],
+            "text": "'a').close()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'A'). Đóng ()"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                857.559740196941,
+                227.1069663633769,
+                9.824861504176766
+            ],
+            "text": "shutil.chown(filename,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Shutil.chown (tên tệp,"
+        },
+        {
+            "bbox": [
+                411.14156769209944,
+                857.5598132468634,
+                74.53835508306906,
+                9.824861504176738
+            ],
+            "text": "*owner)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "*người sở hữu)"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                870.9023694199673,
+                59.19333893159492,
+                9.824849329189703
+            ],
+            "text": "return",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GVOPTM+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "trở lại"
+        },
+        {
+            "bbox": [
+                225.8726204035435,
+                870.9023694199673,
+                457.49053012915624,
+                9.824849329189703
+            ],
+            "text": "logging.FileHandler(filename, mode, encoding)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "đăng nhập.fileHandler (tên tệp, chế độ, mã hóa)"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                897.5862764424536,
+                40.295932067467476,
+                9.824854199184529
+            ],
+            "text": "LOGGING",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Đăng nhập"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                897.5862764424536,
+                22.817751000314928,
+                9.824854199184529
+            ],
+            "text": "={",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "= {"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                910.9288277455627,
+                128.39102896665287,
+                9.824851764187102
+            ],
+            "text": "'version':1,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CNFURM+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'Phiên bản': 1,"
+        },
+        {
+            "bbox": [
+                769.4765768473703,
+                925.3768155236811,
+                131.5539427721103,
+                9.703577935317213
+            ],
+            "text": "(continues on next page)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AKFNVN+FreeSerif",
+                "size": 7.970099925994873
+            },
+            "text_vi": "(Tiếp tục trên trang tiếp theo)"
+        },
+        {
+            "bbox": [
+                502.95904433414296,
+                964.0251176635295,
+                19.075712568419362,
+                12.129434372311891
+            ],
+            "text": "30",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/RQSEHJ+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "30"
+        }
+    ]
+}

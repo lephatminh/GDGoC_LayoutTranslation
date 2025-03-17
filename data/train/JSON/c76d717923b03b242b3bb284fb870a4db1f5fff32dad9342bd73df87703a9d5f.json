@@ -1,3 +1,1676 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3ca49326e6293c26fa572d7dc375ac353992668372009e29c9db8cca8fb05673
-size 48865
+{
+    "metadata": {
+        "page_hash": "c76d717923b03b242b3bb284fb870a4db1f5fff32dad9342bd73df87703a9d5f",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4171,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                378.7642806372549,
+                48.370422979798036,
+                237.32432965686274,
+                11.971275252525288
+            ],
+            "text": "NDB Cluster Configuration Files",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp cấu hình cụm NDB"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                94.96133207070716,
+                712.9946225490196,
+                11.971275252525174
+            ],
+            "text": "data files. The shared global memory pool also provides memory used for satisfying the memory",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp dữ liệu. Nhóm bộ nhớ toàn cầu được chia sẻ cũng cung cấp bộ nhớ được sử dụng để đáp ứng bộ nhớ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                110.49163510101016,
+                148.9432022058824,
+                11.971275252525288
+            ],
+            "text": "requirements of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "yêu cầu của "
+        },
+        {
+            "bbox": [
+                306.3778427287582,
+                111.64347885101006,
+                160.78431372549016,
+                10.172335542929432
+            ],
+            "text": "UNDO_BUFFER_SIZE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Undo_buffer_size"
+        },
+        {
+            "bbox": [
+                467.16215645424836,
+                110.49163510101016,
+                130.3358010620915,
+                11.971275252525288
+            ],
+            "text": " option used with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tùy chọn được sử dụng với "
+        },
+        {
+            "bbox": [
+                597.4979575163399,
+                111.64347885101006,
+                200.98039215686276,
+                10.172335542929432
+            ],
+            "text": "CREATE LOGFILE GROUP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo nhóm logfile"
+        },
+        {
+            "bbox": [
+                798.4783496732026,
+                110.49163510101016,
+                37.248349264705894,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                835.7266989379085,
+                111.64347885101006,
+                50.245098039215804,
+                10.172335542929432
+            ],
+            "text": "ALTER",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                127.17378188131318,
+                130.6372549019608,
+                10.172335542929318
+            ],
+            "text": "LOGFILE GROUP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhóm logfile"
+        },
+        {
+            "bbox": [
+                288.0718954248366,
+                126.02193813131316,
+                615.3517659313726,
+                11.971275252525288
+            ],
+            "text": " statements, including any default value implied for this options by the setting of the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các câu lệnh, bao gồm bất kỳ giá trị mặc định nào ngụ ý cho các tùy chọn này bởi cài đặt của"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                142.70408491161618,
+                190.93137254901964,
+                10.172335542929318
+            ],
+            "text": "InitialLogFileGroup",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "InitLogFilegroup"
+        },
+        {
+            "bbox": [
+                348.36601307189545,
+                141.55224116161617,
+                269.98367687908495,
+                11.971275252525288
+            ],
+            "text": " data node configuration parameter. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tham số cấu hình nút dữ liệu. "
+        },
+        {
+            "bbox": [
+                618.3496899509804,
+                142.70408491161618,
+                180.88235294117646,
+                10.172335542929318
+            ],
+            "text": "SharedGlobalMemory",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sharedglobalmemory"
+        },
+        {
+            "bbox": [
+                799.2320428921569,
+                141.55224116161617,
+                127.55552205882361,
+                11.971275252525288
+            ],
+            "text": " can be set in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có thể được đặt trong"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                158.23438794191918,
+                60.29411764705884,
+                10.172335542929318
+            ],
+            "text": "[ndbd]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[NDBD]"
+        },
+        {
+            "bbox": [
+                217.72875816993465,
+                157.08254419191928,
+                24.201388888888857,
+                11.971275252525174
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                241.9301470588235,
+                158.23438794191918,
+                140.68627450980395,
+                10.172335542929318
+            ],
+            "text": "[ndbd default]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[Mặc định NDBD]"
+        },
+        {
+            "bbox": [
+                382.61642156862746,
+                157.08254419191928,
+                108.93135580065353,
+                11.971275252525174
+            ],
+            "text": " section of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phần của "
+        },
+        {
+            "bbox": [
+                491.547777369281,
+                158.23438794191918,
+                100.49019607843138,
+                10.172335542929318
+            ],
+            "text": "config.ini",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cấu hình.ini"
+        },
+        {
+            "bbox": [
+                592.0379734477124,
+                157.08254419191928,
+                326.74382230392166,
+                11.971275252525174
+            ],
+            "text": " configuration file, and is measured in bytes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tệp cấu hình, và được đo bằng byte."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                183.28993055555566,
+                149.8811107026144,
+                11.971275252525174
+            ],
+            "text": "The default value is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định là "
+        },
+        {
+            "bbox": [
+                307.31578472222225,
+                184.44177430555555,
+                40.19607843137254,
+                10.172335542929318
+            ],
+            "text": "128M",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "128m"
+        },
+        {
+            "bbox": [
+                347.5118631535948,
+                183.28993055555566,
+                4.6560290032679745,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                209.49731691919192,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                210.64916066919193,
+                160.7843137254902,
+                10.172335542929318
+            ],
+            "text": "DiskIOThreadPool",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Diskiothreadpool"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                235.2193813131314,
+                124.70831658496735,
+                11.971275252525174
+            ],
+            "text": "Version (or later)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phiên bản (hoặc muộn hơn)"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                235.2193813131314,
+                86.57230392156862,
+                11.971275252525174
+            ],
+            "text": "NDB 8.0.13",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "NDB 8.0.13"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                256.57354797979804,
+                96.8055555555556,
+                11.971275252525288
+            ],
+            "text": "Type or units",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gõ hoặc đơn vị"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                256.57354797979804,
+                55.85581740196085,
+                11.971275252525288
+            ],
+            "text": "threads",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chủ đề"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                277.92771464646466,
+                53.05882352941177,
+                11.971275252525288
+            ],
+            "text": "Default",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                277.92771464646466,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": "2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                299.2818813131314,
+                49.34068627450981,
+                11.971275252525174
+            ],
+            "text": "Range",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                299.2818813131314,
+                9.312091503267993,
+                11.971275252525174
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                563.7332516339869,
+                299.2818813131314,
+                219.6548035130719,
+                11.971275252525174
+            ],
+            "text": "- 4294967039 (0xFFFFFEFF)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "- 4294967039 (0xffffFeff)"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                320.63604797979804,
+                95.86766380718956,
+                11.971275252525288
+            ],
+            "text": "Restart Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khởi động lại loại"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                320.63604797979804,
+                114.47509844771241,
+                11.971275252525288
+            ],
+            "text": "N (NDB 8.0.13)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "N (NDB 8.0.13)"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                349.75536616161617,
+                722.3570093954248,
+                11.971275252525288
+            ],
+            "text": "This parameter determines the number of unbound threads used for Disk Data file access. Before",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tham số này xác định số lượng luồng không liên kết được sử dụng để truy cập tệp dữ liệu đĩa. Trước"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                366.4375129419193,
+                160.7843137254902,
+                10.172335542929204
+            ],
+            "text": "DiskIOThreadPool",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Diskiothreadpool"
+        },
+        {
+            "bbox": [
+                318.218954248366,
+                365.2856691919193,
+                511.98080065359477,
+                11.971275252525174
+            ],
+            "text": " was introduced, exactly one thread was spawned for each Disk Data",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được giới thiệu, chính xác một luồng đã được sinh ra cho mỗi dữ liệu đĩa"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                380.8159722222223,
+                696.2463067810457,
+                11.971275252525174
+            ],
+            "text": "file, which could lead to performance issues, particularly when using very large data files. With",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp, có thể dẫn đến các vấn đề về hiệu suất, đặc biệt khi sử dụng các tệp dữ liệu rất lớn. Với"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                397.4981190025253,
+                160.7843137254902,
+                10.172335542929318
+            ],
+            "text": "DiskIOThreadPool",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Diskiothreadpool"
+        },
+        {
+            "bbox": [
+                318.218954248366,
+                396.3462752525253,
+                577.7013721405228,
+                11.971275252525288
+            ],
+            "text": ", you can—for example—access a single large data file using several threads",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", bạn có thể lấy ví dụ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                411.8765782828283,
+                138.67647058823533,
+                11.971275252525288
+            ],
+            "text": "working in parallel.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "làm việc song song."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                438.08396464646466,
+                393.7373366013071,
+                11.971275252525288
+            ],
+            "text": "This parameter applies to Disk Data I/O threads only.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tham số này chỉ áp dụng cho các luồng I/O dữ liệu đĩa."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                464.29135101010104,
+                764.2781192810457,
+                11.971275252525288
+            ],
+            "text": "The optimum value for this parameter depends on your hardware and configuration, and includes these",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị tối ưu cho tham số này phụ thuộc vào phần cứng và cấu hình của bạn, và bao gồm chúng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                479.82165404040404,
+                54.91789215686276,
+                11.971275252525288
+            ],
+            "text": "factors:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các yếu tố:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                506.0290404040404,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                506.0290404040404,
+                313.66339869281046,
+                11.971275252525288
+            ],
+            "text": "Physical distribution of Disk Data files. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Phân phối vật lý của các tập tin dữ liệu đĩa. "
+        },
+        {
+            "bbox": [
+                504.59477124183,
+                506.0290404040404,
+                418.9269293300655,
+                11.971275252525288
+            ],
+            "text": " You can obtain better performance by placing data files,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bạn có thể có được hiệu suất tốt hơn bằng cách đặt các tệp dữ liệu,"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                521.5593434343434,
+                753.1070763888889,
+                11.971275252525231
+            ],
+            "text": "undo log files, and the data node file system on separate physical disks. If you do this with some or all",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hoàn tác các tệp nhật ký và hệ thống tệp nút dữ liệu trên các đĩa vật lý riêng biệt. Nếu bạn làm điều này với một số hoặc tất cả"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                537.0896464646464,
+                382.6332034313725,
+                11.971275252525288
+            ],
+            "text": "of these sets of files, then you can (and should) set ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong số các bộ tệp này, sau đó bạn có thể (và nên) đặt "
+        },
+        {
+            "bbox": [
+                556.8161597222222,
+                538.2414513888889,
+                160.78431372549028,
+                10.172374368686917
+            ],
+            "text": "DiskIOThreadPool",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Diskiothreadpool"
+        },
+        {
+            "bbox": [
+                717.6004734477125,
+                537.0896464646464,
+                194.58254983660117,
+                11.971275252525288
+            ],
+            "text": " higher to enable separate",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cao hơn để cho phép riêng biệt"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                552.6199494949495,
+                295.1229910130719,
+                11.971275252525231
+            ],
+            "text": "threads to handle the files on each disk.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chủ đề để xử lý các tệp trên mỗi đĩa."
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                578.8273358585859,
+                363.0710784313725,
+                11.971275252525231
+            ],
+            "text": "In NDB 8.0.19 and later, you should also disable ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong NDB 8.0,19 trở lên, bạn cũng nên vô hiệu hóa "
+        },
+        {
+            "bbox": [
+                537.2540849673202,
+                579.9791407828283,
+                211.02941176470597,
+                10.172374368686917
+            ],
+            "text": "DiskDataUsingSameDisk",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DiskdatausingSamedisk"
+        },
+        {
+            "bbox": [
+                748.2834967320262,
+                578.8273358585859,
+                173.16132271241838,
+                11.971275252525231
+            ],
+            "text": " when using a separate",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Khi sử dụng riêng biệt"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                594.3576388888889,
+                750.2263071895426,
+                11.971275252525231
+            ],
+            "text": "disk or disks for Disk Data files; this increases the rate at which checkpoints of Disk Data tablespaces",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đĩa hoặc đĩa cho các tệp dữ liệu đĩa; Điều này làm tăng tốc độ kiểm tra các không gian bảng dữ liệu đĩa"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                609.8879419191919,
+                135.9129734477124,
+                11.971275252525288
+            ],
+            "text": "can be performed.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có thể được thực hiện."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                636.0953282828283,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                636.0953282828283,
+                233.6229742647059,
+                11.971275252525288
+            ],
+            "text": "Disk performance and types. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Hiệu suất đĩa và các loại. "
+        },
+        {
+            "bbox": [
+                424.55434681372554,
+                636.0953282828283,
+                442.17359436274506,
+                11.971275252525288
+            ],
+            "text": " The number of threads that can be accommodated for Disk",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Số lượng chủ đề có thể được cung cấp cho đĩa"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                651.6256313131314,
+                705.6923684640523,
+                11.971275252525231
+            ],
+            "text": "Data file handling is also dependent on the speed and throughput of the disks. Faster disks and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xử lý tệp dữ liệu cũng phụ thuộc vào tốc độ và thông lượng của các đĩa. Đĩa nhanh hơn và"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                667.1559343434344,
+                696.2797867647058,
+                11.971275252525288
+            ],
+            "text": "higher throughput allow for more disk I/O threads. Our test results indicate that solid-state disk",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông lượng cao hơn cho phép nhiều chủ đề I/O đĩa hơn. Kết quả thử nghiệm của chúng tôi chỉ ra rằng đĩa trạng thái rắn"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                682.6862373737374,
+                722.3737745098039,
+                11.971275252525231
+            ],
+            "text": "drives can handle many more disk I/O threads than conventional disks, and thus higher values for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các ổ đĩa có thể xử lý nhiều luồng I/O đĩa hơn các đĩa thông thường và do đó các giá trị cao hơn cho"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                699.3683453282829,
+                160.7843137254902,
+                10.172374368686803
+            ],
+            "text": "DiskIOThreadPool",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Diskiothreadpool"
+        },
+        {
+            "bbox": [
+                334.9673202614379,
+                698.2165404040404,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                724.4239267676768,
+                89.35254942810454,
+                11.971275252525231
+            ],
+            "text": "Decreasing ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giảm "
+        },
+        {
+            "bbox": [
+                263.53555596405226,
+                725.5757316919191,
+                281.37254901960785,
+                10.17237436868686
+            ],
+            "text": "TimeBetweenGlobalCheckpoints",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Timebetweenglobalcheckpoints"
+        },
+        {
+            "bbox": [
+                544.9081049836601,
+                724.4239267676768,
+                368.59800571895425,
+                11.971275252525231
+            ],
+            "text": " is also recommended when using solid-state disk",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cũng được khuyến nghị khi sử dụng đĩa trạng thái rắn"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                739.9542297979798,
+                585.4726474673204,
+                11.971275252525288
+            ],
+            "text": "drives, in particular those using NVMe. See also Disk Data latency parameters.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ổ đĩa, đặc biệt là những người sử dụng NVME. Xem thêm Thông số độ trễ dữ liệu đĩa."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                766.1616161616162,
+                299.7455065359478,
+                11.97127525252526
+            ],
+            "text": "The default value for this parameter is 2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định cho tham số này là 2."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                792.3690025252525,
+                19.361107761437893,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                792.3690025252525,
+                271.8091985294118,
+                11.97127525252526
+            ],
+            "text": "Disk Data file system parameters. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Thông số hệ thống tệp dữ liệu đĩa. "
+        },
+        {
+            "bbox": [
+                445.9922050653595,
+                792.3690025252525,
+                451.45218913398696,
+                11.97127525252526
+            ],
+            "text": " The parameters in the following list make it possible to place",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các tham số trong danh sách sau đây cho phép đặt"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                807.8993055555555,
+                673.8537581699346,
+                11.97127525252526
+            ],
+            "text": "NDB Cluster Disk Data files in specific directories without the need for using symbolic links.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các tệp dữ liệu đĩa NDB cụm trong các thư mục cụ thể mà không cần sử dụng các liên kết tượng trưng."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                834.1066919191919,
+                19.361111111111114,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                835.2585356691919,
+                160.7843137254902,
+                10.17233554292929
+            ],
+            "text": "FileSystemPathDD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "FileSystemPathdd"
+        },
+        {
+            "bbox": [
+                177.95138888888889,
+                859.8287563131313,
+                124.70831658496732,
+                11.97127525252526
+            ],
+            "text": "Version (or later)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phiên bản (hoặc muộn hơn)"
+        },
+        {
+            "bbox": [
+                558.1392973856209,
+                859.8287563131313,
+                86.57230392156862,
+                11.97127525252526
+            ],
+            "text": "NDB 8.0.13",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "NDB 8.0.13"
+        },
+        {
+            "bbox": [
+                177.95138888888889,
+                881.1829229797979,
+                96.80555555555557,
+                11.97127525252526
+            ],
+            "text": "Type or units",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gõ hoặc đơn vị"
+        },
+        {
+            "bbox": [
+                558.1392973856209,
+                881.1829229797979,
+                63.292091911764714,
+                11.97127525252526
+            ],
+            "text": "filename",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên tệp"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "4142",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4142"
+        }
+    ]
+}

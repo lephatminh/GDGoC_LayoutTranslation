@@ -1,3 +1,2176 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:513b440cb3d68b3ad8c67572df9734e5bd36d0a8b0c12442677e6c0c9afa053b
-size 64099
+{
+    "metadata": {
+        "page_hash": "657f1762f9eeef32fdb2646d9cf50d821af79736309b7df480abb55b11e4e60b",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 306,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                441.0012254901961,
+                48.370422979798036,
+                173.1446078431373,
+                11.971275252525288
+            ],
+            "text": "Changes in MySQL 8.0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thay đổi trong MySQL 8.0"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                94.96133207070716,
+                19.361111111111114,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                204.33006535947712,
+                96.11317582070706,
+                60.29411764705881,
+                10.172335542929318
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                264.62418300653593,
+                94.96133207070716,
+                487.77939501633983,
+                11.971275252525174
+            ],
+            "text": " statistics data for related issues introduced by previous bug fixes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Dữ liệu thống kê cho các vấn đề liên quan được giới thiệu bởi các sửa lỗi trước đó."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                126.02193813131316,
+                771.6977291666666,
+                11.971275252525288
+            ],
+            "text": "During tablespace import operations, partition tablespace file names on disk are checked and modified if",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong các hoạt động nhập không gian bảng, tên tệp không gian bảng phân vùng trên đĩa được kiểm tra và sửa đổi nếu"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                141.55224116161617,
+                463.5445093954248,
+                11.971275252525288
+            ],
+            "text": "necessary to ensure lowercase delimiters and partition names.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cần thiết để đảm bảo các phân định chữ thường và tên phân vùng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                170.02446338383845,
+                790.3051470588235,
+                11.971275252525288
+            ],
+            "text": "•As of MySQL 8.0.21, a warning is written to the error log at startup or when upgrading from MySQL 5.7 if",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Kể từ MySQL 8.0.21, cảnh báo được ghi vào nhật ký lỗi khi khởi động hoặc khi nâng cấp từ MySQL 5.7 nếu"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                185.55476641414145,
+                767.0751633986928,
+                11.971275252525288
+            ],
+            "text": "tablespace data files are found to reside in unknown directories. Known directories are those defined by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các tệp dữ liệu không gian bảng được tìm thấy để cư trú trong các thư mục không xác định. Các thư mục đã biết là những thư mục được định nghĩa bởi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                201.08506944444446,
+                27.93625776143793,
+                11.971275252525288
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                215.51795710784316,
+                202.23691319444447,
+                70.34313725490196,
+                10.172335542929318
+            ],
+            "text": "datadir",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Datadir"
+        },
+        {
+            "bbox": [
+                285.8610943627451,
+                201.08506944444446,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                295.1731858660131,
+                202.23691319444447,
+                200.9803921568627,
+                10.172335542929318
+            ],
+            "text": "innodb_data_home_dir",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_data_home_dir"
+        },
+        {
+            "bbox": [
+                496.1535780228758,
+                201.08506944444446,
+                41.90444526143796,
+                11.971275252525288
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                538.0580232843138,
+                202.23691319444447,
+                180.88235294117646,
+                10.172335542929318
+            ],
+            "text": "innodb_directories",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb_Directories"
+        },
+        {
+            "bbox": [
+                718.9403762254902,
+                201.08506944444446,
+                228.9669452614378,
+                11.971275252525288
+            ],
+            "text": " variables. To make a directory",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến. Để tạo một thư mục"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                216.61537247474757,
+                149.89787581699346,
+                11.971275252525174
+            ],
+            "text": "known, add it to the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đã biết, thêm nó vào "
+        },
+        {
+            "bbox": [
+                337.4795751633987,
+                217.76721622474747,
+                180.88235294117652,
+                10.172335542929318
+            ],
+            "text": "innodb_directories",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb_Directories"
+        },
+        {
+            "bbox": [
+                518.3619281045752,
+                216.61537247474757,
+                420.75240073529403,
+                11.971275252525174
+            ],
+            "text": " setting. Making directories known ensures that data files",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cài đặt. Làm cho các thư mục được biết đến đảm bảo rằng các tệp dữ liệu"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                232.14567550505058,
+                770.6928607026144,
+                11.971275252525174
+            ],
+            "text": "can be found during recovery. For more information, see Tablespace Discovery During Crash Recovery.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có thể được tìm thấy trong quá trình phục hồi. Để biết thêm thông tin, hãy xem TableSpace Discovery trong quá trình phục hồi sự cố."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                263.5622102272728,
+                131.78282638888888,
+                14.365504419191893
+            ],
+            "text": "SQL Changes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "SQL thay đổi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                294.78459027777785,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                294.78459027777785,
+                166.59599673202615,
+                11.971275252525288
+            ],
+            "text": "Incompatible change",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Thay đổi không tương thích"
+        },
+        {
+            "bbox": [
+                354.1776960784314,
+                294.78459027777785,
+                284.889722630719,
+                11.971275252525288
+            ],
+            "text": ": As of MySQL 8.0.13, the deprecated ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Kể từ MySQL 8.0.13, "
+        },
+        {
+            "bbox": [
+                639.0674187091504,
+                295.93644696969693,
+                30.14705882352939,
+                10.17232260101025
+            ],
+            "text": "ASC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ASC"
+        },
+        {
+            "bbox": [
+                669.2144775326798,
+                294.78459027777785,
+                24.20140563725488,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                693.4158329248366,
+                295.93644696969693,
+                40.196078431372484,
+                10.17232260101025
+            ],
+            "text": "DESC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Desc"
+        },
+        {
+            "bbox": [
+                733.6119113562091,
+                294.78459027777785,
+                100.52367606209157,
+                11.971275252525288
+            ],
+            "text": " qualifiers for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " vòng loại cho "
+        },
+        {
+            "bbox": [
+                834.1356376633987,
+                295.93644696969693,
+                80.39220710784309,
+                10.17232260101025
+            ],
+            "text": "GROUP BY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhóm theo"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                310.31489330808085,
+                463.578039624183,
+                11.971275252525288
+            ],
+            "text": "clauses have been removed. Queries that previously relied on ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mệnh đề đã được gỡ bỏ. Các truy vấn mà trước đây đã dựa vào "
+        },
+        {
+            "bbox": [
+                651.1597389705883,
+                311.46675000000005,
+                80.39215686274508,
+                10.172322601010137
+            ],
+            "text": "GROUP BY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhóm theo"
+        },
+        {
+            "bbox": [
+                731.5518958333333,
+                310.31489330808085,
+                210.35947712418294,
+                11.971275252525288
+            ],
+            "text": " sorting may produce results",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Sắp xếp có thể tạo ra kết quả"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                325.84519633838397,
+                624.5967969771242,
+                11.971275252525174
+            ],
+            "text": "that differ from previous MySQL versions. To produce a given sort order, provide an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "khác với các phiên bản MySQL trước đó. Để tạo ra một đơn đặt hàng sắp xếp nhất định, hãy cung cấp một "
+        },
+        {
+            "bbox": [
+                812.1784963235294,
+                326.99705303030305,
+                80.39215686274508,
+                10.172322601010137
+            ],
+            "text": "ORDER BY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Đặt hàng bởi"
+        },
+        {
+            "bbox": [
+                892.5706531862745,
+                325.84519633838397,
+                57.71490277777775,
+                11.971275252525174
+            ],
+            "text": " clause.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                356.90580239899,
+                572.4758986928105,
+                11.971275252525174
+            ],
+            "text": "Queries and stored program definitions from MySQL 8.0.12 or lower that use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Truy vấn và định nghĩa chương trình được lưu trữ từ MySQL 8.0.12 hoặc thấp hơn sử dụng "
+        },
+        {
+            "bbox": [
+                760.0575980392157,
+                358.05765909090906,
+                30.14705882352939,
+                10.172322601010137
+            ],
+            "text": "ASC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ASC"
+        },
+        {
+            "bbox": [
+                790.2046568627451,
+                356.90580239899,
+                24.201405637254993,
+                11.971275252525174
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                814.4060625000001,
+                358.05765909090906,
+                40.196078431372484,
+                10.172322601010137
+            ],
+            "text": "DESC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Desc"
+        },
+        {
+            "bbox": [
+                854.6021409313726,
+                356.90580239899,
+                95.86763031045757,
+                11.971275252525174
+            ],
+            "text": " qualifiers for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " vòng loại cho"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                373.58792329545463,
+                80.39215686274508,
+                10.172361426767566
+            ],
+            "text": "GROUP BY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhóm theo"
+        },
+        {
+            "bbox": [
+                267.9738562091503,
+                372.436105429293,
+                672.1119113562091,
+                11.971275252525174
+            ],
+            "text": " clauses should be amended. Otherwise, upgrading to MySQL 8.0.13 or higher may fail, as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề nên được sửa đổi. Nếu không, việc nâng cấp lên MySQL 8.0.13 trở lên có thể thất bại, vì"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                387.966408459596,
+                431.89011437908493,
+                11.971275252525288
+            ],
+            "text": "may replicating to MySQL 8.0.13 or higher replica servers.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Có thể sao chép thành các máy chủ bản sao của MySQL 8.0.13 hoặc cao hơn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                416.4385918560606,
+                780.9930555555554,
+                11.971275252525288
+            ],
+            "text": "•Some keywords may be reserved in MySQL 8.0 that were not reserved in MySQL 5.7. See Section 9.3,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Một số từ khóa có thể được bảo lưu trong MySQL 8.0 không được bảo lưu trong MySQL 5.7. Xem phần 9.3,"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                431.9688948863637,
+                274.20424836601313,
+                11.971275252525174
+            ],
+            "text": "“Keywords and Reserved Words”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "“Từ khóa và các từ dành riêng”"
+        },
+        {
+            "bbox": [
+                434.218154003268,
+                431.9688948863637,
+                525.9154579248366,
+                11.971275252525174
+            ],
+            "text": ". This can cause words previously used as identifiers to become illegal.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Điều này có thể gây ra các từ trước đây được sử dụng làm định danh trở thành bất hợp pháp."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                447.49919791666673,
+                703.3978423202614,
+                11.971275252525174
+            ],
+            "text": "To fix affected statements, use identifier quoting. See Section 9.2, “Schema Object Names”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để khắc phục các câu lệnh bị ảnh hưởng, hãy sử dụng trích dẫn định danh. Xem phần 9.2, tên đối tượng Schema Schema"
+        },
+        {
+            "bbox": [
+                863.4117982026145,
+                447.49919791666673,
+                4.655995506535874,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                475.9714201388889,
+                774.4946727941176,
+                11.971275252525288
+            ],
+            "text": "•After upgrading, it is recommended that you test optimizer hints specified in application code to ensure",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Sau khi nâng cấp, bạn nên kiểm tra các gợi ý của trình tối ưu hóa được chỉ định trong mã ứng dụng để đảm bảo"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                491.5017231691919,
+                773.5567810457517,
+                11.971275252525288
+            ],
+            "text": "that the hints are still required to achieve the desired optimization strategy. Optimizer enhancements can",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "rằng các gợi ý vẫn được yêu cầu để đạt được chiến lược tối ưu hóa mong muốn. Cải tiến tối ưu hóa có thể"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                507.032026199495,
+                750.2263071895426,
+                11.971275252525231
+            ],
+            "text": "sometimes render certain optimizer hints unnecessary. In some cases, an unnecessary optimizer hint",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đôi khi hiển thị một số tối ưu hóa một số gợi ý không cần thiết. Trong một số trường hợp, một gợi ý tối ưu hóa không cần thiết"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                522.562329229798,
+                238.31248325163398,
+                11.971275252525231
+            ],
+            "text": "may even be counterproductive.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thậm chí có thể phản tác dụng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                551.0345514520202,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                551.0345514520202,
+                166.59599673202615,
+                11.971275252525231
+            ],
+            "text": "Incompatible change",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Thay đổi không tương thích"
+        },
+        {
+            "bbox": [
+                354.1776960784314,
+                551.0345514520202,
+                214.1111111111111,
+                11.971275252525231
+            ],
+            "text": ": In MySQL 5.7, specifying a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Trong MySQL 5.7, chỉ định một "
+        },
+        {
+            "bbox": [
+                568.2888071895425,
+                552.1863693181818,
+                110.53921568627459,
+                10.17236142676768
+            ],
+            "text": "FOREIGN KEY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Khóa ngoại"
+        },
+        {
+            "bbox": [
+                678.828022875817,
+                551.0345514520202,
+                123.8206531862744,
+                11.971275252525231
+            ],
+            "text": " definition for an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Định nghĩa cho một "
+        },
+        {
+            "bbox": [
+                802.6486760620915,
+                552.1863693181818,
+                60.2941176470589,
+                10.17236142676768
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                862.9427937091504,
+                551.0345514520202,
+                98.68133905228763,
+                11.971275252525231
+            ],
+            "text": " table without",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng mà không có"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                566.5648544823232,
+                13.968137254901961,
+                11.971275252525231
+            ],
+            "text": "a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một "
+        },
+        {
+            "bbox": [
+                201.5498366013072,
+                567.716672348485,
+                110.5392156862745,
+                10.172361426767623
+            ],
+            "text": "CONSTRAINT ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ràng buộc "
+        },
+        {
+            "bbox": [
+                312.0890522875817,
+                567.716672348485,
+                60.29411764705884,
+                10.172361426767623
+            ],
+            "text": "symbol",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "biểu tượng"
+        },
+        {
+            "bbox": [
+                382.4321895424837,
+                566.5648544823232,
+                188.97178022875812,
+                11.971275252525231
+            ],
+            "text": " clause, or specifying the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề, hoặc chỉ định "
+        },
+        {
+            "bbox": [
+                571.4040200163398,
+                567.716672348485,
+                100.49019607843138,
+                10.172361426767623
+            ],
+            "text": "CONSTRAINT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ràng buộc"
+        },
+        {
+            "bbox": [
+                671.8942160947712,
+                566.5648544823232,
+                143.34926470588243,
+                11.971275252525231
+            ],
+            "text": " keyword without a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Từ khóa không có a "
+        },
+        {
+            "bbox": [
+                815.2434808006536,
+                567.716672348485,
+                60.29411764705878,
+                10.172361426767623
+            ],
+            "text": "symbol",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "biểu tượng"
+        },
+        {
+            "bbox": [
+                875.5375984477124,
+                566.5648544823232,
+                62.37089828431374,
+                11.971275252525231
+            ],
+            "text": ", causes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", nguyên nhân"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                583.246975378788,
+                60.29411764705884,
+                10.17236142676768
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                247.87581699346407,
+                582.0951575126263,
+                598.6033496732027,
+                11.971275252525231
+            ],
+            "text": " to use a generated constraint name. That behavior changed in MySQL 8.0, with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " để sử dụng một tên ràng buộc được tạo. Hành vi đó đã thay đổi trong MySQL 8.0, với "
+        },
+        {
+            "bbox": [
+                846.4791666666667,
+                583.246975378788,
+                60.29416789215679,
+                10.17236142676768
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                906.7733345588235,
+                582.0951575126263,
+                44.684640522875725,
+                11.971275252525231
+            ],
+            "text": " using",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " sử dụng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                597.6254605429293,
+                27.93625776143793,
+                11.971275252525231
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                215.51795710784316,
+                598.777278409091,
+                120.58823529411765,
+                10.172361426767623
+            ],
+            "text": "FOREIGN KEY ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Khóa ngoại "
+        },
+        {
+            "bbox": [
+                336.1061924019608,
+                598.777278409091,
+                100.49019607843132,
+                10.172361426767623
+            ],
+            "text": "index_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "index_name"
+        },
+        {
+            "bbox": [
+                446.6454080882353,
+                597.6254605429293,
+                510.15529575163407,
+                11.971275252525231
+            ],
+            "text": " value instead of a generated name. Because constraint names must",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giá trị thay vì một tên được tạo. Bởi vì tên ràng buộc phải"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                613.1557635732324,
+                760.5767973856209,
+                11.971275252525231
+            ],
+            "text": "be unique per schema (database), the change caused errors due to foreign key index names that were",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "là duy nhất trên mỗi lược đồ (cơ sở dữ liệu), thay đổi gây ra lỗi do tên chỉ số khóa nước ngoài là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                628.6860666035354,
+                763.3403112745099,
+                11.971275252525231
+            ],
+            "text": "not unique per schema. To avoid such errors, the new constraint naming behavior has been reverted in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "không phải là duy nhất cho mỗi lược đồ. Để tránh các lỗi như vậy, hành vi đặt tên ràng buộc mới đã được hoàn nguyên trong"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                644.2163696338384,
+                148.95996732026146,
+                11.971275252525288
+            ],
+            "text": "MySQL 8.0.16, and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL 8.0.16, và "
+        },
+        {
+            "bbox": [
+                336.5416666666667,
+                645.3681875,
+                60.29411764705878,
+                10.17236142676768
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                396.83578431372547,
+                644.2163696338384,
+                349.1197062908497,
+                11.971275252525288
+            ],
+            "text": " once again uses a generated constraint name.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Một lần nữa sử dụng tên ràng buộc được tạo."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                675.2769756944444,
+                156.36274509803923,
+                11.971275252525288
+            ],
+            "text": "For consistency with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho sự nhất quán với "
+        },
+        {
+            "bbox": [
+                343.94444444444446,
+                676.4287935606061,
+                60.29411764705884,
+                10.17236142676768
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                404.2385620915033,
+                675.2769756944444,
+                9.312091503267936,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                413.55065359477123,
+                676.4287935606061,
+                30.147025326797404,
+                10.17236142676768
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                443.69767892156864,
+                675.2769756944444,
+                449.66019771241844,
+                11.971275252525288
+            ],
+            "text": " releases based on MySQL 8.0.16 or higher use a generated",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phát hành dựa trên MySQL 8.0.16 hoặc cao hơn sử dụng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                690.8072787247474,
+                164.7704248366013,
+                11.971275252525231
+            ],
+            "text": "constraint name if the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tên ràng buộc nếu "
+        },
+        {
+            "bbox": [
+                352.35212418300654,
+                691.9590965909092,
+                110.53921568627453,
+                10.172361426767623
+            ],
+            "text": "CONSTRAINT ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ràng buộc "
+        },
+        {
+            "bbox": [
+                462.89133986928107,
+                691.9590965909092,
+                60.29411764705878,
+                10.172361426767623
+            ],
+            "text": "symbol",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "biểu tượng"
+        },
+        {
+            "bbox": [
+                533.2344771241831,
+                690.8072787247474,
+                225.2822879901961,
+                11.971275252525231
+            ],
+            "text": " clause is not specified, or the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề không được chỉ định, hoặc "
+        },
+        {
+            "bbox": [
+                758.5167651143792,
+                691.9590965909092,
+                100.49019607843127,
+                10.172361426767623
+            ],
+            "text": "CONSTRAINT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ràng buộc"
+        },
+        {
+            "bbox": [
+                859.0069611928104,
+                690.8072787247474,
+                83.75859517973868,
+                11.971275252525231
+            ],
+            "text": " keyword is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Từ khóa là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                706.3375817550505,
+                142.4281213235294,
+                11.971275252525288
+            ],
+            "text": "specified without a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được chỉ định mà không có a "
+        },
+        {
+            "bbox": [
+                330.0097871732026,
+                707.4893996212122,
+                60.29411764705884,
+                10.17236142676768
+            ],
+            "text": "symbol",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "biểu tượng"
+        },
+        {
+            "bbox": [
+                390.30390482026144,
+                706.3375817550505,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ". ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". "
+        },
+        {
+            "bbox": [
+                399.6160298202614,
+                707.4893996212122,
+                30.14705882352945,
+                10.17236142676768
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                429.76308864379087,
+                706.3375817550505,
+                511.0596070261439,
+                11.971275252525288
+            ],
+            "text": " releases based on MySQL 5.7 and earlier MySQL 8.0 releases used",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phát hành dựa trên các bản phát hành MySQL 5.7 và trước đó được sử dụng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                721.8678847853536,
+                27.93625776143793,
+                11.971275252525231
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                215.51795710784316,
+                723.0197026515152,
+                120.58823529411765,
+                10.17236142676768
+            ],
+            "text": "FOREIGN KEY ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Khóa ngoại "
+        },
+        {
+            "bbox": [
+                336.1061924019608,
+                723.0197026515152,
+                100.49019607843132,
+                10.17236142676768
+            ],
+            "text": "index_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "index_name"
+        },
+        {
+            "bbox": [
+                446.6454080882353,
+                721.8678847853536,
+                49.340669526143756,
+                11.971275252525231
+            ],
+            "text": " value.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                752.9285296717172,
+                718.6723521241829,
+                11.971275252525231
+            ],
+            "text": "The changes described above may introduce incompatibilities for applications that depend on the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Những thay đổi được mô tả ở trên có thể đưa ra sự không tương thích cho các ứng dụng phụ thuộc vào"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                768.4588327020202,
+                360.2406045751634,
+                11.97127525252526
+            ],
+            "text": "previous foreign key constraint naming behavior.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hành vi đặt tên hạn chế chính của nước ngoài trước đây."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                799.8753027146465,
+                239.0058656045752,
+                14.365569128787882
+            ],
+            "text": "Changed Server Defaults",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Thay đổi mặc định máy chủ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                833.6860666035354,
+                765.1993464052288,
+                11.97127525252526
+            ],
+            "text": "MySQL 8.0 comes with improved defaults, aiming at the best out of the box experience possible. These",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL 8.0 đi kèm với các mặc định được cải thiện, nhắm đến trải nghiệm tốt nhất trong hộp có thể. Những cái này"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                849.2163696338384,
+                773.5735294117646,
+                11.971275252525231
+            ],
+            "text": "changes are driven by the fact that technology is advancing (machines have more CPUS, use SSDs and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Những thay đổi được thúc đẩy bởi thực tế là công nghệ đang tiến bộ (máy có nhiều CPU hơn, sử dụng SSD và"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                864.7466726641414,
+                751.1977459150328,
+                11.97127525252526
+            ],
+            "text": "so on), more data is being stored, MySQL is evolving (InnoDB, Group Replication, AdminAPI), and so",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vì vậy,), nhiều dữ liệu đang được lưu trữ, MySQL đang phát triển (innodb, sao chép nhóm, adminapi), và như vậy"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                880.2769756944444,
+                755.9039362745099,
+                11.97127525252526
+            ],
+            "text": "on. The following table summarizes the defaults which have been changed to provide the best MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "TRÊN. Bảng sau đây tóm tắt các mặc định đã được thay đổi để cung cấp MySQL tốt nhất"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                895.8072761363636,
+                266.2152945261438,
+                11.97127525252526
+            ],
+            "text": "experience for the majority of users.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kinh nghiệm cho phần lớn người dùng."
+        },
+        {
+            "bbox": [
+                936.7696245915033,
+                964.6583160037878,
+                27.9362577614379,
+                11.971275252525253
+            ],
+            "text": "277",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "277"
+        }
+    ]
+}

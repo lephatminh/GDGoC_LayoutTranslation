@@ -1,3 +1,1856 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:070e8a25b1f4c4ad4d1297b8cfbc726294407a2a06c63753e1d39f235df91bfd
-size 53349
+{
+    "metadata": {
+        "page_hash": "4c4118f6dc67ec480b4a990800f7c8c150740bd6ce9ff116889118d8f64a7c9e",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1827,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                440.19733741830066,
+                48.370422979798036,
+                114.45826633986928,
+                11.971275252525288
+            ],
+            "text": "Optimizer Hints",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gợi ý tối ưu hóa"
+        },
+        {
+            "bbox": [
+                298.45588235294116,
+                94.96133207070716,
+                37.214869281045765,
+                11.971275252525174
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                298.45588235294116,
+                124.17899589646481,
+                601.4002765522878,
+                11.971275252525174
+            ],
+            "text": "To use a block nested loop or batched key access hint to enable join buffering for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để sử dụng một vòng lặp lồng nhau hoặc gợi ý truy cập khóa hàng loạt để bật bộ đệm tham gia cho"
+        },
+        {
+            "bbox": [
+                298.45588235294116,
+                139.70929892676781,
+                595.8063725490197,
+                11.971275252525174
+            ],
+            "text": "any inner table of an outer join, join buffering must be enabled for all inner tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bất kỳ bảng bên trong nào của tham gia bên ngoài, hãy tham gia bộ đệm phải được bật cho tất cả các bảng bên trong"
+        },
+        {
+            "bbox": [
+                298.45588235294116,
+                155.23960195707082,
+                120.1025326797386,
+                11.971275252525288
+            ],
+            "text": "of the outer join.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "của tham gia bên ngoài."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                183.711824179293,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                184.863667929293,
+                80.39215686274511,
+                10.172335542929318
+            ],
+            "text": "tbl_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "tbl_name"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                183.711824179293,
+                687.0681854575163,
+                11.971275252525288
+            ],
+            "text": ": The name of a table used in the statement. The hint applies to all tables that it names. If the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Tên của một bảng được sử dụng trong câu lệnh. Gợi ý áp dụng cho tất cả các bảng mà nó đặt tên. Nếu"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                199.2421272095961,
+                592.9758819444444,
+                11.971275252525174
+            ],
+            "text": "hint names no tables, it applies to all tables of the query block in which it occurs.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gợi ý không có bảng, nó áp dụng cho tất cả các bảng của khối truy vấn trong đó nó xảy ra."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                228.45979103535353,
+                521.3431372549019,
+                11.971275252525288
+            ],
+            "text": "If a table has an alias, hints must refer to the alias, not the table name.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu một bảng có bí danh, gợi ý phải đề cập đến bí danh, không phải tên bảng."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                257.67753251262627,
+                457.06289174836604,
+                11.971275252525288
+            ],
+            "text": "Table names in hints cannot be qualified with schema names.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên bảng trong gợi ý không thể đủ điều kiện với tên lược đồ."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                286.14975473484856,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                287.30159848484845,
+                160.7843137254902,
+                10.172335542929318
+            ],
+            "text": "query_block_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "query_block_name"
+        },
+        {
+            "bbox": [
+                318.218954248366,
+                286.14975473484856,
+                479.4387422385622,
+                11.971275252525174
+            ],
+            "text": ": The query block to which the hint applies. If the hint includes no",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Khối truy vấn mà gợi ý áp dụng. Nếu gợi ý bao gồm không"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                301.68005776515156,
+                58.6527777777778,
+                11.971275252525288
+            ],
+            "text": "leading ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Dẫn đầu "
+        },
+        {
+            "bbox": [
+                216.0874015522876,
+                302.83190151515146,
+                10.04901960784315,
+                10.172335542929432
+            ],
+            "text": "@",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "@"
+        },
+        {
+            "bbox": [
+                226.13642116013074,
+                302.83190151515146,
+                160.78431372549022,
+                10.172335542929432
+            ],
+            "text": "query_block_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "query_block_name"
+        },
+        {
+            "bbox": [
+                386.920751633987,
+                301.68005776515156,
+                425.40853022875814,
+                11.971275252525288
+            ],
+            "text": ", the hint applies to the query block in which it occurs. For",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Gợi ý áp dụng cho khối truy vấn trong đó nó xảy ra. Vì"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                318.3622045454546,
+                80.39215686274511,
+                10.172335542929318
+            ],
+            "text": "tbl_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "tbl_name"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                318.3622045454546,
+                10.04901960784315,
+                10.172335542929318
+            ],
+            "text": "@",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "@"
+        },
+        {
+            "bbox": [
+                247.87581699346407,
+                318.3622045454546,
+                160.78431372549016,
+                10.172335542929318
+            ],
+            "text": "query_block_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "query_block_name"
+        },
+        {
+            "bbox": [
+                408.66013071895424,
+                317.21036079545456,
+                514.828039624183,
+                11.971275252525288
+            ],
+            "text": " syntax, the hint applies to the named table in the named query block.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cú pháp, gợi ý áp dụng cho bảng được đặt tên trong khối truy vấn được đặt tên."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                332.74066382575757,
+                606.8770592320261,
+                11.971275252525288
+            ],
+            "text": "To assign a name to a query block, see Optimizer Hints for Naming Query Blocks.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để gán tên cho một khối truy vấn, hãy xem các gợi ý của trình tối ưu hóa để đặt tên các khối truy vấn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                361.9583276515152,
+                78.18135580065362,
+                11.971275252525174
+            ],
+            "text": "Examples:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                390.09664835858587,
+                562.7450980392157,
+                8.137827020202053
+            ],
+            "text": "SELECT /*+ NO_BKA(t1, t2) */ t1.* FROM t1 INNER JOIN t2 INNER JOIN t3;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn /*+ NO_BKA (T1, T2)* / T1."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                402.52086489899,
+                578.8235461601307,
+                8.137865845959482
+            ],
+            "text": "SELECT /*+ NO_BNL() BKA(t1) */ t1.* FROM t1 INNER JOIN t2 INNER JOIN t3;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn /*+ NO_BNL () BKA (T1)* / T1.*Từ T1 bên trong tham gia T2 bên trong T3;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                414.9451073232324,
+                474.31374223856216,
+                8.137878787878776
+            ],
+            "text": "SELECT /*+ NO_MERGE(dt) */ * FROM (SELECT * FROM t1) AS dt;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn / *+ no_merge (dt) * / * từ (chọn * từ t1) làm dt;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                441.987273358586,
+                770.7598206699347,
+                11.971275252525174
+            ],
+            "text": "A table-level hint applies to tables that receive records from previous tables, not sender tables. Consider",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một gợi ý cấp bảng áp dụng cho các bảng nhận hồ sơ từ các bảng trước, không phải bảng người gửi. Coi như"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                457.517576388889,
+                108.91462418300654,
+                11.971275252525174
+            ],
+            "text": "this statement:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố này:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                485.65587121212127,
+                273.3333333333333,
+                8.137904671717138
+            ],
+            "text": "SELECT /*+ BNL(t2) */ FROM t1, t2;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn / *+ BNL (T2) * / từ T1, T2;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                512.6980372474748,
+                263.4350322712418,
+                11.971275252525288
+            ],
+            "text": "If the optimizer chooses to process ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu trình tối ưu hóa chọn xử lý "
+        },
+        {
+            "bbox": [
+                404.12130678104575,
+                513.8498421717172,
+                20.0980392156863,
+                10.17237436868686
+            ],
+            "text": "t1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T1"
+        },
+        {
+            "bbox": [
+                424.21934599673205,
+                512.6980372474748,
+                321.1499015522876,
+                11.971275252525288
+            ],
+            "text": " first, it applies a Block Nested-Loop join to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đầu tiên, nó áp dụng một khối nối lồng nhau tham gia "
+        },
+        {
+            "bbox": [
+                745.3692977941176,
+                513.8498421717172,
+                20.0980392156863,
+                10.17237436868686
+            ],
+            "text": "t2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T2"
+        },
+        {
+            "bbox": [
+                765.4673370098039,
+                512.6980372474748,
+                160.11437908496725,
+                11.971275252525288
+            ],
+            "text": " by buffering the rows",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bằng cách đệm các hàng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                528.2283402777778,
+                38.15277777777777,
+                11.971275252525288
+            ],
+            "text": "from ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "từ "
+        },
+        {
+            "bbox": [
+                178.8390522875817,
+                529.3801452020202,
+                20.0980392156863,
+                10.172374368686917
+            ],
+            "text": "t1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T1"
+        },
+        {
+            "bbox": [
+                198.937091503268,
+                528.2283402777778,
+                211.31413398692808,
+                11.971275252525288
+            ],
+            "text": " before starting to read from ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Trước khi bắt đầu đọc từ "
+        },
+        {
+            "bbox": [
+                410.2512254901961,
+                529.3801452020202,
+                20.09805596405232,
+                10.172374368686917
+            ],
+            "text": "t2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T2"
+        },
+        {
+            "bbox": [
+                430.3492814542484,
+                528.2283402777778,
+                331.39991830065367,
+                11.971275252525288
+            ],
+            "text": ". If the optimizer instead chooses to process ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Nếu trình tối ưu hóa thay vào đó chọn xử lý "
+        },
+        {
+            "bbox": [
+                761.7491997549021,
+                529.3801452020202,
+                20.098039215686185,
+                10.172374368686917
+            ],
+            "text": "t2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T2"
+        },
+        {
+            "bbox": [
+                781.8472389705883,
+                528.2283402777778,
+                150.81901919934637,
+                11.971275252525288
+            ],
+            "text": " first, the hint has no",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đầu tiên, gợi ý không có"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                543.7586433080809,
+                113.5874350490196,
+                11.971275252525231
+            ],
+            "text": "effect because ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hiệu quả bởi vì "
+        },
+        {
+            "bbox": [
+                254.27370955882353,
+                544.9104482323232,
+                20.09803921568627,
+                10.17237436868686
+            ],
+            "text": "t2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T2"
+        },
+        {
+            "bbox": [
+                274.3717487745098,
+                543.7586433080809,
+                132.1948361928105,
+                11.971275252525231
+            ],
+            "text": " is a sender table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là một bảng người gửi."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                572.9762941919191,
+                57.714869281045736,
+                11.971275252525288
+            ],
+            "text": "For the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho "
+        },
+        {
+            "bbox": [
+                198.40114379084966,
+                574.1281120580809,
+                50.2450812908497,
+                10.17236142676768
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                248.64622508169936,
+                572.9762941919191,
+                37.24838276143788,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                285.89460784313724,
+                574.1281120580809,
+                80.39215686274508,
+                10.17236142676768
+            ],
+            "text": "NO_MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "No_merge"
+        },
+        {
+            "bbox": [
+                366.2867647058823,
+                572.9762941919191,
+                272.7638888888889,
+                11.971275252525288
+            ],
+            "text": " hints, these precedence rules apply:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Gợi ý, các quy tắc ưu tiên này được áp dụng:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                601.4485164141414,
+                786.5870433006537,
+                11.971275252525288
+            ],
+            "text": "•A hint takes precedence over any optimizer heuristic that is not a technical constraint. (If providing a hint",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Một gợi ý được ưu tiên hơn bất kỳ nhà heuristic tối ưu hóa nào không phải là một ràng buộc kỹ thuật. (Nếu cung cấp một gợi ý"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                616.9788194444445,
+                536.2156862745098,
+                11.971275252525231
+            ],
+            "text": "as a suggestion has no effect, the optimizer has a reason for ignoring it.)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Như một gợi ý không có hiệu lực, trình tối ưu hóa có lý do để bỏ qua nó.)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                645.4510416666667,
+                266.2487745098039,
+                11.971275252525231
+            ],
+            "text": "•A hint takes precedence over the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Một gợi ý được ưu tiên hơn "
+        },
+        {
+            "bbox": [
+                406.93504901960785,
+                646.6028595328282,
+                130.6372549019609,
+                10.17236142676768
+            ],
+            "text": "derived_merge",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DRIAD_MERGE"
+        },
+        {
+            "bbox": [
+                537.5723039215687,
+                645.4510416666667,
+                82.87093178104567,
+                11.971275252525231
+            ],
+            "text": " flag of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cờ của "
+        },
+        {
+            "bbox": [
+                620.4432357026144,
+                646.6028595328282,
+                160.78431372549028,
+                10.17236142676768
+            ],
+            "text": "optimizer_switch",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa_Switch"
+        },
+        {
+            "bbox": [
+                781.2275494281047,
+                645.4510416666667,
+                125.64617483660118,
+                11.971275252525231
+            ],
+            "text": " system variable.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                673.9232638888889,
+                196.39135661764703,
+                11.971275252525288
+            ],
+            "text": "•For view references, an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Để xem tài liệu tham khảo, một "
+        },
+        {
+            "bbox": [
+                337.07759763071897,
+                675.0750817550505,
+                271.3235629084968,
+                10.17236142676768
+            ],
+            "text": "ALGORITHM={MERGE|TEMPTABLE}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thuật toán = {Merge | Temptable}"
+        },
+        {
+            "bbox": [
+                608.4011605392158,
+                673.9232638888889,
+                253.20178063725496,
+                11.971275252525288
+            ],
+            "text": " clause in the view definition takes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề trong định nghĩa xem"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                689.4535669191919,
+                492.4522058823529,
+                11.971275252525288
+            ],
+            "text": "precedence over a hint specified in the query referencing the view.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ưu tiên một gợi ý được chỉ định trong truy vấn tham khảo chế độ xem."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                719.0271723484848,
+                264.6911597222222,
+                14.365530303030368
+            ],
+            "text": "Index-Level Optimizer Hints",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Gợi ý tối ưu hóa cấp chỉ mục"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                750.9949940025253,
+                729.7597536764706,
+                11.971275252525231
+            ],
+            "text": "Index-level hints affect which index-processing strategies the optimizer uses for particular tables or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gợi ý cấp chỉ mục ảnh hưởng đến các chiến lược xử lý chỉ mục mà trình tối ưu hóa sử dụng cho các bảng cụ thể hoặc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                766.5252970328283,
+                781.9141989379086,
+                11.97127525252526
+            ],
+            "text": "indexes. These hint types affect use of Index Condition Pushdown (ICP), Multi-Range Read (MRR), Index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chỉ mục. Những loại gợi ý này ảnh hưởng đến việc sử dụng điều kiện chỉ số (ICP), đọc đa phạm vi (MRR), chỉ mục"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                782.0556000631314,
+                660.5388239379085,
+                11.971275252525231
+            ],
+            "text": "Merge, and range optimizations (see Section 8.2.1, “Optimizing SELECT Statements”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất và tối ưu hóa phạm vi (xem Phần 8.2.1, Tối ưu hóa các câu lệnh chọn"
+        },
+        {
+            "bbox": [
+                773.657254493464,
+                782.0556000631314,
+                10.23323488562096,
+                11.971275252525231
+            ],
+            "text": ").",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                811.2732509469697,
+                199.20506535947715,
+                11.97127525252526
+            ],
+            "text": "Syntax of index-level hints:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cú pháp của gợi ý cấp độ chỉ mục:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                839.4115845959595,
+                72.35294117647061,
+                8.137827020202025
+            ],
+            "text": "hint_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "MINT_NAME"
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                839.4115845959595,
+                24.11766380718953,
+                8.137827020202025
+            ],
+            "text": "([@",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "([@"
+        },
+        {
+            "bbox": [
+                237.15687949346406,
+                839.4115845959595,
+                128.62741748366014,
+                8.137827020202025
+            ],
+            "text": "query_block_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "query_block_name"
+        },
+        {
+            "bbox": [
+                365.7842969771242,
+                839.4115845959595,
+                16.078448120915027,
+                8.137827020202025
+            ],
+            "text": "] ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "] "
+        },
+        {
+            "bbox": [
+                381.8627450980392,
+                839.4115845959595,
+                64.31370874183006,
+                8.137827020202025
+            ],
+            "text": "tbl_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "tbl_name"
+        },
+        {
+            "bbox": [
+                446.1764538398693,
+                839.4115845959595,
+                16.078448120915027,
+                8.137827020202025
+            ],
+            "text": " [",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " ["
+        },
+        {
+            "bbox": [
+                462.2549019607843,
+                839.4115845959595,
+                80.39215686274508,
+                8.137827020202025
+            ],
+            "text": "index_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "index_name"
+        },
+        {
+            "bbox": [
+                542.6470588235294,
+                839.4115845959595,
+                32.15687949346409,
+                8.137827020202025
+            ],
+            "text": " [, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " [, "
+        },
+        {
+            "bbox": [
+                574.8039383169935,
+                839.4115845959595,
+                80.39215686274508,
+                8.137827020202025
+            ],
+            "text": "index_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "index_name"
+        },
+        {
+            "bbox": [
+                655.1960951797386,
+                839.4115845959595,
+                56.274526552287625,
+                8.137827020202025
+            ],
+            "text": "] ...])",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "] ...])"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                851.8358787878788,
+                72.35294117647061,
+                8.137827020202025
+            ],
+            "text": "hint_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "MINT_NAME"
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                851.8358787878788,
+                8.039215686274503,
+                8.137827020202025
+            ],
+            "text": "(",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                851.8358787878788,
+                64.31370874183008,
+                8.137827020202025
+            ],
+            "text": "tbl_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "tbl_name"
+        },
+        {
+            "bbox": [
+                285.3921401143791,
+                851.8358787878788,
+                8.039232434640496,
+                8.137827020202025
+            ],
+            "text": "@",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "@"
+        },
+        {
+            "bbox": [
+                293.4313725490196,
+                851.8358787878788,
+                128.62745098039215,
+                8.137827020202025
+            ],
+            "text": "query_block_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "query_block_name"
+        },
+        {
+            "bbox": [
+                422.05882352941177,
+                851.8358787878788,
+                16.078448120915027,
+                8.137827020202025
+            ],
+            "text": " [",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " ["
+        },
+        {
+            "bbox": [
+                438.1372716503268,
+                851.8358787878788,
+                80.39215686274514,
+                8.137827020202025
+            ],
+            "text": "index_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "index_name"
+        },
+        {
+            "bbox": [
+                518.5294285130719,
+                851.8358787878788,
+                32.15687949346409,
+                8.137827020202025
+            ],
+            "text": " [, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " [, "
+        },
+        {
+            "bbox": [
+                550.6862577614379,
+                851.8358787878788,
+                80.39215686274508,
+                8.137827020202025
+            ],
+            "text": "index_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "index_name"
+        },
+        {
+            "bbox": [
+                631.078414624183,
+                851.8358787878788,
+                56.27450980392166,
+                8.137827020202025
+            ],
+            "text": "] ...])",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "] ...])"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                878.877954229798,
+                244.81086601307186,
+                11.971275252525231
+            ],
+            "text": "The syntax refers to these terms:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cú pháp đề cập đến các thuật ngữ sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                907.3501816287878,
+                19.361107761437893,
+                11.971275252525245
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                908.5020318497475,
+                90.44117647058826,
+                10.172329071969685
+            ],
+            "text": "hint_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "MINT_NAME"
+        },
+        {
+            "bbox": [
+                247.87581699346407,
+                907.3501816287878,
+                250.40483700980394,
+                11.971275252525245
+            ],
+            "text": ": These hint names are permitted:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Những tên gợi ý này được cho phép:"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "1798",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1798"
+        }
+    ]
+}

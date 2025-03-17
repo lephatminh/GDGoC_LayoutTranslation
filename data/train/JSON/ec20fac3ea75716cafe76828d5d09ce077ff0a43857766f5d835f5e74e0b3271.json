@@ -1,3 +1,1516 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a1e439bb4e0359d0388662e359a234cd8155dc5ce30f14881669e559a81404a0
-size 44294
+{
+    "metadata": {
+        "page_hash": "ec20fac3ea75716cafe76828d5d09ce077ff0a43857766f5d835f5e74e0b3271",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4912,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                332.1452205882353,
+                48.370422979798036,
+                390.85661764705884,
+                11.971275252525288
+            ],
+            "text": "The INFORMATION_SCHEMA INNODB_TRX Table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng thông tin_schema innodb_trx"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                19.361111111111114,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                96.11317582070706,
+                190.9313725490196,
+                10.172335542929318
+            ],
+            "text": "TRX_ISOLATION_LEVEL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_ISOLATION_LEVEL"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                122.87966603535358,
+                328.6029579248367,
+                11.971275252525174
+            ],
+            "text": "The isolation level of the current transaction.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mức độ cô lập của giao dịch hiện tại."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                150.79792234848492,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                151.9497790404041,
+                170.83333333333331,
+                10.172322601010137
+            ],
+            "text": "TRX_UNIQUE_CHECKS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_UNIQUE_CHECKS"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                178.71625631313134,
+                729.8268141339869,
+                11.971275252525288
+            ],
+            "text": "Whether unique checks are turned on or off for the current transaction. For example, they might be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho dù kiểm tra duy nhất được bật hoặc tắt cho giao dịch hiện tại. Ví dụ, họ có thể"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                194.24655934343446,
+                249.5171233660131,
+                11.971275252525174
+            ],
+            "text": "turned off during a bulk data load.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tắt trong quá trình tải dữ liệu số lượng lớn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                222.16489330808076,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                223.31667234848499,
+                221.078431372549,
+                10.172400252525108
+            ],
+            "text": "TRX_FOREIGN_KEY_CHECKS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_FORIGN_KEY_CHECKS"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                250.0831625631314,
+                761.4644942810459,
+                11.971275252525288
+            ],
+            "text": "Whether foreign key checks are turned on or off for the current transaction. For example, they might be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho dù kiểm tra khóa nước ngoài được bật hoặc tắt cho giao dịch hiện tại. Ví dụ, họ có thể"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                265.6134655934344,
+                249.5171233660131,
+                11.971275252525288
+            ],
+            "text": "turned off during a bulk data load.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tắt trong quá trình tải dữ liệu số lượng lớn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                293.5317995580808,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                294.68364330808083,
+                261.2745098039216,
+                10.172335542929318
+            ],
+            "text": "TRX_LAST_FOREIGN_KEY_ERROR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_LAST_FORIGN_KEY_ERROR"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                321.45013352272724,
+                549.1956699346406,
+                11.971275252525288
+            ],
+            "text": "The detailed error message for the last foreign key error, if any; otherwise ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông báo lỗi chi tiết cho lỗi khóa nước ngoài cuối cùng, nếu có; nếu không thì "
+        },
+        {
+            "bbox": [
+                736.7773692810458,
+                322.60197727272737,
+                40.1960784313726,
+                10.172335542929204
+            ],
+            "text": "NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "VÔ GIÁ TRỊ"
+        },
+        {
+            "bbox": [
+                776.9734477124184,
+                321.45013352272724,
+                4.656045751633883,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                349.3683898358587,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                350.5202335858586,
+                251.22549019607845,
+                10.172335542929432
+            ],
+            "text": "TRX_ADAPTIVE_HASH_LATCHED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_ADAPTIVE_HASH_LATCHED"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                377.2867238005051,
+                742.8905228758169,
+                11.971275252525174
+            ],
+            "text": "Whether the adaptive hash index is locked by the current transaction. When the adaptive hash index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Liệu chỉ số băm thích ứng có bị khóa bởi giao dịch hiện tại. Khi chỉ số băm thích ứng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                392.8170268308081,
+                767.0751633986928,
+                11.971275252525288
+            ],
+            "text": "search system is partitioned, a single transaction does not lock the entire adaptive hash index. Adaptive",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hệ thống tìm kiếm được phân vùng, một giao dịch duy nhất không khóa toàn bộ chỉ mục băm thích ứng. Thích nghi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                408.3473298611111,
+                288.57432965686274,
+                11.971275252525288
+            ],
+            "text": "hash index partitioning is controlled by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phân vùng chỉ mục băm được kiểm soát bởi "
+        },
+        {
+            "bbox": [
+                476.156029003268,
+                409.49917361111113,
+                321.5686274509804,
+                10.172335542929318
+            ],
+            "text": "innodb_adaptive_hash_index_parts",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_adaptive_hash_index_parts"
+        },
+        {
+            "bbox": [
+                797.7246564542484,
+                408.3473298611111,
+                150.80225408496733,
+                11.971275252525288
+            ],
+            "text": ", which is set to 8 by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", được đặt thành 8 bởi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                423.8776328914141,
+                54.93464052287584,
+                11.971275252525288
+            ],
+            "text": "default.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mặc định."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                451.7959280303031,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                452.94774589646465,
+                251.22549019607845,
+                10.172361426767793
+            ],
+            "text": "TRX_ADAPTIVE_HASH_TIMEOUT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_Adaptive_hash_timeout"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                479.714223169192,
+                770.7262904411765,
+                11.971275252525174
+            ],
+            "text": "Whether to relinquish the search latch immediately for the adaptive hash index, or reserve it across calls",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Có nên từ bỏ chốt tìm kiếm ngay lập tức cho chỉ số băm thích ứng hay đặt trước các cuộc gọi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                495.244526199495,
+                766.1204897875817,
+                11.971275252525288
+            ],
+            "text": "from MySQL. When there is no adaptive hash index contention, this value remains zero and statements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "từ mysql. Khi không có sự tranh chấp chỉ số băm thích ứng, giá trị này vẫn không và các câu lệnh"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                510.774829229798,
+                739.138905637255,
+                11.971275252525231
+            ],
+            "text": "reserve the latch until they finish. During times of contention, it counts down to zero, and statements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đặt chốt cho đến khi họ kết thúc. Trong thời gian tranh chấp, nó được tính xuống 0 và các tuyên bố"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                526.3051322601011,
+                745.6205065359478,
+                11.971275252525231
+            ],
+            "text": "release the latch immediately after each row lookup. When the adaptive hash index search system is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phát hành chốt ngay sau mỗi lần tra cứu hàng. Khi hệ thống tìm kiếm chỉ mục băm thích ứng là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                541.8354352904041,
+                188.0338884803922,
+                11.971275252525231
+            ],
+            "text": "partitioned (controlled by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phân vùng (được kiểm soát bởi "
+        },
+        {
+            "bbox": [
+                375.61560457516345,
+                542.9872531565657,
+                321.5686609477123,
+                10.172361426767623
+            ],
+            "text": "innodb_adaptive_hash_index_parts",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_adaptive_hash_index_parts"
+        },
+        {
+            "bbox": [
+                697.1842152777778,
+                541.8354352904041,
+                165.6915179738562,
+                11.971275252525231
+            ],
+            "text": "), the value remains 0.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "), giá trị vẫn là 0."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                569.7537692550505,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                570.9055871212122,
+                160.78431372549022,
+                10.172361426767623
+            ],
+            "text": "TRX_IS_READ_ONLY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_IS_READ_ONLY"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                597.6720643939393,
+                368.64826756535945,
+                11.971275252525288
+            ],
+            "text": "A value of 1 indicates the transaction is read only.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị 1 chỉ ra giao dịch chỉ được đọc."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                625.5903724747475,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                626.74217739899,
+                261.2745098039216,
+                10.172374368686803
+            ],
+            "text": "TRX_AUTOCOMMIT_NON_LOCKING",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_AUTOCOMMIT_NON_LOCK"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                653.508706439394,
+                309.0743129084968,
+                11.971275252525231
+            ],
+            "text": "A value of 1 indicates the transaction is a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị 1 cho biết giao dịch là một "
+        },
+        {
+            "bbox": [
+                496.656012254902,
+                654.6605113636365,
+                60.29411764705884,
+                10.172374368686803
+            ],
+            "text": "SELECT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LỰA CHỌN"
+        },
+        {
+            "bbox": [
+                556.9501801470589,
+                653.508706439394,
+                243.93993423202608,
+                11.971275252525231
+            ],
+            "text": " statement that does not use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố không sử dụng "
+        },
+        {
+            "bbox": [
+                800.8901143790849,
+                654.6605113636365,
+                100.4901960784315,
+                10.172374368686803
+            ],
+            "text": "FOR UPDATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Để cập nhật"
+        },
+        {
+            "bbox": [
+                901.3803104575164,
+                653.508706439394,
+                19.54532638888884,
+                11.971275252525231
+            ],
+            "text": " or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                670.1908143939395,
+                190.9313725490196,
+                10.17237436868686
+            ],
+            "text": "LOCK IN SHARED MODE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Khóa ở chế độ chia sẻ"
+        },
+        {
+            "bbox": [
+                378.51307189542484,
+                669.039009469697,
+                230.859477124183,
+                11.971275252525288
+            ],
+            "text": " clauses, and is executing with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các điều khoản, và đang thực hiện với "
+        },
+        {
+            "bbox": [
+                609.3725490196078,
+                670.1908143939395,
+                100.49019607843138,
+                10.17237436868686
+            ],
+            "text": "autocommit",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "AutoCommit"
+        },
+        {
+            "bbox": [
+                709.8627450980392,
+                669.039009469697,
+                233.68995098039215,
+                11.971275252525288
+            ],
+            "text": " enabled so that the transaction",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được bật để giao dịch"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                684.5693125,
+                418.9101307189543,
+                11.971275252525231
+            ],
+            "text": "contains only this one statement. When this column and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ chứa một tuyên bố này. Khi cột này và "
+        },
+        {
+            "bbox": [
+                606.4918300653595,
+                685.7211174242425,
+                160.78431372549016,
+                10.172374368686803
+            ],
+            "text": "TRX_IS_READ_ONLY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_IS_READ_ONLY"
+        },
+        {
+            "bbox": [
+                767.2761437908497,
+                684.5693125,
+                89.38601266339867,
+                11.971275252525231
+            ],
+            "text": " are both 1, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cả hai là 1, "
+        },
+        {
+            "bbox": [
+                856.6621564542484,
+                685.7211174242425,
+                60.2941176470589,
+                10.172374368686803
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                700.099615530303,
+                751.2814709967321,
+                11.971275252525288
+            ],
+            "text": "optimizes the transaction to reduce the overhead associated with transactions that change table data.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa giao dịch để giảm chi phí liên quan đến các giao dịch thay đổi dữ liệu bảng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                728.0179106691919,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                729.1697155934344,
+                190.9313725490196,
+                10.17237436868686
+            ],
+            "text": "TRX_SCHEDULE_WEIGHT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_SCHEDULE_ WEGHE"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                755.9362058080808,
+                740.9645110294118,
+                11.971275252525288
+            ],
+            "text": "The transaction schedule weight assigned by the Contention-Aware Transaction Scheduling (CATS)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trọng lượng lịch trình giao dịch được gán bởi Lập lịch giao dịch (CATS) nhận biết tranh chấp (CATS)"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                771.4665088383838,
+                746.5584150326798,
+                11.97127525252526
+            ],
+            "text": "algorithm to transactions waiting for a lock. The value is relative to the values of other transactions. A",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thuật toán cho các giao dịch đang chờ khóa. Giá trị có liên quan đến các giá trị của các giao dịch khác. MỘT"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                786.9968118686869,
+                598.5698696895425,
+                11.971275252525231
+            ],
+            "text": "higher value has a greater weight. A value is computed only for transactions in a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị cao hơn có trọng lượng lớn hơn. Giá trị chỉ được tính toán cho các giao dịch trong một "
+        },
+        {
+            "bbox": [
+                786.1515690359478,
+                788.1486556186869,
+                90.44117647058818,
+                10.172335542929261
+            ],
+            "text": "LOCK WAIT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Khóa chờ đợi"
+        },
+        {
+            "bbox": [
+                876.592745506536,
+                786.9968118686869,
+                67.96490277777775,
+                11.971275252525231
+            ],
+            "text": " state, as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Nhà nước, như"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                802.5271148989899,
+                117.30557230392156,
+                11.971275252525231
+            ],
+            "text": "reported by the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Báo cáo bởi "
+        },
+        {
+            "bbox": [
+                304.88723815359475,
+                803.6789586489899,
+                90.44117647058823,
+                10.172335542929261
+            ],
+            "text": "TRX_STATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_STATE"
+        },
+        {
+            "bbox": [
+                395.328414624183,
+                802.5271148989899,
+                558.5245600490198,
+                11.971275252525231
+            ],
+            "text": " column. A NULL value is reported for transactions that are not waiting for a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cột. Giá trị null được báo cáo cho các giao dịch không chờ đợi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                818.0574179292929,
+                72.60418341503271,
+                11.971275252525231
+            ],
+            "text": "lock. The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "khóa. Các "
+        },
+        {
+            "bbox": [
+                260.18588276143794,
+                819.2092616792929,
+                190.9313725490196,
+                10.172335542929261
+            ],
+            "text": "TRX_SCHEDULE_WEIGHT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_SCHEDULE_ WEGHE"
+        },
+        {
+            "bbox": [
+                451.11725531045755,
+                818.0574179292929,
+                197.34596323529405,
+                11.971275252525231
+            ],
+            "text": " value is different from the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giá trị khác với "
+        },
+        {
+            "bbox": [
+                648.4632185457516,
+                819.2092616792929,
+                100.49019607843138,
+                10.172335542929261
+            ],
+            "text": "TRX_WEIGHT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRX_ weight"
+        },
+        {
+            "bbox": [
+                748.953414624183,
+                818.0574179292929,
+                214.09439624183005,
+                11.971275252525231
+            ],
+            "text": " value, which is computed by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị, được tính toán bởi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                833.587720959596,
+                321.1666834150327,
+                11.971275252525231
+            ],
+            "text": "a different algorithm for a different purpose.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "một thuật toán khác nhau cho một mục đích khác."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                861.8619059343434,
+                82.66323529411764,
+                14.365582070707063
+            ],
+            "text": "Example",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Ví dụ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                891.7111871843434,
+                56.27452655228757,
+                8.137832196969697
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                891.7111871843434,
+                361.76470588235304,
+                8.137832196969697
+            ],
+            "text": "SELECT * FROM INFORMATION_SCHEMA.INNODB_TRX\\G",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn * Từ thông tin_schema.innodb_trx \\ g"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                904.135476199495,
+                498.43138929738564,
+                8.137832196969711
+            ],
+            "text": "*************************** 1. row ***************************",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "****** / TÌM HIỂU 1. Hàng ****** / TÌM HIỂU"
+        },
+        {
+            "bbox": [
+                331.61764705882354,
+                916.5596875631313,
+                96.47060498366011,
+                8.137832196969697
+            ],
+            "text": "trx_id: 1510",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "TRX_ID: 1510"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "4883",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4883"
+        }
+    ]
+}

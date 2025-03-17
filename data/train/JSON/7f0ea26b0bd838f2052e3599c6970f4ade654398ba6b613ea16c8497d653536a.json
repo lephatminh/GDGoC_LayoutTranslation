@@ -1,3 +1,1096 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2890f92b4a2d0b68276eff288faaff5280651dc4c6955af6b20d288cc40a5d3e
-size 32512
+{
+    "metadata": {
+        "page_hash": "7f0ea26b0bd838f2052e3599c6970f4ade654398ba6b613ea16c8497d653536a",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 5067,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                341.046977124183,
+                48.370422979798036,
+                312.75898692810466,
+                11.971275252525288
+            ],
+            "text": "Performance Schema Thread Pool Tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biểu đồ biểu đồ bảng nhóm"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                94.96133207070716,
+                428.2222054738562,
+                11.971275252525174
+            ],
+            "text": "The thread group ID. This is a unique key within the table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ID nhóm chủ đề. Đây là một khóa duy nhất trong bảng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                123.19926672979807,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                124.35111047979808,
+                160.7843137254902,
+                10.172335542929318
+            ],
+            "text": "CONSUMER THREADS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Chủ đề tiêu dùng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                151.43727904040418,
+                729.8268141339869,
+                11.971275252525174
+            ],
+            "text": "The number of consumer threads. There is at most one thread ready to start executing if the active",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng chủ đề tiêu dùng. Nhiều nhất là có một luồng sẵn sàng để bắt đầu thực thi nếu hoạt động"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                166.96758207070718,
+                259.71692851307193,
+                11.971275252525288
+            ],
+            "text": "threads become stalled or blocked.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chủ đề trở nên bị đình trệ hoặc bị chặn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                195.20559438131318,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                196.3573604797981,
+                150.7352941176471,
+                10.172413194444403
+            ],
+            "text": "RESERVE_THREADS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Dự trữ_threads"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                223.44352904040397,
+                754.0616495098038,
+                11.971275252525288
+            ],
+            "text": "The number of threads in the reserved state. This means that they are not started until there is a need",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng chủ đề trong trạng thái dành riêng. Điều này có nghĩa là họ không bắt đầu cho đến khi có nhu cầu"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                238.9738320707071,
+                742.8737577614379,
+                11.971275252525174
+            ],
+            "text": "to wake a new thread and there is no consumer thread. This is where most threads end up when the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "để đánh thức một chủ đề mới và không có chủ đề tiêu dùng. Đây là nơi mà hầu hết các chủ đề kết thúc khi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                254.5041351010101,
+                756.8922238562091,
+                11.971275252525288
+            ],
+            "text": "thread group has created more threads than needed for normal operation. Often a thread group needs",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhóm chủ đề đã tạo ra nhiều luồng hơn cần thiết cho hoạt động bình thường. Thường thì một nhóm chủ đề cần"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                270.0344381313131,
+                762.469362745098,
+                11.971275252525288
+            ],
+            "text": "additional threads for a short while and then does not need them again for a while. In this case, they go",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các chủ đề bổ sung trong một thời gian ngắn và sau đó không cần chúng một lần nữa. Trong trường hợp này, họ đi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                285.5647411616161,
+                765.1993464052288,
+                11.971275252525288
+            ],
+            "text": "into the reserved state and remain until needed again. They take up some extra memory resources, but",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "vào trạng thái dành riêng và vẫn còn cho đến khi cần thiết. Họ chiếm một số tài nguyên bộ nhớ bổ sung, nhưng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                301.0950441919192,
+                225.26552287581703,
+                11.971275252525174
+            ],
+            "text": "no extra computing resources.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không có thêm tài nguyên điện toán."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                329.3329788510101,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                330.48483554292943,
+                200.98039215686273,
+                10.172322601010023
+            ],
+            "text": "CONNECT_THREAD_COUNT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Connect_Thread_Count"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                357.57099116161623,
+                684.2042316176471,
+                11.971275252525174
+            ],
+            "text": "The number of threads that are processing or waiting to process connection initialization and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng các luồng đang xử lý hoặc chờ đợi để xử lý khởi tạo kết nối và"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                373.10129419191924,
+                741.0314709967321,
+                11.971275252525174
+            ],
+            "text": "authentication. There can be a maximum of four connection threads per thread group; these threads",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "xác thực. Có thể có tối đa bốn luồng kết nối trên mỗi nhóm luồng; những chủ đề này"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                388.63159722222224,
+                241.09272875816995,
+                11.971275252525288
+            ],
+            "text": "expire after a period of inactivity.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hết hạn sau một thời gian không hoạt động."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                416.8695707070707,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                418.02138857323234,
+                160.7843137254902,
+                10.17236142676768
+            ],
+            "text": "CONNECTION_COUNT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Connection_Count"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                445.10754419191926,
+                382.6164383169935,
+                11.971275252525288
+            ],
+            "text": "The number of connections using this thread group.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng kết nối sử dụng nhóm chủ đề này."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                473.3455176767677,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                474.49733554292936,
+                140.68627450980395,
+                10.172361426767566
+            ],
+            "text": "QUEUED_QUERIES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hàng đợi_queries"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                501.58349116161617,
+                445.89176511437904,
+                11.971275252525288
+            ],
+            "text": "The number of statements waiting in the high-priority queue.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng tuyên bố đang chờ trong hàng đợi ưu tiên cao."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                529.8214646464646,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                530.9732825126264,
+                190.93137254901964,
+                10.17236142676768
+            ],
+            "text": "QUEUED_TRANSACTIONS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hàng đợi_Transactions"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                558.0594381313131,
+                700.9358827614378,
+                11.971275252525231
+            ],
+            "text": "The number of statements waiting in the low-priority queue. These are the initial statements for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng tuyên bố đang chờ trong hàng đợi ưu tiên thấp. Đây là những tuyên bố ban đầu cho"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                573.5897411616161,
+                581.8549836601308,
+                11.971275252525288
+            ],
+            "text": "transactions that have not started, so they also represent queued transactions.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các giao dịch chưa bắt đầu, vì vậy chúng cũng đại diện cho các giao dịch xếp hàng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                601.8277146464646,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                602.9795325126263,
+                110.5392156862745,
+                10.17236142676768
+            ],
+            "text": "STALL_LIMIT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Stall_limit"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                630.0656881313132,
+                124.75856168300655,
+                11.971275252525288
+            ],
+            "text": "The value of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị của "
+        },
+        {
+            "bbox": [
+                282.1932357026144,
+                631.2175059974747,
+                231.1274174836601,
+                10.17236142676768
+            ],
+            "text": "thread_pool_stall_limit",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thread_pool_stall_limit"
+        },
+        {
+            "bbox": [
+                513.3206531862745,
+                630.0656881313132,
+                403.98737009803926,
+                11.971275252525288
+            ],
+            "text": " system variable for the thread group. This is the same",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống cho nhóm chủ đề. Điều này giống nhau"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                645.5959911616162,
+                198.2839052287582,
+                11.971275252525231
+            ],
+            "text": "value for all thread groups.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị cho tất cả các nhóm chủ đề."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                673.8339646464647,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                674.9857825126262,
+                170.83333333333334,
+                10.172361426767736
+            ],
+            "text": "PRIO_KICKUP_TIMER",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "PRO_KICKUP_TIMER"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                702.0719381313131,
+                124.75856168300655,
+                11.971275252525231
+            ],
+            "text": "The value of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị của "
+        },
+        {
+            "bbox": [
+                282.1932357026144,
+                703.2237559974748,
+                291.4215351307189,
+                10.17236142676768
+            ],
+            "text": "thread_pool_prio_kickup_timer",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thread_pool_prio_kickup_timer"
+        },
+        {
+            "bbox": [
+                573.6147708333333,
+                702.0719381313131,
+                358.3815024509804,
+                11.971275252525231
+            ],
+            "text": " system variable for the thread group. This is the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống cho nhóm chủ đề. Đây là"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                717.6022411616161,
+                243.88970588235296,
+                11.971275252525288
+            ],
+            "text": "same value for all thread groups.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cùng giá trị cho tất cả các nhóm luồng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                745.8402146464647,
+                19.361107761437893,
+                11.971236426767632
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                746.9920325126263,
+                90.44117647058826,
+                10.17232260101008
+            ],
+            "text": "ALGORITHM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thuật toán"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                774.0781881313131,
+                124.75856168300655,
+                11.971275252525231
+            ],
+            "text": "The value of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị của "
+        },
+        {
+            "bbox": [
+                282.1932357026144,
+                775.2300448232323,
+                211.0293782679738,
+                10.172322601010052
+            ],
+            "text": "thread_pool_algorithm",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thread_Pool_Algorithm"
+        },
+        {
+            "bbox": [
+                493.2226139705882,
+                774.0781881313131,
+                403.98737009803926,
+                11.971275252525231
+            ],
+            "text": " system variable for the thread group. This is the same",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống cho nhóm chủ đề. Điều này giống nhau"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                789.6084911616161,
+                198.2839052287582,
+                11.971275252525231
+            ],
+            "text": "value for all thread groups.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị cho tất cả các nhóm chủ đề."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                817.8465164141414,
+                19.361107761437893,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                818.9983601641414,
+                120.58823529411765,
+                10.172335542929261
+            ],
+            "text": "THREAD_COUNT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thread_Count"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                846.0844381313132,
+                568.8247549019608,
+                11.97127525252526
+            ],
+            "text": "The number of threads started in the thread pool as part of this thread group.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng chủ đề bắt đầu trong nhóm luồng như là một phần của nhóm chủ đề này."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                874.3224633838383,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                875.4743071338384,
+                190.93137254901964,
+                10.17233554292929
+            ],
+            "text": "ACTIVE_THREAD_COUNT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Active_Thread_Count"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                902.5603915719697,
+                403.0828913398693,
+                11.97127525252526
+            ],
+            "text": "The number of threads active in executing statements.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng chủ đề hoạt động trong việc thực thi các câu lệnh."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "5038",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "5038"
+        }
+    ]
+}

@@ -1,3 +1,2616 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9c38ed3394e1c93f3358644e6297137354b449d1c04d16b015c7d88e93493e21
-size 73894
+{
+    "metadata": {
+        "page_hash": "c2a6bd6a7bb8c698efad9c03a43f060ac529d5f521ef9a09b8533c751d25ed5e",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3391,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                340.56964869281046,
+                48.370422979798036,
+                313.7136437908497,
+                11.971275252525288
+            ],
+            "text": "Setting Up the InnoDB memcached Plugin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thiết lập plugin innodb memcached"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                95.32501294191934,
+                176.86276184640522,
+                8.13782702020194
+            ],
+            "text": "HYDERABAD|TELANGANA|IN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Hyderabad | Telangana | in"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                107.74921654040418,
+                24.117647058823536,
+                8.137917613636205
+            ],
+            "text": "END",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "KẾT THÚC"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                132.9924428661617,
+                415.4064060457517,
+                14.36556912878791
+            ],
+            "text": "Configuring the InnoDB memcached Plugin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Định cấu hình plugin innodb memcached"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                162.8054608585859,
+                82.83740155228759,
+                11.971275252525288
+            ],
+            "text": "Traditional ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Truyền thống "
+        },
+        {
+            "bbox": [
+                223.5236760620915,
+                163.9573046085859,
+                90.44117647058823,
+                10.172335542929318
+            ],
+            "text": "memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Memcached"
+        },
+        {
+            "bbox": [
+                313.9648860294118,
+                162.8054608585859,
+                546.4322230392156,
+                11.971275252525288
+            ],
+            "text": " configuration options may be specified in a MySQL configuration file or a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tùy chọn cấu hình có thể được chỉ định trong tệp cấu hình MySQL hoặc một "
+        },
+        {
+            "bbox": [
+                860.3970085784314,
+                163.9573046085859,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "mysqld",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqld"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                178.335763888889,
+                342.6045751633987,
+                11.971275252525174
+            ],
+            "text": "startup string, encoded in the argument of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chuỗi khởi động, được mã hóa trong đối số của "
+        },
+        {
+            "bbox": [
+                483.2908496732026,
+                179.4876076388889,
+                231.12745098039215,
+                10.172335542929318
+            ],
+            "text": "daemon_memcached_option",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Daemon_memcached_option"
+        },
+        {
+            "bbox": [
+                714.4183006535948,
+                178.335763888889,
+                186.1747863562092,
+                11.971275252525174
+            ],
+            "text": " configuration parameter.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tham số cấu hình."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                195.0179106691919,
+                90.44117647058823,
+                10.172335542929432
+            ],
+            "text": "memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Memcached"
+        },
+        {
+            "bbox": [
+                231.12745098039215,
+                193.866066919192,
+                646.0682189542484,
+                11.971275252525288
+            ],
+            "text": " configuration options take effect when the plugin is loaded, which occurs each time the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tùy chọn cấu hình có hiệu lực khi tải plugin, xảy ra mỗi lần"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                209.396369949495,
+                184.28227124183007,
+                11.971275252525288
+            ],
+            "text": "MySQL server is started.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Máy chủ MySQL được bắt đầu."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                236.4592301136363,
+                166.61276184640525,
+                11.971275252525288
+            ],
+            "text": "For example, to make ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ, để làm "
+        },
+        {
+            "bbox": [
+                307.29901960784315,
+                237.61107386363642,
+                90.44117647058823,
+                10.172335542929204
+            ],
+            "text": "memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Memcached"
+        },
+        {
+            "bbox": [
+                397.7401960784314,
+                236.4592301136363,
+                462.7238729575163,
+                11.971275252525288
+            ],
+            "text": " listen on port 11222 instead of the default port 11211, specify ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Nghe trên cổng 11222 thay vì cổng mặc định 11211, chỉ định "
+        },
+        {
+            "bbox": [
+                860.4640690359477,
+                237.61107386363642,
+                70.34313725490199,
+                10.172335542929204
+            ],
+            "text": "-p11222",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-P11222"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                251.9895331439394,
+                167.58415032679738,
+                11.971275252525174
+            ],
+            "text": "as an argument of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "như một lập luận của "
+        },
+        {
+            "bbox": [
+                308.2704248366013,
+                253.14137689393942,
+                231.1274509803922,
+                10.172335542929204
+            ],
+            "text": "daemon_memcached_option",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Daemon_memcached_option"
+        },
+        {
+            "bbox": [
+                539.3978758169935,
+                251.9895331439394,
+                155.4750984477124,
+                11.971275252525174
+            ],
+            "text": " configuration option:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tùy chọn cấu hình:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                278.4039513888889,
+                377.843154003268,
+                8.137917613636432
+            ],
+            "text": "mysqld .... --daemon_memcached_option=\"-p11222\"",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "MySQLD ....--daemon_memcached_option = \"-p11222\""
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                303.2913137626264,
+                46.543709150326805,
+                11.971275252525174
+            ],
+            "text": "Other ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khác "
+        },
+        {
+            "bbox": [
+                187.22998366013073,
+                304.44317045454545,
+                90.44119321895423,
+                10.172322601010137
+            ],
+            "text": "memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Memcached"
+        },
+        {
+            "bbox": [
+                277.6711433823529,
+                303.2913137626264,
+                232.76879084967328,
+                11.971275252525174
+            ],
+            "text": " options can be encoded in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tùy chọn có thể được mã hóa trong "
+        },
+        {
+            "bbox": [
+                510.4399342320262,
+                304.44317045454545,
+                231.12745098039215,
+                10.172322601010137
+            ],
+            "text": "daemon_memcached_option",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Daemon_memcached_option"
+        },
+        {
+            "bbox": [
+                741.5673852124183,
+                303.2913137626264,
+                184.29903635620906,
+                11.971275252525174
+            ],
+            "text": " string. For example, you",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " sợi dây. Ví dụ, bạn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                318.8216167929294,
+                768.8839199346405,
+                11.971275252525288
+            ],
+            "text": "can specify options to reduce the maximum number of simultaneous connections, change the maximum",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có thể chỉ định các tùy chọn để giảm số lượng kết nối đồng thời tối đa, thay đổi tối đa"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                334.3519198232324,
+                691.6405061274511,
+                11.971275252525288
+            ],
+            "text": "memory size for a key-value pair, or enable debugging messages for the error log, and so on.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kích thước bộ nhớ cho một cặp giá trị khóa hoặc bật các thông báo gỡ lỗi cho nhật ký lỗi, v.v."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                361.4147799873739,
+                378.8815359477125,
+                11.971236426767632
+            ],
+            "text": "There are also configuration options specific to the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ngoài ra còn có các tùy chọn cấu hình cụ thể cho "
+        },
+        {
+            "bbox": [
+                519.5678104575164,
+                362.5665590277779,
+                160.78431372549016,
+                10.17236142676768
+            ],
+            "text": "daemon_memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "daemon_memcached"
+        },
+        {
+            "bbox": [
+                680.3521241830066,
+                361.4147799873739,
+                167.56743545751624,
+                11.971236426767632
+            ],
+            "text": " plugin. These include:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " plugin. Chúng bao gồm:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                388.47760132575763,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                389.6294191919193,
+                321.56862745098044,
+                10.172361426767566
+            ],
+            "text": "daemon_memcached_engine_lib_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Daemon_memcached_engine_lib_name"
+        },
+        {
+            "bbox": [
+                479.0032679738562,
+                388.47760132575763,
+                366.75568545751634,
+                11.971275252525174
+            ],
+            "text": ": Specifies the shared library that implements the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Chỉ định thư viện được chia sẻ để thực hiện "
+        },
+        {
+            "bbox": [
+                845.7590036764706,
+                389.6294191919193,
+                60.294067401960774,
+                10.172361426767566
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                405.1597222222223,
+                90.44117647058826,
+                10.17236142676768
+            ],
+            "text": "memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Memcached"
+        },
+        {
+            "bbox": [
+                247.87581699346407,
+                404.00790435606064,
+                217.84601348039217,
+                11.971275252525288
+            ],
+            "text": " plugin. The default setting is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " plugin. Cài đặt mặc định là "
+        },
+        {
+            "bbox": [
+                465.72183047385624,
+                405.1597222222223,
+                160.78431372549016,
+                10.17236142676768
+            ],
+            "text": "innodb_engine.so",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb_Engine.so"
+        },
+        {
+            "bbox": [
+                626.5061441993464,
+                404.00790435606064,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                431.0707256944445,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                432.22254356060614,
+                321.56862745098044,
+                10.172361426767566
+            ],
+            "text": "daemon_memcached_engine_lib_path",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Daemon_memcached_engine_lib_path"
+        },
+        {
+            "bbox": [
+                479.0032679738562,
+                431.0707256944445,
+                438.47220547385615,
+                11.971275252525174
+            ],
+            "text": ": The path of the directory containing the shared library that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Đường dẫn của thư mục chứa thư viện được chia sẻ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                446.6010287247475,
+                118.20996732026148,
+                11.971275252525288
+            ],
+            "text": "implements the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thực hiện "
+        },
+        {
+            "bbox": [
+                275.6446078431373,
+                447.75284659090914,
+                155.391323120915,
+                10.17236142676768
+            ],
+            "text": "InnoDB memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb memcached"
+        },
+        {
+            "bbox": [
+                431.0359309640523,
+                446.6010287247475,
+                459.859885620915,
+                11.971275252525288
+            ],
+            "text": " plugin. The default is NULL, representing the plugin directory.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " plugin. Mặc định là NULL, đại diện cho thư mục plugin."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                473.6638888888889,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                474.81570675505054,
+                291.42156862745105,
+                10.17236142676768
+            ],
+            "text": "daemon_memcached_r_batch_size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Daemon_memcached_r_batch_size"
+        },
+        {
+            "bbox": [
+                448.85620915032683,
+                473.6638888888889,
+                377.92686233660135,
+                11.971275252525288
+            ],
+            "text": ": Defines the batch commit size for read operations",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Xác định kích thước cam kết hàng loạt cho các hoạt động đọc"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                489.194191919192,
+                5.577209232026149,
+                11.971275252525174
+            ],
+            "text": "(",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                163.01184975490196,
+                490.34600978535354,
+                30.147055473856227,
+                10.17236142676768
+            ],
+            "text": "get",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "lấy"
+        },
+        {
+            "bbox": [
+                193.1589052287582,
+                489.194191919192,
+                206.65808823529412,
+                11.971275252525174
+            ],
+            "text": "). It specifies the number of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Nó chỉ định số lượng "
+        },
+        {
+            "bbox": [
+                399.8169934640523,
+                490.34600978535354,
+                90.44117647058829,
+                10.17236142676768
+            ],
+            "text": "memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Memcached"
+        },
+        {
+            "bbox": [
+                490.2581699346406,
+                489.194191919192,
+                337.8815694444444,
+                11.971275252525174
+            ],
+            "text": " read operations after which a commit occurs.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đọc các hoạt động sau đó một cam kết xảy ra."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                505.87631281565655,
+                291.42156862745105,
+                10.172361426767736
+            ],
+            "text": "daemon_memcached_r_batch_size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Daemon_memcached_r_batch_size"
+        },
+        {
+            "bbox": [
+                448.85620915032683,
+                504.724494949495,
+                258.81249999999994,
+                11.971275252525231
+            ],
+            "text": " is set to 1 by default so that every ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được đặt thành 1 theo mặc định để mọi "
+        },
+        {
+            "bbox": [
+                707.6687091503268,
+                505.87631281565655,
+                30.14705882352939,
+                10.172361426767736
+            ],
+            "text": "get",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "lấy"
+        },
+        {
+            "bbox": [
+                737.8157679738562,
+                504.724494949495,
+                162.91133946078435,
+                11.971275252525231
+            ],
+            "text": " request accesses the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Yêu cầu truy cập vào"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                520.254797979798,
+                269.0122549019608,
+                11.971275252525288
+            ],
+            "text": "most recently committed data in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "dữ liệu được cam kết gần đây nhất trong "
+        },
+        {
+            "bbox": [
+                426.4468954248366,
+                521.4066158459595,
+                60.29411764705884,
+                10.172361426767736
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                486.74101307189545,
+                520.254797979798,
+                340.76228839869276,
+                11.971275252525288
+            ],
+            "text": " table, whether the data was updated through ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng, liệu dữ liệu đã được cập nhật thông qua "
+        },
+        {
+            "bbox": [
+                827.5032512254902,
+                521.4066158459595,
+                90.44112622549028,
+                10.172361426767736
+            ],
+            "text": "memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Memcached"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                535.785101010101,
+                754.0448843954248,
+                11.971275252525231
+            ],
+            "text": "or by SQL. When the value is greater than 1, the counter for read operations is incremented with each",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hoặc bởi SQL. Khi giá trị lớn hơn 1, bộ đếm cho các hoạt động đọc được tăng lên"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                552.4672219065657,
+                30.14705882352942,
+                10.172361426767736
+            ],
+            "text": "get",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "lấy"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                551.315404040404,
+                54.91790890522876,
+                11.971275252525288
+            ],
+            "text": " call. A ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " gọi. MỘT "
+        },
+        {
+            "bbox": [
+                242.499608251634,
+                552.4672219065657,
+                90.44117647058826,
+                10.172361426767736
+            ],
+            "text": "flush_all",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Flush_all"
+        },
+        {
+            "bbox": [
+                332.9407512254902,
+                551.315404040404,
+                301.6045919117647,
+                11.971275252525288
+            ],
+            "text": " call resets both read and write counters.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cuộc gọi đặt lại cả đọc và ghi."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                578.3782771464647,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                579.5300820707071,
+                291.42156862745105,
+                10.17237436868686
+            ],
+            "text": "daemon_memcached_w_batch_size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Daemon_memcached_w_batch_size"
+        },
+        {
+            "bbox": [
+                448.85620915032683,
+                578.3782771464647,
+                390.00243423202613,
+                11.971275252525231
+            ],
+            "text": ": Defines the batch commit size for write operations (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Xác định kích thước cam kết hàng loạt cho các hoạt động ghi ("
+        },
+        {
+            "bbox": [
+                838.858643382353,
+                579.5300820707071,
+                30.147058823529505,
+                10.17237436868686
+            ],
+            "text": "set",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "bộ"
+        },
+        {
+            "bbox": [
+                869.0057022058825,
+                578.3782771464647,
+                4.656079248365813,
+                11.971275252525231
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                595.0603851010101,
+                70.34313725490196,
+                10.172374368686917
+            ],
+            "text": "replace",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "thay thế"
+        },
+        {
+            "bbox": [
+                227.77777777777777,
+                593.9085801767677,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                237.08986928104576,
+                595.0603851010101,
+                60.29411764705884,
+                10.172374368686917
+            ],
+            "text": "append",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "nối lại"
+        },
+        {
+            "bbox": [
+                297.3839869281046,
+                593.9085801767677,
+                9.312091503267936,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                306.69607843137254,
+                595.0603851010101,
+                70.34313725490199,
+                10.172374368686917
+            ],
+            "text": "prepend",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "dự bị"
+        },
+        {
+            "bbox": [
+                377.03921568627453,
+                593.9085801767677,
+                9.312074754901971,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                386.3512904411765,
+                595.0603851010101,
+                40.19607843137254,
+                10.172374368686917
+            ],
+            "text": "incr",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "tăng lên"
+        },
+        {
+            "bbox": [
+                426.54736887254904,
+                593.9085801767677,
+                9.312091503267936,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                435.859460375817,
+                595.0603851010101,
+                40.19607843137254,
+                10.172374368686917
+            ],
+            "text": "decr",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "giảm"
+        },
+        {
+            "bbox": [
+                476.0555388071895,
+                593.9085801767677,
+                97.7602626633988,
+                11.971275252525288
+            ],
+            "text": ", and so on). ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", và như vậy). "
+        },
+        {
+            "bbox": [
+                573.8157512254902,
+                595.0603851010101,
+                291.42156862745105,
+                10.172374368686917
+            ],
+            "text": "daemon_memcached_w_batch_size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Daemon_memcached_w_batch_size"
+        },
+        {
+            "bbox": [
+                865.2373198529413,
+                593.9085801767677,
+                43.74671527777764,
+                11.971275252525288
+            ],
+            "text": " is set",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được đặt"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                609.4388832070708,
+                765.2998366013073,
+                11.971275252525231
+            ],
+            "text": "to 1 by default so that no uncommitted data is lost in case of an outage, and so that SQL queries on the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đến 1 theo mặc định để không bị mất dữ liệu chưa được cam kết trong trường hợp mất điện và do đó các truy vấn SQL trên"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                624.9691862373738,
+                741.014705882353,
+                11.971275252525288
+            ],
+            "text": "underlying table access the most recent data. When the value is greater than 1, the counter for write",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng cơ bản truy cập dữ liệu gần đây nhất. Khi giá trị lớn hơn 1, bộ đếm để ghi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                640.4994892676768,
+                261.57596364379083,
+                11.971275252525231
+            ],
+            "text": "operations is incremented for each ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hoạt động được tăng lên cho mỗi "
+        },
+        {
+            "bbox": [
+                419.01060416666667,
+                641.6512941919193,
+                30.14705882352939,
+                10.17237436868686
+            ],
+            "text": "add",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "thêm vào"
+        },
+        {
+            "bbox": [
+                449.15766299019606,
+                640.4994892676768,
+                9.312091503267993,
+                11.971275252525231
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                458.46975449346405,
+                641.6512941919193,
+                30.14705882352939,
+                10.17237436868686
+            ],
+            "text": "set",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "bộ"
+        },
+        {
+            "bbox": [
+                488.61681331699344,
+                640.4994892676768,
+                9.31214174836606,
+                11.971275252525231
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                497.92890482026144,
+                641.6512941919193,
+                40.196078431372484,
+                10.17237436868686
+            ],
+            "text": "incr",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "tăng lên"
+        },
+        {
+            "bbox": [
+                538.1249832516339,
+                640.4994892676768,
+                9.312091503267993,
+                11.971275252525231
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                547.4370747549019,
+                641.6512941919193,
+                40.1960784313726,
+                10.17237436868686
+            ],
+            "text": "decr",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "giảm"
+        },
+        {
+            "bbox": [
+                587.6331531862745,
+                640.4994892676768,
+                41.904378267973925,
+                11.971275252525231
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                629.5375816993464,
+                641.6512941919193,
+                60.29411764705878,
+                10.17237436868686
+            ],
+            "text": "delete",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "xóa bỏ"
+        },
+        {
+            "bbox": [
+                689.8316993464052,
+                640.4994892676768,
+                54.91790890522873,
+                11.971275252525231
+            ],
+            "text": " call. A ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " gọi. MỘT "
+        },
+        {
+            "bbox": [
+                744.749608251634,
+                641.6512941919193,
+                90.44117647058829,
+                10.17237436868686
+            ],
+            "text": "flush_all",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Flush_all"
+        },
+        {
+            "bbox": [
+                835.1907847222222,
+                640.4994892676768,
+                80.04045792483657,
+                11.971275252525231
+            ],
+            "text": " call resets",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đặt lại cuộc gọi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                656.0297922979798,
+                216.9080714869281,
+                11.971275252525288
+            ],
+            "text": "both read and write counters.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cả đọc và viết quầy."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                683.0926136363637,
+                281.171568627451,
+                11.971275252525231
+            ],
+            "text": "By default, you do not need to modify ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Theo mặc định, bạn không cần sửa đổi "
+        },
+        {
+            "bbox": [
+                421.8578431372549,
+                684.2444185606062,
+                321.56862745098044,
+                10.17237436868686
+            ],
+            "text": "daemon_memcached_engine_lib_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Daemon_memcached_engine_lib_name"
+        },
+        {
+            "bbox": [
+                743.4264705882354,
+                683.0926136363637,
+                19.54537663398696,
+                11.971275252525231
+            ],
+            "text": " or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                699.7747215909092,
+                321.5686274509804,
+                10.17237436868686
+            ],
+            "text": "daemon_memcached_engine_lib_path",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Daemon_memcached_engine_lib_path"
+        },
+        {
+            "bbox": [
+                462.2549019607843,
+                698.6229166666667,
+                467.3297071078432,
+                11.971275252525231
+            ],
+            "text": ". You might configure these options if, for example, you want to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Bạn có thể định cấu hình các tùy chọn này nếu, ví dụ, bạn muốn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                714.1532196969697,
+                250.43831699346407,
+                11.971275252525231
+            ],
+            "text": "use a different storage engine for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sử dụng một công cụ lưu trữ khác cho "
+        },
+        {
+            "bbox": [
+                391.124591503268,
+                715.3050246212122,
+                90.44117647058818,
+                10.172374368686803
+            ],
+            "text": "memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Memcached"
+        },
+        {
+            "bbox": [
+                481.56576797385617,
+                714.1532196969697,
+                140.55230433006545,
+                11.971275252525231
+            ],
+            "text": " (such as the NDB ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (chẳng hạn như NDB "
+        },
+        {
+            "bbox": [
+                622.1180723039216,
+                715.3050246212122,
+                90.44117647058829,
+                10.172374368686803
+            ],
+            "text": "memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Memcached"
+        },
+        {
+            "bbox": [
+                712.5592487745099,
+                714.1532196969697,
+                65.16790890522873,
+                11.971275252525231
+            ],
+            "text": " engine).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " động cơ)."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                742.3678847853536,
+                160.78431372549022,
+                10.17237436868686
+            ],
+            "text": "daemon_memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "daemon_memcached"
+        },
+        {
+            "bbox": [
+                301.47058823529414,
+                741.2160798611111,
+                621.8166184640523,
+                11.971275252525288
+            ],
+            "text": " plugin configuration parameters may be specified in the MySQL configuration file or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tham số cấu hình plugin có thể được chỉ định trong tệp cấu hình MySQL hoặc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                756.7464217171718,
+                31.654411764705884,
+                11.971275252525231
+            ],
+            "text": "in a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trong a "
+        },
+        {
+            "bbox": [
+                172.3406862745098,
+                757.8982654671718,
+                60.29410089869282,
+                10.172335542929318
+            ],
+            "text": "mysqld",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqld"
+        },
+        {
+            "bbox": [
+                232.63478717320262,
+                756.7464217171718,
+                375.1801638071896,
+                11.971275252525231
+            ],
+            "text": " startup string. They take effect when you load the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Chuỗi khởi động. Họ có hiệu lực khi bạn tải "
+        },
+        {
+            "bbox": [
+                607.8149509803923,
+                757.8982654671718,
+                160.78431372549016,
+                10.172335542929318
+            ],
+            "text": "daemon_memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "daemon_memcached"
+        },
+        {
+            "bbox": [
+                768.5992647058824,
+                756.7464217171718,
+                53.99671527777775,
+                11.971275252525231
+            ],
+            "text": " plugin.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " plugin."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                783.809204229798,
+                193.62785947712422,
+                11.97127525252526
+            ],
+            "text": "When making changes to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi thay đổi "
+        },
+        {
+            "bbox": [
+                334.31413398692814,
+                784.961047979798,
+                160.78429697712414,
+                10.17233554292929
+            ],
+            "text": "daemon_memcached",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "daemon_memcached"
+        },
+        {
+            "bbox": [
+                495.0984309640523,
+                783.809204229798,
+                374.2590204248367,
+                11.97127525252526
+            ],
+            "text": " plugin configuration, reload the plugin to apply the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cấu hình plugin, tải lại plugin để áp dụng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                799.3395072601011,
+                375.1633986928105,
+                11.97127525252526
+            ],
+            "text": "changes. To do so, issue the following statements:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thay đổi. Để làm như vậy, hãy đưa ra các tuyên bố sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                825.7540031565657,
+                56.274509803921575,
+                8.137827020202025
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                825.7540031565657,
+                273.3333165849673,
+                8.137827020202025
+            ],
+            "text": "UNINSTALL PLUGIN daemon_memcached;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Gỡ cài đặt plugin Daemon_MemCached;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                850.6025009469697,
+                56.274509803921575,
+                8.137839962121234
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                850.6025009469697,
+                458.23531086601304,
+                8.137839962121234
+            ],
+            "text": "INSTALL PLUGIN daemon_memcached soname \"libmemcached.so\";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Cài đặt plugin daemon_memcached soname \"libmemcached.so\";"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                875.4897856691919,
+                678.6438075980393,
+                11.97127525252526
+            ],
+            "text": "Configuration settings, required tables, and data are preserved when the plugin is restarted.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cài đặt cấu hình, bảng bắt buộc và dữ liệu được bảo tồn khi plugin được khởi động lại."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                902.552651010101,
+                730.6139370915032,
+                11.971275252525245
+            ],
+            "text": "For additional information about enabling and disabling plugins, see Section 5.6.1, “Installing and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin về việc bật và tắt các plugin, xem Phần 5.6.1, Cài đặt và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                918.082954040404,
+                165.4906045751634,
+                11.971275252525245
+            ],
+            "text": "Uninstalling Plugins”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gỡ cài đặt các plugin ”"
+        },
+        {
+            "bbox": [
+                292.39297385620915,
+                918.082954040404,
+                4.656045751633997,
+                11.971275252525245
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3362",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3362"
+        }
+    ]
+}

@@ -1,3 +1,1516 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:db88d6c44fc2b0af4fda5527c525eff14833c23f22e15009375b8c2b1d298389
-size 45293
+{
+    "metadata": {
+        "page_hash": "13805c233d3621d76d3daff8ae5579c11c6bfeffd9c52a58eea534c46b013f02",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1339,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                414.5723039215686,
+                48.370422979798036,
+                165.70833333333337,
+                11.971275252525288
+            ],
+            "text": "Authentication Plugins",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Plugin xác thực"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                764.2948843954248,
+                11.971275252525174
+            ],
+            "text": "To enable use of an RSA key pair for password exchange during the client connection process, use the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để cho phép sử dụng cặp khóa RSA để trao đổi mật khẩu trong quá trình kết nối máy khách, hãy sử dụng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                149.86439583333333,
+                11.971275252525288
+            ],
+            "text": "following procedure:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Quy trình sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                136.9850508207071,
+                13.968130555555547,
+                11.971275252525288
+            ],
+            "text": "1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                136.9850508207071,
+                762.2014391339869,
+                11.971275252525288
+            ],
+            "text": "Create the RSA private and public key-pair files using the instructions in Section 6.3.3, “Creating SSL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tạo các tệp cặp khóa tư nhân và công khai RSA bằng các hướng dẫn trong Phần 6.3.3, Tạo SSL"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                152.5153538510101,
+                249.2826797385621,
+                11.971275252525288
+            ],
+            "text": "and RSA Certificates and Keys”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và chứng chỉ RSA và khóa"
+        },
+        {
+            "bbox": [
+                402.9824346405229,
+                152.5153538510101,
+                4.65604575163394,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                179.00876957070705,
+                13.968130555555547,
+                11.971275252525288
+            ],
+            "text": "2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                179.00876957070705,
+                599.5244930555556,
+                11.971275252525288
+            ],
+            "text": "If the private and public key files are located in the data directory and are named ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu các tệp khóa riêng và công khai được đặt trong thư mục dữ liệu và được đặt tên "
+        },
+        {
+            "bbox": [
+                767.0081531862745,
+                180.16061332070717,
+                150.73524387254906,
+                10.172335542929204
+            ],
+            "text": "private_key.pem",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "private_key.pem"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                194.53907260101005,
+                32.59232026143789,
+                11.971275252525288
+            ],
+            "text": "and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Và "
+        },
+        {
+            "bbox": [
+                200.07598039215685,
+                195.69091635101017,
+                140.68625776143796,
+                10.172335542929204
+            ],
+            "text": "public_key.pem",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "public_key.pem"
+        },
+        {
+            "bbox": [
+                340.76227165032685,
+                194.53907260101005,
+                192.72343096405223,
+                11.971275252525288
+            ],
+            "text": " (the default values of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (các giá trị mặc định của "
+        },
+        {
+            "bbox": [
+                533.4857026143791,
+                195.69091635101017,
+                381.86279534313735,
+                10.172335542929204
+            ],
+            "text": "caching_sha2_password_private_key_path",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "bộ nhớ cache_sha2_password_private_key_path"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                210.06937563131316,
+                32.59232026143789,
+                11.971275252525174
+            ],
+            "text": "and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Và "
+        },
+        {
+            "bbox": [
+                200.07598039215685,
+                211.22121938131318,
+                371.8137087418301,
+                10.172335542929204
+            ],
+            "text": "caching_sha2_password_public_key_path",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "bộ nhớ cache_sha2_password_public_key_path"
+        },
+        {
+            "bbox": [
+                571.889689133987,
+                210.06937563131316,
+                300.63311968954247,
+                11.971275252525174
+            ],
+            "text": " system variables), the server uses them",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các biến hệ thống), máy chủ sử dụng chúng"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                225.59967866161617,
+                176.86276184640522,
+                11.971275252525288
+            ],
+            "text": "automatically at startup.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tự động khi khởi động."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                252.09308143939393,
+                750.2430723039216,
+                11.971275252525288
+            ],
+            "text": "Otherwise, to name the key files explicitly, set the system variables to the key file names in the server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu không, để đặt tên cho các tệp khóa một cách rõ ràng, đặt các biến hệ thống thành tên tệp khóa trong máy chủ"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                267.62338446969693,
+                766.1540200163399,
+                11.971275252525288
+            ],
+            "text": "option file. If the files are located in the server data directory, you need not specify their full path names:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn Tệp. Nếu các tệp được đặt trong thư mục dữ liệu máy chủ, bạn không cần chỉ định tên đường dẫn đầy đủ của chúng:"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                293.5822730429293,
+                64.31370874183008,
+                8.137904671717251
+            ],
+            "text": "[mysqld]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[MySQLD]"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                306.0064766414141,
+                418.03923243464055,
+                8.137917613636432
+            ],
+            "text": "caching_sha2_password_private_key_path=myprivkey.pem",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "bộ nhớ cache_sha2_password_private_key_path = MyPrivKey.pem"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                318.4307708333333,
+                401.9607843137255,
+                8.137827020202053
+            ],
+            "text": "caching_sha2_password_public_key_path=mypubkey.pem",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "bộ nhớ cache_sha2_password_public_key_path = mypubkey.pem"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                342.74861111111113,
+                725.1539530228758,
+                11.971275252525288
+            ],
+            "text": "If the key files are not located in the data directory, or to make their locations explicit in the system",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu các tệp khóa không nằm trong thư mục dữ liệu hoặc để làm cho vị trí của chúng rõ ràng trong hệ thống"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                358.27891414141425,
+                270.8880551470588,
+                11.971275252525174
+            ],
+            "text": "variable values, use full path names:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị biến, sử dụng tên đường dẫn đầy đủ:"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                384.2377897727273,
+                64.31370874183008,
+                8.137917613636318
+            ],
+            "text": "[mysqld]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[MySQLD]"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                396.6620839646465,
+                554.7058991013073,
+                8.13782702020194
+            ],
+            "text": "caching_sha2_password_private_key_path=/usr/local/mysql/myprivkey.pem",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "bộ nhớ cache_sha2_password_private_key_path =/usr/local/mysql/myprivkey.pem"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                409.08628756313135,
+                538.6274677287582,
+                8.137917613636432
+            ],
+            "text": "caching_sha2_password_public_key_path=/usr/local/mysql/mypubkey.pem",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "bộ nhớ cache_sha2_password_public_key_path =/usr/local/mysql/mypubkey.pem"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                433.4041666666667,
+                13.968130555555547,
+                11.971275252525288
+            ],
+            "text": "3.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                433.4041666666667,
+                431.9905878267974,
+                11.971275252525288
+            ],
+            "text": "If you want to change the number of hash rounds used by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu bạn muốn thay đổi số lượng vòng băm được sử dụng bởi "
+        },
+        {
+            "bbox": [
+                599.4742479575164,
+                434.55598453282835,
+                211.02941176470586,
+                10.17236142676768
+            ],
+            "text": "caching_sha2_password",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "bộ nhớ cache_sha2_password"
+        },
+        {
+            "bbox": [
+                810.5036597222222,
+                433.4041666666667,
+                51.19977165032685,
+                11.971275252525288
+            ],
+            "text": " during",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trong lúc"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                448.9344696969697,
+                219.7050486111111,
+                11.971275252525288
+            ],
+            "text": "password generation, set the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tạo mật khẩu, đặt "
+        },
+        {
+            "bbox": [
+                387.18870874183006,
+                450.08628756313135,
+                351.71568627450984,
+                10.17236142676768
+            ],
+            "text": "caching_sha2_password_digest_rounds",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "bộ nhớ cache_sha2_password_digest_round"
+        },
+        {
+            "bbox": [
+                738.9043950163399,
+                448.9344696969697,
+                155.42481985294114,
+                11.971275252525288
+            ],
+            "text": " system variable. For",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống. Vì"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                464.4647727272728,
+                67.94813766339868,
+                11.971275252525174
+            ],
+            "text": "example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ví dụ:"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                490.42366130050505,
+                64.31370874183008,
+                8.137904671717251
+            ],
+            "text": "[mysqld]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[MySQLD]"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                502.84790372474754,
+                329.60782638888884,
+                8.137917613636318
+            ],
+            "text": "caching_sha2_password_digest_rounds=10000",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "bộ nhớ cache_sha2_password_digest_round = 10000"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                527.1657828282828,
+                13.968130555555547,
+                11.971275252525288
+            ],
+            "text": "4.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                527.1657828282828,
+                383.5543468137256,
+                11.971275252525288
+            ],
+            "text": "Restart the server, then connect to it and check the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khởi động lại máy chủ, sau đó kết nối với nó và kiểm tra "
+        },
+        {
+            "bbox": [
+                551.0380069444445,
+                528.3175877525252,
+                361.7647058823528,
+                10.172374368686917
+            ],
+            "text": "Caching_sha2_password_rsa_public_key",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bộ nhớ cache_sha2_password_rsa_public_key"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                542.6960858585859,
+                694.454265114379,
+                11.971275252525231
+            ],
+            "text": "status variable value. The value actually displayed differs from that shown here, but should be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị biến trạng thái. Giá trị thực sự hiển thị khác với giá trị được hiển thị ở đây, nhưng nên"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                558.2263888888889,
+                78.19812091503269,
+                11.971275252525288
+            ],
+            "text": "nonempty:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "không trống:"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                584.185264520202,
+                56.27452655228757,
+                8.137917613636375
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                223.75818668300653,
+                584.185264520202,
+                458.2352941176471,
+                8.137917613636375
+            ],
+            "text": "SHOW STATUS LIKE ’Caching_sha2_password_rsa_public_key’\\G",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Hiển thị trạng thái như bộ nhớ cache_sha2_password_rsa_public_key, \\ g"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                596.6095198863636,
+                498.43138929738564,
+                8.137917613636432
+            ],
+            "text": "*************************** 1. row ***************************",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "****** / TÌM HIỂU 1. Hàng ****** / TÌM HIỂU"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                609.0337752525252,
+                409.99998325163403,
+                8.137904671717195
+            ],
+            "text": "Variable_name: Caching_sha2_password_rsa_public_key",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Biến_name: bộ nhớ cache_sha2_password_rsa_public_key"
+        },
+        {
+            "bbox": [
+                231.79736887254904,
+                621.4579788510101,
+                265.2941176470588,
+                8.137917613636375
+            ],
+            "text": "Value: -----BEGIN PUBLIC KEY-----",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Giá trị: ----- Bắt đầu khóa công khai -----"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                633.8822342171718,
+                514.5098206699347,
+                8.137904671717138
+            ],
+            "text": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDO9nRUDd+KvSZgY7cNBZMNpwX6",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Migfma0gcsqgsib3dqebaquaa4gnadcbiqkbgqdo9nrudd+kvszgy7cnbzmnpwx6"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                646.3064766414141,
+                514.5098206699347,
+                8.137917613636375
+            ],
+            "text": "MvE1PbJFXO7u18nJ9lwc99Du/E7lw6CVXw7VKrXPeHbVQUzGyUNkf45Nz/ckaaJa",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "MVE1PBJFXO7U18NJ9LWC99DU/E7LW6CVXW7VKKRXPEHBVQUZGYUNKF45NZ/CKAAJA"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                658.7307320075757,
+                514.5098206699347,
+                8.137917613636432
+            ],
+            "text": "aLgJOBCIDmNVnyU54OT/1lcs2xiyfaDMe8fCJ64ZwTnKbY2gkt1IMjUAB5Ogd5kJ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "algjobcidmnvnyu54ot/1LCS2XIYFADME8FCJ64ZWTNKBY2GKT1IMJUAB5OGD5KJ"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                671.1549873737374,
+                192.9411764705882,
+                8.137904671717195
+            ],
+            "text": "g8aV7EtKwyhHb0c30QIDAQAB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "G8AV7ETKWYHHB0C30QIDAQAB"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                683.5791909722222,
+                192.9411764705882,
+                8.137917613636375
+            ],
+            "text": "-----END PUBLIC KEY-----",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "----- Kết thúc khóa công khai -----"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                707.8971089015151,
+                693.4828431372548,
+                11.971275252525288
+            ],
+            "text": "If the value is empty, the server found some problem with the key files. Check the error log for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu giá trị trống, máy chủ đã tìm thấy một số vấn đề với các tệp chính. Kiểm tra nhật ký lỗi cho"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                723.4274119318181,
+                167.55067034313723,
+                11.971275252525231
+            ],
+            "text": "diagnostic information.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin chẩn đoán."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                749.9207888257577,
+                704.7209799836601,
+                11.971275252525231
+            ],
+            "text": "After the server has been configured with the RSA key files, accounts that authenticate with the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau khi máy chủ được cấu hình với các tệp khóa RSA, các tài khoản xác thực với"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                766.6029356060606,
+                211.0294117647059,
+                10.17233554292929
+            ],
+            "text": "caching_sha2_password",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "bộ nhớ cache_sha2_password"
+        },
+        {
+            "bbox": [
+                351.71568627450984,
+                765.4510918560607,
+                551.1384971405229,
+                11.97127525252526
+            ],
+            "text": " plugin have the option of using those key files to connect to the server. As",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Plugin có tùy chọn sử dụng các tệp khóa đó để kết nối với máy chủ. BẰNG"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                780.9813948863637,
+                780.0719121732027,
+                11.97127525252526
+            ],
+            "text": "mentioned previously, such accounts can use either a secure connection (in which case RSA is not used)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đã đề cập trước đây, các tài khoản như vậy có thể sử dụng kết nối an toàn (trong trường hợp RSA không được sử dụng)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                796.5116979166667,
+                789.4509636437908,
+                11.97127525252526
+            ],
+            "text": "or an unencrypted connection that performs password exchange using RSA. Suppose that an unencrypted",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hoặc kết nối không được mã hóa thực hiện trao đổi mật khẩu bằng RSA. Giả sử rằng một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                812.0420009469697,
+                245.74877450980392,
+                11.97127525252526
+            ],
+            "text": "connection is used. For example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kết nối được sử dụng. Ví dụ:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                838.000954229798,
+                56.274509803921575,
+                8.137839962121205
+            ],
+            "text": "shell> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Vỏ> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                838.000954229798,
+                321.5686441993464,
+                8.137839962121205
+            ],
+            "text": "mysql --ssl-mode=DISABLED -u sha2user -p",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "mysql - -ssl -mode = đã vô hiệu"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                850.425170770202,
+                128.62745098039215,
+                8.137827020202025
+            ],
+            "text": "Enter password: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nhập mật khẩu: "
+        },
+        {
+            "bbox": [
+                269.3137254901961,
+                850.425170770202,
+                64.3137422385621,
+                8.137827020202025
+            ],
+            "text": "password",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "mật khẩu"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                874.7430110479797,
+                229.000408496732,
+                11.97127525252526
+            ],
+            "text": "For this connection attempt by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với kết nối này, cố gắng "
+        },
+        {
+            "bbox": [
+                369.68668300653593,
+                875.8948547979799,
+                80.3921233660131,
+                10.17233554292929
+            ],
+            "text": "sha2user",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sha2User"
+        },
+        {
+            "bbox": [
+                450.078806372549,
+                874.7430110479797,
+                208.51715686274508,
+                11.97127525252526
+            ],
+            "text": ", the server determines that ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", máy chủ xác định rằng "
+        },
+        {
+            "bbox": [
+                658.5960134803921,
+                875.8948547979799,
+                211.02936151960785,
+                10.17233554292929
+            ],
+            "text": "caching_sha2_password",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "bộ nhớ cache_sha2_password"
+        },
+        {
+            "bbox": [
+                869.625375,
+                874.7430110479797,
+                16.74836601307186,
+                11.97127525252526
+            ],
+            "text": " is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                890.2733140782829,
+                689.8484644607843,
+                11.97127136994952
+            ],
+            "text": "the appropriate authentication plugin and invokes it (because that was the plugin specified at ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "plugin xác thực thích hợp và gọi nó (vì đó là plugin được chỉ định tại "
+        },
+        {
+            "bbox": [
+                830.5347389705883,
+                891.4251578282829,
+                60.29411764705878,
+                10.17233166035355
+            ],
+            "text": "CREATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TẠO NÊN"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                906.9554621527777,
+                40.19607843137254,
+                10.172330366161617
+            ],
+            "text": "USER",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Người dùng"
+        },
+        {
+            "bbox": [
+                180.88235294117646,
+                905.8036132260102,
+                718.6891172385622,
+                11.97127525252526
+            ],
+            "text": " time). The plugin finds that the connection is not encrypted and thus requires the password to be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " thời gian). Plugin thấy rằng kết nối không được mã hóa và do đó yêu cầu mật khẩu"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "1310",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1310"
+        }
+    ]
+}

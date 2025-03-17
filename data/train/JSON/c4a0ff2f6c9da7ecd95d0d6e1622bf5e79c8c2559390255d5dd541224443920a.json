@@ -1,3 +1,1856 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d064c7a5ef58ab072ecd181eecc6d0d626f7186ea268c3636a5c0b4d4e23932b
-size 52226
+{
+    "metadata": {
+        "page_hash": "c4a0ff2f6c9da7ecd95d0d6e1622bf5e79c8c2559390255d5dd541224443920a",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 242,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                333.50183823529414,
+                48.370422979798036,
+                388.1433823529412,
+                11.971275252525288
+            ],
+            "text": "Installing MySQL Using a Development Source Tree",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Installing MySQL Using a Development Source Tree"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                786.5367647058823,
+                11.971275252525174
+            ],
+            "text": "MySQL officially joined GitHub in September, 2014. For more information about MySQL’s move to GitHub,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL officially joined GitHub in September, 2014. For more information about MySQL’s move to GitHub,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                110.49163510101016,
+                649.7863059640523,
+                11.971275252525288
+            ],
+            "text": "refer to the announcement on the MySQL Release Engineering blog: MySQL on GitHub",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "refer to the announcement on the MySQL Release Engineering blog: MySQL on GitHub"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                136.5048667929293,
+                408.60988562091507,
+                11.971275252525288
+            ],
+            "text": "•Prerequisites for Installing from Development Source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•Prerequisites for Installing from Development Source"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                162.51816319444447,
+                280.16666666666663,
+                11.971275252525288
+            ],
+            "text": "•Setting Up a MySQL Git Repository",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Thiết lập kho lưu trữ Git MySQL"
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                188.88732354797992,
+                509.28429697712426,
+                14.36550441919178
+            ],
+            "text": "Prerequisites for Installing from Development Source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Điều kiện tiên quyết để cài đặt từ nguồn phát triển"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                217.65071306818186,
+                785.5988562091502,
+                11.971275252525288
+            ],
+            "text": "To install MySQL from a development source tree, your system must satisfy the tool requirements listed at",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để cài đặt MySQL từ cây nguồn phát triển, hệ thống của bạn phải đáp ứng các yêu cầu công cụ được liệt kê tại"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                233.18101609848486,
+                385.94934640522877,
+                11.971275252525288
+            ],
+            "text": "Section 2.9.2, “Source Installation Prerequisites”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mục 2.9.2, Điều kiện tiên quyết cài đặt nguồn Nguồn"
+        },
+        {
+            "bbox": [
+                529.2148860294118,
+                233.18101609848486,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                259.5501764520202,
+                336.1397058823529,
+                14.365569128788024
+            ],
+            "text": "Setting Up a MySQL Git Repository",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Thiết lập kho lưu trữ Git MySQL"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                288.31363068181827,
+                381.64501633986924,
+                11.971275252525288
+            ],
+            "text": "To set up a MySQL Git repository on your machine:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để thiết lập kho lưu trữ Git MySQL trên máy của bạn:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                314.3268623737374,
+                13.968137254901961,
+                11.971275252525288
+            ],
+            "text": "1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                314.3268623737374,
+                713.9326315359478,
+                11.971275252525288
+            ],
+            "text": "Clone the MySQL Git repository to your machine. The following command clones the MySQL Git",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao chép kho lưu trữ Git MySQL vào máy của bạn. Lệnh sau đây nhân bản mysql git"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                329.8571654040404,
+                235.4987577614379,
+                11.971275252525288
+            ],
+            "text": "repository to a directory named ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "kho lưu trữ vào một thư mục có tên "
+        },
+        {
+            "bbox": [
+                433.1294767156863,
+                331.0090091540404,
+                120.58823529411762,
+                10.172335542929318
+            ],
+            "text": "mysql-server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql-server"
+        },
+        {
+            "bbox": [
+                553.7177120098039,
+                329.8571654040404,
+                407.70545710784324,
+                11.971275252525288
+            ],
+            "text": ". The initial download may take some time to complete,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Tải xuống ban đầu có thể mất một thời gian để hoàn thành,"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                345.3874684343434,
+                325.8729742647059,
+                11.971275252525288
+            ],
+            "text": "depending on the speed of your connection.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy thuộc vào tốc độ kết nối của bạn."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                370.9619820075758,
+                434.11766380718956,
+                8.137904671717251
+            ],
+            "text": "~$ git clone https://github.com/mysql/mysql-server.git",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "~ $ Git Clone https://github.com/mysql/mysql-server.git"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                383.3862632575758,
+                241.1764705882353,
+                8.137839962121234
+            ],
+            "text": "Cloning into ’mysql-server’...",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nhân bản vào MYSQL-server, ..."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                395.81047979797984,
+                321.5686274509804,
+                8.137865845959595
+            ],
+            "text": "remote: Counting objects: 1198513, done.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Điều khiển từ xa: Đếm đối tượng: 1198513, xong."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                408.2347222222222,
+                578.8235461601307,
+                8.137878787878776
+            ],
+            "text": "remote: Total 1198513 (delta 0), reused 0 (delta 0), pack-reused 1198513",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Remote: Tổng số 1198513 (Delta 0), tái sử dụng 0 (Delta 0), Gói được sử dụng 1198513"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                420.6589775883839,
+                570.7842969771241,
+                8.137878787878776
+            ],
+            "text": "Receiving objects: 100% (1198513/1198513), 1.01 GiB | 7.44 MiB/s, done.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nhận đối tượng: 100% (1198513/1198513), 1.01 GIB | 7,44 mib/s, thực hiện."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                433.0831941287879,
+                361.764705882353,
+                8.137904671717138
+            ],
+            "text": "Resolving deltas: 100% (993200/993200), done.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Giải quyết Deltas: 100% (993200/993200), được thực hiện."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                445.5074365530304,
+                241.1764705882353,
+                8.137917613636318
+            ],
+            "text": "Checking connectivity... done.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Kiểm tra kết nối ... Xong."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                457.93169191919196,
+                361.764705882353,
+                8.137904671717138
+            ],
+            "text": "Checking out files: 100% (25510/25510), done.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Kiểm tra các tập tin: 100% (25510/25510), đã thực hiện."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                481.7694128787879,
+                13.968137254901961,
+                11.971275252525288
+            ],
+            "text": "2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                481.7694128787879,
+                760.5097369281045,
+                11.971275252525288
+            ],
+            "text": "When the clone operation completes, the contents of your local MySQL Git repository appear similar to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi hoạt động nhân bản hoàn thành, nội dung của kho lưu trữ Git MySQL cục bộ của bạn xuất hiện tương tự như"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                497.2997159090909,
+                97.7434640522876,
+                11.971275252525288
+            ],
+            "text": "the following:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau đây:"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                522.8742294823232,
+                144.70586560457514,
+                8.137917613636375
+            ],
+            "text": "~$ cd mysql-server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "~ $ cd mysql-server"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                535.2984848484848,
+                144.70586560457514,
+                8.137904671717195
+            ],
+            "text": "~/mysql-server$ ls",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "~/mysql-server $ ls"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                547.7226884469698,
+                48.23529411764707,
+                8.137917613636375
+            ],
+            "text": "client",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "khách hàng"
+        },
+        {
+            "bbox": [
+                350.37581699346407,
+                547.7226884469698,
+                40.19607843137254,
+                8.137917613636375
+            ],
+            "text": "extra",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "thêm"
+        },
+        {
+            "bbox": [
+                519.1993464052288,
+                547.7226884469698,
+                40.1960784313726,
+                8.137917613636375
+            ],
+            "text": "mysys",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Mysys"
+        },
+        {
+            "bbox": [
+                671.9444109477124,
+                547.7226884469698,
+                56.274526552287625,
+                8.137917613636375
+            ],
+            "text": "storage",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "kho"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                560.1469438131314,
+                40.19607843137254,
+                8.137904671717138
+            ],
+            "text": "cmake",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "cmake"
+        },
+        {
+            "bbox": [
+                350.37581699346407,
+                560.1469438131314,
+                56.27449305555558,
+                8.137904671717138
+            ],
+            "text": "include",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "bao gồm"
+        },
+        {
+            "bbox": [
+                519.1993464052288,
+                560.1469438131314,
+                72.35290767973856,
+                8.137904671717138
+            ],
+            "text": "packaging",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bao bì"
+        },
+        {
+            "bbox": [
+                671.9444109477124,
+                560.1469438131314,
+                56.274526552287625,
+                8.137904671717138
+            ],
+            "text": "strings",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "chuỗi"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                572.571199179293,
+                112.54901960784309,
+                8.137904671717138
+            ],
+            "text": "CMakeLists.txt",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "CMAKELIST.TXT"
+        },
+        {
+            "bbox": [
+                350.37581699346407,
+                572.571199179293,
+                56.2745098039216,
+                8.137904671717138
+            ],
+            "text": "INSTALL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "CÀI ĐẶT"
+        },
+        {
+            "bbox": [
+                519.1993464052288,
+                572.571199179293,
+                48.235327614379116,
+                8.137904671717138
+            ],
+            "text": "plugin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "plugin"
+        },
+        {
+            "bbox": [
+                671.9444611928105,
+                572.571199179293,
+                104.50980392156862,
+                8.137904671717138
+            ],
+            "text": "support-files",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Hỗ trợ-Files"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                584.9954416035354,
+                80.39215686274508,
+                8.137917613636375
+            ],
+            "text": "components",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "các thành phần"
+        },
+        {
+            "bbox": [
+                350.37581699346407,
+                584.9954416035354,
+                120.5882520424837,
+                8.137917613636375
+            ],
+            "text": "libbinlogevents",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Libbinlogevents"
+        },
+        {
+            "bbox": [
+                519.1993464052288,
+                584.9954416035354,
+                48.23527736928099,
+                8.137917613636375
+            ],
+            "text": "README",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Readme"
+        },
+        {
+            "bbox": [
+                671.9444611928105,
+                584.9954416035354,
+                88.43135580065359,
+                8.137917613636375
+            ],
+            "text": "testclients",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Testclients"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                597.419696969697,
+                112.54901960784309,
+                8.137904671717195
+            ],
+            "text": "config.h.cmake",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "config.h.cmake"
+        },
+        {
+            "bbox": [
+                350.37581699346407,
+                597.419696969697,
+                152.74508129084967,
+                8.137904671717195
+            ],
+            "text": "libbinlogstandalone",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "libbinlogstandalone"
+        },
+        {
+            "bbox": [
+                519.1993464052288,
+                597.419696969697,
+                48.235327614379116,
+                8.137904671717195
+            ],
+            "text": "router",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "bộ định tuyến"
+        },
+        {
+            "bbox": [
+                671.9444611928105,
+                597.419696969697,
+                64.31372549019602,
+                8.137904671717195
+            ],
+            "text": "unittest",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "nhất quán"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                609.8439005681819,
+                120.58823529411762,
+                8.137917613636375
+            ],
+            "text": "configure.cmake",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Cấu hình.cmake"
+        },
+        {
+            "bbox": [
+                350.37581699346407,
+                609.8439005681819,
+                64.31370874183006,
+                8.137917613636375
+            ],
+            "text": "libmysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "libmysql"
+        },
+        {
+            "bbox": [
+                519.1993464052288,
+                609.8439005681819,
+                136.6666834150327,
+                8.137917613636375
+            ],
+            "text": "run_doxygen.cmake",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Run_doxygen.cmake"
+        },
+        {
+            "bbox": [
+                671.9444109477124,
+                609.8439005681819,
+                72.35295792483669,
+                8.137917613636375
+            ],
+            "text": "utilities",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tiện ích"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                622.2681559343434,
+                32.15686274509801,
+                8.137904671717138
+            ],
+            "text": "Docs",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tài liệu"
+        },
+        {
+            "bbox": [
+                350.37581699346407,
+                622.2681559343434,
+                88.43137254901961,
+                8.137904671717138
+            ],
+            "text": "libservices",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "libservices"
+        },
+        {
+            "bbox": [
+                519.1993464052288,
+                622.2681559343434,
+                56.274526552287625,
+                8.137904671717138
+            ],
+            "text": "scripts",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "kịch bản"
+        },
+        {
+            "bbox": [
+                671.9444109477124,
+                622.2681559343434,
+                56.274526552287625,
+                8.137904671717138
+            ],
+            "text": "VERSION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "PHIÊN BẢN"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                634.6924113005051,
+                128.62745098039215,
+                8.13790467171708
+            ],
+            "text": "Doxyfile-ignored",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Doxyfile-id"
+        },
+        {
+            "bbox": [
+                350.37581699346407,
+                634.6924113005051,
+                56.2745098039216,
+                8.13790467171708
+            ],
+            "text": "LICENSE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "GIẤY PHÉP"
+        },
+        {
+            "bbox": [
+                519.1993464052288,
+                634.6924113005051,
+                40.1960784313726,
+                8.13790467171708
+            ],
+            "text": "share",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "chia sẻ"
+        },
+        {
+            "bbox": [
+                671.9444611928105,
+                634.6924113005051,
+                24.117647058823422,
+                8.13790467171708
+            ],
+            "text": "vio",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "vio"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                647.1166537247475,
+                88.43137254901961,
+                8.137917613636318
+            ],
+            "text": "Doxyfile.in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Doxyfile.in"
+        },
+        {
+            "bbox": [
+                350.37581699346407,
+                647.1166537247475,
+                24.117663807189558,
+                8.137917613636318
+            ],
+            "text": "man",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "người đàn ông"
+        },
+        {
+            "bbox": [
+                519.1993464052288,
+                647.1166537247475,
+                24.11763031045757,
+                8.137917613636318
+            ],
+            "text": "sql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "SQL"
+        },
+        {
+            "bbox": [
+                671.9444611928105,
+                647.1166537247475,
+                24.117647058823422,
+                8.137917613636318
+            ],
+            "text": "win",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "thắng"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                659.540909090909,
+                136.66668341503265,
+                8.137904671717195
+            ],
+            "text": "doxygen_resources",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "doxygen_resource"
+        },
+        {
+            "bbox": [
+                350.37581699346407,
+                659.540909090909,
+                80.39217361111116,
+                8.137904671717195
+            ],
+            "text": "mysql-test",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql-test"
+        },
+        {
+            "bbox": [
+                519.1993464052288,
+                659.540909090909,
+                80.39215686274508,
+                8.137904671717195
+            ],
+            "text": "sql-common",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "SQL-Common"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                683.3786300505051,
+                13.968137254901961,
+                11.971275252525231
+            ],
+            "text": "3.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                683.3786300505051,
+                62.37093178104578,
+                11.971275252525231
+            ],
+            "text": "Use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng "
+        },
+        {
+            "bbox": [
+                260.0016172385621,
+                684.5304479166666,
+                130.63725490196077,
+                10.17236142676768
+            ],
+            "text": "git branch -r",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "chi nhánh git -r"
+        },
+        {
+            "bbox": [
+                390.63890563725494,
+                683.3786300505051,
+                551.9758819444444,
+                11.971275252525231
+            ],
+            "text": " command to view the remote tracking branches for the MySQL repository.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " lệnh để xem các nhánh theo dõi từ xa cho kho lưu trữ MySQL."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                708.9531436237373,
+                233.13727165032685,
+                8.137904671717195
+            ],
+            "text": "~/mysql-server$ git branch -r",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "~/mysql -server $ git chi nhánh -r"
+        },
+        {
+            "bbox": [
+                213.70915032679738,
+                721.377398989899,
+                80.3921736111111,
+                8.137904671717195
+            ],
+            "text": "origin/5.5",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nguồn gốc/5,5"
+        },
+        {
+            "bbox": [
+                213.70915032679738,
+                733.8016414141414,
+                80.3921736111111,
+                8.137917613636375
+            ],
+            "text": "origin/5.6",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nguồn gốc/5.6"
+        },
+        {
+            "bbox": [
+                213.70915032679738,
+                746.2258579545455,
+                80.3921736111111,
+                8.137904671717138
+            ],
+            "text": "origin/5.7",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nguồn gốc/5,7"
+        },
+        {
+            "bbox": [
+                213.70915032679738,
+                758.6501780303031,
+                80.3921736111111,
+                8.137839962121234
+            ],
+            "text": "origin/8.0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nguồn gốc/8.0"
+        },
+        {
+            "bbox": [
+                213.70915032679738,
+                771.0743945707071,
+                200.98040890522878,
+                8.137827020202025
+            ],
+            "text": "origin/HEAD -> origin/8.0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nguồn gốc/đầu -> Nguồn gốc/8.0"
+        },
+        {
+            "bbox": [
+                213.70915032679738,
+                783.4986111111111,
+                144.70588235294116,
+                8.137827020202053
+            ],
+            "text": "origin/cluster-7.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nguồn gốc/cụm-7.2"
+        },
+        {
+            "bbox": [
+                213.70915032679738,
+                795.922892361111,
+                144.70588235294116,
+                8.137839962121205
+            ],
+            "text": "origin/cluster-7.3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nguồn gốc/cụm-7.3"
+        },
+        {
+            "bbox": [
+                213.70915032679738,
+                808.3471089015152,
+                144.70588235294116,
+                8.137827020201996
+            ],
+            "text": "origin/cluster-7.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nguồn gốc/cụm-7.4"
+        },
+        {
+            "bbox": [
+                213.70915032679738,
+                820.7713901515151,
+                144.70588235294116,
+                8.137839962121234
+            ],
+            "text": "origin/cluster-7.5",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nguồn gốc/cụm-7.5"
+        },
+        {
+            "bbox": [
+                213.70915032679738,
+                833.1956066919192,
+                144.70588235294116,
+                8.137827020201996
+            ],
+            "text": "origin/cluster-7.6",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nguồn gốc/cụm-7.6"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                857.0333405934343,
+                13.968137254901961,
+                11.971275252525231
+            ],
+            "text": "4.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                857.0333405934343,
+                538.9791666666667,
+                11.971275252525231
+            ],
+            "text": "To view the branch that is checked out in your local repository, issue the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để xem chi nhánh được kiểm tra trong kho lưu trữ địa phương của bạn, hãy phát hành "
+        },
+        {
+            "bbox": [
+                736.6098856209151,
+                858.1851843434343,
+                100.49019607843138,
+                10.17233554292929
+            ],
+            "text": "git branch",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Chi nhánh Git"
+        },
+        {
+            "bbox": [
+                837.1000816993464,
+                857.0333405934343,
+                82.83745179738571,
+                11.971275252525231
+            ],
+            "text": " command.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " yêu cầu."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                872.5636436237373,
+                753.9946895424837,
+                11.971275252525231
+            ],
+            "text": "When you clone the MySQL Git repository, the latest MySQL GA branch is checked out automatically.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi bạn sao chép kho lưu trữ Git MySQL, chi nhánh MySQL GA mới nhất được kiểm tra tự động."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                888.0939466540405,
+                298.80759803921575,
+                11.971271369949491
+            ],
+            "text": "The asterisk identifies the active branch.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Dấu hoa thị xác định nhánh hoạt động."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                913.6684511679293,
+                209.0196078431373,
+                8.137832196969697
+            ],
+            "text": "~/mysql-server$ git branch",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "~/MySQL-server $ git chi nhánh"
+        },
+        {
+            "bbox": [
+                936.7696245915033,
+                964.6583160037878,
+                27.9362577614379,
+                11.971275252525253
+            ],
+            "text": "213",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "213"
+        }
+    ]
+}

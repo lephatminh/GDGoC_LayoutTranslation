@@ -1,3 +1,1356 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6ee56ce4d167ac54245277b953b4fd04bc5385f3963434b68f4554fb28bb0c8c
-size 40125
+{
+    "metadata": {
+        "page_hash": "6944b198ca18d0ed801c1d15bf37fef4ccf30591de4cc148aadc69b727dcff66",
+        "original_filename": "cm-oreilly-kubernetes-patterns-ebook-f19824-201910-en.pdf",
+        "page_no": 109,
+        "num_pages": 266,
+        "original_width": 504,
+        "original_height": 661.5,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                148.7470380456349,
+                867.3266130007559,
+                7.732648809523823,
+                14.632013681027956
+            ],
+            "text": "1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 7
+            },
+            "text_vi": "1"
+        },
+        {
+            "bbox": [
+                160.1366062003968,
+                867.3266130007559,
+                681.713790625,
+                14.632013681027956
+            ],
+            "text": "Let’s assume we have invented a highly sophisticated way of generating random numbers in a distributed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 7
+            },
+            "text_vi": "Hãy giả sử rằng chúng tôi đã phát minh ra một cách tạo ra các số ngẫu nhiên rất tinh vi trong một phân phối"
+        },
+        {
+            "bbox": [
+                162.6984757440476,
+                881.2892404761905,
+                689.5972608630952,
+                16.72229625850339
+            ],
+            "text": "RNG cluster with several instances of our service as nodes. Of course, that’s not true, but for this example’s",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 8
+            },
+            "text_vi": "Cụm RNG với một số trường hợp dịch vụ của chúng tôi dưới dạng các nút. Tất nhiên, điều đó không đúng, nhưng trong ví dụ này"
+        },
+        {
+            "bbox": [
+                162.6984757440476,
+                896.7843273998488,
+                191.93533576388884,
+                16.722296258503377
+            ],
+            "text": "sake, it’s a good enough story.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 8
+            },
+            "text_vi": "Sake, nó là một câu chuyện đủ tốt."
+        },
+        {
+            "bbox": [
+                146.43068244047618,
+                81.03777059712763,
+                732.142983234127,
+                21.94800037792902
+            ],
+            "text": "We have seen some of the common challenges of managing distributed stateful appli‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Chúng tôi đã thấy một số thách thức chung của việc quản lý ứng dụng trạng thái phân tán"
+        },
+        {
+            "bbox": [
+                146.42458328373016,
+                100.56154913076341,
+                732.1428795138888,
+                21.94800037792902
+            ],
+            "text": "cations, and a few less-than-ideal workarounds. Next, let’s check out the Kubernetes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Cations, và một vài cách giải quyết ít lý tưởng. Tiếp theo, hãy để Lừa kiểm tra Kubernetes"
+        },
+        {
+            "bbox": [
+                146.41857971230158,
+                120.08540513983371,
+                732.1428632440476,
+                21.948000377928906
+            ],
+            "text": "native mechanism for addressing these requirements through the StatefulSet primi‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Cơ chế bản địa để giải quyết các yêu cầu này thông qua các nguyên tắc trạng thái primi‐"
+        },
+        {
+            "bbox": [
+                146.4338306547619,
+                139.6091836734695,
+                36.067197668650806,
+                21.948000377928906
+            ],
+            "text": "tive.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "tive."
+        },
+        {
+            "bbox": [
+                146.4469583829365,
+                174.87327437641727,
+                106.27671622023811,
+                35.12147392290251
+            ],
+            "text": "Solution",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 18.92000007629395
+            },
+            "text_vi": "Giải pháp"
+        },
+        {
+            "bbox": [
+                146.42262886904763,
+                217.08528458049886,
+                732.1429018849205,
+                21.948000377928906
+            ],
+            "text": "To explain what StatefulSet provides for managing stateful applications, we occasion‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Để giải thích những gì trạng thái cung cấp cho việc quản lý các ứng dụng trạng thái, chúng tôi nhân dịp"
+        },
+        {
+            "bbox": [
+                146.43791235119048,
+                236.60904761904771,
+                732.142830704365,
+                21.948000377928906
+            ],
+            "text": "ally compare its behavior to the already familiar ReplicaSet primitive that Kubernetes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ally so sánh hành vi của nó với nguyên thủy bản sao đã quen thuộc mà Kubernetes"
+        },
+        {
+            "bbox": [
+                146.43190674603173,
+                256.13287263794416,
+                732.1427554563493,
+                21.948000377928906
+            ],
+            "text": "uses for running stateless workloads. In many ways, StatefulSet is for managing pets,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Sử dụng để chạy khối lượng công việc không trạng thái. Theo nhiều cách, trạng thái là để quản lý vật nuôi,"
+        },
+        {
+            "bbox": [
+                146.42582589285712,
+                275.65668216175357,
+                731.6365396825396,
+                21.948000377928906
+            ],
+            "text": "and ReplicaSet is for managing cattle. Pets versus cattle is a famous (but also a contro‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Và bản sao là để quản lý gia súc. Vật nuôi so với gia súc là một người nổi tiếng (nhưng cũng là một cuộc tranh luận‐"
+        },
+        {
+            "bbox": [
+                146.42590317460318,
+                295.18046069538923,
+                732.1428612103175,
+                21.94804686318969
+            ],
+            "text": "versial) analogy in the DevOps world: identical and replaceable servers are referred to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Versial) Tương tự trong thế giới DevOps: Máy chủ giống hệt nhau và có thể thay thế được đề cập đến"
+        },
+        {
+            "bbox": [
+                146.41982028769843,
+                314.70433219954646,
+                732.1430462797618,
+                21.948000377928906
+            ],
+            "text": "as cattle, and nonfungible unique servers that require individual care are referred to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Là gia súc, và các máy chủ độc đáo không thể bỏ qua cần được chăm sóc cá nhân được đề cập đến"
+        },
+        {
+            "bbox": [
+                146.43510376984128,
+                334.2280952380953,
+                732.1427107142856,
+                21.94804686318969
+            ],
+            "text": "as pets. Similarly, StatefulSet (initially inspired by the analogy and named PetSet) is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "làm vật nuôi. Tương tự, Statefulset (ban đầu lấy cảm hứng từ sự tương tự và được đặt tên là vật nuôi) là"
+        },
+        {
+            "bbox": [
+                146.4290208829365,
+                353.7519667422524,
+                732.1428957837302,
+                21.94800037792902
+            ],
+            "text": "designed for managing nonfungible Pods, as opposed to ReplicaSet, which is for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "được thiết kế để quản lý các vỏ không bị nấm, trái ngược với bản sao, dành cho"
+        },
+        {
+            "bbox": [
+                146.4229400297619,
+                373.27577626606205,
+                315.2302062996032,
+                21.94804686318969
+            ],
+            "text": "managing identical replaceable Pods.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Quản lý các nhóm có thể thay thế giống hệt nhau."
+        },
+        {
+            "bbox": [
+                146.422954265873,
+                402.09665343915344,
+                732.1427595238094,
+                21.94800037792902
+            ],
+            "text": "Let’s explore how StatefulSets work and how they address the needs of stateful appli‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Hãy cùng khám phá cách thức hoạt động của trạng thái và cách họ giải quyết các nhu cầu của Appli- trạng thái"
+        },
+        {
+            "bbox": [
+                146.4382072420635,
+                421.6204784580499,
+                609.2557739087301,
+                21.94804686318969
+            ],
+            "text": "cations. Example 11-1 is our random-generator service as a StatefulSet. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "cation. Ví dụ 11-1 là dịch vụ máy phát điện ngẫu nhiên của chúng tôi như một trạng thái. "
+        },
+        {
+            "bbox": [
+                755.6816974206349,
+                423.09328647014365,
+                5.85714285714289,
+                12.54175434618287
+            ],
+            "text": "1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 6
+            },
+            "text_vi": "1"
+        },
+        {
+            "bbox": [
+                146.43206334325396,
+                464.52404988662136,
+                385.2718200892857,
+                22.159523809523762
+            ],
+            "text": "Example 11-1. Service for accessing StatefulSet",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Ví dụ 11-1. Dịch vụ truy cập trạng thái"
+        },
+        {
+            "bbox": [
+                146.43512003968252,
+                502.89378987150417,
+                86.43353174603175,
+                13.170823885109598
+            ],
+            "text": "apiVersion",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "Apiversion"
+        },
+        {
+            "bbox": [
+                232.86865178571426,
+                502.89378987150417,
+                77.79017857142858,
+                13.170823885109598
+            ],
+            "text": ": apps/v1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": Ứng dụng/V1"
+        },
+        {
+            "bbox": [
+                146.43512003968252,
+                518.6987940287227,
+                34.57341269841271,
+                13.170823885109598
+            ],
+            "text": "kind",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "loại"
+        },
+        {
+            "bbox": [
+                181.00853273809523,
+                518.6987940287227,
+                112.36359126984124,
+                13.170823885109598
+            ],
+            "text": ": StatefulSet",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": Trạng thái"
+        },
+        {
+            "bbox": [
+                146.43512003968252,
+                534.503798185941,
+                69.14682539682539,
+                13.170823885109598
+            ],
+            "text": "metadata",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "Siêu dữ liệu"
+        },
+        {
+            "bbox": [
+                215.5819454365079,
+                534.503798185941,
+                8.643353174603192,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                163.72182638888887,
+                550.5836851851852,
+                34.57341269841271,
+                13.170823885109598
+            ],
+            "text": "name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "tên"
+        },
+        {
+            "bbox": [
+                198.29523908730158,
+                550.5836851851852,
+                34.57341269841268,
+                13.170823885109598
+            ],
+            "text": ": rg",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": RG"
+        },
+        {
+            "bbox": [
+                146.43512003968252,
+                566.3886428571429,
+                34.57341269841271,
+                13.170823885109598
+            ],
+            "text": "spec",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "thông số kỹ thuật"
+        },
+        {
+            "bbox": [
+                181.00853273809523,
+                566.3886428571429,
+                8.643353174603163,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                163.72182638888887,
+                582.468529856387,
+                95.07688492063494,
+                13.170823885109598
+            ],
+            "text": "serviceName",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "Tên động vật"
+        },
+        {
+            "bbox": [
+                258.7987113095238,
+                582.468529856387,
+                155.5803571428571,
+                13.170823885109598
+            ],
+            "text": ": random-generator",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": Máy phát điện ngẫu nhiên"
+        },
+        {
+            "bbox": [
+                163.72182638888887,
+                598.5484168556311,
+                69.14682539682539,
+                13.170823885109598
+            ],
+            "text": "replicas",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "bản sao"
+        },
+        {
+            "bbox": [
+                232.86865178571426,
+                598.5484168556311,
+                25.930059523809547,
+                13.170823885109598
+            ],
+            "text": ": 2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": 2"
+        },
+        {
+            "bbox": [
+                163.72182638888887,
+                614.3534365079365,
+                69.14682539682539,
+                13.170823885109598
+            ],
+            "text": "selector",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "người chọn"
+        },
+        {
+            "bbox": [
+                232.86865178571426,
+                614.3534365079365,
+                8.643353174603192,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                181.00853273809523,
+                630.158440665155,
+                95.07688492063491,
+                13.170823885109598
+            ],
+            "text": "matchLabels",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "Matchlabels"
+        },
+        {
+            "bbox": [
+                276.08541765873014,
+                630.158440665155,
+                8.643353174603192,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                198.29523908730158,
+                645.9634448223734,
+                25.93005952380952,
+                13.170823885109598
+            ],
+            "text": "app",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "ứng dụng"
+        },
+        {
+            "bbox": [
+                224.2252986111111,
+                645.9634448223734,
+                155.5803571428571,
+                13.170823885109598
+            ],
+            "text": ": random-generator",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": Máy phát điện ngẫu nhiên"
+        },
+        {
+            "bbox": [
+                163.72184062499997,
+                661.7684489795918,
+                69.1468314980159,
+                13.170823885109598
+            ],
+            "text": "template",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "bản mẫu"
+        },
+        {
+            "bbox": [
+                232.86867212301587,
+                661.7684489795918,
+                8.643353174603163,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                181.00854697420633,
+                677.5734686318972,
+                69.1468314980159,
+                13.170823885109598
+            ],
+            "text": "metadata",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "Siêu dữ liệu"
+        },
+        {
+            "bbox": [
+                250.15537847222222,
+                677.5734686318972,
+                8.643353174603163,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                198.29525332341268,
+                693.3784727891157,
+                51.860125148809544,
+                13.170823885109598
+            ],
+            "text": "labels",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "nhãn"
+        },
+        {
+            "bbox": [
+                250.15537847222222,
+                693.3784727891157,
+                8.643353174603163,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                215.58196577380951,
+                709.183476946334,
+                25.93005952380952,
+                13.170823885109598
+            ],
+            "text": "app",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "ứng dụng"
+        },
+        {
+            "bbox": [
+                241.51202529761903,
+                709.183476946334,
+                155.58035714285714,
+                13.170823885109598
+            ],
+            "text": ": random-generator",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": Máy phát điện ngẫu nhiên"
+        },
+        {
+            "bbox": [
+                181.00854697420633,
+                724.9884811035525,
+                34.57341879960319,
+                13.170823885109598
+            ],
+            "text": "spec",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "thông số kỹ thuật"
+        },
+        {
+            "bbox": [
+                215.58196577380951,
+                724.9884811035525,
+                8.643353174603163,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                198.29525332341268,
+                740.7934387755101,
+                86.43353784722223,
+                13.170823885109598
+            ],
+            "text": "containers",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "container"
+        },
+        {
+            "bbox": [
+                284.7287911706349,
+                740.7934387755101,
+                8.643353174603192,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                198.29526959325398,
+                756.5984584278156,
+                17.286696180555538,
+                13.17082388510957
+            ],
+            "text": "- ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": "- "
+        },
+        {
+            "bbox": [
+                215.58196577380951,
+                756.5984584278156,
+                43.21676587301587,
+                13.17082388510957
+            ],
+            "text": "image",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "hình ảnh"
+        },
+        {
+            "bbox": [
+                258.7987316468254,
+                756.5984584278156,
+                293.8740079365079,
+                13.17082388510957
+            ],
+            "text": ": k8spatterns/random-generator:1.0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": K8Spatterns/Trình tạo ngẫu nhiên: 1.0"
+        },
+        {
+            "bbox": [
+                215.58196577380951,
+                772.403462585034,
+                34.57341269841271,
+                13.170823885109598
+            ],
+            "text": "name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "tên"
+        },
+        {
+            "bbox": [
+                250.15537847222222,
+                772.403462585034,
+                155.58035714285714,
+                13.170823885109598
+            ],
+            "text": ": random-generator",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": Máy phát điện ngẫu nhiên"
+        },
+        {
+            "bbox": [
+                215.58196577380951,
+                788.2084667422524,
+                43.21676587301587,
+                13.170823885109598
+            ],
+            "text": "ports",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "Cổng"
+        },
+        {
+            "bbox": [
+                258.7987316468254,
+                788.2084667422524,
+                8.643353174603192,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                215.58196577380951,
+                804.0134708994709,
+                17.286706349206355,
+                13.170823885109598
+            ],
+            "text": "- ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": "- "
+        },
+        {
+            "bbox": [
+                232.86867212301587,
+                804.0134708994709,
+                112.36359126984127,
+                13.170823885109598
+            ],
+            "text": "containerPort",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "container"
+        },
+        {
+            "bbox": [
+                345.23226339285713,
+                804.0134708994709,
+                51.86011904761904,
+                13.170823885109598
+            ],
+            "text": ": 8080",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": 8080"
+        },
+        {
+            "bbox": [
+                146.42498799603175,
+                945.5380580498866,
+                17.82767450396824,
+                16.70680427059714
+            ],
+            "text": "90 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "90 "
+        },
+        {
+            "bbox": [
+                179.66427574404761,
+                945.5380580498866,
+                6.735708184523787,
+                16.70680427059714
+            ],
+            "text": "| ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "| "
+        },
+        {
+            "bbox": [
+                201.81159717261906,
+                945.5380580498866,
+                166.013394890873,
+                16.70680427059714
+            ],
+            "text": "Chapter 11: Stateful Service",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "Chương 11: Dịch vụ trạng thái"
+        }
+    ]
+}

@@ -1,3 +1,1636 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f432a1ccb79ca003cc9d000216ba40a57ce90bd9ba2b58c3820fc385d5a8b7f8
-size 51078
+{
+    "metadata": {
+        "page_hash": "a3d0651767d57f3f5ecd1163560779f2aacb30157539523b8d68c5a151374dee",
+        "original_filename": "MongoDB-manual.pdf",
+        "page_no": 752,
+        "num_pages": 946,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                585.4659481209151,
+                46.997324179292946,
+                318.94755841503263,
+                12.106971275252477
+            ],
+            "text": "MongoDB Documentation, Release 3.0.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tài liệu MongoDB, Phát hành 3.0.4"
+        },
+        {
+            "bbox": [
+                148.11920604575164,
+                97.33406470959596,
+                15.937153880718938,
+                11.526797979797948
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                168.04064379084969,
+                97.33406470959596,
+                122.1742050653595,
+                11.526797979797948
+            ],
+            "text": "Embed documents.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nhúng tài liệu."
+        },
+        {
+            "bbox": [
+                162.30339889705883,
+                120.54152714646477,
+                738.0097056781046,
+                11.526797979797834
+            ],
+            "text": "In some cases you may want to embed documents in other documents and save on the per-document overhead.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trong một số trường hợp, bạn có thể muốn nhúng các tài liệu vào các tài liệu khác và tiết kiệm chi phí cho mỗi tài liệu."
+        },
+        {
+            "bbox": [
+                120.58824869281045,
+                161.93749810606073,
+                67.68619656862745,
+                14.528533775252527
+            ],
+            "text": "11.2.10",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "11.2.10"
+        },
+        {
+            "bbox": [
+                193.91495996732027,
+                161.93749810606073,
+                264.94196650326796,
+                14.528533775252527
+            ],
+            "text": "When should I use GridFS?",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "Khi nào tôi nên sử dụng Gridfs?"
+        },
+        {
+            "bbox": [
+                120.58824869281045,
+                195.89969539141418,
+                432.2937700980392,
+                11.526785037878767
+            ],
+            "text": "For documents in a MongoDB collection, you should always use",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đối với các tài liệu trong bộ sưu tập MongoDB, bạn nên luôn luôn sử dụng"
+        },
+        {
+            "bbox": [
+                557.0523451797385,
+                196.01573263888884,
+                50.05716462418309,
+                11.114222537878959
+            ],
+            "text": "GridFS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Gridfs"
+        },
+        {
+            "bbox": [
+                611.4142083333334,
+                195.89969539141418,
+                232.81603799019604,
+                11.526785037878767
+            ],
+            "text": "for storing files larger than 16 MB.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để lưu trữ các tập tin lớn hơn 16 MB."
+        },
+        {
+            "bbox": [
+                120.5882872140523,
+                219.10841319444455,
+                783.8287867238561,
+                11.526797979797948
+            ],
+            "text": "In some situations, storing large files may be more efficient in a MongoDB database than on a system-level filesystem.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trong một số tình huống, lưu trữ các tệp lớn có thể hiệu quả hơn trong cơ sở dữ liệu MongoDB so với hệ thống tập tin cấp hệ thống."
+        },
+        {
+            "bbox": [
+                148.11925629084968,
+                242.3171309974748,
+                16.45117630718954,
+                11.526797979797948
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                168.6832450980392,
+                242.3171309974748,
+                734.2652818627453,
+                11.526797979797948
+            ],
+            "text": "If your filesystem limits the number of files in a directory, you can use GridFS to store as many files as needed.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nếu hệ thống tập tin của bạn giới hạn số lượng tệp trong một thư mục, bạn có thể sử dụng GridFS để lưu trữ càng nhiều tệp nếu cần."
+        },
+        {
+            "bbox": [
+                148.11925629084968,
+                265.52586174242424,
+                16.46414456699347,
+                11.52678503787888
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                168.6994575163399,
+                265.52586174242424,
+                735.7169129901961,
+                11.52678503787888
+            ],
+            "text": "When you want to keep your files and metadata automatically synced and deployed across a number of systems",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Khi bạn muốn giữ cho các tệp và siêu dữ liệu của mình tự động được đồng bộ hóa và triển khai trên một số hệ thống"
+        },
+        {
+            "bbox": [
+                162.3034508169935,
+                280.9979390782828,
+                175.15006388888887,
+                11.526797979798062
+            ],
+            "text": "and facilities. When using",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "và cơ sở vật chất. Khi sử dụng"
+        },
+        {
+            "bbox": [
+                341.64328594771246,
+                281.11398926767686,
+                256.6765473856209,
+                11.11420959595955
+            ],
+            "text": "geographically distributed replica sets",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bộ bản sao phân bố địa lý"
+        },
+        {
+            "bbox": [
+                602.4974285130719,
+                280.9979390782828,
+                301.9114722222222,
+                11.526797979798062
+            ],
+            "text": "(page 579) MongoDB can distribute files and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(trang 579) MongoDB có thể phân phối các tệp và"
+        },
+        {
+            "bbox": [
+                162.3034625408497,
+                296.47002935606065,
+                291.9501755310458,
+                11.526797979797948
+            ],
+            "text": "their metadata automatically to a number of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Siêu dữ liệu của họ tự động đến một số"
+        },
+        {
+            "bbox": [
+                458.4213014705882,
+                297.1533885732324,
+                60.06861764705877,
+                9.953759469697047
+            ],
+            "text": "mongod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongod"
+        },
+        {
+            "bbox": [
+                522.6629922385622,
+                296.47002935606065,
+                155.07715727124173,
+                11.526797979797948
+            ],
+            "text": "instances and facilities.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trường hợp và cơ sở vật chất."
+        },
+        {
+            "bbox": [
+                148.1192814133987,
+                319.6787471590909,
+                16.0931498366013,
+                11.526797979798062
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                168.2357120098039,
+                319.6787471590909,
+                736.1808594771243,
+                11.526797979798062
+            ],
+            "text": "When you want to access information from portions of large files without having to load whole files into memory,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Khi bạn muốn truy cập thông tin từ các phần của các tệp lớn mà không phải tải toàn bộ tệp vào bộ nhớ,"
+        },
+        {
+            "bbox": [
+                162.3034759395425,
+                335.15083743686876,
+                593.0609619689542,
+                11.526797979797948
+            ],
+            "text": "you can use GridFS to recall sections of files without reading the entire file into memory.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể sử dụng GridFs để nhớ lại các phần của các tệp mà không cần đọc toàn bộ tệp vào bộ nhớ."
+        },
+        {
+            "bbox": [
+                120.58832406045751,
+                358.3595681818182,
+                783.828749877451,
+                11.52682386363631
+            ],
+            "text": "Do not use GridFS if you need to update the content of the entire file atomically. As an alternative you can store",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Không sử dụng Gridfs nếu bạn cần cập nhật nội dung của toàn bộ tệp về mặt nguyên tử. Thay thế bạn có thể lưu trữ"
+        },
+        {
+            "bbox": [
+                120.58832406045751,
+                373.83164551767686,
+                783.8285488970589,
+                11.526797979797948
+            ],
+            "text": "multiple versions of each file and specify the current version of the file in the metadata. You can update the metadata",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nhiều phiên bản của mỗi tệp và chỉ định phiên bản hiện tại của tệp trong siêu dữ liệu. Bạn có thể cập nhật siêu dữ liệu"
+        },
+        {
+            "bbox": [
+                120.58832406045751,
+                389.30369696969694,
+                783.8288503676472,
+                11.52678503787888
+            ],
+            "text": "field that indicates “latest” status in an atomic update after uploading the new version of the file, and later remove",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trường biểu thị trạng thái mới nhất của người Viking trong bản cập nhật nguyên tử sau khi tải lên phiên bản mới của tệp và sau đó xóa"
+        },
+        {
+            "bbox": [
+                120.58832406045751,
+                404.77574842171714,
+                186.5463940767974,
+                11.52678503787888
+            ],
+            "text": "previous versions if needed.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các phiên bản trước nếu cần."
+        },
+        {
+            "bbox": [
+                120.58832406045751,
+                427.98450505050505,
+                352.4025987336601,
+                11.526785037878767
+            ],
+            "text": "Furthermore, if your files are all smaller the 16 MB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hơn nữa, nếu các tệp của bạn đều nhỏ hơn 16 MB"
+        },
+        {
+            "bbox": [
+                478.1877230392157,
+                428.6678513257576,
+                180.2059366830066,
+                9.95381123737377
+            ],
+            "text": "BSON Document Size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Kích thước tài liệu BSON"
+        },
+        {
+            "bbox": [
+                663.588785130719,
+                427.98450505050505,
+                240.82512336601303,
+                11.526785037878767
+            ],
+            "text": "limit, consider storing the file man-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "giới hạn, xem xét lưu trữ tệp người đàn ông-"
+        },
+        {
+            "bbox": [
+                120.58833745915034,
+                443.45655650252536,
+                708.10903876634,
+                11.526785037878767
+            ],
+            "text": "ually within a single document. You may use the BinData data type to store the binary data. See your",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Ually trong một tài liệu duy nhất. Bạn có thể sử dụng kiểu dữ liệu Bindata để lưu trữ dữ liệu nhị phân. Xem của bạn"
+        },
+        {
+            "bbox": [
+                834.3316940359477,
+                444.1399027777778,
+                70.08007066993468,
+                9.95379829545459
+            ],
+            "text": "drivers",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trình điều khiển"
+        },
+        {
+            "bbox": [
+                120.58833745915034,
+                458.92859501262626,
+                295.6877609885621,
+                11.526797979798062
+            ],
+            "text": "documentation for details on using BinData.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tài liệu để biết chi tiết về việc sử dụng Bindata."
+        },
+        {
+            "bbox": [
+                120.58833745915034,
+                482.13736458333335,
+                248.16680142973854,
+                11.526785037878767
+            ],
+            "text": "For more information on GridFS, see",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để biết thêm thông tin về Gridfs, hãy xem"
+        },
+        {
+            "bbox": [
+                372.92591748366016,
+                482.2534018308081,
+                50.057181372548996,
+                11.114222537878845
+            ],
+            "text": "GridFS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Gridfs"
+        },
+        {
+            "bbox": [
+                427.2877806372549,
+                482.13736458333335,
+                75.98681740196076,
+                11.526785037878767
+            ],
+            "text": "(page 150).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(trang 150)."
+        },
+        {
+            "bbox": [
+                120.58836258169936,
+                523.533374368687,
+                67.26978529411764,
+                14.528494949494927
+            ],
+            "text": "11.2.11",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "11.2.11"
+        },
+        {
+            "bbox": [
+                193.4639934640523,
+                523.533374368687,
+                516.5416486928104,
+                14.528494949494927
+            ],
+            "text": "How does MongoDB address SQL or Query injection?",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "Làm thế nào để MongoDB giải quyết SQL hoặc tiêm truy vấn?"
+        },
+        {
+            "bbox": [
+                120.58836258169936,
+                558.9912174873738,
+                48.205070016339874,
+                12.107023042929256
+            ],
+            "text": "BSON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "BSON"
+        },
+        {
+            "bbox": [
+                120.58836258169936,
+                591.0928197601011,
+                783.828711356209,
+                11.526785037878767
+            ],
+            "text": "As a client program assembles a query in MongoDB, it builds a BSON object, not a string. Thus traditional SQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Là một chương trình khách hàng tập hợp một truy vấn trong MongoDB, nó xây dựng một đối tượng BSON, không phải là một chuỗi. Do đó SQL truyền thống"
+        },
+        {
+            "bbox": [
+                120.58836258169936,
+                606.564858270202,
+                577.7600818627451,
+                11.526797979798005
+            ],
+            "text": "injection attacks are not a problem. More details and some nuances are covered below.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các cuộc tấn công tiêm không phải là một vấn đề. Thêm chi tiết và một số sắc thái được đề cập dưới đây."
+        },
+        {
+            "bbox": [
+                120.58836258169936,
+                629.7723207070708,
+                211.35808839869276,
+                11.526785037878767
+            ],
+            "text": "MongoDB represents queries as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "MongoDB đại diện cho các truy vấn là"
+        },
+        {
+            "bbox": [
+                335.36269893790853,
+                629.8883579545454,
+                41.714301062091465,
+                11.114222537878732
+            ],
+            "text": "BSON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "BSON"
+        },
+        {
+            "bbox": [
+                381.49441503267974,
+                629.7723207070708,
+                118.98593586601311,
+                11.526785037878767
+            ],
+            "text": "objects. Typically",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đối tượng. Tiêu biểu"
+        },
+        {
+            "bbox": [
+                503.8931486928105,
+                630.4556669823232,
+                160.18298039215694,
+                9.953811237373657
+            ],
+            "text": "client libraries",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thư viện khách hàng"
+        },
+        {
+            "bbox": [
+                667.492862745098,
+                629.7723207070708,
+                236.92064379084968,
+                11.526785037878767
+            ],
+            "text": "provide a convenient, injection free,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Cung cấp một tiện lợi, không tiêm, không có,"
+        },
+        {
+            "bbox": [
+                120.58838937908496,
+                645.2456663510102,
+                457.25569558823526,
+                11.526797979798005
+            ],
+            "text": "process to build these objects. Consider the following C++ example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "xử lý để xây dựng các đối tượng này. Xem xét ví dụ C ++ sau:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                670.1429034090909,
+                396.4555126633986,
+                8.958474116161597
+            ],
+            "text": "BSONObj my_query = BSON( \"name\" << a_name );",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Bsonobj my_query = bson (\"tên\" << a_name);"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                684.325939709596,
+                648.745512254902,
+                8.958474116161597
+            ],
+            "text": "auto_ptr<DBClientCursor> cursor = c.query(\"tutorial.persons\", my_query);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "auto_ptr <DbClientCursor> con trỏ = c.query (\"hướng dẫn.persons\", my_query);"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                712.2162932449496,
+                36.591791544117655,
+                11.52678503787871
+            ],
+            "text": "Here,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đây,"
+        },
+        {
+            "bbox": [
+                162.0153203022876,
+                712.8996395202021,
+                80.09148852124181,
+                9.953798295454476
+            ],
+            "text": "my_query",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "my_query"
+        },
+        {
+            "bbox": [
+                246.8106209150327,
+                712.2162932449496,
+                201.44671691176467,
+                11.52678503787871
+            ],
+            "text": "then will have a value such as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sau đó sẽ có một giá trị như"
+        },
+        {
+            "bbox": [
+                452.96290849673204,
+                712.8996395202021,
+                80.09155718954247,
+                9.953798295454476
+            ],
+            "text": "{ name :",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "{ tên :"
+        },
+        {
+            "bbox": [
+                553.0773214869281,
+                712.8996395202021,
+                70.08007066993468,
+                9.953798295454476
+            ],
+            "text": "\"Joe\" }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "\"Joe\"}"
+        },
+        {
+            "bbox": [
+                623.1580955882354,
+                712.2162932449496,
+                22.058602941176446,
+                11.52678503787871
+            ],
+            "text": ". If",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ". Nếu như"
+        },
+        {
+            "bbox": [
+                649.9119354575164,
+                712.8996395202021,
+                80.09152369281037,
+                9.953798295454476
+            ],
+            "text": "my_query",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "my_query"
+        },
+        {
+            "bbox": [
+                734.707237745098,
+                712.2162932449496,
+                169.71055637254904,
+                11.52678503787871
+            ],
+            "text": "contained special charac-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "chứa charac đặc biệt-"
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                727.6883576388889,
+                114.14708337418303,
+                11.526785037878824
+            ],
+            "text": "ters, for example",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Ters, ví dụ"
+        },
+        {
+            "bbox": [
+                239.7159460784314,
+                728.3717039141413,
+                10.011419526143811,
+                9.95381123737377
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                249.72811928104576,
+                727.6883576388889,
+                4.171415032679732,
+                11.526785037878824
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                259.07536560457515,
+                728.3717039141413,
+                10.011436274509833,
+                9.95381123737377
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                269.08753880718956,
+                727.6883576388889,
+                33.438196486928064,
+                11.526785037878824
+            ],
+            "text": ", and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", Và"
+        },
+        {
+            "bbox": [
+                307.5032491830066,
+                728.3717039141413,
+                10.011436274509776,
+                9.95381123737377
+            ],
+            "text": "{",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "{"
+        },
+        {
+            "bbox": [
+                317.5154223856209,
+                727.6883576388889,
+                586.903694852941,
+                11.526785037878824
+            ],
+            "text": ", the query simply wouldn’t match any documents. For example, users cannot hijack a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", Truy vấn chỉ đơn giản là sẽ phù hợp với bất kỳ tài liệu nào. Ví dụ: người dùng không thể chiếm đoạt một"
+        },
+        {
+            "bbox": [
+                120.58813312908497,
+                743.1604220328284,
+                209.923066625817,
+                11.526797979797948
+            ],
+            "text": "query and convert it to a delete.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Truy vấn và chuyển đổi nó thành xóa."
+        },
+        {
+            "bbox": [
+                120.58813312908497,
+                783.8389965277778,
+                83.81240935457517,
+                12.107010101010104
+            ],
+            "text": "JavaScript",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "JavaScript"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                823.5212632575758,
+                38.91111029411766,
+                11.591261679292927
+            ],
+            "text": "Note:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Ghi chú:"
+        },
+        {
+            "bbox": [
+                178.693341503268,
+                823.6759839015151,
+                489.35895016339873,
+                11.526785037878795
+            ],
+            "text": "You can disable all server-side execution of JavaScript, by passing the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể vô hiệu hóa tất cả các thực thi javaScript phía máy chủ, bằng cách chuyển"
+        },
+        {
+            "bbox": [
+                674.4365845588236,
+                824.3593301767677,
+                130.14867156862738,
+                9.953811237373714
+            ],
+            "text": "--noscripting",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XTRDIM+NimbusMonL-ReguObli",
+                "size": 9.962599754333496
+            },
+            "text_vi": "--Noscripting"
+        },
+        {
+            "bbox": [
+                811.9205882352942,
+                823.6759839015151,
+                92.48903267973856,
+                11.526785037878795
+            ],
+            "text": "option on the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tùy chọn trên"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                836.2477642045454,
+                161.751397875817,
+                11.526797979798005
+            ],
+            "text": "command line or setting",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "dòng lệnh hoặc cài đặt"
+        },
+        {
+            "bbox": [
+                286.50927287581703,
+                836.9311234217172,
+                260.2973263888888,
+                9.953798295454561
+            ],
+            "text": "security.javascriptEnabled",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "bảo mật.javascriptenables"
+        },
+        {
+            "bbox": [
+                550.9793876633987,
+                836.2477642045454,
+                147.38510171568623,
+                11.526797979798005
+            ],
+            "text": "in a configuration file.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trong một tệp cấu hình."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                872.0269681186869,
+                768.5614971405228,
+                11.526810921717157
+            ],
+            "text": "All of the following MongoDB operations permit you to run arbitrary JavaScript expressions directly on the server:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tất cả các hoạt động MongoDB sau đây cho phép bạn chạy các biểu thức JavaScript tùy ý trực tiếp trên máy chủ:"
+        },
+        {
+            "bbox": [
+                148.11920604575164,
+                895.2357118055555,
+                5.8399994689542325,
+                11.52681480429294
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                162.30339889705883,
+                895.9190774936869,
+                60.06862602124181,
+                9.953790530303039
+            ],
+            "text": "$where",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "$ ở đâu"
+        },
+        {
+            "bbox": [
+                148.11920604575164,
+                918.4444567866162,
+                5.8399994689542325,
+                11.52681221590909
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                162.30339889705883,
+                919.1278198863637,
+                90.10293484477126,
+                9.953790530303024
+            ],
+            "text": "mapReduce",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "MapReduce"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                961.18987260101,
+                37.39042732843137,
+                12.10701139520203
+            ],
+            "text": "11.2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "11.2."
+        },
+        {
+            "bbox": [
+                162.65246834150327,
+                961.18987260101,
+                343.7431207107843,
+                12.10701139520203
+            ],
+            "text": "FAQ: MongoDB for Application Developers",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "FAQ: MongoDB cho các nhà phát triển ứng dụng"
+        },
+        {
+            "bbox": [
+                876.585191993464,
+                961.18987260101,
+                27.831781454248357,
+                12.10701139520203
+            ],
+            "text": "749",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "749"
+        }
+    ]
+}

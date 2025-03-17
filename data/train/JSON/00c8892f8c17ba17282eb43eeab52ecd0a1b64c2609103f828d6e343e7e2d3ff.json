@@ -1,3 +1,1156 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ad0d8025d59a6006f9f13adefc0fcf3dfda0cea62f5287f1318eb20411f34ce5
-size 35754
+{
+    "metadata": {
+        "page_hash": "00c8892f8c17ba17282eb43eeab52ecd0a1b64c2609103f828d6e343e7e2d3ff",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 2545,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                395.04370915032683,
+                48.370422979798036,
+                204.765522875817,
+                11.971275252525288
+            ],
+            "text": "CREATE INDEX Statement",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tạo câu lệnh INDEX"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                758.6506850490196,
+                11.971275252525174
+            ],
+            "text": "Functional key parts must adhere to the following rules. An error occurs if a key part definition contains",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các phần khóa chức năng phải tuân thủ các quy tắc sau. Xảy ra lỗi nếu định nghĩa phần chính chứa"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                163.81576797385623,
+                11.971275252525288
+            ],
+            "text": "disallowed constructs.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "không được phép cấu trúc."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                138.5574422348485,
+                788.4125649509804,
+                11.971275252525288
+            ],
+            "text": "•In index definitions, enclose expressions within parentheses to distinguish them from columns or column",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Trong các định nghĩa chỉ số, việc đặt các biểu thức trong ngoặc đơn để phân biệt chúng với các cột hoặc cột"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                154.0877452651515,
+                663.687483251634,
+                11.971275252525288
+            ],
+            "text": "prefixes. For example, this is permitted; the expressions are enclosed within parentheses:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tiền tố. Ví dụ, điều này được cho phép; Các biểu thức được đính kèm trong ngoặc đơn:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                181.30464015151517,
+                289.41174795751635,
+                8.137917613636318
+            ],
+            "text": "INDEX ((col1 + col2), (col3 - col4))",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chỉ mục ((col1 + col2), (col3 - col4))"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                207.19496243686876,
+                572.4926638071896,
+                11.971275252525174
+            ],
+            "text": "This produces an error; the expressions are not enclosed within parentheses:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Điều này tạo ra một lỗi; Các biểu thức không được đặt trong ngoặc đơn:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                234.41177967171723,
+                257.2549187091504,
+                8.137904671717138
+            ],
+            "text": "INDEX (col1 + col2, col3 - col4)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "INDEX (COL1 + COL2, COL3 - COL4)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                260.30208901515164,
+                726.9963402777778,
+                11.971275252525174
+            ],
+            "text": "•A functional key part cannot consist solely of a column name. For example, this is not permitted:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Một phần khóa chức năng không thể chỉ bao gồm một tên cột. Ví dụ, điều này không được phép:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                287.5189839015152,
+                176.86276184640522,
+                8.137827020202053
+            ],
+            "text": "INDEX ((col1), (col2))",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Index ((col1), (col2))"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                313.4093061868688,
+                563.2140522875817,
+                11.971275252525174
+            ],
+            "text": "Instead, write the key parts as nonfunctional key parts, without parentheses:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thay vào đó, hãy viết các phần chính dưới dạng các phần khóa không chức năng, không có dấu ngoặc đơn:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                340.62611047979794,
+                144.70586560457517,
+                8.137917613636432
+            ],
+            "text": "INDEX (col1, col2)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "INDEX (COL1, COL2)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                366.51643276515154,
+                776.3370600490196,
+                11.971275252525288
+            ],
+            "text": "•A functional key part expression cannot refer to column prefixes. For a workaround, see the discussion",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Một biểu thức phần khóa chức năng không thể tham khảo các tiền tố cột. Đối với một cách giải quyết, hãy xem cuộc thảo luận"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                382.04673579545454,
+                18.624183006535958,
+                11.971275252525288
+            ],
+            "text": "of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "của "
+        },
+        {
+            "bbox": [
+                176.05882352941177,
+                383.19857954545455,
+                110.53921568627453,
+                10.172335542929318
+            ],
+            "text": "SUBSTRING()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Substring ()"
+        },
+        {
+            "bbox": [
+                286.5980392156863,
+                382.04673579545454,
+                37.248366013071916,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                323.8464052287582,
+                383.19857954545455,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "CAST()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DÀN DIỄN VIÊN()"
+        },
+        {
+            "bbox": [
+                384.140522875817,
+                382.04673579545454,
+                148.00532720588234,
+                11.971275252525288
+            ],
+            "text": " later in this section.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " sau này trong phần này."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                410.1126205808081,
+                511.9640355392157,
+                11.971275252525288
+            ],
+            "text": "•Functional key parts are not permitted in foreign key specifications.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các bộ phận khóa chức năng không được phép trong các thông số kỹ thuật khóa nước ngoài."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                438.1784406565656,
+                29.778594771241842,
+                11.971275252525288
+            ],
+            "text": "For ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vì "
+        },
+        {
+            "bbox": [
+                170.46486928104576,
+                439.3302455808081,
+                211.02941176470586,
+                10.17237436868686
+            ],
+            "text": "CREATE TABLE ... LIKE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo bảng ... thích"
+        },
+        {
+            "bbox": [
+                381.4942810457516,
+                438.1784406565656,
+                511.05970751633987,
+                11.971275252525288
+            ],
+            "text": ", the destination table preserves functional key parts from the original",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Bảng đích lưu giữ các bộ phận khóa chức năng từ bản gốc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                453.70874368686873,
+                40.96650326797385,
+                11.971275252525174
+            ],
+            "text": "table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bàn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                481.77458964646473,
+                768.8839199346405,
+                11.971275252525174
+            ],
+            "text": "Functional indexes are implemented as hidden virtual generated columns, which has these implications:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các chỉ mục chức năng được triển khai dưới dạng các cột được tạo ảo ẩn, có những hàm ý này:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                509.8404485479798,
+                761.4979240196078,
+                11.971275252525288
+            ],
+            "text": "•Each functional key part counts against the limit on total number of table columns; see Section 8.4.7,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Mỗi phần khóa chức năng được tính theo giới hạn trên tổng số cột bảng; Xem phần 8.4.7,"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                525.3707515782828,
+                371.94774591503267,
+                11.971275252525288
+            ],
+            "text": "“Limits on Table Column Count and Row Size”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "“Giới hạn về số lượng cột bảng và kích thước hàng"
+        },
+        {
+            "bbox": [
+                501.81454248366015,
+                525.3707515782828,
+                4.6560290032679745,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                553.4365975378788,
+                654.3753917483659,
+                11.971275252525288
+            ],
+            "text": "•Functional key parts inherit all restrictions that apply to generated columns. Examples:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các bộ phận khóa chức năng kế thừa tất cả các hạn chế áp dụng cho các cột được tạo. Ví dụ:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                581.502456439394,
+                649.7361111111111,
+                11.971275252525231
+            ],
+            "text": "•Only functions permitted for generated columns are permitted for functional key parts.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Chỉ các chức năng được phép cho các cột được tạo mới được phép cho các phần khóa chức năng."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                609.5683023989899,
+                712.140539624183,
+                11.971275252525288
+            ],
+            "text": "•Subqueries, parameters, variables, stored functions, and loadable functions are not permitted.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các mục tiêu con, tham số, biến, chức năng được lưu trữ và các hàm có thể tải không được phép."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                637.6341224747475,
+                725.8909816176471,
+                11.971275252525231
+            ],
+            "text": "For more information about applicable restrictions, see Section 13.1.20.8, “CREATE TABLE and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin về các hạn chế áp dụng, xem Phần 13.1.20.8, Tạo bảng và"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                653.1644255050505,
+                169.22550694444445,
+                11.971275252525288
+            ],
+            "text": "Generated Columns”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các cột được tạo ”"
+        },
+        {
+            "bbox": [
+                312.8762254901961,
+                653.1644255050505,
+                509.7867647058824,
+                11.971275252525288
+            ],
+            "text": ", and Section 13.1.9.2, “ALTER TABLE and Generated Columns”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", và phần 13.1.9.2, bảng thay đổi và các cột được tạo"
+        },
+        {
+            "bbox": [
+                795.0951964869281,
+                653.1644255050505,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                681.2302714646464,
+                775.4325812908498,
+                11.971275252525231
+            ],
+            "text": "•The virtual generated column itself requires no storage. The index itself takes up storage space as any",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Cột được tạo ảo không yêu cầu lưu trữ. Bản thân chỉ mục chiếm không gian lưu trữ như bất kỳ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                696.7605744949495,
+                87.51021241830065,
+                11.971275252525231
+            ],
+            "text": "other index.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ mục khác."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                725.9782383207071,
+                60.29411764705884,
+                10.17236142676768
+            ],
+            "text": "UNIQUE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ĐỘC NHẤT"
+        },
+        {
+            "bbox": [
+                200.98039215686276,
+                724.8264204545455,
+                713.9661617647058,
+                11.971275252525231
+            ],
+            "text": " is supported for indexes that include functional key parts. However, primary keys cannot include",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được hỗ trợ cho các chỉ mục bao gồm các phần khóa chức năng. Tuy nhiên, các khóa chính không thể bao gồm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                740.3567234848485,
+                791.2598039215688,
+                11.971275252525288
+            ],
+            "text": "functional key parts. A primary key requires the generated column to be stored, but functional key parts are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các bộ phận khóa chức năng. Một khóa chính yêu cầu cột được tạo phải được lưu trữ, nhưng các phần khóa chức năng là"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                755.8870782828283,
+                550.1503435457516,
+                11.971275252525288
+            ],
+            "text": "implemented as virtual generated columns, not stored generated columns.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được triển khai dưới dạng các cột được tạo ảo, không được lưu trữ các cột được tạo."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                785.1047291666666,
+                70.34313725490196,
+                10.172335542929261
+            ],
+            "text": "SPATIAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Không gian"
+        },
+        {
+            "bbox": [
+                211.02941176470588,
+                783.9528854166667,
+                37.248349264705894,
+                11.971275252525231
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                248.27776102941178,
+                785.1047291666666,
+                80.39215686274511,
+                10.172335542929261
+            ],
+            "text": "FULLTEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "FULLTEXT"
+        },
+        {
+            "bbox": [
+                328.66995138888893,
+                783.9528854166667,
+                311.87132352941177,
+                11.971275252525231
+            ],
+            "text": " indexes cannot have functional key parts.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các chỉ mục không thể có các phần khóa chức năng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                812.0186925505051,
+                255.0608492647059,
+                11.97127525252526
+            ],
+            "text": "If a table contains no primary key, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu một bảng không chứa khóa chính, "
+        },
+        {
+            "bbox": [
+                395.7471237745098,
+                813.1705492424243,
+                60.29410089869282,
+                10.172322601010052
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                456.04122467320263,
+                812.0186925505051,
+                241.07598039215685,
+                11.97127525252526
+            ],
+            "text": " automatically promotes the first ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tự động quảng bá đầu tiên "
+        },
+        {
+            "bbox": [
+                697.1172553104575,
+                813.1705492424243,
+                150.73529411764707,
+                10.172322601010052
+            ],
+            "text": "UNIQUE NOT NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Độc đáo không phải null"
+        },
+        {
+            "bbox": [
+                847.8525494281046,
+                812.0186925505051,
+                63.30885702614387,
+                11.97127525252526
+            ],
+            "text": " index to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chỉ mục"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                827.5489955808081,
+                308.1029746732026,
+                11.971275252525231
+            ],
+            "text": "the primary key. This is not supported for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khóa chính. Điều này không được hỗ trợ cho "
+        },
+        {
+            "bbox": [
+                448.7892491830065,
+                828.7008522727273,
+                150.73529411764707,
+                10.172322601010052
+            ],
+            "text": "UNIQUE NOT NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Độc đáo không phải null"
+        },
+        {
+            "bbox": [
+                599.5244930555556,
+                827.5489955808081,
+                289.52895302287584,
+                11.971275252525231
+            ],
+            "text": " indexes that have functional key parts.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các chỉ mục có các phần khóa chức năng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                855.6148933080808,
+                768.0130718954247,
+                11.971275252525231
+            ],
+            "text": "Nonfunctional indexes raise a warning if there are duplicate indexes. Indexes that contain functional key",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các chỉ mục không chức năng nêu ra một cảnh báo nếu có các chỉ mục trùng lặp. Các chỉ mục có chứa khóa chức năng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                871.1451963383838,
+                221.58088235294122,
+                11.971275252525231
+            ],
+            "text": "parts do not have this feature.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các bộ phận không có tính năng này."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                899.211007354798,
+                711.185866013072,
+                11.971275252525245
+            ],
+            "text": "To remove a column that is referenced by a functional key part, the index must be removed first.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để loại bỏ một cột được tham chiếu bởi một phần khóa chức năng, chỉ mục phải được xóa trước."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                914.741310385101,
+                201.968545751634,
+                11.971275252525245
+            ],
+            "text": "Otherwise, an error occurs.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu không, một lỗi xảy ra."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "2516",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2516"
+        }
+    ]
+}

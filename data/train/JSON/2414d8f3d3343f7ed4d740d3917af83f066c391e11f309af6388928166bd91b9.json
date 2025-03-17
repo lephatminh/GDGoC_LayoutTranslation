@@ -1,3 +1,2196 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:65a7bfbac52ce0764304bdb60a3fdf271394e6a443a9cacf613fd039bd1c7a36
-size 65068
+{
+    "metadata": {
+        "page_hash": "2414d8f3d3343f7ed4d740d3917af83f066c391e11f309af6388928166bd91b9",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4675,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                335.01756535947715,
+                48.370422979798036,
+                324.8178104575164,
+                11.971275252525288
+            ],
+            "text": "NDB Cluster Replication Conflict Resolution",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giải quyết xung đột sao chép cụm NDB"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                789.3170437091503,
+                11.971275252525174
+            ],
+            "text": "(see ndb_replication Table). The roles of the primary and secondary NDB Clusters in this scenario are fully",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "(Xem bảng NDB_Replication). Vai trò của các cụm NDB chính và phụ trong kịch bản này hoàn toàn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                110.7736928104575,
+                11.971275252525288
+            ],
+            "text": "determined by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được xác định bởi "
+        },
+        {
+            "bbox": [
+                251.45996732026143,
+                111.64347885101006,
+                211.02942851307196,
+                10.172335542929432
+            ],
+            "text": "mysql.ndb_replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql.ndb_replication"
+        },
+        {
+            "bbox": [
+                462.4893958333334,
+                110.49163510101016,
+                100.54039093137254,
+                11.971275252525288
+            ],
+            "text": " table entries.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mục nhập bảng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                138.72956976010107,
+                408.66013071895424,
+                11.971275252525288
+            ],
+            "text": "Because the conflict detection algorithms employed by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bởi vì các thuật toán phát hiện xung đột được sử dụng bởi "
+        },
+        {
+            "bbox": [
+                549.3464052287582,
+                139.88141351010108,
+                110.53921568627459,
+                10.172335542929318
+            ],
+            "text": "NDB$EPOCH()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb $ epoch ()"
+        },
+        {
+            "bbox": [
+                659.8856209150327,
+                138.72956976010107,
+                37.24834926470578,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                697.1339701797385,
+                139.88141351010108,
+                170.83333333333348,
+                10.172335542929318
+            ],
+            "text": "NDB$EPOCH_TRANS()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch_trans ()"
+        },
+        {
+            "bbox": [
+                867.967303513072,
+                138.72956976010107,
+                28.857401143790753,
+                11.971275252525288
+            ],
+            "text": " are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                154.2598727904042,
+                369.5359644607844,
+                11.971275252525174
+            ],
+            "text": "asymmetric, you must use different values for the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "không đối xứng, bạn phải sử dụng các giá trị khác nhau cho "
+        },
+        {
+            "bbox": [
+                510.2222389705883,
+                155.4117165404041,
+                90.44117647058823,
+                10.172335542929318
+            ],
+            "text": "server_id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SERVER_ID"
+        },
+        {
+            "bbox": [
+                600.6634154411765,
+                154.2598727904042,
+                276.4652945261437,
+                11.971275252525174
+            ],
+            "text": " entries of the primary and secondary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mục của chính và phụ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                169.7901758207072,
+                62.354166666666686,
+                11.971275252525174
+            ],
+            "text": "replicas.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bản sao."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                198.0281881313132,
+                140.56901919934643,
+                11.971275252525288
+            ],
+            "text": "A conflict between ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một cuộc xung đột giữa "
+        },
+        {
+            "bbox": [
+                281.25529370915035,
+                199.18004482323238,
+                60.29411764705884,
+                10.172322601010137
+            ],
+            "text": "DELETE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "XÓA BỎ"
+        },
+        {
+            "bbox": [
+                341.5494113562092,
+                198.0281881313132,
+                434.7373533496731,
+                11.971275252525288
+            ],
+            "text": " operations alone is not sufficient to trigger a conflict using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Chỉ riêng các hoạt động không đủ để kích hoạt xung đột bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                776.2867647058823,
+                199.18004482323238,
+                110.53921568627459,
+                10.172322601010137
+            ],
+            "text": "NDB$EPOCH()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb $ epoch ()"
+        },
+        {
+            "bbox": [
+                886.8259803921569,
+                198.0281881313132,
+                19.545410130718892,
+                11.971275252525288
+            ],
+            "text": " or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                214.71034785353538,
+                170.83333333333331,
+                10.172322601010137
+            ],
+            "text": "NDB$EPOCH_TRANS()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch_trans ()"
+        },
+        {
+            "bbox": [
+                311.51960784313724,
+                213.5584911616163,
+                571.6050506535947,
+                11.971275252525174
+            ],
+            "text": ", and the relative placement within epochs does not matter. (Bug #18459944)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và vị trí tương đối trong các kỷ nguyên không quan trọng. (Lỗi #18459944)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                241.7965034722223,
+                424.4035780228758,
+                11.971275252525288
+            ],
+            "text": "For more information, see Limitations on NDB$EPOCH().",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin, hãy xem các giới hạn trên NDB $ epoch ()."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                270.0344381313131,
+                192.60620915032683,
+                11.971275252525288
+            ],
+            "text": "NDB$EPOCH_TRANS(). ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch_trans (). "
+        },
+        {
+            "bbox": [
+                359.3529411764706,
+                271.1862948232324,
+                170.83333333333337,
+                10.172322601010023
+            ],
+            "text": "NDB$EPOCH_TRANS()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch_trans ()"
+        },
+        {
+            "bbox": [
+                530.186274509804,
+                270.0344381313131,
+                95.90116053921565,
+                11.971275252525288
+            ],
+            "text": " extends the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mở rộng "
+        },
+        {
+            "bbox": [
+                626.0874350490196,
+                271.1862948232324,
+                110.53921568627459,
+                10.172322601010023
+            ],
+            "text": "NDB$EPOCH()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb $ epoch ()"
+        },
+        {
+            "bbox": [
+                736.6266507352942,
+                270.0344381313131,
+                165.69156821895422,
+                11.971275252525288
+            ],
+            "text": " function. Conflicts are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chức năng. Xung đột là"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                285.5647411616161,
+                518.1274844771242,
+                11.971275252525288
+            ],
+            "text": "detected and handled in the same way using the “primary wins all”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được phát hiện và xử lý theo cùng một cách bằng cách sử dụng các chiến thắng chính của người Viking"
+        },
+        {
+            "bbox": [
+                631.2458982843137,
+                285.5647411616161,
+                285.72714093137256,
+                11.971275252525288
+            ],
+            "text": " rule (see NDB$EPOCH()) but with the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " quy tắc (xem ndb $ epoch ()) nhưng với"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                301.0950441919192,
+                782.8856209150329,
+                11.971275252525174
+            ],
+            "text": "extra condition that any other rows updated in the same transaction in which the conflict occurred are also",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "điều kiện bổ sung mà bất kỳ hàng nào khác được cập nhật trong cùng một giao dịch trong đó xung đột xảy ra"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                316.6253472222222,
+                384.45872508169936,
+                11.971275252525288
+            ],
+            "text": "regarded as being in conflict. In other words, where ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được coi là trong xung đột. Nói cách khác, ở đâu "
+        },
+        {
+            "bbox": [
+                525.1449995915033,
+                317.7772039141414,
+                110.53921568627447,
+                10.172322601010137
+            ],
+            "text": "NDB$EPOCH()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb $ epoch ()"
+        },
+        {
+            "bbox": [
+                635.6842152777778,
+                316.6253472222222,
+                280.16661642156873,
+                11.971275252525288
+            ],
+            "text": " realigns individual conflicting rows on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " sắp xếp lại các hàng xung đột cá nhân trên"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                332.1556502525252,
+                114.50857843137257,
+                11.971275252525288
+            ],
+            "text": "the secondary, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thứ cấp, "
+        },
+        {
+            "bbox": [
+                255.1948529411765,
+                333.3075069444445,
+                170.83333333333334,
+                10.172322601010023
+            ],
+            "text": "NDB$EPOCH_TRANS()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch_trans ()"
+        },
+        {
+            "bbox": [
+                426.02818627450984,
+                332.1556502525252,
+                242.0138888888889,
+                11.971275252525288
+            ],
+            "text": " realigns conflicting transactions.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " sắp xếp lại các giao dịch xung đột."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                360.39358491161613,
+                788.5130551470588,
+                11.971314078282944
+            ],
+            "text": "In addition, any transactions which are detectably dependent on a conflicting transaction are also regarded",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ngoài ra, bất kỳ giao dịch nào có thể phụ thuộc vào một giao dịch mâu thuẫn cũng được xem xét"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                375.9239267676768,
+                794.0902777777778,
+                11.971275252525288
+            ],
+            "text": "as being in conflict, these dependencies being determined by the contents of the secondary cluster’s binary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Như bị xung đột, những phụ thuộc này được xác định bởi nội dung của cụm thứ cấp nhị phân"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                391.4542297979799,
+                765.2161115196077,
+                11.971275252525174
+            ],
+            "text": "log. Since the binary log contains only data modification operations (inserts, updates, and deletes), only",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đăng nhập. Vì nhật ký nhị phân chỉ chứa các hoạt động sửa đổi dữ liệu (chèn, cập nhật và xóa), chỉ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                406.9845328282829,
+                670.2696245915033,
+                11.971275252525288
+            ],
+            "text": "overlapping data modifications are used to determine dependencies between transactions.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sửa đổi dữ liệu chồng chéo được sử dụng để xác định các phụ thuộc giữa các giao dịch."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                436.374324179293,
+                170.83333333333331,
+                10.172361426767566
+            ],
+            "text": "NDB$EPOCH_TRANS()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch_trans ()"
+        },
+        {
+            "bbox": [
+                311.51960784313724,
+                435.22250631313136,
+                385.3799187091504,
+                11.971275252525174
+            ],
+            "text": " is subject to the same conditions and limitations as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phải tuân theo các điều kiện và giới hạn tương tự như "
+        },
+        {
+            "bbox": [
+                696.8995265522876,
+                436.374324179293,
+                110.53921568627447,
+                10.172361426767566
+            ],
+            "text": "NDB$EPOCH()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb $ epoch ()"
+        },
+        {
+            "bbox": [
+                807.4387422385621,
+                435.22250631313136,
+                54.93465727124192,
+                11.971275252525174
+            ],
+            "text": ", and in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", và trong"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                450.75280934343436,
+                648.8149677287581,
+                11.971275252525288
+            ],
+            "text": "addition requires that all transaction IDs are recorded in the secondary’s binary log (the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bổ sung yêu cầu tất cả các ID giao dịch được ghi lại trong nhật ký nhị phân thứ cấp ( "
+        },
+        {
+            "bbox": [
+                788.9820093954248,
+                451.904627209596,
+                100.49014583333337,
+                10.17236142676768
+            ],
+            "text": "--ndb-log-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--ndb-log-"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                467.434930239899,
+                140.68627450980392,
+                10.17236142676768
+            ],
+            "text": "transaction-id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ID giao dịch"
+        },
+        {
+            "bbox": [
+                281.37254901960785,
+                466.28311237373737,
+                608.8198696895424,
+                11.971275252525288
+            ],
+            "text": " option), which adds a variable overhead (up to 13 bytes per row). The deprecated",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tùy chọn), trong đó thêm một chi phí biến đổi (tối đa 13 byte mỗi hàng). Không dùng nữa"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                482.965233270202,
+                251.22549019607845,
+                10.17236142676768
+            ],
+            "text": "log_bin_use_v1_row_events",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "log_bin_use_v1_row_events"
+        },
+        {
+            "bbox": [
+                391.9117647058824,
+                481.81341540404037,
+                259.70016339869284,
+                11.971275252525288
+            ],
+            "text": " system variable, which defaults to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " biến hệ thống, mặc định là mặc định "
+        },
+        {
+            "bbox": [
+                651.6119281045752,
+                482.965233270202,
+                30.14705882352939,
+                10.17236142676768
+            ],
+            "text": "OFF",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TẮT"
+        },
+        {
+            "bbox": [
+                681.7589869281046,
+                481.81341540404037,
+                147.10091544117654,
+                11.971275252525288
+            ],
+            "text": ", must not be set to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", không được đặt thành "
+        },
+        {
+            "bbox": [
+                828.8599023692811,
+                482.965233270202,
+                20.098039215686185,
+                10.17236142676768
+            ],
+            "text": "ON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÊN"
+        },
+        {
+            "bbox": [
+                848.9579415849673,
+                481.81341540404037,
+                39.09063602941171,
+                11.971275252525288
+            ],
+            "text": " with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " với "
+        },
+        {
+            "bbox": [
+                888.048577614379,
+                482.965233270202,
+                30.14705882352939,
+                10.17236142676768
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                498.49553630050514,
+                140.68627450980392,
+                10.172361426767566
+            ],
+            "text": "$EPOCH_TRANS()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "$ Epoch_trans ()"
+        },
+        {
+            "bbox": [
+                281.37254901960785,
+                497.3437184343435,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                525.5816919191919,
+                154.48694485294118,
+                11.971275252525288
+            ],
+            "text": "See NDB$EPOCH().",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xem ndb $ epoch ()."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                553.8196654040405,
+                134.92483660130722,
+                11.971275252525288
+            ],
+            "text": "NDB$EPOCH2(). ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch2 (). "
+        },
+        {
+            "bbox": [
+                301.671568627451,
+                553.8196654040405,
+                33.51348039215685,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                335.18504901960785,
+                554.971483270202,
+                120.58823529411762,
+                10.172361426767736
+            ],
+            "text": "NDB$EPOCH2()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch2 ()"
+        },
+        {
+            "bbox": [
+                455.77328431372547,
+                553.8196654040405,
+                156.3627283496732,
+                11.971275252525288
+            ],
+            "text": " function is similar to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chức năng tương tự như "
+        },
+        {
+            "bbox": [
+                612.1360126633987,
+                554.971483270202,
+                110.53921568627447,
+                10.172361426767736
+            ],
+            "text": "NDB$EPOCH()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb $ epoch ()"
+        },
+        {
+            "bbox": [
+                722.6752283496731,
+                553.8196654040405,
+                95.90116053921577,
+                11.971275252525288
+            ],
+            "text": ", except that ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", ngoại trừ điều đó "
+        },
+        {
+            "bbox": [
+                818.5763888888889,
+                554.971483270202,
+                30.14705882352939,
+                10.172361426767736
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                570.501786300505,
+                90.44117647058823,
+                10.172361426767736
+            ],
+            "text": "$EPOCH2()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "$ Epoch2 ()"
+        },
+        {
+            "bbox": [
+                231.12745098039215,
+                569.3499684343435,
+                679.5481858660131,
+                11.971275252525231
+            ],
+            "text": " provides for delete-delete handling with a bidirectional replication topology. In this scenario,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cung cấp cho việc xử lý xóa-delete với cấu trúc liên kết sao chép hai chiều. Trong kịch bản này,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                584.8802714646465,
+                561.3214701797385,
+                11.971275252525231
+            ],
+            "text": "primary and secondary roles are assigned to the two sources by setting the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vai trò chính và phụ được gán cho hai nguồn bằng cách đặt "
+        },
+        {
+            "bbox": [
+                702.0077446895425,
+                586.032089330808,
+                231.12750122549028,
+                10.172361426767736
+            ],
+            "text": "ndb_slave_conflict_role",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ndb_slave_conflict_role"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                600.4105744949495,
+                575.3063725490197,
+                11.971275252525231
+            ],
+            "text": "system variable to the appropriate value on each source (usually one each of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biến hệ thống theo giá trị thích hợp trên mỗi nguồn (thường là một "
+        },
+        {
+            "bbox": [
+                715.9926470588235,
+                601.562392361111,
+                70.34313725490199,
+                10.172361426767736
+            ],
+            "text": "PRIMARY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SƠ ĐẲNG"
+        },
+        {
+            "bbox": [
+                786.3357843137255,
+                600.4105744949495,
+                9.312091503267993,
+                11.971275252525231
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                795.6478758169935,
+                601.562392361111,
+                90.44117647058806,
+                10.172361426767736
+            ],
+            "text": "SECONDARY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SƠ TRUNG"
+        },
+        {
+            "bbox": [
+                886.0890522875816,
+                600.4105744949495,
+                10.233218137255108,
+                11.971275252525231
+            ],
+            "text": ").",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                615.9408775252525,
+                713.982826388889,
+                11.971275252525231
+            ],
+            "text": "When this is done, modifications made by the secondary are reflected by the primary back to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi điều này được thực hiện, các sửa đổi được thực hiện bởi thứ cấp được phản ánh bởi phần chính trở lại"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                631.4711805555556,
+                363.03759844771247,
+                11.971275252525231
+            ],
+            "text": "secondary which then conditionally applies them.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thứ cấp sau đó áp dụng chúng có điều kiện."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                659.709154040404,
+                201.91830065359477,
+                11.971275252525231
+            ],
+            "text": "NDB$EPOCH2_TRANS(). ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch2_trans (). "
+        },
+        {
+            "bbox": [
+                368.6650326797386,
+                660.8609719065657,
+                180.88235294117646,
+                10.172361426767623
+            ],
+            "text": "NDB$EPOCH2_TRANS()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch2_trans ()"
+        },
+        {
+            "bbox": [
+                549.5473856209151,
+                659.709154040404,
+                95.90114379084969,
+                11.971275252525231
+            ],
+            "text": " extends the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mở rộng "
+        },
+        {
+            "bbox": [
+                645.4485294117648,
+                660.8609719065657,
+                120.58823529411757,
+                10.172361426767623
+            ],
+            "text": "NDB$EPOCH2()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch2 ()"
+        },
+        {
+            "bbox": [
+                766.0367647058823,
+                659.709154040404,
+                136.83418382352943,
+                11.971275252525231
+            ],
+            "text": " function. Conflicts",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chức năng. Xung đột"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                675.2394570707071,
+                771.7312593954248,
+                11.971275252525231
+            ],
+            "text": "are detected and handled in the same way, and assigning primary and secondary roles to the replicating",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được phát hiện và xử lý theo cùng một cách, và gán các vai trò chính và phụ cho bản sao"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                690.7697601010101,
+                749.3888888888889,
+                11.971275252525288
+            ],
+            "text": "clusters, but with the extra condition that any other rows updated in the same transaction in which the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các cụm, nhưng với điều kiện bổ sung mà bất kỳ hàng nào khác được cập nhật trong cùng một giao dịch trong đó"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                706.3000631313132,
+                469.1552287581699,
+                11.971275252525288
+            ],
+            "text": "conflict occurred are also regarded as being in conflict. That is, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xung đột xảy ra cũng được coi là trong xung đột. Đó là, "
+        },
+        {
+            "bbox": [
+                609.8415032679738,
+                707.4518809974747,
+                120.58823529411768,
+                10.172361426767736
+            ],
+            "text": "NDB$EPOCH2()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch2 ()"
+        },
+        {
+            "bbox": [
+                730.4297385620915,
+                706.3000631313132,
+                137.75531045751632,
+                11.971275252525288
+            ],
+            "text": " realigns individual",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " sắp xếp lại cá nhân"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                721.8303661616162,
+                299.72879166666667,
+                11.971275252525231
+            ],
+            "text": "conflicting rows on the secondary, while ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các hàng mâu thuẫn trên thứ cấp, trong khi "
+        },
+        {
+            "bbox": [
+                440.4150661764706,
+                722.9821840277777,
+                170.83333333333331,
+                10.17236142676768
+            ],
+            "text": "NDB$EPOCH_TRANS()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch_trans ()"
+        },
+        {
+            "bbox": [
+                611.2483492647059,
+                721.8303661616162,
+                242.0138888888889,
+                11.971275252525231
+            ],
+            "text": " realigns conflicting transactions.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " sắp xếp lại các giao dịch xung đột."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                750.0683396464647,
+                53.97998366013073,
+                11.971275252525231
+            ],
+            "text": "Where ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ở đâu "
+        },
+        {
+            "bbox": [
+                194.66625816993465,
+                751.2201575126263,
+                110.53923243464052,
+                10.172361426767623
+            ],
+            "text": "NDB$EPOCH()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb $ epoch ()"
+        },
+        {
+            "bbox": [
+                305.20547385620915,
+                750.0683396464647,
+                37.248366013071916,
+                11.971275252525231
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                342.45383986928107,
+                751.2201575126263,
+                170.83333333333337,
+                10.172361426767623
+            ],
+            "text": "NDB$EPOCH_TRANS()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch_trans ()"
+        },
+        {
+            "bbox": [
+                513.2871732026144,
+                750.0683396464647,
+                418.89341584967315,
+                11.971275252525231
+            ],
+            "text": " use metadata that is specified per row, per last modified",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Sử dụng siêu dữ liệu được chỉ định mỗi hàng, theo lần sửa đổi lần cuối"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                765.5986426767677,
+                735.3871879084968,
+                11.97127525252526
+            ],
+            "text": "epoch, to determine on the primary whether an incoming replicated row change from the secondary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Epoch, để xác định trên chính cho dù một hàng được sao chép đến từ thứ cấp"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                781.1289457070707,
+                734.4326147875818,
+                11.971275252525231
+            ],
+            "text": "is concurrent with a locally committed change; concurrent changes are regarded as conflicting, with",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đồng thời với một thay đổi cam kết tại địa phương; Những thay đổi đồng thời được coi là mâu thuẫn, với"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                796.6592487373738,
+                781.0432504084968,
+                11.971275252525231
+            ],
+            "text": "subesequent exceptions table updates and realignment of the secondary. A problem arises when a row is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cập nhật bảng ngoại lệ của Subesequent và sắp xếp lại thứ cấp. Một vấn đề phát sinh khi một hàng là"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                812.1895517676768,
+                768.9174501633986,
+                11.971275252525231
+            ],
+            "text": "deleted on the primary so there is no longer any last-modified epoch available to determine whether any",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bị xóa trên chính để không còn bất kỳ kỷ nguyên được sửa đổi cuối cùng nào để xác định xem có bất kỳ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                827.7198547979798,
+                770.7932504084968,
+                11.971275252525231
+            ],
+            "text": "replicated operations conflict, which means that conflicting delete operationss are not detected. This can",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xung đột hoạt động được nhân rộng, có nghĩa là không được phát hiện xóa các hoạt động xung đột. Điều này có thể"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                843.2501578282828,
+                785.6825812908498,
+                11.97127525252526
+            ],
+            "text": "result in divergence, an example being a delete on one cluster which is concurrent with a delete and insert",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "dẫn đến sự khác biệt, một ví dụ là xóa trên một cụm đồng thời với việc xóa và chèn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                858.7804608585859,
+                633.9926638071895,
+                11.97127525252526
+            ],
+            "text": "on the other; this why delete operations can be routed to only one cluster when using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mặt khác; Điều này tại sao xóa các hoạt động có thể được chuyển đến chỉ một cụm khi sử dụng "
+        },
+        {
+            "bbox": [
+                774.6789383169935,
+                859.9323175505051,
+                110.53926593137248,
+                10.17232260101008
+            ],
+            "text": "NDB$EPOCH()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb $ epoch ()"
+        },
+        {
+            "bbox": [
+                885.218204248366,
+                858.7804608585859,
+                32.59225326797389,
+                11.97127525252526
+            ],
+            "text": " and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                875.4626205808081,
+                170.83333333333331,
+                10.17232260101008
+            ],
+            "text": "NDB$EPOCH_TRANS()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch_trans ()"
+        },
+        {
+            "bbox": [
+                311.51960784313724,
+                874.3107638888889,
+                4.656045751633997,
+                11.97127525252526
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                903.7006303030303,
+                120.58823529411768,
+                10.172329071969699
+            ],
+            "text": "NDB$EPOCH2()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB $ epoch2 ()"
+        },
+        {
+            "bbox": [
+                261.2745098039216,
+                902.5487800820707,
+                609.5567977941178,
+                11.971275252525245
+            ],
+            "text": " bypasses the issue just described—storing information about deleted rows on the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bỏ qua các vấn đề vừa mô tả thông tin về ý định về các hàng đã xóa trên"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                918.0790831123737,
+                771.5302790032681,
+                11.971275252525245
+            ],
+            "text": "PRIMARY—by ignoring any delete-delete conflict, and by avoiding any potential resultant divergence as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chính-bằng cách bỏ qua bất kỳ xóa bỏ"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "4646",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "xung đột, và bằng cách tránh bất kỳ sự phân kỳ kết quả tiềm năng nào"
+        }
+    ]
+}

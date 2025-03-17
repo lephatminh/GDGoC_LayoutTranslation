@@ -1,3 +1,1456 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a855f63877ac532dc0f00b874f5e2c0614f2813e2afbb254614276ac2cc90bb5
-size 42314
+{
+    "metadata": {
+        "page_hash": "ef92b252725abfc6d0d4654dd723ca9f632fb7fcebadff752e9d482f4c0fd465",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4133,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                378.7642806372549,
+                48.370422979798036,
+                237.32432965686274,
+                11.971275252525288
+            ],
+            "text": "NDB Cluster Configuration Files",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp cấu hình cụm NDB"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                97.54971590909099,
+                95.86766380718956,
+                11.971275252525174
+            ],
+            "text": "Restart Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khởi động lại loại"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                97.54971590909099,
+                114.47509844771241,
+                11.971275252525174
+            ],
+            "text": "N (NDB 8.0.13)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "N (NDB 8.0.13)"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                131.52225378787887,
+                747.5465183823529,
+                11.971275252525174
+            ],
+            "text": "If a data node has not completed its startup sequence within the time specified by this parameter, the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu một nút dữ liệu chưa hoàn thành chuỗi khởi động của mình trong thời gian được chỉ định bởi tham số này, thì"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                147.05255681818187,
+                738.2512924836601,
+                11.971275252525288
+            ],
+            "text": "node startup fails. Setting this parameter to 0 (the default value) means that no data node timeout is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nút khởi động không thành công. Đặt tham số này thành 0 (giá trị mặc định) có nghĩa là không có thời gian chờ nút dữ liệu nào"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                162.58285984848487,
+                58.6527777777778,
+                11.971275252525288
+            ],
+            "text": "applied.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "áp dụng."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                193.643465909091,
+                749.3051638071895,
+                11.971275252525174
+            ],
+            "text": "For nonzero values, this parameter is measured in milliseconds. For data nodes containing extremely",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các giá trị khác nhau, tham số này được đo bằng mili giây. Đối với các nút dữ liệu có chứa cực kỳ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                209.173768939394,
+                737.313283496732,
+                11.971275252525288
+            ],
+            "text": "large amounts of data, this parameter should be increased. For example, in the case of a data node",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một lượng lớn dữ liệu, tham số này nên được tăng lên. Ví dụ: trong trường hợp nút dữ liệu"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                224.8334652777778,
+                441.28596446078427,
+                11.971275252525174
+            ],
+            "text": "containing several gigabytes of data, a period as long as 10",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chứa một số gigabyte dữ liệu, một khoảng thời gian dài tới 10"
+        },
+        {
+            "bbox": [
+                598.7206049836601,
+                220.1744002525253,
+                9.764280637254956,
+                18.20929324494955
+            ],
+            "text": "−",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/EAAAAA+ArialUnicodeMS",
+                "size": 10
+            },
+            "text_vi": "-"
+        },
+        {
+            "bbox": [
+                608.4848856209151,
+                224.8334652777778,
+                18.624166258169907,
+                11.971275252525174
+            ],
+            "text": "15",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "15"
+        },
+        {
+            "bbox": [
+                631.765097630719,
+                224.8334652777778,
+                267.203448120915,
+                11.971275252525174
+            ],
+            "text": "minutes (that is, 600000 to 1000000",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "phút (nghĩa là, 600000 đến 1000000"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                240.38967803030312,
+                425.37496650326796,
+                11.971275252525174
+            ],
+            "text": "milliseconds) might be required to perform a node restart.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mili giây) có thể được yêu cầu để thực hiện khởi động lại nút."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                268.8619002525253,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                270.0137440025253,
+                231.12745098039218,
+                10.172335542929318
+            ],
+            "text": "StartNoNodeGroupTimeout",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "StartNonodegrouptimeout"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                313.1879734848485,
+                124.70831658496735,
+                11.971275252525288
+            ],
+            "text": "Version (or later)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phiên bản (hoặc muộn hơn)"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                313.1879734848485,
+                86.57230392156862,
+                11.971275252525288
+            ],
+            "text": "NDB 8.0.13",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "NDB 8.0.13"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                334.54214015151524,
+                96.8055555555556,
+                11.971275252525174
+            ],
+            "text": "Type or units",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gõ hoặc đơn vị"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                334.54214015151524,
+                91.19486968954254,
+                11.971275252525174
+            ],
+            "text": "milliseconds",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mili giây"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                355.89630681818187,
+                53.05882352941177,
+                11.971275252525288
+            ],
+            "text": "Default",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                355.89630681818187,
+                46.56044076797389,
+                11.971275252525288
+            ],
+            "text": "15000",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "15000"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                377.2504734848485,
+                49.34068627450981,
+                11.971275252525288
+            ],
+            "text": "Range",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                377.2504734848485,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                563.7332516339869,
+                377.2504734848485,
+                219.6548035130719,
+                11.971275252525288
+            ],
+            "text": "- 4294967039 (0xFFFFFEFF)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "- 4294967039 (0xffffFeff)"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                398.60464015151524,
+                95.86766380718956,
+                11.971275252525174
+            ],
+            "text": "Restart Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khởi động lại loại"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                398.60464015151524,
+                114.47509844771241,
+                11.971275252525174
+            ],
+            "text": "N (NDB 8.0.13)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "N (NDB 8.0.13)"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                432.5771780303031,
+                275.56086601307186,
+                11.971275252525174
+            ],
+            "text": "When a data node is configured with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi một nút dữ liệu được cấu hình với "
+        },
+        {
+            "bbox": [
+                432.9955065359477,
+                433.7289829545455,
+                170.83333333333337,
+                10.17237436868686
+            ],
+            "text": "Nodegroup = 65536",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nodegroup = 65536"
+        },
+        {
+            "bbox": [
+                603.8288398692811,
+                432.5771780303031,
+                310.9501633986929,
+                11.971275252525174
+            ],
+            "text": ", is regarded as not being assigned to any",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", được coi là không được gán cho bất kỳ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                448.1074810606061,
+                363.0710784313725,
+                11.971275252525288
+            ],
+            "text": "node group. When that is done, the cluster waits ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "nhóm nút. Khi nó được hoàn thành, cụm chờ đợi "
+        },
+        {
+            "bbox": [
+                520.5057189542483,
+                449.2592859848485,
+                231.12745098039215,
+                10.172374368686974
+            ],
+            "text": "StartNoNodegroupTimeout",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "StartNonodegrouptimeout"
+        },
+        {
+            "bbox": [
+                751.6331699346405,
+                448.1074810606061,
+                137.75536070261444,
+                11.971275252525288
+            ],
+            "text": " milliseconds, then",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mili giây, sau đó"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                463.6377840909091,
+                553.9856858660131,
+                11.971275252525288
+            ],
+            "text": "treats such nodes as though they had been added to the list passed to the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "xử lý các nút như vậy như thể chúng đã được thêm vào danh sách được chuyển cho "
+        },
+        {
+            "bbox": [
+                711.420326388889,
+                464.7895890151515,
+                140.68627450980387,
+                10.172374368686974
+            ],
+            "text": "--nowait-nodes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--Nowait-nodes"
+        },
+        {
+            "bbox": [
+                852.1066008986928,
+                463.6377840909091,
+                54.93457352941175,
+                11.971275252525288
+            ],
+            "text": " option,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " lựa chọn,"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                479.1680871212121,
+                232.73531086601312,
+                11.971275252525288
+            ],
+            "text": "and starts. The default value is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và bắt đầu. Giá trị mặc định là "
+        },
+        {
+            "bbox": [
+                390.16995138888893,
+                480.3198920454546,
+                50.245114787581656,
+                10.17237436868686
+            ],
+            "text": "15000",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "15000"
+        },
+        {
+            "bbox": [
+                440.4150661764706,
+                479.1680871212121,
+                471.95217238562094,
+                11.971275252525288
+            ],
+            "text": " (that is, the management server waits 15 seconds). Setting this",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (nghĩa là, máy chủ quản lý chờ 15 giây). Đặt cái này"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                494.69839015151524,
+                145.2250649509804,
+                11.971275252525174
+            ],
+            "text": "parameter equal to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tham số bằng "
+        },
+        {
+            "bbox": [
+                302.65973897058825,
+                495.8501950757576,
+                10.04901960784315,
+                10.17237436868686
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                312.7087585784314,
+                494.69839015151524,
+                300.6666666666667,
+                11.971275252525174
+            ],
+            "text": " means that the cluster waits indefinitely.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có nghĩa là cụm chờ vô thời hạn."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                526.9108011363637,
+                231.12745098039218,
+                10.17237436868686
+            ],
+            "text": "StartNoNodegroupTimeout",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "StartNonodegrouptimeout"
+        },
+        {
+            "bbox": [
+                388.562091503268,
+                525.7589962121212,
+                522.2475657679739,
+                11.971275252525231
+            ],
+            "text": " must be the same for all data nodes in the cluster; for this reason, you",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phải giống nhau cho tất cả các nút dữ liệu trong cụm; Vì lý do này, bạn"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                541.2892992424242,
+                195.48692810457518,
+                11.971275252525288
+            ],
+            "text": "should always set it in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "phải luôn luôn đặt nó trong "
+        },
+        {
+            "bbox": [
+                352.921568627451,
+                542.4411041666667,
+                140.68627450980398,
+                10.172374368686917
+            ],
+            "text": "[ndbd default]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[Mặc định NDBD]"
+        },
+        {
+            "bbox": [
+                493.607843137255,
+                541.2892992424242,
+                108.93138929738558,
+                11.971275252525288
+            ],
+            "text": " section of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phần của "
+        },
+        {
+            "bbox": [
+                602.5392324346406,
+                542.4411041666667,
+                100.49019607843138,
+                10.172374368686917
+            ],
+            "text": "config.ini",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cấu hình.ini"
+        },
+        {
+            "bbox": [
+                703.0294285130719,
+                541.2892992424242,
+                215.0322879901961,
+                11.971275252525288
+            ],
+            "text": " file, rather than for individual",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tệp, thay vì cho cá nhân"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                556.8196022727273,
+                87.52694403594771,
+                11.971275252525231
+            ],
+            "text": "data nodes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các nút dữ liệu."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                587.8802083333334,
+                485.55187908496737,
+                11.971275252525231
+            ],
+            "text": "See Section 23.5.7, “Adding NDB Cluster Data Nodes Online”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xem phần 23.5.7, Thêm các nút dữ liệu cụm NDB trực tuyến trực tuyến"
+        },
+        {
+            "bbox": [
+                615.4187258986929,
+                587.8802083333334,
+                163.81576797385617,
+                11.971275252525231
+            ],
+            "text": ", for more information.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", để biết thêm thông tin."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                616.3524305555557,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                617.5042354797979,
+                211.02941176470588,
+                10.172374368686917
+            ],
+            "text": "HeartbeatIntervalDbDb",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Heartbeatintervaldbdb"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                660.6785037878788,
+                124.70831658496735,
+                11.971275252525231
+            ],
+            "text": "Version (or later)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phiên bản (hoặc muộn hơn)"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                660.6785037878788,
+                86.57230392156862,
+                11.971275252525231
+            ],
+            "text": "NDB 8.0.13",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "NDB 8.0.13"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                682.0326704545455,
+                96.8055555555556,
+                11.971275252525231
+            ],
+            "text": "Type or units",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gõ hoặc đơn vị"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                682.0326704545455,
+                91.19486968954254,
+                11.971275252525231
+            ],
+            "text": "milliseconds",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mili giây"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                703.3868371212121,
+                53.05882352941177,
+                11.971275252525288
+            ],
+            "text": "Default",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                703.3868371212121,
+                37.248349264705894,
+                11.971275252525288
+            ],
+            "text": "5000",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "5000"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                724.7410037878788,
+                49.34068627450981,
+                11.971275252525231
+            ],
+            "text": "Range",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                724.7410037878788,
+                18.624183006535986,
+                11.971275252525231
+            ],
+            "text": "10",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "10"
+        },
+        {
+            "bbox": [
+                573.045326388889,
+                724.7410037878788,
+                219.65482026143786,
+                11.971275252525231
+            ],
+            "text": "- 4294967039 (0xFFFFFEFF)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "- 4294967039 (0xffffFeff)"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                746.0951704545455,
+                95.86766380718956,
+                11.971275252525231
+            ],
+            "text": "Restart Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khởi động lại loại"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                746.0951704545455,
+                114.47509844771241,
+                11.971275252525231
+            ],
+            "text": "N (NDB 8.0.13)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "N (NDB 8.0.13)"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                780.0677083333334,
+                733.5449011437908,
+                11.97127525252526
+            ],
+            "text": "One of the primary methods of discovering failed nodes is by the use of heartbeats. This parameter",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một trong những phương pháp chính để khám phá các nút thất bại là sử dụng nhịp tim. Tham số này"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                795.5980113636364,
+                767.1254587418301,
+                11.97127525252526
+            ],
+            "text": "states how often heartbeat signals are sent and how often to expect to receive them. Heartbeats cannot",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trạng thái tần suất tín hiệu nhịp tim được gửi và tần suất mong đợi nhận được chúng. Nhịp tim không thể"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                811.1283143939394,
+                90.30718954248366,
+                11.97127525252526
+            ],
+            "text": "be disabled.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được vô hiệu hóa."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                842.1889204545455,
+                754.9158329248366,
+                11.97127525252526
+            ],
+            "text": "After missing four heartbeat intervals in a row, the node is declared dead. Thus, the maximum time for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau khi thiếu bốn khoảng thời gian nhịp tim liên tiếp, nút được tuyên bố đã chết. Do đó, thời gian tối đa cho"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                857.7192234848485,
+                662.7831049836601,
+                11.97127525252526
+            ],
+            "text": "discovering a failure through the heartbeat mechanism is five times the heartbeat interval.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khám phá một thất bại thông qua cơ chế nhịp tim gấp năm lần khoảng thời gian nhịp tim."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                888.7798295454545,
+                747.4963235294117,
+                11.971268781565655
+            ],
+            "text": "The default heartbeat interval is 5000 milliseconds (5 seconds). This parameter must not be changed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khoảng thời gian nhịp tim mặc định là 5000 mili giây (5 giây). Tham số này không được thay đổi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                904.310126104798,
+                768.0298370098039,
+                11.97127525252526
+            ],
+            "text": "drastically and should not vary widely between nodes. If one node uses 5000 milliseconds and the node",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mạnh mẽ và không nên khác nhau giữa các nút. Nếu một nút sử dụng 5000 mili giây và nút"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "4104",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4104"
+        }
+    ]
+}

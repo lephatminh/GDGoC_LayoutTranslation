@@ -1,3 +1,1256 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f7272366424aa5be595bfcdb9c00cbcecbcc0e32da4a94b127a4011527406e90
-size 39729
+{
+    "metadata": {
+        "page_hash": "9eb5127548778ad561cae2a4d8760e7e022f0ee99f227d026afb7c3829bb48c6",
+        "original_filename": "cm-oreilly-kubernetes-patterns-ebook-f19824-201910-en.pdf",
+        "page_no": 231,
+        "num_pages": 266,
+        "original_width": 504,
+        "original_height": 661.5,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                146.42857142857142,
+                81.03777059712763,
+                732.1429181547618,
+                21.94800037792902
+            ],
+            "text": "A VPA definition can also have a resource policy that influences how VPA computes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Định nghĩa VPA cũng có thể có chính sách tài nguyên ảnh hưởng đến cách tính toán VPA"
+        },
+        {
+            "bbox": [
+                146.42248854166667,
+                100.56154913076341,
+                732.1428591765872,
+                21.94800037792902
+            ],
+            "text": "the recommended resources (e.g., by setting per container lower and upper resource",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "các tài nguyên được đề xuất (ví dụ: bằng cách cài đặt cho mỗi container thấp hơn và tài nguyên trên"
+        },
+        {
+            "bbox": [
+                146.4376642361111,
+                120.08540513983371,
+                108.2229349702381,
+                21.948000377928906
+            ],
+            "text": "boundaries).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "ranh giới)."
+        },
+        {
+            "bbox": [
+                146.4376642361111,
+                149.82549735449743,
+                208.37438338293654,
+                21.948000377928906
+            ],
+            "text": "Depending on which ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tùy thuộc vào đó "
+        },
+        {
+            "bbox": [
+                354.81204761904763,
+                153.0875695389268,
+                294.15368650793647,
+                15.456395691609828
+            ],
+            "text": ".spec.updatePolicy.updateMode",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": ".Spec.UpdatePolicy.UpdateMode"
+        },
+        {
+            "bbox": [
+                648.9656731150794,
+                149.82549735449743,
+                229.61488690476176,
+                21.948000377928906
+            ],
+            "text": " is configured, the VPA",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " được cấu hình, VPA"
+        },
+        {
+            "bbox": [
+                146.43164439484124,
+                169.34927588813298,
+                732.1429567956349,
+                21.94809334845047
+            ],
+            "text": "involves different system components. All three VPA components—recommender,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "liên quan đến các thành phần hệ thống khác nhau. Tất cả ba thành phần VPA - ReCommender,"
+        },
+        {
+            "bbox": [
+                146.42563878968252,
+                188.8731318972034,
+                732.1428205357142,
+                21.94800037792902
+            ],
+            "text": "admission plugin, and updater—are decoupled, independent, and can be replaced",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "plugin nhập học và người cập nhật - được phân tách, độc lập và có thể được thay thế"
+        },
+        {
+            "bbox": [
+                146.41964945436507,
+                208.39691043083906,
+                732.1428510416666,
+                21.948000377928906
+            ],
+            "text": "with alternative implementations. The module with the intelligence to produce rec‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "với các triển khai thay thế. Mô -đun với trí thông minh để sản xuất rec‐"
+        },
+        {
+            "bbox": [
+                146.43480887896825,
+                227.92078193499628,
+                732.1428835813491,
+                21.94798488284198
+            ],
+            "text": "ommendations is the recommender, which is inspired by Google’s Borg system. The",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "OMMendations là người giới thiệu, được lấy cảm hứng từ hệ thống Google Google Borg. Các"
+        },
+        {
+            "bbox": [
+                146.4288195436508,
+                247.4445449735449,
+                732.142792063492,
+                21.94800037792902
+            ],
+            "text": "current implementation analyzes the actual resource usage of a container under load",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Việc triển khai hiện tại phân tích việc sử dụng tài nguyên thực tế của một container đang tải"
+        },
+        {
+            "bbox": [
+                146.42262886904763,
+                266.9683235071807,
+                732.1429628968253,
+                21.948000377928906
+            ],
+            "text": "for a certain period (by default, eight days), produces a histogram, and chooses a high",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "trong một khoảng thời gian nhất định (theo mặc định, tám ngày), tạo ra một biểu đồ và chọn một"
+        },
+        {
+            "bbox": [
+                146.43791235119048,
+                286.492179516251,
+                732.1429527281746,
+                21.948000377928906
+            ],
+            "text": "percentile value for that period. In addition to metrics, it also considers resource and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Giá trị phần trăm cho giai đoạn đó. Ngoài các số liệu, nó cũng xem xét tài nguyên và"
+        },
+        {
+            "bbox": [
+                146.43182946428573,
+                306.93521957671953,
+                524.5010782738095,
+                21.94800037792902
+            ],
+            "text": "specifically memory-related Pod events such as evictions and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "cụ thể là các sự kiện pod liên quan đến bộ nhớ như trục xuất và "
+        },
+        {
+            "bbox": [
+                670.9328467261904,
+                310.1973382464097,
+                111.57550049603185,
+                15.45634920634916
+            ],
+            "text": "OutOfMemory",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "Outofmemory"
+        },
+        {
+            "bbox": [
+                782.5083472222223,
+                306.93521957671953,
+                63.37922767857128,
+                21.94800037792902
+            ],
+            "text": " events.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " sự kiện."
+        },
+        {
+            "bbox": [
+                146.43189250992063,
+                336.67531179138325,
+                221.01256830357138,
+                21.948000377928906
+            ],
+            "text": "In our example we chose ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Trong ví dụ của chúng tôi, chúng tôi đã chọn "
+        },
+        {
+            "bbox": [
+                367.44448115079365,
+                339.93741496598636,
+                294.1536661706349,
+                15.4563647014362
+            ],
+            "text": ".spec.updatePolicy.updateMode",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": ".Spec.UpdatePolicy.UpdateMode"
+        },
+        {
+            "bbox": [
+                661.5980863095238,
+                336.67531179138325,
+                65.41086309523814,
+                21.948000377928906
+            ],
+            "text": " equals ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " bằng nhau "
+        },
+        {
+            "bbox": [
+                727.0089494047619,
+                339.93741496598636,
+                30.429667162698365,
+                15.4563647014362
+            ],
+            "text": "Off",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "Tắt"
+        },
+        {
+            "bbox": [
+                757.4386165674603,
+                336.67531179138325,
+                121.1361066468254,
+                21.948000377928906
+            ],
+            "text": ", but there are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": ", nhưng có"
+        },
+        {
+            "bbox": [
+                146.42576284722222,
+                356.19916780045355,
+                732.142818501984,
+                21.948000377928906
+            ],
+            "text": "two other options to choose from, each with a different level of potential disruption",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Hai tùy chọn khác để lựa chọn, mỗi lựa chọn có mức độ gián đoạn tiềm năng khác nhau"
+        },
+        {
+            "bbox": [
+                146.4197125,
+                376.6422078609222,
+                456.47664414682544,
+                21.948000377928906
+            ],
+            "text": "on the scaled Pods. Let’s see how different values for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Trên các vỏ được chia tỷ lệ. Hãy để xem các giá trị khác nhau như thế nào cho "
+        },
+        {
+            "bbox": [
+                602.8964786706348,
+                379.90428004535147,
+                101.43229166666674,
+                15.456395691610055
+            ],
+            "text": "updateMode",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "UpdateMode"
+        },
+        {
+            "bbox": [
+                704.3287093253967,
+                376.6422078609222,
+                174.23379117063496,
+                21.948000377928906
+            ],
+            "text": " work, starting from",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " làm việc, bắt đầu từ"
+        },
+        {
+            "bbox": [
+                146.43490243055555,
+                396.16603287981866,
+                356.08072306547615,
+                21.94804686318969
+            ],
+            "text": "nondisruptive to a more disruptive order:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "không tham nhũng đến một trật tự đột phá hơn:"
+        },
+        {
+            "bbox": [
+                146.427438640873,
+                430.71773696145124,
+                152.1484517361111,
+                15.456411186696869
+            ],
+            "text": "updateMode: Off",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "UpdateMode: TẮT"
+        },
+        {
+            "bbox": [
+                183.02845183531747,
+                446.97944331065753,
+                88.22545342261901,
+                21.948046863189802
+            ],
+            "text": "The VPA ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "VPA "
+        },
+        {
+            "bbox": [
+                271.2538849206349,
+                446.7679818594104,
+                113.62552083333333,
+                22.15950831443695
+            ],
+            "text": "recommender",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "đề xuất"
+        },
+        {
+            "bbox": [
+                384.87940575396823,
+                446.97944331065753,
+                493.68482341269845,
+                21.948046863189802
+            ],
+            "text": " gathers Pod metrics and events and then produces rec‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " Tập hợp các số liệu và sự kiện Pod và sau đó sản xuất rec‐"
+        },
+        {
+            "bbox": [
+                183.03757718253968,
+                467.4224833711262,
+                595.4029843253968,
+                21.948046863189802
+            ],
+            "text": "ommendations. The VPA recommendations are always stored in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "sự cố chấp. Các khuyến nghị VPA luôn được lưu trữ trong "
+        },
+        {
+            "bbox": [
+                778.4405004960316,
+                470.6846330309901,
+                60.85935466269848,
+                15.456318216175418
+            ],
+            "text": "status",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "trạng thái"
+        },
+        {
+            "bbox": [
+                839.2998551587301,
+                467.4224833711262,
+                39.27338343253973,
+                21.948046863189802
+            ],
+            "text": " sec‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " giây‐"
+        },
+        {
+            "bbox": [
+                183.0253646329365,
+                487.8656164021164,
+                468.19541016865077,
+                21.948000377928906
+            ],
+            "text": "tion of the VPA resource. However, this is how far the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tion của tài nguyên VPA. Tuy nhiên, đây là bao xa "
+        },
+        {
+            "bbox": [
+                651.2411324404761,
+                491.12771957671964,
+                30.4296875,
+                15.456318216175305
+            ],
+            "text": "Off",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "Tắt"
+        },
+        {
+            "bbox": [
+                681.6707589285714,
+                487.8656164021164,
+                196.90433035714284,
+                21.948000377928906
+            ],
+            "text": " mode goes. It analyzes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " Chế độ đi. Nó phân tích"
+        },
+        {
+            "bbox": [
+                183.02724176587301,
+                507.38942592592593,
+                695.5357468253968,
+                21.948000377928963
+            ],
+            "text": "and produces recommendations, but it does not apply them to the Pods. This",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "và đưa ra các khuyến nghị, nhưng nó không áp dụng chúng cho các nhóm. Cái này"
+        },
+        {
+            "bbox": [
+                183.03639761904762,
+                526.9132509448224,
+                695.5357834325396,
+                21.948000377928963
+            ],
+            "text": "mode is useful for getting insight on the Pod resource consumption without",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Chế độ rất hữu ích để hiểu rõ hơn về mức tiêu thụ tài nguyên POD mà không có"
+        },
+        {
+            "bbox": [
+                183.04558194444442,
+                546.4370604686319,
+                695.5357712301587,
+                21.948000377928906
+            ],
+            "text": "introducing any changes and causing disruption. That decision is left for the user",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Giới thiệu bất kỳ thay đổi và gây ra sự gián đoạn. Quyết định đó được để lại cho người dùng"
+        },
+        {
+            "bbox": [
+                183.03335515873016,
+                565.9608854875283,
+                157.57237549603173,
+                21.948000377928906
+            ],
+            "text": "to make if desired.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "để làm nếu muốn."
+        },
+        {
+            "bbox": [
+                146.4237921626984,
+                600.5126360544218,
+                192.7213745039683,
+                15.456318216175362
+            ],
+            "text": "updateMode: Initial",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "UpdateMode: Ban đầu"
+        },
+        {
+            "bbox": [
+                183.04617172619047,
+                616.7742959183674,
+                695.5356898809524,
+                21.948000377928906
+            ],
+            "text": "In this mode, the VPA goes one step further. In addition to the activities per‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Trong chế độ này, VPA tiến thêm một bước. Ngoài các hoạt động trên mỗi"
+        },
+        {
+            "bbox": [
+                183.0339774801587,
+                636.2981209372638,
+                695.5357834325397,
+                21.948000377928906
+            ],
+            "text": "formed by the recommender component, it also activates the VPA admission",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Được hình thành bởi thành phần đề xuất, nó cũng kích hoạt nhập học VPA"
+        },
+        {
+            "bbox": [
+                183.04316180555557,
+                655.8219459561603,
+                695.5357102182539,
+                21.948000377928906
+            ],
+            "text": "plugin, which applies the recommendations to newly created Pods only. For",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Plugin, chỉ áp dụng các đề xuất cho POD mới được tạo. Vì"
+        },
+        {
+            "bbox": [
+                183.03101230158728,
+                675.3458019652305,
+                695.5357590277777,
+                21.948000377928906
+            ],
+            "text": "example, if a Pod is scaled manually through an HPA, updated by a Deployment,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ví dụ, nếu một nhóm được chia tỷ lệ bằng tay thông qua HPA, được cập nhật bởi một triển khai,"
+        },
+        {
+            "bbox": [
+                183.04022916666665,
+                694.869626984127,
+                695.2276448412697,
+                21.948000377928963
+            ],
+            "text": "or evicted and restarted for whatever reason, the Pod’s resource request values are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "hoặc bị đuổi và khởi động lại vì bất kỳ lý do gì, các giá trị yêu cầu tài nguyên POD"
+        },
+        {
+            "bbox": [
+                183.04030644841268,
+                714.3934520030234,
+                367.1635253968253,
+                21.948000377928963
+            ],
+            "text": "updated by the VPA Admission Controller.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "được cập nhật bởi bộ điều khiển nhập học VPA."
+        },
+        {
+            "bbox": [
+                183.04035322420634,
+                744.133575207861,
+                166.72212544642855,
+                21.948000377928963
+            ],
+            "text": "This controller is a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Bộ điều khiển này là một "
+        },
+        {
+            "bbox": [
+                349.7624786706349,
+                743.922067271353,
+                223.09204315476188,
+                22.15950831443689
+            ],
+            "text": "mutating admission plugin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "plugin nhập học đột biến"
+        },
+        {
+            "bbox": [
+                572.8545828373016,
+                744.133575207861,
+                161.30636507936504,
+                21.948000377928963
+            ],
+            "text": " that overrides the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " Điều đó ghi đè lên "
+        },
+        {
+            "bbox": [
+                734.1608869047618,
+                747.395693877551,
+                81.14581299603174,
+                15.456302721088434
+            ],
+            "text": "requests",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "yêu cầu"
+        },
+        {
+            "bbox": [
+                815.3066999007935,
+                744.133575207861,
+                62.78125,
+                21.948000377928963
+            ],
+            "text": " of new",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " của mới"
+        },
+        {
+            "bbox": [
+                183.0311831349206,
+                763.6573537414965,
+                695.5357102182539,
+                21.948000377928963
+            ],
+            "text": "Pods matching the VPA label selector. This mode does not restart a running Pod,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Pods khớp với bộ chọn nhãn VPA. Chế độ này không khởi động lại POD đang chạy,"
+        },
+        {
+            "bbox": [
+                183.04029221230158,
+                783.1811787603931,
+                695.5358546130952,
+                21.947984882842036
+            ],
+            "text": "but it is still partially disruptive because it changes the resource request of newly",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Nhưng nó vẫn gây rối một phần vì nó thay đổi yêu cầu tài nguyên mới"
+        },
+        {
+            "bbox": [
+                183.02811220238095,
+                802.7049882842025,
+                695.5356288690475,
+                21.948000377928963
+            ],
+            "text": "created Pods. This in turn can affect where a new Pod is scheduled. What’s more,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "đã tạo pods. Điều này đến lượt nó có thể ảnh hưởng đến nơi một nhóm mới được lên lịch. Những gì nhiều hơn nữa,"
+        },
+        {
+            "bbox": [
+                183.03728229166666,
+                822.2288133030991,
+                695.5356919146825,
+                21.948000377928963
+            ],
+            "text": "it is possible that after applying the recommended resource requests, the Pod is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Có thể sau khi áp dụng các yêu cầu tài nguyên được đề xuất, nhóm là"
+        },
+        {
+            "bbox": [
+                183.02505550595237,
+                841.7526693121692,
+                695.5356959821429,
+                21.948000377928963
+            ],
+            "text": "scheduled to a different node, which can have unexpected consequences. Or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "dự kiến ​​đến một nút khác, có thể gây ra hậu quả bất ngờ. Hoặc"
+        },
+        {
+            "bbox": [
+                183.0342255952381,
+                861.276447845805,
+                695.5357183531746,
+                21.948046863189717
+            ],
+            "text": "worse, the Pod might not be scheduled to any node if there is not enough",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "tệ hơn, nhóm có thể không được lên lịch cho bất kỳ nút nào nếu không đủ"
+        },
+        {
+            "bbox": [
+                183.0434404265873,
+                880.8001705971278,
+                194.38698120039678,
+                21.94809489795918
+            ],
+            "text": "capacity on the cluster.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "năng lực trên cụm."
+        },
+        {
+            "bbox": [
+                146.42109340277779,
+                945.5380580498866,
+                25.295527579365057,
+                16.70680427059714
+            ],
+            "text": "212 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "212 "
+        },
+        {
+            "bbox": [
+                187.1282321924603,
+                945.5380580498866,
+                6.735708184523816,
+                16.70680427059714
+            ],
+            "text": "| ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "| "
+        },
+        {
+            "bbox": [
+                209.27555158730158,
+                945.5380580498866,
+                144.32364037698412,
+                16.70680427059714
+            ],
+            "text": "Chapter 24: Elastic Scale",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "Chương 24: Quy mô đàn hồi"
+        }
+    ]
+}

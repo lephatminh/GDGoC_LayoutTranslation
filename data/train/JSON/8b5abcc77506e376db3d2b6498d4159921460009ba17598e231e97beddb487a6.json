@@ -1,3 +1,1476 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9782ac1978b97c442c1ae6fbc9f76ce216b0009867fe095ca687d89719f69807
-size 45691
+{
+    "metadata": {
+        "page_hash": "8b5abcc77506e376db3d2b6498d4159921460009ba17598e231e97beddb487a6",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3495,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                327.5561683006536,
+                48.370422979798036,
+                339.74058782679737,
+                11.971275252525288
+            ],
+            "text": "Replication with Global Transaction Identifiers",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao chép với số nhận dạng giao dịch toàn cầu"
+        },
+        {
+            "bbox": [
+                425.40849673202615,
+                96.61920486111126,
+                56.27452655228757,
+                8.13782702020194
+            ],
+            "text": "shell> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Vỏ> "
+        },
+        {
+            "bbox": [
+                481.6830232843137,
+                96.61920486111126,
+                442.1569129901962,
+                8.13782702020194
+            ],
+            "text": "mysqlbinlog copied-binlog.000001 copied-binlog.000002 |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "mysqlbinlog sao chép-BinLog.000001 Copied-BinLog.000002 |"
+        },
+        {
+            "bbox": [
+                425.40849673202615,
+                124.2100435606061,
+                491.29661887254895,
+                11.971275252525174
+            ],
+            "text": "For more information, see Section 4.6.9.3, “Using mysqlbinlog to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin, xem Phần 4.6.9.3, sử dụng mysqlbinlog để"
+        },
+        {
+            "bbox": [
+                425.40849673202615,
+                139.7403465909091,
+                207.37828472222225,
+                11.971275252525288
+            ],
+            "text": "Back Up Binary Log Files”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao lưu các tệp nhật ký nhị phân ”"
+        },
+        {
+            "bbox": [
+                619.0028594771242,
+                139.7403465909091,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                169.5067607323232,
+                783.7899991830066,
+                11.971275252525288
+            ],
+            "text": "This method has the advantage that a new server is available almost immediately; only those transactions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phương pháp này có lợi thế là một máy chủ mới có sẵn gần như ngay lập tức; Chỉ những giao dịch đó"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                185.0370637626263,
+                782.8856209150329,
+                11.971275252525174
+            ],
+            "text": "that were committed while the snapshot or dump file was being replayed still need to be obtained from the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đã được cam kết trong khi ảnh chụp nhanh hoặc tệp kết xuất được phát lại vẫn cần được lấy từ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                200.5673667929293,
+                768.8839199346405,
+                11.971275252525288
+            ],
+            "text": "existing source. This means that the replica’s availability is not instantanteous, but only a relatively short",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "nguồn hiện có. Điều này có nghĩa là tính khả dụng của bản sao không phải là ngay lập tức, mà chỉ là một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                216.0976698232323,
+                735.4039530228758,
+                11.971275252525288
+            ],
+            "text": "amount of time should be required for the replica to catch up with these few remaining transactions.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lượng thời gian nên được yêu cầu để bản sao bắt kịp với một vài giao dịch còn lại này."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                245.8640839646465,
+                707.4844938725491,
+                11.971275252525174
+            ],
+            "text": "Copying over binary logs to the target server in advance is usually faster than reading the entire",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao chép nhật ký nhị phân vào máy chủ đích trước thường nhanh hơn so với đọc toàn bộ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                261.3943869949495,
+                782.8186609477125,
+                11.971275252525174
+            ],
+            "text": "transaction execution history from the source in real time. However, it may not always be feasible to move",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lịch sử thực hiện giao dịch từ nguồn trong thời gian thực. Tuy nhiên, có thể không phải lúc nào cũng khả thi để di chuyển"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                276.9246900252525,
+                761.4812593954248,
+                11.971275252525288
+            ],
+            "text": "these files to the target when required, due to size or other considerations. The two remaining methods",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các tệp này đến mục tiêu khi được yêu cầu, do kích thước hoặc các cân nhắc khác. Hai phương pháp còn lại"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                292.4549930555555,
+                745.6205065359479,
+                11.971275252525288
+            ],
+            "text": "for provisioning a new replica discussed in this section use other means to transfer information about",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để cung cấp một bản sao mới được thảo luận trong phần này, sử dụng các phương tiện khác để chuyển thông tin về"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                307.9852960858585,
+                230.859477124183,
+                11.971275252525288
+            ],
+            "text": "transactions to the new replica.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "giao dịch cho bản sao mới."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                337.7517102272727,
+                236.4031695261438,
+                11.971275252525288
+            ],
+            "text": "Injecting empty transactions. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Tiêm các giao dịch trống. "
+        },
+        {
+            "bbox": [
+                393.8378100490196,
+                337.7517102272727,
+                154.52044158496744,
+                11.971275252525288
+            ],
+            "text": " The source’s global ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Nguồn toàn cầu "
+        },
+        {
+            "bbox": [
+                547.8390690359478,
+                338.90355397727285,
+                130.63725490196077,
+                10.172335542929204
+            ],
+            "text": "gtid_executed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GTID_EXECED"
+        },
+        {
+            "bbox": [
+                678.4763239379085,
+                337.7517102272727,
+                225.2822377450981,
+                11.971275252525288
+            ],
+            "text": " variable contains the set of all",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến chứa tập hợp tất cả"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                353.2820132575757,
+                790.372190767974,
+                11.971314078282944
+            ],
+            "text": "transactions executed on the source. Rather than copy the binary logs when taking a snapshot to provision",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giao dịch được thực hiện trên nguồn. Thay vì sao chép nhật ký nhị phân khi chụp ảnh nhanh để cung cấp"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                368.8123551136364,
+                370.5408329248366,
+                11.971275252525288
+            ],
+            "text": "a new server, you can instead note the content of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "một máy chủ mới, thay vào đó bạn có thể lưu ý nội dung của "
+        },
+        {
+            "bbox": [
+                511.2271074346405,
+                369.96416003787874,
+                130.63725490196077,
+                10.172374368686974
+            ],
+            "text": "gtid_executed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GTID_EXECED"
+        },
+        {
+            "bbox": [
+                641.8643623366013,
+                368.8123551136364,
+                288.5743296568628,
+                11.971275252525288
+            ],
+            "text": " on the server from which the snapshot",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trên máy chủ mà từ đó ảnh chụp nhanh"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                384.3426581439394,
+                774.4780081699346,
+                11.971275252525288
+            ],
+            "text": "was taken. Before adding the new server to the replication chain, simply commit an empty transaction on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đã được thực hiện. Trước khi thêm máy chủ mới vào chuỗi sao chép, chỉ cần thực hiện một giao dịch trống trên"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                399.8729611742425,
+                524.0898860294117,
+                11.971275252525174
+            ],
+            "text": "the new server for each transaction identifier contained in the source’s ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Máy chủ mới cho mỗi định danh giao dịch có trong nguồn "
+        },
+        {
+            "bbox": [
+                664.2569276960784,
+                401.02476609848486,
+                130.63725490196077,
+                10.17237436868686
+            ],
+            "text": "gtid_executed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GTID_EXECED"
+        },
+        {
+            "bbox": [
+                794.8941825980392,
+                399.8729611742425,
+                69.80717279411772,
+                11.971275252525174
+            ],
+            "text": ", like this:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", như thế này:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                428.45000000000005,
+                273.3333333333333,
+                8.137904671717138
+            ],
+            "text": "SET GTID_NEXT=’aaa-bbb-ccc-ddd:N’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt gtid_next = xông AAA-bbb-ccc-ddd: n,;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                453.29845896464656,
+                48.23529411764707,
+                8.137917613636318
+            ],
+            "text": "BEGIN;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "BẮT ĐẦU;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                465.7227143308081,
+                56.274509803921575,
+                8.137904671717138
+            ],
+            "text": "COMMIT;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "LÀM;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                490.57121212121217,
+                209.0196078431373,
+                8.137904671717138
+            ],
+            "text": "SET GTID_NEXT=’AUTOMATIC’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt gtid_next = tự động tự động;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                518.1620896464647,
+                775.4158161764706,
+                11.971275252525288
+            ],
+            "text": "Once all transaction identifiers have been reinstated in this way using empty transactions, you must flush",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi tất cả các định danh giao dịch đã được khôi phục theo cách này bằng cách sử dụng các giao dịch trống, bạn phải xóa"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                533.6923926767677,
+                432.8615363562092,
+                11.971275252525231
+            ],
+            "text": "and purge the replica’s binary logs, as shown here, where ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và thanh lọc các bản ghi nhị phân bản sao, như được hiển thị ở đây, ở đâu "
+        },
+        {
+            "bbox": [
+                573.0286115196079,
+                534.8441976010101,
+                10.049019607843093,
+                10.172374368686917
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                583.077631127451,
+                533.6923926767677,
+                334.19686192810457,
+                11.971275252525231
+            ],
+            "text": " is the nonzero suffix of the current binary log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là hậu tố khác của nhật ký nhị phân hiện tại"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                549.2226957070707,
+                72.60416666666666,
+                11.971275252525288
+            ],
+            "text": "file name:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên tập tin:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                577.7997345328283,
+                88.43137254901964,
+                8.137917613636375
+            ],
+            "text": "FLUSH LOGS;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nhật ký xả;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                590.2239898989899,
+                305.49017933006536,
+                8.137904671717195
+            ],
+            "text": "PURGE BINARY LOGS TO ’source-bin.00000",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thanh lọc nhật ký nhị phân vào nguồn gốc của nguồn.00000"
+        },
+        {
+            "bbox": [
+                446.1764538398693,
+                590.2239898989899,
+                8.039249183006575,
+                8.137904671717195
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                454.21570302287586,
+                590.2239898989899,
+                16.078397875816904,
+                8.137904671717195
+            ],
+            "text": "’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ";"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                617.8148674242425,
+                780.0719121732027,
+                11.971275252525288
+            ],
+            "text": "You should do this to prevent this server from flooding the replication stream with false transactions in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn nên làm điều này để ngăn máy chủ này tràn vào luồng sao chép với các giao dịch sai trong"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                633.3451704545455,
+                365.85130718954247,
+                11.971275252525231
+            ],
+            "text": "event that it is later promoted to the source. (The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sự kiện mà sau này nó được thăng cấp lên nguồn. (The "
+        },
+        {
+            "bbox": [
+                506.5375816993464,
+                634.4969753787879,
+                100.49019607843144,
+                10.172374368686917
+            ],
+            "text": "FLUSH LOGS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhật ký xả"
+        },
+        {
+            "bbox": [
+                607.0277777777778,
+                633.3451704545455,
+                288.59109477124184,
+                11.971275252525231
+            ],
+            "text": " statement forces the creation of a new",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tuyên bố buộc phải tạo ra một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                648.8754734848485,
+                107.9767156862745,
+                11.971275252525288
+            ],
+            "text": "binary log file; ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp nhật ký nhị phân; "
+        },
+        {
+            "bbox": [
+                248.66299019607843,
+                650.027278409091,
+                170.83333333333334,
+                10.17237436868686
+            ],
+            "text": "PURGE BINARY LOGS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thanh lọc nhật ký nhị phân"
+        },
+        {
+            "bbox": [
+                419.49632352941177,
+                648.8754734848485,
+                440.29777736928116,
+                11.971275252525288
+            ],
+            "text": " purges the empty transactions, but retains their identifiers.)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " thanh lọc các giao dịch trống, nhưng vẫn giữ được số nhận dạng của họ.)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                678.6418876262626,
+                770.7598206699347,
+                11.971275252525231
+            ],
+            "text": "This method creates a server that is essentially a snapshot, but in time is able to become a source as its",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phương pháp này tạo ra một máy chủ về cơ bản là một ảnh chụp nhanh, nhưng trong thời gian có thể trở thành một nguồn như"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                694.1721906565657,
+                776.3370600490196,
+                11.971275252525231
+            ],
+            "text": "binary log history converges with that of the replication stream (that is, as it catches up with the source or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lịch sử nhật ký nhị phân hội tụ với luồng sao chép (nghĩa là nó bắt kịp với nguồn hoặc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                709.7024936868687,
+                784.6944779411765,
+                11.971275252525231
+            ],
+            "text": "sources). This outcome is similar in effect to that obtained using the remaining provisioning method, which",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "nguồn). Kết quả này có hiệu lực tương tự như được sử dụng bằng phương pháp cung cấp còn lại, mà"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                725.2327967171717,
+                288.57432965686274,
+                11.971275252525288
+            ],
+            "text": "we discuss in the next few paragraphs.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chúng tôi thảo luận trong một vài đoạn tiếp theo."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                754.9992108585859,
+                333.17522834967315,
+                11.971275252525288
+            ],
+            "text": "Excluding transactions with gtid_purged. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Không bao gồm các giao dịch với gtid_purged. "
+        },
+        {
+            "bbox": [
+                490.609868872549,
+                754.9992108585859,
+                154.52044158496733,
+                11.971275252525288
+            ],
+            "text": " The source’s global ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Nguồn toàn cầu "
+        },
+        {
+            "bbox": [
+                644.6111111111111,
+                756.1510546085858,
+                110.53921568627459,
+                10.172335542929318
+            ],
+            "text": "gtid_purged",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "gtid_purged"
+        },
+        {
+            "bbox": [
+                755.1503267973857,
+                754.9992108585859,
+                158.25531045751632,
+                11.971275252525288
+            ],
+            "text": " variable contains the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến chứa"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                770.5295138888889,
+                770.7932504084968,
+                11.971275252525231
+            ],
+            "text": "set of all transactions that have been purged from the source’s binary log. As with the method discussed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tập hợp tất cả các giao dịch đã được thanh trừng từ nhật ký nhị phân của nguồn. Như với phương pháp đã thảo luận"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                786.0598169191919,
+                546.4154411764705,
+                11.971275252525231
+            ],
+            "text": "previously (see Injecting empty transactions), you can record the value of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trước đây (xem tiêm các giao dịch trống), bạn có thể ghi lại giá trị của "
+        },
+        {
+            "bbox": [
+                687.1017156862745,
+                787.2116606691919,
+                130.6372549019609,
+                10.17233554292929
+            ],
+            "text": "gtid_executed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GTID_EXECED"
+        },
+        {
+            "bbox": [
+                817.7389705882354,
+                786.0598169191919,
+                102.39952655228751,
+                11.971275252525231
+            ],
+            "text": " on the server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Trên máy chủ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                801.5901199494949,
+                746.5584150326797,
+                11.971275252525231
+            ],
+            "text": "from which the snapshot was taken (in place of copying the binary logs to the new server). Unlike the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "từ đó ảnh chụp nhanh đã được thực hiện (thay cho sao chép nhật ký nhị phân vào máy chủ mới). Không giống như"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                817.1204229797979,
+                567.8198529411764,
+                11.97127525252526
+            ],
+            "text": "previous method, there is no need to commit empty transactions (or to issue ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phương pháp trước đây, không cần phải thực hiện các giao dịch trống (hoặc phát hành "
+        },
+        {
+            "bbox": [
+                708.5061274509803,
+                818.272266729798,
+                170.8333835784315,
+                10.17233554292929
+            ],
+            "text": "PURGE BINARY LOGS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thanh lọc nhật ký nhị phân"
+        },
+        {
+            "bbox": [
+                879.3395110294118,
+                817.1204229797979,
+                10.233218137254767,
+                11.97127525252526
+            ],
+            "text": ");",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ");"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                832.650726010101,
+                153.61601307189545,
+                11.97127525252526
+            ],
+            "text": "instead, you can set ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thay vào đó, bạn có thể đặt "
+        },
+        {
+            "bbox": [
+                294.3022875816994,
+                833.802569760101,
+                110.53921568627447,
+                10.172335542929318
+            ],
+            "text": "gtid_purged",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "gtid_purged"
+        },
+        {
+            "bbox": [
+                404.84150326797385,
+                832.650726010101,
+                337.01062091503275,
+                11.97127525252526
+            ],
+            "text": " on the replica directly, based on the value of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trên bản sao trực tiếp, dựa trên giá trị của "
+        },
+        {
+            "bbox": [
+                741.8521241830066,
+                833.802569760101,
+                130.6372549019609,
+                10.172335542929318
+            ],
+            "text": "gtid_executed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GTID_EXECED"
+        },
+        {
+            "bbox": [
+                872.4893790849675,
+                832.650726010101,
+                51.21653676470578,
+                11.97127525252526
+            ],
+            "text": " on the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trên"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                848.181029040404,
+                395.6131870915032,
+                11.97127525252526
+            ],
+            "text": "server from which the backup or snapshot was taken.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Máy chủ mà từ đó sao lưu hoặc ảnh chụp nhanh đã được thực hiện."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                877.9474431818182,
+                781.9477124183006,
+                11.97127525252526
+            ],
+            "text": "As with the method using empty transactions, this method creates a server that is functionally a snapshot,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cũng như phương thức sử dụng các giao dịch trống, phương thức này tạo ra một máy chủ có chức năng ảnh chụp nhanh,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                893.4777462121212,
+                782.8856209150329,
+                11.97127525252526
+            ],
+            "text": "but in time is able to become a source as its binary log history converges with that of the source and other",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhưng trong thời gian có thể trở thành một nguồn khi lịch sử nhật ký nhị phân của nó hội tụ với nguồn của nguồn và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                909.0080492424242,
+                62.354166666666686,
+                11.971275252525245
+            ],
+            "text": "replicas.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bản sao."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3466",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3466"
+        }
+    ]
+}

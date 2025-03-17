@@ -1,3 +1,1656 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8eb97d02b70604440ba5b198a6384be7894049b1831e0afd66f814347ab5350e
-size 46120
+{
+    "metadata": {
+        "page_hash": "6d573fb881f3e8cfbc64f4357f12ae50aee7e2f1843e654f7379655e8ad02b62",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1686,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                408.43404452614385,
+                48.370422979798036,
+                238.2790032679739,
+                11.971275252525288
+            ],
+            "text": "Optimizing SELECT Statements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa các câu lệnh chọn"
+        },
+        {
+            "bbox": [
+                202.99019607843138,
+                95.32501294191934,
+                48.235294117647044,
+                8.13782702020194
+            ],
+            "text": "a INT,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "một int,"
+        },
+        {
+            "bbox": [
+                202.99019607843138,
+                107.74921654040418,
+                48.235294117647044,
+                8.137917613636205
+            ],
+            "text": "b INT,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "b int,"
+        },
+        {
+            "bbox": [
+                202.99019607843138,
+                120.17351073232317,
+                48.235294117647044,
+                8.137827020202167
+            ],
+            "text": "KEY(a)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Khóa (a)"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                132.59771433080823,
+                104.50978717320262,
+                8.137917613636205
+            ],
+            "text": ") ENGINE=NDB;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ") Động cơ = ndb;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                157.4241849747475,
+                741.0314709967321,
+                11.971275252525174
+            ],
+            "text": "Engine condition pushdown can be used with queries such as the one shown here, which includes a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Có thể sử dụng đẩy điều kiện động cơ với các truy vấn như được hiển thị ở đây, bao gồm một"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                172.9544880050505,
+                437.55106209150324,
+                11.971275252525174
+            ],
+            "text": "comparison between a nonindexed column and a constant:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "So sánh giữa một cột không được cho biết và một hằng số:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                199.3197787247475,
+                265.2941008986928,
+                8.137904671717138
+            ],
+            "text": "SELECT a, b FROM t1 WHERE b = 10;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn A, B từ T1 trong đó B = 10;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                224.1462364267678,
+                502.76919934640523,
+                11.971275252525174
+            ],
+            "text": "The use of engine condition pushdown can be seen in the output of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Có thể thấy việc sử dụng đẩy điều kiện động cơ trong đầu ra của "
+        },
+        {
+            "bbox": [
+                673.6025326797386,
+                225.2980801767677,
+                70.34313725490199,
+                10.172335542929318
+            ],
+            "text": "EXPLAIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GIẢI THÍCH"
+        },
+        {
+            "bbox": [
+                743.9456699346406,
+                224.1462364267678,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                250.5115271464647,
+                56.27452655228757,
+                8.137904671717251
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                250.5115271464647,
+                329.6078096405229,
+                8.137904671717251
+            ],
+            "text": "EXPLAIN SELECT a,b FROM t1 WHERE b = 10\\G",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Giải thích Chọn a, b từ t1 trong đó b = 10 \\ g"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                262.9358213383839,
+                498.43138929738564,
+                8.137827020202053
+            ],
+            "text": "*************************** 1. row ***************************",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "****** / TÌM HIỂU 1. Hàng ****** / TÌM HIỂU"
+        },
+        {
+            "bbox": [
+                259.264705882353,
+                275.36002493686874,
+                40.19607843137254,
+                8.137917613636432
+            ],
+            "text": "id: 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "ID: 1"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                287.78424147727276,
+                152.74509803921572,
+                8.137904671717251
+            ],
+            "text": "select_type: SIMPLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "select_type: đơn giản"
+        },
+        {
+            "bbox": [
+                235.14707557189544,
+                300.2085227272728,
+                72.35294117647058,
+                8.137917613636318
+            ],
+            "text": "table: t1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bảng: T1"
+        },
+        {
+            "bbox": [
+                243.18627450980392,
+                312.632816919192,
+                72.35292442810459,
+                8.137827020202053
+            ],
+            "text": "type: ALL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Loại: Tất cả"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                325.057033459596,
+                152.74509803921566,
+                8.13782702020194
+            ],
+            "text": "possible_keys: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Có thể_keys: NULL"
+        },
+        {
+            "bbox": [
+                251.22549019607843,
+                337.48123705808086,
+                72.35294117647058,
+                8.137917613636432
+            ],
+            "text": "key: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "KEY: NULL"
+        },
+        {
+            "bbox": [
+                219.06862745098042,
+                349.90545359848477,
+                104.50980392156859,
+                8.137904671717365
+            ],
+            "text": "key_len: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "key_len: null"
+        },
+        {
+            "bbox": [
+                251.22549019607843,
+                362.3297348484849,
+                72.35294117647058,
+                8.137878787878776
+            ],
+            "text": "ref: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tham khảo: NULL"
+        },
+        {
+            "bbox": [
+                243.18627450980392,
+                374.7539902146465,
+                64.3137422385621,
+                8.137865845959595
+            ],
+            "text": "rows: 10",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Hàng: 10"
+        },
+        {
+            "bbox": [
+                235.1470420751634,
+                387.17824558080815,
+                321.56862745098033,
+                8.13782702020194
+            ],
+            "text": "Extra: Using where with pushed condition",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thêm: Sử dụng nơi có điều kiện đẩy"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                412.00470328282836,
+                282.99714052287584,
+                11.971275252525174
+            ],
+            "text": "However, engine condition pushdown ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuy nhiên, việc đẩy điều kiện động cơ "
+        },
+        {
+            "bbox": [
+                453.8304738562092,
+                412.00470328282836,
+                50.278578022875706,
+                11.971275252525174
+            ],
+            "text": "cannot",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "không thể"
+        },
+        {
+            "bbox": [
+                504.1090518790849,
+                412.00470328282836,
+                247.62465849673214,
+                11.971275252525174
+            ],
+            "text": " be used with the following query:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được sử dụng với truy vấn sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                438.3699551767677,
+                257.2549187091503,
+                8.137904671717251
+            ],
+            "text": "SELECT a,b FROM t1 WHERE a = 10;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn a, b từ t1 trong đó a = 10;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                463.1964905303031,
+                637.6940359477125,
+                11.971275252525174
+            ],
+            "text": "Engine condition pushdown is not applicable here because an index exists on column ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đẩy điều kiện động cơ không được áp dụng ở đây vì một chỉ mục tồn tại trên cột "
+        },
+        {
+            "bbox": [
+                808.5273692810458,
+                464.34830839646474,
+                10.049019607843093,
+                10.172361426767566
+            ],
+            "text": "a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Một"
+        },
+        {
+            "bbox": [
+                818.5763888888889,
+                463.1964905303031,
+                136.83416707516346,
+                11.971275252525174
+            ],
+            "text": ". (An index access",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". (Truy cập chỉ mục"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                478.7267935606061,
+                701.923986111111,
+                11.971275252525288
+            ],
+            "text": "method would be more efficient and so would be chosen in preference to condition pushdown.)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phương pháp sẽ hiệu quả hơn và do đó sẽ được chọn theo sở thích để điều kiện đẩy xuống.)"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                505.7288008207071,
+                779.1674334150326,
+                11.971275252525288
+            ],
+            "text": "Engine condition pushdown may also be employed when an indexed column is compared with a constant",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đẩy điều kiện động cơ cũng có thể được sử dụng khi một cột được lập chỉ mục được so sánh với không đổi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                521.2591038510102,
+                58.6527777777778,
+                11.971275252525231
+            ],
+            "text": "using a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sử dụng a "
+        },
+        {
+            "bbox": [
+                229.48609436274512,
+                522.4109087752526,
+                10.049019607843121,
+                10.17237436868686
+            ],
+            "text": ">",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": ">"
+        },
+        {
+            "bbox": [
+                239.53511397058824,
+                521.2591038510102,
+                24.201405637254908,
+                11.971275252525231
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                263.73651960784315,
+                522.4109087752526,
+                10.04901960784315,
+                10.17237436868686
+            ],
+            "text": "<",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "<"
+        },
+        {
+            "bbox": [
+                273.7855392156863,
+                521.2591038510102,
+                71.6830065359477,
+                11.971275252525231
+            ],
+            "text": " operator:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Nhà điều hành:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                547.6243428030302,
+                56.27452655228757,
+                8.137917613636375
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                547.6243428030302,
+                329.6078096405229,
+                8.137917613636375
+            ],
+            "text": "EXPLAIN SELECT a, b FROM t1 WHERE a < 2\\G",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Giải thích Chọn a, b từ t1 trong đó a <2 \\ g"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                560.0485981691919,
+                498.43138929738564,
+                8.137917613636432
+            ],
+            "text": "*************************** 1. row ***************************",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "****** / TÌM HIỂU 1. Hàng ****** / TÌM HIỂU"
+        },
+        {
+            "bbox": [
+                259.264705882353,
+                572.4728535353536,
+                40.19607843137254,
+                8.137904671717195
+            ],
+            "text": "id: 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "ID: 1"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                584.8970571338384,
+                152.74509803921572,
+                8.137917613636375
+            ],
+            "text": "select_type: SIMPLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "select_type: đơn giản"
+        },
+        {
+            "bbox": [
+                235.14707557189544,
+                597.3213125,
+                72.35294117647058,
+                8.137904671717138
+            ],
+            "text": "table: t1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bảng: T1"
+        },
+        {
+            "bbox": [
+                243.18627450980392,
+                609.7455549242425,
+                88.43137254901961,
+                8.137917613636375
+            ],
+            "text": "type: range",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Loại: phạm vi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                622.169810290404,
+                128.62745098039218,
+                8.137917613636432
+            ],
+            "text": "possible_keys: a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Có thể_Keys: a"
+        },
+        {
+            "bbox": [
+                251.22549019607843,
+                634.5940656565656,
+                48.2352941176471,
+                8.137904671717195
+            ],
+            "text": "key: a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "chìa khóa: a"
+        },
+        {
+            "bbox": [
+                219.06862745098042,
+                647.0182692550505,
+                80.39215686274511,
+                8.137917613636375
+            ],
+            "text": "key_len: 5",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "key_len: 5"
+        },
+        {
+            "bbox": [
+                251.22549019607843,
+                659.4425246212122,
+                72.35294117647058,
+                8.137904671717138
+            ],
+            "text": "ref: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tham khảo: NULL"
+        },
+        {
+            "bbox": [
+                243.18627450980392,
+                671.8667670454545,
+                56.2745098039216,
+                8.137917613636375
+            ],
+            "text": "rows: 2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Hàng: 2"
+        },
+        {
+            "bbox": [
+                235.1470420751634,
+                684.2910224116162,
+                321.56862745098033,
+                8.137917613636432
+            ],
+            "text": "Extra: Using where with pushed condition",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thêm: Sử dụng nơi có điều kiện đẩy"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                709.1175189393939,
+                612.5380069444444,
+                11.971275252525231
+            ],
+            "text": "Other supported comparisons for engine condition pushdown include the following:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các so sánh được hỗ trợ khác cho Đẩy điều kiện động cơ bao gồm các điều sau đây:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                736.1195650252525,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                737.271369949495,
+                60.29411764705884,
+                10.172374368686917
+            ],
+            "text": "column",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "cột"
+        },
+        {
+            "bbox": [
+                247.87581699346407,
+                737.271369949495,
+                120.58823529411762,
+                10.172374368686917
+            ],
+            "text": " [NOT] LIKE ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": " [Không] thích "
+        },
+        {
+            "bbox": [
+                368.4640522875817,
+                737.271369949495,
+                70.34313725490199,
+                10.172374368686917
+            ],
+            "text": "pattern",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "mẫu"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                764.2734160353535,
+                70.34313725490199,
+                10.172322601010137
+            ],
+            "text": "pattern",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "mẫu"
+        },
+        {
+            "bbox": [
+                257.9248366013072,
+                763.1215593434345,
+                679.5984812091503,
+                11.971275252525231
+            ],
+            "text": " must be a string literal containing the pattern to be matched; for syntax, see Section 12.8.1,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phải là một chuỗi theo nghĩa đen chứa mẫu được khớp; Đối với cú pháp, xem Phần 12.8.1,"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                778.6518623737375,
+                366.3705065359477,
+                11.97127525252526
+            ],
+            "text": "“String Comparison Functions and Operators”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chức năng so sánh chuỗi và các toán tử trực tuyến"
+        },
+        {
+            "bbox": [
+                526.3844121732026,
+                778.6518623737375,
+                4.65604575163411,
+                11.97127525252526
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                805.6538955176768,
+                19.361111111111114,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                806.805752209596,
+                60.29411764705884,
+                10.172322601010052
+            ],
+            "text": "column",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "cột"
+        },
+        {
+            "bbox": [
+                247.87581699346407,
+                806.805752209596,
+                140.68627450980392,
+                10.172322601010052
+            ],
+            "text": " IS [NOT] NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": " Là [không] null"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                832.6559416035353,
+                19.361111111111114,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                833.8077853535353,
+                60.29411764705884,
+                10.17233554292929
+            ],
+            "text": "column",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "cột"
+        },
+        {
+            "bbox": [
+                247.87581699346407,
+                833.8077853535353,
+                50.24509803921569,
+                10.17233554292929
+            ],
+            "text": " IN (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": " TRONG ("
+        },
+        {
+            "bbox": [
+                298.12091503267976,
+                833.8077853535353,
+                100.49019607843138,
+                10.17233554292929
+            ],
+            "text": "value_list",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "value_list"
+        },
+        {
+            "bbox": [
+                398.61111111111114,
+                833.8077853535353,
+                10.049019607843093,
+                10.17233554292929
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                859.6578970959596,
+                124.74184681372549,
+                11.97127525252526
+            ],
+            "text": "Each item in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mỗi mục trong "
+        },
+        {
+            "bbox": [
+                312.3235294117647,
+                860.8097537878788,
+                100.49019607843138,
+                10.172322601010109
+            ],
+            "text": "value_list",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "value_list"
+        },
+        {
+            "bbox": [
+                412.8137254901961,
+                859.6578970959596,
+                244.82756413398687,
+                11.97127525252526
+            ],
+            "text": " must be a constant, literal value.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phải là một giá trị hằng số, theo nghĩa đen."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                886.659930239899,
+                19.361111111111114,
+                11.971281723484864
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                887.8117869318182,
+                60.29411764705884,
+                10.172329071969685
+            ],
+            "text": "column",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "cột"
+        },
+        {
+            "bbox": [
+                247.87581699346407,
+                887.8117869318182,
+                90.44117647058823,
+                10.172329071969685
+            ],
+            "text": " BETWEEN ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": " GIỮA "
+        },
+        {
+            "bbox": [
+                338.3169934640523,
+                887.8117869318182,
+                90.44117647058823,
+                10.172329071969685
+            ],
+            "text": "constant1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "không đổi1"
+        },
+        {
+            "bbox": [
+                428.75816993464053,
+                887.8117869318182,
+                50.24509803921569,
+                10.172329071969685
+            ],
+            "text": " AND ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": " VÀ "
+        },
+        {
+            "bbox": [
+                479.0032679738562,
+                887.8117869318182,
+                90.44117647058823,
+                10.172329071969685
+            ],
+            "text": "constant2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "hằng số2"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                914.8138239583334,
+                90.44117647058823,
+                10.172329071969685
+            ],
+            "text": "constant1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "không đổi1"
+        },
+        {
+            "bbox": [
+                278.02287581699346,
+                913.6619737373737,
+                37.24838276143794,
+                11.971275252525245
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                315.2712585784314,
+                914.8138239583334,
+                90.44117647058823,
+                10.172329071969685
+            ],
+            "text": "constant2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "hằng số2"
+        },
+        {
+            "bbox": [
+                405.71243504901963,
+                913.6619737373737,
+                285.7941008986928,
+                11.971275252525245
+            ],
+            "text": " must each be a constant, literal value.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phải là một giá trị hằng số, theo nghĩa đen."
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "1657",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1657"
+        }
+    ]
+}

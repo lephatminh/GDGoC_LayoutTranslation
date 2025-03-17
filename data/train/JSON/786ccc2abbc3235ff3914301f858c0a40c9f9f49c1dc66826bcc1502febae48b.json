@@ -1,3 +1,1296 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cb18c0ac0625005451f168ec80f21dc8a8a8a256f6e0da59bbdc16a8145c6b3c
-size 41730
+{
+    "metadata": {
+        "page_hash": "786ccc2abbc3235ff3914301f858c0a40c9f9f49c1dc66826bcc1502febae48b",
+        "original_filename": "sg248440.pdf",
+        "page_no": 97,
+        "num_pages": 390,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "redbooks",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                108.5294167892157,
+                976.9191149305556,
+                22.781122426470574,
+                11.923388857323232
+            ],
+            "text": "80 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "80 "
+        },
+        {
+            "bbox": [
+                156.46374276960785,
+                977.8111768308081,
+                351.59457381535947,
+                10.774146433080809
+            ],
+            "text": "IBM Cloud Private System Administrator’s Guide",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Hướng dẫn quản trị viên hệ thống riêng của IBM Cloud"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                92.5459428661618,
+                643.7292091503269,
+                11.923403093434217
+            ],
+            "text": "Consider the following example: In a HA cluster with 3 masters, a cold backup is taken ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Hãy xem xét ví dụ sau: Trong cụm HA với 3 Master, một bản sao lưu lạnh được thực hiện "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                108.07600000000002,
+                662.6994301470588,
+                11.923416035353512
+            ],
+            "text": "sequentially starting from master 1, then 2, then 3. Each master is powered off (using the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "tuần tự bắt đầu từ Master 1, sau đó 2, sau đó 3. Mỗi chủ được cấp nguồn (sử dụng "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                123.60607007575754,
+                687.461035130719,
+                11.923403093434445
+            ],
+            "text": "recommended approach in the previous sections), backed up, then powered on again. During ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Cách tiếp cận được đề xuất trong các phần trước), được sao lưu, sau đó được cung cấp lại. Trong lúc "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                139.13614015151518,
+                687.3075866013072,
+                11.923403093434445
+            ],
+            "text": "this time period, master 2 and 3 are still running, and the cluster is still fully operational for end ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "khoảng thời gian này, Master 2 và 3 vẫn đang chạy và cụm vẫn còn hoạt động đầy đủ cho cuối "
+        },
+        {
+            "bbox": [
+                229.11937214052287,
+                154.66619728535352,
+                670.9511491013072,
+                11.923416035353625
+            ],
+            "text": "users. When restoring, the same order is used so master 1 is restored first, then 2, then 3. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Người dùng. Khi khôi phục, cùng một thứ tự được sử dụng để Master 1 được khôi phục trước, sau đó 2, sau đó là 3. "
+        },
+        {
+            "bbox": [
+                229.11937214052287,
+                183.16378566919195,
+                667.1897173202615,
+                11.923403093434331
+            ],
+            "text": "The issue here is that each backup for the master nodes is taken at a completely different ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Vấn đề ở đây là mỗi bản sao lưu cho các nút chính được thực hiện ở một nơi hoàn toàn khác nhau "
+        },
+        {
+            "bbox": [
+                229.1193888888889,
+                198.6938428030303,
+                663.3398374183007,
+                11.923416035353625
+            ],
+            "text": "time, with master 3 being the last. This means that master 3 will have different data when ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Thời gian, với Master 3 là người cuối cùng. Điều này có nghĩa là Master 3 sẽ có dữ liệu khác nhau khi "
+        },
+        {
+            "bbox": [
+                229.11942238562094,
+                214.22391287878793,
+                687.2025575980392,
+                11.923403093434331
+            ],
+            "text": "restored, and when brought online last it will attempt to communicate with the existing cluster. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Được khôi phục, và khi được đưa trực tuyến cuối cùng, nó sẽ cố gắng giao tiếp với cụm hiện có. "
+        },
+        {
+            "bbox": [
+                229.12109722222226,
+                229.75398295454545,
+                703.0814656862744,
+                11.923403093434445
+            ],
+            "text": "Therefore, it’s essential to ensure that in the event of a cluster failure, and all 3 masters need ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Do đó, nó rất cần thiết để đảm bảo rằng trong trường hợp thất bại trong cụm và cả 3 bậc thầy cần "
+        },
+        {
+            "bbox": [
+                229.12109722222226,
+                245.2840400883839,
+                474.6167369281045,
+                11.923416035353512
+            ],
+            "text": "to be restored from a backup, that the order of restoration is the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "được khôi phục từ một bản sao lưu, rằng thứ tự phục hồi là "
+        },
+        {
+            "bbox": [
+                703.6323529411765,
+                241.8803153409092,
+                55.48723611111109,
+                15.730786300504974
+            ],
+            "text": "reverse",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TimesNewRoman,Italic",
+                "size": 1
+            },
+            "text_vi": "đảo ngược"
+        },
+        {
+            "bbox": [
+                757.093154003268,
+                245.2864990530303,
+                113.6418672385621,
+                11.923403093434445
+            ],
+            "text": " of the order of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " thứ tự của "
+        },
+        {
+            "bbox": [
+                229.11768055555555,
+                260.81655618686875,
+                508.82535825163404,
+                11.923416035353512
+            ],
+            "text": "backup. This process applies to restoring both hot and cold backups.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "hỗ trợ. Quá trình này áp dụng để khôi phục cả bản sao lưu nóng và lạnh."
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                294.25258680555567,
+                264.5846568627451,
+                14.365582070706978
+            ],
+            "text": "Verifying a restored backup",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Xác minh một bản sao lưu được khôi phục"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                313.8527610479799,
+                676.3731981209149,
+                11.923403093434217
+            ],
+            "text": "Restoring a cluster entirely depends on the hosting virtualization platform. The examples in ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khôi phục một cụm hoàn toàn phụ thuộc vào nền tảng ảo hóa lưu trữ. Các ví dụ trong "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                329.38281818181815,
+                681.1273223039216,
+                11.923416035353625
+            ],
+            "text": "this section uses VMWare to host the IBM Cloud Private installation, and therefore uses the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Phần này sử dụng VMware để lưu trữ cài đặt riêng của IBM Cloud và do đó sử dụng "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                344.9128882575758,
+                678.119483251634,
+                11.923403093434331
+            ],
+            "text": "Virtual Machine (VM) snapshot capabilities provided with the platform. Note that a VMWare ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khả năng chụp nhanh máy ảo (VM) được cung cấp với nền tảng. Lưu ý rằng một vmware "
+        },
+        {
+            "bbox": [
+                229.11930514705884,
+                360.4429583333333,
+                687.3224758986929,
+                11.923403093434445
+            ],
+            "text": "snapshot is not a complete backup mechanism and is used here to demonstrate the practical ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Ảnh chụp không phải là một cơ chế sao lưu hoàn chỉnh và được sử dụng ở đây để chứng minh sự thực tế "
+        },
+        {
+            "bbox": [
+                229.11928839869285,
+                375.9730672348485,
+                444.8869803921569,
+                11.923364267676789
+            ],
+            "text": "application of the backup methods described in this chapter.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Áp dụng các phương thức sao lưu được mô tả trong chương này."
+        },
+        {
+            "bbox": [
+                229.11928839869285,
+                404.4706038510102,
+                687.3841266339869,
+                11.923364267676675
+            ],
+            "text": "Using the previous example of a HA cluster, master nodes 1, 2, and 3 were backed up using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Sử dụng ví dụ trước của cụm HA, các nút chính 1, 2 và 3 đã được sao lưu bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                229.11928839869285,
+                420.00066098484854,
+                661.5732030228758,
+                11.923377209595856
+            ],
+            "text": "VMWare snapshots while the machines were offline (cold snapshot) in sequence starting ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Ảnh chụp nhanh VMware trong khi các máy được ngoại tuyến (ảnh chụp nhanh lạnh) theo trình tự bắt đầu "
+        },
+        {
+            "bbox": [
+                229.11928839869285,
+                435.53073106060606,
+                658.6604444444445,
+                11.923364267676789
+            ],
+            "text": "from master 1. Nginx workloads were deployed to simulate user deployments so that the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "từ Master 1. Nginx khối lượng công việc đã được triển khai để mô phỏng việc triển khai người dùng để "
+        },
+        {
+            "bbox": [
+                229.11928839869285,
+                451.0608011363637,
+                687.2990784313724,
+                11.923364267676789
+            ],
+            "text": "cluster state in etcd was changed. To simulate a disaster, masters 1 and 2 were destroyed. At ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Trạng thái cụm trong ETCD đã được thay đổi. Để mô phỏng một thảm họa, Masters 1 và 2 đã bị phá hủy. Tại "
+        },
+        {
+            "bbox": [
+                229.11928839869285,
+                466.59085827020203,
+                685.6895604575163,
+                11.92337720959597
+            ],
+            "text": "this point etcd is now running as a single node cluster, in read-only mode and cannot accept ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Điểm này ETCD hiện đang chạy như một cụm nút duy nhất, ở chế độ chỉ đọc và không thể chấp nhận "
+        },
+        {
+            "bbox": [
+                229.11928839869285,
+                482.12092834595967,
+                273.5646115196078,
+                11.923364267676789
+            ],
+            "text": "any write requests from Kubernetes. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Bất kỳ yêu cầu ghi từ Kubernetes. "
+        },
+        {
+            "bbox": [
+                229.11928839869285,
+                510.5411369949495,
+                283.8050984477124,
+                11.923364267676789
+            ],
+            "text": "The CoreOS documentation (found at ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Tài liệu lõi (được tìm thấy tại "
+        },
+        {
+            "bbox": [
+                229.11928839869285,
+                526.264533459596,
+                485.3611654411764,
+                11.356249368686804
+            ],
+            "text": "https://coreos.com/etcd/docs/latest/op-guide/failures.html",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "https://coreos.com/etcd/docs/latest/op-guide/failures.html"
+        },
+        {
+            "bbox": [
+                714.5872749183006,
+                526.071207070707,
+                133.9697442810458,
+                11.923364267676789
+            ],
+            "text": ") provides a good ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": ") cung cấp một điều tốt "
+        },
+        {
+            "bbox": [
+                229.11930514705884,
+                541.6012642045455,
+                671.672300245098,
+                11.923377209596026
+            ],
+            "text": "explanation about different etcd failure scenarios and what it can or can’t tolerate. In this ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Giải thích về các kịch bản thất bại khác nhau của ETCD và những gì nó có thể hoặc có thể chịu đựng được. Trong này "
+        },
+        {
+            "bbox": [
+                229.11930514705884,
+                557.131334280303,
+                687.6159575163398,
+                11.923364267676789
+            ],
+            "text": "situation, quorum is lost and as you cannot currently replace IBM Cloud Private master nodes ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Tình huống, Quorum bị mất và vì hiện tại bạn không thể thay thế các nút chính của IBM Cloud Private "
+        },
+        {
+            "bbox": [
+                229.11930514705884,
+                572.6614043560605,
+                683.0138415032679,
+                11.923364267676789
+            ],
+            "text": "using different IP addresses, you cannot recover. Therefore, the snapshots must be used to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Sử dụng các địa chỉ IP khác nhau, bạn không thể khôi phục. Do đó, các ảnh chụp nhanh phải được sử dụng để "
+        },
+        {
+            "bbox": [
+                229.11930514705884,
+                588.191461489899,
+                587.8982630718955,
+                11.923377209595913
+            ],
+            "text": "deploy masters 1 and 2, and restore all 3 masters to a previously working state.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Triển khai Masters 1 và 2, và khôi phục cả 3 bậc thầy về trạng thái làm việc trước đó."
+        },
+        {
+            "bbox": [
+                229.11930514705884,
+                616.6890110479799,
+                687.417640114379,
+                11.923364267676789
+            ],
+            "text": "Restore all 3 masters to a previous snapshot, power on the nodes and allow some time for all ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khôi phục tất cả 3 bậc thầy về ảnh chụp nhanh trước đó, cấp nguồn cho các nút và cho phép một chút thời gian cho tất cả "
+        },
+        {
+            "bbox": [
+                229.11930514705884,
+                632.2190681818182,
+                682.2596290849673,
+                11.923364267676732
+            ],
+            "text": "the containers to start. To ensure the etcd cluster has started successfully and the cluster is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "các container để bắt đầu. Để đảm bảo cụm ETCD đã bắt đầu thành công và cụm là "
+        },
+        {
+            "bbox": [
+                229.11930514705884,
+                647.7491382575759,
+                685.7529362745098,
+                11.923364267676732
+            ],
+            "text": "healthy, etcd provides a useful command line utility to query the cluster status, which can be ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "khỏe mạnh, ETCD cung cấp một tiện ích dòng lệnh hữu ích để truy vấn trạng thái cụm, có thể là "
+        },
+        {
+            "bbox": [
+                229.11768055555555,
+                663.2792083333334,
+                659.574804738562,
+                11.923364267676732
+            ],
+            "text": "downloaded to your local machine or ran from the etcd container itself. To get the cluster ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Tải xuống máy cục bộ của bạn hoặc chạy từ chính container ETCD. Để có được cụm "
+        },
+        {
+            "bbox": [
+                229.11768055555555,
+                678.8092654671717,
+                629.0596335784313,
+                11.92337720959597
+            ],
+            "text": "health status, complete the following steps from the IBM Cloud Private boot node (or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Tình trạng sức khỏe, hoàn thành các bước sau từ nút khởi động riêng của IBM Cloud (hoặc "
+        },
+        {
+            "bbox": [
+                229.11768055555555,
+                694.33932260101,
+                306.85379779411767,
+                11.92337720959597
+            ],
+            "text": "whatever system has cluster access with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Bất cứ hệ thống nào có quyền truy cập cụm với "
+        },
+        {
+            "bbox": [
+                536.1149950980392,
+                694.5326619318182,
+                58.58499714052289,
+                11.356210542929261
+            ],
+            "text": "kubectl",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "KUBECTL"
+        },
+        {
+            "bbox": [
+                594.6999922385621,
+                694.33932260101,
+                10.135591911764664,
+                11.92337720959597
+            ],
+            "text": "):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "):"
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                716.3917834595959,
+                15.363041666666675,
+                11.92339015151515
+            ],
+            "text": "1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "1."
+        },
+        {
+            "bbox": [
+                249.6000780228758,
+                716.3917834595959,
+                38.904963643790865,
+                11.92339015151515
+            ],
+            "text": "Run ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Chạy "
+        },
+        {
+            "bbox": [
+                288.6067879901961,
+                716.5851357323232,
+                393.31335171568634,
+                11.356210542929318
+            ],
+            "text": "kubectl -n kube-system get pods | grep k8s-etcd",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Kubectl -N Kube -System Get Pods | GREP K8S-ETCD"
+        },
+        {
+            "bbox": [
+                681.9251977124184,
+                716.3917834595959,
+                217.7586037581699,
+                11.92339015151515
+            ],
+            "text": " to retrieve the etc pod name ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " để lấy tên pod ETC "
+        },
+        {
+            "bbox": [
+                253.233954248366,
+                731.9218276515152,
+                102.26848733660131,
+                11.92339015151515
+            ],
+            "text": "(the format is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "(Định dạng là "
+        },
+        {
+            "bbox": [
+                355.53247140522876,
+                732.1151799242425,
+                150.632760620915,
+                11.356210542929261
+            ],
+            "text": "k8s-etcd-<node-ip>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "K8S-ETCD- <nút-IP>"
+        },
+        {
+            "bbox": [
+                506.1669236111111,
+                731.9218276515152,
+                10.335751633986888,
+                11.92339015151515
+            ],
+            "text": "):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "):"
+        },
+        {
+            "bbox": [
+                253.23227941176475,
+                754.0903128156566,
+                636.0939975490196,
+                11.420674242424184
+            ],
+            "text": "[root@icp-ha-boot ~]# kubectl -n kube-system get pods -o name| grep k8s-etcd",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": "[root@icp-ha-boot ~]# kubectl -n kube-system get pods -o name | GREP K8S-ETCD"
+        },
+        {
+            "bbox": [
+                253.23227941176475,
+                769.620369949495,
+                184.09557720588236,
+                11.356210542929318
+            ],
+            "text": "k8s-etcd-172.24.19.201",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "K8S-ETCD-172.24.19.201"
+        },
+        {
+            "bbox": [
+                253.23227941176475,
+                785.1504141414141,
+                184.09557720588236,
+                11.35621054292929
+            ],
+            "text": "k8s-etcd-172.24.19.202",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "K8S-ETCD-172.24.19.202"
+        },
+        {
+            "bbox": [
+                253.23227941176475,
+                800.6804583333334,
+                184.09557720588236,
+                11.35621054292929
+            ],
+            "text": "k8s-etcd-172.24.19.203",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "K8S-ETCD-172.24.19.203"
+        },
+        {
+            "bbox": [
+                229.11434763071898,
+                837.9922831439394,
+                14.148902369281018,
+                11.92339015151515
+            ],
+            "text": "2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "2."
+        },
+        {
+            "bbox": [
+                247.979556372549,
+                837.9922831439394,
+                405.5169648692811,
+                11.92339015151515
+            ],
+            "text": "Use any one of the pod names returned to execute an",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Sử dụng bất kỳ một trong các tên nhóm được trả về để thực thi"
+        },
+        {
+            "bbox": [
+                653.3833692810458,
+                838.1856354166666,
+                192.4363137254901,
+                11.420674242424269
+            ],
+            "text": " etcdctl cluster-health",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": " ETCDCTL Cụm-Sức khỏe"
+        },
+        {
+            "bbox": [
+                253.23060457516343,
+                853.5223402777777,
+                452.25704861111114,
+                11.923390151515179
+            ],
+            "text": "command, using one of the master node IP addresses in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "lệnh, sử dụng một trong các địa chỉ IP nút chính trong "
+        },
+        {
+            "bbox": [
+                705.4359342320262,
+                853.7156925505051,
+                66.9256331699346,
+                11.35622348484847
+            ],
+            "text": "endpoint",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "điểm cuối"
+        },
+        {
+            "bbox": [
+                772.3616176470589,
+                853.5223402777777,
+                85.71225857843137,
+                11.923390151515179
+            ],
+            "text": " parameter:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " Tham số:"
+        },
+        {
+            "bbox": [
+                253.22897998366017,
+                875.7681663510101,
+                661.2161613562091,
+                11.42066130050506
+            ],
+            "text": "[root@icp-ha-boot ~]# kubectl -n kube-system exec k8s-etcd-172.24.19.201 -- sh ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": "[root@icp-ha-boot ~]# kubectl -n kube-system Exec "
+        },
+        {
+            "bbox": [
+                253.22897998366017,
+                891.2982234848484,
+                636.0940310457515,
+                11.420663888888882
+            ],
+            "text": "-c \"export ETCDCTL_API=2; etcdctl --cert-file /etc/cfc/conf/etcd/client.pem ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": "-c \"Xuất ETCDCTL_API = 2; ETCDCTL--cert-file /etc/cfc/conf/etcd/client.pem "
+        },
+        {
+            "bbox": [
+                253.22897998366017,
+                906.8282767361111,
+                460.3391233660131,
+                11.42066777146465
+            ],
+            "text": "--key-file /etc/cfc/conf/etcd/client-key.pem --ca-file ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": "--Key-file /etc/cfc/conf/etcd/client-key.pem--ca-file "
+        },
+        {
+            "bbox": [
+                253.22897998366017,
+                922.3583325757576,
+                543.9461625816994,
+                11.42066777146465
+            ],
+            "text": "/etc/cfc/conf/etcd/ca.pem --endpoints https://172.24.19.201:4001 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": "/etc/cfc/conf/etcd/ca.pem --endpoints https://172.24.19.201:4001 "
+        },
+        {
+            "bbox": [
+                253.22897998366017,
+                937.8883897095959,
+                125.51061356209152,
+                11.420671654040405
+            ],
+            "text": "cluster-health\"",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": "Sức khỏe tập đoàn \""
+        }
+    ]
+}

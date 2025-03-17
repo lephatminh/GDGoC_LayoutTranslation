@@ -1,3 +1,1456 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4b691a9c931ce3042a05817c6a0a4f4b3b47694e2ad28b501186d461c4008ff8
-size 42889
+{
+    "metadata": {
+        "page_hash": "9f8be98b8b8b95dcf81e042aedc7422850c6bd032f94e5b6bddb4847b0018d29",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 5026,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                375.3894848856209,
+                48.370422979798036,
+                304.3680555555556,
+                11.971275252525288
+            ],
+            "text": "Performance Schema Replication Tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng sao chép lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                94.96133207070716,
+                141.4902128267974,
+                11.971275252525174
+            ],
+            "text": "The variable value.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị biến."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                123.32999305555563,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                124.48184974747471,
+                241.17648733660133,
+                10.17232260101025
+            ],
+            "text": "user_variables_by_thread",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "user_variables_by_thread"
+        },
+        {
+            "bbox": [
+                445.52330106209155,
+                123.32999305555563,
+                185.27040808823523,
+                11.971275252525288
+            ],
+            "text": " table has these indexes:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng có các chỉ mục này:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                151.69874463383837,
+                138.65973897058822,
+                11.971275252525288
+            ],
+            "text": "•Primary key on (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Khóa chính trên ("
+        },
+        {
+            "bbox": [
+                309.4930388071895,
+                152.8505107323232,
+                90.44117647058823,
+                10.172413194444516
+            ],
+            "text": "THREAD_ID",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thread_id"
+        },
+        {
+            "bbox": [
+                399.93421527777775,
+                151.69874463383837,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                409.2463402777778,
+                152.8505107323232,
+                130.63725490196077,
+                10.172413194444516
+            ],
+            "text": "VARIABLE_NAME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Biến_name"
+        },
+        {
+            "bbox": [
+                539.8835951797386,
+                151.69874463383837,
+                5.577172385620884,
+                11.971275252525288
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                181.21924936868697,
+                140.6862745098039,
+                10.172335542929204
+            ],
+            "text": "TRUNCATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bàn cắt ngắn"
+        },
+        {
+            "bbox": [
+                311.51960784313724,
+                180.06740561868685,
+                175.94156821895427,
+                11.971275252525288
+            ],
+            "text": " is not permitted for the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " không được phép cho "
+        },
+        {
+            "bbox": [
+                487.4611760620915,
+                181.21924936868697,
+                241.1764705882353,
+                10.172335542929204
+            ],
+            "text": "user_variables_by_thread",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "user_variables_by_thread"
+        },
+        {
+            "bbox": [
+                728.6376466503268,
+                180.06740561868685,
+                45.62253227124188,
+                11.971275252525288
+            ],
+            "text": " table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                209.14785921717169,
+                91.25849673202615,
+                16.75979829545463
+            ],
+            "text": "27.12.11",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "27.12.11"
+        },
+        {
+            "bbox": [
+                188.21813725490196,
+                209.14785921717169,
+                453.4787749183007,
+                16.75979829545463
+            ],
+            "text": "Performance Schema Replication Tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Bảng sao chép lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                243.01691351010106,
+                729.7597536764706,
+                11.971275252525288
+            ],
+            "text": "The Performance Schema provides tables that expose replication information. This is similar to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lược đồ hiệu suất cung cấp các bảng hiển thị thông tin sao chép. Điều này tương tự như"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                258.5472165404042,
+                224.32761437908496,
+                11.971275252525174
+            ],
+            "text": "information available from the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thông tin có sẵn từ "
+        },
+        {
+            "bbox": [
+                395.1609477124183,
+                259.69907323232326,
+                271.32352941176475,
+                10.172322601010137
+            ],
+            "text": "SHOW REPLICA | SLAVE STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị bản sao | Trạng thái nô lệ"
+        },
+        {
+            "bbox": [
+                666.4844771241831,
+                258.5472165404042,
+                281.15482026143775,
+                11.971275252525174
+            ],
+            "text": " statement, but representation in table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố, nhưng đại diện trong bảng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                274.0775195707072,
+                373.2540682189542,
+                11.971275252525288
+            ],
+            "text": "form is more accessible and has usability benefits:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hình thức dễ tiếp cận hơn và có lợi ích khả năng sử dụng:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                302.44619349747484,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                303.59803724747474,
+                271.3235294117647,
+                10.172335542929432
+            ],
+            "text": "SHOW REPLICA | SLAVE STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị bản sao | Trạng thái nô lệ"
+        },
+        {
+            "bbox": [
+                458.9052287581699,
+                302.44619349747484,
+                421.70707434640525,
+                11.971275252525288
+            ],
+            "text": " output is useful for visual inspection, but not so much for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đầu ra là hữu ích để kiểm tra trực quan, nhưng không quá nhiều cho"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                317.97649652777784,
+                762.3688725490197,
+                11.971275252525288
+            ],
+            "text": "programmatic use. By contrast, using the Performance Schema tables, information about replica status",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng chương trình. Ngược lại, sử dụng bảng lược đồ hiệu suất, thông tin về trạng thái bản sao"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                333.50679955808084,
+                233.67320261437914,
+                11.971275252525288
+            ],
+            "text": "can be searched using general ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có thể được tìm kiếm bằng cách sử dụng chung "
+        },
+        {
+            "bbox": [
+                421.25490196078437,
+                334.65864330808085,
+                60.29415114379077,
+                10.172335542929318
+            ],
+            "text": "SELECT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LỰA CHỌN"
+        },
+        {
+            "bbox": [
+                481.54905310457514,
+                333.50679955808084,
+                206.64128962418306,
+                11.971275252525288
+            ],
+            "text": " queries, including complex ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Truy vấn, bao gồm cả phức tạp "
+        },
+        {
+            "bbox": [
+                688.1903427287582,
+                334.65864330808085,
+                50.24509803921569,
+                10.172335542929318
+            ],
+            "text": "WHERE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ở ĐÂU"
+        },
+        {
+            "bbox": [
+                738.4354407679739,
+                333.50679955808084,
+                226.2201462418301,
+                11.971275252525288
+            ],
+            "text": " conditions, joins, and so forth.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Điều kiện, tham gia, và vv."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                361.87546054292943,
+                743.7781360294117,
+                11.971275252525174
+            ],
+            "text": "•Query results can be saved in tables for further analysis, or assigned to variables and thus used in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Kết quả truy vấn có thể được lưu trong các bảng để phân tích thêm hoặc được gán cho các biến và do đó được sử dụng trong"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                377.4057635732323,
+                139.6311274509804,
+                11.971275252525288
+            ],
+            "text": "stored procedures.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thủ tục lưu trữ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                405.77446338383845,
+                724.1993799019608,
+                11.971275252525288
+            ],
+            "text": "•The replication tables provide better diagnostic information. For multithreaded replica operation,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các bảng sao chép cung cấp thông tin chẩn đoán tốt hơn. Cho hoạt động bản sao đa luồng,"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                422.456584280303,
+                271.3235294117647,
+                10.172361426767793
+            ],
+            "text": "SHOW REPLICA | SLAVE STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị bản sao | Trạng thái nô lệ"
+        },
+        {
+            "bbox": [
+                458.9052287581699,
+                421.30476641414145,
+                427.250783496732,
+                11.971275252525288
+            ],
+            "text": " reports all coordinator and worker thread errors using the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " báo cáo tất cả các lỗi điều phối viên và chủ đề công nhân bằng cách sử dụng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                437.9868873106061,
+                140.68627450980392,
+                10.17236142676768
+            ],
+            "text": "Last_SQL_Errno",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Last_sql_errno"
+        },
+        {
+            "bbox": [
+                328.26797385620915,
+                436.83506944444446,
+                37.24838276143794,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                365.5163566176471,
+                437.9868873106061,
+                140.68624101307182,
+                10.17236142676768
+            ],
+            "text": "Last_SQL_Error",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Last_sql_error"
+        },
+        {
+            "bbox": [
+                506.2025976307189,
+                436.83506944444446,
+                406.76756535947726,
+                11.971275252525288
+            ],
+            "text": " fields, so only the most recent of those errors is visible",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các trường, vì vậy chỉ có các lỗi gần đây nhất trong số đó là có thể nhìn thấy"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                452.3653724747476,
+                733.5281360294118,
+                11.971275252525174
+            ],
+            "text": "and information can be lost. The replication tables store errors on a per-thread basis without loss of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và thông tin có thể bị mất. Các bảng sao chép lưu trữ lỗi trên cơ sở mỗi luồng mà không mất"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                467.8956755050506,
+                87.49348080065363,
+                11.971275252525288
+            ],
+            "text": "information.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thông tin."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                496.2643882575758,
+                786.5367647058823,
+                11.971275252525288
+            ],
+            "text": "•The last seen transaction is visible in the replication tables on a per-worker basis. This is information not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Giao dịch nhìn thấy cuối cùng có thể nhìn thấy trong các bảng sao chép trên cơ sở mỗi người lao động. Đây là thông tin không"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                511.7946912878788,
+                99.5857675653595,
+                11.971275252525288
+            ],
+            "text": "avilable from ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có thể từ "
+        },
+        {
+            "bbox": [
+                287.16746691176473,
+                512.9464962121212,
+                271.3235294117647,
+                10.17237436868686
+            ],
+            "text": "SHOW REPLICA | SLAVE STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị bản sao | Trạng thái nô lệ"
+        },
+        {
+            "bbox": [
+                558.4909963235294,
+                511.7946912878788,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                540.1633522727273,
+                780.9762904411764,
+                11.971275252525231
+            ],
+            "text": "•Developers familiar with the Performance Schema interface can extend the replication tables to provide",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các nhà phát triển quen thuộc với giao diện Lược đồ hiệu suất có thể mở rộng các bảng sao chép để cung cấp"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                555.6936553030303,
+                377.02245057189543,
+                11.971275252525288
+            ],
+            "text": "additional information by adding rows to the tables.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin bổ sung bằng cách thêm các hàng vào các bảng."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                584.4182578914142,
+                293.7328431372549,
+                14.365530303030255
+            ],
+            "text": "Replication Table Descriptions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Mô tả bảng sao chép"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                615.537115530303,
+                552.9138071895425,
+                11.971275252525231
+            ],
+            "text": "The Performance Schema provides the following replication-related tables:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lược đồ hiệu suất cung cấp các bảng liên quan đến sao chép sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                643.9057765151515,
+                612.5714869281046,
+                11.971275252525288
+            ],
+            "text": "•Tables that contain information about the connection of the replica to the source:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các bảng chứa thông tin về kết nối của bản sao với nguồn:"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                672.2744892676767,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                204.33006535947712,
+                673.4262941919192,
+                361.76470588235304,
+                10.17237436868686
+            ],
+            "text": "replication_connection_configuration",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "sao chép_connection_configuration"
+        },
+        {
+            "bbox": [
+                566.0947712418301,
+                672.2744892676767,
+                354.6801805555556,
+                11.971275252525288
+            ],
+            "text": ": Configuration parameters for connecting to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Các tham số cấu hình để kết nối với"
+        },
+        {
+            "bbox": [
+                204.33006535947712,
+                687.8047922979798,
+                50.26186315359479,
+                11.971275252525231
+            ],
+            "text": "source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "nguồn"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                716.1734532828283,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                204.33006535947712,
+                717.3252582070708,
+                291.42156862745105,
+                10.17237436868686
+            ],
+            "text": "replication_connection_status",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "sao chép_connection_status"
+        },
+        {
+            "bbox": [
+                495.75163398692814,
+                716.1734532828283,
+                348.18179779411764,
+                11.971275252525288
+            ],
+            "text": ": Current status of the connection to the source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Trạng thái hiện tại của kết nối với nguồn"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                744.5421530934343,
+                19.361111111111114,
+                11.971236426767689
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                204.33006535947712,
+                745.693970959596,
+                442.1568627450981,
+                10.172322601010137
+            ],
+            "text": "replication_asynchronous_connection_failover",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "sao chép_asynchronous_connection_failover"
+        },
+        {
+            "bbox": [
+                646.4869281045752,
+                744.5421530934343,
+                256.91996813725495,
+                11.971236426767689
+            ],
+            "text": ": Source lists for the asynchronous",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Danh sách nguồn cho sự không đồng bộ"
+        },
+        {
+            "bbox": [
+                204.33006535947712,
+                760.0724172979799,
+                229.90485375816993,
+                11.97127525252526
+            ],
+            "text": "connection failover mechanism",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cơ chế chuyển đổi dự phòng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                788.4411688762626,
+                679.548185866013,
+                11.97127525252526
+            ],
+            "text": "•Tables that contain general (not thread-specific) information about the transaction applier:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các bảng có chứa thông tin chung (không phải chủ đề cụ thể) về trình apple giao dịch:"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                816.8098298611111,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                204.33006535947712,
+                817.9616736111111,
+                331.61764705882354,
+                10.172335542929261
+            ],
+            "text": "replication_applier_configuration",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sao chép_applier_configuration"
+        },
+        {
+            "bbox": [
+                535.9477124183006,
+                816.8098298611111,
+                415.1752618464052,
+                11.971275252525231
+            ],
+            "text": ": Configuration parameters for the transaction applier on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Các tham số cấu hình cho Trình ứng dụng giao dịch trên"
+        },
+        {
+            "bbox": [
+                204.33006535947712,
+                832.3401328914142,
+                81.91625816993465,
+                11.971275252525231
+            ],
+            "text": "the replica.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bản sao."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                860.7087938762627,
+                19.361111111111114,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                204.33006535947712,
+                861.8606505681819,
+                261.27450980392155,
+                10.172322601010109
+            ],
+            "text": "replication_applier_status",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sao chép_applier_status"
+        },
+        {
+            "bbox": [
+                465.6045751633987,
+                860.7087938762627,
+                412.39498284313726,
+                11.97127525252526
+            ],
+            "text": ": Current status of the transaction applier on the replica.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Trạng thái hiện tại của người ứng dụng giao dịch trên bản sao."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                889.0775454545454,
+                757.7296421568627,
+                11.971271369949505
+            ],
+            "text": "•Tables that contain information about specific threads responsible for applying transactions received",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các bảng có chứa thông tin về các chủ đề cụ thể chịu trách nhiệm áp dụng các giao dịch nhận được"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                904.6078446022727,
+                121.00694444444446,
+                11.971275252525245
+            ],
+            "text": "from the source:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Từ nguồn:"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "4997",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4997"
+        }
+    ]
+}

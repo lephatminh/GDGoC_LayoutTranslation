@@ -1,3 +1,496 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d690b61c9e091dd58d3f74a9de45ec17d2dd969b5a13320206db85fae6297cac
-size 16350
+{
+    "metadata": {
+        "page_hash": "13822015b431aa6b998786674ff5ade48fa1f2ca9e500b2765321dd7865446ef",
+        "original_filename": "cm-oreilly-kubernetes-patterns-ebook-f19824-201910-en.pdf",
+        "page_no": 235,
+        "num_pages": 266,
+        "original_width": 504,
+        "original_height": 661.5,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                146.42857142857142,
+                81.03777059712763,
+                732.1429791666667,
+                21.94800037792902
+            ],
+            "text": "Figure 24-3 summarizes how the CA interacts with cloud providers and Kubernetes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Hình 24-3 tóm tắt cách CA tương tác với các nhà cung cấp đám mây và kubernetes"
+        },
+        {
+            "bbox": [
+                146.42241125992064,
+                100.56154913076341,
+                245.06039429563486,
+                21.94800037792902
+            ],
+            "text": "for scaling out cluster nodes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Để mở rộng các nút cụm."
+        },
+        {
+            "bbox": [
+                146.42239702380954,
+                293.4347996976568,
+                362.89265952380947,
+                22.159570294784658
+            ],
+            "text": "Figure 24-3. Cluster autoscaling mechanism",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Hình 24-3. Cụm cơ chế tự động"
+        },
+        {
+            "bbox": [
+                146.42235024801587,
+                331.7642369614513,
+                732.142997470238,
+                21.948000377928906
+            ],
+            "text": "As you probably figured out by now, scaling Pods and nodes are decoupled but com‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Như bạn có thể đã tìm ra bây giờ, các nhóm và nút mở rộng được tách rời nhưng com‐"
+        },
+        {
+            "bbox": [
+                146.4376642361111,
+                351.2880619803477,
+                732.1427737599206,
+                21.94804686318969
+            ],
+            "text": "plementary procedures. An HPA or VPA can analyze usage metrics, events, and scale",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Thủ tục đủ điều kiện. HPA hoặc VPA có thể phân tích các số liệu, sự kiện và quy mô sử dụng"
+        },
+        {
+            "bbox": [
+                146.43158134920634,
+                370.81188699924417,
+                732.1430198412697,
+                21.948000377928906
+            ],
+            "text": "Pods. If the cluster capacity is insufficient, the CA kicks in and increases the capacity.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Pods. Nếu công suất cụm là không đủ, CA sẽ khởi động và tăng công suất."
+        },
+        {
+            "bbox": [
+                146.4254984623016,
+                390.33574300831447,
+                732.1428795138888,
+                21.948000377928906
+            ],
+            "text": "The CA is also helpful when there are irregularities in the cluster load due to batch",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "CA cũng hữu ích khi có sự bất thường trong tải cụm do hàng loạt"
+        },
+        {
+            "bbox": [
+                146.41941760912695,
+                409.85952154195013,
+                732.1429405257936,
+                21.94804686318969
+            ],
+            "text": "Jobs, recurring tasks, continuous integration tests, or other peak tasks that require a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Công việc, các nhiệm vụ định kỳ, kiểm tra tích hợp liên tục hoặc các nhiệm vụ cực đại khác yêu cầu"
+        },
+        {
+            "bbox": [
+                146.43477837301586,
+                429.38339304610736,
+                732.1427920634919,
+                21.94798488284198
+            ],
+            "text": "temporary increase in the capacity. It can increase and reduce capacity and provide",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tăng tạm thời về công suất. Nó có thể tăng và giảm công suất và cung cấp"
+        },
+        {
+            "bbox": [
+                146.4286954861111,
+                448.9072025699169,
+                411.3880187996032,
+                21.94804686318969
+            ],
+            "text": "significant savings on cloud infrastructure costs.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tiết kiệm đáng kể chi phí cơ sở hạ tầng đám mây."
+        },
+        {
+            "bbox": [
+                146.43012316468256,
+                483.94441421012846,
+                146.3762577876984,
+                29.27401549508693
+            ],
+            "text": "Scaling Levels",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 15.77000045776367
+            },
+            "text_vi": "Mức độ mở rộng"
+        },
+        {
+            "bbox": [
+                146.4235745535714,
+                519.2688892668178,
+                732.1428917162699,
+                21.948000377928906
+            ],
+            "text": "In this chapter, we explored various techniques for scaling deployed workloads to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Trong chương này, chúng tôi đã khám phá các kỹ thuật khác nhau để mở rộng khối lượng công việc được triển khai để"
+        },
+        {
+            "bbox": [
+                146.43885803571428,
+                538.7926987906274,
+                732.142881547619,
+                21.948000377928963
+            ],
+            "text": "meet their changing resource needs. While a human operator can manually perform",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "đáp ứng nhu cầu tài nguyên thay đổi của họ. Trong khi một người điều khiển con người có thể thực hiện thủ công"
+        },
+        {
+            "bbox": [
+                146.43277718253967,
+                558.3165238095238,
+                732.1430645833333,
+                21.948000377928963
+            ],
+            "text": "most of the activities listed here, that doesn’t align with the cloud-native mindset. In",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Hầu hết các hoạt động được liệt kê ở đây, điều đó không phù hợp với tư duy bản địa. TRONG"
+        },
+        {
+            "bbox": [
+                146.42669429563492,
+                577.8403488284202,
+                732.1430056051587,
+                21.948000377928963
+            ],
+            "text": "order to enable large-scale distributed system management, the automation of repeti‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "để cho phép quản lý hệ thống phân tán quy mô lớn, tự động hóa Repeti‐"
+        },
+        {
+            "bbox": [
+                146.42070496031747,
+                597.3641583522299,
+                732.1429750992063,
+                21.948000377928963
+            ],
+            "text": "tive activities is a must. The preferred approach is to automate scaling and enable",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các hoạt động tive là phải. Cách tiếp cận ưa thích là tự động hóa tỷ lệ và bật"
+        },
+        {
+            "bbox": [
+                146.43597217261905,
+                616.8879833711262,
+                452.7937316964285,
+                21.948000377928906
+            ],
+            "text": "human operators to focus on tasks that a Kubernetes ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các nhà khai thác con người tập trung vào các nhiệm vụ mà Kubernetes "
+        },
+        {
+            "bbox": [
+                599.2297038690475,
+                616.6764599395314,
+                70.06302083333344,
+                22.15952380952382
+            ],
+            "text": "operator",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "nhà điều hành"
+        },
+        {
+            "bbox": [
+                669.292724702381,
+                616.8879833711262,
+                183.73127033730145,
+                21.948000377928906
+            ],
+            "text": " cannot automate yet.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " chưa thể tự động hóa."
+        },
+        {
+            "bbox": [
+                146.43604945436508,
+                645.7088450491308,
+                732.1427615575396,
+                21.948000377928963
+            ],
+            "text": "Let’s review all of the scaling techniques, from the more granular to the more coarse-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Hãy để xem xét tất cả các kỹ thuật tỷ lệ, từ hạt hơn đến thô hơn-"
+        },
+        {
+            "bbox": [
+                146.42993606150793,
+                665.2327165532879,
+                330.84010213293647,
+                21.948000377928963
+            ],
+            "text": "grained order as shown in Figure 24-4.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "thứ tự hạt như trong Hình 24-4."
+        },
+        {
+            "bbox": [
+                146.43296225198412,
+                945.5380580498866,
+                25.295543849206354,
+                16.70680427059714
+            ],
+            "text": "216 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "216 "
+        },
+        {
+            "bbox": [
+                187.1401030753968,
+                945.5380580498866,
+                6.735722420634943,
+                16.70680427059714
+            ],
+            "text": "| ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "| "
+        },
+        {
+            "bbox": [
+                209.28742857142856,
+                945.5380580498866,
+                144.32364037698414,
+                16.70680427059714
+            ],
+            "text": "Chapter 24: Elastic Scale",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "Chương 24: Quy mô đàn hồi"
+        }
+    ]
+}

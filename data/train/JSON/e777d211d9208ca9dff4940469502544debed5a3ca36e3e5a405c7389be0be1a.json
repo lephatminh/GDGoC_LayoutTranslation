@@ -1,3 +1,3396 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:636cdee0fc1014b1e219e4f0c7ef31ae505751acf98a6c87c585f2dc7ed177fc
-size 93486
+{
+    "metadata": {
+        "page_hash": "e777d211d9208ca9dff4940469502544debed5a3ca36e3e5a405c7389be0be1a",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1892,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                443.33765604575166,
+                48.370422979798036,
+                168.47174673202613,
+                11.971275252525288
+            ],
+            "text": "Date and Time Literals",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ngày và thời gian theo nghĩa đen"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                762.3688725490197,
+                11.971275252525174
+            ],
+            "text": "This section describes the acceptable formats for date and time literals. For more information about the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phần này mô tả các định dạng chấp nhận được cho các chữ ngày và thời gian. Để biết thêm thông tin về"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                110.49163510101016,
+                748.2835469771242,
+                11.971275252525288
+            ],
+            "text": "temporal data types, such as the range of permitted values, see Section 11.2, “Date and Time Data",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các loại dữ liệu tạm thời, chẳng hạn như phạm vi của các giá trị được phép, xem Phần 11.2, dữ liệu ngày và thời gian"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                126.02193813131316,
+                64.96692851307188,
+                11.971275252525288
+            ],
+            "text": "Types”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các loại ”"
+        },
+        {
+            "bbox": [
+                222.01633986928107,
+                126.02193813131316,
+                4.656045751633968,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                155.92421654040402,
+                392.7491830065359,
+                11.971275252525288
+            ],
+            "text": "Standard SQL and ODBC Date and Time Literals. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Tiêu chuẩn SQL và ODBC Ngày và thời gian theo nghĩa đen. "
+        },
+        {
+            "bbox": [
+                580.3308823529412,
+                155.92421654040402,
+                340.6952279411764,
+                11.971275252525288
+            ],
+            "text": " Standard SQL requires temporal literals to be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " SQL tiêu chuẩn yêu cầu các chữ theo thời gian"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                171.45451957070702,
+                733.56166625817,
+                11.971275252525288
+            ],
+            "text": "specified using a type keyword and a string. The space between the keyword and string is optional.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được chỉ định bằng cách sử dụng từ khóa loại và một chuỗi. Không gian giữa từ khóa và chuỗi là tùy chọn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                200.14033522727289,
+                48.23529411764707,
+                8.13782702020194
+            ],
+            "text": "DATE ’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "NGÀY '"
+        },
+        {
+            "bbox": [
+                219.06862745098042,
+                200.14033522727289,
+                24.1176638071895,
+                8.13782702020194
+            ],
+            "text": "str",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "STR"
+        },
+        {
+            "bbox": [
+                243.18627450980392,
+                200.14033522727289,
+                8.039215686274503,
+                8.13782702020194
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                212.5645517676768,
+                48.23529411764707,
+                8.137904671717138
+            ],
+            "text": "TIME ’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "THỜI GIAN '"
+        },
+        {
+            "bbox": [
+                219.06862745098042,
+                212.5645517676768,
+                24.1176638071895,
+                8.137904671717138
+            ],
+            "text": "str",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "STR"
+        },
+        {
+            "bbox": [
+                243.18627450980392,
+                212.5645517676768,
+                8.039215686274503,
+                8.137904671717138
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                224.98875536616163,
+                88.43137254901964,
+                8.137917613636432
+            ],
+            "text": "TIMESTAMP ’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Dấu thời gian"
+        },
+        {
+            "bbox": [
+                259.264705882353,
+                224.98875536616163,
+                24.1176638071895,
+                8.137917613636432
+            ],
+            "text": "str",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "STR"
+        },
+        {
+            "bbox": [
+                283.38235294117646,
+                224.98875536616163,
+                8.039215686274531,
+                8.137917613636432
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                252.71553598484866,
+                771.7312593954248,
+                11.971352904040259
+            ],
+            "text": "MySQL recognizes but, unlike standard SQL, does not require the type keyword. Applications that are to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL nhận ra nhưng, không giống như SQL tiêu chuẩn, không yêu cầu từ khóa loại. Các ứng dụng được"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                268.24591666666674,
+                560.3668133169934,
+                11.971275252525288
+            ],
+            "text": "be standard-compliant should include the type keyword for temporal literals.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hãy tuân thủ tiêu chuẩn nên bao gồm từ khóa loại cho các chữ theo thời gian."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                298.1481950757576,
+                633.9256535947712,
+                11.971275252525288
+            ],
+            "text": "MySQL also recognizes the ODBC syntax corresponding to the standard SQL syntax:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL cũng nhận ra cú pháp ODBC tương ứng với cú pháp SQL tiêu chuẩn:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                326.83393308080815,
+                40.19607843137254,
+                8.137917613636432
+            ],
+            "text": "{ d ’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "{D"
+        },
+        {
+            "bbox": [
+                211.02941176470588,
+                326.83393308080815,
+                24.117630310457514,
+                8.137917613636432
+            ],
+            "text": "str",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "STR"
+        },
+        {
+            "bbox": [
+                235.1470420751634,
+                326.83393308080815,
+                24.117663807189587,
+                8.137917613636432
+            ],
+            "text": "’ }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"}"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                339.25822727272737,
+                40.19607843137254,
+                8.13782702020194
+            ],
+            "text": "{ t ’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "{t…"
+        },
+        {
+            "bbox": [
+                211.02941176470588,
+                339.25822727272737,
+                24.117630310457514,
+                8.13782702020194
+            ],
+            "text": "str",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "STR"
+        },
+        {
+            "bbox": [
+                235.1470420751634,
+                339.25822727272737,
+                24.117663807189587,
+                8.13782702020194
+            ],
+            "text": "’ }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"}"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                351.6824308712122,
+                48.23529411764707,
+                8.13783996212112
+            ],
+            "text": "{ ts ’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "{ts"
+        },
+        {
+            "bbox": [
+                219.06862745098042,
+                351.6824308712122,
+                24.1176638071895,
+                8.13783996212112
+            ],
+            "text": "str",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "STR"
+        },
+        {
+            "bbox": [
+                243.18627450980392,
+                351.6824308712122,
+                24.117663807189558,
+                8.13783996212112
+            ],
+            "text": "’ }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"}"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                379.409211489899,
+                540.8382520424836,
+                11.971275252525288
+            ],
+            "text": "MySQL uses the type keywords and the ODBC constructions to produce ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL sử dụng các từ khóa loại và các công trình ODBC để sản xuất "
+        },
+        {
+            "bbox": [
+                711.671585375817,
+                380.56102935606066,
+                40.196078431372484,
+                10.17236142676768
+            ],
+            "text": "DATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NGÀY"
+        },
+        {
+            "bbox": [
+                751.8676638071895,
+                379.409211489899,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                761.1797553104575,
+                380.56102935606066,
+                40.1960784313726,
+                10.17236142676768
+            ],
+            "text": "TIME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "THỜI GIAN"
+        },
+        {
+            "bbox": [
+                801.3758337418301,
+                379.409211489899,
+                41.90439501633989,
+                11.971275252525288
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                843.28022875817,
+                380.56102935606066,
+                80.39215686274508,
+                10.17236142676768
+            ],
+            "text": "DATETIME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DateTime"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                394.9395145202021,
+                589.2242647058823,
+                11.971275252525174
+            ],
+            "text": "values, respectively, including a trailing fractional seconds part if specified. The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các giá trị, tương ứng, bao gồm một phần hai phần phân đoạn nếu được chỉ định. Các "
+        },
+        {
+            "bbox": [
+                760.0575980392157,
+                396.09133238636366,
+                90.44117647058829,
+                10.17236142676768
+            ],
+            "text": "TIMESTAMP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Dấu thời gian"
+        },
+        {
+            "bbox": [
+                850.498774509804,
+                394.9395145202021,
+                53.058806781045746,
+                11.971275252525174
+            ],
+            "text": " syntax",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cú pháp"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                410.4698175505051,
+                87.51021241830065,
+                11.971275252525288
+            ],
+            "text": "produces a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sản xuất a "
+        },
+        {
+            "bbox": [
+                258.343545751634,
+                411.62163541666666,
+                80.39215686274508,
+                10.172361426767793
+            ],
+            "text": "DATETIME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DateTime"
+        },
+        {
+            "bbox": [
+                338.7357026143791,
+                410.4698175505051,
+                195.4869281045752,
+                11.971275252525288
+            ],
+            "text": " value in MySQL because ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị trong mysql vì "
+        },
+        {
+            "bbox": [
+                534.2226307189543,
+                411.62163541666666,
+                80.39215686274508,
+                10.172361426767793
+            ],
+            "text": "DATETIME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DateTime"
+        },
+        {
+            "bbox": [
+                614.6147875816994,
+                410.4698175505051,
+                339.77405106209153,
+                11.971275252525288
+            ],
+            "text": " has a range that more closely corresponds to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có một phạm vi tương ứng chặt chẽ hơn với"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                426.0000817550505,
+                135.9297385620915,
+                11.971275252525288
+            ],
+            "text": "the standard SQL ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "SQL tiêu chuẩn "
+        },
+        {
+            "bbox": [
+                306.76307189542484,
+                427.1518996212121,
+                90.44117647058823,
+                10.17236142676768
+            ],
+            "text": "TIMESTAMP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Dấu thời gian"
+        },
+        {
+            "bbox": [
+                397.2042483660131,
+                426.0000817550505,
+                261.5759803921568,
+                11.971275252525288
+            ],
+            "text": " type, which has a year range from ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " loại, có phạm vi một năm từ "
+        },
+        {
+            "bbox": [
+                658.7802287581699,
+                427.1518996212121,
+                40.1960784313726,
+                10.17236142676768
+            ],
+            "text": "0001",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "0001"
+        },
+        {
+            "bbox": [
+                698.9763071895425,
+                426.0000817550505,
+                23.280212009803904,
+                11.971275252525288
+            ],
+            "text": " to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " ĐẾN "
+        },
+        {
+            "bbox": [
+                722.2565191993464,
+                427.1518996212121,
+                40.1960784313726,
+                10.17236142676768
+            ],
+            "text": "9999",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "9999"
+        },
+        {
+            "bbox": [
+                762.452597630719,
+                426.0000817550505,
+                108.89790931372545,
+                11.971275252525288
+            ],
+            "text": ". (The MySQL ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". (MySQL "
+        },
+        {
+            "bbox": [
+                871.3505069444444,
+                427.1518996212121,
+                90.44117647058818,
+                10.17236142676768
+            ],
+            "text": "TIMESTAMP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Dấu thời gian"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                441.5303847853536,
+                101.46160130718957,
+                11.971275252525174
+            ],
+            "text": "year range is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi năm là "
+        },
+        {
+            "bbox": [
+                272.2949346405229,
+                442.6822026515151,
+                40.19607843137254,
+                10.17236142676768
+            ],
+            "text": "1970",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "1970"
+        },
+        {
+            "bbox": [
+                312.49101307189545,
+                441.5303847853536,
+                23.280228758169926,
+                11.971275252525174
+            ],
+            "text": " to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " ĐẾN "
+        },
+        {
+            "bbox": [
+                335.7712418300654,
+                442.6822026515151,
+                40.19607843137254,
+                10.17236142676768
+            ],
+            "text": "2038",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "2038"
+        },
+        {
+            "bbox": [
+                375.9673202614379,
+                441.5303847853536,
+                10.233251633986924,
+                11.971275252525174
+            ],
+            "text": ".)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ".)"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                471.4327149621213,
+                433.6989546568627,
+                11.971275252525174
+            ],
+            "text": "String and Numeric Literals in Date and Time Context. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Chuỗi và chữ số theo ngữ cảnh ngày và thời gian. "
+        },
+        {
+            "bbox": [
+                621.2806540032681,
+                471.4327149621213,
+                150.78553921568619,
+                11.971275252525174
+            ],
+            "text": " MySQL recognizes ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " MySQL nhận ra "
+        },
+        {
+            "bbox": [
+                772.0661932189543,
+                472.58451988636364,
+                40.1960784313726,
+                10.17237436868686
+            ],
+            "text": "DATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NGÀY"
+        },
+        {
+            "bbox": [
+                812.2622716503269,
+                471.4327149621213,
+                116.3676638071895,
+                11.971275252525174
+            ],
+            "text": " values in these",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị trong này"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                486.9630179924243,
+                60.49509803921569,
+                11.971275252525288
+            ],
+            "text": "formats:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                515.4352402146465,
+                164.75367647058826,
+                11.971275252525231
+            ],
+            "text": "•As a string in either ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Là một chuỗi trong một trong hai "
+        },
+        {
+            "bbox": [
+                335.5870098039216,
+                516.5870451388889,
+                10.049019607843093,
+                10.17237436868686
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                345.6360294117647,
+                516.5870451388889,
+                100.49019607843138,
+                10.17237436868686
+            ],
+            "text": "YYYY-MM-DD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "Yyyy-mm-dd"
+        },
+        {
+            "bbox": [
+                446.1262254901961,
+                516.5870451388889,
+                10.04901960784315,
+                10.17237436868686
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                456.1752450980392,
+                515.4352402146465,
+                24.201405637254936,
+                11.971275252525231
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                480.37665073529416,
+                516.5870451388889,
+                10.04901960784315,
+                10.17237436868686
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                490.4256703431373,
+                516.5870451388889,
+                80.39215686274508,
+                10.17237436868686
+            ],
+            "text": "YY-MM-DD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "YY-MM-DD"
+        },
+        {
+            "bbox": [
+                570.8178272058824,
+                516.5870451388889,
+                10.049019607843206,
+                10.17237436868686
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                580.8668468137256,
+                515.4352402146465,
+                170.90034354575153,
+                11.971275252525231
+            ],
+            "text": " format. A “relaxed”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " định dạng. Một \"thư giãn\""
+        },
+        {
+            "bbox": [
+                724.1993296568628,
+                515.4352402146465,
+                182.43990073529415,
+                11.971275252525231
+            ],
+            "text": " syntax is permitted: Any",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cú pháp được cho phép: bất kỳ"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                530.9655432449495,
+                638.5984644607843,
+                11.971275252525288
+            ],
+            "text": "punctuation character may be used as the delimiter between date parts. For example, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ký tự dấu câu có thể được sử dụng làm dấu phân cách giữa các phần ngày. Ví dụ, "
+        },
+        {
+            "bbox": [
+                826.1801638071895,
+                532.1173481691919,
+                120.58828553921569,
+                10.172374368686917
+            ],
+            "text": "’2012-12-31’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Càng 2012-12-31"
+        },
+        {
+            "bbox": [
+                946.7684493464052,
+                530.9655432449495,
+                4.655995506536101,
+                11.971275252525288
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                547.6476511994949,
+                120.58823529411768,
+                10.172374368686917
+            ],
+            "text": "’2012/12/31’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Trò chơi 2012/12/31"
+        },
+        {
+            "bbox": [
+                308.1699346405229,
+                546.4958462752526,
+                9.312091503267936,
+                11.971275252525231
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                317.48202614379085,
+                547.6476511994949,
+                120.58823529411768,
+                10.172374368686917
+            ],
+            "text": "’2012^12^31’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Càng 2012^12^31"
+        },
+        {
+            "bbox": [
+                438.0702614379085,
+                546.4958462752526,
+                41.9044452614379,
+                11.971275252525231
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                479.9747066993464,
+                547.6476511994949,
+                120.58823529411762,
+                10.172374368686917
+            ],
+            "text": "’2012@12@31’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Trò chơi 2012@12@31"
+        },
+        {
+            "bbox": [
+                600.562891748366,
+                546.4958462752526,
+                114.50856168300652,
+                11.971275252525231
+            ],
+            "text": " are equivalent.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tương đương."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                574.9680684974749,
+                298.7741180555556,
+                11.971275252525231
+            ],
+            "text": "•As a string with no delimiters in either ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Là một chuỗi không có dấu phân cách trong một trong hai "
+        },
+        {
+            "bbox": [
+                469.60745138888893,
+                576.1198734217171,
+                10.04901960784315,
+                10.172374368686917
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                479.6564709967321,
+                576.1198734217171,
+                80.39215686274508,
+                10.172374368686917
+            ],
+            "text": "YYYYMMDD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "YYYYMMDD"
+        },
+        {
+            "bbox": [
+                560.0486278594772,
+                576.1198734217171,
+                10.049019607843093,
+                10.172374368686917
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                570.0976474673203,
+                574.9680684974749,
+                24.20142238562096,
+                11.971275252525231
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                594.2990196078431,
+                576.1198734217171,
+                10.049019607843206,
+                10.172374368686917
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                604.3480392156863,
+                576.1198734217171,
+                60.29411764705878,
+                10.172374368686917
+            ],
+            "text": "YYMMDD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "YYMMDD"
+        },
+        {
+            "bbox": [
+                664.6421568627451,
+                576.1198734217171,
+                10.049019607843093,
+                10.172374368686917
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                674.6911764705882,
+                574.9680684974749,
+                285.7773190359478,
+                11.971275252525231
+            ],
+            "text": " format, provided that the string makes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " định dạng, với điều kiện chuỗi tạo ra"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                590.4983715277779,
+                229.93830024509805,
+                11.971275252525231
+            ],
+            "text": "sense as a date. For example, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ý nghĩa như một ngày. Ví dụ, "
+        },
+        {
+            "bbox": [
+                417.5199995915033,
+                591.6501764520202,
+                100.49017933006542,
+                10.17237436868686
+            ],
+            "text": "’20070523’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cung 20070523"
+        },
+        {
+            "bbox": [
+                518.0101789215687,
+                590.4983715277779,
+                37.24839950980379,
+                11.971275252525231
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                555.2585784313725,
+                591.6501764520202,
+                80.39215686274508,
+                10.17237436868686
+            ],
+            "text": "’070523’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Mạnh 070523"
+        },
+        {
+            "bbox": [
+                635.6507352941176,
+                590.4983715277779,
+                140.56901919934649,
+                11.971275252525231
+            ],
+            "text": " are interpreted as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được giải thích là "
+        },
+        {
+            "bbox": [
+                776.219754493464,
+                591.6501764520202,
+                120.58818504901967,
+                10.17237436868686
+            ],
+            "text": "’2007-05-23’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "2007 2007-05-23"
+        },
+        {
+            "bbox": [
+                896.8079395424837,
+                590.4983715277779,
+                32.59235375816991,
+                11.971275252525231
+            ],
+            "text": ", but",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Nhưng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                607.1804794823232,
+                80.39215686274508,
+                10.172374368686917
+            ],
+            "text": "’071332’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Mạnh 071332"
+        },
+        {
+            "bbox": [
+                267.9738562091503,
+                606.0286745580809,
+                480.3264056372549,
+                11.971275252525231
+            ],
+            "text": " is illegal (it has nonsensical month and day parts) and becomes ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là bất hợp pháp (nó có các bộ phận tháng và ngày vô nghĩa) và trở thành "
+        },
+        {
+            "bbox": [
+                748.3002618464052,
+                607.1804794823232,
+                120.58828553921569,
+                10.172374368686917
+            ],
+            "text": "’0000-00-00’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "0000-00-00"
+        },
+        {
+            "bbox": [
+                868.8885473856209,
+                606.0286745580809,
+                4.655995506536101,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                634.500896780303,
+                180.5808991013072,
+                11.971275252525288
+            ],
+            "text": "•As a number in either ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Là một số trong một trong hai "
+        },
+        {
+            "bbox": [
+                351.41423243464055,
+                635.6527017045455,
+                80.39215686274514,
+                10.172374368686917
+            ],
+            "text": "YYYYMMDD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "YYYYMMDD"
+        },
+        {
+            "bbox": [
+                431.8063892973857,
+                634.500896780303,
+                24.201405637254823,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                456.0077949346405,
+                635.6527017045455,
+                60.29411764705878,
+                10.172374368686917
+            ],
+            "text": "YYMMDD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "YYMMDD"
+        },
+        {
+            "bbox": [
+                516.3019125816993,
+                634.500896780303,
+                429.1601139705882,
+                11.971275252525288
+            ],
+            "text": " format, provided that the number makes sense as a date.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Định dạng, với điều kiện là số có ý nghĩa như một ngày."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                650.031199810606,
+                102.38276143790847,
+                11.971275252525231
+            ],
+            "text": "For example, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ, "
+        },
+        {
+            "bbox": [
+                289.9644607843137,
+                651.1830047348485,
+                80.39215686274514,
+                10.17237436868686
+            ],
+            "text": "19830905",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "19830905"
+        },
+        {
+            "bbox": [
+                370.35661764705884,
+                650.031199810606,
+                37.24838276143794,
+                11.971275252525231
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                407.60498366013076,
+                651.1830047348485,
+                60.29411764705878,
+                10.17237436868686
+            ],
+            "text": "830905",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "830905"
+        },
+        {
+            "bbox": [
+                467.89910130718954,
+                650.031199810606,
+                140.56901919934637,
+                11.971275252525231
+            ],
+            "text": " are interpreted as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được giải thích là "
+        },
+        {
+            "bbox": [
+                608.4681205065359,
+                651.1830047348485,
+                120.58823529411768,
+                10.17237436868686
+            ],
+            "text": "’1983-09-05’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Mạnh 1983-09-05"
+        },
+        {
+            "bbox": [
+                729.0563558006536,
+                650.031199810606,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                679.9335170454546,
+                146.12949346405227,
+                11.971275252525288
+            ],
+            "text": "MySQL recognizes ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL nhận ra "
+        },
+        {
+            "bbox": [
+                316.9628267973856,
+                681.0853219696969,
+                80.39215686274514,
+                10.172374368686917
+            ],
+            "text": "DATETIME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DateTime"
+        },
+        {
+            "bbox": [
+                397.35498366013076,
+                679.9335170454546,
+                37.24834926470584,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                434.6033329248366,
+                681.0853219696969,
+                90.44117647058823,
+                10.172374368686917
+            ],
+            "text": "TIMESTAMP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Dấu thời gian"
+        },
+        {
+            "bbox": [
+                525.0445093954248,
+                679.9335170454546,
+                181.5188075980393,
+                11.971275252525288
+            ],
+            "text": " values in these formats:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các giá trị trong các định dạng này:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                708.4057392676768,
+                164.75367647058826,
+                11.971275252525231
+            ],
+            "text": "•As a string in either ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Là một chuỗi trong một trong hai "
+        },
+        {
+            "bbox": [
+                335.5870098039216,
+                709.5575441919192,
+                10.049019607843093,
+                10.17237436868686
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                345.6360294117647,
+                709.5575441919192,
+                190.9313725490196,
+                10.17237436868686
+            ],
+            "text": "YYYY-MM-DD hh:mm:ss",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "YYYY-MM-DD HH: MM: SS"
+        },
+        {
+            "bbox": [
+                536.5674019607843,
+                709.5575441919192,
+                10.049019607843206,
+                10.17237436868686
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                546.6164215686275,
+                708.4057392676768,
+                24.20140563725488,
+                11.971275252525231
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                570.8178272058824,
+                709.5575441919192,
+                10.049019607843206,
+                10.17237436868686
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                580.8668468137256,
+                709.5575441919192,
+                170.83333333333326,
+                10.17237436868686
+            ],
+            "text": "YY-MM-DD hh:mm:ss",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "YY-MM-DD HH: MM: SS"
+        },
+        {
+            "bbox": [
+                751.7001801470589,
+                709.5575441919192,
+                10.049019607843206,
+                10.17237436868686
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                761.7491997549021,
+                708.4057392676768,
+                170.90029330065363,
+                11.971275252525231
+            ],
+            "text": " format. A “relaxed”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " định dạng. Một \"thư giãn\""
+        },
+        {
+            "bbox": [
+                905.0817328431374,
+                708.4057392676768,
+                53.0588235294116,
+                11.971275252525231
+            ],
+            "text": " syntax",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cú pháp"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                723.9360422979798,
+                746.591945261438,
+                11.971275252525231
+            ],
+            "text": "is permitted here, too: Any punctuation character may be used as the delimiter between date parts or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cũng được phép ở đây: bất kỳ ký tự chấm câu nào cũng có thể được sử dụng làm dấu phân cách giữa các phần ngày hoặc"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                739.4663453282828,
+                185.22017973856208,
+                11.971275252525231
+            ],
+            "text": "time parts. For example, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bộ phận thời gian. Ví dụ, "
+        },
+        {
+            "bbox": [
+                372.8018790849673,
+                740.6181502525253,
+                211.0294117647059,
+                10.17237436868686
+            ],
+            "text": "’2012-12-31 11:30:45’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Càng 2012-12-31 11:30:45"
+        },
+        {
+            "bbox": [
+                583.8312908496732,
+                739.4663453282828,
+                9.312074754901914,
+                11.971275252525231
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                593.1433656045751,
+                740.6181502525253,
+                211.02941176470597,
+                10.17237436868686
+            ],
+            "text": "’2012^12^31 11+30+45’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Càng 2012^12^31 11+30+45"
+        },
+        {
+            "bbox": [
+                804.1727773692811,
+                739.4663453282828,
+                9.312091503267993,
+                11.971275252525231
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                813.4848688725491,
+                740.6181502525253,
+                110.53916544117646,
+                10.17237436868686
+            ],
+            "text": "’2012/12/31",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Càng 2012/12/31"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                756.1484532828283,
+                90.44117647058823,
+                10.172335542929261
+            ],
+            "text": "11*30*45’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "11*30*45"
+        },
+        {
+            "bbox": [
+                278.02287581699346,
+                754.9966095328283,
+                41.90441176470591,
+                11.971275252525231
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                319.9272875816994,
+                756.1484532828283,
+                211.0294452614379,
+                10.172335542929261
+            ],
+            "text": "’2012@12@31 11^30^45’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Càng 2012@12@31 11^30^45"
+        },
+        {
+            "bbox": [
+                530.9566825980393,
+                754.9966095328283,
+                114.50856168300652,
+                11.971275252525231
+            ],
+            "text": " are equivalent.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tương đương."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                784.8989655934344,
+                767.0583982843139,
+                11.971275252525231
+            ],
+            "text": "The only delimiter recognized between a date and time part and a fractional seconds part is the decimal",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phân phối duy nhất được công nhận giữa phần ngày và phần thời gian và phần giây phân số là số thập phân"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                800.4292686237374,
+                40.966486519607855,
+                11.971275252525231
+            ],
+            "text": "point.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "điểm."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                830.3315470328283,
+                337.94852941176464,
+                11.97127525252526
+            ],
+            "text": "The date and time parts can be separated by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các bộ phận ngày và thời gian có thể được phân tách bằng "
+        },
+        {
+            "bbox": [
+                525.5302287581699,
+                831.4833907828283,
+                10.049019607843206,
+                10.172335542929318
+            ],
+            "text": "T",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T"
+        },
+        {
+            "bbox": [
+                535.5792483660131,
+                830.3315470328283,
+                260.654820261438,
+                11.97127525252526
+            ],
+            "text": " rather than a space. For example, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " thay vì một không gian. Ví dụ, "
+        },
+        {
+            "bbox": [
+                796.234068627451,
+                831.4833907828283,
+                110.53926593137248,
+                10.172335542929318
+            ],
+            "text": "’2012-12-31",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Càng 2012-12-31"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                847.0136938131313,
+                306.1266339869281,
+                10.172335542929318
+            ],
+            "text": "11:30:45’ ’2012-12-31T11:30:45’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "11:30:45"
+        },
+        {
+            "bbox": [
+                493.7083333333333,
+                845.8618500631313,
+                114.50856168300658,
+                11.97127525252526
+            ],
+            "text": " are equivalent.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tương đương."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                874.3340722853536,
+                298.7741180555556,
+                11.971275252525231
+            ],
+            "text": "•As a string with no delimiters in either ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Là một chuỗi không có dấu phân cách trong một trong hai "
+        },
+        {
+            "bbox": [
+                469.60745138888893,
+                875.4859160353535,
+                10.04901960784315,
+                10.17233554292929
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                479.6564709967321,
+                875.4859160353535,
+                140.68627450980387,
+                10.17233554292929
+            ],
+            "text": "YYYYMMDDhhmmss",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "YYYYMMDDHMMSS"
+        },
+        {
+            "bbox": [
+                620.342745506536,
+                875.4859160353535,
+                10.049019607843206,
+                10.17233554292929
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                630.3917651143792,
+                874.3340722853536,
+                24.201422385620845,
+                11.971275252525231
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                654.593137254902,
+                875.4859160353535,
+                10.049019607843093,
+                10.17233554292929
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                664.6421568627451,
+                875.4859160353535,
+                120.58823529411768,
+                10.17233554292929
+            ],
+            "text": "YYMMDDhhmmss",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "YyMMDDHHMMSS"
+        },
+        {
+            "bbox": [
+                785.2303921568628,
+                875.4859160353535,
+                10.049019607843093,
+                10.17233554292929
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                795.2794117647059,
+                874.3340722853536,
+                125.66299019607845,
+                11.971275252525231
+            ],
+            "text": " format, provided",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Định dạng, được cung cấp"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                889.8643753156566,
+                390.05271282679746,
+                11.97127266414141
+            ],
+            "text": "that the string makes sense as a date. For example, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "rằng chuỗi có ý nghĩa như một ngày. Ví dụ, "
+        },
+        {
+            "bbox": [
+                577.6344121732027,
+                891.0162190656565,
+                160.78431372549016,
+                10.172332954545467
+            ],
+            "text": "’20070523091528’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "20070523091528"
+        },
+        {
+            "bbox": [
+                738.4187258986929,
+                889.8643753156566,
+                37.248349264705894,
+                11.97127266414141
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                775.6670751633987,
+                891.0162190656565,
+                140.68627450980387,
+                10.172332954545467
+            ],
+            "text": "’070523091528’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tuần 070523091528"
+        },
+        {
+            "bbox": [
+                916.3533496732026,
+                889.8643753156566,
+                28.857417892156946,
+                11.97127266414141
+            ],
+            "text": " are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                905.3946757575758,
+                107.05555555555554,
+                11.97127525252526
+            ],
+            "text": "interpreted as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "giải thích là "
+        },
+        {
+            "bbox": [
+                294.6372549019608,
+                906.5465246843435,
+                211.02937826797393,
+                10.172330366161631
+            ],
+            "text": "’2007-05-23 09:15:28’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Càng 2007-05-23 09:15:28"
+        },
+        {
+            "bbox": [
+                505.6666331699347,
+                905.3946757575758,
+                37.2483995098039,
+                11.97127525252526
+            ],
+            "text": ", but ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Nhưng "
+        },
+        {
+            "bbox": [
+                542.9150326797386,
+                906.5465246843435,
+                140.68627450980398,
+                10.172330366161631
+            ],
+            "text": "’071122129015’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tuần 071122129015"
+        },
+        {
+            "bbox": [
+                683.6013071895426,
+                905.3946757575758,
+                276.44847916666663,
+                11.97127525252526
+            ],
+            "text": " is illegal (it has a nonsensical minute",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là bất hợp pháp (nó có một phút vô nghĩa"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                920.9249787878788,
+                144.28715645424836,
+                11.97127525252526
+            ],
+            "text": "part) and becomes ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "một phần) và trở thành "
+        },
+        {
+            "bbox": [
+                331.8688558006536,
+                922.0768277146465,
+                211.02941176470586,
+                10.172330366161631
+            ],
+            "text": "’0000-00-00 00:00:00’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "0000-00-00 00:00:00"
+        },
+        {
+            "bbox": [
+                542.8982675653594,
+                920.9249787878788,
+                4.656045751633997,
+                11.97127525252526
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "1863",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1863"
+        }
+    ]
+}

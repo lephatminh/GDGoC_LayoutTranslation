@@ -1,3 +1,1476 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:44f72a7c8ae6b6f5431bcb7f8824d9e970900734ae2f559289fd04680de6121e
-size 44439
+{
+    "metadata": {
+        "page_hash": "84e0502cf0d37ca564031b44b96f4386c942067bf436c6ecd55a64ec439c898d",
+        "original_filename": "python_faq.pdf",
+        "page_no": 19,
+        "num_pages": 121,
+        "original_width": 595.28003,
+        "original_height": 841.89001,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                123.97526589292772,
+                43.26615420938424,
+                415.41069041069625,
+                12.129440459805437
+            ],
+            "text": "Python Frequently Asked Questions, Release 3.9.5",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HDAGCP+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Python thường xuyên đặt câu hỏi, phát hành 3.9.5"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                90.08628454921313,
+                777.0423224175687,
+                12.12942828481846
+            ],
+            "text": "It is often expected that a function call creates new objects for default values. This is not what happens. Default values",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Người ta thường hy vọng rằng một cuộc gọi chức năng tạo ra các đối tượng mới cho các giá trị mặc định. Đây không phải là những gì xảy ra. Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                104.64149378610625,
+                777.0423224175687,
+                12.129440459805437
+            ],
+            "text": "are created exactly once, when the function is defined. If that object is changed, like the dictionary in this example,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "được tạo chính xác một lần, khi hàm được xác định. Nếu đối tượng đó được thay đổi, như từ điển trong ví dụ này,"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                119.19664214806392,
+                431.192724540079,
+                12.129501334740894
+            ],
+            "text": "subsequent calls to the function will refer to this changed object.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các cuộc gọi tiếp theo đến chức năng sẽ đề cập đến đối tượng đã thay đổi này."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                141.03009519022555,
+                482.81025696427275,
+                12.129440459805437
+            ],
+            "text": "By definition, immutable objects such as numbers, strings, tuples, and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Theo định nghĩa, các đối tượng bất biến như số, chuỗi, bộ dữ liệu và"
+        },
+        {
+            "bbox": [
+                612.6909296789277,
+                142.44919951004044,
+                36.23006679730213,
+                10.916543896274675
+            ],
+            "text": "None",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Không có"
+        },
+        {
+            "bbox": [
+                653.8610492275375,
+                141.03009519022555,
+                247.14309121036683,
+                12.129440459805437
+            ],
+            "text": ", are safe from change. Changes to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", an toàn khỏi sự thay đổi. Thay đổi"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                155.58524355218333,
+                559.3531887841089,
+                12.129513509727872
+            ],
+            "text": "mutable objects such as dictionaries, lists, and class instances can lead to confusion.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các đối tượng có thể thay đổi như từ điển, danh sách và các trường hợp lớp có thể dẫn đến sự nhầm lẫn."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                177.41869659434496,
+                739.7314495834843,
+                12.129440459805323
+            ],
+            "text": "Because of this feature, it is good programming practice to not use mutable objects as default values.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Do tính năng này, thực tế lập trình tốt là không sử dụng các đối tượng có thể thay đổi làm giá trị mặc định."
+        },
+        {
+            "bbox": [
+                881.2899724689235,
+                177.41869659434496,
+                19.71037983585643,
+                12.129440459805323
+            ],
+            "text": "In-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "TRONG-"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                191.97391800622506,
+                67.62260150067524,
+                12.129440459805437
+            ],
+            "text": "stead, use",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "STEAD, sử dụng"
+        },
+        {
+            "bbox": [
+                197.80942424693802,
+                193.39302232603995,
+                36.23008401608902,
+                10.916543896274447
+            ],
+            "text": "None",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Không có"
+        },
+        {
+            "bbox": [
+                245.17660243028814,
+                191.97391800622506,
+                484.52581636242695,
+                12.129440459805437
+            ],
+            "text": "as the default value and inside the function, check if the parameter is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "là giá trị mặc định và bên trong hàm, hãy kiểm tra xem tham số có phải không"
+        },
+        {
+            "bbox": [
+                735.8947939174105,
+                193.39302232603995,
+                36.23006679730213,
+                10.916543896274447
+            ],
+            "text": "None",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Không có"
+        },
+        {
+            "bbox": [
+                783.2602157844939,
+                191.97391800622506,
+                117.76493157346454,
+                12.129440459805437
+            ],
+            "text": "and create a new",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "và tạo một cái mới"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                206.52906636818273,
+                381.18773151183984,
+                12.129501334740894
+            ],
+            "text": "list/dictionary/whatever if it is. For example, don’t write:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Danh sách/Từ điển/Sao nếu nó là. Ví dụ, don lồng viết:"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                233.15701715001933,
+                29.16437374020427,
+                9.824922379112309
+            ],
+            "text": "def",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GAHBJU+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "def"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                233.15701715001933,
+                147.89027203717887,
+                9.824922379112309
+            ],
+            "text": "foo(mydict={}):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "foo (mydict = {}):"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                246.49956114813608,
+                35.75739904293445,
+                9.8249345540994
+            ],
+            "text": "...",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "..."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                274.21230327937974,
+                25.954583509209925,
+                12.129428284818346
+            ],
+            "text": "but:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nhưng:"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                300.8389878625593,
+                29.16437374020427,
+                9.8249345540994
+            ],
+            "text": "def",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GAHBJU+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "def"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                300.8389878625593,
+                109.86531889033802,
+                9.8249345540994
+            ],
+            "text": "foo(mydict=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "foo (mydict ="
+        },
+        {
+            "bbox": [
+                262.9256935597184,
+                300.8389878625593,
+                32.607285683680686,
+                9.8249345540994
+            ],
+            "text": "None",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GAHBJU+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Không có"
+        },
+        {
+            "bbox": [
+                299.980557469734,
+                300.8389878625593,
+                34.45995828215507,
+                9.8249345540994
+            ],
+            "text": "):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "):"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                314.18154403566336,
+                17.152792484908304,
+                9.824922379112195
+            ],
+            "text": "if",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GAHBJU+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "nếu như"
+        },
+        {
+            "bbox": [
+                188.8194955910078,
+                314.18154403566336,
+                58.3132987847753,
+                9.824922379112195
+            ],
+            "text": "mydict",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Mydict"
+        },
+        {
+            "bbox": [
+                253.66370807030097,
+                314.18154403566336,
+                60.39670312810591,
+                9.824922379112195
+            ],
+            "text": "is None",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GAHBJU+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "là không có"
+        },
+        {
+            "bbox": [
+                318.506233108475,
+                314.18154403566336,
+                17.22997914107748,
+                9.824922379112195
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                327.5240880337801,
+                94.90291107195378,
+                9.825007604021721
+            ],
+            "text": "mydict ={}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "mydict = {}"
+        },
+        {
+            "bbox": [
+                318.506233108475,
+                327.5240880337801,
+                12.60503019058109,
+                9.825007604021721
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HJOGYF+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                337.4137697849531,
+                327.5240880337801,
+                377.9996042366817,
+                9.825007604021721
+            ],
+            "text": "create a new dict for local namespace",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HJOGYF+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Tạo một độc tài mới cho không gian tên địa phương"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                355.23683016502355,
+                777.042012479404,
+                12.129428284818346
+            ],
+            "text": "This feature can be useful. When you have a function that’s time-consuming to compute, a common technique is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tính năng này có thể hữu ích. Khi bạn có một chức năng tốn thời gian để tính toán, một kỹ thuật phổ biến là"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                369.79203940191667,
+                777.0425290430118,
+                12.129440459805437
+            ],
+            "text": "to cache the parameters and the resulting value of each call to the function, and return the cached value if the same",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để lưu trữ các tham số và giá trị kết quả của mỗi cuộc gọi cho hàm và trả về giá trị được lưu"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                384.3471877638742,
+                586.2168209304787,
+                12.129501334741008
+            ],
+            "text": "value is requested again. This is called “memoizing”, and can be implemented like this:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Giá trị được yêu cầu một lần nữa. Điều này được gọi là ghi nhớ, và có thể được thực hiện như thế này:"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                410.97513854571093,
+                12.022475581786267,
+                9.824922379112195
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HJOGYF+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                142.00897323903172,
+                410.97513854571093,
+                773.9589301357883,
+                9.824922379112195
+            ],
+            "text": "Callers can only provide two parameters and optionally pass _cache by keyword",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HJOGYF+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Người gọi chỉ có thể cung cấp hai tham số và tùy chọn vượt qua _Cache theo từ khóa"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                424.31773124377605,
+                29.16437374020427,
+                9.824922379112309
+            ],
+            "text": "def",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GAHBJU+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "def"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                424.31773124377605,
+                238.82745541623495,
+                9.824922379112309
+            ],
+            "text": "expensive(arg1, arg2,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "đắt (arg1, arg2,"
+        },
+        {
+            "bbox": [
+                364.8230480703342,
+                424.31773124377605,
+                96.29362083589467,
+                9.824922379112309
+            ],
+            "text": "*, _cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "*, _Cache"
+        },
+        {
+            "bbox": [
+                448.1947097234221,
+                424.31773124377605,
+                55.256602510250445,
+                9.824922379112309
+            ],
+            "text": "={}):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "= {}):"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                437.6602752418929,
+                17.152792484908304,
+                9.824922379112195
+            ],
+            "text": "if",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GAHBJU+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "nếu như"
+        },
+        {
+            "bbox": [
+                188.8194955910078,
+                437.6602752418929,
+                155.4558230350848,
+                9.824922379112195
+            ],
+            "text": "(arg1, arg2)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "(arg1, arg2)"
+        },
+        {
+            "bbox": [
+                309.2425429591515,
+                437.6602752418929,
+                17.15278731927225,
+                9.824922379112195
+            ],
+            "text": "in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GAHBJU+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "TRONG"
+        },
+        {
+            "bbox": [
+                337.0336306259089,
+                437.6602752418929,
+                77.76651603783853,
+                9.824922379112195
+            ],
+            "text": "_cache:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "_cache:"
+        },
+        {
+            "bbox": [
+                198.08320295911824,
+                451.00286793995804,
+                59.19333376595881,
+                9.824922379112309
+            ],
+            "text": "return",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GAHBJU+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "trở lại"
+        },
+        {
+            "bbox": [
+                262.9256935597184,
+                451.00286793995804,
+                233.4230756909484,
+                9.824922379112309
+            ],
+            "text": "_cache[(arg1, arg2)]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "_cache [(arg1, arg2)]"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                477.68799246115304,
+                13.429143717453428,
+                9.824934554099173
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HJOGYF+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                181.1720640956156,
+                477.68799246115304,
+                205.86859137539017,
+                9.824934554099173
+            ],
+            "text": "Calculate the value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HJOGYF+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Tính giá trị"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                491.0305486342569,
+                359.9768256546418,
+                9.824922379112195
+            ],
+            "text": "result=...expensive computation...",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "kết quả = ... tính toán đắt tiền ..."
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                504.37191165862623,
+                233.42304641901052,
+                9.824922379112195
+            ],
+            "text": "_cache[(arg1, arg2)]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "_cache [(arg1, arg2)]"
+        },
+        {
+            "bbox": [
+                355.5610625809167,
+                504.37191165862623,
+                81.14651225575295,
+                9.824922379112195
+            ],
+            "text": "=result",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "= Kết quả"
+        },
+        {
+            "bbox": [
+                531.5646322790301,
+                504.37191165862623,
+                12.507416887477234,
+                9.824922379112195
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HJOGYF+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                550.3257920478198,
+                504.37191165862623,
+                240.367963460827,
+                9.824922379112195
+            ],
+            "text": "Store result in the cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HJOGYF+FreeMonoOblique",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Lưu trữ kết quả trong bộ đệm"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                517.7144556567431,
+                59.19333893159492,
+                9.824922379112252
+            ],
+            "text": "return",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GAHBJU+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "trở lại"
+        },
+        {
+            "bbox": [
+                225.8726204035435,
+                517.7144556567431,
+                62.62078496065121,
+                9.824922379112252
+            ],
+            "text": "result",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "kết quả"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                545.4271125630769,
+                698.1493016824368,
+                12.129476984766711
+            ],
+            "text": "You could use a global variable containing a dictionary instead of the default value; it’s a matter of taste.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể sử dụng một biến toàn cầu có chứa từ điển thay vì giá trị mặc định; Nó là một vấn đề của hương vị."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                585.4851942001308,
+                62.83770723838998,
+                14.555440561647686
+            ],
+            "text": "2.2.7",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HDAGCP+FreeSansBold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "2.2.7"
+        },
+        {
+            "bbox": [
+                196.49129166990534,
+                585.4851942001308,
+                704.5205111281828,
+                14.555440561647686
+            ],
+            "text": "How can I pass optional or keyword parameters from one function to an-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HDAGCP+FreeSansBold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "Làm thế nào tôi có thể chuyển các tham số từ khóa hoặc tùy chọn từ một hàm sang một-"
+        },
+        {
+            "bbox": [
+                178.8963086834947,
+                602.4656365146797,
+                64.67934259444246,
+                14.555440561647686
+            ],
+            "text": "other?",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HDAGCP+FreeSansBold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "khác?"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                634.4275100140457,
+                308.15691566202884,
+                12.129464809779563
+            ],
+            "text": "Collect the arguments using the$_{*}$and$_{**}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thu thập các đối số bằng $ _ {*} $ và $ _ {**} $"
+        },
+        {
+            "bbox": [
+                420.21240742781174,
+                634.4275100140457,
+                480.8204195091173,
+                12.129464809779563
+            ],
+            "text": "specifiers in the function’s parameter list; this gives you the positional",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "các nhà xác định trong danh sách tham số chức năng; Điều này cung cấp cho bạn vị trí"
+        },
+        {
+            "bbox": [
+                123.97524006474733,
+                648.9826827259775,
+                777.0422449330274,
+                12.129476984766654
+            ],
+            "text": "arguments as a tuple and the keyword arguments as a dictionary. You can then pass these arguments when calling",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đối số như một tuple và từ khóa đối số như một từ điển. Sau đó, bạn có thể vượt qua những đối số này khi gọi"
+        },
+        {
+            "bbox": [
+                123.97524006474733,
+                663.5378676128963,
+                256.21817537705743,
+                12.129476984766711
+            ],
+            "text": "another function by using$_{*}$and$_{**}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Một chức năng khác bằng cách sử dụng $ _ {*} $ và $ _ {**} $"
+        },
+        {
+            "bbox": [
+                362.4915898824961,
+                663.5378676128963,
+                4.288597166614181,
+                12.129476984766711
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MNVXPT+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                690.1658549196943,
+                29.16437374020427,
+                9.824934554099286
+            ],
+            "text": "def",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GAHBJU+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "def"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                690.1658549196943,
+                224.19091830612894,
+                9.824934554099286
+            ],
+            "text": "f(x,*args,**kwargs):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "f (x,*args, ** kwargs):"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                703.5084110927983,
+                35.75739904293445,
+                9.824922379112195
+            ],
+            "text": "...",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "..."
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                716.8510281408376,
+                256.072208276498,
+                9.824861504176795
+            ],
+            "text": "kwargs['width'] ='14.3c",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "kwargs ['chiều rộng'] = '14 .3c"
+        },
+        {
+            "bbox": [
+                383.3504455877681,
+                716.8510281408376,
+                17.229979141077592,
+                9.824861504176795
+            ],
+            "text": "'",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "'"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                730.1935843139414,
+                35.75739904293445,
+                9.824849329189703
+            ],
+            "text": "...",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "..."
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                743.5361283120583,
+                206.9609391650514,
+                9.824849329189703
+            ],
+            "text": "g(x,*args,**kwargs)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBXERC+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "g (x,*args, ** kwargs)"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                964.0251176635295,
+                19.075686740238893,
+                12.129434372311891
+            ],
+            "text": "12",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HDAGCP+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "12"
+        },
+        {
+            "bbox": [
+                652.4026351933895,
+                964.0251176635295,
+                248.60128140028473,
+                12.129434372311891
+            ],
+            "text": "Chapter 2. Programming FAQ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HDAGCP+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Chương 2. Câu hỏi thường gặp về lập trình"
+        }
+    ]
+}

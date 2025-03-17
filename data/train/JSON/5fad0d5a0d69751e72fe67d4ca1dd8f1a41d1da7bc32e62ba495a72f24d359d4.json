@@ -1,3 +1,1316 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56dd4cb2dbedee60f2737945dde14009f146864a7ef7c3f2a6b1f0c6e62b2e1a
-size 38510
+{
+    "metadata": {
+        "page_hash": "5fad0d5a0d69751e72fe67d4ca1dd8f1a41d1da7bc32e62ba495a72f24d359d4",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 2743,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                362.9538566176471,
+                48.370422979798036,
+                268.9452614379085,
+                11.971275252525288
+            ],
+            "text": "WITH (Common Table Expressions)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Với (biểu thức bảng phổ biến)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                781.8639035947713,
+                11.971275252525174
+            ],
+            "text": "suffer a performance penalty. If so, increasing the permitted in-memory temporary table size may improve",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bị phạt hiệu suất. Nếu vậy, việc tăng kích thước bảng tạm thời trong bộ nhớ được phép có thể cải thiện"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                581.4027442810457,
+                11.971275252525288
+            ],
+            "text": "performance; see Section 8.4.4, “Internal Temporary Table Use in MySQL”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hiệu suất; Xem Phần 8.4.4, Sử dụng bảng tạm thời nội bộ trong MySQL"
+        },
+        {
+            "bbox": [
+                694.5212250816993,
+                110.49163510101016,
+                4.65604575163411,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                140.86762657828285,
+                446.7191176470588,
+                14.365491477272712
+            ],
+            "text": "Limiting Common Table Expression Recursion",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Giới hạn đệ quy biểu hiện bảng phổ biến"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                173.6378342803032,
+                381.6115363562091,
+                11.971275252525174
+            ],
+            "text": "It is important for recursive CTEs that the recursive ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Điều quan trọng đối với các CTE đệ quy là đệ quy "
+        },
+        {
+            "bbox": [
+                522.297810866013,
+                174.78969097222227,
+                60.2941176470589,
+                10.172322601010137
+            ],
+            "text": "SELECT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LỰA CHỌN"
+        },
+        {
+            "bbox": [
+                582.5919285130719,
+                173.6378342803032,
+                348.14821732026144,
+                11.971275252525174
+            ],
+            "text": " part include a condition to terminate recursion.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phần bao gồm một điều kiện để chấm dứt đệ quy."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                189.1681373106062,
+                748.4342320261437,
+                11.971275252525288
+            ],
+            "text": "As a development technique to guard against a runaway recursive CTE, you can force termination by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Là một kỹ thuật phát triển để bảo vệ chống lại CTE đệ quy chạy trốn, bạn có thể buộc phải chấm dứt bằng cách"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                204.6984403409092,
+                242.0138888888889,
+                11.971275252525288
+            ],
+            "text": "placing a limit on execution time:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đặt giới hạn về thời gian thực hiện:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                233.1706625631315,
+                50.261846405228766,
+                11.971275252525174
+            ],
+            "text": "•The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• The "
+        },
+        {
+            "bbox": [
+                190.9481209150327,
+                234.32251925505057,
+                231.12746772875818,
+                10.172322601010137
+            ],
+            "text": "cte_max_recursion_depth",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CTE_MAX_RECURSION_DEPTH"
+        },
+        {
+            "bbox": [
+                422.0755551470588,
+                233.1706625631315,
+                490.5261772875816,
+                11.971275252525174
+            ],
+            "text": " system variable enforces a limit on the number of recursion levels",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống thực thi giới hạn về số lượng cấp độ đệ quy"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                248.7009655934345,
+                753.9779244281045,
+                11.971275252525174
+            ],
+            "text": "for CTEs. The server terminates execution of any CTE that recurses more levels than the value of this",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cho CTE. Máy chủ chấm dứt thực thi bất kỳ CTE nào làm đọng lại nhiều cấp hơn giá trị của điều này"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                264.2312686237375,
+                63.292091911764714,
+                11.971275252525288
+            ],
+            "text": "variable.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "biến."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                292.70349084595966,
+                50.261846405228766,
+                11.971275252525288
+            ],
+            "text": "•The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• The "
+        },
+        {
+            "bbox": [
+                190.9481209150327,
+                293.85534753787886,
+                180.8823696895425,
+                10.172322601010137
+            ],
+            "text": "max_execution_time",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "max_execut_time"
+        },
+        {
+            "bbox": [
+                371.83045710784313,
+                292.70349084595966,
+                377.9268455882353,
+                11.971275252525288
+            ],
+            "text": " system variable enforces an execution timeout for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống thực thi thời gian chờ thực hiện cho "
+        },
+        {
+            "bbox": [
+                749.7573529411766,
+                293.85534753787886,
+                60.29411764705878,
+                10.172322601010137
+            ],
+            "text": "SELECT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LỰA CHỌN"
+        },
+        {
+            "bbox": [
+                810.0514705882354,
+                292.70349084595966,
+                86.57227042483646,
+                11.971275252525288
+            ],
+            "text": " statements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                308.2337938762628,
+                266.23204289215687,
+                11.971275252525174
+            ],
+            "text": "executed within the current session.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được thực hiện trong phiên hiện tại."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                336.70601609848495,
+                50.261846405228766,
+                11.971275252525288
+            ],
+            "text": "•The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• The "
+        },
+        {
+            "bbox": [
+                190.9481209150327,
+                337.85787279040403,
+                180.8823696895425,
+                10.17232260101025
+            ],
+            "text": "MAX_EXECUTION_TIME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Max_execut_time"
+        },
+        {
+            "bbox": [
+                371.83045710784313,
+                336.70601609848495,
+                456.12498325163403,
+                11.971275252525288
+            ],
+            "text": " optimizer hint enforces a per-query execution timeout for the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Gợi ý của trình tối ưu hóa thực thi một thời gian chờ thực hiện trên mỗi "
+        },
+        {
+            "bbox": [
+                827.9554906045752,
+                337.85787279040403,
+                60.294067401960774,
+                10.17232260101025
+            ],
+            "text": "SELECT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LỰA CHỌN"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                352.23631912878795,
+                221.54738562091504,
+                11.971275252525174
+            ],
+            "text": "statement in which it appears.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tuyên bố trong đó nó xuất hiện."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                382.256420770202,
+                749.3051638071895,
+                11.971275252525288
+            ],
+            "text": "Suppose that a recursive CTE is mistakenly written with no recursion execution termination condition:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giả sử rằng một CTE đệ quy bị viết nhầm không có điều kiện chấm dứt thực thi đệ quy:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                411.03536647727276,
+                200.98039215686276,
+                8.137865845959595
+            ],
+            "text": "WITH RECURSIVE cte (n) AS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Với CTE (N) đệ quy như"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                423.45960890151525,
+                8.03922071078432,
+                8.137878787878662
+            ],
+            "text": "(",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                156.76470253267973,
+                435.88382544191916,
+                64.3137288398693,
+                8.137904671717251
+            ],
+            "text": "SELECT 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn 1"
+        },
+        {
+            "bbox": [
+                156.76470253267973,
+                448.30806786616165,
+                72.35294452614383,
+                8.137917613636318
+            ],
+            "text": "UNION ALL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Liên minh tất cả"
+        },
+        {
+            "bbox": [
+                156.76470253267973,
+                460.7323232323232,
+                168.82351601307192,
+                8.137904671717251
+            ],
+            "text": "SELECT n + 1 FROM cte",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn N + 1 từ CTE"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                473.15653977272734,
+                8.03922071078432,
+                8.137904671717138
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                485.5807821969697,
+                144.7058656045752,
+                8.137917613636318
+            ],
+            "text": "SELECT * FROM cte;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn * từ CTE;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                513.4253472222222,
+                83.79207516339869,
+                11.971275252525231
+            ],
+            "text": "By default, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Theo mặc định, "
+        },
+        {
+            "bbox": [
+                224.47834967320262,
+                514.5771521464646,
+                231.1274509803921,
+                10.172374368686803
+            ],
+            "text": "cte_max_recursion_depth",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CTE_MAX_RECURSION_DEPTH"
+        },
+        {
+            "bbox": [
+                455.6058006535947,
+                513.4253472222222,
+                434.7540682189544,
+                11.971275252525231
+            ],
+            "text": " has a value of 1000, causing the CTE to terminate when it",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có giá trị 1000, khiến CTE chấm dứt khi nó"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                528.9556502525252,
+                751.2312761437909,
+                11.971275252525288
+            ],
+            "text": "recurses past 1000 levels. Applications can change the session value to adjust for their requirements:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đệ quy 1000 cấp độ. Các ứng dụng có thể thay đổi giá trị phiên để điều chỉnh các yêu cầu của chúng:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                557.7345959595959,
+                329.60787663398696,
+                8.137904671717195
+            ],
+            "text": "SET SESSION cte_max_recursion_depth = 10;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt phiên CTE_MAX_RECURSION_DEPTH = 10;"
+        },
+        {
+            "bbox": [
+                518.5294285130719,
+                557.7345959595959,
+                257.2549019607843,
+                8.137904671717195
+            ],
+            "text": "-- permit only shallow recursion",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- Chỉ cho phép đệ quy nông"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                570.1588383838384,
+                586.8627283496733,
+                8.137917613636375
+            ],
+            "text": "SET SESSION cte_max_recursion_depth = 1000000; -- permit deeper recursion",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt phiên CTE_MAX_RECURSION_DEPTH = 1000000; - Cho phép đệ quy sâu hơn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                598.0034034090909,
+                205.75369321895425,
+                11.971275252525288
+            ],
+            "text": "You can also set the global ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn cũng có thể đặt toàn cầu "
+        },
+        {
+            "bbox": [
+                346.4399677287582,
+                599.1552083333333,
+                231.1274509803922,
+                10.172374368686917
+            ],
+            "text": "cte_max_recursion_depth",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CTE_MAX_RECURSION_DEPTH"
+        },
+        {
+            "bbox": [
+                577.5674187091504,
+                598.0034034090909,
+                278.35780964052276,
+                11.971275252525288
+            ],
+            "text": " value to affect all sessions that begin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị ảnh hưởng đến tất cả các phiên bắt đầu"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                613.533706439394,
+                103.33741830065358,
+                11.971275252525231
+            ],
+            "text": "subsequently.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sau đó."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                643.5537563131313,
+                725.1539530228758,
+                11.971275252525231
+            ],
+            "text": "For queries that execute and thus recurse slowly or in contexts for which there is reason to set the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các truy vấn thực thi và do đó tái phát chậm hoặc trong các bối cảnh mà có lý do để đặt"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                660.2358642676768,
+                231.12745098039215,
+                10.17237436868686
+            ],
+            "text": "cte_max_recursion_depth",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CTE_MAX_RECURSION_DEPTH"
+        },
+        {
+            "bbox": [
+                371.8137254901961,
+                659.0840593434343,
+                534.3566008986927,
+                11.971275252525288
+            ],
+            "text": " value very high, another way to guard against deep recursion is to set a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị rất cao, một cách khác để bảo vệ chống lại đệ quy sâu là thiết lập một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                674.6143623737373,
+                723.294917892157,
+                11.971275252525231
+            ],
+            "text": "per-session timeout. To do so, execute a statement like this prior to executing the CTE statement:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thời gian chờ mỗi phiên. Để làm như vậy, thực hiện một câu lệnh như thế này trước khi thực hiện câu lệnh CTE:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                703.3933080808081,
+                474.31374223856216,
+                8.137904671717195
+            ],
+            "text": "SET max_execution_time = 1000; -- impose one second timeout",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt max_execut_time = 1000; - áp đặt một thời gian chờ thứ hai"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                731.2378601641415,
+                516.6033664215686,
+                11.971275252525288
+            ],
+            "text": "Alternatively, include an optimizer hint within the CTE statement itself:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ngoài ra, bao gồm một gợi ý của trình tối ưu hóa trong câu lệnh CTE:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                760.0168058712122,
+                200.98039215686276,
+                8.137839962121177
+            ],
+            "text": "WITH RECURSIVE cte (n) AS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Với CTE (N) đệ quy như"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                772.4410224116161,
+                8.03922071078432,
+                8.137827020201996
+            ],
+            "text": "(",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                156.76470253267973,
+                784.8653166035353,
+                64.3137288398693,
+                8.137827020202025
+            ],
+            "text": "SELECT 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn 1"
+        },
+        {
+            "bbox": [
+                156.76470253267973,
+                797.2895202020202,
+                72.35294452614383,
+                8.137839962121205
+            ],
+            "text": "UNION ALL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Liên minh tất cả"
+        },
+        {
+            "bbox": [
+                156.76470253267973,
+                809.7138143939394,
+                168.82351601307192,
+                8.137827020202025
+            ],
+            "text": "SELECT n + 1 FROM cte",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn N + 1 từ CTE"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                822.1380179924242,
+                8.03922071078432,
+                8.137839962121205
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                834.5622345328283,
+                506.4705714869281,
+                8.137827020202025
+            ],
+            "text": "SELECT /*+ SET_VAR(cte_max_recursion_depth = 1M) */ * FROM cte;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn / *+ set_var (CTE_MAX_RECURSION_DEPTH = 1M) * / *từ CTE;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                859.4107323232323,
+                200.98039215686276,
+                8.137839962121205
+            ],
+            "text": "WITH RECURSIVE cte (n) AS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Với CTE (N) đệ quy như"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                871.8350265151515,
+                8.03922071078432,
+                8.137827020202025
+            ],
+            "text": "(",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                156.76470253267973,
+                884.2592301136364,
+                64.3137288398693,
+                8.137839962121234
+            ],
+            "text": "SELECT 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn 1"
+        },
+        {
+            "bbox": [
+                156.76470253267973,
+                896.6834466540404,
+                72.35294452614383,
+                8.137832196969697
+            ],
+            "text": "UNION ALL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Liên minh tất cả"
+        },
+        {
+            "bbox": [
+                156.76470253267973,
+                909.1077356691919,
+                168.82351601307192,
+                8.137832196969711
+            ],
+            "text": "SELECT n + 1 FROM cte",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn N + 1 từ CTE"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                921.5319470328283,
+                8.03922071078432,
+                8.137832196969711
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "2714",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2714"
+        }
+    ]
+}

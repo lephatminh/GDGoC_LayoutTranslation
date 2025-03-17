@@ -1,3 +1,1256 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:45e399784eb0771fbba685010707816d8fee1faf454620c0ca40952f20811735
-size 38441
+{
+    "metadata": {
+        "page_hash": "bc687a22aac76e53ee56d30adcbd66be83ab6c6cc8e0db5b6e0195ba62306d61",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 5153,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                294.04268790849676,
+                48.370422979798036,
+                406.7675653594771,
+                11.971275252525288
+            ],
+            "text": "Using the Performance Schema to Diagnose Problems",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng lược đồ hiệu suất để chẩn đoán các vấn đề"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                757.7296421568626,
+                11.971275252525174
+            ],
+            "text": "The Performance Schema is a tool to help a DBA do performance tuning by taking real measurements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lược đồ hiệu suất là một công cụ để giúp DBA thực hiện điều chỉnh hiệu suất bằng cách thực hiện các phép đo thực tế"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                216.52287581699346,
+                11.971275252525288
+            ],
+            "text": "instead of “wild guesses.”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thay vì những phỏng đoán hoang dã."
+        },
+        {
+            "bbox": [
+                329.64135661764703,
+                110.49163510101016,
+                588.2863562091504,
+                11.971275252525288
+            ],
+            "text": " This section demonstrates some ways to use the Performance Schema for this",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phần này thể hiện một số cách để sử dụng lược đồ hiệu suất cho việc này"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                126.02193813131316,
+                750.3100322712419,
+                11.971275252525288
+            ],
+            "text": "purpose. The discussion here relies on the use of event filtering, which is described in Section 27.4.2,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mục đích. Các cuộc thảo luận ở đây phụ thuộc vào việc sử dụng lọc sự kiện, được mô tả trong phần 27.4.2,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                141.55224116161617,
+                312.37379125817,
+                11.971275252525288
+            ],
+            "text": "“Performance Schema Event Filtering”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lọc theo dõi lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                425.49223856209153,
+                141.55224116161617,
+                4.656079248365984,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                169.41363068181818,
+                743.8116662581701,
+                11.971275252525288
+            ],
+            "text": "The following example provides one methodology that you can use to analyze a repeatable problem,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ sau đây cung cấp một phương pháp mà bạn có thể sử dụng để phân tích một vấn đề lặp lại,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                184.94393371212118,
+                774.5448676470589,
+                11.971275252525288
+            ],
+            "text": "such as investigating a performance bottleneck. To begin, you should have a repeatable use case where",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chẳng hạn như điều tra một nút cổ chai hiệu suất. Để bắt đầu, bạn nên có một trường hợp sử dụng lặp lại trong đó"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                200.4742367424243,
+                280.73612785947716,
+                11.971275252525174
+            ],
+            "text": "performance is deemed “too slow”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hiệu suất được coi là quá chậm ”"
+        },
+        {
+            "bbox": [
+                393.8545751633987,
+                200.4742367424243,
+                524.1233325163398,
+                11.971275252525174
+            ],
+            "text": " and needs optimization, and you should enable all instrumentation (no",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " và cần tối ưu hóa, và bạn nên kích hoạt tất cả các thiết bị (không"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                216.0045397727273,
+                134.02040808823529,
+                11.971275252525288
+            ],
+            "text": "pre-filtering at all).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "phòng lọc trước ở tất cả)."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                243.86591635101013,
+                13.968130555555547,
+                11.971275252525174
+            ],
+            "text": "1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                243.86591635101013,
+                134.99184681372552,
+                11.971275252525174
+            ],
+            "text": "Run the use case.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chạy trường hợp sử dụng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                271.7272152777779,
+                13.968130555555547,
+                11.971275252525174
+            ],
+            "text": "2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                271.7272152777779,
+                715.841962009804,
+                11.971275252525174
+            ],
+            "text": "Using the Performance Schema tables, analyze the root cause of the performance problem. This",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng các bảng lược đồ hiệu suất, phân tích nguyên nhân gốc của vấn đề hiệu suất. Cái này"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                287.2575183080809,
+                285.7438558006536,
+                11.971275252525174
+            ],
+            "text": "analysis relies heavily on post-filtering.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phân tích phụ thuộc rất nhiều vào sau khi lọc."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                315.1189078282828,
+                13.968130555555547,
+                11.971275252525288
+            ],
+            "text": "3.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                315.1189078282828,
+                745.6037414215687,
+                11.971275252525288
+            ],
+            "text": "For problem areas that are ruled out, disable the corresponding instruments. For example, if analysis",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các khu vực có vấn đề được loại trừ, vô hiệu hóa các công cụ tương ứng. Ví dụ: nếu phân tích"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                330.6492108585859,
+                687.9558991013073,
+                11.971275252525174
+            ],
+            "text": "shows that the issue is not related to file I/O in a particular storage engine, disable the file I/O",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cho thấy sự cố không liên quan đến tệp I/O trong một công cụ lưu trữ cụ thể, vô hiệu hóa tệp I/O"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                346.1795138888889,
+                707.451013888889,
+                11.971275252525288
+            ],
+            "text": "instruments for that engine. Then truncate the history and summary tables to remove previously",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "dụng cụ cho động cơ đó. Sau đó cắt ngắn lịch sử và bảng tóm tắt để xóa trước đó"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                361.7098169191919,
+                124.74184681372546,
+                11.971275252525402
+            ],
+            "text": "collected events.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thu thập các sự kiện."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                389.57119349747484,
+                13.968130555555547,
+                11.971275252525174
+            ],
+            "text": "4.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                389.57119349747484,
+                218.7839052287582,
+                11.971275252525174
+            ],
+            "text": "Repeat the process at step 1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lặp lại quá trình ở bước 1."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                417.4325441919192,
+                511.98080065359477,
+                11.971275252525288
+            ],
+            "text": "With each iteration, the Performance Schema output, particularly the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Với mỗi lần lặp, đầu ra lược đồ hiệu suất, đặc biệt là "
+        },
+        {
+            "bbox": [
+                679.4644607843137,
+                418.58434911616166,
+                251.22549019607857,
+                10.17237436868686
+            ],
+            "text": "events_waits_history_long",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_waits_history_long"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                432.9628472222223,
+                292.86191135620913,
+                11.971275252525174
+            ],
+            "text": "table, contains less and less “noise”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bảng, chứa ít và ít tiếng ồn"
+        },
+        {
+            "bbox": [
+                432.7777610294118,
+                432.9628472222223,
+                497.1249665032679,
+                11.971275252525174
+            ],
+            "text": " caused by nonsignificant instruments, and given that this table has",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " gây ra bởi các nhạc cụ không đáng kể, và cho rằng bảng này có"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                448.4931502525253,
+                663.7544934640523,
+                11.971275252525288
+            ],
+            "text": "a fixed size, contains more and more data relevant to the analysis of the problem at hand.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một kích thước cố định, chứa ngày càng nhiều dữ liệu liên quan đến phân tích vấn đề trong tay."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                476.35452683080814,
+                758.7009803921569,
+                11.971275252525174
+            ],
+            "text": "With each iteration, investigation should lead closer and closer to the root cause of the problem, as the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Với mỗi lần lặp, việc điều tra sẽ càng ngày càng gần với nguyên nhân gốc rễ của vấn đề, như"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                491.88482986111114,
+                127.15359477124181,
+                11.971275252525288
+            ],
+            "text": "“signal/noise”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "“Tín hiệu/tiếng ồn”"
+        },
+        {
+            "bbox": [
+                267.06942769607844,
+                491.88482986111114,
+                293.18018055555564,
+                11.971275252525288
+            ],
+            "text": " ratio improves, making analysis easier.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tỷ lệ cải thiện, làm cho phân tích dễ dàng hơn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                519.7461805555556,
+                13.968130555555547,
+                11.971275252525288
+            ],
+            "text": "5.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "5."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                519.7461805555556,
+                753.1070763888889,
+                11.971275252525288
+            ],
+            "text": "Once a root cause of performance bottleneck is identified, take the appropriate corrective action, such",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một khi nguyên nhân gốc của nút thắt thực hiện được xác định, hãy thực hiện hành động khắc phục thích hợp, như vậy"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                535.2764835858586,
+                22.34232026143792,
+                11.971275252525231
+            ],
+            "text": "as:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "BẰNG:"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                563.1378601641414,
+                498.9003267973857,
+                11.971275252525231
+            ],
+            "text": "•Tune the server parameters (cache sizes, memory, and so forth).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Điều chỉnh các tham số máy chủ (kích thước bộ đệm, bộ nhớ, v.v.)."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                590.9992108585859,
+                285.76062091503275,
+                11.971275252525231
+            ],
+            "text": "•Tune a query by writing it differently,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Điều chỉnh một truy vấn bằng cách viết nó khác nhau,"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                618.8605874368687,
+                449.6433823529412,
+                11.971275252525231
+            ],
+            "text": "•Tune the database schema (tables, indexes, and so forth).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Điều chỉnh lược đồ cơ sở dữ liệu (bảng, chỉ mục, v.v.)."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                646.7219381313132,
+                554.8063892973857,
+                11.971275252525288
+            ],
+            "text": "•Tune the code (this applies to storage engine or server developers only).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Điều chỉnh mã (chỉ áp dụng cho các nhà phát triển công cụ lưu trữ hoặc máy chủ)."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                674.5833147095959,
+                13.968130555555547,
+                11.971275252525288
+            ],
+            "text": "6.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "6."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                674.5833147095959,
+                527.8917483660131,
+                11.971275252525288
+            ],
+            "text": "Start again at step 1, to see the effects of the changes on performance.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu lại ở bước 1, để xem ảnh hưởng của các thay đổi đối với hiệu suất."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                702.4446654040404,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                703.5964703282829,
+                351.7157030228759,
+                10.17237436868686
+            ],
+            "text": "mutex_instances.LOCKED_BY_THREAD_ID",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Mutex_instances.locked_by_thread_id"
+        },
+        {
+            "bbox": [
+                525.9154579248367,
+                702.4446654040404,
+                32.5923035130719,
+                11.971275252525288
+            ],
+            "text": " and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                719.1267733585859,
+                422.05882352941177,
+                10.17237436868686
+            ],
+            "text": "rwlock_instances.WRITE_LOCKED_BY_THREAD_ID",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "rwlock_instances.write_locked_by_thread_id"
+        },
+        {
+            "bbox": [
+                562.7450980392157,
+                717.9749684343435,
+                369.51919934640523,
+                11.971275252525231
+            ],
+            "text": " columns are extremely important for investigating",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các cột cực kỳ quan trọng để điều tra"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                733.5052714646465,
+                783.7564689542485,
+                11.971275252525288
+            ],
+            "text": "performance bottlenecks or deadlocks. This is made possible by Performance Schema instrumentation as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hiệu suất tắc nghẽn hoặc bế tắc. Điều này được thực hiện bởi các thiết bị học đồ hiệu suất như"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                749.0356133207072,
+                55.83905228758172,
+                11.971275252525231
+            ],
+            "text": "follows:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "theo sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                776.8969122474748,
+                13.968130555555547,
+                11.97127525252526
+            ],
+            "text": "1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                776.8969122474748,
+                375.16339869281046,
+                11.97127525252526
+            ],
+            "text": "Suppose that thread 1 is stuck waiting for a mutex.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giả sử rằng chủ đề 1 đang bị mắc kẹt đang chờ một mutex."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                804.7583017676768,
+                13.968130555555547,
+                11.97127525252526
+            ],
+            "text": "2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                804.7583017676768,
+                363.05436356209157,
+                11.97127525252526
+            ],
+            "text": "You can determine what the thread is waiting for:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể xác định những gì chủ đề đang chờ đợi:"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                831.8108083964646,
+                426.0784146241831,
+                8.137839962121205
+            ],
+            "text": "SELECT * FROM performance_schema.events_waits_current",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn * Từ Performance_Schema.events_waits_cien"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                844.2350249368687,
+                144.70586560457517,
+                8.137827020202025
+            ],
+            "text": "WHERE THREAD_ID = ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Trong đó thread_id = "
+        },
+        {
+            "bbox": [
+                312.1895257352941,
+                844.2350249368687,
+                64.31372549019608,
+                8.137827020202025
+            ],
+            "text": "thread_1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "Thread_1"
+        },
+        {
+            "bbox": [
+                376.5032679738562,
+                844.2350249368687,
+                8.039232434640496,
+                8.137827020202025
+            ],
+            "text": ";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ";"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                869.9209037247475,
+                565.0731376633987,
+                11.971275252525231
+            ],
+            "text": "Say the query result identifies that the thread is waiting for mutex A, found in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giả sử kết quả truy vấn xác định rằng chuỗi đang chờ Mutex A, được tìm thấy trong"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                886.6030634469697,
+                422.0588235294118,
+                10.172329071969699
+            ],
+            "text": "events_waits_current.OBJECT_INSTANCE_BEGIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_waits_cien.Object_instance_begin"
+        },
+        {
+            "bbox": [
+                589.5424836601308,
+                885.4512067550505,
+                4.656045751633883,
+                11.971281723484836
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                913.3125173295455,
+                13.968130555555547,
+                11.971275252525245
+            ],
+            "text": "3.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                913.3125173295455,
+                386.31781045751643,
+                11.971275252525245
+            ],
+            "text": "You can determine which thread is holding mutex A:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể xác định chủ đề nào đang giữ mutex a:"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "5124",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "5124"
+        }
+    ]
+}

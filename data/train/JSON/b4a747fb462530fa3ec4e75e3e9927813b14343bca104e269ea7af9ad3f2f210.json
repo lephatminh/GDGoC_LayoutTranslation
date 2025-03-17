@@ -1,3 +1,1756 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:dc60892c2626dda6591f07c4bb3bb4dff32678d62024998d3471dd8ef59cd9f3
-size 53088
+{
+    "metadata": {
+        "page_hash": "b4a747fb462530fa3ec4e75e3e9927813b14343bca104e269ea7af9ad3f2f210",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1765,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                395.5126466503268,
+                48.370422979798036,
+                203.82759763071897,
+                11.971275252525288
+            ],
+            "text": "Optimizing for Many Tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa cho nhiều bảng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                94.96133207070716,
+                746.5751801470587,
+                11.971275252525174
+            ],
+            "text": "database instance. For example, to retrieve a BLOB might require a large sequential disk read that is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thể hiện cơ sở dữ liệu. Ví dụ: để lấy một đốm màu có thể yêu cầu một đĩa tuần tự lớn đọc"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                110.49163510101016,
+                457.0964219771241,
+                11.971275252525288
+            ],
+            "text": "better suited to a traditional hard drive than to an SSD device.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phù hợp hơn với ổ cứng truyền thống hơn là thiết bị SSD."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                137.9893437500001,
+                523.7046568627452,
+                11.971275252525288
+            ],
+            "text": "•See Section 8.4.2.2, “Optimizing for Character and String Types”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Xem Phần 8.4.2.2, Tối ưu hóa cho các loại nhân vật và chuỗi"
+        },
+        {
+            "bbox": [
+                636.8231376633987,
+                137.9893437500001,
+                191.75202573529418,
+                11.971275252525288
+            ],
+            "text": " for reasons why a binary ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " vì lý do tại sao một nhị phân "
+        },
+        {
+            "bbox": [
+                828.5751633986929,
+                139.14118750000011,
+                70.34308700980387,
+                10.172335542929318
+            ],
+            "text": "VARCHAR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Varchar"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                153.5196467803031,
+                471.93545751633985,
+                11.971275252525288
+            ],
+            "text": "column is sometimes preferable to an equivalent BLOB column.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cột đôi khi thích hợp hơn một cột Blob tương đương."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                181.01735542929293,
+                781.9812426470589,
+                11.971275252525288
+            ],
+            "text": "•Rather than testing for equality against a very long text string, you can store a hash of the column value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Thay vì kiểm tra sự bình đẳng so với chuỗi văn bản rất dài, bạn có thể lưu trữ một hàm băm của giá trị cột"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                196.54765845959594,
+                651.6621732026143,
+                11.971275252525288
+            ],
+            "text": "in a separate column, index that column, and test the hashed value in queries. (Use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong một cột riêng biệt, chỉ mục cột đó và kiểm tra giá trị băm trong các truy vấn. (Sử dụng "
+        },
+        {
+            "bbox": [
+                809.0968137254902,
+                197.69950220959606,
+                50.24504779411768,
+                10.172335542929204
+            ],
+            "text": "MD5()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Md5 ()"
+        },
+        {
+            "bbox": [
+                859.3418615196078,
+                196.54765845959594,
+                19.545410130718892,
+                11.971275252525288
+            ],
+            "text": " or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                213.22980523989906,
+                70.34313725490196,
+                10.172335542929204
+            ],
+            "text": "CRC32()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Crc32 ()"
+        },
+        {
+            "bbox": [
+                227.77777777777777,
+                212.07796148989905,
+                676.8014370915032,
+                11.971275252525174
+            ],
+            "text": " function to produce the hash value.) Since hash functions can produce duplicate results for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chức năng tạo ra giá trị băm.) Vì các hàm băm có thể tạo ra kết quả trùng lặp cho"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                227.60826452020206,
+                304.4015522875817,
+                11.971275252525288
+            ],
+            "text": "different inputs, you still include a clause ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các đầu vào khác nhau, bạn vẫn bao gồm một mệnh đề "
+        },
+        {
+            "bbox": [
+                461.83619281045753,
+                228.76010827020218,
+                40.19607843137254,
+                10.172335542929204
+            ],
+            "text": "AND ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "VÀ "
+        },
+        {
+            "bbox": [
+                502.0322712418301,
+                228.76010827020218,
+                110.53921568627453,
+                10.172335542929204
+            ],
+            "text": "blob_column",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "blob_column"
+        },
+        {
+            "bbox": [
+                612.5714869281046,
+                228.76010827020218,
+                30.14705882352939,
+                10.172335542929204
+            ],
+            "text": " = ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": " = "
+        },
+        {
+            "bbox": [
+                642.718545751634,
+                228.76010827020218,
+                170.83333333333337,
+                10.172335542929204
+            ],
+            "text": "long_string_value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "Long_String_Value"
+        },
+        {
+            "bbox": [
+                813.5518790849674,
+                227.60826452020206,
+                110.79047467320265,
+                11.971275252525288
+            ],
+            "text": " in the query to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trong truy vấn để"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                243.13856755050506,
+                763.3067810457517,
+                11.971275252525288
+            ],
+            "text": "guard against false matches; the performance benefit comes from the smaller, easily scanned index for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bảo vệ chống lại các trận đấu sai; lợi ích hiệu suất đến từ chỉ số nhỏ hơn, dễ dàng được quét cho"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                258.66887058080806,
+                140.5857843137255,
+                11.971275252525288
+            ],
+            "text": "the hashed values.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các giá trị băm."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                286.87837184343437,
+                52.147715767973864,
+                16.759720643939318
+            ],
+            "text": "8.4.3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "8.4.3"
+        },
+        {
+            "bbox": [
+                118.96029411764707,
+                286.87837184343437,
+                306.18022875816996,
+                16.759720643939318
+            ],
+            "text": "Optimizing for Many Tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Tối ưu hóa cho nhiều bảng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                319.8763832070707,
+                767.9796421568628,
+                11.971275252525288
+            ],
+            "text": "Some techniques for keeping individual queries fast involve splitting data across many tables. When the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một số kỹ thuật để giữ các truy vấn riêng lẻ nhanh chóng liên quan đến việc chia dữ liệu trên nhiều bảng. Khi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                335.4066862373737,
+                759.6388888888889,
+                11.971275252525288
+            ],
+            "text": "number of tables runs into the thousands or even millions, the overhead of dealing with all these tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng bảng chạy vào hàng ngàn hoặc thậm chí hàng triệu người, chi phí đối phó với tất cả các bảng này"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                350.9369892676767,
+                324.8680555555556,
+                11.971275252525402
+            ],
+            "text": "becomes a new performance consideration.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trở thành một xem xét hiệu suất mới."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                378.79056186868695,
+                61.459802246732025,
+                14.365491477272712
+            ],
+            "text": "8.4.3.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "8.4.3.1"
+        },
+        {
+            "bbox": [
+                127.34117312091504,
+                378.79056186868695,
+                367.45247107843136,
+                14.365491477272712
+            ],
+            "text": "How MySQL Opens and Closes Tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Cách MySQL mở và đóng bảng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                409.0384283459596,
+                157.33415032679738,
+                11.971275252525288
+            ],
+            "text": "When you execute a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi bạn thực hiện một "
+        },
+        {
+            "bbox": [
+                298.0204248366013,
+                410.1902720959597,
+                170.83333333333331,
+                10.172335542929204
+            ],
+            "text": "mysqladmin status",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Trạng thái MySQLadmin"
+        },
+        {
+            "bbox": [
+                468.8537581699346,
+                409.0384283459596,
+                347.2103758169935,
+                11.971275252525288
+            ],
+            "text": " command, you should see something like this:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " lệnh, bạn sẽ thấy một cái gì đó như thế này:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                435.8009971590909,
+                377.843154003268,
+                8.137917613636432
+            ],
+            "text": "Uptime: 426 Running threads: 1 Questions: 11082",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thời gian hoạt động: 426 Chủ đề chạy: 1 Câu hỏi: 11082"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                448.2252525252526,
+                209.0196078431373,
+                8.137904671717138
+            ],
+            "text": "Reloads: 1 Open tables: 12",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tải lại: 1 Bảng mở: 12"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                473.5474245580808,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                474.6992294823233,
+                110.53923243464052,
+                10.17237436868686
+            ],
+            "text": "Open tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bảng mở"
+        },
+        {
+            "bbox": [
+                284.7389538398693,
+                473.5474245580808,
+                534.373399509804,
+                11.971275252525288
+            ],
+            "text": " value of 12 can be somewhat puzzling if you have fewer than 12 tables.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giá trị 12 có thể gây khó hiểu nếu bạn có ít hơn 12 bảng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                501.04513320707076,
+                766.0702949346405,
+                11.971275252525231
+            ],
+            "text": "MySQL is multithreaded, so there may be many clients issuing queries for a given table simultaneously.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL được đa luồng, vì vậy có thể có nhiều khách hàng phát hành truy vấn cho một bảng nhất định."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                516.5754362373738,
+                773.5400159313726,
+                11.971275252525288
+            ],
+            "text": "To minimize the problem with multiple client sessions having different states on the same table, the table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để giảm thiểu vấn đề với nhiều phiên khách có trạng thái khác nhau trên cùng một bảng, bảng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                532.1057392676769,
+                784.7112430555555,
+                11.971275252525231
+            ],
+            "text": "is opened independently by each concurrent session. This uses additional memory but normally increases",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được mở độc lập bởi mỗi phiên đồng thời. Điều này sử dụng bộ nhớ bổ sung nhưng thường tăng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                547.6360422979799,
+                141.4734477124183,
+                11.971275252525288
+            ],
+            "text": "performance. With ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hiệu suất. Với "
+        },
+        {
+            "bbox": [
+                282.15972222222223,
+                548.7878472222222,
+                60.29411764705884,
+                10.17237436868686
+            ],
+            "text": "MyISAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Myisam"
+        },
+        {
+            "bbox": [
+                342.45383986928107,
+                547.6360422979799,
+                572.5093786764705,
+                11.971275252525288
+            ],
+            "text": " tables, one extra file descriptor is required for the data file for each client that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các bảng, một bộ mô tả tệp bổ sung được yêu cầu cho tệp dữ liệu cho mỗi máy khách"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                563.1663453282829,
+                660.0028762254904,
+                11.971275252525231
+            ],
+            "text": "has the table open. (By contrast, the index file descriptor is shared between all sessions.)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có bảng mở. (Ngược lại, bộ mô tả tệp chỉ mục được chia sẻ giữa tất cả các phiên.)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                590.6640151515152,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                591.8158200757575,
+                160.78433047385622,
+                10.172374368686917
+            ],
+            "text": "table_open_cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Table_open_cache"
+        },
+        {
+            "bbox": [
+                334.984051879085,
+                590.6640151515152,
+                37.24838276143794,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                372.2324346405229,
+                591.8158200757575,
+                150.73529411764707,
+                10.172374368686917
+            ],
+            "text": "max_connections",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Max_Connections"
+        },
+        {
+            "bbox": [
+                522.96772875817,
+                590.6640151515152,
+                394.6417483660131,
+                11.971275252525288
+            ],
+            "text": " system variables affect the maximum number of files",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các biến hệ thống ảnh hưởng đến số lượng tệp tối đa"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                606.1943181818183,
+                790.3554256535949,
+                11.971275252525231
+            ],
+            "text": "the server keeps open. If you increase one or both of these values, you may run up against a limit imposed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Máy chủ giữ mở. Nếu bạn tăng một hoặc cả hai giá trị này, bạn có thể chạy lên so với giới hạn áp đặt"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                621.7246212121213,
+                756.7748848039216,
+                11.971275252525288
+            ],
+            "text": "by your operating system on the per-process number of open file descriptors. Many operating systems",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bởi hệ điều hành của bạn về số lượng mô tả tệp mở. Nhiều hệ điều hành"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                637.2549242424243,
+                743.7111760620915,
+                11.971275252525231
+            ],
+            "text": "permit you to increase the open-files limit, although the method varies widely from system to system.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho phép bạn tăng giới hạn tệp mở, mặc dù phương pháp thay đổi từ hệ thống này sang hệ thống khác."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                652.7852272727273,
+                780.0551470588236,
+                11.971275252525288
+            ],
+            "text": "Consult your operating system documentation to determine whether it is possible to increase the limit and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tham khảo tài liệu hệ điều hành của bạn để xác định xem có thể tăng giới hạn hay không và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                668.3155303030303,
+                99.61928104575162,
+                11.971275252525231
+            ],
+            "text": "how to do so.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Làm thế nào để làm như vậy."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                696.9650438762626,
+                160.78431372549022,
+                10.17237436868686
+            ],
+            "text": "table_open_cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Table_open_cache"
+        },
+        {
+            "bbox": [
+                301.47058823529414,
+                695.8132389520202,
+                95.88439542483661,
+                11.971275252525231
+            ],
+            "text": " is related to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có liên quan đến "
+        },
+        {
+            "bbox": [
+                397.35498366013076,
+                696.9650438762626,
+                150.73529411764707,
+                10.17237436868686
+            ],
+            "text": "max_connections",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Max_Connections"
+        },
+        {
+            "bbox": [
+                548.0902777777778,
+                695.8132389520202,
+                308.1196895424837,
+                11.971275252525231
+            ],
+            "text": ". For example, for 200 concurrent running",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Ví dụ, trong 200 lần chạy đồng thời"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                711.3435419823232,
+                371.4452614379084,
+                11.971275252525288
+            ],
+            "text": "connections, specify a table cache size of at least ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "kết nối, chỉ định kích thước bộ nhớ cache của bảng ít nhất "
+        },
+        {
+            "bbox": [
+                512.1315359477123,
+                712.4953469065657,
+                60.2941176470589,
+                10.17237436868686
+            ],
+            "text": "200 * ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "200 * "
+        },
+        {
+            "bbox": [
+                572.4256535947712,
+                712.4953469065657,
+                10.049019607843093,
+                10.17237436868686
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                582.4746732026143,
+                711.3435419823232,
+                59.57395465686284,
+                11.971275252525288
+            ],
+            "text": ", where ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Ở đâu "
+        },
+        {
+            "bbox": [
+                642.0486278594772,
+                712.4953469065657,
+                10.049019607843093,
+                10.17237436868686
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                652.0976474673203,
+                711.3435419823232,
+                251.3092487745099,
+                11.971275252525288
+            ],
+            "text": " is the maximum number of tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là số lượng bảng tối đa"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                726.8738450126264,
+                753.0567810457517,
+                11.971275252525231
+            ],
+            "text": "per join in any of the queries which you execute. You must also reserve some extra file descriptors for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mỗi lần tham gia vào bất kỳ truy vấn nào mà bạn thực hiện. Bạn cũng phải đặt trước một số mô tả tệp bổ sung cho"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                742.4041480429294,
+                196.40807148692812,
+                11.971275252525231
+            ],
+            "text": "temporary tables and files.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng và tập tin tạm thời."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                769.90184375,
+                737.263088643791,
+                11.971275252525231
+            ],
+            "text": "Make sure that your operating system can handle the number of open file descriptors implied by the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đảm bảo rằng hệ điều hành của bạn có thể xử lý số lượng mô tả tệp mở được ngụ ý bởi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                786.5840034722223,
+                160.78431372549022,
+                10.172322601010052
+            ],
+            "text": "table_open_cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Table_open_cache"
+        },
+        {
+            "bbox": [
+                301.47058823529414,
+                785.432146780303,
+                77.2769607843137,
+                11.971275252525231
+            ],
+            "text": " setting. If ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cài đặt. Nếu như "
+        },
+        {
+            "bbox": [
+                378.74754901960785,
+                786.5840034722223,
+                160.78433047385624,
+                10.172322601010052
+            ],
+            "text": "table_open_cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Table_open_cache"
+        },
+        {
+            "bbox": [
+                539.5318794934641,
+                785.432146780303,
+                310.9167001633987,
+                11.971275252525231
+            ],
+            "text": " is set too high, MySQL may run out of file",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được đặt quá cao, MySQL có thể hết tệp"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                800.9624498106061,
+                682.2949346405228,
+                11.971275252525231
+            ],
+            "text": "descriptors and exhibit symptoms such as refusing connections or failing to perform queries.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các mô tả và biểu hiện các triệu chứng như từ chối kết nối hoặc không thực hiện các truy vấn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                828.460158459596,
+                229.03390522875816,
+                11.971275252525231
+            ],
+            "text": "Also take into account that the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cũng tính đến việc "
+        },
+        {
+            "bbox": [
+                369.7201797385621,
+                829.6120151515152,
+                60.29411764705884,
+                10.172322601010109
+            ],
+            "text": "MyISAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Myisam"
+        },
+        {
+            "bbox": [
+                430.0142973856209,
+                828.460158459596,
+                471.0645592320261,
+                11.971275252525231
+            ],
+            "text": " storage engine needs two file descriptors for each unique open",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Công cụ lưu trữ cần hai mô tả tệp cho mỗi lần mở duy nhất"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                843.990461489899,
+                567.8366180555556,
+                11.971275252525231
+            ],
+            "text": "table. To increase the number of file descriptors available to MySQL, set the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bàn. Để tăng số lượng mô tả tệp có sẵn cho MySQL, hãy đặt "
+        },
+        {
+            "bbox": [
+                708.5228925653595,
+                845.1423181818182,
+                160.78436397058817,
+                10.172322601010109
+            ],
+            "text": "open_files_limit",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "open_files_limit"
+        },
+        {
+            "bbox": [
+                869.3072565359477,
+                843.990461489899,
+                57.698037173202806,
+                11.971275252525231
+            ],
+            "text": " system",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hệ thống"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                859.5207645202021,
+                521.828856617647,
+                11.971275252525231
+            ],
+            "text": "variable. See Section B.3.2.16, “File Not Found and Similar Errors”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "biến. Xem phần B.3.2.16, Không tìm thấy tệp và các lỗi tương tự"
+        },
+        {
+            "bbox": [
+                634.9472871732027,
+                859.5207645202021,
+                4.656029003267918,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                887.0184731691919,
+                336.0894272875817,
+                11.971279135101
+            ],
+            "text": "The cache of open tables is kept at a level of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bộ nhớ cache của các bảng mở được giữ ở mức "
+        },
+        {
+            "bbox": [
+                476.77570179738564,
+                888.1703298611111,
+                160.78431372549016,
+                10.172326483585849
+            ],
+            "text": "table_open_cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Table_open_cache"
+        },
+        {
+            "bbox": [
+                637.5600657679738,
+                887.0184731691919,
+                296.9485629084967,
+                11.971279135101
+            ],
+            "text": " entries. The server autosizes the cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mục. Máy chủ tự động hóa bộ nhớ cache"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                902.5487800820707,
+                354.66341544117654,
+                11.971275252525245
+            ],
+            "text": "size at startup. To set the size explicitly, set the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kích thước khi khởi động. Để đặt kích thước một cách rõ ràng, hãy đặt "
+        },
+        {
+            "bbox": [
+                495.34968995098046,
+                903.7006303030303,
+                160.78431372549022,
+                10.172329071969699
+            ],
+            "text": "table_open_cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Table_open_cache"
+        },
+        {
+            "bbox": [
+                656.1340036764707,
+                902.5487800820707,
+                260.62130678104563,
+                11.971275252525245
+            ],
+            "text": " system variable at startup. MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống khi khởi động. Mysql"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                918.0790831123737,
+                714.9040200163399,
+                11.971275252525245
+            ],
+            "text": "may temporarily open more tables than this to execute queries, as described later in this section.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Có thể tạm thời mở nhiều bảng hơn thế này để thực hiện các truy vấn, như được mô tả sau trong phần này."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "1736",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1736"
+        }
+    ]
+}

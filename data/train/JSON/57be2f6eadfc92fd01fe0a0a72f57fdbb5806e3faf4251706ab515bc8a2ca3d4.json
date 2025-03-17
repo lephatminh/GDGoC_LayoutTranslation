@@ -1,3 +1,1736 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6c846fdf0a56e69552d40bc3372fe4441df18041ff56079e6cee0836613fad92
-size 49824
+{
+    "metadata": {
+        "page_hash": "57be2f6eadfc92fd01fe0a0a72f57fdbb5806e3faf4251706ab515bc8a2ca3d4",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3549,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                296.81454248366015,
+                48.370422979798036,
+                401.2238562091503,
+                11.971275252525288
+            ],
+            "text": "Replication and Binary Logging Options and Variables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn sao chép và ghi nhật ký nhị phân và các biến"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                94.96133207070716,
+                747.5465183823529,
+                11.971275252525174
+            ],
+            "text": "•If you need to put the relay logs in some area other than the data directory because your relay logs",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Nếu bạn cần đặt nhật ký rơle vào một số khu vực khác ngoài thư mục dữ liệu vì nhật ký rơle của bạn"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                110.49163510101016,
+                404.99223856209153,
+                11.971275252525288
+            ],
+            "text": "tend to be very large and you do not want to decrease ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có xu hướng rất lớn và bạn không muốn giảm "
+        },
+        {
+            "bbox": [
+                579.1752450980392,
+                111.64347885101006,
+                180.88235294117646,
+                10.172335542929432
+            ],
+            "text": "max_relay_log_size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MAX_RELAY_LOG_SIZE"
+        },
+        {
+            "bbox": [
+                760.0575980392157,
+                110.49163510101016,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                138.96385732323233,
+                450.54781086601315,
+                11.971275252525288
+            ],
+            "text": "•To increase speed by using load-balancing between disks.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Để tăng tốc độ bằng cách sử dụng cân bằng tải giữa các đĩa."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                170.02446338383845,
+                431.95710784313724,
+                11.971275252525288
+            ],
+            "text": "You can obtain the relay log file name (and path) from the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể lấy tên tệp (và đường dẫn) của Relay Log từ "
+        },
+        {
+            "bbox": [
+                589.3917483660131,
+                171.17630713383835,
+                180.88235294117658,
+                10.172335542929432
+            ],
+            "text": "relay_log_basename",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log_basename"
+        },
+        {
+            "bbox": [
+                770.2741013071897,
+                170.02446338383845,
+                125.64622508169919,
+                11.971275252525288
+            ],
+            "text": " system variable.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                198.49668560606062,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                199.64852935606064,
+                180.8823529411765,
+                10.172335542929318
+            ],
+            "text": "relay_log_basename",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log_basename"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                242.82275883838383,
+                121.92810457516345,
+                11.971275252525288
+            ],
+            "text": "System Variable",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biến hệ thống"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                243.97460258838385,
+                180.88235294117658,
+                10.172335542929318
+            ],
+            "text": "relay_log_basename",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log_basename"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                264.1769255050506,
+                47.48161764705881,
+                11.971275252525174
+            ],
+            "text": "Scope",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                264.1769255050506,
+                48.40276102941186,
+                11.971275252525174
+            ],
+            "text": "Global",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Toàn cầu"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                285.5310921717172,
+                65.13439542483658,
+                11.971275252525288
+            ],
+            "text": "Dynamic",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Năng động"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                285.5310921717172,
+                21.404411764705856,
+                11.971275252525288
+            ],
+            "text": "No",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "KHÔNG"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                308.03710258838385,
+                70.34313725490196,
+                10.172335542929318
+            ],
+            "text": "SET_VAR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Set_var"
+        },
+        {
+            "bbox": [
+                231.54616013071896,
+                306.88525883838383,
+                94.00857843137257,
+                11.971275252525288
+            ],
+            "text": " Hint Applies",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Gợi ý áp dụng"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                306.88525883838383,
+                21.404411764705856,
+                11.971275252525288
+            ],
+            "text": "No",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "KHÔNG"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                328.2394255050506,
+                37.23161764705884,
+                11.971275252525174
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                328.2394255050506,
+                73.52531004901971,
+                11.971275252525174
+            ],
+            "text": "File name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên tập tin"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                349.5935921717172,
+                100.54044117647061,
+                11.971275252525288
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                350.7454359217172,
+                351.71568627450984,
+                10.172335542929318
+            ],
+            "text": "datadir + ’/’ + hostname + ’-relay-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Datadir + xông/xông + HostName + xông -Relay-"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                366.2757389520202,
+                40.1960784313726,
+                10.172335542929318
+            ],
+            "text": "bin’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "thùng rác"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                399.0964330808081,
+                760.5265020424837,
+                11.971275252525288
+            ],
+            "text": "Holds the base name and complete path to the relay log file. The maximum variable length is 256. This",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giữ tên cơ sở và đường dẫn hoàn chỉnh đến tệp nhật ký chuyển tiếp. Độ dài biến tối đa là 256. Điều này"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                414.6267361111112,
+                331.3831531862745,
+                11.971275252525174
+            ],
+            "text": "variable is set by the server and is read only.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biến được đặt bởi máy chủ và chỉ được đọc."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                443.09895833333337,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                444.2507632575757,
+                150.7352941176471,
+                10.172374368686974
+            ],
+            "text": "relay_log_index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log_index"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                487.4250315656566,
+                172.17320261437914,
+                11.971275252525288
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                488.5768753156566,
+                271.32352941176475,
+                10.172335542929318
+            ],
+            "text": "--relay-log-index=file_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--relay-log-index = file_name"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                508.7791982323232,
+                121.92810457516345,
+                11.971275252525288
+            ],
+            "text": "System Variable",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biến hệ thống"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                509.93104198232334,
+                150.73529411764707,
+                10.172335542929204
+            ],
+            "text": "relay_log_index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log_index"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                530.13336489899,
+                47.48161764705881,
+                11.971275252525231
+            ],
+            "text": "Scope",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                530.13336489899,
+                48.40276102941186,
+                11.971275252525231
+            ],
+            "text": "Global",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Toàn cầu"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                551.4875315656566,
+                65.13439542483658,
+                11.971275252525288
+            ],
+            "text": "Dynamic",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Năng động"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                551.4875315656566,
+                21.404411764705856,
+                11.971275252525288
+            ],
+            "text": "No",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "KHÔNG"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                573.9935419823232,
+                70.34313725490196,
+                10.172335542929261
+            ],
+            "text": "SET_VAR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Set_var"
+        },
+        {
+            "bbox": [
+                231.54616013071896,
+                572.8416982323233,
+                94.00857843137257,
+                11.971275252525231
+            ],
+            "text": " Hint Applies",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Gợi ý áp dụng"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                572.8416982323233,
+                21.404411764705856,
+                11.971275252525231
+            ],
+            "text": "No",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "KHÔNG"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                594.1958648989898,
+                37.23161764705884,
+                11.971275252525288
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                594.1958648989898,
+                73.52531004901971,
+                11.971275252525288
+            ],
+            "text": "File name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên tập tin"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                615.5500315656566,
+                100.54044117647061,
+                11.971275252525288
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                616.7018753156566,
+                271.32352941176475,
+                10.172335542929261
+            ],
+            "text": "*host_name*-relay-bin.index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "*host_name*-Relay-bin.index"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                649.5225694444445,
+                733.5281360294117,
+                11.971275252525288
+            ],
+            "text": "The name for the relay log index file. The maximum variable length is 256. If you do not specify this",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên cho tệp chỉ mục nhật ký rơle. Độ dài biến tối đa là 256. Nếu bạn không chỉ định điều này"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                665.0528724747476,
+                123.82065318627454,
+                11.971275252525231
+            ],
+            "text": "variable, but the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "biến, nhưng "
+        },
+        {
+            "bbox": [
+                281.25529370915035,
+                666.2046773989898,
+                90.44117647058823,
+                10.172374368686917
+            ],
+            "text": "relay_log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log"
+        },
+        {
+            "bbox": [
+                371.6964701797386,
+                665.0528724747476,
+                553.8684808006535,
+                11.971275252525231
+            ],
+            "text": " system variable is specified, its value is used as the default base name for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống được chỉ định, giá trị của nó được sử dụng làm tên cơ sở mặc định cho"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                680.5831755050506,
+                185.25367647058826,
+                11.971275252525231
+            ],
+            "text": "the relay log index file. If ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp chỉ mục nhật ký rơle. Nếu như "
+        },
+        {
+            "bbox": [
+                342.68831699346407,
+                681.7349804292929,
+                90.44115972222221,
+                10.17237436868686
+            ],
+            "text": "relay_log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log"
+        },
+        {
+            "bbox": [
+                433.1294767156863,
+                680.5831755050506,
+                476.6585469771242,
+                11.971275252525231
+            ],
+            "text": " is also not specified, then for the default replication channel, the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cũng không được chỉ định, sau đó cho kênh sao chép mặc định,"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                696.1134785353536,
+                118.2267156862745,
+                11.971275252525231
+            ],
+            "text": "default name is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên mặc định là "
+        },
+        {
+            "bbox": [
+                275.6613562091503,
+                697.265283459596,
+                90.44117647058829,
+                10.17237436868686
+            ],
+            "text": "host_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "host_name"
+        },
+        {
+            "bbox": [
+                366.1025326797386,
+                697.265283459596,
+                160.78431372549016,
+                10.17237436868686
+            ],
+            "text": "-relay-bin.index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Relay-bin.index"
+        },
+        {
+            "bbox": [
+                526.8868464052288,
+                696.1134785353536,
+                397.5224673202615,
+                11.971275252525231
+            ],
+            "text": ", using the name of the host machine. For non-default",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", sử dụng tên của máy chủ. Cho không mặc định"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                711.6437815656566,
+                303.48040890522884,
+                11.971275252525231
+            ],
+            "text": "replication channels, the default name is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kênh sao chép, tên mặc định là "
+        },
+        {
+            "bbox": [
+                460.9150494281046,
+                712.795586489899,
+                90.44117647058823,
+                10.17237436868686
+            ],
+            "text": "host_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "host_name"
+        },
+        {
+            "bbox": [
+                551.3562258986929,
+                712.795586489899,
+                110.53921568627447,
+                10.17237436868686
+            ],
+            "text": "-relay-bin-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Relay-bin-"
+        },
+        {
+            "bbox": [
+                661.8954415849673,
+                712.795586489899,
+                70.34313725490199,
+                10.17237436868686
+            ],
+            "text": "channel",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "kênh"
+        },
+        {
+            "bbox": [
+                732.2385788398693,
+                712.795586489899,
+                60.2941176470589,
+                10.17237436868686
+            ],
+            "text": ".index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": ".index"
+        },
+        {
+            "bbox": [
+                792.5326964869282,
+                711.6437815656566,
+                59.57395465686261,
+                11.971275252525231
+            ],
+            "text": ", where ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Ở đâu "
+        },
+        {
+            "bbox": [
+                852.1066008986928,
+                712.795586489899,
+                70.34318750000011,
+                10.17237436868686
+            ],
+            "text": "channel",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "kênh"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                727.1740845959596,
+                513.8566176470588,
+                11.971275252525231
+            ],
+            "text": "is the name of the replication channel recorded in this relay log index.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "là tên của kênh sao chép được ghi trong chỉ mục nhật ký chuyển tiếp này."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                758.2346906565656,
+                767.0583982843137,
+                11.971275252525288
+            ],
+            "text": "The default location for relay log files is the data directory, or any other location that was specified using",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vị trí mặc định cho các tệp nhật ký rơle là thư mục dữ liệu hoặc bất kỳ vị trí nào khác được chỉ định bằng cách sử dụng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                773.7649936868687,
+                27.93627450980395,
+                11.97127525252526
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                185.37091503267976,
+                774.9168374368687,
+                90.44115972222221,
+                10.172335542929318
+            ],
+            "text": "relay_log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log"
+        },
+        {
+            "bbox": [
+                275.81207475490197,
+                773.7649936868687,
+                255.9987912581699,
+                11.97127525252526
+            ],
+            "text": " system variable. You can use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống. Bạn có thể sử dụng "
+        },
+        {
+            "bbox": [
+                531.8108660130719,
+                774.9168374368687,
+                150.73529411764707,
+                10.172335542929318
+            ],
+            "text": "relay_log_index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log_index"
+        },
+        {
+            "bbox": [
+                682.5461601307189,
+                773.7649936868687,
+                219.67156862745117,
+                11.97127525252526
+            ],
+            "text": " system variable to specify an",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống để chỉ định một"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                789.2952967171717,
+                734.5497696078431,
+                11.971275252525231
+            ],
+            "text": "alternative location, by adding a leading absolute path name to the base name to specify a different",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vị trí thay thế, bằng cách thêm một tên đường dẫn tuyệt đối hàng đầu vào tên cơ sở để chỉ định một"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                804.8255997474748,
+                68.86928104575165,
+                11.971275252525231
+            ],
+            "text": "directory.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thư mục."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                835.8862058080808,
+                763.3403112745099,
+                11.971275252525231
+            ],
+            "text": "The relay log and relay log index on a replication server cannot be given the same names as the binary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhật ký rơle và chỉ mục nhật ký rơle trên máy chủ sao chép không thể được đặt cùng tên với nhị phân"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                851.4165088383838,
+                444.0494281045751,
+                11.971275252525231
+            ],
+            "text": "log and binary log index, whose names are specified by the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ mục nhật ký và nhật ký nhị phân, có tên được chỉ định bởi "
+        },
+        {
+            "bbox": [
+                601.4840686274509,
+                852.5683525883838,
+                90.44117647058829,
+                10.17233554292929
+            ],
+            "text": "--log-bin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Log-bin"
+        },
+        {
+            "bbox": [
+                691.9252450980392,
+                851.4165088383838,
+                37.24836601307186,
+                11.971275252525231
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                729.1736111111111,
+                852.5683525883838,
+                150.73529411764707,
+                10.17233554292929
+            ],
+            "text": "--log-bin-index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Log-bin-index"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                866.9468118686868,
+                755.8872716503269,
+                11.97127525252526
+            ],
+            "text": "options. The server issues an error message and does not start if the binary log and relay log file base",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tùy chọn. Máy chủ phát hành thông báo lỗi và không khởi động nếu bản ghi nhật ký nhị phân và cơ sở tệp nhật ký rơle"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                882.4771148989898,
+                200.14297385620918,
+                11.97127525252526
+            ],
+            "text": "names would be the same.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên sẽ giống nhau."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                913.537720959596,
+                759.5551638071895,
+                11.971275252525245
+            ],
+            "text": "Due to the manner in which MySQL parses server options, if you specify this variable at server startup,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Do cách thức mà các tùy chọn máy chủ của MySQL phân tích lại, nếu bạn chỉ định biến này tại máy chủ khởi động,"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                929.068023989899,
+                188.97181372549025,
+                11.97127525252526
+            ],
+            "text": "you must supply a value; ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn phải cung cấp một giá trị; "
+        },
+        {
+            "bbox": [
+                346.40645424836606,
+                929.068023989899,
+                526.920343137255,
+                11.97127525252526
+            ],
+            "text": "the default base name is used only if the option is not actually specified",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "Tên cơ sở mặc định chỉ được sử dụng nếu tùy chọn không thực sự được chỉ định"
+        },
+        {
+            "bbox": [
+                873.326797385621,
+                929.068023989899,
+                50.27862826797377,
+                11.97127525252526
+            ],
+            "text": ". If you",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Nếu bạn"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                944.5983270202021,
+                84.71323529411768,
+                11.97127525252526
+            ],
+            "text": "specify the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ định "
+        },
+        {
+            "bbox": [
+                242.1478758169935,
+                945.7501772411616,
+                150.73529411764704,
+                10.172329071969699
+            ],
+            "text": "relay_log_index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log_index"
+        },
+        {
+            "bbox": [
+                392.88316993464053,
+                944.5983270202021,
+                538.0412916666667,
+                11.97127525252526
+            ],
+            "text": " system variable at server startup without specifying a value, unexpected",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống tại máy chủ khởi động mà không chỉ định giá trị, bất ngờ"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3520",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3520"
+        }
+    ]
+}

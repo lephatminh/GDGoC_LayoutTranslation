@@ -1,3 +1,1716 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d5eaa3dd74e83361eda7ed523646146ea7ba5da6c93aaec2aa4adc0297a9aaa1
-size 55773
+{
+    "metadata": {
+        "page_hash": "bf2b44715356dc3d8d783c76a0eb4ffa0c3c11b878d2ebde0c6f185dc4c605c1",
+        "original_filename": "python_howto-pyporting.pdf",
+        "page_no": 3,
+        "num_pages": 7,
+        "original_width": 595.28003,
+        "original_height": 841.89001,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                123.97526589292772,
+                90.08628454921313,
+                66.71341511321992,
+                12.12942828481846
+            ],
+            "text": "Division",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XDOKWL+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Phân công"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                120.10612585841238,
+                286.7692021350019,
+                12.12950133474078
+            ],
+            "text": "In Python 3,$_{5 / 2 == 2.5}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trong Python 3, $ _ {5/2 == 2.5} $"
+        },
+        {
+            "bbox": [
+                345.74637124984685,
+                120.10612585841238,
+                76.47422885998714,
+                12.12950133474078
+            ],
+            "text": "and not$_{2}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "và không phải $ _ {2} $"
+        },
+        {
+            "bbox": [
+                413.3679912796671,
+                120.10612585841238,
+                371.9723228410669,
+                12.12950133474078
+            ],
+            "text": "; all division between$_{int}$ values result in a$_{float}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "; Tất cả các phân chia giữa $ _ {int} $ giá trị dẫn đến $ _ {float} $"
+        },
+        {
+            "bbox": [
+                775.8028280404434,
+                120.10612585841238,
+                125.22695117119918,
+                12.12950133474078
+            ],
+            "text": ". This change has",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ". Thay đổi này có"
+        },
+        {
+            "bbox": [
+                123.97531927116722,
+                134.66133509530528,
+                777.0423723520507,
+                12.12944045980555
+            ],
+            "text": "actually been planned since Python 2.2 which was released in 2002. Since then users have been encouraged to add",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trên thực tế đã được lên kế hoạch kể từ Python 2.2 được phát hành vào năm 2002. Kể từ đó, người dùng đã được khuyến khích thêm"
+        },
+        {
+            "bbox": [
+                123.97531927116722,
+                150.63692702565743,
+                348.5256883638445,
+                10.916470846352013
+            ],
+            "text": "from __future__ import division",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BDVYVK+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Từ __future __"
+        },
+        {
+            "bbox": [
+                446.5951532928124,
+                149.2165565071856,
+                295.84543135102314,
+                12.129440459805437
+            ],
+            "text": "to any and all files which use the$_{/}$and$_{//}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đối với bất kỳ và tất cả các tệp sử dụng $ _ {/} $ và $ _ {//} $"
+        },
+        {
+            "bbox": [
+                728.2858464108059,
+                149.2165565071856,
+                172.74456989595296,
+                12.129440459805437
+            ],
+            "text": "operators or to be running",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "người vận hành hoặc đang chạy"
+        },
+        {
+            "bbox": [
+                123.97531927116722,
+                163.77297106780009,
+                156.00200123461218,
+                12.129428284818346
+            ],
+            "text": "the interpreter with the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "thông dịch với"
+        },
+        {
+            "bbox": [
+                284.5715167028197,
+                165.192063212628,
+                27.721454892414215,
+                10.916543896274561
+            ],
+            "text": "-Q",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BDVYVK+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "-Q"
+        },
+        {
+            "bbox": [
+                309.7660113005975,
+                163.77297106780009,
+                591.2601864033637,
+                12.129428284818346
+            ],
+            "text": "flag. If you have not been doing this then you will need to go through your code and do",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "lá cờ. Nếu bạn chưa làm điều này thì bạn sẽ cần phải thông qua mã của mình và làm"
+        },
+        {
+            "bbox": [
+                123.97530549613766,
+                178.3281803046932,
+                73.76386610012771,
+                12.129440459805437
+            ],
+            "text": "two things:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hai điều:"
+        },
+        {
+            "bbox": [
+                145.41782642196142,
+                200.16157247191938,
+                17.619920955520712,
+                12.129428284818346
+            ],
+            "text": "1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "1."
+        },
+        {
+            "bbox": [
+                171.1943917806213,
+                200.16157247191938,
+                24.46991599063051,
+                12.129428284818346
+            ],
+            "text": "Add",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thêm vào"
+        },
+        {
+            "bbox": [
+                199.9531632196699,
+                201.58066461674719,
+                348.5256900857231,
+                10.916543896274561
+            ],
+            "text": "from __future__ import division",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BDVYVK+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Từ __future __"
+        },
+        {
+            "bbox": [
+                523.3133379260178,
+                200.16157247191938,
+                78.99592020582304,
+                12.129428284818346
+            ],
+            "text": "to your files",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cho các tập tin của bạn"
+        },
+        {
+            "bbox": [
+                145.41782642196142,
+                221.9937593154241,
+                12.925242805474255,
+                12.129440459805437
+            ],
+            "text": "2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "2."
+        },
+        {
+            "bbox": [
+                165.07246904452683,
+                221.9937593154241,
+                367.3840447410943,
+                12.129440459805437
+            ],
+            "text": "Update any division operator as necessary to either use",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Cập nhật bất kỳ toán tử phân chia nào khi cần thiết để sử dụng"
+        },
+        {
+            "bbox": [
+                536.3910582553895,
+                223.41286363523898,
+                38.28858999351951,
+                10.916543896274561
+            ],
+            "text": "//",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BDVYVK+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "//"
+        },
+        {
+            "bbox": [
+                560.907132648142,
+                221.9937593154241,
+                250.09363366347088,
+                12.129440459805437
+            ],
+            "text": "to use floor division or continue using",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sử dụng phân chia sàn hoặc tiếp tục sử dụng"
+        },
+        {
+            "bbox": [
+                814.9307478028448,
+                223.41286363523898,
+                19.14427777797289,
+                10.916543896274561
+            ],
+            "text": "/",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BDVYVK+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/"
+        },
+        {
+            "bbox": [
+                829.1551704665785,
+                221.9937593154241,
+                71.87691606251269,
+                12.129440459805437
+            ],
+            "text": "and expect",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "và mong đợi"
+        },
+        {
+            "bbox": [
+                166.86206750459945,
+                236.5501738760388,
+                40.87891198029942,
+                12.129428284818346
+            ],
+            "text": "a float",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "một chiếc phao"
+        },
+        {
+            "bbox": [
+                123.97524006474733,
+                258.3823607195434,
+                105.31079822214095,
+                12.129440459805437
+            ],
+            "text": "The reason that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Lý do mà"
+        },
+        {
+            "bbox": [
+                234.20644440230924,
+                259.8014650393583,
+                19.144329434333628,
+                10.916543896274447
+            ],
+            "text": "/",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BDVYVK+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/"
+        },
+        {
+            "bbox": [
+                249.43305212170478,
+                258.3823607195434,
+                164.92233327565177,
+                12.129440459805437
+            ],
+            "text": "isn’t simply translated to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "isn chỉ đơn giản là dịch sang"
+        },
+        {
+            "bbox": [
+                419.30325547793024,
+                259.8014650393583,
+                38.28864164988033,
+                10.916543896274447
+            ],
+            "text": "//",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BDVYVK+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "//"
+        },
+        {
+            "bbox": [
+                444.82151492634483,
+                258.3823607195434,
+                282.25825877276617,
+                12.129440459805437
+            ],
+            "text": "automatically is that if an object defines a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tự động là nếu một đối tượng xác định"
+        },
+        {
+            "bbox": [
+                732.0188277607767,
+                259.8014650393583,
+                140.39150238250045,
+                10.916543896274447
+            ],
+            "text": "__truediv__",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BDVYVK+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "__truediv__"
+        },
+        {
+            "bbox": [
+                850.1706654765488,
+                258.3823607195434,
+                50.86267802398811,
+                12.129440459805437
+            ],
+            "text": "method",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "phương pháp"
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                272.9375821314236,
+                48.135215286828966,
+                12.129440459805437
+            ],
+            "text": "but not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nhưng không"
+        },
+        {
+            "bbox": [
+                177.05901246174844,
+                274.3566864512384,
+                152.79416017029834,
+                10.916543896274561
+            ],
+            "text": "__floordiv__",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BDVYVK+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "__floordiv__"
+        },
+        {
+            "bbox": [
+                305.53184271946765,
+                272.9375821314236,
+                471.81435684983416,
+                12.129440459805437
+            ],
+            "text": "then your code would begin to fail (e.g. a user-defined class that uses",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Sau đó, mã của bạn sẽ bắt đầu thất bại (ví dụ: một lớp do người dùng xác định"
+        },
+        {
+            "bbox": [
+                782.2976511575569,
+                274.3566864512384,
+                19.144294996759754,
+                10.916543896274561
+            ],
+            "text": "/",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BDVYVK+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/"
+        },
+        {
+            "bbox": [
+                797.5517917172527,
+                272.9375821314236,
+                103.47524970726806,
+                12.129440459805437
+            ],
+            "text": "to signify some",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để biểu thị một số"
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                287.49391146712856,
+                157.71811507770553,
+                12.129513509727985
+            ],
+            "text": "operation but not$_{//}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hoạt động nhưng không phải $ _ {//} $"
+        },
+        {
+            "bbox": [
+                268.2789799785489,
+                287.49391146712856,
+                187.617520950602,
+                12.129513509727985
+            ],
+            "text": "for the same thing or at all).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cho cùng một điều hoặc tất cả)."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                327.0663328693021,
+                193.8788745357374,
+                12.129440459805323
+            ],
+            "text": "Text versus binary data",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XDOKWL+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Văn bản so với dữ liệu nhị phân"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                357.0861863534881,
+                777.0440098586879,
+                12.129428284818346
+            ],
+            "text": "In Python 2 you could use the$_{str}$ type for both text and binary data. Unfortunately this confluence of two different",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trong Python 2, bạn có thể sử dụng loại $ _ {str} $ cho cả dữ liệu văn bản và dữ liệu nhị phân. Thật không may, sự hợp lưu của hai khác nhau"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                371.6413955903812,
+                777.0423224175687,
+                12.129440459805437
+            ],
+            "text": "concepts could lead to brittle code which sometimes worked for either kind of data, sometimes not. It also could lead",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các khái niệm có thể dẫn đến mã giòn đôi khi hoạt động cho một trong hai loại dữ liệu, đôi khi không. Nó cũng có thể dẫn đầu"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                386.1978101509958,
+                535.5085782064618,
+                12.12942828481846
+            ],
+            "text": "to confusing APIs if people didn’t explicitly state that something that accepted",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "để gây nhầm lẫn cho API nếu mọi người đã nói rõ ràng rằng một cái gì đó đã chấp nhận"
+        },
+        {
+            "bbox": [
+                664.6572114135929,
+                387.6169144708107,
+                32.40465499909351,
+                10.916543896274675
+            ],
+            "text": "str",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BDVYVK+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "STR"
+        },
+        {
+            "bbox": [
+                700.7236997350641,
+                386.1978101509958,
+                200.29452567054875,
+                12.12942828481846
+            ],
+            "text": "accepted either text or binary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "được chấp nhận văn bản hoặc nhị phân"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                400.75294633796636,
+                777.042219104847,
+                12.129476984766711
+            ],
+            "text": "data instead of one specific type. This complicated the situation especially for anyone supporting multiple languages",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Dữ liệu thay vì một loại cụ thể. Điều này phức tạp tình hình đặc biệt đối với bất kỳ ai hỗ trợ nhiều ngôn ngữ"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                415.3081312248853,
+                629.8594721882405,
+                12.129476984766711
+            ],
+            "text": "as APIs wouldn’t bother explicitly supporting$_{unicode}$ when they claimed text data support.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Vì API sẽ không bận tâm hỗ trợ rõ ràng $ _ {Unicode} $ khi họ tuyên bố hỗ trợ dữ liệu văn bản."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                437.14154774208566,
+                777.0421157921255,
+                12.129476984766711
+            ],
+            "text": "To make the distinction between text and binary data clearer and more pronounced, Python 3 did what most languages",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để làm cho sự khác biệt giữa dữ liệu văn bản và dữ liệu nhị phân rõ ràng hơn và rõ rệt hơn, Python 3 đã làm những gì mà hầu hết các ngôn ngữ"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                451.6967326290046,
+                777.0423224175687,
+                12.129476984766711
+            ],
+            "text": "created in the age of the internet have done and made text and binary data distinct types that cannot blindly be mixed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "được tạo ra trong thời đại của internet đã thực hiện và tạo ra các loại dữ liệu văn bản và nhị phân không thể được trộn lẫn một cách mù quáng"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                466.2519175159234,
+                777.042219104847,
+                12.12946480977962
+            ],
+            "text": "together (Python predates widespread access to the internet). For any code that deals only with text or only binary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Cùng nhau (Python có quyền truy cập rộng rãi vào Internet). Đối với bất kỳ mã nào chỉ liên quan đến văn bản hoặc chỉ nhị phân"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                480.80709022785527,
+                777.0250864118522,
+                12.129476984766711
+            ],
+            "text": "data, this separation doesn’t pose an issue. But for code that has to deal with both, it does mean you might have to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Dữ liệu, sự phân tách này không phải là một vấn đề. Nhưng đối với mã phải đối phó với cả hai, điều đó có nghĩa là bạn có thể phải"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                495.3622751147742,
+                761.0029190799496,
+                12.129476984766711
+            ],
+            "text": "now care about when you are using text compared to binary data, which is why this cannot be entirely automated.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bây giờ quan tâm đến khi bạn đang sử dụng văn bản so với dữ liệu nhị phân, đó là lý do tại sao điều này không thể hoàn toàn tự động."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                517.1956916319746,
+                558.9414875886227,
+                12.129476984766711
+            ],
+            "text": "To start, you will need to decide which APIs take text and which take binary (it is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để bắt đầu, bạn sẽ cần phải quyết định API lấy văn bản nào và lấy nhị phân nào (nó là"
+        },
+        {
+            "bbox": [
+                687.8698925109245,
+                517.1956916319746,
+                44.70431000347867,
+                12.129476984766711
+            ],
+            "text": "highly",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BMVTGR+FreeSerifBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Rất cao"
+        },
+        {
+            "bbox": [
+                737.5392052879716,
+                517.1956916319746,
+                163.48112080964654,
+                12.129476984766711
+            ],
+            "text": "recommended you don’t",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đề xuất bạn don"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                531.7508765188935,
+                777.0421157921255,
+                12.129476984766654
+            ],
+            "text": "design APIs that can take both due to the difficulty of keeping the code working; as stated earlier it is difficult to do",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "API thiết kế có thể mất cả do khó khăn trong việc giữ cho mã hoạt động; Như đã nêu trước đó, rất khó để làm"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                546.3060614058124,
+                777.0522060012662,
+                12.12946480977962
+            ],
+            "text": "well). In Python 2 this means making sure the APIs that take text can work with$_{unicode}$ and those that work with",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tốt). Trong Python 2, điều này có nghĩa là đảm bảo các API lấy văn bản có thể hoạt động với $ _ {unicode} $ và những người làm việc với"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                560.86246379144,
+                777.0543066932717,
+                12.129476984766654
+            ],
+            "text": "binary data work with the$_{bytes}$type from Python 3 (which is a subset of$_{str}$ in Python 2 and acts as an alias for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Dữ liệu nhị phân hoạt động với loại $ _ {byte} $ từ Python 3 (là tập hợp con của $ _ {str} $ trong python 2 và hoạt động như một bí danh cho"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                575.4176486783588,
+                777.0248797864091,
+                12.12946480977962
+            ],
+            "text": "$_{bytes}$type in Python 2). Usually the biggest issue is realizing which methods exist on which types in Python 2 & 3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BDVYVK+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "$ _ {byte} $ gõ trong Python 2). Thông thường vấn đề lớn nhất là nhận ra phương pháp nào tồn tại trong các loại trong Python 2 & 3"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                589.9728213902906,
+                777.0513622807066,
+                12.129476984766711
+            ],
+            "text": "simultaneously (for text that’s$_{unicode}$ in Python 2 and$_{str}$ in Python 3, for binary that’s$_{str}$/$_{bytes}$in Python",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "đồng thời (đối với văn bản mà $ _ {unicode} $ trong python 2 và $ _ {str} $ trong python 3, đối với nhị phân mà $ _ {str} $/$ _ {byte} $ in python"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                604.5280062772096,
+                6.199942781551073,
+                12.129476984766711
+            ],
+            "text": "2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "2"
+        },
+        {
+            "bbox": [
+                136.82721865371497,
+                604.5280062772096,
+                376.1726169026701,
+                12.129476984766711
+            ],
+            "text": "and$_{bytes}$ in Python 3). The following table lists the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "và $ _ {byte} $ trong Python 3). Bảng sau liệt kê"
+        },
+        {
+            "bbox": [
+                518.2958350711009,
+                604.5280062772096,
+                50.26237945526236,
+                12.129476984766711
+            ],
+            "text": "unique",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BMVTGR+FreeSerifBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "độc nhất"
+        },
+        {
+            "bbox": [
+                573.8574339542349,
+                604.5280062772096,
+                327.15132111856667,
+                12.129476984766711
+            ],
+            "text": "methods of each data type across Python 2 & 3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Phương pháp của từng loại dữ liệu trên Python 2 & 3"
+        },
+        {
+            "bbox": [
+                123.97531927116722,
+                619.0831911641285,
+                163.15046672235923,
+                12.12946480977962
+            ],
+            "text": "(e.g., the$_{decode()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(ví dụ: $ _ {decode ()} $"
+        },
+        {
+            "bbox": [
+                273.100343631551,
+                619.0831911641285,
+                627.9019027397911,
+                12.12946480977962
+            ],
+            "text": "method is usable on the equivalent binary data type in either Python 2 or 3, but it can’t be used",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Phương pháp có thể sử dụng trên loại dữ liệu nhị phân tương đương trong Python 2 hoặc 3, nhưng nó có thể được sử dụng"
+        },
+        {
+            "bbox": [
+                123.97531927116722,
+                633.6383638760602,
+                777.0304913890694,
+                12.129476984766711
+            ],
+            "text": "by the textual data type consistently between Python 2 and 3 because$_{str}$ in Python 3 doesn’t have the method). Do",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "theo kiểu dữ liệu văn bản một cách nhất quán giữa Python 2 và 3 vì $ _ {str} $ trong python 3 không có phương thức). LÀM"
+        },
+        {
+            "bbox": [
+                123.975370927528,
+                648.1947784366748,
+                298.71077352452085,
+                12.12946480977962
+            ],
+            "text": "note that as of Python 3.5 the$_{__mod__}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Lưu ý rằng như của Python 3.5, $ _ {__ mod __} $"
+        },
+        {
+            "bbox": [
+                403.42078416438727,
+                648.1947784366748,
+                244.34705293238216,
+                12.12946480977962
+            ],
+            "text": "method was added to the bytes type.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Phương pháp đã được thêm vào loại byte."
+        },
+        {
+            "bbox": [
+                424.0987220753903,
+                680.2164311226356,
+                68.53178788813057,
+                12.12946480977962
+            ],
+            "text": "Text data",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BMVTGR+FreeSerifBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Dữ liệu văn bản"
+        },
+        {
+            "bbox": [
+                514.5714286770211,
+                680.2164311226356,
+                86.33801095259321,
+                12.12946480977962
+            ],
+            "text": "Binary data",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BMVTGR+FreeSerifBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Dữ liệu nhị phân"
+        },
+        {
+            "bbox": [
+                514.5714286770211,
+                695.2573736443314,
+                47.895054534249994,
+                12.129476984766711
+            ],
+            "text": "decode",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "giải mã"
+        },
+        {
+            "bbox": [
+                424.0987220753903,
+                710.2971717172413,
+                47.55200464225214,
+                12.129428284818346
+            ],
+            "text": "encode",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "mã hóa"
+        },
+        {
+            "bbox": [
+                424.0987220753903,
+                725.3381507638985,
+                44.978811904709744,
+                12.12944045980538
+            ],
+            "text": "format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "định dạng"
+        },
+        {
+            "bbox": [
+                424.0987220753903,
+                740.3791298105557,
+                64.03734012377328,
+                12.129440459805437
+            ],
+            "text": "isdecimal",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "isdecimal"
+        },
+        {
+            "bbox": [
+                424.0987220753903,
+                755.4188548335429,
+                65.78711325155655,
+                12.129440459805437
+            ],
+            "text": "isnumeric",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "isnumeric"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                789.3821988100322,
+                777.0421157921255,
+                12.129428284818346
+            ],
+            "text": "Making the distinction easier to handle can be accomplished by encoding and decoding between binary data and text",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Làm cho sự khác biệt dễ dàng hơn để xử lý có thể được thực hiện bằng cách mã hóa và giải mã giữa dữ liệu nhị phân và văn bản"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                803.9374080469253,
+                777.0421157921255,
+                12.129440459805437
+            ],
+            "text": "at the edge of your code. This means that when you receive text in binary data, you should immediately decode it.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "ở cạnh mã của bạn. Điều này có nghĩa là khi bạn nhận được văn bản trong dữ liệu nhị phân, bạn nên giải mã nó ngay lập tức."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                818.4926294588054,
+                777.0421157921255,
+                12.129440459805437
+            ],
+            "text": "And if your code needs to send text as binary data then encode it as late as possible. This allows your code to work",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Và nếu mã của bạn cần gửi văn bản dưới dạng dữ liệu nhị phân thì mã hóa nó càng muộn càng tốt. Điều này cho phép mã của bạn hoạt động"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                833.0478508706856,
+                725.4760331032774,
+                12.129428284818374
+            ],
+            "text": "with only text internally and thus eliminates having to keep track of what type of data you are working with.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Chỉ với văn bản nội bộ và do đó loại bỏ phải theo dõi loại dữ liệu bạn đang làm việc."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                854.8812308629247,
+                777.0423224175687,
+                12.129440459805437
+            ],
+            "text": "The next issue is making sure you know whether the string literals in your code represent text or binary data. You",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Vấn đề tiếp theo là đảm bảo bạn biết liệu các chuỗi chữ trong mã của bạn đại diện cho văn bản hoặc dữ liệu nhị phân. Bạn"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                869.4364522748049,
+                777.0461105506932,
+                12.129428284818346
+            ],
+            "text": "should add a$_{b}$prefix to any literal that presents binary data. For text you should add a$_{u}$prefix to the text literal. (there",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nên thêm tiền tố $ _ {B} $ cho bất kỳ nghĩa đen nào trình bày dữ liệu nhị phân. Đối với văn bản, bạn nên thêm tiền tố $ _ {u} $ vào"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                883.9916736866851,
+                159.28173417811445,
+                12.129428284818346
+            ],
+            "text": "is a$_{__future__}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "văn bản theo nghĩa đen. (ở đó"
+        },
+        {
+            "bbox": [
+                258.9257693559785,
+                883.9916736866851,
+                642.0886679165098,
+                12.129428284818346
+            ],
+            "text": "import to force all unspecified literals to be Unicode, but usage has shown it isn’t as effective as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "là $ _ {__ Tương lai __} $"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                898.5468829235781,
+                306.29270647631165,
+                12.12943802480801
+            ],
+            "text": "adding a$_{b}$ or$_{u}$ prefix to all literals explicitly)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/AOUAWF+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nhập khẩu để buộc tất cả các nghĩa đen không xác định là unicode, nhưng việc sử dụng đã cho thấy nó không hiệu quả như"
+        },
+        {
+            "bbox": [
+                507.72689199736794,
+                964.0251176635295,
+                9.537864893603114,
+                12.129434372311891
+            ],
+            "text": "4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XDOKWL+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thêm một $ _ {b} $ hoặc $ _ {u} $ tiền tố cho tất cả các chữ một cách rõ ràng)"
+        }
+    ]
+}

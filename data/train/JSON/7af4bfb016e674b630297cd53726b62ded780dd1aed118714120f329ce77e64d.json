@@ -1,3 +1,2496 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:442c5aaf5c8f7d578e422dbab10fe063131f984bbbdfc977e3473923e41c56dc
-size 71702
+{
+    "metadata": {
+        "page_hash": "7af4bfb016e674b630297cd53726b62ded780dd1aed118714120f329ce77e64d",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1802,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                435.8845996732026,
+                48.370422979798036,
+                183.37785947712416,
+                11.971275252525288
+            ],
+            "text": "EXPLAIN Output Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giải thích định dạng đầu ra"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                19.361111111111114,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                96.11317582070706,
+                140.68627450980392,
+                10.172335542929318
+            ],
+            "text": "Using filesort",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng Filesort"
+        },
+        {
+            "bbox": [
+                328.26797385620915,
+                94.96133207070716,
+                130.3022708333333,
+                11.971275252525174
+            ],
+            "text": " (JSON property: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Tài sản JSON: "
+        },
+        {
+            "bbox": [
+                458.57024468954245,
+                96.11317582070706,
+                140.68627450980392,
+                10.172335542929318
+            ],
+            "text": "using_filesort",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "sử dụng_filesort"
+        },
+        {
+            "bbox": [
+                599.2565191993464,
+                94.96133207070716,
+                5.577172385620997,
+                11.971275252525174
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                123.00257544191936,
+                750.2932671568627,
+                11.971275252525174
+            ],
+            "text": "MySQL must do an extra pass to find out how to retrieve the rows in sorted order. The sort is done by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL phải thực hiện thêm một đường chuyền để tìm hiểu cách lấy các hàng theo thứ tự được sắp xếp. Loại được thực hiện bởi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                138.53287847222236,
+                745.6707013888889,
+                11.971275252525288
+            ],
+            "text": "going through all rows according to the join type and storing the sort key and pointer to the row for all",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đi qua tất cả các hàng theo loại tham gia và lưu trữ phím sắp xếp và con trỏ đến hàng cho tất cả"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                154.06318150252537,
+                150.80230433006534,
+                11.971275252525288
+            ],
+            "text": "rows that match the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hàng phù hợp với "
+        },
+        {
+            "bbox": [
+                338.3839701797385,
+                155.21503819444445,
+                50.24509803921569,
+                10.17232260101025
+            ],
+            "text": "WHERE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ở ĐÂU"
+        },
+        {
+            "bbox": [
+                388.6290682189542,
+                154.06318150252537,
+                564.1184640522877,
+                11.971275252525288
+            ],
+            "text": " clause. The keys then are sorted and the rows are retrieved in sorted order.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề. Các phím sau đó được sắp xếp và các hàng được lấy theo thứ tự được sắp xếp."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                169.59348453282837,
+                388.7295919117647,
+                11.971275252525288
+            ],
+            "text": "See Section 8.2.1.16, “ORDER BY Optimization”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xem phần 8.2.1.16, Đơn hàng của người dùng bằng cách tối ưu hóa ”"
+        },
+        {
+            "bbox": [
+                548.7434808006536,
+                169.59348453282837,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                197.63472790404046,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                198.78658459595965,
+                110.53921568627453,
+                10.172322601010137
+            ],
+            "text": "Using index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng chỉ mục"
+        },
+        {
+            "bbox": [
+                298.12091503267976,
+                197.63472790404046,
+                130.30228758169937,
+                11.971275252525288
+            ],
+            "text": " (JSON property: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Tài sản JSON: "
+        },
+        {
+            "bbox": [
+                428.42320261437914,
+                198.78658459595965,
+                110.53919893790845,
+                10.172322601010137
+            ],
+            "text": "using_index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "sử dụng_index"
+        },
+        {
+            "bbox": [
+                538.9624015522876,
+                197.63472790404046,
+                5.577172385620997,
+                11.971275252525288
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                225.67598421717184,
+                771.6809640522875,
+                11.971275252525174
+            ],
+            "text": "The column information is retrieved from the table using only information in the index tree without having",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin cột được lấy từ bảng chỉ bằng cách sử dụng thông tin trong cây chỉ mục mà không có"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                241.20628724747485,
+                738.2512924836601,
+                11.971275252525288
+            ],
+            "text": "to do an additional seek to read the actual row. This strategy can be used when the query uses only",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để thực hiện một tìm kiếm bổ sung để đọc hàng thực tế. Chiến lược này có thể được sử dụng khi truy vấn chỉ sử dụng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                256.73659027777785,
+                287.65318627450984,
+                11.971275252525288
+            ],
+            "text": "columns that are part of a single index.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các cột là một phần của một chỉ mục duy nhất."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                284.77791130050514,
+                29.778594771241842,
+                11.971275252525288
+            ],
+            "text": "For ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vì "
+        },
+        {
+            "bbox": [
+                217.36029411764707,
+                285.92967739898995,
+                60.29411764705884,
+                10.172413194444516
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                277.6544117647059,
+                284.77791130050514,
+                620.0412414215687,
+                11.971275252525288
+            ],
+            "text": " tables that have a user-defined clustered index, that index can be used even when ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các bảng có chỉ mục phân cụm do người dùng xác định, chỉ mục đó có thể được sử dụng ngay cả khi "
+        },
+        {
+            "bbox": [
+                897.6956531862746,
+                285.92967739898995,
+                50.24509803921569,
+                10.172413194444516
+            ],
+            "text": "Using",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                301.45998042929307,
+                50.24509803921569,
+                10.172413194444403
+            ],
+            "text": "index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "chỉ mục"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                300.30821433080814,
+                142.4281213235294,
+                11.971275252525288
+            ],
+            "text": " is absent from the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " vắng mặt trong "
+        },
+        {
+            "bbox": [
+                380.2548852124183,
+                301.45998042929307,
+                50.245081290849726,
+                10.172413194444403
+            ],
+            "text": "Extra",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thêm"
+        },
+        {
+            "bbox": [
+                430.499966503268,
+                300.30821433080814,
+                201.98529411764702,
+                11.971275252525288
+            ],
+            "text": " column. This is the case if ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cột. Đây là trường hợp nếu "
+        },
+        {
+            "bbox": [
+                632.4853108660132,
+                301.45998042929307,
+                40.196078431372484,
+                10.172413194444403
+            ],
+            "text": "type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "kiểu"
+        },
+        {
+            "bbox": [
+                672.6813892973856,
+                300.30821433080814,
+                21.404411764705856,
+                11.971275252525288
+            ],
+            "text": " is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là "
+        },
+        {
+            "bbox": [
+                694.0858010620915,
+                301.45998042929307,
+                50.24509803921569,
+                10.172413194444403
+            ],
+            "text": "index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "chỉ mục"
+        },
+        {
+            "bbox": [
+                744.3308991013072,
+                300.30821433080814,
+                37.24834926470601,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                781.5792483660132,
+                301.45998042929307,
+                30.14705882352939,
+                10.172413194444403
+            ],
+            "text": "key",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "chìa khóa"
+        },
+        {
+            "bbox": [
+                811.7263071895426,
+                300.30821433080814,
+                21.404411764705856,
+                11.971275252525288
+            ],
+            "text": " is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là "
+        },
+        {
+            "bbox": [
+                833.1307189542484,
+                301.45998042929307,
+                70.34313725490199,
+                10.172413194444403
+            ],
+            "text": "PRIMARY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SƠ ĐẲNG"
+        },
+        {
+            "bbox": [
+                903.4738562091504,
+                300.30821433080814,
+                4.655995506535874,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                328.34945770202023,
+                431.9403427287582,
+                11.971275252525288
+            ],
+            "text": "Information about any covering indexes used is shown for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin về bất kỳ chỉ mục bao gồm nào được sử dụng được hiển thị cho "
+        },
+        {
+            "bbox": [
+                619.5220420751634,
+                329.5012367424242,
+                261.27456004901967,
+                10.172400252525335
+            ],
+            "text": "EXPLAIN FORMAT=TRADITIONAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Giải thích định dạng = truyền thống"
+        },
+        {
+            "bbox": [
+                880.7966021241831,
+                328.34945770202023,
+                32.59227001633985,
+                11.971275252525288
+            ],
+            "text": " and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                345.0315397727272,
+                190.9313725490196,
+                10.172400252525335
+            ],
+            "text": "EXPLAIN FORMAT=JSON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Giải thích định dạng = json"
+        },
+        {
+            "bbox": [
+                378.51307189542484,
+                343.87976073232323,
+                381.6617647058824,
+                11.971275252525288
+            ],
+            "text": ". Beginning with MySQL 8.0.27, it is also shown for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Bắt đầu với MySQL 8.0.27, nó cũng được hiển thị cho "
+        },
+        {
+            "bbox": [
+                760.1748366013072,
+                345.0315397727272,
+                190.93137254901956,
+                10.172400252525335
+            ],
+            "text": "EXPLAIN FORMAT=TREE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Giải thích định dạng = cây"
+        },
+        {
+            "bbox": [
+                951.1062091503268,
+                343.87976073232323,
+                4.65609599673212,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                371.9210041035353,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                373.0728607954545,
+                211.0294117647059,
+                10.172322601010137
+            ],
+            "text": "Using index condition",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng điều kiện chỉ số"
+        },
+        {
+            "bbox": [
+                398.61111111111114,
+                371.9210041035353,
+                130.30227083333324,
+                11.971275252525288
+            ],
+            "text": " (JSON property: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Tài sản JSON: "
+        },
+        {
+            "bbox": [
+                528.9133819444444,
+                373.0728607954545,
+                211.02941176470597,
+                10.172322601010137
+            ],
+            "text": "using_index_condition",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "sử dụng_index_condition"
+        },
+        {
+            "bbox": [
+                739.9427937091504,
+                371.9210041035353,
+                5.577172385620884,
+                11.971275252525288
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                399.9622604166667,
+                758.6842152777779,
+                11.971275252525288
+            ],
+            "text": "Tables are read by accessing index tuples and testing them first to determine whether to read full table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các bảng được đọc bằng cách truy cập các bộ dữ liệu chỉ mục và kiểm tra chúng trước để xác định xem có nên đọc bảng đầy đủ"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                415.4925634469697,
+                509.73653635620917,
+                11.971275252525288
+            ],
+            "text": "rows. In this way, index information is used to defer (“push down”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hàng. Theo cách này, thông tin chỉ mục được sử dụng để trì hoãn (\"đẩy xuống\""
+        },
+        {
+            "bbox": [
+                669.7504252450981,
+                415.4925634469697,
+                255.96531127450965,
+                11.971275252525288
+            ],
+            "text": ") reading full table rows unless it is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ") Đọc các hàng bảng đầy đủ trừ khi nó là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                431.0228664772728,
+                576.796993872549,
+                11.971275252525174
+            ],
+            "text": "necessary. See Section 8.2.1.6, “Index Condition Pushdown Optimization”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cần thiết. Xem phần 8.2.1.6, Tối ưu hóa đẩy điều kiện chỉ số của người dùng"
+        },
+        {
+            "bbox": [
+                736.8108492647059,
+                431.0228664772728,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                459.0641098484849,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                460.2159147727273,
+                241.1764705882353,
+                10.17237436868686
+            ],
+            "text": "Using index for group-by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng chỉ mục cho nhóm"
+        },
+        {
+            "bbox": [
+                428.75816993464053,
+                459.0641098484849,
+                130.30227083333335,
+                11.971275252525288
+            ],
+            "text": " (JSON property: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Tài sản JSON: "
+        },
+        {
+            "bbox": [
+                559.0604407679739,
+                460.2159147727273,
+                241.17647058823525,
+                10.17237436868686
+            ],
+            "text": "using_index_for_group_by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng_index_for_group_by"
+        },
+        {
+            "bbox": [
+                800.2369113562091,
+                459.0641098484849,
+                5.577172385620997,
+                11.971275252525288
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                487.10539204545455,
+                102.38276143790847,
+                11.971275252525288
+            ],
+            "text": "Similar to the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tương tự như "
+        },
+        {
+            "bbox": [
+                289.9644607843137,
+                488.2572099116162,
+                110.53921568627453,
+                10.17236142676768
+            ],
+            "text": "Using index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng chỉ mục"
+        },
+        {
+            "bbox": [
+                400.50367647058823,
+                487.10539204545455,
+                167.5673852124183,
+                11.971275252525288
+            ],
+            "text": " table access method, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phương thức truy cập bảng, "
+        },
+        {
+            "bbox": [
+                568.0710616830065,
+                488.2572099116162,
+                241.17647058823525,
+                10.17236142676768
+            ],
+            "text": "Using index for group-by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng chỉ mục cho nhóm"
+        },
+        {
+            "bbox": [
+                809.2475322712418,
+                487.10539204545455,
+                103.33743504901963,
+                11.971275252525288
+            ],
+            "text": " indicates that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chỉ ra rằng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                502.63569507575755,
+                503.64009763071897,
+                11.971275252525288
+            ],
+            "text": "MySQL found an index that can be used to retrieve all columns of a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mysql đã tìm thấy một chỉ mục có thể được sử dụng để truy xuất tất cả các cột của một "
+        },
+        {
+            "bbox": [
+                691.2217969771242,
+                503.7875129419192,
+                80.39215686274508,
+                10.17236142676768
+            ],
+            "text": "GROUP BY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhóm theo"
+        },
+        {
+            "bbox": [
+                771.6139538398693,
+                502.63569507575755,
+                24.201405637254993,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                795.8153594771243,
+                503.7875129419192,
+                80.39220710784309,
+                10.17236142676768
+            ],
+            "text": "DISTINCT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "RIÊNG BIỆT"
+        },
+        {
+            "bbox": [
+                876.2075665849674,
+                502.63569507575755,
+                46.54367565359473,
+                11.971275252525288
+            ],
+            "text": " query",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " truy vấn"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                518.1659981060607,
+                767.9963067810457,
+                11.971275252525288
+            ],
+            "text": "without any extra disk access to the actual table. Additionally, the index is used in the most efficient way",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "không có bất kỳ đĩa phụ truy cập vào bảng thực tế. Ngoài ra, chỉ mục được sử dụng theo cách hiệu quả nhất"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                533.6963011363637,
+                780.8590351307189,
+                11.971275252525231
+            ],
+            "text": "so that for each group, only a few index entries are read. For details, see Section 8.2.1.17, “GROUP BY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vì vậy, đối với mỗi nhóm, chỉ có một vài mục chỉ mục được đọc. Để biết chi tiết, xem Phần 8.2.2.1.17, nhóm của"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                549.2266041666667,
+                112.43178104575162,
+                11.971275252525288
+            ],
+            "text": "Optimization”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa ”"
+        },
+        {
+            "bbox": [
+                286.22955841503267,
+                549.2266041666667,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                577.2678475378789,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                578.4196654040404,
+                251.22549019607845,
+                10.17236142676768
+            ],
+            "text": "Using index for skip scan",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng chỉ mục để quét bỏ qua"
+        },
+        {
+            "bbox": [
+                438.8071895424837,
+                577.2678475378789,
+                130.3022708333333,
+                11.971275252525231
+            ],
+            "text": " (JSON property: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Tài sản JSON: "
+        },
+        {
+            "bbox": [
+                569.109460375817,
+                578.4196654040404,
+                251.22549019607845,
+                10.17236142676768
+            ],
+            "text": "using_index_for_skip_scan",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng_index_for_skip_scan"
+        },
+        {
+            "bbox": [
+                820.3349505718954,
+                577.2678475378789,
+                5.577172385620997,
+                11.971275252525231
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                605.3091038510101,
+                679.5817160947712,
+                11.971275252525231
+            ],
+            "text": "Indicates that the Skip Scan access method is used. See Skip Scan Range Access Method.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho biết phương pháp truy cập quét bỏ qua được sử dụng. Xem Phương thức truy cập phạm vi Skip Scan."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                633.3503472222224,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                634.5021521464646,
+                371.81372549019613,
+                10.172374368686917
+            ],
+            "text": "Using join buffer (Block Nested Loop)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng Buffer tham gia (vòng lặp lồng nhau)"
+        },
+        {
+            "bbox": [
+                559.3954248366014,
+                633.3503472222224,
+                9.31209150326788,
+                11.971275252525231
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                568.7075163398692,
+                634.5021521464646,
+                381.8627450980392,
+                10.172374368686917
+            ],
+            "text": "Using join buffer (Batched Key Access)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng Buffer tham gia (truy cập khóa được sử dụng)"
+        },
+        {
+            "bbox": [
+                950.5702614379085,
+                633.3503472222224,
+                4.656095996732006,
+                11.971275252525231
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                650.0324551767677,
+                291.421568627451,
+                10.17237436868686
+            ],
+            "text": "Using join buffer (hash join)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng Buffer tham gia (Hash tham gia)"
+        },
+        {
+            "bbox": [
+                479.0032679738562,
+                648.8806502525254,
+                130.30227083333335,
+                11.971275252525231
+            ],
+            "text": " (JSON property: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Tài sản JSON: "
+        },
+        {
+            "bbox": [
+                609.3055388071896,
+                650.0324551767677,
+                170.83333333333326,
+                10.17237436868686
+            ],
+            "text": "using_join_buffer",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "sử dụng_join_buffer"
+        },
+        {
+            "bbox": [
+                780.1388721405228,
+                648.8806502525254,
+                5.577172385620997,
+                11.971275252525231
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                676.921932449495,
+                753.0735461601307,
+                11.971275252525231
+            ],
+            "text": "Tables from earlier joins are read in portions into the join buffer, and then their rows are used from the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các bảng từ các kết nối trước đó được đọc theo các phần vào bộ đệm tham gia và sau đó các hàng của chúng được sử dụng từ"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                692.452235479798,
+                351.88318668300656,
+                11.971275252525231
+            ],
+            "text": "buffer to perform the join with the current table. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bộ đệm để thực hiện tham gia với bảng hiện tại. "
+        },
+        {
+            "bbox": [
+                539.4648860294118,
+                693.6040404040405,
+                190.93137254901956,
+                10.17237436868686
+            ],
+            "text": "(Block Nested Loop)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "(Khối vòng lặp lồng)"
+        },
+        {
+            "bbox": [
+                730.3962585784313,
+                692.452235479798,
+                194.56578472222236,
+                11.971275252525231
+            ],
+            "text": " indicates use of the Block",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cho biết việc sử dụng khối"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                707.982538510101,
+                178.7217969771242,
+                11.971275252525231
+            ],
+            "text": "Nested-Loop algorithm, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thuật toán vòng lặp lồng nhau, "
+        },
+        {
+            "bbox": [
+                366.3035298202615,
+                709.1343434343435,
+                200.98040890522873,
+                10.17237436868686
+            ],
+            "text": "(Batched Key Access)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "(Truy cập khóa được sử dụng)"
+        },
+        {
+            "bbox": [
+                567.2838884803922,
+                707.982538510101,
+                385.39668382352943,
+                11.971275252525231
+            ],
+            "text": " indicates use of the Batched Key Access algorithm,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cho biết việc sử dụng thuật toán truy cập khóa được sử dụng theo lô,"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                723.512841540404,
+                32.5923035130719,
+                11.971275252525231
+            ],
+            "text": "and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Và "
+        },
+        {
+            "bbox": [
+                220.17400285947713,
+                724.6646464646465,
+                110.53921568627453,
+                10.17237436868686
+            ],
+            "text": "(hash join)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "(băm tham gia)"
+        },
+        {
+            "bbox": [
+                330.7132520424837,
+                723.512841540404,
+                574.4019105392156,
+                11.971275252525231
+            ],
+            "text": " indicates use of a hash join. That is, the keys from the table on the preceding",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chỉ ra việc sử dụng một băm tham gia. Nghĩa là, các phím từ bàn trên"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                739.0431445707071,
+                77.2769607843137,
+                11.971275252525231
+            ],
+            "text": "line of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "dòng của "
+        },
+        {
+            "bbox": [
+                264.85866013071893,
+                740.1949494949495,
+                70.34313725490199,
+                10.17237436868686
+            ],
+            "text": "EXPLAIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GIẢI THÍCH"
+        },
+        {
+            "bbox": [
+                335.2017973856209,
+                739.0431445707071,
+                600.4791331699347,
+                11.971275252525231
+            ],
+            "text": " output are buffered, and the matching rows are fetched in batches from the table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đầu ra được đệm và các hàng phù hợp được tìm nạp theo các lô từ bảng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                754.5734476010101,
+                240.17155187908497,
+                11.971275252525231
+            ],
+            "text": "represented by the line in which ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đại diện bởi dòng trong đó "
+        },
+        {
+            "bbox": [
+                427.7532512254902,
+                755.7252525252525,
+                170.83333333333337,
+                10.17237436868686
+            ],
+            "text": "Using join buffer",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng Buffer tham gia"
+        },
+        {
+            "bbox": [
+                598.5865845588236,
+                754.5734476010101,
+                69.82395465686272,
+                11.971275252525231
+            ],
+            "text": " appears.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " xuất hiện."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                782.6146909722222,
+                291.38803839869286,
+                11.97127525252526
+            ],
+            "text": "In JSON-formatted output, the value of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong đầu ra định dạng JSON, giá trị của "
+        },
+        {
+            "bbox": [
+                478.9697377450981,
+                783.7665476641414,
+                170.83333333333337,
+                10.172322601010109
+            ],
+            "text": "using_join_buffer",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "sử dụng_join_buffer"
+        },
+        {
+            "bbox": [
+                649.8031213235295,
+                782.6146909722222,
+                128.45993382352935,
+                11.97127525252526
+            ],
+            "text": " is always one of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " luôn là một trong những "
+        },
+        {
+            "bbox": [
+                778.2630551470588,
+                783.7665476641414,
+                170.83333333333337,
+                10.172322601010109
+            ],
+            "text": "Block Nested Loop",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Khối vòng lặp lồng nhau"
+        },
+        {
+            "bbox": [
+                949.0963884803922,
+                782.6146909722222,
+                4.656095996732006,
+                11.97127525252526
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                799.2968506944444,
+                180.88235294117646,
+                10.172322601010109
+            ],
+            "text": "Batched Key Access",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Truy cập khóa hàng loạt"
+        },
+        {
+            "bbox": [
+                368.4640522875817,
+                798.1449940025252,
+                28.857434640522854,
+                11.97127525252526
+            ],
+            "text": ", or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hoặc "
+        },
+        {
+            "bbox": [
+                397.32148692810455,
+                799.2968506944444,
+                90.44114297385624,
+                10.172322601010109
+            ],
+            "text": "hash join",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "băm tham gia"
+        },
+        {
+            "bbox": [
+                487.7626299019608,
+                798.1449940025252,
+                4.656095996732063,
+                11.97127525252526
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                826.1862373737374,
+                739.1221405228757,
+                11.97127525252526
+            ],
+            "text": "Hash joins are available beginning with MySQL 8.0.18; the Block Nested-Loop algorithm is not used",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hash tham gia có sẵn bắt đầu với MySQL 8.0,18; Thuật toán vòng lặp lồng nhau không được sử dụng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                841.7165404040404,
+                705.5752136437909,
+                11.971275252525231
+            ],
+            "text": "in MySQL 8.0.20 or later MySQL releases. For more information about these optimizations, see",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trong MySQL 8.0.20 trở lên phát hành MySQL. Để biết thêm thông tin về những tối ưu hóa này, hãy xem"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                857.2468434343434,
+                331.952631127451,
+                11.971275252525231
+            ],
+            "text": "Section 8.2.1.4, “Hash Join Optimization”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mục 8.2.1.4, Hash Hash tham gia tối ưu hóa ”"
+        },
+        {
+            "bbox": [
+                491.9664865196078,
+                857.2468434343434,
+                298.80759803921575,
+                11.971275252525231
+            ],
+            "text": ", and Block Nested-Loop Join Algorithm.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", và chặn thuật toán tham gia vòng lặp lồng nhau."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                885.2880997474747,
+                659.0816825980393,
+                11.971271369949505
+            ],
+            "text": "See Batched Key Access Joins, for information about the Batched Key Access algorithm.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xem các kết nối truy cập khóa được sử dụng, để biết thông tin về thuật toán truy cập khóa được sử dụng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                913.3293418244949,
+                19.361111111111114,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                914.4811920454546,
+                90.44117647058823,
+                10.172329071969685
+            ],
+            "text": "Using MRR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng MRR"
+        },
+        {
+            "bbox": [
+                278.02287581699346,
+                913.3293418244949,
+                130.30228758169937,
+                11.97127525252526
+            ],
+            "text": " (JSON property: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Tài sản JSON: "
+        },
+        {
+            "bbox": [
+                408.32516339869284,
+                914.4811920454546,
+                70.34312050653591,
+                10.172329071969685
+            ],
+            "text": "message",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "tin nhắn"
+        },
+        {
+            "bbox": [
+                478.66828390522875,
+                913.3293418244949,
+                5.57722263071895,
+                11.97127525252526
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "1773",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1773"
+        }
+    ]
+}

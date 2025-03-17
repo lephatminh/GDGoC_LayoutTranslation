@@ -1,3 +1,1596 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:369ac54678ad420b3adda1e8a1c6743a7f282390d072324892528bc61381469f
-size 49983
+{
+    "metadata": {
+        "page_hash": "96adc52414107ed65f7176a44f5f1f11523dd11cf09c217bcf092fd0f71c9998",
+        "original_filename": "python_howto-regex.pdf",
+        "page_no": 16,
+        "num_pages": 19,
+        "original_width": 595.28003,
+        "original_height": 841.89001,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                123.97526589292772,
+                88.96999650821374,
+                17.11441353072101,
+                17.466467799041766
+            ],
+            "text": "6",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JQGKDW+FreeSansBold",
+                "size": 14.34619998931885
+            },
+            "text_vi": "6"
+        },
+        {
+            "bbox": [
+                155.97783811091395,
+                88.96999650821374,
+                222.18598169671506,
+                17.466467799041766
+            ],
+            "text": "Common Problems",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JQGKDW+FreeSansBold",
+                "size": 14.34619998931885
+            },
+            "text_vi": "Vấn đề phổ biến"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                129.11809999978493,
+                777.0423224175687,
+                12.129428284818346
+            ],
+            "text": "Regular expressions are a powerful tool for some applications, but in some ways their behaviour isn’t intuitive and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Biểu thức chính quy là một công cụ mạnh mẽ cho một số ứng dụng, nhưng trong một số cách, hành vi của chúng không trực quan và"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                143.67450238541255,
+                777.042219104847,
+                12.129440459805437
+            ],
+            "text": "at times they don’t behave the way you may expect them to. This section will point out some of the most common",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đôi khi họ không cư xử theo cách bạn có thể mong đợi. Phần này sẽ chỉ ra một số phổ biến nhất"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                158.22965074737021,
+                49.541876534981355,
+                12.129501334740894
+            ],
+            "text": "pitfalls.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cạm bẫy."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                198.2865027107282,
+                39.53991712102285,
+                14.555440561647742
+            ],
+            "text": "6.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JQGKDW+FreeSansBold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "6.1"
+        },
+        {
+            "bbox": [
+                174.62443095898914,
+                198.2865027107282,
+                183.94282519438792,
+                14.555440561647742
+            ],
+            "text": "Use String Methods",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JQGKDW+FreeSansBold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "Sử dụng các phương thức chuỗi"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                230.24836403510722,
+                777.0550298823227,
+                12.129440459805437
+            ],
+            "text": "Sometimes using the$_{re}$ module is a mistake. If you’re matching a fixed string, or a single character class, and you’re",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đôi khi sử dụng mô -đun $ _ {re} $ là một sai lầm. Nếu bạn phù hợp với một chuỗi cố định hoặc một lớp ký tự duy nhất và bạn"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                244.8035854469873,
+                351.40997464672216,
+                12.129428284818346
+            ],
+            "text": "not using any$_{re}$ features such as the$_{IGNORECASE}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Không sử dụng bất kỳ tính năng $ _ {re} $ nào như $ _ {ignorecase} $"
+        },
+        {
+            "bbox": [
+                496.96346272526563,
+                244.8035854469873,
+                404.0373028304006,
+                12.129428284818346
+            ],
+            "text": "flag, then the full power of regular expressions may not be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cờ, sau đó toàn bộ sức mạnh của các biểu thức thông thường có thể không"
+        },
+        {
+            "bbox": [
+                123.97524006474733,
+                259.3588068588675,
+                777.042348245749,
+                12.129428284818346
+            ],
+            "text": "required. Strings have several methods for performing operations with fixed strings and they’re usually much faster,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "yêu cầu. Chuỗi có một số phương pháp để thực hiện các hoạt động với các chuỗi cố định và chúng thường nhanh hơn nhiều,"
+        },
+        {
+            "bbox": [
+                123.97524006474733,
+                273.91401609576053,
+                777.0421416203059,
+                12.129440459805437
+            ],
+            "text": "because the implementation is a single small C loop that’s been optimized for the purpose, instead of the large, more",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bởi vì việc triển khai là một vòng C nhỏ duy nhất mà Lừa được tối ưu hóa cho mục đích, thay vì lớn, nhiều hơn nữa"
+        },
+        {
+            "bbox": [
+                123.97524006474733,
+                288.4703576064526,
+                255.65184947494373,
+                12.129501334740894
+            ],
+            "text": "generalized regular expression engine.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Động cơ biểu thức chính quy tổng quát."
+        },
+        {
+            "bbox": [
+                123.97524006474733,
+                310.3025444499573,
+                729.0785046577154,
+                12.129513509727872
+            ],
+            "text": "One example might be replacing a single fixed string with another one; for example, you might replace",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Một ví dụ có thể là thay thế một chuỗi cố định bằng một chuỗi khác; Ví dụ: bạn có thể thay thế"
+        },
+        {
+            "bbox": [
+                859.8459362898499,
+                311.7217218196947,
+                41.94241657997509,
+                10.916470846352013
+            ],
+            "text": "word",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "từ"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                324.858959010572,
+                29.55700857292325,
+                12.129428284818346
+            ],
+            "text": "with",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "với"
+        },
+        {
+            "bbox": [
+                159.92120376522624,
+                324.858959010572,
+                168.34875306500706,
+                12.129428284818346
+            ],
+            "text": "$_{deed}$. re.sub()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "$ _ {Deed} $. Re.sub ()"
+        },
+        {
+            "bbox": [
+                306.20168796860196,
+                324.858959010572,
+                388.8384173579617,
+                12.129428284818346
+            ],
+            "text": "seems like the function to use for this, but consider the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "có vẻ như là chức năng để sử dụng cho việc này, nhưng hãy xem xét"
+        },
+        {
+            "bbox": [
+                701.4382449550675,
+                326.27812420532223,
+                118.36528179855122,
+                10.916470846352013
+            ],
+            "text": "replace()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "thay thế()"
+        },
+        {
+            "bbox": [
+                800.4790027140672,
+                324.858959010572,
+                55.15136128453685,
+                12.129428284818346
+            ],
+            "text": "method.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "phương pháp."
+        },
+        {
+            "bbox": [
+                867.6727358886875,
+                324.858959010572,
+                33.330974079543694,
+                12.129428284818346
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                339.414168247465,
+                148.49643704661145,
+                12.129440459805437
+            ],
+            "text": "that$_{replace()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đó là $ _ {thay thế ()} $"
+        },
+        {
+            "bbox": [
+                251.41493449729867,
+                339.414168247465,
+                649.590152973887,
+                12.129440459805437
+            ],
+            "text": "will also replace$_{word}$ inside words, turning$_{swordfish}$ into$_{sdeedfish}$ , but the naive RE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cũng sẽ thay thế $ _ {word} $ bên trong các từ, biến $ _ {swordfish} $ thành $ _ {sdeedfish} $, nhưng re ngây thơ"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                355.38849397916,
+                41.94248373324399,
+                10.916543896274561
+            ],
+            "text": "word",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "từ"
+        },
+        {
+            "bbox": [
+                170.18360077525193,
+                353.9693896593452,
+                730.8453347158311,
+                12.129440459805437
+            ],
+            "text": "would have done that, too. (To avoid performing the substitution on parts of words, the pattern would have",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cũng sẽ làm điều đó, quá. (Để tránh thực hiện sự thay thế trên các phần của từ, mô hình sẽ có"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                368.5246110712253,
+                34.65186338436382,
+                12.129428284818346
+            ],
+            "text": "to be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "được"
+        },
+        {
+            "bbox": [
+                163.82470104028184,
+                369.9437153910402,
+                84.17659172944201,
+                10.91653172128747
+            ],
+            "text": "\\bword\\b",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "\\ BWORD \\ b"
+        },
+        {
+            "bbox": [
+                246.16494358125868,
+                368.5246110712253,
+                165.71143584306031,
+                12.129428284818346
+            ],
+            "text": ", in order to require that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", để yêu cầu điều đó"
+        },
+        {
+            "bbox": [
+                417.0562210024079,
+                369.9437153910402,
+                41.942468236335685,
+                10.91653172128747
+            ],
+            "text": "word",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "từ"
+        },
+        {
+            "bbox": [
+                463.4160484940171,
+                368.5246110712253,
+                437.6082723621688,
+                12.129428284818346
+            ],
+            "text": "have a word boundary on either side. This takes the job beyond",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Có một ranh giới từ ở hai bên. Điều này mất công việc xa hơn"
+        },
+        {
+            "bbox": [
+                123.97524006474733,
+                384.4989246279332,
+                118.36525597037077,
+                10.916470846352127
+            ],
+            "text": "replace()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "thay thế()"
+        },
+        {
+            "bbox": [
+                216.60887859785922,
+                383.07974725819577,
+                76.19977861511663,
+                12.129513509728099
+            ],
+            "text": "’s abilities.)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Khả năng của người Viking.)"
+        },
+        {
+            "bbox": [
+                123.97524006474733,
+                404.91317595038333,
+                777.0422449330274,
+                12.12946480977962
+            ],
+            "text": "Another common task is deleting every occurrence of a single character from a string or replacing it with another single",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Một nhiệm vụ phổ biến khác là xóa mọi lần xuất hiện của một ký tự từ một chuỗi hoặc thay thế nó bằng một đơn lẻ khác"
+        },
+        {
+            "bbox": [
+                123.97524006474733,
+                419.4683486623152,
+                621.167506030733,
+                12.129476984766711
+            ],
+            "text": "character. You might do this with something like$_{re.sub('\n', ' ', S)}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tính cách. Bạn có thể làm điều này với một cái gì đó như $ _ {re.sub ('"
+        },
+        {
+            "bbox": [
+                663.8135080728308,
+                419.4683486623152,
+                177.733902815453,
+                12.129476984766711
+            ],
+            "text": ", but$_{translate()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "',' ', S)} $"
+        },
+        {
+            "bbox": [
+                815.9518046489817,
+                419.4683486623152,
+                85.06852144863649,
+                12.129476984766711
+            ],
+            "text": "is capable of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", nhưng $ _ {dịch ()} $"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                434.023533549234,
+                537.0352475119987,
+                12.129476984766711
+            ],
+            "text": "doing both tasks and will be faster than any regular expression operation can be.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "có khả năng"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                455.8569500664345,
+                777.0496748395877,
+                12.129476984766598
+            ],
+            "text": "In short, before turning to the$_{re}$ module, consider whether your problem can be solved with a faster and simpler",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thực hiện cả hai nhiệm vụ và sẽ nhanh hơn bất kỳ hoạt động biểu thức chính quy nào có thể."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                470.4121349533533,
+                97.33399716096642,
+                12.129476984766711
+            ],
+            "text": "string method.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tóm lại, trước khi chuyển sang mô -đun $ _ {re} $, hãy xem xét liệu vấn đề của bạn có thể được giải quyết bằng cách nhanh hơn và đơn giản hơn"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                510.47025311536834,
+                33.75545333681026,
+                14.555440561647742
+            ],
+            "text": "6.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JQGKDW+FreeSansBold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "Phương thức chuỗi."
+        },
+        {
+            "bbox": [
+                167.36226809926748,
+                510.47025311536834,
+                228.546923579815,
+                14.555440561647742
+            ],
+            "text": "match() versus search()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JQGKDW+FreeSansBold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "6.2"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                542.4308604160774,
+                124.20963080182617,
+                12.129464809779563
+            ],
+            "text": "The$_{match()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "khớp () so với tìm kiếm ()"
+        },
+        {
+            "bbox": [
+                232.86170879947036,
+                542.4308604160774,
+                617.9886166347626,
+                12.129464809779563
+            ],
+            "text": "function only checks if the RE matches at the beginning of the string while$_{search()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "$ _ {Match ()} $"
+        },
+        {
+            "bbox": [
+                841.0327069093851,
+                542.4308604160774,
+                59.988876159678966,
+                12.129464809779563
+            ],
+            "text": "will scan",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Chức năng chỉ kiểm tra xem RE có khớp ở đầu chuỗi trong khi $ _ {search ()} $"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                556.9872628017049,
+                767.5946839674765,
+                12.129476984766711
+            ],
+            "text": "forward through the string for a match. It’s important to keep this distinction in mind. Remember,$_{match()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sẽ quét"
+        },
+        {
+            "bbox": [
+                875.8507643033145,
+                556.9872628017049,
+                25.18269972873111,
+                12.129476984766711
+            ],
+            "text": "will",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Chuyển tiếp qua chuỗi cho một trận đấu. Nó rất quan trọng để ghi nhớ sự khác biệt này. Hãy nhớ rằng, $ _ {match ()} $"
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                571.5424476886238,
+                675.593036902313,
+                12.129464809779563
+            ],
+            "text": "only report a successful match which will start at 0; if the match wouldn’t start at zero,$_{match()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sẽ"
+        },
+        {
+            "bbox": [
+                783.3066204152691,
+                571.5424476886238,
+                25.182682509944016,
+                12.129464809779563
+            ],
+            "text": "will",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Chỉ báo cáo một trận đấu thành công sẽ bắt đầu ở 0; Nếu trận đấu sẽ bắt đầu ở 0, $ _ {match ()} $"
+        },
+        {
+            "bbox": [
+                812.7610601182101,
+                571.5424476886238,
+                20.653866046875464,
+                12.129464809779563
+            ],
+            "text": "not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KUJTEO+FreeSerifItalic",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sẽ"
+        },
+        {
+            "bbox": [
+                838.5100513114811,
+                571.5424476886238,
+                58.65075257102103,
+                12.129464809779563
+            ],
+            "text": "report it.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "không"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                598.1704349954218,
+                51.68995464201947,
+                9.824922379112195
+            ],
+            "text": ">>>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PDXDQC+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Báo cáo nó."
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                598.1704349954218,
+                464.25131979481984,
+                9.824922379112195
+            ],
+            "text": "print(re.match('super','superstition').span())",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": ">>>"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                611.5117980197912,
+                95.4133447916941,
+                9.824922379112195
+            ],
+            "text": "(0, 5)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "in (re.match ('Super', 'mê tín'). span ())"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                624.854342017908,
+                51.68995464201947,
+                9.824922379112252
+            ],
+            "text": ">>>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PDXDQC+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "(0, 5)"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                624.854342017908,
+                377.2068047957194,
+                9.824922379112252
+            ],
+            "text": "print(re.match('super','insuperable'))",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": ">>>"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                638.1969347159732,
+                32.6072770742872,
+                9.824922379112195
+            ],
+            "text": "None",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "in (re.match ('Super', 'Insuperable')))"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                665.9095916223071,
+                228.1879618068155,
+                12.129464809779563
+            ],
+            "text": "On the other hand,$_{search()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Không có"
+        },
+        {
+            "bbox": [
+                341.4072197248075,
+                665.9095916223071,
+                464.36905669420827,
+                12.129464809779563
+            ],
+            "text": "will scan forward through the string, reporting the first match it finds.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mặt khác, $ _ {search ()} $"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                692.5375424041438,
+                51.68995464201947,
+                9.824922379112138
+            ],
+            "text": ">>>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PDXDQC+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Sẽ quét về phía trước qua chuỗi, báo cáo đối sánh đầu tiên mà nó tìm thấy."
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                692.5375424041438,
+                473.5149927253564,
+                9.824922379112138
+            ],
+            "text": "print(re.search('super','superstition').span())",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": ">>>"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                705.8801351022089,
+                95.4133447916941,
+                9.82488585415092
+            ],
+            "text": "(0, 5)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "in (re.Search ('Super', 'mê tín'). span ())"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                719.222715625287,
+                51.68995464201947,
+                9.824849329189703
+            ],
+            "text": ">>>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PDXDQC+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "(0, 5)"
+        },
+        {
+            "bbox": [
+                161.02836832104043,
+                719.222715625287,
+                464.25131979481984,
+                9.824849329189703
+            ],
+            "text": "print(re.search('super','insuperable').span())",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": ">>>"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                732.5652717983909,
+                95.4133447916941,
+                9.824849329189703
+            ],
+            "text": "(2, 7)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WPZQLQ+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "in (Re.Search ('Super', 'Insuperable'). Span ())"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                760.2766625060677,
+                434.2643495028717,
+                12.129440459805437
+            ],
+            "text": "Sometimes you’ll be tempted to keep using$_{re.match()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(2, 7)"
+        },
+        {
+            "bbox": [
+                530.3472468243223,
+                760.2766625060677,
+                139.60906348563378,
+                12.129440459805437
+            ],
+            "text": ", and just add$_{.*}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đôi khi bạn sẽ bị cám dỗ để tiếp tục sử dụng $ _ {re.match ()} $"
+        },
+        {
+            "bbox": [
+                658.0245519071083,
+                760.2766625060677,
+                243.00901543765883,
+                12.129440459805437
+            ],
+            "text": "to the front of your RE. Resist this",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "và chỉ cần thêm $ _ {.*} $"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                774.8330648916954,
+                266.7523106730122,
+                12.129440459805409
+            ],
+            "text": "temptation and use$_{re.search()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "đến phía trước của bạn. Chống lại điều này"
+        },
+        {
+            "bbox": [
+                372.4354565531116,
+                774.8330648916954,
+                528.5779303733741,
+                12.129440459805409
+            ],
+            "text": "instead. The regular expression compiler does some analysis of REs in order to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cám dỗ và sử dụng $ _ {re.Search ()} $"
+        },
+        {
+            "bbox": [
+                123.97524006474733,
+                789.3882863035755,
+                777.0422449330274,
+                12.129440459805437
+            ],
+            "text": "speed up the process of looking for a match. One such analysis figures out what the first character of a match must",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "thay vì. Trình biên dịch biểu thức chính quy thực hiện một số phân tích RES để"
+        },
+        {
+            "bbox": [
+                123.97524006474733,
+                803.9435077154556,
+                545.2928525504207,
+                12.129428284818346
+            ],
+            "text": "be; for example, a pattern starting with$_{Crow}$ must match starting with a$_{'C'}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tăng tốc quá trình tìm kiếm một trận đấu. Một phân tích như vậy cho thấy những gì nhân vật đầu tiên của một trận đấu phải"
+        },
+        {
+            "bbox": [
+                653.2807588892239,
+                803.9435077154556,
+                247.7437685924051,
+                12.129428284818346
+            ],
+            "text": ". The analysis lets the engine quickly",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "là; Ví dụ: một mẫu bắt đầu bằng $ _ {Crow} $ phải khớp bắt đầu với $ _ {'C'} $ $"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                818.4987291273358,
+                634.9717816839916,
+                12.129428284818289
+            ],
+            "text": "scan through the string looking for the starting character, only trying the full match if a$_{'C'}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ". Phân tích cho phép động cơ nhanh chóng"
+        },
+        {
+            "bbox": [
+                747.248896456345,
+                818.4987291273358,
+                58.27336841788565,
+                12.129428284818289
+            ],
+            "text": "is found.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Quét qua chuỗi Tìm kiếm ký tự bắt đầu, chỉ thử toàn bộ trận đấu nếu $ _ {'C'} $"
+        },
+        {
+            "bbox": [
+                123.97531927116722,
+                840.3321091195749,
+                91.587621333442,
+                12.129428284818346
+            ],
+            "text": "Adding$_{.*}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "được tìm thấy."
+        },
+        {
+            "bbox": [
+                201.35998976817683,
+                840.3321091195749,
+                699.6588555137655,
+                12.129428284818346
+            ],
+            "text": "defeats this optimization, requiring scanning to the end of the string and then backtracking to find a match",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thêm $ _ {.*} $"
+        },
+        {
+            "bbox": [
+                123.97531927116722,
+                854.8873305314551,
+                318.14525673740474,
+                12.129428284818346
+            ],
+            "text": "for the rest of the RE. Use$_{re.search()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đánh bại tối ưu hóa này, yêu cầu quét đến cuối chuỗi và sau đó quay lại để tìm một trận đấu"
+        },
+        {
+            "bbox": [
+                424.02473294795385,
+                854.8873305314551,
+                51.46318321815704,
+                12.129428284818346
+            ],
+            "text": "instead.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QGZWOR+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cho phần còn lại của Re. Sử dụng $ _ {re.Search ()} $"
+        },
+        {
+            "bbox": [
+                502.95904433414296,
+                964.0251176635295,
+                19.075712568419362,
+                12.129434372311891
+            ],
+            "text": "17",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JQGKDW+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "thay vì."
+        }
+    ]
+}

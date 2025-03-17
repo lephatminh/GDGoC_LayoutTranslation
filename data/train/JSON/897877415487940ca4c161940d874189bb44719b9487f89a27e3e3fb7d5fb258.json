@@ -1,3 +1,1016 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ae8093146dc9a3ee0deba8312f25a12a9afcdb00981bc462310fd8d935793cfe
-size 31916
+{
+    "metadata": {
+        "page_hash": "897877415487940ca4c161940d874189bb44719b9487f89a27e3e3fb7d5fb258",
+        "original_filename": "cm-oreilly-kubernetes-patterns-ebook-f19824-201910-en.pdf",
+        "page_no": 35,
+        "num_pages": 266,
+        "original_width": 504,
+        "original_height": 661.5,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                146.42857142857142,
+                81.03777059712763,
+                732.1429791666667,
+                21.94800037792902
+            ],
+            "text": "Besides resource requirements, application runtimes also have dependencies on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Bên cạnh các yêu cầu tài nguyên, ứng dụng Runtimes còn có sự phụ thuộc vào"
+        },
+        {
+            "bbox": [
+                146.42256582341267,
+                100.56154913076341,
+                654.078151438492,
+                21.94800037792902
+            ],
+            "text": "platform-managed capabilities like data storage or application configuration.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các khả năng do nền tảng quản lý như lưu trữ dữ liệu hoặc cấu hình ứng dụng."
+        },
+        {
+            "bbox": [
+                146.41024751984125,
+                135.8256398337113,
+                106.27671825396826,
+                35.12147392290251
+            ],
+            "text": "Solution",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 18.92000007629395
+            },
+            "text_vi": "Giải pháp"
+        },
+        {
+            "bbox": [
+                146.42863447420635,
+                178.03763454270597,
+                732.1430381448412,
+                21.948000377928906
+            ],
+            "text": "Knowing the runtime requirements for a container is important mainly for two rea‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Biết các yêu cầu thời gian chạy cho một container là quan trọng chủ yếu cho hai rea‐"
+        },
+        {
+            "bbox": [
+                146.42267564484126,
+                197.56141307634152,
+                732.1429161210317,
+                21.948093348450698
+            ],
+            "text": "sons. First, with all the runtime dependencies defined and resource demands envis‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "con trai. Đầu tiên, với tất cả các phụ thuộc thời gian chạy được xác định và yêu cầu tài nguyên"
+        },
+        {
+            "bbox": [
+                146.43794285714287,
+                217.08528458049886,
+                732.1430442460318,
+                21.948000377928906
+            ],
+            "text": "aged, Kubernetes can make intelligent decisions for where to place a container on the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "già, kubernetes có thể đưa ra quyết định thông minh về nơi đặt một container trên"
+        },
+        {
+            "bbox": [
+                146.43185997023807,
+                236.60904761904771,
+                732.1429242559524,
+                21.948000377928906
+            ],
+            "text": "cluster for most efficient hardware utilization. In an environment with shared resour‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Cụm cho việc sử dụng phần cứng hiệu quả nhất. Trong một môi trường có nguồn lực chia sẻ -"
+        },
+        {
+            "bbox": [
+                146.4258706349206,
+                256.13287263794416,
+                732.1430157738093,
+                21.948000377928906
+            ],
+            "text": "ces among a large number of processes with different priorities, the only way for a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "CES trong số một số lượng lớn các quy trình với các ưu tiên khác nhau, cách duy nhất để"
+        },
+        {
+            "bbox": [
+                146.41978978174603,
+                275.65668216175357,
+                732.1427717261904,
+                21.948000377928906
+            ],
+            "text": "successful coexistence is to know the demands of every process in advance. However,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Sự cùng tồn tại thành công là để biết nhu cầu của mọi quy trình trước. Tuy nhiên,"
+        },
+        {
+            "bbox": [
+                146.4349634424603,
+                295.18046069538923,
+                416.47030639880956,
+                21.94804686318969
+            ],
+            "text": "intelligent placement is only one side of the coin.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Vị trí thông minh chỉ là một mặt của đồng tiền."
+        },
+        {
+            "bbox": [
+                146.4349634424603,
+                324.0013843537415,
+                732.1428510416665,
+                21.948000377928906
+            ],
+            "text": "The second reason container resource profiles are essential is capacity planning.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Lý do thứ hai Hồ sơ tài nguyên container là điều cần thiết là kế hoạch năng lực."
+        },
+        {
+            "bbox": [
+                146.42895987103174,
+                343.52514739229025,
+                732.1430178075395,
+                21.94804686318969
+            ],
+            "text": "Based on the particular service demands and the total number of services, we can do",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Dựa trên nhu cầu dịch vụ cụ thể và tổng số dịch vụ, chúng tôi có thể làm"
+        },
+        {
+            "bbox": [
+                146.422954265873,
+                363.0490188964475,
+                732.1430035714286,
+                21.948000377928906
+            ],
+            "text": "some capacity planning for the different environments and come up with the most",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "một số kế hoạch năng lực cho các môi trường khác nhau và đưa ra nhiều nhất"
+        },
+        {
+            "bbox": [
+                146.43823774801587,
+                382.572828420257,
+                732.1428713789683,
+                21.94804686318969
+            ],
+            "text": "cost-effective host profiles to satisfy the entire cluster demand. Service resource pro‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Hồ sơ máy chủ hiệu quả chi phí để đáp ứng toàn bộ nhu cầu cụm. Tài nguyên dịch vụ chuyên nghiệp"
+        },
+        {
+            "bbox": [
+                146.4321548611111,
+                402.09665343915344,
+                732.1428124007937,
+                21.94800037792902
+            ],
+            "text": "files and capacity planning go hand-to-hand for successful cluster management in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "các tập tin và kế hoạch năng lực đi tay đôi để quản lý cụm thành công trong"
+        },
+        {
+            "bbox": [
+                146.42615128968254,
+                421.6204784580499,
+                88.68385416666666,
+                21.94804686318969
+            ],
+            "text": "long term.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "dài hạn."
+        },
+        {
+            "bbox": [
+                146.42615128968254,
+                450.44134013605435,
+                732.1429791666667,
+                21.948046863189802
+            ],
+            "text": "Let’s have a look first at how to declare runtime dependencies before we dive into",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Hãy để một cái nhìn trước tiên về cách khai báo các phụ thuộc thời gian chạy trước khi chúng ta đi sâu vào"
+        },
+        {
+            "bbox": [
+                146.4201456845238,
+                469.9651186696901,
+                147.17290243055555,
+                21.94804686318969
+            ],
+            "text": "resource profiles.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Hồ sơ tài nguyên."
+        },
+        {
+            "bbox": [
+                146.415010515873,
+                505.0023767951625,
+                243.45797559523805,
+                29.27401549508693
+            ],
+            "text": "Runtime Dependencies",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 15.77000045776367
+            },
+            "text_vi": "Phụ thuộc thời gian chạy"
+        },
+        {
+            "bbox": [
+                146.4354922123016,
+                540.3268518518519,
+                732.1428917162698,
+                21.948000377928963
+            ],
+            "text": "One of the most common runtime dependencies is file storage for saving application",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Một trong những phụ thuộc thời gian chạy phổ biến nhất là lưu trữ tệp để lưu ứng dụng"
+        },
+        {
+            "bbox": [
+                146.42950287698412,
+                559.8507078609222,
+                732.1427391865079,
+                21.948000377928963
+            ],
+            "text": "state. Container filesystems are ephemeral and lost when a container is shut down.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "tình trạng. Các hệ thống tập tin container là phù du và bị mất khi tắt của một container."
+        },
+        {
+            "bbox": [
+                146.42351354166667,
+                579.3745328798186,
+                732.1428917162697,
+                21.948000377928963
+            ],
+            "text": "Kubernetes offers volume as a Pod-level storage utility that survives container",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Kubernetes cung cấp khối lượng như một tiện ích lưu trữ cấp độ POD"
+        },
+        {
+            "bbox": [
+                146.43885803571428,
+                598.898342403628,
+                67.8635253968254,
+                21.948000377928963
+            ],
+            "text": "restarts.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Khởi động lại."
+        },
+        {
+            "bbox": [
+                146.43885803571428,
+                628.6384811035525,
+                382.3860363095238,
+                21.948000377928963
+            ],
+            "text": "The most straightforward type of volume is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Loại âm lượng đơn giản nhất là "
+        },
+        {
+            "bbox": [
+                528.804597718254,
+                631.9005997732427,
+                81.14587400793641,
+                15.456302721088377
+            ],
+            "text": "emptyDir",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "rỗng"
+        },
+        {
+            "bbox": [
+                609.9504717261904,
+                628.6384811035525,
+                268.6110322420635,
+                21.948000377928963
+            ],
+            "text": ", which lives as long as the Pod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": ", sống miễn là pod"
+        },
+        {
+            "bbox": [
+                146.43392420634922,
+                648.1622596371883,
+                732.1427717261904,
+                21.948000377928963
+            ],
+            "text": "lives and when the Pod is removed, its content is also lost. The volume needs to be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Cuộc sống và khi nhóm được loại bỏ, nội dung của nó cũng bị mất. Khối lượng cần phải được"
+        },
+        {
+            "bbox": [
+                146.42776403769838,
+                667.6860691609977,
+                732.1426680059524,
+                21.948000377928906
+            ],
+            "text": "backed by some other kind of storage mechanism to have a volume that survives Pod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Được hỗ trợ bởi một số loại cơ chế lưu trữ khác để có một khối lượng tồn tại"
+        },
+        {
+            "bbox": [
+                146.4216831845238,
+                687.2098941798943,
+                732.1429730654762,
+                21.948000377928906
+            ],
+            "text": "restarts. If your application needs to read or write files to such long-lived storage, you",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Khởi động lại. Nếu ứng dụng của bạn cần đọc hoặc ghi tệp vào lưu trữ tồn tại lâu như vậy, bạn"
+        },
+        {
+            "bbox": [
+                146.43695039682538,
+                706.7337191987906,
+                732.1428571428571,
+                21.948000377928906
+            ],
+            "text": "have to declare that dependency explicitly in the container definition using volumes,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "phải tuyên bố rằng sự phụ thuộc rõ ràng trong định nghĩa container bằng cách sử dụng khối lượng,"
+        },
+        {
+            "bbox": [
+                146.43086750992063,
+                726.257575207861,
+                217.7484395337301,
+                21.948000377928906
+            ],
+            "text": "as shown in Example 2-1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "như thể hiện trong ví dụ 2-1."
+        },
+        {
+            "bbox": [
+                146.43086750992063,
+                769.1611156462585,
+                407.13852336309526,
+                22.159508314436863
+            ],
+            "text": "Example 2-1. Dependency on a PersistentVolume",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Ví dụ 2-1. Sự phụ thuộc vào một liên tục"
+        },
+        {
+            "bbox": [
+                146.43291547619046,
+                807.5308401360544,
+                86.43353988095237,
+                13.170823885109598
+            ],
+            "text": "apiVersion",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "Apiversion"
+        },
+        {
+            "bbox": [
+                232.86645535714283,
+                807.5308401360544,
+                34.57341269841268,
+                13.170823885109598
+            ],
+            "text": ": v1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": V1"
+        },
+        {
+            "bbox": [
+                146.43291547619046,
+                823.3357978080121,
+                34.57341269841268,
+                13.170823885109598
+            ],
+            "text": "kind",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "loại"
+        },
+        {
+            "bbox": [
+                181.00632817460314,
+                823.3357978080121,
+                43.21677400793652,
+                13.170823885109598
+            ],
+            "text": ": Pod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": Pod"
+        },
+        {
+            "bbox": [
+                146.43291547619046,
+                839.1408174603175,
+                69.14683353174604,
+                13.170823885109598
+            ],
+            "text": "metadata",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "Siêu dữ liệu"
+        },
+        {
+            "bbox": [
+                215.5797490079365,
+                839.1408174603175,
+                8.643353174603163,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                163.7196218253968,
+                854.9458216175359,
+                34.57341269841268,
+                13.170823885109598
+            ],
+            "text": "name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "tên"
+        },
+        {
+            "bbox": [
+                198.2930345238095,
+                854.9458216175359,
+                155.58036527777776,
+                13.170823885109598
+            ],
+            "text": ": random-generator",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": Máy phát điện ngẫu nhiên"
+        },
+        {
+            "bbox": [
+                146.43291547619046,
+                870.7508738095238,
+                34.57341269841268,
+                13.170823885109598
+            ],
+            "text": "spec",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "thông số kỹ thuật"
+        },
+        {
+            "bbox": [
+                181.00632817460314,
+                870.7508738095238,
+                8.643353174603192,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                163.7196218253968,
+                886.5558810657596,
+                86.43353988095237,
+                13.170823885109598
+            ],
+            "text": "containers",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "container"
+        },
+        {
+            "bbox": [
+                250.15316170634918,
+                886.5558810657596,
+                8.643353174603192,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                163.7196218253968,
+                902.3608883219955,
+                17.286706349206327,
+                13.170823885109598
+            ],
+            "text": "- ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": "- "
+        },
+        {
+            "bbox": [
+                181.00632817460314,
+                902.3608883219955,
+                43.21677400793652,
+                13.170823885109598
+            ],
+            "text": "image",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "hình ảnh"
+        },
+        {
+            "bbox": [
+                224.22310218253966,
+                902.3608883219955,
+                293.8740079365079,
+                13.170823885109598
+            ],
+            "text": ": k8spatterns/random-generator:1.0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": K8Spatterns/Trình tạo ngẫu nhiên: 1.0"
+        },
+        {
+            "bbox": [
+                146.42466056547616,
+                945.5380580498866,
+                17.827692807539705,
+                16.70680427059714
+            ],
+            "text": "16 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "16 "
+        },
+        {
+            "bbox": [
+                179.6639503472222,
+                945.5380580498866,
+                6.735722420634943,
+                16.70680427059714
+            ],
+            "text": "| ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "| "
+        },
+        {
+            "bbox": [
+                201.81127177579364,
+                945.5380580498866,
+                192.60850451388885,
+                16.70680427059714
+            ],
+            "text": "Chapter 2: Predictable Demands",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "Chương 2: Nhu cầu có thể dự đoán được"
+        }
+    ]
+}

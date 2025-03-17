@@ -1,3 +1,1216 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b2f155eb4b0829c069576a07e84ab2bc6db6b0ecd2360f4ae83619a01cc36ad4
-size 40577
+{
+    "metadata": {
+        "page_hash": "f5fa81f803bbbf91dbf11368208756c0c1c32b9c8f738482254290cf4f6e16f7",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3808,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                426.58088235294116,
+                48.370422979798036,
+                201.98527736928105,
+                11.971275252525288
+            ],
+            "text": "XCom Cache Management",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Quản lý bộ đệm XCOM"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                786.6205735294117,
+                11.971275252525174
+            ],
+            "text": "removes the oldest entries that have been decided and delivered. The same cache size limit should be set",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Loại bỏ các mục cũ nhất đã được quyết định và giao hàng. Giới hạn kích thước bộ nhớ cache tương tự phải được đặt"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                110.49163510101016,
+                781.0264852941177,
+                11.971275252525288
+            ],
+            "text": "on all group members, because an unreachable member that is attempting to reconnect selects any other",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trên tất cả các thành viên trong nhóm, bởi vì một thành viên không thể truy cập đang cố gắng kết nối lại chọn bất kỳ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                126.02193813131316,
+                776.3035298202614,
+                11.971275252525288
+            ],
+            "text": "member at random for recovery of missed messages. The same messages should therefore be available",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thành viên ngẫu nhiên để phục hồi các tin nhắn bị bỏ lỡ. Do đó, các tin nhắn tương tự nên có sẵn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                141.55224116161617,
+                186.1580714869281,
+                11.971275252525288
+            ],
+            "text": "in each member’s cache.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong mỗi bộ nhớ cache thành viên."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                170.19659090909101,
+                763.3570763888889,
+                11.971275252525288
+            ],
+            "text": "Before MySQL 8.0.16, the cache size was 1 GB, and the default setting for the cache size from MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trước MySQL 8.0.16, kích thước bộ đệm là 1 GB và cài đặt mặc định cho kích thước bộ đệm từ MySQL"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                185.72689393939402,
+                46.56045751633988,
+                11.971275252525288
+            ],
+            "text": "8.0.16",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "8.0.16"
+        },
+        {
+            "bbox": [
+                222.04983660130722,
+                185.72689393939402,
+                726.0415996732027,
+                11.971275252525288
+            ],
+            "text": "is the same. Ensure that sufficient memory is available on your system for your chosen cache size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "là như nhau. Đảm bảo rằng đủ bộ nhớ có sẵn trên hệ thống của bạn cho kích thước bộ đệm đã chọn của bạn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                201.25719696969702,
+                770.7430555555557,
+                11.971275252525288
+            ],
+            "text": "limit, considering the size of MySQL Server’s other caches and object pools. Note that the limit set using",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giới hạn, xem xét kích thước của máy chủ MySQL, bộ nhớ cache và nhóm đối tượng khác. Lưu ý rằng bộ giới hạn sử dụng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                217.93934375000003,
+                361.7647058823529,
+                10.172335542929318
+            ],
+            "text": "group_replication_message_cache_size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Message_Cache_Size"
+        },
+        {
+            "bbox": [
+                532.5980392156863,
+                216.78750000000014,
+                388.24387254901956,
+                11.971275252525174
+            ],
+            "text": " applies only to the data stored in the cache, and the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chỉ áp dụng cho dữ liệu được lưu trữ trong bộ đệm và"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                232.31780303030314,
+                420.735736111111,
+                11.971275252525288
+            ],
+            "text": "cache structures require an additional 50 MB of memory.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cấu trúc bộ đệm yêu cầu thêm 50 MB bộ nhớ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                260.9621398358586,
+                133.11602982026145,
+                11.971275252525288
+            ],
+            "text": "When selecting a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi chọn a "
+        },
+        {
+            "bbox": [
+                303.9493631535948,
+                262.1139965277779,
+                361.764705882353,
+                10.172322601010023
+            ],
+            "text": "group_replication_message_cache_size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Message_Cache_Size"
+        },
+        {
+            "bbox": [
+                665.7140690359478,
+                260.9621398358586,
+                232.7352773692811,
+                11.971275252525288
+            ],
+            "text": " setting, do so with reference to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cài đặt, làm như vậy với tham chiếu đến"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                276.4924428661617,
+                740.9979407679738,
+                11.971275252525174
+            ],
+            "text": "the expected volume of messages in the time period before a member is expelled. The length of this",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "khối lượng tin nhắn dự kiến ​​trong khoảng thời gian trước khi một thành viên bị trục xuất. Chiều dài của cái này"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                292.0227458964647,
+                231.78063725490196,
+                11.971275252525174
+            ],
+            "text": "time period is controlled by the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "khoảng thời gian được kiểm soát bởi "
+        },
+        {
+            "bbox": [
+                402.6139705882353,
+                293.1746025883839,
+                381.86276184640525,
+                10.172322601010023
+            ],
+            "text": "group_replication_member_expel_timeout",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Member_Expel_Timeout"
+        },
+        {
+            "bbox": [
+                784.4767324346406,
+                292.0227458964647,
+                125.64627532679742,
+                11.971275252525174
+            ],
+            "text": " system variable,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " biến hệ thống,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                307.5530489267677,
+                735.4039530228758,
+                11.971275252525288
+            ],
+            "text": "which determines the waiting period (up to an hour) that is allowed in addition to the initial 5-second",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trong đó xác định thời gian chờ (tối đa một giờ) được phép ngoài 5 giây ban đầu"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                323.0833519570707,
+                767.0919285130718,
+                11.971275252525288
+            ],
+            "text": "detection period for members to return to the group rather than being expelled. Note that before MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thời gian phát hiện để các thành viên trở lại nhóm thay vì bị trục xuất. Lưu ý rằng trước MySQL"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                338.6136549873737,
+                740.9812761437908,
+                11.971275252525288
+            ],
+            "text": "8.0.21, this time period defaulted to 5 seconds from the member becoming unavailable, which is just",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "8.0.21, khoảng thời gian này mặc định là 5 giây từ khi thành viên không khả dụng, đó chỉ là"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                354.1439580176768,
+                723.3619616013073,
+                11.971275252525174
+            ],
+            "text": "the detection period before a suspicion is created, because the additional expel timeout set by the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thời gian phát hiện trước khi sự nghi ngờ được tạo ra, bởi vì thời gian hủy bỏ bổ sung được đặt bởi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                370.826117739899,
+                381.8627450980392,
+                10.172322601010137
+            ],
+            "text": "group_replication_member_expel_timeout",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Member_Expel_Timeout"
+        },
+        {
+            "bbox": [
+                552.6960784313726,
+                369.6742610479798,
+                377.94367769607845,
+                11.971275252525288
+            ],
+            "text": " system variable defaulted to zero. From 8.0.21 the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống mặc định về 0. Từ 8.0,21"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                385.20456407828283,
+                778.279820261438,
+                11.971275252525288
+            ],
+            "text": "expel timeout defaults to 5 seconds, so by default a member is not expelled until it has been absent for at",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tiết tác thời gian chờ mặc định xuống còn 5 giây, vì vậy theo mặc định, một thành viên không bị trục xuất cho đến khi nó vắng mặt tại"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                400.73486710858583,
+                130.33580106209152,
+                11.971275252525288
+            ],
+            "text": "least 10 seconds.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ít nhất 10 giây."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                429.73514551767687,
+                72.6343204248366,
+                14.365543244949436
+            ],
+            "text": "18.7.5.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "18.7.5.1"
+        },
+        {
+            "bbox": [
+                168.6627450980392,
+                429.73514551767687,
+                242.40245098039216,
+                14.365543244949436
+            ],
+            "text": "Increasing the cache size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Tăng kích thước bộ nhớ cache"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                461.1296530934344,
+                733.595196486928,
+                11.971275252525174
+            ],
+            "text": "If a member is absent for a period that is not long enough for it to be expelled from the group, it can",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu một thành viên vắng mặt trong một khoảng thời gian không đủ dài để nó bị trục xuất khỏi nhóm, thì nó có thể"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                476.6599561237374,
+                725.1539530228758,
+                11.971275252525288
+            ],
+            "text": "reconnect and start participating in the group again by retrieving missed transactions from another",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kết nối lại và bắt đầu tham gia vào nhóm một lần nữa bằng cách truy xuất các giao dịch bị bỏ lỡ từ một"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                492.1902591540404,
+                731.6355706699346,
+                11.971275252525288
+            ],
+            "text": "member’s XCom message cache. However, if the transactions that happened during the member’s",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thành viên bộ đệm tin nhắn XCOM XCOM. Tuy nhiên, nếu các giao dịch xảy ra trong thành viên"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                507.7205621843434,
+                791.2096090686274,
+                11.971275252525288
+            ],
+            "text": "absence have been deleted from the other members’ XCom message caches because their maximum size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sự vắng mặt đã bị xóa khỏi bộ đệm tin nhắn của các thành viên khác XCOM vì kích thước tối đa của chúng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                523.2508652146464,
+                448.65522875816987,
+                11.971275252525288
+            ],
+            "text": "limit was reached, the member cannot reconnect in this way.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hạn chế đã đạt được, thành viên không thể kết nối lại theo cách này."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                551.8952020202021,
+                748.3505069444444,
+                11.971275252525288
+            ],
+            "text": "Group Replication’s Group Communication System (GCS) alerts you, by a warning message, when a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hệ thống truyền thông nhóm sao chép nhóm (GCS) cảnh báo bạn, bằng một thông báo cảnh báo, khi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                567.4255050505051,
+                758.6339199346405,
+                11.971275252525231
+            ],
+            "text": "message that is likely to be needed for recovery by a member that is currently unreachable is removed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thông điệp có khả năng cần thiết để phục hồi bởi một thành viên hiện không thể truy cập được"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                582.9558080808081,
+                780.9762904411764,
+                11.971275252525288
+            ],
+            "text": "from the message cache. This warning message is logged on all the active group members (only once for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "từ bộ đệm tin nhắn. Thông báo cảnh báo này được đăng nhập trên tất cả các thành viên nhóm đang hoạt động (chỉ một lần cho"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                598.4861111111111,
+                765.1825980392157,
+                11.971275252525231
+            ],
+            "text": "each unreachable member). Although the group members cannot know for sure what message was the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mỗi thành viên không thể truy cập). Mặc dù các thành viên trong nhóm không thể biết chắc chắn thông điệp là gì"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                614.0164141414141,
+                781.9477124183006,
+                11.971275252525288
+            ],
+            "text": "last message seen by the unreachable member, the warning message indicates that the cache size might",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông báo cuối cùng được nhìn thấy bởi thành viên không thể truy cập, thông báo cảnh báo chỉ ra rằng kích thước bộ nhớ cache có thể"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                629.5467171717172,
+                620.9121899509804,
+                11.971275252525231
+            ],
+            "text": "not be sufficient to support your chosen waiting period before a member is expelled.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không đủ để hỗ trợ thời gian chờ đợi bạn đã chọn trước khi một thành viên bị trục xuất."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                658.1910669191919,
+                297.8864211601307,
+                11.971275252525231
+            ],
+            "text": "In this situation, consider increasing the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong tình huống này, hãy xem xét tăng "
+        },
+        {
+            "bbox": [
+                468.71975449346405,
+                659.3428718434344,
+                361.7647058823529,
+                10.172374368686803
+            ],
+            "text": "group_replication_message_cache_size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Message_Cache_Size"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                673.7213699494949,
+                671.1572879901961,
+                11.971275252525231
+            ],
+            "text": "limit with reference to the expected volume of messages in the time period specified by the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "giới hạn với tham chiếu đến khối lượng tin nhắn dự kiến ​​trong khoảng thời gian được chỉ định bởi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                690.4034779040405,
+                381.8627450980392,
+                10.172374368686803
+            ],
+            "text": "group_replication_member_expel_timeout",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Member_Expel_Timeout"
+        },
+        {
+            "bbox": [
+                552.6960784313726,
+                689.251672979798,
+                408.6601307189542,
+                11.971275252525288
+            ],
+            "text": " system variable plus the 5-second detection period, so",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống cộng với thời gian phát hiện 5 giây, vì vậy"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                704.7819760101011,
+                793.0854260620915,
+                11.971275252525231
+            ],
+            "text": "that the cache contains all the missed messages required for members to return successfully. You can also",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Rằng bộ đệm chứa tất cả các tin nhắn bị bỏ lỡ cần thiết cho các thành viên để trả về thành công. Bạn cũng có thể"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                720.3122790404041,
+                783.7564689542484,
+                11.971275252525231
+            ],
+            "text": "consider increasing the cache size limit temporarily if you expect a member to become unreachable for an",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xem xét tăng giới hạn kích thước bộ nhớ cache tạm thời nếu bạn mong đợi một thành viên sẽ không thể truy cập được"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                735.8425820707071,
+                169.42647058823528,
+                11.971275252525231
+            ],
+            "text": "unusual period of time.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "khoảng thời gian bất thường."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                764.8427828282829,
+                72.6343070261438,
+                14.365569128787882
+            ],
+            "text": "18.7.5.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "18.7.5.2"
+        },
+        {
+            "bbox": [
+                168.6627450980392,
+                764.8427828282829,
+                233.4387254901961,
+                14.365569128787882
+            ],
+            "text": "Reducing the cache size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Giảm kích thước bộ nhớ cache"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                796.2373551136363,
+                737.1961286764706,
+                11.971275252525231
+            ],
+            "text": "The minimum setting for the XCom message cache size is 1 GB up to MySQL 8.0.20. From MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cài đặt tối thiểu cho kích thước bộ nhớ cache tin nhắn XCOM là 1 GB lên đến MySQL 8.0.20. Từ mysql"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                811.7676581439395,
+                787.5751466503268,
+                11.971275252525231
+            ],
+            "text": "8.0.21, the minimum setting is 134217728 bytes (128 MB), which enables deployment on a host that has a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "8.0,21, cài đặt tối thiểu là 134217728 byte (128 MB), cho phép triển khai trên máy chủ có"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                827.2979611742425,
+                430.0142973856209,
+                11.971275252525231
+            ],
+            "text": "restricted amount of available memory. Having a very low ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "số lượng hạn chế của bộ nhớ có sẵn. Có rất thấp "
+        },
+        {
+            "bbox": [
+                600.8476307189543,
+                828.4498178661617,
+                361.7647058823529,
+                10.172322601010109
+            ],
+            "text": "group_replication_message_cache_size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Message_Cache_Size"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                842.8282642045455,
+                744.7161282679739,
+                11.97127525252526
+            ],
+            "text": "setting is not recommended if the host is on an unstable network, because a smaller message cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cài đặt không được khuyến nghị nếu máy chủ trên mạng không ổn định, vì bộ đệm tin nhắn nhỏ hơn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                858.3585672348485,
+                629.2528427287582,
+                11.971275252525231
+            ],
+            "text": "makes it harder for group members to reconnect after a transient loss of connectivity.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Làm cho các thành viên trong nhóm khó kết nối lại sau khi mất kết nối thoáng qua."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                887.0029169823233,
+                742.8235629084968,
+                11.971273958333327
+            ],
+            "text": "If a reconnecting member cannot retrieve all the messages it needs from the XCom message cache,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu một thành viên kết nối lại không thể truy xuất tất cả các tin nhắn cần thiết từ bộ đệm tin nhắn XCOM,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                902.5332187184343,
+                770.7430555555557,
+                11.97127525252526
+            ],
+            "text": "the member must leave the group and rejoin it, in order to retrieve the missing transactions from another",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thành viên phải rời khỏi nhóm và tham gia lại, để lấy lại các giao dịch bị thiếu từ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                918.0635217487373,
+                743.7279411764705,
+                11.97127525252526
+            ],
+            "text": "member’s binary log using distributed recovery. From MySQL 8.0.21, a member that has left a group",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "khác"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "3779",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhật ký nhị phân thành viên sử dụng phục hồi phân tán. Từ MySQL 8.0,21, một thành viên đã rời khỏi một nhóm"
+        }
+    ]
+}

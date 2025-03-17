@@ -1,3 +1,1596 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a60f65878d92065a7ef402ece3fc22ca79577095f640ffd43ffb3877bda35c1f
-size 47037
+{
+    "metadata": {
+        "page_hash": "6eaa39da8041e107fb5c6b85d4ae6092c9f6f35310c10bc0a80db3092655c8ca",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1349,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                414.5723039215686,
+                48.370422979798036,
+                165.70833333333337,
+                11.971275252525288
+            ],
+            "text": "Authentication Plugins",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Plugin xác thực"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                561.3550004084968,
+                11.971275252525174
+            ],
+            "text": "Alternatively, to load the plugin at runtime, use this statement, adjusting the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ngoài ra, để tải plugin vào thời gian chạy, sử dụng câu lệnh này, điều chỉnh "
+        },
+        {
+            "bbox": [
+                702.0412749183007,
+                96.11317582070706,
+                30.14705882352939,
+                10.172335542929318
+            ],
+            "text": ".so",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": ".Vì thế"
+        },
+        {
+            "bbox": [
+                732.1883337418301,
+                94.96133207070716,
+                192.67321936274504,
+                11.971275252525174
+            ],
+            "text": " suffix for your platform as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Hậu tố cho nền tảng của bạn là"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                80.97836642156864,
+                11.971275252525288
+            ],
+            "text": "necessary:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cần thiết:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                136.8219308712122,
+                522.5490196078431,
+                8.137917613636432
+            ],
+            "text": "INSTALL PLUGIN authentication_pam SONAME ’authentication_pam.so’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Cài đặt plugin xác thực_pam soname, xác thực_pam.so"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                162.756242739899,
+                140.68627450980392,
+                10.172413194444516
+            ],
+            "text": "INSTALL PLUGIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cài đặt plugin"
+        },
+        {
+            "bbox": [
+                281.37254901960785,
+                161.60447664141418,
+                420.75245098039227,
+                11.971275252525288
+            ],
+            "text": " loads the plugin immediately, and also registers it in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tải plugin ngay lập tức và cũng đăng ký nó trong "
+        },
+        {
+            "bbox": [
+                702.1250000000001,
+                162.756242739899,
+                130.63725490196077,
+                10.172413194444516
+            ],
+            "text": "mysql.plugins",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql.plugins"
+        },
+        {
+            "bbox": [
+                832.7622549019609,
+                161.60447664141418,
+                98.66462418300648,
+                11.971275252525288
+            ],
+            "text": " system table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng hệ thống"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                177.13477967171718,
+                634.9138071895425,
+                11.971275252525288
+            ],
+            "text": "to cause the server to load it for each subsequent normal startup without the need for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "để khiến máy chủ tải nó cho mỗi lần khởi động bình thường tiếp theo mà không cần "
+        },
+        {
+            "bbox": [
+                775.6000816993463,
+                178.2866234217173,
+                140.68622426470597,
+                10.172335542929204
+            ],
+            "text": "--plugin-load-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--Plugin-load-"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                193.8169264520203,
+                30.14705882352942,
+                10.172335542929204
+            ],
+            "text": "add",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "thêm vào"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                192.6650827020202,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                219.62303566919206,
+                302.5257352941176,
+                11.971275252525174
+            ],
+            "text": "To verify plugin installation, examine the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để xác minh cài đặt plugin, hãy kiểm tra "
+        },
+        {
+            "bbox": [
+                443.21200980392155,
+                220.77489236111114,
+                261.27450980392155,
+                10.172322601010137
+            ],
+            "text": "INFORMATION_SCHEMA.PLUGINS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thông tin_schema.plugins"
+        },
+        {
+            "bbox": [
+                704.4865196078431,
+                219.62303566919206,
+                124.7585784313726,
+                11.971275252525174
+            ],
+            "text": " table or use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng hoặc sử dụng "
+        },
+        {
+            "bbox": [
+                829.2450980392157,
+                220.77489236111114,
+                40.1960784313726,
+                10.172322601010137
+            ],
+            "text": "SHOW",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÌNH DIỄN"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                236.30519539141414,
+                70.34313725490196,
+                10.172322601010137
+            ],
+            "text": "PLUGINS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Plugin"
+        },
+        {
+            "bbox": [
+                211.02941176470588,
+                235.15333869949507,
+                531.1744113562092,
+                11.971275252525174
+            ],
+            "text": " statement (see Section 5.6.2, “Obtaining Server Plugin Information”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tuyên bố (xem Phần 5.6.2, Thông tin plugin máy chủ có được thông tin trực tuyến"
+        },
+        {
+            "bbox": [
+                714.6360294117648,
+                235.15333869949507,
+                112.61599632352932,
+                11.971275252525174
+            ],
+            "text": "). For example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Ví dụ:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                261.48372506313126,
+                56.274509803921575,
+                8.137904671717365
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                261.48372506313126,
+                265.2941176470588,
+                8.137904671717365
+            ],
+            "text": "SELECT PLUGIN_NAME, PLUGIN_STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn Plugin_Name, Plugin_Status"
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                273.9079286616163,
+                249.21566952614378,
+                8.137917613636205
+            ],
+            "text": "FROM INFORMATION_SCHEMA.PLUGINS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Từ thông tin_schema.plugins"
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                286.3322228535353,
+                249.21566952614378,
+                8.137827020202053
+            ],
+            "text": "WHERE PLUGIN_NAME LIKE ’%pam%’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Trong đó plugin_name như trên%pam%;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                298.75642645202015,
+                305.49017933006536,
+                8.137917613636432
+            ],
+            "text": "+--------------------+---------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+--------------------+---------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                311.1806429924243,
+                104.50978717320262,
+                8.137904671717138
+            ],
+            "text": "| PLUGIN_NAME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Plugin_name"
+        },
+        {
+            "bbox": [
+                309.5098039215687,
+                311.1806429924243,
+                136.6666499183006,
+                8.137904671717138
+            ],
+            "text": "| PLUGIN_STATUS |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Plugin_status |"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                323.6049371843434,
+                305.49017933006536,
+                8.137904671717251
+            ],
+            "text": "+--------------------+---------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+--------------------+---------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                336.02914078282845,
+                233.13725490196077,
+                8.137917613636205
+            ],
+            "text": "| authentication_pam | ACTIVE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| xác thực_pam | TÍCH CỰC"
+        },
+        {
+            "bbox": [
+                438.1372716503268,
+                336.02914078282845,
+                8.039182189542487,
+                8.137917613636205
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                348.45343497474744,
+                305.49017933006536,
+                8.137827020202053
+            ],
+            "text": "+--------------------+---------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+--------------------+---------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                373.23590309343433,
+                592.9424019607843,
+                11.971275252525288
+            ],
+            "text": "If the plugin fails to initialize, check the server error log for diagnostic messages.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu plugin không khởi tạo, hãy kiểm tra nhật ký lỗi máy chủ để biết tin nhắn chẩn đoán."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                400.1939337121213,
+                699.0935457516341,
+                11.971275252525288
+            ],
+            "text": "To associate MySQL accounts with the PAM plugin, see Using PAM Pluggable Authentication.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để liên kết các tài khoản MySQL với plugin PAM, hãy xem bằng cách sử dụng xác thực PAM pluggable."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                427.3292297979798,
+                378.7441993464052,
+                13.16842866161619
+            ],
+            "text": "Uninstalling PAM Pluggable Authentication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Gỡ cài đặt xác thực PAM PAM"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                455.6629864267677,
+                685.1923852124182,
+                11.971275252525288
+            ],
+            "text": "The method used to uninstall the PAM authentication plugin depends on how you installed it:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phương pháp được sử dụng để gỡ cài đặt plugin xác thực PAM phụ thuộc vào cách bạn đã cài đặt nó:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                482.620978219697,
+                390.0527128267974,
+                11.971275252525174
+            ],
+            "text": "•If you installed the plugin at server startup using a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Nếu bạn đã cài đặt plugin tại máy chủ khởi động bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                530.7389873366013,
+                483.77279608585866,
+                170.83333333333337,
+                10.172361426767566
+            ],
+            "text": "--plugin-load-add",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--Plugin-load-Add"
+        },
+        {
+            "bbox": [
+                701.5723206699347,
+                482.620978219697,
+                186.1749035947713,
+                11.971275252525174
+            ],
+            "text": " option, restart the server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tùy chọn, khởi động lại máy chủ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                498.15128125,
+                135.9297385620915,
+                11.971275252525288
+            ],
+            "text": "without the option.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mà không có tùy chọn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                525.109324810606,
+                352.8210784313726,
+                11.971275252525288
+            ],
+            "text": "•If you installed the plugin at runtime using an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Nếu bạn đã cài đặt plugin vào thời gian chạy bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                493.5073529411765,
+                526.2611426767677,
+                140.68627450980392,
+                10.172361426767736
+            ],
+            "text": "INSTALL PLUGIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cài đặt plugin"
+        },
+        {
+            "bbox": [
+                634.1936274509804,
+                525.109324810606,
+                280.16666666666674,
+                11.971275252525288
+            ],
+            "text": " statement, it remains installed across",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố, nó vẫn được cài đặt trên"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                540.6396278409092,
+                255.9652777777778,
+                11.971275252525231
+            ],
+            "text": "server restarts. To uninstall it, use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Máy chủ khởi động lại. Để gỡ cài đặt nó, sử dụng "
+        },
+        {
+            "bbox": [
+                413.3999183006536,
+                541.7914457070707,
+                160.78434722222215,
+                10.172361426767736
+            ],
+            "text": "UNINSTALL PLUGIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Gỡ cài đặt plugin"
+        },
+        {
+            "bbox": [
+                574.1842152777778,
+                540.6396278409092,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                566.9699236111112,
+                289.41174795751635,
+                8.137917613636375
+            ],
+            "text": "UNINSTALL PLUGIN authentication_pam;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Gỡ cài đặt plugin xác thực_pam;"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                591.9297219065656,
+                324.4878676470588,
+                13.16842866161619
+            ],
+            "text": "Using PAM Pluggable Authentication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Sử dụng xác thực có thể cắm PAM"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                620.2634785353536,
+                783.7899991830066,
+                11.971275252525231
+            ],
+            "text": "This section describes in general terms how to use the PAM authentication plugin to connect from MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phần này mô tả trong các thuật ngữ chung cách sử dụng plugin xác thực PAM để kết nối từ MySQL"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                635.7937815656566,
+                753.9779244281046,
+                11.971275252525288
+            ],
+            "text": "client programs to the server. The following sections provide instructions for using PAM authentication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các chương trình khách hàng đến máy chủ. Các phần sau cung cấp hướng dẫn sử dụng xác thực PAM"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                651.3240845959597,
+                744.6658496732027,
+                11.971275252525231
+            ],
+            "text": "in specific ways. It is assumed that the server is running with the server-side PAM plugin enabled, as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "theo những cách cụ thể. Người ta cho rằng máy chủ đang chạy với plugin PAM phía máy chủ được bật"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                666.8543876262627,
+                396.56781045751626,
+                11.971275252525288
+            ],
+            "text": "described in Installing PAM Pluggable Authentication.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Được mô tả trong việc cài đặt xác thực pam pluggable."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                693.8124311868687,
+                354.69689542483655,
+                11.971275252525231
+            ],
+            "text": "To refer to the PAM authentication plugin in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để tham khảo plugin xác thực PAM trong "
+        },
+        {
+            "bbox": [
+                495.3831699346405,
+                694.9642361111112,
+                150.73529411764707,
+                10.17237436868686
+            ],
+            "text": "IDENTIFIED WITH",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Được xác định với"
+        },
+        {
+            "bbox": [
+                646.1184640522875,
+                693.8124311868687,
+                90.30720629084976,
+                11.971275252525231
+            ],
+            "text": " clause of a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề của a "
+        },
+        {
+            "bbox": [
+                736.4256703431373,
+                694.9642361111112,
+                110.53921568627447,
+                10.17237436868686
+            ],
+            "text": "CREATE USER",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo người dùng"
+        },
+        {
+            "bbox": [
+                846.9648860294118,
+                693.8124311868687,
+                82.85421691176464,
+                11.971275252525231
+            ],
+            "text": " statement,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                709.3427342171717,
+                106.13439542483661,
+                11.971275252525288
+            ],
+            "text": "use the name ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng tên "
+        },
+        {
+            "bbox": [
+                246.82066993464053,
+                710.4945391414142,
+                180.88235294117646,
+                10.172374368686803
+            ],
+            "text": "authentication_pam",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "xác thực_pam"
+        },
+        {
+            "bbox": [
+                427.703022875817,
+                709.3427342171717,
+                107.03880718954241,
+                11.971275252525288
+            ],
+            "text": ". For example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Ví dụ:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                735.6730299873738,
+                96.47060498366014,
+                8.137904671717138
+            ],
+            "text": "CREATE USER ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo người dùng "
+        },
+        {
+            "bbox": [
+                237.15687949346406,
+                735.6730299873738,
+                32.15684599673202,
+                8.137904671717138
+            ],
+            "text": "user",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "người dùng"
+        },
+        {
+            "bbox": [
+                156.76470253267973,
+                748.0972724116161,
+                273.3333199346405,
+                8.137917613636318
+            ],
+            "text": "IDENTIFIED WITH authentication_pam",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Được xác định với xác thực_pam"
+        },
+        {
+            "bbox": [
+                155.15686107026144,
+                760.5215666035353,
+                33.76470755718955,
+                8.137827020202053
+            ],
+            "text": "AS ’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "BẰNG '"
+        },
+        {
+            "bbox": [
+                188.921568627451,
+                760.5215666035353,
+                88.43138929738564,
+                8.137827020202053
+            ],
+            "text": "auth_string",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "Auth_String"
+        },
+        {
+            "bbox": [
+                277.35295792483663,
+                760.5215666035353,
+                16.078431372549005,
+                8.137827020202053
+            ],
+            "text": "’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ";"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                785.3040347222222,
+                506.4035780228758,
+                11.97127525252526
+            ],
+            "text": "The authentication string specifies the following types of information:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chuỗi xác thực Chỉ định các loại thông tin sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                812.2620653409091,
+                731.5686107026145,
+                11.97127525252526
+            ],
+            "text": "•The PAM service name (see How PAM Authentication of MySQL Users Works). Examples in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Tên dịch vụ PAM (xem cách xác thực PAM của người dùng MySQL hoạt động). Ví dụ trong"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                827.7923683712121,
+                321.1331531862745,
+                11.97127525252526
+            ],
+            "text": "following discussion use a service name of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thảo luận sau sử dụng tên dịch vụ của "
+        },
+        {
+            "bbox": [
+                478.5677937091503,
+                828.9442250631314,
+                100.49019607843144,
+                10.17232260101008
+            ],
+            "text": "mysql-unix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql-unix"
+        },
+        {
+            "bbox": [
+                579.0579897875817,
+                827.7923683712121,
+                293.2304256535948,
+                11.97127525252526
+            ],
+            "text": " for authentication using traditional Unix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để xác thực bằng cách sử dụng Unix truyền thống"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                843.3226714015152,
+                121.94485294117649,
+                11.97127525252526
+            ],
+            "text": "passwords, and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mật khẩu, và "
+        },
+        {
+            "bbox": [
+                279.3794934640523,
+                844.4745280934344,
+                100.49019607843138,
+                10.17232260101008
+            ],
+            "text": "mysql-ldap",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql-ldap"
+        },
+        {
+            "bbox": [
+                379.8696895424837,
+                843.3226714015152,
+                230.87622549019613,
+                11.97127525252526
+            ],
+            "text": " for authentication using LDAP.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để xác thực bằng LDAP."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                870.280637310606,
+                771.6474338235294,
+                11.97127525252526
+            ],
+            "text": "•For proxy support, PAM provides a way for a PAM module to return to the server a MySQL user name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Đối với hỗ trợ proxy, PAM cung cấp một cách để mô -đun PAM quay lại máy chủ một tên người dùng MySQL"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                885.8109403409092,
+                765.2161115196078,
+                11.971273958333342
+            ],
+            "text": "other than the external user name passed by the client program when it connects to the server. Use the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khác với tên người dùng bên ngoài được truyền bởi chương trình máy khách khi kết nối với máy chủ. Sử dụng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                901.3412420770202,
+                776.3538251633987,
+                11.97127525252526
+            ],
+            "text": "authentication string to control the mapping from external user names to MySQL user names. If you want",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chuỗi xác thực để kiểm soát ánh xạ từ tên người dùng bên ngoài sang tên người dùng MySQL. Nếu bạn muốn"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                916.8715451073233,
+                766.1540200163399,
+                11.97127525252526
+            ],
+            "text": "to take advantage of proxy user capabilities, the authentication string must include this kind of mapping.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để tận dụng các khả năng của người dùng proxy, chuỗi xác thực phải bao gồm loại ánh xạ này."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "1320",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1320"
+        }
+    ]
+}

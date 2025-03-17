@@ -1,3 +1,1896 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:17b8f9eb81bc3f79b37f2d7c970defb061b30f08ec523e59f9506660ff068ad7
-size 54754
+{
+    "metadata": {
+        "page_hash": "9fc7f2119007f707354726846a13c2c0db1c14593585e3aaec248b53352c4281",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1142,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                463.343529003268,
+                48.370422979798036,
+                128.4599505718955,
+                11.971275252525288
+            ],
+            "text": "The Clone Plugin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Plugin nhân bản"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                50.26186315359476,
+                11.971275252525174
+            ],
+            "text": "where ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ở đâu "
+        },
+        {
+            "bbox": [
+                221.0951964869281,
+                96.11317582070706,
+                100.49019607843138,
+                10.172335542929318
+            ],
+            "text": "clone_user",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "clone_user"
+        },
+        {
+            "bbox": [
+                321.58535906862744,
+                94.96133207070716,
+                642.2998700980392,
+                11.971275252525174
+            ],
+            "text": " is the MySQL user that performs the cloning operation. The user you select to perform",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là người dùng MySQL thực hiện thao tác nhân bản. Người dùng bạn chọn để thực hiện"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                110.49163510101016,
+                406.81779370915035,
+                11.971275252525288
+            ],
+            "text": "the cloning operation can be any MySQL user with the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hoạt động nhân bản có thể là bất kỳ người dùng MySQL nào với "
+        },
+        {
+            "bbox": [
+                577.6511270424837,
+                111.64347885101006,
+                120.58823529411757,
+                10.172335542929432
+            ],
+            "text": "BACKUP_ADMIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Backup_Admin"
+        },
+        {
+            "bbox": [
+                698.2393623366013,
+                110.49163510101016,
+                117.28880718954247,
+                11.971275252525288
+            ],
+            "text": " privilege on *.*.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đặc quyền trên *. *."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                138.17568150252532,
+                423.532679738562,
+                11.971275252525174
+            ],
+            "text": "The following example demonstrates cloning data locally:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ sau đây cho thấy dữ liệu nhân bản cục bộ:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                165.08712121212125,
+                297.4509971405229,
+                8.137904671717251
+            ],
+            "text": "mysql> CLONE LOCAL DATA DIRECTORY = ’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "MySQL> Thư mục dữ liệu cục bộ bản sao = xông"
+        },
+        {
+            "bbox": [
+                468.28433047385624,
+                165.08712121212125,
+                144.70586560457514,
+                8.137904671717251
+            ],
+            "text": "/path/to/clone_dir",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "/path/to/clone_dir"
+        },
+        {
+            "bbox": [
+                612.9901960784314,
+                165.08712121212125,
+                16.078448120915027,
+                8.137904671717251
+            ],
+            "text": "’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ";"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                190.59566982323247,
+                50.26186315359476,
+                11.971275252525174
+            ],
+            "text": "where ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ở đâu "
+        },
+        {
+            "bbox": [
+                221.0951964869281,
+                191.74743592171728,
+                180.88235294117646,
+                10.172413194444403
+            ],
+            "text": "/path/to/clone_dir",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "/path/to/clone_dir"
+        },
+        {
+            "bbox": [
+                401.9775159313725,
+                190.59566982323247,
+                556.732417892157,
+                11.971275252525174
+            ],
+            "text": " is the full path of the local directory that data is cloned to. An absolute path",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là đường dẫn đầy đủ của thư mục cục bộ mà dữ liệu được nhân bản. Một con đường tuyệt đối"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                206.12597285353547,
+                312.5747549019608,
+                11.971275252525288
+            ],
+            "text": "is required, and the specified directory (“",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được yêu cầu và thư mục được chỉ định ("
+        },
+        {
+            "bbox": [
+                469.62416625816996,
+                207.2777389520203,
+                90.44117647058823,
+                10.172413194444516
+            ],
+            "text": "clone_dir",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "clone_dir"
+        },
+        {
+            "bbox": [
+                560.0653427287582,
+                206.12597285353547,
+                19.361111111111086,
+                11.971275252525288
+            ],
+            "text": "”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                565.6425821078432,
+                206.12597285353547,
+                369.5862095588236,
+                11.971275252525288
+            ],
+            "text": ") must not exist, but the specified path must be an",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ") không được tồn tại, nhưng đường dẫn được chỉ định phải là một"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                221.65627588383848,
+                703.7161617647058,
+                11.971275252525288
+            ],
+            "text": "existent path. The MySQL server must have the necessary write access to create the directory.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "con đường tồn tại. Máy chủ MySQL phải có quyền truy cập ghi cần thiết để tạo thư mục."
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                249.34032228535364,
+                37.214869281045765,
+                11.971275252525288
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                277.0243686868688,
+                555.7609791666669,
+                11.971275252525174
+            ],
+            "text": "A local cloning operation does not support cloning of user-created tables or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một hoạt động nhân bản cục bộ không hỗ trợ nhân bản các bảng do người dùng tạo hoặc"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                292.5546717171718,
+                576.2610629084968,
+                11.971275252525288
+            ],
+            "text": "tablespaces that reside outside of the data directory. Attempting to clone such",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không gian bảng nằm bên ngoài thư mục dữ liệu. Cố gắng nhân bản như vậy"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                308.0849747474748,
+                363.0375649509804,
+                11.971275252525288
+            ],
+            "text": "tables or tablespaces causes the following error: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng hoặc không gian bảng gây ra lỗi sau: "
+        },
+        {
+            "bbox": [
+                674.8921401143791,
+                309.2368314393939,
+                241.17642034313724,
+                10.17232260101025
+            ],
+            "text": "ERROR 1086 (HY000): File",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Lỗi 1086 (Hy000): Tệp"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                324.767134469697,
+                10.04901960784315,
+                10.172322601010137
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                321.90359477124184,
+                324.767134469697,
+                281.3725657679739,
+                10.172322601010137
+            ],
+            "text": "/path/to/tablespace_name.ibd",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "/path/to/tablespace_name.ibd"
+        },
+        {
+            "bbox": [
+                603.2761605392158,
+                324.767134469697,
+                160.78431372549016,
+                10.172322601010137
+            ],
+            "text": "’ already exists",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\"Đã tồn tại"
+        },
+        {
+            "bbox": [
+                764.0604742647059,
+                323.6152777777778,
+                165.70833333333326,
+                11.971275252525288
+            ],
+            "text": ". Cloning a tablespace",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Nhân bản một không gian bảng"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                339.1455808080809,
+                620.9289215686276,
+                11.971275252525174
+            ],
+            "text": "with the same path as the source tablespace would cause a conflict and is therefore",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "với cùng một con đường với không gian bảng nguồn sẽ gây ra xung đột và do đó"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                354.6758838383839,
+                78.19812091503269,
+                11.971275252525288
+            ],
+            "text": "prohibited.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bị cấm."
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                382.3599302398991,
+                164.7536932189543,
+                11.971275252525174
+            ],
+            "text": "All other user-created ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tất cả người dùng khác do người dùng tạo ra "
+        },
+        {
+            "bbox": [
+                476.608268382353,
+                383.5117869318183,
+                60.29411764705878,
+                10.172322601010023
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                536.9023860294118,
+                382.3599302398991,
+                213.20668259803927,
+                11.971275252525174
+            ],
+            "text": " tables and tablespaces, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng và không gian bảng, "
+        },
+        {
+            "bbox": [
+                750.109068627451,
+                383.5117869318183,
+                60.29411764705878,
+                10.172322601010023
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                810.4031862745098,
+                382.3599302398991,
+                57.69813766339871,
+                11.971275252525174
+            ],
+            "text": " system",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hệ thống"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                397.8902332702021,
+                606.0563725490194,
+                11.971275252525288
+            ],
+            "text": "tablespace, redo logs, and undo tablespaces are cloned to the specified directory.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không gian bảng, nhật ký làm lại và các không gian bảng được hoàn tác được nhân bản vào thư mục được chỉ định."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                425.5743184974748,
+                780.0886772875817,
+                11.971275252525174
+            ],
+            "text": "If desired, you can start the MySQL server on the cloned directory after the cloning operation is complete.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu muốn, bạn có thể khởi động máy chủ MySQL trên thư mục nhân bản sau khi hoạt động nhân bản hoàn tất."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                452.4857193813132,
+                233.13725490196074,
+                8.137917613636318
+            ],
+            "text": "shell> mysqld_safe --datadir=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "shell> mysqld_safe -datadir ="
+        },
+        {
+            "bbox": [
+                403.9705882352941,
+                452.4857193813132,
+                72.35292442810464,
+                8.137917613636318
+            ],
+            "text": "clone_dir",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "clone_dir"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                477.9942679924243,
+                50.26186315359476,
+                11.971275252525288
+            ],
+            "text": "where ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ở đâu "
+        },
+        {
+            "bbox": [
+                221.0951964869281,
+                479.14608585858593,
+                90.44117647058823,
+                10.17236142676768
+            ],
+            "text": "clone_dir",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "clone_dir"
+        },
+        {
+            "bbox": [
+                311.5363394607843,
+                477.9942679924243,
+                295.10620915032683,
+                11.971275252525288
+            ],
+            "text": " is the directory that data was cloned to.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là thư mục mà dữ liệu đã được nhân bản."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                505.67831439393944,
+                785.4983660130719,
+                11.971275252525231
+            ],
+            "text": "For information about monitoring cloning operation status and progress, see Section 5.6.7.9, “Monitoring",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thông tin về giám sát trạng thái và tiến trình hoạt động nhân bản, xem phần 5.6.7.9, Giám sát"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                521.2086174242424,
+                162.71035906862747,
+                11.971275252525231
+            ],
+            "text": "Cloning Operations”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các hoạt động nhân bản ”"
+        },
+        {
+            "bbox": [
+                319.7598039215686,
+                521.2086174242424,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                549.2485666035354,
+                61.45980224673204,
+                14.365543244949492
+            ],
+            "text": "5.6.7.3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "5.6.7.3"
+        },
+        {
+            "bbox": [
+                157.48824366830067,
+                549.2485666035354,
+                203.23138092320264,
+                14.365543244949492
+            ],
+            "text": "Cloning Remote Data",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Nhân bản dữ liệu từ xa"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                579.6828096590909,
+                781.0264852941177,
+                11.971275252525288
+            ],
+            "text": "The clone plugin supports the following syntax for cloning remote data; that is, cloning data from a remote",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Plugin Clone hỗ trợ cú pháp sau để nhân bản dữ liệu từ xa; nghĩa là, nhân bản dữ liệu từ một điều khiển từ xa"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                595.2131126893939,
+                780.0719121732026,
+                11.971275252525231
+            ],
+            "text": "MySQL server instance (the donor) and transferring it to the MySQL instance where the cloning operation",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phiên bản máy chủ MySQL (nhà tài trợ) và chuyển nó sang thể hiện MySQL trong đó hoạt động nhân bản"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                610.7434157196969,
+                203.84434599673202,
+                11.971275252525288
+            ],
+            "text": "was initiated (the recipient).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đã được bắt đầu (người nhận)."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                637.6548166035354,
+                168.82352941176472,
+                8.137904671717195
+            ],
+            "text": "CLONE INSTANCE FROM ’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Phiên bản sao chép từ"
+        },
+        {
+            "bbox": [
+                339.65686274509807,
+                637.6548166035354,
+                32.15686274509801,
+                8.137904671717195
+            ],
+            "text": "user",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "người dùng"
+        },
+        {
+            "bbox": [
+                371.8137254901961,
+                637.6548166035354,
+                24.117630310457514,
+                8.137904671717195
+            ],
+            "text": "’@’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"@\""
+        },
+        {
+            "bbox": [
+                395.9313558006536,
+                637.6548166035354,
+                32.15686274509807,
+                8.137904671717195
+            ],
+            "text": "host",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "chủ nhà"
+        },
+        {
+            "bbox": [
+                428.08825204248365,
+                637.6548166035354,
+                16.078431372549062,
+                8.137904671717195
+            ],
+            "text": "’:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                444.1666834150327,
+                637.6548166035354,
+                32.15682924836602,
+                8.137904671717195
+            ],
+            "text": "port",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "Cổng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                650.0790590277777,
+                120.58823529411765,
+                8.137917613636432
+            ],
+            "text": "IDENTIFIED BY ’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Được xác định bởi \""
+        },
+        {
+            "bbox": [
+                291.421568627451,
+                650.0790590277777,
+                64.31370874183006,
+                8.137917613636432
+            ],
+            "text": "password",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "mật khẩu"
+        },
+        {
+            "bbox": [
+                355.73527736928105,
+                650.0790590277777,
+                8.039232434640496,
+                8.137917613636432
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                662.5033143939394,
+                168.82352941176472,
+                8.137904671717195
+            ],
+            "text": "[DATA DIRECTORY [=] ’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[Thư mục dữ liệu [=]"
+        },
+        {
+            "bbox": [
+                339.65686274509807,
+                662.5033143939394,
+                72.35294117647055,
+                8.137904671717195
+            ],
+            "text": "clone_dir",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "clone_dir"
+        },
+        {
+            "bbox": [
+                412.0098039215686,
+                662.5033143939394,
+                16.078448120915027,
+                8.137904671717195
+            ],
+            "text": "’]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                674.9275179924243,
+                152.74509803921566,
+                8.137917613636375
+            ],
+            "text": "[REQUIRE [NO] SSL];",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[Yêu cầu [không] SSL];"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                700.4360795454545,
+                50.26186315359476,
+                11.971275252525288
+            ],
+            "text": "where:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ở đâu:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                728.1201647727273,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                729.2719696969698,
+                40.19607843137254,
+                10.17237436868686
+            ],
+            "text": "user",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "người dùng"
+        },
+        {
+            "bbox": [
+                227.77777777777777,
+                728.1201647727273,
+                408.66013071895424,
+                11.971275252525288
+            ],
+            "text": " is the clone user on the donor MySQL server instance.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là người dùng bản sao trên phiên bản máy chủ MySQL của nhà tài trợ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                755.8042111742425,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                756.9560549242424,
+                80.39215686274508,
+                10.172335542929261
+            ],
+            "text": "password",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "mật khẩu"
+        },
+        {
+            "bbox": [
+                267.9738562091503,
+                755.8042111742425,
+                49.34066952614381,
+                11.971275252525231
+            ],
+            "text": " is the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là "
+        },
+        {
+            "bbox": [
+                317.31455923202617,
+                756.9560549242424,
+                40.19607843137254,
+                10.172335542929261
+            ],
+            "text": "user",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "người dùng"
+        },
+        {
+            "bbox": [
+                357.5106376633987,
+                755.8042111742425,
+                80.9783329248366,
+                11.971275252525231
+            ],
+            "text": " password.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mật khẩu."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                783.4882575757576,
+                19.361111111111114,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                784.6401142676768,
+                40.19607843137254,
+                10.172322601010109
+            ],
+            "text": "host",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "chủ nhà"
+        },
+        {
+            "bbox": [
+                227.77777777777777,
+                783.4882575757576,
+                49.34066952614381,
+                11.97127525252526
+            ],
+            "text": " is the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là "
+        },
+        {
+            "bbox": [
+                277.1184473039216,
+                784.6401142676768,
+                80.39215686274508,
+                10.172322601010109
+            ],
+            "text": "hostname",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "tên máy chủ"
+        },
+        {
+            "bbox": [
+                357.5106376633987,
+                783.4882575757576,
+                591.1000816993463,
+                11.97127525252526
+            ],
+            "text": " address of the donor MySQL server instance. Internet Protocol version 6 (IPv6)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Địa chỉ của phiên bản máy chủ MySQL của nhà tài trợ. Giao thức Internet Phiên bản 6 (IPv6)"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                799.0185606060606,
+                771.764689133987,
+                11.97127525252526
+            ],
+            "text": "address format is not supported. An alias to the IPv6 address can be used instead. An IPv4 address can",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng địa chỉ không được hỗ trợ. Thay vào đó, một bí danh đến địa chỉ IPv6 có thể được sử dụng. Một địa chỉ IPv4 có thể"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                814.5488636363636,
+                103.33741830065361,
+                11.97127525252526
+            ],
+            "text": "be used as is.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được sử dụng như là."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                842.2329100378788,
+                19.361111111111114,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                843.384766729798,
+                40.19607843137254,
+                10.172322601010109
+            ],
+            "text": "port",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "Cổng"
+        },
+        {
+            "bbox": [
+                227.77777777777777,
+                842.2329100378788,
+                49.34066952614381,
+                11.97127525252526
+            ],
+            "text": " is the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là "
+        },
+        {
+            "bbox": [
+                277.1184473039216,
+                843.384766729798,
+                40.19607843137254,
+                10.172322601010109
+            ],
+            "text": "port",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cổng"
+        },
+        {
+            "bbox": [
+                317.31455923202617,
+                842.2329100378788,
+                586.4440024509804,
+                11.97127525252526
+            ],
+            "text": " number of the donor MySQL server instance. (The X Protocol port specified by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Số lượng phiên bản máy chủ MySQL của nhà tài trợ. (Cổng giao thức X được chỉ định bởi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                858.915069760101,
+                110.53921568627453,
+                10.172322601010109
+            ],
+            "text": "mysqlx_port",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqlx_port"
+        },
+        {
+            "bbox": [
+                298.12091503267976,
+                857.7632130681818,
+                612.5379566993463,
+                11.97127525252526
+            ],
+            "text": " is not supported. Connecting to the donor MySQL server instance through MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " không được hỗ trợ. Kết nối với phiên bản máy chủ MySQL của nhà tài trợ thông qua MySQL"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                873.2935160984848,
+                219.688316993464,
+                11.97127525252526
+            ],
+            "text": "Router is also not supported.)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bộ định tuyến cũng không được hỗ trợ.)"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                900.9775663825758,
+                19.361111111111114,
+                11.971275252525245
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                902.1294166035353,
+                200.98039215686276,
+                10.172329071969713
+            ],
+            "text": "DATA DIRECTORY [=] ’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thư mục dữ liệu [=]"
+        },
+        {
+            "bbox": [
+                388.562091503268,
+                902.1294166035353,
+                90.44117647058823,
+                10.172329071969713
+            ],
+            "text": "clone_dir",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "clone_dir"
+        },
+        {
+            "bbox": [
+                479.0032679738562,
+                902.1294166035353,
+                10.04901960784315,
+                10.172329071969713
+            ],
+            "text": "’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\""
+        },
+        {
+            "bbox": [
+                489.0522875816994,
+                900.9775663825758,
+                474.76588112745094,
+                11.971275252525245
+            ],
+            "text": " is an optional clause used to specify a directory on the recipient",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là một mệnh đề tùy chọn được sử dụng để chỉ định một thư mục trên người nhận"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                916.5078694128788,
+                750.3435625,
+                11.97127525252526
+            ],
+            "text": "for the data you are cloning. Use this option if you do not want to remove existing data in the recipient",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với dữ liệu bạn đang nhân bản. Sử dụng tùy chọn này nếu bạn không muốn xóa dữ liệu hiện có trong người nhận"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "1113",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1113"
+        }
+    ]
+}

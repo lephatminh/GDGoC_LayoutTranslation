@@ -1,3 +1,1316 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:973da6cd72d2b0bca7474db716af594b417fd00f5c5484b58f08744652983e73
-size 39423
+{
+    "metadata": {
+        "page_hash": "b5db1760a009f714a5009598871f5c5c8a12b6cf6cd9fcc29c22ac7a846eabae",
+        "original_filename": "perl-all-en-5.8.5.pdf",
+        "page_no": 760,
+        "num_pages": 1714,
+        "original_width": 595.276,
+        "original_height": 841.89001,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                97.61913133571655,
+                68.89575605012817,
+                27.042723585362083,
+                10.832049485894345
+            ],
+            "text": "47.3.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PUMMVX+NimbusRomNo9L-Regu-Slant_167",
+                "size": 9.963000297546387
+            },
+            "text_vi": "47.3."
+        },
+        {
+            "bbox": [
+                138.18321068714346,
+                68.89575605012817,
+                709.1008651029103,
+                10.832049485894345
+            ],
+            "text": "A NAMED PIPE (OFTEN REFERRED TO AS A FIFO) IS AN OLD UNIX IPC MECHANISM FOR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PUMMVX+NimbusRomNo9L-Regu-Slant_167",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Một đường ống được đặt tên (thường được gọi là FIFO) là cơ chế IPC UNIX cũ cho"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                83.45096528702129,
+                731.7890364721575,
+                10.832061660881322
+            ],
+            "text": "PROCESSES COMMUNICATING ON THE SAME MACHINE. IT WORKS JUST LIKE A REGULAR,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PUMMVX+NimbusRomNo9L-Regu-Slant_167",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Quá trình giao tiếp trên cùng một máy. Nó hoạt động giống như một thông thường,"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                98.007379847636,
+                807.5980830320726,
+                10.832049485894117
+            ],
+            "text": "CONNECTED ANONYMOUS PIPES, EXCEPT THAT THE PROCESSES RENDEZVOUS USING A FILENAME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PUMMVX+NimbusRomNo9L-Regu-Slant_167",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Các ống ẩn danh được kết nối, ngoại trừ việc các quy trình gặp phải bằng cách sử dụng tên tệp"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                112.5625890845289,
+                282.27156684462335,
+                10.832061660881436
+            ],
+            "text": "AND DON’T HAVE TO BE RELATED.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PUMMVX+NimbusRomNo9L-Regu-Slant_167",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Và don lồng phải có liên quan."
+        },
+        {
+            "bbox": [
+                745.2448364288163,
+                112.5625890845289,
+                182.136671056787,
+                10.832061660881436
+            ],
+            "text": "CHAPTER 47. PERLIPC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PUMMVX+NimbusRomNo9L-Regu-Slant_167",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Chương 47. Perlipc"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                150.96136608153836,
+                162.11659977892614,
+                10.225528154206359
+            ],
+            "text": "#!/usr/bin/perl -w",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "#!/usr/bin/perl -w"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                165.51657531843148,
+                99.0712548464914,
+                10.225540329193336
+            ],
+            "text": "use strict;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "sử dụng nghiêm ngặt;"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                180.07179673031158,
+                99.0712548464914,
+                10.225540329193336
+            ],
+            "text": "use Socket;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "sử dụng ổ cắm;"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                194.6282112909263,
+                450.3066154187302,
+                10.225528154206131
+            ],
+            "text": "my ($remote,$port, $iaddr, $paddr, $proto, $line);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "của tôi ($ Remote, $ Port, $ IAddr, $ paddr, $ proto, $ line);"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                225.24097447123756,
+                63.04534837621543,
+                10.225528154206359
+            ],
+            "text": "$remote",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ điều khiển từ xa"
+        },
+        {
+            "bbox": [
+                214.70109579421984,
+                225.24097447123756,
+                207.1318207856524,
+                10.225528154206359
+            ],
+            "text": "= shift || ’localhost’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "= Shift || Vòng localhost"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                239.79618370813068,
+                45.032395141077444,
+                10.225540329193336
+            ],
+            "text": "$port",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ cổng"
+        },
+        {
+            "bbox": [
+                214.70109579421984,
+                239.79618370813068,
+                144.1036431000074,
+                10.225540329193336
+            ],
+            "text": "= shift || 2345;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "= Shift || 2345;"
+        },
+        {
+            "bbox": [
+                376.81769212936524,
+                239.79618370813068,
+                7.904836999979807,
+                10.225540329193336
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                399.7793754493714,
+                239.79618370813068,
+                94.10531963324576,
+                10.225540329193336
+            ],
+            "text": "random port",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Cổng ngẫu nhiên"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                254.35140512001078,
+                522.3584455781856,
+                10.22554032919345
+            ],
+            "text": "if ($port =~ /\\D/) { $port = getservbyname($port, ’tcp’) }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "if ($ port = ~ /\\ d /) {$ port = getServByName ($ port, hồi tcp,)}"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                268.906626531891,
+                243.17489794649882,
+                10.225528154206245
+            ],
+            "text": "die \"No port\" unless $port;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "chết \"không có cổng\" trừ khi $ cổng;"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                283.4630289175185,
+                54.0388631491947,
+                10.22554032919345
+            ],
+            "text": "$iaddr",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ IADDR"
+        },
+        {
+            "bbox": [
+                214.70109579421984,
+                283.4630289175185,
+                180.11236510459014,
+                10.22554032919345
+            ],
+            "text": "= inet_aton($remote)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "= inet_aton ($ từ xa)"
+        },
+        {
+            "bbox": [
+                529.9106015528931,
+                283.4630289175185,
+                234.1682026488553,
+                10.22554032919345
+            ],
+            "text": "|| die \"no host: $remote\";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "|| chết \"Không có máy chủ: $ từ xa\";"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                298.0182503293987,
+                54.0388631491947,
+                10.225528154206359
+            ],
+            "text": "$paddr",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ paddr"
+        },
+        {
+            "bbox": [
+                214.70109579421984,
+                298.0182503293987,
+                261.17064605325936,
+                10.225528154206359
+            ],
+            "text": "= sockaddr_in($port, $iaddr);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "= sockaddr_in ($ port, $ IAddr);"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                328.63094045978755,
+                54.0388631491947,
+                10.225528154206359
+            ],
+            "text": "$proto",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ proto"
+        },
+        {
+            "bbox": [
+                214.70109579421984,
+                328.63094045978755,
+                216.1382715748661,
+                10.225528154206359
+            ],
+            "text": "= getprotobyname(’tcp’);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "= getProtobyname (TCP TCP);"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                343.18616187166765,
+                378.2548541348888,
+                10.225528154206359
+            ],
+            "text": "socket(SOCK, PF_INET, SOCK_STREAM, $proto)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Ổ cắm (sock, pf_inet, sock_stream, $ proto)"
+        },
+        {
+            "bbox": [
+                529.9106015528931,
+                343.18616187166765,
+                180.12944625686237,
+                10.225528154206359
+            ],
+            "text": "|| die \"socket: $!\";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "|| chết \"Ổ cắm: $!\";"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                357.74256425729527,
+                189.13603824108483,
+                10.225528154206359
+            ],
+            "text": "connect(SOCK, $paddr)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Kết nối (Sock, $ Paddr)"
+        },
+        {
+            "bbox": [
+                358.8047388942272,
+                357.74256425729527,
+                189.11881589380397,
+                10.225528154206359
+            ],
+            "text": "|| die \"connect: $!\";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "|| chết \"Kết nối: $!\";"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                372.2977856691755,
+                297.19657318621955,
+                10.225528154206359
+            ],
+            "text": "while (defined($line = <SOCK>)) {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "while (được xác định ($ line = <cock>)) {"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                386.8529949060685,
+                108.07772802027966,
+                10.22554032919345
+            ],
+            "text": "print $line;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "In $ line;"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                401.40814326802627,
+                9.006478339459363,
+                10.225576854154497
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                432.0221361220333,
+                108.07774007351213,
+                10.225528154206245
+            ],
+            "text": "close (SOCK)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Đóng (Sock)"
+        },
+        {
+            "bbox": [
+                349.7982536672065,
+                432.0221361220333,
+                171.10589709647297,
+                10.225528154206245
+            ],
+            "text": "|| die \"close: $!\";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "|| chết \"Đóng: $!\";"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                446.57732100895225,
+                45.032395141077444,
+                10.225528154206245
+            ],
+            "text": "exit;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "ra;"
+        },
+        {
+            "bbox": [
+                97.61913822327794,
+                477.1052245292707,
+                817.7539231801719,
+                10.916909145887189
+            ],
+            "text": "And here’s a corresponding server to go along with it. We’ll leave the address as INADDR_ANY so that the kernel can",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Và ở đây, một máy chủ tương ứng để đi cùng với nó. Chúng tôi sẽ rời khỏi địa chỉ như inaddr_any để kernel có thể"
+        },
+        {
+            "bbox": [
+                97.61913822327794,
+                491.66039724120253,
+                826.6574221453579,
+                10.91692132087428
+            ],
+            "text": "choose the appropriate interface on multihomed hosts. If you want sit on a particular interface (like the external side of a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Chọn giao diện thích hợp trên máy chủ đa năng. Nếu bạn muốn ngồi trên một giao diện cụ thể (như phía bên ngoài của một"
+        },
+        {
+            "bbox": [
+                97.61913822327794,
+                506.21558212812147,
+                586.3474604637178,
+                10.916909145887075
+            ],
+            "text": "gateway or firewall machine), you should fill this in with your real address instead.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "thay vào đó, cổng hoặc máy tường lửa), thay vào đó, bạn nên điền vào địa chỉ thực của mình."
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                536.914507692044,
+                171.12306778704337,
+                10.225540329193336
+            ],
+            "text": "#!/usr/bin/perl -Tw",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "#!/usr/bin/perl -tw"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                551.4696925789628,
+                99.0712548464914,
+                10.225528154206245
+            ],
+            "text": "use strict;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "sử dụng nghiêm ngặt;"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                566.0248652908947,
+                342.22894766461275,
+                10.225540329193393
+            ],
+            "text": "BEGIN { $ENV{PATH} = ’/usr/ucb:/bin’ }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Bắt đầu {$ env {path} = xông/usr/ucb:/bin triệt}"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                580.5800501778135,
+                99.0712548464914,
+                10.225540329193393
+            ],
+            "text": "use Socket;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "sử dụng ổ cắm;"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                595.1364647384282,
+                81.05830161135341,
+                10.225528154206302
+            ],
+            "text": "use Carp;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "sử dụng cá chép;"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                609.6916374503601,
+                189.13603824108483,
+                10.225540329193393
+            ],
+            "text": "my $EOL = \"\\015\\012\";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ eol của tôi = \"\\ 015 \\ 012\";"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                640.3045223805423,
+                540.3713471566132,
+                10.225528154206302
+            ],
+            "text": "sub logmsg { print \"$0 $$: @_ at \", scalar localtime, \"\n\" }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Sub logmsg {print \"$ 0 $$: @_ tại\", local thời gian vô hướng, \""
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                670.9185030595625,
+                225.1619447113608,
+                10.225540329193393
+            ],
+            "text": "my $port = shift || 2345;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "\"}"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                685.4736879464813,
+                306.2030584132402,
+                10.225528154206245
+            ],
+            "text": "my $proto = getprotobyname(’tcp’);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ port của tôi = shift || 2345;"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                716.0865120017281,
+                252.18136595461604,
+                10.225528154206245
+            ],
+            "text": "($port) = $port =~ /^(\\d+)$/",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ proto của tôi = getProtobyName (TCP TCP);"
+        },
+        {
+            "bbox": [
+                601.9624661501556,
+                716.0865120017281,
+                198.14239949200032,
+                10.225528154206245
+            ],
+            "text": "or die \"invalid port\";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "($ port) = $ port = ~ /^(\\ d+) $ /"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                746.7005048557353,
+                396.2677557133162,
+                10.225528154206302
+            ],
+            "text": "socket(Server, PF_INET, SOCK_STREAM, $proto)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "hoặc chết \"cổng không hợp lệ\";"
+        },
+        {
+            "bbox": [
+                601.9623628367347,
+                746.7005048557353,
+                180.12944625686237,
+                10.225528154206302
+            ],
+            "text": "|| die \"socket: $!\";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Ổ cắm (Máy chủ, PF_Inet, Sock_Stream, $ Proto)"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                761.2557019176412,
+                396.26780737002673,
+                10.225528154206302
+            ],
+            "text": "setsockopt(Server, SOL_SOCKET, SO_REUSEADDR,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "|| chết \"Ổ cắm: $!\";"
+        },
+        {
+            "bbox": [
+                457.8644536315928,
+                775.8108989795472,
+                117.08413576223461,
+                10.225528154206273
+            ],
+            "text": "pack(\"l\", 1))",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "setsockopt (máy chủ, sol_socket, so_reuseaddr,"
+        },
+        {
+            "bbox": [
+                601.9679934181792,
+                775.8108989795472,
+                216.13816826144512,
+                10.225528154206273
+            ],
+            "text": "|| die \"setsockopt: $!\";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Gói (\"L\", 1))"
+        },
+        {
+            "bbox": [
+                133.64282173311204,
+                790.3660960414531,
+                396.2678314764916,
+                10.225540329193365
+            ],
+            "text": "bind(Server, sockaddr_in($port, INADDR_ANY))",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "|| chết \"setsockopt: $!\";"
+        },
+        {
+            "bbox": [
+                601.9624661501556,
+                790.3660960414531,
+                162.1164930217244,
+                10.225540329193365
+            ],
+            "text": "|| die \"bind: $!\";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "BIND (Máy chủ, sockaddr_in ($ port, inaddr_any)))"
+        },
+        {
+            "bbox": [
+                133.64282173311204,
+                804.9212931033592,
+                216.15546637190147,
+                10.225540329193365
+            ],
+            "text": "listen(Server,SOMAXCONN)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "|| chết \"Bind: $!\";"
+        },
+        {
+            "bbox": [
+                601.9624661501556,
+                804.9212931033592,
+                180.12944625686237,
+                10.225540329193365
+            ],
+            "text": "|| die \"listen: $!\";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Nghe (Máy chủ, Somaxconn)"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                835.5353103073405,
+                342.2289993213233,
+                10.225528154206245
+            ],
+            "text": "logmsg \"server started on port $port\";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "|| chết \"Nghe: $!\";"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                866.1480978376261,
+                90.06476961947064,
+                10.225528154206273
+            ],
+            "text": "my $paddr;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "logmsg \"máy chủ bắt đầu trên cổng $ port\";"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                896.7620906916331,
+                198.14250624920206,
+                10.225536676697246
+            ],
+            "text": "$SIG{CHLD} = \\&REAPER;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ paddr của tôi;"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                927.3748879619085,
+                495.33892102150935,
+                10.225531806702406
+            ],
+            "text": "for ( ; $paddr = accept(Client,Server); close Client) {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ Sig {CHLD} = \\ & Reaper;"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                941.9300874588118,
+                351.2354380573046,
+                10.225536676697232
+            ],
+            "text": "my($port,$iaddr) = sockaddr_in($paddr);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "for (; $ paddr = Accept (máy khách, máy chủ); Close Client) {"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                956.4852820857204,
+                369.24839129244253,
+                10.225541546692078
+            ],
+            "text": "my $name = gethostbyaddr($iaddr,AF_INET);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "của tôi (cổng $, $ addr) = sockaddr_in ($ paddr);"
+        },
+        {
+            "bbox": [
+                499.63401808572837,
+                989.2289991658174,
+                25.732755898104415,
+                10.916948105845798
+            ],
+            "text": "760",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ name của tôi = gethostbyaddr ($ IAddr, AF_Inet);"
+        }
+    ]
+}

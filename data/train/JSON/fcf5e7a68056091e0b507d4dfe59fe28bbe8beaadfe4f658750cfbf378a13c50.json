@@ -1,3 +1,1756 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6589038c1b85f0f51013a484103634b6ede60a6eec5e3629fed1d4053ab21d16
-size 49008
+{
+    "metadata": {
+        "page_hash": "fcf5e7a68056091e0b507d4dfe59fe28bbe8beaadfe4f658750cfbf378a13c50",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1501,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                407.60498366013076,
+                48.370422979798036,
+                179.6429738562091,
+                11.971275252525288
+            ],
+            "text": "MySQL Enterprise Audit",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL Enterprise Audit"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                94.96133207070716,
+                274.5894775326798,
+                11.971275252525174
+            ],
+            "text": "A string representing a UTC value in ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một chuỗi đại diện cho một giá trị UTC trong "
+        },
+        {
+            "bbox": [
+                432.0241180555556,
+                96.11317582070706,
+                100.49019607843138,
+                10.172335542929318
+            ],
+            "text": "YYYY-MM-DD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "Yyyy-mm-dd"
+        },
+        {
+            "bbox": [
+                532.514314133987,
+                96.11317582070706,
+                10.049019607843093,
+                10.172335542929318
+            ],
+            "text": "T",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T"
+        },
+        {
+            "bbox": [
+                542.5633337418301,
+                96.11317582070706,
+                80.39215686274508,
+                10.172335542929318
+            ],
+            "text": "hh:mm:ss",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "HH: MM: SS"
+        },
+        {
+            "bbox": [
+                622.9554906045752,
+                96.11317582070706,
+                40.1960784313726,
+                10.172335542929318
+            ],
+            "text": " UTC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": " UTC"
+        },
+        {
+            "bbox": [
+                663.1515690359478,
+                94.96133207070716,
+                261.59272875816987,
+                11.971275252525174
+            ],
+            "text": " format indicating the date and time",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Định dạng cho biết ngày và giờ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                110.49163510101016,
+                735.4709967320262,
+                11.971275252525288
+            ],
+            "text": "when the audit event was generated. For example, the event corresponding to execution of an SQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi sự kiện kiểm toán được tạo ra. Ví dụ: sự kiện tương ứng với việc thực hiện SQL"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                126.02193813131316,
+                287.6364211601307,
+                11.971275252525288
+            ],
+            "text": "statement received from a client has a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố nhận được từ một khách hàng có một "
+        },
+        {
+            "bbox": [
+                445.0710616830065,
+                127.17378188131318,
+                110.53921568627447,
+                10.172335542929318
+            ],
+            "text": "<TIMESTAMP>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "<Dấu thời gian>"
+        },
+        {
+            "bbox": [
+                555.610277369281,
+                126.02193813131316,
+                356.53923243464055,
+                11.971275252525288
+            ],
+            "text": " value occurring after the statement finishes, not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị xảy ra sau khi tuyên bố kết thúc, không"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                141.55224116161617,
+                160.09763071895426,
+                11.971275252525288
+            ],
+            "text": "when it was received.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi nó được nhận."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                168.90373200757585,
+                69.80717279411766,
+                11.971275252525288
+            ],
+            "text": "Example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                195.54849053030307,
+                369.80390482026144,
+                8.137917613636318
+            ],
+            "text": "<TIMESTAMP>2019-10-03T14:09:45 UTC</TIMESTAMP>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<Timestamp> 2019-10-03T14: 09: 45 UTC </Timestamp>"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                220.7244188762627,
+                285.77736928104576,
+                11.971275252525174
+            ],
+            "text": "The following elements are optional in ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các yếu tố sau là tùy chọn trong "
+        },
+        {
+            "bbox": [
+                426.4636437908497,
+                221.8762626262627,
+                140.68627450980387,
+                10.172335542929204
+            ],
+            "text": "<AUDIT_RECORD>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "<Eudit_Record>"
+        },
+        {
+            "bbox": [
+                567.1499183006536,
+                220.7244188762627,
+                359.28598120915046,
+                11.971275252525174
+            ],
+            "text": " elements. Many of them occur only with specific",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các yếu tố. Nhiều người trong số họ chỉ xảy ra với cụ thể"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                237.40656565656582,
+                60.29411764705884,
+                10.172335542929204
+            ],
+            "text": "<NAME>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "<Tên>"
+        },
+        {
+            "bbox": [
+                200.98039215686276,
+                236.2547219065657,
+                121.94485294117646,
+                11.971275252525288
+            ],
+            "text": " element values.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giá trị phần tử."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                263.6062127525254,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                264.7579788510102,
+                150.7352941176471,
+                10.172413194444403
+            ],
+            "text": "<COMMAND_CLASS>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "<Command_Class>"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                290.95762594696976,
+                377.9603423202615,
+                11.971275252525288
+            ],
+            "text": "A string that indicates the type of action performed.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một chuỗi chỉ ra loại hành động được thực hiện."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                318.3091297348486,
+                69.80717279411766,
+                11.971275252525174
+            ],
+            "text": "Example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                344.9539659090909,
+                329.60782638888884,
+                8.137827020202053
+            ],
+            "text": "<COMMAND_CLASS>drop_table</COMMAND_CLASS>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<Dord_Class> drop_table </Command_Class>"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                370.1298424873738,
+                221.5641172385621,
+                11.971275252525288
+            ],
+            "text": "The values correspond to the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các giá trị tương ứng với "
+        },
+        {
+            "bbox": [
+                378.9987577614379,
+                371.28166035353536,
+                140.6862577614379,
+                10.172361426767793
+            ],
+            "text": "statement/sql/",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "tuyên bố/sql/"
+        },
+        {
+            "bbox": [
+                519.6850657679738,
+                371.28166035353536,
+                30.147058823529505,
+                10.172361426767793
+            ],
+            "text": "xxx",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "xxx"
+        },
+        {
+            "bbox": [
+                549.8321245915033,
+                370.1298424873738,
+                258.7622549019608,
+                11.971275252525288
+            ],
+            "text": " command counters. For example, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bộ đếm lệnh. Ví dụ, "
+        },
+        {
+            "bbox": [
+                808.5943794934641,
+                371.28166035353536,
+                30.14705882352939,
+                10.172361426767793
+            ],
+            "text": "xxx",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "xxx"
+        },
+        {
+            "bbox": [
+                838.7414383169935,
+                370.1298424873738,
+                16.74836601307186,
+                11.971275252525288
+            ],
+            "text": " is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                386.81196338383836,
+                100.49019607843141,
+                10.172361426767793
+            ],
+            "text": "drop_table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "drop_table"
+        },
+        {
+            "bbox": [
+                257.9248366013072,
+                385.6601455176768,
+                37.24838276143788,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                295.1732193627451,
+                386.81196338383836,
+                60.29411764705884,
+                10.172361426767793
+            ],
+            "text": "select",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "lựa chọn"
+        },
+        {
+            "bbox": [
+                355.46733700980394,
+                385.6601455176768,
+                28.857417892156832,
+                11.971275252525288
+            ],
+            "text": " for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " vì "
+        },
+        {
+            "bbox": [
+                384.3247549019608,
+                386.81196338383836,
+                100.49019607843144,
+                10.172361426767793
+            ],
+            "text": "DROP TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bàn thả"
+        },
+        {
+            "bbox": [
+                484.8149509803922,
+                385.6601455176768,
+                37.24834926470584,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                522.063300245098,
+                386.81196338383836,
+                60.29411764705878,
+                10.172361426767793
+            ],
+            "text": "SELECT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LỰA CHỌN"
+        },
+        {
+            "bbox": [
+                582.3574178921568,
+                385.6601455176768,
+                292.27570179738564,
+                11.971275252525288
+            ],
+            "text": " statements, respectively. The following",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố, tương ứng. Sau đây"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                401.1904485479798,
+                292.2925171568628,
+                11.971275252525288
+            ],
+            "text": "statement displays the possible names:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố hiển thị các tên có thể:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                427.8352458964647,
+                450.1960616830065,
+                8.137917613636318
+            ],
+            "text": "SELECT REPLACE(EVENT_NAME, ’statement/sql/’, ’’) AS name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn Thay thế (Event_Name, câu lệnh/SQL/,,"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                440.25950126262626,
+                562.7450980392157,
+                8.137904671717251
+            ],
+            "text": "FROM performance_schema.events_statements_summary_global_by_event_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Từ Performance_Schema.Events_Statements_Summary_Global_by_event_name"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                452.6837178030304,
+                313.52942851307193,
+                8.137904671717138
+            ],
+            "text": "WHERE EVENT_NAME LIKE ’statement/sql/%’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Trong đó sự kiện_name giống như câu lệnh/sql/%"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                465.10796022727277,
+                112.54901960784312,
+                8.137917613636318
+            ],
+            "text": "ORDER BY name;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt hàng theo tên;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                490.28391445707075,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                491.4357323232323,
+                231.12745098039218,
+                10.17236142676768
+            ],
+            "text": "<CONNECTION_ATTRIBUTES>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "<Connection_Attribution>"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                517.635379419192,
+                261.59272875817,
+                11.971275252525288
+            ],
+            "text": "As of MySQL 8.0.19, events with a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kể từ MySQL 8.0.19, các sự kiện có "
+        },
+        {
+            "bbox": [
+                419.02736928104576,
+                518.7871843434343,
+                150.73529411764702,
+                10.172374368686917
+            ],
+            "text": "<COMMAND_CLASS>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "<Command_Class>"
+        },
+        {
+            "bbox": [
+                569.7626633986928,
+                517.635379419192,
+                67.96490277777775,
+                11.971275252525288
+            ],
+            "text": " value of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị của "
+        },
+        {
+            "bbox": [
+                637.7275159313725,
+                518.7871843434343,
+                70.34313725490199,
+                10.172374368686917
+            ],
+            "text": "connect",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "kết nối"
+        },
+        {
+            "bbox": [
+                708.0706531862745,
+                517.635379419192,
+                107.97671568627447,
+                11.971275252525288
+            ],
+            "text": " may include a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có thể bao gồm a"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                534.3174873737374,
+                231.12745098039218,
+                10.17237436868686
+            ],
+            "text": "<CONNECTION_ATTRIBUTES>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "<Connection_Attribution>"
+        },
+        {
+            "bbox": [
+                388.562091503268,
+                533.1656824494951,
+                498.062908496732,
+                11.971275252525231
+            ],
+            "text": " element to display the connection attributes passed by the client at",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phần tử để hiển thị các thuộc tính kết nối được truyền bởi máy khách tại"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                548.6959854797981,
+                756.7916499183008,
+                11.971275252525288
+            ],
+            "text": "connect time. (For information about these attributes, which are also exposed in Performance Schema",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kết nối thời gian. (Để biết thông tin về các thuộc tính này, cũng được phơi bày trong lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                564.2262885101011,
+                623.3406695261438,
+                11.971275252525231
+            ],
+            "text": "tables, see Section 27.12.9, “Performance Schema Connection Attribute Tables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các bảng, xem Phần 27.12.9, Bảng kết nối Lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                753.2075163398694,
+                564.2262885101011,
+                10.233234885620845,
+                11.971275252525231
+            ],
+            "text": ".)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ".)"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                591.5777405303031,
+                33.51348039215688,
+                11.971275252525231
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                190.9481209150327,
+                592.7295454545456,
+                231.12746772875818,
+                10.172374368686803
+            ],
+            "text": "<CONNECTION_ATTRIBUTES>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "<Connection_Attribution>"
+        },
+        {
+            "bbox": [
+                422.0755551470588,
+                591.5777405303031,
+                168.5053272058824,
+                11.971275252525231
+            ],
+            "text": " element contains one ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phần tử chứa một "
+        },
+        {
+            "bbox": [
+                590.5808823529412,
+                592.7295454545456,
+                110.53921568627447,
+                10.172374368686803
+            ],
+            "text": "<ATTRIBUTE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "<Thuộc tính>"
+        },
+        {
+            "bbox": [
+                701.1200980392157,
+                591.5777405303031,
+                222.50199223856214,
+                11.971275252525231
+            ],
+            "text": " element per attribute, each of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phần tử trên mỗi thuộc tính, mỗi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                607.1080435606061,
+                114.4918300653595,
+                11.971275252525231
+            ],
+            "text": "which contains ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trong đó chứa "
+        },
+        {
+            "bbox": [
+                271.9264705882353,
+                608.2598484848486,
+                60.29411764705884,
+                10.172374368686803
+            ],
+            "text": "<NAME>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "<Tên>"
+        },
+        {
+            "bbox": [
+                332.22058823529414,
+                607.1080435606061,
+                37.24838276143788,
+                11.971275252525231
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                369.468970996732,
+                608.2598484848486,
+                70.34313725490199,
+                10.172374368686803
+            ],
+            "text": "<VALUE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "<Giá trị>"
+        },
+        {
+            "bbox": [
+                439.812108251634,
+                607.1080435606061,
+                472.906779003268,
+                11.971275252525231
+            ],
+            "text": " elements to indicate the attribute name and value, respectively.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các phần tử để chỉ ra tên và giá trị thuộc tính tương ứng."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                634.4594567550505,
+                69.80717279411766,
+                11.971275252525231
+            ],
+            "text": "Example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                661.1042541035354,
+                184.9019440359477,
+                8.137917613636375
+            ],
+            "text": "<CONNECTION_ATTRIBUTES>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<Connection_Attribution>"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                673.5285094696969,
+                96.47060498366014,
+                8.137917613636432
+            ],
+            "text": " <ATTRIBUTE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " <Thuộc tính>"
+        },
+        {
+            "bbox": [
+                173.51307189542484,
+                685.9527648358587,
+                136.66666666666663,
+                8.13790467171708
+            ],
+            "text": "<NAME>_pid</NAME>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<Tên> _Pid </name>"
+        },
+        {
+            "bbox": [
+                173.51307189542484,
+                698.377007260101,
+                160.7843304738562,
+                8.137917613636375
+            ],
+            "text": "<VALUE>42794</VALUE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<value> 42794 </value>"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                710.8012626262627,
+                104.50978717320262,
+                8.137904671717195
+            ],
+            "text": " </ATTRIBUTE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " </Thuộc tính>"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                723.2254662247475,
+                96.47060498366014,
+                8.137917613636375
+            ],
+            "text": " <ATTRIBUTE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " <Thuộc tính>"
+        },
+        {
+            "bbox": [
+                173.51307189542484,
+                735.6497215909092,
+                128.62743423202613,
+                8.137917613636375
+            ],
+            "text": "<NAME>_os</NAME>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<Tên> _os </name>"
+        },
+        {
+            "bbox": [
+                173.51307189542484,
+                748.0739769570707,
+                192.94117647058823,
+                8.137904671717138
+            ],
+            "text": "<VALUE>macos0.14</VALUE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<value> macOS0.14 </value>"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                760.4982582070706,
+                104.50978717320262,
+                8.137839962121234
+            ],
+            "text": " </ATTRIBUTE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " </Thuộc tính>"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                772.9224747474748,
+                96.47060498366014,
+                8.137827020202025
+            ],
+            "text": " <ATTRIBUTE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " <Thuộc tính>"
+        },
+        {
+            "bbox": [
+                173.51307189542484,
+                785.346768939394,
+                176.86274509803923,
+                8.137827020202025
+            ],
+            "text": "<NAME>_platform</NAME>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<Tên> _Platform </name>"
+        },
+        {
+            "bbox": [
+                173.51307189542484,
+                797.7709725378788,
+                168.82351266339867,
+                8.137839962121234
+            ],
+            "text": "<VALUE>x86_64</VALUE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<value> x86_64 </value>"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                810.1952667297979,
+                104.50978717320262,
+                8.137827020202025
+            ],
+            "text": " </ATTRIBUTE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " </Thuộc tính>"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                822.6194703282829,
+                96.47060498366014,
+                8.137839962121234
+            ],
+            "text": " <ATTRIBUTE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " <Thuộc tính>"
+        },
+        {
+            "bbox": [
+                173.51307189542484,
+                835.0436868686869,
+                225.0980392156863,
+                8.137827020201996
+            ],
+            "text": "<NAME>_client_version</NAME>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<Tên> _Client_Version </name>"
+        },
+        {
+            "bbox": [
+                173.51307189542484,
+                847.467981060606,
+                168.82351266339867,
+                8.137827020202025
+            ],
+            "text": "<VALUE>8.0.19</VALUE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<Giá trị> 8.0.19 </giá trị>"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                859.8921846590908,
+                104.50978717320262,
+                8.137839962121234
+            ],
+            "text": " </ATTRIBUTE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " </Thuộc tính>"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                872.3164788510101,
+                96.47060498366014,
+                8.137827020202025
+            ],
+            "text": " <ATTRIBUTE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " <Thuộc tính>"
+        },
+        {
+            "bbox": [
+                173.51307189542484,
+                884.7406824494949,
+                200.98040890522878,
+                8.137839962121205
+            ],
+            "text": "<NAME>_client_name</NAME>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<Tên> _Client_Name </name>"
+        },
+        {
+            "bbox": [
+                173.51307189542484,
+                897.164897695707,
+                184.9019607843137,
+                8.137832196969683
+            ],
+            "text": "<VALUE>libmysql</VALUE>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "<valge> libmysql </value>"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "1472",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1472"
+        }
+    ]
+}

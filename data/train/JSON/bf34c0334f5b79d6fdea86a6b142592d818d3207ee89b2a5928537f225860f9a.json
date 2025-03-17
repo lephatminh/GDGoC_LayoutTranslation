@@ -1,3 +1,1096 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:78a6b775d8dcc3ccc69c660afda535f005e52c70e2a34917ed87b22924ffe239
-size 35939
+{
+    "metadata": {
+        "page_hash": "bf34c0334f5b79d6fdea86a6b142592d818d3207ee89b2a5928537f225860f9a",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3775,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                419.7140690359477,
+                48.370422979798036,
+                155.42485334967324,
+                11.971275252525288
+            ],
+            "text": "Distributed Recovery",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phục hồi phân phối"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                94.96133207070716,
+                247.60784313725495,
+                11.971275252525174
+            ],
+            "text": "Joining member leaves the group",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "Tham gia thành viên rời khỏi nhóm"
+        },
+        {
+            "bbox": [
+                405.04248366013076,
+                94.96133207070716,
+                466.34155351307186,
+                11.971275252525174
+            ],
+            "text": " - The joining member leaves the group or Group Replication is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " - Thành viên tham gia rời khỏi nhóm hoặc sao chép nhóm là"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                110.49163510101016,
+                484.04454289215687,
+                11.971275252525288
+            ],
+            "text": "stopped on the joining member while state transfer is in progress.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Dừng lại trên thành viên tham gia trong khi chuyển giao nhà nước đang được tiến hành."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                141.55224116161617,
+                738.2345273692811,
+                11.971275252525288
+            ],
+            "text": "If the joining member left the group unintentionally, so in any situation listed above except the last, it",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu thành viên tham gia rời khỏi nhóm một cách vô tình, thì trong mọi tình huống được liệt kê ở trên ngoại trừ lần cuối cùng, nó"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                157.08254419191928,
+                326.77735253267974,
+                11.971275252525174
+            ],
+            "text": "proceeds to take the action specified by the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tiến hành thực hiện hành động được chỉ định bởi "
+        },
+        {
+            "bbox": [
+                467.46362704248367,
+                158.23438794191918,
+                351.7156862745098,
+                10.172335542929318
+            ],
+            "text": "group_replication_exit_state_action",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_exit_state_action"
+        },
+        {
+            "bbox": [
+                819.1793133169934,
+                157.08254419191928,
+                57.6981376633986,
+                11.971275252525174
+            ],
+            "text": " system",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hệ thống"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                172.61284722222229,
+                63.29207516339872,
+                11.971275252525288
+            ],
+            "text": "variable.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "biến."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                204.0293819444446,
+                72.63430702614379,
+                14.36550441919178
+            ],
+            "text": "18.5.3.5",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "18.5.3.5"
+        },
+        {
+            "bbox": [
+                138.5156779003268,
+                204.0293819444446,
+                317.1671484885621,
+                14.36550441919178
+            ],
+            "text": "How Distributed Recovery Works",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Cách phục hồi phân tán hoạt động"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                237.8401458333334,
+                767.9125816993464,
+                11.971275252525288
+            ],
+            "text": "When Group Replication’s distributed recovery process is carrying out state transfer from the binary log,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi quá trình phục hồi phân tán của nhóm sao chép đang thực hiện chuyển trạng thái từ nhật ký nhị phân,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                253.3704488636365,
+                760.5265020424836,
+                11.971275252525174
+            ],
+            "text": "to synchronize the joining member with the donor up to a specific point in time, the joining member and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để đồng bộ hóa thành viên tham gia với nhà tài trợ cho đến một thời điểm cụ thể, thành viên tham gia và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                268.9007518939395,
+                728.4868611111112,
+                11.971275252525174
+            ],
+            "text": "donor make use of GTIDs (see Section 17.1.3, “Replication with Global Transaction Identifiers”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhà tài trợ sử dụng GTIDS (xem Phần 17.1.3, Bản sao của Hồi với các định danh giao dịch toàn cầu"
+        },
+        {
+            "bbox": [
+                841.6053921568628,
+                268.9007518939395,
+                85.61764705882354,
+                11.971275252525174
+            ],
+            "text": "). However,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Tuy nhiên,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                284.4310549242425,
+                786.5367647058824,
+                11.971275252525288
+            ],
+            "text": "GTIDs only provide a means to realize which transactions the joining member is missing. They do not help",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "GTID chỉ cung cấp một phương tiện để nhận ra các giao dịch nào mà thành viên tham gia bị thiếu. Họ không giúp"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                299.9613579545455,
+                762.3856376633987,
+                11.971275252525288
+            ],
+            "text": "marking a specific point in time to which the server joining the group must catch up, nor do they convey",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đánh dấu một thời điểm cụ thể theo thời gian mà máy chủ tham gia nhóm phải bắt kịp, họ cũng không truyền tải"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                315.4916609848485,
+                779.9880866013073,
+                11.971275252525288
+            ],
+            "text": "certification information. This is the job of binary log view markers, which mark view changes in the binary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin chứng nhận. Đây là công việc của các điểm đánh dấu chế độ xem nhật ký nhị phân, mà đánh dấu chế độ xem thay đổi trong nhị phân"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                331.02196401515164,
+                770.7430555555557,
+                11.971275252525174
+            ],
+            "text": "log stream, and also contain additional metadata information, supplying the joining member with missing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "luồng nhật ký và cũng chứa thông tin siêu dữ liệu bổ sung, cung cấp cho thành viên tham gia bị mất tích"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                346.55226704545464,
+                183.3778427287582,
+                11.971275252525288
+            ],
+            "text": "certification-related data.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Dữ liệu liên quan đến chứng nhận."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                377.61287310606065,
+                788.4963905228758,
+                11.971275252525174
+            ],
+            "text": "This topic explains the role of view changes and the view change identifier, and the steps to carry out state",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chủ đề này giải thích vai trò của các thay đổi quan điểm và định danh thay đổi quan điểm và các bước để thực hiện trạng thái"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                393.14317613636365,
+                204.78225449346405,
+                11.971275252525288
+            ],
+            "text": "transfer from the binary log.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chuyển từ nhật ký nhị phân."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                424.3810476641414,
+                209.89554738562094,
+                13.16842866161619
+            ],
+            "text": "View and View Changes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Xem và xem các thay đổi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                456.81740561868685,
+                15.827200857843138,
+                11.971275252525288
+            ],
+            "text": "A ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MỘT "
+        },
+        {
+            "bbox": [
+                156.51347536764706,
+                456.81740561868685,
+                33.49673705065359,
+                11.971275252525288
+            ],
+            "text": "view",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "xem"
+        },
+        {
+            "bbox": [
+                190.01021241830065,
+                456.81740561868685,
+                742.8234791666667,
+                11.971275252525288
+            ],
+            "text": " corresponds to a group of members participating actively in the current configuration, in other words",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tương ứng với một nhóm các thành viên tham gia tích cực trong cấu hình hiện tại, nói cách khác"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                472.34770864898996,
+                592.0547385620914,
+                11.971275252525174
+            ],
+            "text": "at a specific point in time. They are functioning correctly and online in the group.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tại một thời điểm cụ thể. Họ đang hoạt động chính xác và trực tuyến trong nhóm."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                503.40831470959597,
+                15.827200857843138,
+                11.971275252525288
+            ],
+            "text": "A ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MỘT "
+        },
+        {
+            "bbox": [
+                156.51347536764706,
+                503.40831470959597,
+                93.0874233251634,
+                11.971275252525288
+            ],
+            "text": "view change",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "Xem thay đổi"
+        },
+        {
+            "bbox": [
+                249.60089869281046,
+                503.40831470959597,
+                670.2528092320262,
+                11.971275252525288
+            ],
+            "text": " occurs when a modification to the group configuration happens, such as a member joining",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " xảy ra khi sửa đổi cấu hình nhóm xảy ra, chẳng hạn như thành viên tham gia"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                518.938617739899,
+                757.7463067810456,
+                11.971275252525231
+            ],
+            "text": "or leaving. Any group membership change results in an independent view change communicated to all",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hoặc rời đi. Bất kỳ thay đổi thành viên trong nhóm nào cũng có kết quả thay đổi quan điểm độc lập được truyền đạt cho tất cả"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                534.468920770202,
+                313.68011356209155,
+                11.971275252525288
+            ],
+            "text": "members at the same logical point in time.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các thành viên tại cùng một thời điểm logic."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                565.5295268308081,
+                15.827200857843138,
+                11.971275252525288
+            ],
+            "text": "A ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MỘT "
+        },
+        {
+            "bbox": [
+                156.51347536764706,
+                565.5295268308081,
+                101.44485796568631,
+                11.971275252525288
+            ],
+            "text": "view identifier",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "Xem nhận dạng"
+        },
+        {
+            "bbox": [
+                257.95831658496735,
+                565.5295268308081,
+                567.8700980392157,
+                11.971275252525288
+            ],
+            "text": " uniquely identifies a view. It is generated whenever a view change happens.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " xác định duy nhất một quan điểm. Nó được tạo ra bất cứ khi nào một thay đổi xem xảy ra."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                596.5901328914142,
+                760.4763071895425,
+                11.971275252525231
+            ],
+            "text": "At the group communication layer, view changes with their associated view identifiers mark boundaries",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ở lớp giao tiếp nhóm, xem các thay đổi với các định danh xem liên quan của họ đánh dấu ranh giới"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                612.1204359217172,
+                754.0616495098038,
+                11.971275252525231
+            ],
+            "text": "between the data exchanged before and after a member joins. This concept is implemented through a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "giữa dữ liệu được trao đổi trước và sau khi một thành viên tham gia. Khái niệm này được thực hiện thông qua một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                627.6507389520202,
+                757.5285780228758,
+                11.971275252525231
+            ],
+            "text": "binary log event: the\"view change log event\". The view identifier is recorded to demarcate transactions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sự kiện nhật ký nhị phân: Sự kiện \"Chế độ xem thay đổi\". Định danh xem được ghi lại để phân định các giao dịch"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                643.1810419823232,
+                528.7794117647059,
+                11.971275252525231
+            ],
+            "text": "transmitted before and after changes happen in the group membership.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Truyền trước và sau khi thay đổi xảy ra trong tư cách thành viên nhóm."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                674.2416480429292,
+                781.8974338235294,
+                11.971275252525288
+            ],
+            "text": "The view identifier itself is built from two parts: a randomly generated part, and a monotonically increasing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bản thân định danh chế độ xem được xây dựng từ hai phần: một phần được tạo ngẫu nhiên và tăng đơn điệu"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                689.7719510732323,
+                759.655654003268,
+                11.971275252525231
+            ],
+            "text": "integer. The randomly generated part is generated when the group is created, and remains unchanged",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số nguyên. Phần được tạo ngẫu nhiên được tạo khi nhóm được tạo và vẫn không thay đổi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                705.3022541035353,
+                749.3386940359478,
+                11.971275252525288
+            ],
+            "text": "while there is at least one member in the group. The integer is incremented every time a view change",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong khi có ít nhất một thành viên trong nhóm. Số nguyên được tăng lên mỗi khi xem thay đổi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                720.8325571338385,
+                780.1054424019608,
+                11.971275252525231
+            ],
+            "text": "happens. Using these two different parts enables the view identifier to identify incremental group changes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "xảy ra. Sử dụng hai phần khác nhau này cho phép định danh xem để xác định các thay đổi nhóm gia tăng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                736.3628601641415,
+                791.2430388071896,
+                11.971275252525288
+            ],
+            "text": "caused by members joining or leaving, and also to identify the situation where all members leave the group",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "do các thành viên tham gia hoặc rời đi, và cũng để xác định tình huống tất cả các thành viên rời khỏi nhóm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                751.8932020202021,
+                771.6977291666667,
+                11.971275252525231
+            ],
+            "text": "in a full group shutdown, so no information remains of what view the group was in. Randomly generating",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong một nhóm đóng cửa đầy đủ, vì vậy không có thông tin nào về những gì xem nhóm."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                767.4235050505051,
+                752.2026143790849,
+                11.97127525252526
+            ],
+            "text": "part of the identifier when the group is started from the beginning ensures that the data markers in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "một phần của mã định danh khi nhóm được bắt đầu từ đầu đảm bảo rằng các điểm đánh dấu dữ liệu trong"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                782.9538080808081,
+                786.6205735294118,
+                11.97127525252526
+            ],
+            "text": "binary log remain unique, and an identical identifier is not reused after a full group shutdown, as this would",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhật ký nhị phân vẫn duy nhất và một mã định danh giống hệt"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                798.4841111111111,
+                379.7859644607843,
+                11.97127525252526
+            ],
+            "text": "cause issues with distributed recovery in the future.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "gây ra các vấn đề với sự phục hồi phân tán trong tương lai."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                829.7219696969697,
+                178.115506127451,
+                13.16838983585859
+            ],
+            "text": "Begin: Stable Group",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Bắt đầu: Nhóm ổn định"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                862.1582888257576,
+                775.3656213235295,
+                11.97127525252526
+            ],
+            "text": "All servers are online and processing incoming transactions from the group. Some servers may be a little",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tất cả các máy chủ là trực tuyến và xử lý các giao dịch đến từ nhóm. Một số máy chủ có thể là một chút"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                877.6885918560606,
+                785.6993464052289,
+                11.97127525252526
+            ],
+            "text": "behind in terms of transactions replicated, but eventually they converge. The group acts as one distributed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đằng sau về các giao dịch được nhân rộng, nhưng cuối cùng chúng hội tụ. Nhóm hoạt động như một phân phối"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                893.2188948863636,
+                183.41137295751633,
+                11.97127266414141
+            ],
+            "text": "and replicated database.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và cơ sở dữ liệu nhân rộng."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3746",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3746"
+        }
+    ]
+}

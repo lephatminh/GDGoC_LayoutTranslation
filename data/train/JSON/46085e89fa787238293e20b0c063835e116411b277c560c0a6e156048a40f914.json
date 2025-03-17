@@ -1,3 +1,1096 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:9e85e6bb00782a1115a1399a5f7a9a8eeaf6c7256493abb55ab46f3a3ca9a5e1
-size 34153
+{
+    "metadata": {
+        "page_hash": "46085e89fa787238293e20b0c063835e116411b277c560c0a6e156048a40f914",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 2819,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                327.5478108660131,
+                48.370422979798036,
+                339.75731944444436,
+                11.971275252525288
+            ],
+            "text": "Prepared Statements in Application Programs",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Báo cáo chuẩn bị trong các chương trình ứng dụng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                286.69851266339873,
+                11.971275252525174
+            ],
+            "text": "•Prepared Statements in SQL Scripts",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các câu lệnh được chuẩn bị trong tập lệnh SQL"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                122.68676672979802,
+                511.9305555555556,
+                11.971275252525174
+            ],
+            "text": "•PREPARE, EXECUTE, and DEALLOCATE PREPARE Statements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Chuẩn bị, thực hiện và giải quyết các tuyên bố chuẩn bị"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                150.41229198232327,
+                363.03759844771247,
+                11.971275252525288
+            ],
+            "text": "•SQL Syntax Permitted in Prepared Statements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Cú pháp SQL được phép trong các câu lệnh đã chuẩn bị"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                178.8495192550506,
+                512.074591503268,
+                16.759798295454516
+            ],
+            "text": "Prepared Statements in Application Programs",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Báo cáo chuẩn bị trong các chương trình ứng dụng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                212.07534722222226,
+                788.4293300653594,
+                11.971275252525174
+            ],
+            "text": "You can use server-side prepared statements through client programming interfaces, including the MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể sử dụng các câu lệnh được chuẩn bị phía máy chủ thông qua các giao diện lập trình máy khách, bao gồm cả MySQL"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                227.60565025252527,
+                12.092321936274516,
+                11.971275252525288
+            ],
+            "text": "C",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "C"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                227.60565025252527,
+                754.8488729575164,
+                11.971275252525288
+            ],
+            "text": "API client library for C programs, MySQL Connector/J for Java programs, and MySQL Connector/NET",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thư viện máy khách API cho các chương trình C, Trình kết nối MySQL/J cho các chương trình Java và Trình kết nối MYSQL/NET"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                243.13595328282827,
+                771.6809640522877,
+                11.971275252525288
+            ],
+            "text": "for programs using .NET technologies. For example, the C API provides a set of function calls that make",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các chương trình sử dụng .NET Technologies. Ví dụ: API C cung cấp một tập hợp các cuộc gọi chức năng tạo ra"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                258.66625631313127,
+                767.108693627451,
+                11.971275252525288
+            ],
+            "text": "up its prepared statement API. See C API Prepared Statement Interface. Other language interfaces can",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "lên API tuyên bố đã chuẩn bị của nó. Xem giao diện câu lệnh API C. Các giao diện ngôn ngữ khác có thể"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                274.1965593434344,
+                772.6356376633987,
+                11.971275252525174
+            ],
+            "text": "provide support for prepared statements that use the binary protocol by linking in the C client library, one",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cung cấp hỗ trợ cho các câu lệnh đã chuẩn bị sử dụng giao thức nhị phân bằng cách liên kết trong thư viện máy khách C, một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                289.7268623737374,
+                141.50692769607844,
+                11.971275252525174
+            ],
+            "text": "example being the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ví dụ là "
+        },
+        {
+            "bbox": [
+                282.1932357026144,
+                290.8787190656566,
+                60.29411764705884,
+                10.172322601010023
+            ],
+            "text": "mysqli",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqli"
+        },
+        {
+            "bbox": [
+                342.48735334967324,
+                289.7268623737374,
+                324.90155228758164,
+                11.971275252525174
+            ],
+            "text": " extension, available in PHP 5.0 and higher.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tiện ích mở rộng, có sẵn trong PHP 5.0 trở lên."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                318.1641025883839,
+                402.6441511437909,
+                16.759798295454516
+            ],
+            "text": "Prepared Statements in SQL Scripts",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Các câu lệnh được chuẩn bị trong tập lệnh SQL"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                351.3899305555557,
+                780.0886772875817,
+                11.971275252525174
+            ],
+            "text": "An alternative SQL interface to prepared statements is available. This interface is not as efficient as using",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một giao diện SQL thay thế cho các câu lệnh đã chuẩn bị có sẵn. Giao diện này không hiệu quả như sử dụng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                366.92023358585857,
+                787.5416164215687,
+                11.971275252525288
+            ],
+            "text": "the binary protocol through a prepared statement API, but requires no programming because it is available",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giao thức nhị phân thông qua API câu lệnh đã chuẩn bị, nhưng không yêu cầu lập trình vì nó có sẵn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                382.45053661616157,
+                181.51879084967322,
+                11.971275252525288
+            ],
+            "text": "directly at the SQL level:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trực tiếp ở cấp độ SQL:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                410.1760101010101,
+                505.4656695261438,
+                11.971275252525288
+            ],
+            "text": "•You can use it when no programming interface is available to you.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Bạn có thể sử dụng nó khi không có giao diện lập trình nào có sẵn cho bạn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                437.9014965277778,
+                768.9509803921569,
+                11.971275252525288
+            ],
+            "text": "•You can use it from any program that can send SQL statements to the server to be executed, such as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Bạn có thể sử dụng nó từ bất kỳ chương trình nào có thể gửi các câu lệnh SQL đến máy chủ để được thực thi, chẳng hạn như"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                453.4317995580809,
+                27.93627450980395,
+                11.971275252525174
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                185.37091503267976,
+                454.58360448232327,
+                50.24508129084967,
+                10.17237436868686
+            ],
+            "text": "mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql"
+        },
+        {
+            "bbox": [
+                235.61599632352943,
+                453.4317995580809,
+                115.41300694444442,
+                11.971275252525174
+            ],
+            "text": " client program.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Chương trình khách hàng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                481.1572730429293,
+                564.1184808006537,
+                11.971275252525288
+            ],
+            "text": "•You can use it even if the client is using an old version of the client library.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Bạn có thể sử dụng nó ngay cả khi máy khách đang sử dụng phiên bản cũ của thư viện máy khách."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                508.882759469697,
+                649.8031213235295,
+                11.971275252525231
+            ],
+            "text": "SQL syntax for prepared statements is intended to be used for situations such as these:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cú pháp SQL cho các câu lệnh đã chuẩn bị được dự định sẽ được sử dụng cho các tình huống như sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                536.6082329545454,
+                565.0396241830065,
+                11.971275252525231
+            ],
+            "text": "•To test how prepared statements work in your application before coding it.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Để kiểm tra cách các câu lệnh được chuẩn bị trong ứng dụng của bạn trước khi mã hóa nó."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                564.3336676136364,
+                767.0751633986929,
+                11.971275252525231
+            ],
+            "text": "•To use prepared statements when you do not have access to a programming API that supports them.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Để sử dụng các câu lệnh đã chuẩn bị khi bạn không có quyền truy cập vào API lập trình hỗ trợ chúng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                592.0591540404041,
+                560.3668133169936,
+                11.971275252525231
+            ],
+            "text": "•To interactively troubleshoot application issues with prepared statements.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Để tương tác khắc phục sự cố ứng dụng với các câu lệnh đã chuẩn bị."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                619.7846275252525,
+                761.4980245098038,
+                11.971275252525288
+            ],
+            "text": "•To create a test case that reproduces a problem with prepared statements, so that you can file a bug",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Để tạo trường hợp kiểm tra tái tạo một vấn đề với các câu lệnh đã chuẩn bị, để bạn có thể nộp lỗi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                635.3149305555555,
+                48.4027777777778,
+                11.971275252525231
+            ],
+            "text": "report.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "báo cáo."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                663.7522095959596,
+                711.3566825980392,
+                16.759798295454573
+            ],
+            "text": "PREPARE, EXECUTE, and DEALLOCATE PREPARE Statements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Chuẩn bị, thực thi và giải quyết các tuyên bố chuẩn bị"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                696.9779987373738,
+                531.5596405228757,
+                11.971275252525288
+            ],
+            "text": "SQL syntax for prepared statements is based on three SQL statements:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cú pháp SQL cho các câu lệnh được chuẩn bị dựa trên ba câu lệnh SQL:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                724.7034722222222,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                725.8552900883839,
+                70.34313725490196,
+                10.17236142676768
+            ],
+            "text": "PREPARE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHUẨN BỊ"
+        },
+        {
+            "bbox": [
+                227.77777777777777,
+                724.7034722222222,
+                621.4816343954249,
+                11.971275252525231
+            ],
+            "text": " prepares a statement for execution (see Section 13.5.1, “PREPARE Statement”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Chuẩn bị một tuyên bố để thực hiện (xem Phần 13.5.1, Tuyên bố chuẩn bị trực tiếp"
+        },
+        {
+            "bbox": [
+                821.6915682189542,
+                724.7034722222222,
+                10.233218137254994,
+                11.971275252525231
+            ],
+            "text": ").",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                752.4289198232323,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                753.5807247474747,
+                70.34313725490196,
+                10.17237436868686
+            ],
+            "text": "EXECUTE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thực thi"
+        },
+        {
+            "bbox": [
+                227.77777777777777,
+                752.4289198232323,
+                592.624233251634,
+                11.971275252525288
+            ],
+            "text": " executes a prepared statement (see Section 13.5.2, “EXECUTE Statement”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Thực hiện một câu lệnh đã chuẩn bị (xem Phần 13.5.2, Tuyên bố thực thi"
+        },
+        {
+            "bbox": [
+                792.8341503267974,
+                752.4289198232323,
+                10.233234885620845,
+                11.971275252525288
+            ],
+            "text": ").",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                780.1544321338383,
+                19.361107761437893,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                781.3062888257576,
+                180.8823529411765,
+                10.17232260101008
+            ],
+            "text": "DEALLOCATE PREPARE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thỏa thuận chuẩn bị"
+        },
+        {
+            "bbox": [
+                338.3169934640523,
+                780.1544321338383,
+                604.8840371732026,
+                11.97127525252526
+            ],
+            "text": " releases a prepared statement (see Section 13.5.3, “DEALLOCATE PREPARE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phát hành một tuyên bố đã chuẩn bị (xem Phần 13.5.3, Chuẩn bị của Deal DealLocate"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                795.6847351641414,
+                95.70016339869281,
+                11.97127525252526
+            ],
+            "text": "Statement”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố\""
+        },
+        {
+            "bbox": [
+                239.35089869281046,
+                795.6847351641414,
+                10.233251633986953,
+                11.97127525252526
+            ],
+            "text": ").",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                823.4101827651516,
+                788.4796254084968,
+                11.97127525252526
+            ],
+            "text": "The following examples show two equivalent ways of preparing a statement that computes the hypotenuse",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các ví dụ sau đây cho thấy hai cách chuẩn bị tương đương"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                838.9404857954546,
+                344.4636102941177,
+                11.971275252525231
+            ],
+            "text": "of a triangle given the lengths of the two sides.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "của một tam giác được cho chiều dài của hai bên."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                866.6659981060607,
+                770.7764852941177,
+                11.97127525252526
+            ],
+            "text": "The first example shows how to create a prepared statement by using a string literal to supply the text of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ đầu tiên cho thấy cách tạo một câu lệnh đã chuẩn bị bằng cách sử dụng một chuỗi theo nghĩa đen để cung cấp văn bản của"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                882.1963011363637,
+                106.13439542483661,
+                11.971275252525231
+            ],
+            "text": "the statement:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                909.1400438762627,
+                56.274509803921575,
+                8.137832196969697
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                909.1400438762627,
+                546.6666666666666,
+                8.137832196969697
+            ],
+            "text": "PREPARE stmt1 FROM ’SELECT SQRT(POW(?,2) + POW(?,2)) AS hypotenuse’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chuẩn bị STMT1 từ SQRT chọn SQRT (POW (?, 2) + POW (?, 2)) như hạ huyết áp;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                921.5643328914141,
+                56.274509803921575,
+                8.137832196969697
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                921.5643328914141,
+                88.43135580065362,
+                8.137832196969697
+            ],
+            "text": "SET @a = 3;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Đặt @A = 3;"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "2790",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2790"
+        }
+    ]
+}

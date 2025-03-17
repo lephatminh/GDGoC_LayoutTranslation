@@ -1,3 +1,1356 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:78cc42c3c645589212d4120f61d3d40058326f4ae90701926b3b5b6e64adac1e
-size 38055
+{
+    "metadata": {
+        "page_hash": "2eee53508a2525e45d94b535afa33268fb781c0afe0cadf0246f7517b1d35d49",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4128,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                408.91133946078435,
+                48.370422979798036,
+                237.3243296568628,
+                11.971275252525288
+            ],
+            "text": "NDB Cluster Configuration Files",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp cấu hình cụm NDB"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                94.96133207070716,
+                754.0114546568628,
+                11.971275252525174
+            ],
+            "text": "uncompressed checkpoint files. Compressed LCPs can be enabled for individual data nodes, or for all",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các tập tin điểm kiểm tra không nén. LCPS được nén có thể được bật cho các nút dữ liệu riêng lẻ hoặc cho tất cả"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                110.49163510101016,
+                326.7606376633987,
+                11.971275252525288
+            ],
+            "text": "data nodes (by setting this parameter in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các nút dữ liệu (bằng cách đặt tham số này trong "
+        },
+        {
+            "bbox": [
+                514.3423370098039,
+                111.64347885101006,
+                140.68627450980387,
+                10.172335542929432
+            ],
+            "text": "[ndbd default]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[Mặc định NDBD]"
+        },
+        {
+            "bbox": [
+                655.0286115196078,
+                110.49163510101016,
+                108.93137254901967,
+                11.971275252525288
+            ],
+            "text": " section of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phần của "
+        },
+        {
+            "bbox": [
+                763.9599840686275,
+                111.64347885101006,
+                100.49019607843127,
+                10.172335542929432
+            ],
+            "text": "config.ini",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cấu hình.ini"
+        },
+        {
+            "bbox": [
+                864.4501801470587,
+                110.49163510101016,
+                36.29379289215706,
+                11.971275252525288
+            ],
+            "text": " file).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tài liệu)."
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                141.55224116161617,
+                77.22671568627459,
+                11.971275252525288
+            ],
+            "text": "Important",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Quan trọng"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                172.61284722222229,
+                596.6939857026143,
+                11.971275252525288
+            ],
+            "text": "You cannot restore a compressed local checkpoint to a cluster running a MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn không thể khôi phục một điểm kiểm tra cục bộ được nén vào một cụm chạy MySQL"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                188.1431502525253,
+                308.1531862745099,
+                11.971275252525288
+            ],
+            "text": "version that does not support this feature.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phiên bản không hỗ trợ tính năng này."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                219.2037563131314,
+                149.88111070261442,
+                11.971275252525174
+            ],
+            "text": "The default value is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định là "
+        },
+        {
+            "bbox": [
+                337.46284354575164,
+                220.3556000631313,
+                10.04901960784315,
+                10.172335542929318
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                347.5118631535948,
+                219.2037563131314,
+                82.83741830065361,
+                11.971275252525174
+            ],
+            "text": " (disabled).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (tàn tật)."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                247.67597853535358,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                248.82782228535348,
+                211.0294117647059,
+                10.172335542929432
+            ],
+            "text": "CrashOnCorruptedTuple",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Crashoncorruptedtuple"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                292.0020517676768,
+                124.70831658496732,
+                11.971275252525288
+            ],
+            "text": "Version (or later)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phiên bản (hoặc muộn hơn)"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                292.0020517676768,
+                86.57230392156862,
+                11.971275252525288
+            ],
+            "text": "NDB 8.0.13",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "NDB 8.0.13"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                313.35621843434353,
+                96.80555555555557,
+                11.971275252525174
+            ],
+            "text": "Type or units",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gõ hoặc đơn vị"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                313.35621843434353,
+                59.590719771241766,
+                11.971275252525174
+            ],
+            "text": "boolean",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Boolean"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                334.71038510101016,
+                53.058806781045746,
+                11.971275252525288
+            ],
+            "text": "Default",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc định"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                334.71038510101016,
+                28.857451388888876,
+                11.971275252525288
+            ],
+            "text": "true",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ĐÚNG VẬY"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                356.0645517676768,
+                49.340669526143785,
+                11.971275252525288
+            ],
+            "text": "Range",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                356.0645517676768,
+                73.54207516339864,
+                11.971275252525288
+            ],
+            "text": "true, false",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đúng, sai"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                377.4187184343434,
+                95.86766380718953,
+                11.971275252525288
+            ],
+            "text": "Restart Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khởi động lại loại"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                377.4187184343434,
+                114.47509844771241,
+                11.971275252525288
+            ],
+            "text": "N (NDB 8.0.13)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "N (NDB 8.0.13)"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                411.3912563131313,
+                768.9509803921569,
+                11.971275252525288
+            ],
+            "text": "When this parameter is enabled (the default), it forces a data node to shut down whenever it encounters",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi tham số này được bật (mặc định), nó buộc một nút dữ liệu phải tắt bất cứ khi nào nó gặp"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                426.9215593434344,
+                130.3358010620915,
+                11.971275252525174
+            ],
+            "text": "a corrupted tuple.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "một tuple bị hỏng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                455.3937815656566,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                456.54558648989905,
+                80.39215686274508,
+                10.17237436868686
+            ],
+            "text": "Diskless",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Không có đĩa"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                499.7198547979798,
+                124.70831658496732,
+                11.971275252525288
+            ],
+            "text": "Version (or later)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phiên bản (hoặc muộn hơn)"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                499.7198547979798,
+                86.57230392156862,
+                11.971275252525288
+            ],
+            "text": "NDB 8.0.13",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "NDB 8.0.13"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                521.0740214646464,
+                96.80555555555557,
+                11.971275252525288
+            ],
+            "text": "Type or units",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gõ hoặc đơn vị"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                521.0740214646464,
+                107.37375776143779,
+                11.971275252525288
+            ],
+            "text": "true|false (1|0)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đúng | Sai (1 | 0)"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                542.4281881313132,
+                53.058806781045746,
+                11.971275252525231
+            ],
+            "text": "Default",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc định"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                542.4281881313132,
+                35.372549019607845,
+                11.971275252525231
+            ],
+            "text": "false",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "SAI"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                563.7823547979799,
+                49.340669526143785,
+                11.971275252525231
+            ],
+            "text": "Range",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                563.7823547979799,
+                73.54207516339864,
+                11.971275252525231
+            ],
+            "text": "true, false",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đúng, sai"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                585.1365214646464,
+                95.86766380718953,
+                11.971275252525288
+            ],
+            "text": "Restart Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khởi động lại loại"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                585.1365214646464,
+                118.21000081699344,
+                11.971275252525288
+            ],
+            "text": "IS (NDB 8.0.13)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "IS (NDB 8.0.13)"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                619.1090593434344,
+                341.59970669934637,
+                11.971275252525288
+            ],
+            "text": "It is possible to specify NDB Cluster tables as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Có thể chỉ định các bảng cụm NDB là "
+        },
+        {
+            "bbox": [
+                529.1813558006536,
+                619.1090593434344,
+                59.557189542483684,
+                11.971275252525288
+            ],
+            "text": "diskless",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "không có đĩa"
+        },
+        {
+            "bbox": [
+                588.7385453431373,
+                619.1090593434344,
+                368.66506617647053,
+                11.971275252525288
+            ],
+            "text": ", meaning that tables are not checkpointed to disk",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", có nghĩa là các bảng không được chỉ định vào đĩa"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                634.6393623737374,
+                743.7781360294118,
+                11.971275252525231
+            ],
+            "text": "and that no logging occurs. Such tables exist only in main memory. A consequence of using diskless",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và không có ghi nhật ký xảy ra. Các bảng như vậy chỉ tồn tại trong bộ nhớ chính. Hậu quả của việc sử dụng không có đĩa"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                650.1696654040404,
+                773.5735294117648,
+                11.971275252525288
+            ],
+            "text": "tables is that neither the tables nor the records in those tables survive a crash. However, when operating",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các bảng là cả các bảng và hồ sơ trong các bảng đó đều không tồn tại một vụ tai nạn. Tuy nhiên, khi hoạt động"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                665.6999684343434,
+                276.4485294117647,
+                11.971275252525231
+            ],
+            "text": "in diskless mode, it is possible to run ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ở chế độ không đĩa, có thể chạy "
+        },
+        {
+            "bbox": [
+                464.0302287581699,
+                666.8517733585859,
+                40.1960784313726,
+                10.172374368686917
+            ],
+            "text": "ndbd",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDBD"
+        },
+        {
+            "bbox": [
+                504.2263071895425,
+                665.6999684343434,
+                180.58088235294116,
+                11.971275252525231
+            ],
+            "text": " on a diskless computer.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Trên một máy tính không có đĩa."
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                696.7605744949495,
+                77.22671568627459,
+                11.971275252525231
+            ],
+            "text": "Important",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Quan trọng"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                727.8211805555557,
+                178.7385285947713,
+                11.971275252525231
+            ],
+            "text": "This feature causes the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tính năng này gây ra "
+        },
+        {
+            "bbox": [
+                507.34146977124186,
+                727.8211805555557,
+                41.8876801470588,
+                11.971275252525231
+            ],
+            "text": "entire",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "toàn bộ"
+        },
+        {
+            "bbox": [
+                549.2291499183007,
+                727.8211805555557,
+                267.1532030228758,
+                11.971275252525231
+            ],
+            "text": " cluster to operate in diskless mode.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cụm để hoạt động ở chế độ không đĩa."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                765.1198046085858,
+                776.3704897875817,
+                11.97127525252526
+            ],
+            "text": "When this feature is enabled, Cluster online backup is disabled. In addition, a partial start of the cluster is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi tính năng này được bật, Cụm sao lưu trực tuyến bị tắt. Ngoài ra, một bắt đầu một phần của cụm là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                780.6501076388889,
+                94.02532679738562,
+                11.97127525252526
+            ],
+            "text": "not possible.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "không thể."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                812.862557449495,
+                80.39215686274508,
+                10.172335542929318
+            ],
+            "text": "Diskless",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Không có đĩa"
+        },
+        {
+            "bbox": [
+                267.9738562091503,
+                811.7107136994949,
+                165.70833333333337,
+                11.97127525252526
+            ],
+            "text": " is disabled by default.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được vô hiệu hóa theo mặc định."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                840.1829359217172,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                841.3347796717171,
+                90.44117647058823,
+                10.17233554292929
+            ],
+            "text": "LateAlloc",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LataLloc"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                884.5090091540404,
+                124.70831658496732,
+                11.971271369949505
+            ],
+            "text": "Version (or later)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phiên bản (hoặc muộn hơn)"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                884.5090091540404,
+                86.57230392156862,
+                11.971271369949505
+            ],
+            "text": "NDB 8.0.13",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "NDB 8.0.13"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                905.8631719381314,
+                96.80555555555557,
+                11.971275252525245
+            ],
+            "text": "Type or units",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gõ hoặc đơn vị"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                905.8631719381314,
+                59.55718954248357,
+                11.971275252525245
+            ],
+            "text": "numeric",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "số"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                927.217338604798,
+                53.058806781045746,
+                11.97127525252526
+            ],
+            "text": "Default",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc định"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                927.217338604798,
+                9.31209150326788,
+                11.97127525252526
+            ],
+            "text": "1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                948.5715052714646,
+                49.340669526143785,
+                11.97127525252526
+            ],
+            "text": "Range",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                948.5715052714646,
+                9.31209150326788,
+                11.97127525252526
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                593.8803104575163,
+                948.5715052714646,
+                19.545359885620996,
+                11.97127525252526
+            ],
+            "text": "- 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "- 1"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "4099",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4099"
+        }
+    ]
+}

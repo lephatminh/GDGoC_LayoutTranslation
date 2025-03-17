@@ -1,3 +1,2076 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7e01548549c3b81384de77d4784e7490fb1e895992a1b9f40fc5e1e795ea7ee3
-size 64026
+{
+    "metadata": {
+        "page_hash": "82b8cb1797418ca62b9cc0aef3c83e98881eab2f9f9161fb26d234fccc3287d8",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3663,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                341.96812050653597,
+                48.370422979798036,
+                310.91670016339873,
+                11.971275252525288
+            ],
+            "text": "Handling an Unexpected Halt of a Replica",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xử lý một sự dừng lại bất ngờ của một bản sao"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                94.96133207070716,
+                676.7177120098039,
+                11.971275252525174
+            ],
+            "text": "source to automatically identify and retrieve missing transactions. This option is set using a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "nguồn để tự động xác định và truy xuất các giao dịch bị thiếu. Tùy chọn này được đặt bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                834.1523525326797,
+                96.11317582070706,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "CHANGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "THAY ĐỔI"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                111.64347885101006,
+                211.02941176470588,
+                10.172335542929432
+            ],
+            "text": "REPLICATION SOURCE TO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nguồn nhân rộng để"
+        },
+        {
+            "bbox": [
+                368.4640522875817,
+                110.49163510101016,
+                263.41830065359477,
+                11.971275252525288
+            ],
+            "text": " statement (from MySQL 8.0.23) or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố (từ mysql 8.0,23) hoặc "
+        },
+        {
+            "bbox": [
+                631.8823529411765,
+                111.64347885101006,
+                160.78431372549016,
+                10.172335542929432
+            ],
+            "text": "CHANGE MASTER TO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi chủ thành"
+        },
+        {
+            "bbox": [
+                792.6666666666666,
+                110.49163510101016,
+                78.19807066993474,
+                11.971275252525288
+            ],
+            "text": " statement",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                126.02193813131316,
+                722.390539624183,
+                11.971275252525288
+            ],
+            "text": "(before MySQL 8.0.23). If the replica has multiple replication channels, you need to set this option",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "(trước MySQL 8.0,23). Nếu bản sao có nhiều kênh sao chép, bạn cần đặt tùy chọn này"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                141.55224116161617,
+                734.4661450163399,
+                11.971275252525288
+            ],
+            "text": "for each channel individually. For details of how GTID auto-positioning works, see Section 17.1.3.3,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cho mỗi kênh riêng lẻ. Để biết chi tiết về cách hoạt động của Định vị Tự động GTID, xem Phần 17.1.3.3,"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                157.08254419191928,
+                205.33498406862745,
+                11.971275252525174
+            ],
+            "text": "“GTID Auto-Positioning”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "\"GTID tự động định vị"
+        },
+        {
+            "bbox": [
+                335.2017973856209,
+                157.08254419191928,
+                348.1483010620916,
+                11.971275252525174
+            ],
+            "text": ". When file position based replication is in use, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Khi sao chép dựa trên vị trí tệp được sử dụng, "
+        },
+        {
+            "bbox": [
+                683.3500984477125,
+                158.23438794191918,
+                221.07843137254883,
+                10.172335542929318
+            ],
+            "text": "SOURCE_AUTO_POSITION=1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Source_auto_poseition = 1"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                172.61284722222229,
+                9.0106292892157,
+                11.971275252525288
+            ],
+            "text": "| ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "| "
+        },
+        {
+            "bbox": [
+                166.4452698120915,
+                173.76469097222218,
+                221.07842299836602,
+                10.172335542929432
+            ],
+            "text": "MASTER_AUTO_POSITION=1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Master_auto_poseition = 1"
+        },
+        {
+            "bbox": [
+                387.52369281045753,
+                172.61284722222229,
+                515.7324346405228,
+                11.971275252525288
+            ],
+            "text": " is not used, and instead the binary log position or relay log position is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " không được sử dụng và thay vào đó là vị trí nhật ký nhị phân hoặc vị trí nhật ký rơle là"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                188.1431502525253,
+                291.3546086601307,
+                11.971275252525288
+            ],
+            "text": "used to control where replication starts.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Được sử dụng để kiểm soát nơi sao chép bắt đầu."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                216.0976698232323,
+                46.543709150326805,
+                11.971275252525288
+            ],
+            "text": "•Set ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•Bộ "
+        },
+        {
+            "bbox": [
+                187.22998366013073,
+                217.24951357323243,
+                160.78433047385622,
+                10.172335542929204
+            ],
+            "text": "sync_relay_log=1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SYNC_RELAY_LOG = 1"
+        },
+        {
+            "bbox": [
+                348.0142806372549,
+                216.0976698232323,
+                568.7577781862744,
+                11.971275252525288
+            ],
+            "text": ", which instructs the replication I/O thread to synchronize the relay log to disk",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hướng dẫn chủ đề I/O sao chép để đồng bộ hóa nhật ký rơle vào đĩa"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                231.6279728535353,
+                739.0887107843137,
+                11.971275252525288
+            ],
+            "text": "after each received transaction is written to it. This means the replica’s record of the current position",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau mỗi giao dịch nhận được được viết cho nó. Điều này có nghĩa là bản ghi bản sao của vị trí hiện tại"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                247.15827588383843,
+                740.0432839052288,
+                11.971275252525174
+            ],
+            "text": "read from the source’s binary log (in the applier metadata repository) is never ahead of the record of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đọc từ nhật ký nhị phân nguồn (trong kho lưu trữ siêu dữ liệu của máy áp dụng) không bao giờ đi trước hồ sơ của"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                262.68857891414143,
+                768.9509803921569,
+                11.971275252525174
+            ],
+            "text": "transactions saved in the relay log. Note that although this setting is the safest, it is also the slowest due",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giao dịch được lưu trong nhật ký chuyển tiếp. Lưu ý rằng mặc dù cài đặt này là an toàn nhất, nhưng nó cũng là do chậm nhất"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                278.21888194444443,
+                318.3362095588236,
+                11.971275252525288
+            ],
+            "text": "to the number of disk writes involved. With ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đến số lượng đĩa viết liên quan. Với "
+        },
+        {
+            "bbox": [
+                475.7708500816994,
+                279.37072569444456,
+                180.88235294117652,
+                10.172335542929204
+            ],
+            "text": "sync_relay_log > 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sync_Relay_Log> 1"
+        },
+        {
+            "bbox": [
+                656.6532030228759,
+                278.21888194444443,
+                28.857451388888876,
+                11.971275252525288
+            ],
+            "text": ", or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hoặc "
+        },
+        {
+            "bbox": [
+                685.5106041666667,
+                279.37072569444456,
+                160.78431372549016,
+                10.172335542929204
+            ],
+            "text": "sync_relay_log=0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "sync_relay_log = 0"
+        },
+        {
+            "bbox": [
+                846.2949178921568,
+                278.21888194444443,
+                55.83908578431374,
+                11.971275252525288
+            ],
+            "text": " (where",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Ở đâu"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                293.74918497474744,
+                775.482876633987,
+                11.971275252525288
+            ],
+            "text": "synchronization is handled by the operating system), in the event of an unexpected halt of a replica there",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đồng bộ hóa được xử lý bởi hệ điều hành), trong trường hợp tạm dừng một bản sao ở đó"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                309.27948800505044,
+                764.2781192810457,
+                11.971275252525288
+            ],
+            "text": "might be committed transactions that have not been synchronized to disk. Such transactions can cause",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Có thể được cam kết các giao dịch chưa được đồng bộ hóa với đĩa. Các giao dịch như vậy có thể gây ra"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                324.80979103535356,
+                752.1523190359477,
+                11.971275252525174
+            ],
+            "text": "the recovery process to fail if the recovering replica, based on the information it has in the relay log as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "quá trình phục hồi sẽ thất bại nếu bản sao phục hồi, dựa trên thông tin nó có trong nhật ký rơle là"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                340.34009406565656,
+                738.2009971405229,
+                11.971275252525288
+            ],
+            "text": "last synchronized to disk, tries to retrieve and apply the transactions again instead of skipping them.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Được đồng bộ hóa lần cuối với đĩa, cố gắng truy xuất và áp dụng các giao dịch một lần nữa thay vì bỏ qua chúng."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                355.87039709595956,
+                56.793709150326805,
+                11.971314078282944
+            ],
+            "text": "Setting ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cài đặt "
+        },
+        {
+            "bbox": [
+                214.22834967320262,
+                357.0222408459597,
+                160.78431372549022,
+                10.17237436868686
+            ],
+            "text": "sync_relay_log=1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SYNC_RELAY_LOG = 1"
+        },
+        {
+            "bbox": [
+                375.01266339869284,
+                355.87039709595956,
+                532.3971258169934,
+                11.971314078282944
+            ],
+            "text": " is particularly important for a multi-threaded replica, where the recovery",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đặc biệt quan trọng đối với một bản sao nhiều luồng, trong đó sự phục hồi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                371.4007389520202,
+                747.5297532679739,
+                11.971275252525288
+            ],
+            "text": "process fails if gaps in the sequence of transactions cannot be filled using the information in the relay",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Quá trình không thành công nếu các khoảng trống trong chuỗi giao dịch không thể được điền bằng cách sử dụng thông tin trong rơle"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                386.9310419823232,
+                746.5751801470587,
+                11.971275252525288
+            ],
+            "text": "log. For a single-threaded replica, the recovery process only needs to use the relay log if the relevant",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đăng nhập. Đối với một bản sao duy nhất, quá trình phục hồi chỉ cần sử dụng nhật ký rơle nếu có liên quan"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                402.46134501262634,
+                456.125,
+                11.971275252525174
+            ],
+            "text": "information is not available in the applier metadata repository.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin không có sẵn trong kho lưu trữ siêu dữ liệu applor."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                430.41589046717183,
+                46.543709150326805,
+                11.971275252525174
+            ],
+            "text": "•Set ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•Bộ "
+        },
+        {
+            "bbox": [
+                187.22998366013073,
+                431.56770833333337,
+                321.5686441993464,
+                10.17236142676768
+            ],
+            "text": "innodb_flush_log_at_trx_commit=1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_flush_log_at_trx_commit = 1"
+        },
+        {
+            "bbox": [
+                508.7986278594771,
+                430.41589046717183,
+                187.09597998366013,
+                11.971275252525174
+            ],
+            "text": ", which synchronizes the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", đồng bộ hóa "
+        },
+        {
+            "bbox": [
+                695.8946078431372,
+                431.56770833333337,
+                60.2941176470589,
+                10.17236142676768
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                756.1887254901961,
+                430.41589046717183,
+                140.56901919934637,
+                11.971275252525174
+            ],
+            "text": " logs to disk before",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Nhật ký vào đĩa trước"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                445.94619349747484,
+                574.3516989379085,
+                11.971275252525174
+            ],
+            "text": "each transaction is committed. This setting, which is the default, ensures that ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mỗi giao dịch được cam kết. Cài đặt này, là mặc định, đảm bảo rằng "
+        },
+        {
+            "bbox": [
+                731.7863394607843,
+                447.0980113636364,
+                60.29411764705878,
+                10.17236142676768
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                792.0804571078431,
+                445.94619349747484,
+                109.86934803921577,
+                11.971275252525174
+            ],
+            "text": " tables and the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng và các"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                462.6283143939394,
+                60.29411764705884,
+                10.172361426767793
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                217.72875816993465,
+                461.47649652777784,
+                694.454265114379,
+                11.971275252525288
+            ],
+            "text": " logs are saved on disk so that there is no longer a requirement for the information in the relay",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Nhật ký được lưu trên đĩa để không còn yêu cầu thông tin trong rơle"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                477.00679955808084,
+                418.9101307189543,
+                11.971275252525288
+            ],
+            "text": "log regarding the transaction. Combined with the setting ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhật ký liên quan đến giao dịch. Kết hợp với cài đặt "
+        },
+        {
+            "bbox": [
+                576.3447712418301,
+                478.1586174242424,
+                160.78431372549016,
+                10.172361426767793
+            ],
+            "text": "sync_relay_log=1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SYNC_RELAY_LOG = 1"
+        },
+        {
+            "bbox": [
+                737.1290849673203,
+                477.00679955808084,
+                142.4281548202614,
+                11.971275252525288
+            ],
+            "text": ", this setting further",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", cài đặt này xa hơn"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                492.53710258838385,
+                230.90972222222226,
+                11.971275252525288
+            ],
+            "text": "ensures that the content of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đảm bảo rằng nội dung của "
+        },
+        {
+            "bbox": [
+                388.34436274509807,
+                493.6889204545455,
+                60.29411764705884,
+                10.17236142676768
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                448.6384803921569,
+                492.53710258838385,
+                114.52532679738556,
+                11.971275252525288
+            ],
+            "text": " tables and the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng và các "
+        },
+        {
+            "bbox": [
+                563.1638071895425,
+                493.6889204545455,
+                60.2941176470589,
+                10.17236142676768
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                623.4579248366014,
+                492.53710258838385,
+                272.76387214052295,
+                11.971275252525288
+            ],
+            "text": " logs is consistent with the content of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Nhật ký phù hợp với nội dung của"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                508.06740561868696,
+                754.0281192810457,
+                11.971275252525231
+            ],
+            "text": "the relay log at all times, so that purging the relay log files cannot cause unfillable gaps in the replica’s",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhật ký rơle mọi lúc, để thanh lọc các tệp nhật ký rơle không thể gây ra những khoảng trống không thể giải thích được trong bản sao"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                523.59770864899,
+                423.5996397058824,
+                11.971275252525231
+            ],
+            "text": "history of transactions in the event of an unexpected halt.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lịch sử giao dịch trong trường hợp dừng lại bất ngờ."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                551.5522670454545,
+                46.543709150326805,
+                11.971275252525288
+            ],
+            "text": "•Set ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•Bộ "
+        },
+        {
+            "bbox": [
+                187.22998366013073,
+                552.704071969697,
+                331.6176638071895,
+                10.172374368686917
+            ],
+            "text": "relay_log_info_repository = TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log_info_repository = bảng"
+        },
+        {
+            "bbox": [
+                518.8476474673203,
+                551.5522670454545,
+                409.5979889705882,
+                11.971275252525288
+            ],
+            "text": ", which stores the replication SQL thread position in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", lưu trữ vị trí chủ đề SQL sao chép trong"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                568.234375,
+                60.29411764705884,
+                10.172374368686917
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                217.72875816993465,
+                567.0825700757576,
+                45.62253227124185,
+                11.971275252525231
+            ],
+            "text": " table ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn "
+        },
+        {
+            "bbox": [
+                263.3512904411765,
+                568.234375,
+                261.27450980392155,
+                10.172374368686917
+            ],
+            "text": "mysql.slave_relay_log_info",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql.slave_relay_log_info"
+        },
+        {
+            "bbox": [
+                524.625800245098,
+                567.0825700757576,
+                406.81784395424836,
+                11.971275252525231
+            ],
+            "text": ", and updates it together with the transaction commit to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và cập nhật nó cùng với giao dịch cam kết"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                582.6128731060606,
+                682.3451797385621,
+                11.971275252525288
+            ],
+            "text": "ensure a record that is always accurate. This setting is the default from MySQL 8.0, and the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đảm bảo một hồ sơ luôn luôn chính xác. Cài đặt này là mặc định từ MySQL 8.0 và "
+        },
+        {
+            "bbox": [
+                839.779820261438,
+                583.764678030303,
+                40.19612867647061,
+                10.17237436868686
+            ],
+            "text": "FILE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TÀI LIỆU"
+        },
+        {
+            "bbox": [
+                879.9759489379086,
+                582.6128731060606,
+                53.99671527777775,
+                11.971275252525288
+            ],
+            "text": " setting",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cài đặt"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                598.1431761363638,
+                745.6372716503269,
+                11.971275252525231
+            ],
+            "text": "is deprecated. From MySQL 8.0.23, the use of the system variable itself is deprecated, so omit it and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được không dùng nữa. Từ MySQL 8.0,23, việc sử dụng biến hệ thống được không dùng nữa, vì vậy hãy bỏ qua nó và"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                613.6734791666668,
+                175.95833333333334,
+                11.971275252525231
+            ],
+            "text": "allow it to default. If the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho phép nó mặc định. Nếu "
+        },
+        {
+            "bbox": [
+                333.39297385620915,
+                614.8252840909091,
+                40.19607843137254,
+                10.17237436868686
+            ],
+            "text": "FILE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TÀI LIỆU"
+        },
+        {
+            "bbox": [
+                373.5890522875817,
+                613.6734791666668,
+                554.7896241830065,
+                11.971275252525231
+            ],
+            "text": " setting is used, which was the default in earlier releases, the information is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cài đặt được sử dụng, là mặc định trong các bản phát hành trước đó, thông tin là"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                629.2037821969698,
+                769.9056372549021,
+                11.971275252525231
+            ],
+            "text": "stored in a file in the data directory that is updated after the transaction has been applied. This creates a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Được lưu trữ trong một tệp trong thư mục dữ liệu được cập nhật sau khi giao dịch được áp dụng. Điều này tạo ra a"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                644.7340852272728,
+                772.6356376633987,
+                11.971275252525231
+            ],
+            "text": "risk of losing synchrony with the source depending at which stage of processing a transaction the replica",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nguy cơ mất đồng bộ với nguồn tùy thuộc vào giai đoạn xử lý giao dịch bản sao"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                660.2643882575758,
+                439.3933991013072,
+                11.971275252525288
+            ],
+            "text": "halts at, or even corruption of the file itself. With the setting ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giúp, hoặc thậm chí tham nhũng của chính tập tin. Với cài đặt "
+        },
+        {
+            "bbox": [
+                596.828039624183,
+                661.4161931818182,
+                321.5685772058823,
+                10.172374368686917
+            ],
+            "text": "relay_log_info_repository = FILE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log_info_repository = Tệp"
+        },
+        {
+            "bbox": [
+                918.3966168300653,
+                660.2643882575758,
+                4.656079248366041,
+                11.971275252525288
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                675.7946912878788,
+                202.93995098039213,
+                11.971275252525231
+            ],
+            "text": "recovery is not guaranteed.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phục hồi không được đảm bảo."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                703.7491979166666,
+                46.543709150326805,
+                11.971275252525288
+            ],
+            "text": "•Set ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•Bộ "
+        },
+        {
+            "bbox": [
+                187.22998366013073,
+                704.9010157828284,
+                231.12746772875815,
+                10.17236142676768
+            ],
+            "text": "relay_log_recovery = ON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "relay_log_recovery = ON"
+        },
+        {
+            "bbox": [
+                418.35741789215683,
+                703.7491979166666,
+                493.3064227941177,
+                11.971275252525288
+            ],
+            "text": ", which enables automatic relay log recovery immediately following",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", cho phép khôi phục nhật ký chuyển tiếp tự động ngay sau"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                719.2795009469697,
+                342.5543300653594,
+                11.971275252525231
+            ],
+            "text": "server startup. This global variable defaults to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Máy chủ khởi động. Biến toàn cầu này mặc định là "
+        },
+        {
+            "bbox": [
+                499.98897058823525,
+                720.4313188131314,
+                30.14705882352939,
+                10.17236142676768
+            ],
+            "text": "OFF",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TẮT"
+        },
+        {
+            "bbox": [
+                530.1360294117646,
+                719.2795009469697,
+                362.1331699346406,
+                11.971275252525231
+            ],
+            "text": " and is read-only at runtime, but you can set it to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " và chỉ đọc chỉ trong thời gian chạy, nhưng bạn có thể đặt nó thành "
+        },
+        {
+            "bbox": [
+                892.2691993464052,
+                720.4313188131314,
+                20.0980392156863,
+                10.17236142676768
+            ],
+            "text": "ON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÊN"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                734.8098039772727,
+                62.37093178104578,
+                11.971275252525288
+            ],
+            "text": "with the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "với "
+        },
+        {
+            "bbox": [
+                219.80553880718955,
+                735.9616218434344,
+                200.98039215686273,
+                10.17236142676768
+            ],
+            "text": "--relay-log-recovery",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--RELAY-LOG-RECKE"
+        },
+        {
+            "bbox": [
+                420.7859644607843,
+                734.8098039772727,
+                485.953839869281,
+                11.971275252525288
+            ],
+            "text": " option at replica startup following an unexpected halt of a replica.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tùy chọn tại bản sao khởi động sau khi dừng lại bất ngờ của một bản sao."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                750.3401458333333,
+                757.7463067810457,
+                11.971275252525288
+            ],
+            "text": "Note that this setting ignores the existing relay log files, in case they are corrupted or inconsistent. The",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lưu ý rằng cài đặt này bỏ qua các tệp nhật ký chuyển tiếp hiện có, trong trường hợp chúng bị hỏng hoặc không nhất quán. Các"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                765.8704488636364,
+                768.8839199346405,
+                11.97127525252526
+            ],
+            "text": "relay log recovery process starts a new relay log file and fetches transactions from the source beginning",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Quy trình khôi phục nhật ký chuyển tiếp bắt đầu nhật ký rơle mới"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                781.4007518939394,
+                773.5735294117648,
+                11.97127525252526
+            ],
+            "text": "at the replication SQL thread position recorded in the applier metadata repository. The previous relay log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp và tìm nạp các giao dịch từ nguồn bắt đầu"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                796.9310549242425,
+                516.5698361928104,
+                11.971275252525231
+            ],
+            "text": "files are removed over time by the replica’s normal purge mechanism.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tại vị trí chủ đề SQL sao chép được ghi lại trong kho lưu trữ siêu dữ liệu của máy áp dụng. Nhật ký rơle trước"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                824.8855744949495,
+                262.4971405228758,
+                11.97127525252526
+            ],
+            "text": "For a multithreaded replica, setting ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các tệp được xóa theo thời gian bằng cơ chế thanh lọc bình thường bản sao."
+        },
+        {
+            "bbox": [
+                403.1834150326797,
+                826.0374182449495,
+                231.12741748366022,
+                10.172335542929318
+            ],
+            "text": "relay_log_recovery = ON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Đối với bản sao đa luồng, cài đặt "
+        },
+        {
+            "bbox": [
+                634.3108827614379,
+                824.8855744949495,
+                197.34597998366007,
+                11.97127525252526
+            ],
+            "text": " automatically handles any",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "relay_log_recovery = ON"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                840.4158775252525,
+                718.7058823529412,
+                11.97127525252526
+            ],
+            "text": "inconsistencies and gaps in the sequence of transactions that have been executed from the relay",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tự động xử lý bất kỳ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                855.9461805555555,
+                699.0767806372548,
+                11.97127525252526
+            ],
+            "text": "log. These gaps can occur when file position based replication is in use. (For more details, see",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sự không nhất quán và khoảng trống trong chuỗi các giao dịch đã được thực hiện từ rơle"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                871.4764835858587,
+                505.1139705882353,
+                11.971275252525231
+            ],
+            "text": "Section 17.5.1.34, “Replication and Transaction Inconsistencies”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đăng nhập. Những khoảng trống này có thể xảy ra khi sao chép dựa trên vị trí tệp đang được sử dụng. (Để biết thêm chi tiết, xem"
+        },
+        {
+            "bbox": [
+                618.2324346405229,
+                871.4764835858587,
+                288.5408999183006,
+                11.971275252525231
+            ],
+            "text": ".) The relay log recovery process deals",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mục 17.5.1.34, Sao chép và giao dịch không nhất quán"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                887.0067866161617,
+                304.41831740196085,
+                11.971275252525245
+            ],
+            "text": "with gaps using the same method as the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ".) Các giao dịch quá trình phục hồi nhật ký chuyển tiếp"
+        },
+        {
+            "bbox": [
+                445.10459191176477,
+                888.1586303661616,
+                462.25490196078425,
+                10.172335542929304
+            ],
+            "text": "START REPLICA | SLAVE UNTIL SQL_AFTER_MTS_GAPS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "với các khoảng trống sử dụng phương pháp tương tự như "
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                902.5370896464647,
+                755.8705065359477,
+                11.97127525252526
+            ],
+            "text": "statement would. When the replica reaches a consistent gap-free state, the relay log recovery process",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu bản sao | Nô lệ cho đến khi sql_after_mts_gaps"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                918.0673926767677,
+                750.3435625,
+                11.97127525252526
+            ],
+            "text": "goes on to fetch further transactions from the source beginning at the replication SQL thread position.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố sẽ. Khi bản sao đạt đến trạng thái không có khoảng cách nhất quán, quá trình phục hồi nhật ký chuyển tiếp"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3634",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tiếp tục tìm nạp các giao dịch tiếp theo từ nguồn bắt đầu tại vị trí chủ đề SQL sao chép."
+        }
+    ]
+}

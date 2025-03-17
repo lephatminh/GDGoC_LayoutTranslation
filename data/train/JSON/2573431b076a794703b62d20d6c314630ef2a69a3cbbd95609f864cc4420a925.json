@@ -1,3 +1,1676 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:03689df0eae0296f431ee96bdf42b132cc677c9d350e834c8018bc0da1e8e6b0
-size 49193
+{
+    "metadata": {
+        "page_hash": "2573431b076a794703b62d20d6c314630ef2a69a3cbbd95609f864cc4420a925",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1327,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                330.33639705882354,
+                48.370422979798036,
+                334.1801638071896,
+                11.971275252525288
+            ],
+            "text": "Creating SSL and RSA Certificates and Keys",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tạo các chứng chỉ và khóa SSL và RSA"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                292.2757520424837,
+                11.971275252525174
+            ],
+            "text": "•The SSL CA certificate is self signed.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Chứng chỉ SSL CA được tự ký."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                122.55864172979807,
+                684.1875167483661,
+                11.971275252525288
+            ],
+            "text": "•The SSL server and client certificates are signed with the CA certificate and key, using the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Chứng chỉ máy chủ và máy khách SSL được ký hợp đồng với chứng chỉ và khóa CA, bằng cách sử dụng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                139.24080145202026,
+                231.12745098039218,
+                10.172322601010137
+            ],
+            "text": "sha256WithRSAEncryption",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sha256WithrsAencryption"
+        },
+        {
+            "bbox": [
+                388.562091503268,
+                138.08894476010107,
+                151.7234477124183,
+                11.971275252525288
+            ],
+            "text": " signature algorithm.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Thuật toán chữ ký."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                165.68634501262636,
+                791.1593137254902,
+                11.971275252525174
+            ],
+            "text": "•SSL certificates use these Common Name (CN) values, with the appropriate certificate type (CA, Server,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Chứng chỉ SSL sử dụng các giá trị tên chung (CN) này, với loại chứng chỉ thích hợp (CA, Server,"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                181.21664804292936,
+                53.04207516339872,
+                11.971275252525174
+            ],
+            "text": "Client):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khách hàng):"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                208.0581755050506,
+                56.274509803921575,
+                8.137917613636318
+            ],
+            "text": "ca.pem:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Ca.pem:"
+        },
+        {
+            "bbox": [
+                286.062091503268,
+                208.0581755050506,
+                104.50980392156862,
+                8.137917613636318
+            ],
+            "text": "MySQL_Server_",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Mysql_server_"
+        },
+        {
+            "bbox": [
+                390.5718954248366,
+                208.0581755050506,
+                48.23529411764707,
+                8.137917613636318
+            ],
+            "text": "suffix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "Hậu tố"
+        },
+        {
+            "bbox": [
+                438.8071895424837,
+                208.0581755050506,
+                241.17647058823525,
+                8.137917613636318
+            ],
+            "text": "_Auto_Generated_CA_Certificate",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "_Auto_generated_ca_certificate"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                220.48239204545462,
+                233.1372549019608,
+                8.137904671717138
+            ],
+            "text": "server-cert.pm: MySQL_Server_",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Máy chủ-Cert.pm: mysql_server_"
+        },
+        {
+            "bbox": [
+                390.5718954248366,
+                220.48239204545462,
+                48.23529411764707,
+                8.137904671717138
+            ],
+            "text": "suffix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "Hậu tố"
+        },
+        {
+            "bbox": [
+                438.8071895424837,
+                220.48239204545462,
+                273.33335008169934,
+                8.137904671717138
+            ],
+            "text": "_Auto_Generated_Server_Certificate",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "_Auto_generated_server_certificate"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                232.90667329545465,
+                233.1372549019608,
+                8.137839962121234
+            ],
+            "text": "client-cert.pm: MySQL_Server_",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "client-cert.pm: mysql_server_"
+        },
+        {
+            "bbox": [
+                390.5718954248366,
+                232.90667329545465,
+                48.23529411764707,
+                8.137839962121234
+            ],
+            "text": "suffix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "Hậu tố"
+        },
+        {
+            "bbox": [
+                438.8071895424837,
+                232.90667329545465,
+                273.33335008169934,
+                8.137839962121234
+            ],
+            "text": "_Auto_Generated_Client_Certificate",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "_Auto_generated_client_certicate"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                258.3284981060606,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                190.9481209150327,
+                259.4802642045456,
+                60.294134395424834,
+                10.172413194444289
+            ],
+            "text": "suffix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "Hậu tố"
+        },
+        {
+            "bbox": [
+                251.24225531045752,
+                258.3284981060606,
+                514.7777610294119,
+                11.971275252525288
+            ],
+            "text": " value is based on the MySQL version number. For files generated by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giá trị dựa trên số phiên bản MySQL. Cho các tệp được tạo bởi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                275.0105672348486,
+                190.93137254901964,
+                10.172413194444289
+            ],
+            "text": "mysql_ssl_rsa_setup",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql_ssl_rsa_setup"
+        },
+        {
+            "bbox": [
+                348.36601307189545,
+                273.8588011363636,
+                347.2271409313726,
+                11.971275252525288
+            ],
+            "text": ", the suffix can be specified explicitly using the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Hậu tố có thể được chỉ định rõ ràng bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                695.5931540032681,
+                275.0105672348486,
+                80.39215686274508,
+                10.172413194444289
+            ],
+            "text": "--suffix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Suffix"
+        },
+        {
+            "bbox": [
+                775.9853108660132,
+                273.8588011363636,
+                54.93462377450976,
+                11.971275252525288
+            ],
+            "text": " option.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " lựa chọn."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                301.4561107954546,
+                638.5816993464052,
+                11.971275252525174
+            ],
+            "text": "For files generated by the server, if the resulting CN values exceed 64 characters, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các tệp do máy chủ tạo ra, nếu các giá trị CN kết quả vượt quá 64 ký tự, "
+        },
+        {
+            "bbox": [
+                796.0163398692811,
+                302.6079674873738,
+                10.049019607843093,
+                10.172322601010023
+            ],
+            "text": "_",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "_"
+        },
+        {
+            "bbox": [
+                806.0653594771242,
+                302.6079674873738,
+                60.294167892156906,
+                10.172322601010023
+            ],
+            "text": "suffix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "Hậu tố"
+        },
+        {
+            "bbox": [
+                866.3595273692811,
+                301.4561107954546,
+                55.85575040849676,
+                11.971275252525174
+            ],
+            "text": " portion",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phần"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                316.9864138257576,
+                169.42647058823528,
+                11.971275252525174
+            ],
+            "text": "of the name is omitted.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "của tên bị bỏ qua."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                344.5838140782828,
+                783.7230392156864,
+                11.971275252525288
+            ],
+            "text": "•SSL files have blank values for Country (C), State or Province (ST), Organization (O), Organization Unit",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các tệp SSL có giá trị trống cho quốc gia (c), tiểu bang hoặc tỉnh (ST), tổ chức (O), đơn vị tổ chức"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                360.1141171085858,
+                231.74714052287587,
+                11.971275252525402
+            ],
+            "text": "Name (OU) and email address.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên (OU) và địa chỉ email."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                387.7114267676768,
+                291.3546086601307,
+                11.971275252525174
+            ],
+            "text": "•SSL files created by the server or by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các tệp SSL được tạo bởi máy chủ hoặc bởi "
+        },
+        {
+            "bbox": [
+                432.0408831699346,
+                388.863283459596,
+                190.9313725490196,
+                10.172322601010023
+            ],
+            "text": "mysql_ssl_rsa_setup",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql_ssl_rsa_setup"
+        },
+        {
+            "bbox": [
+                622.9722054738562,
+                387.7114267676768,
+                286.6985629084967,
+                11.971275252525174
+            ],
+            "text": " are valid for ten years from the time of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có giá trị trong mười năm kể từ thời"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                403.2417297979798,
+                83.79207516339872,
+                11.971275252525288
+            ],
+            "text": "generation.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thế hệ."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                430.83909122474756,
+                191.75202573529413,
+                11.971275252525174
+            ],
+            "text": "•RSA files do not expire.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các tệp RSA không hết hạn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                458.436439709596,
+                777.2246732026142,
+                11.971275252525174
+            ],
+            "text": "•SSL files have different serial numbers for each certificate/key pair (1 for CA, 2 for Server, 3 for Client).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các tệp SSL có các số sê -ri khác nhau cho mỗi cặp chứng chỉ/khóa (1 cho CA, 2 cho máy chủ, 3 cho máy khách)."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                486.03380113636365,
+                767.0248680555555,
+                11.971275252525288
+            ],
+            "text": "•Files created automatically by the server are owned by the account that runs the server. Files created",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các tệp được tạo tự động bởi máy chủ được sở hữu bởi tài khoản chạy máy chủ. Các tập tin được tạo"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                501.56410416666677,
+                44.68464052287584,
+                11.971275252525231
+            ],
+            "text": "using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sử dụng "
+        },
+        {
+            "bbox": [
+                202.11928104575165,
+                502.7159090909091,
+                190.93135580065362,
+                10.17237436868686
+            ],
+            "text": "mysql_ssl_rsa_setup",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql_ssl_rsa_setup"
+        },
+        {
+            "bbox": [
+                393.05063684640527,
+                501.56410416666677,
+                532.4975657679738,
+                11.971275252525231
+            ],
+            "text": " are owned by the user who invoked that program. This can be changed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được sở hữu bởi người dùng đã gọi chương trình đó. Điều này có thể được thay đổi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                517.0944071969698,
+                210.39297385620918,
+                11.971275252525231
+            ],
+            "text": "on systems that support the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trên các hệ thống hỗ trợ "
+        },
+        {
+            "bbox": [
+                367.827614379085,
+                518.2462121212121,
+                70.34313725490193,
+                10.172374368686917
+            ],
+            "text": "chown()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Chown ()"
+        },
+        {
+            "bbox": [
+                438.1707516339869,
+                517.0944071969698,
+                301.5710616830065,
+                11.971275252525231
+            ],
+            "text": " system call if the program is invoked by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cuộc gọi hệ thống nếu chương trình được gọi bởi "
+        },
+        {
+            "bbox": [
+                739.7418133169934,
+                518.2462121212121,
+                40.1960784313726,
+                10.172374368686917
+            ],
+            "text": "root",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Root"
+        },
+        {
+            "bbox": [
+                779.937891748366,
+                517.0944071969698,
+                65.18462377450987,
+                11.971275252525231
+            ],
+            "text": " and the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                845.1225657679739,
+                518.2462121212121,
+                50.24504779411757,
+                10.172374368686917
+            ],
+            "text": "--uid",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--UID"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                532.6247102272728,
+                439.3933991013072,
+                11.971275252525231
+            ],
+            "text": "option is given to specify the user who should own the files.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn được đưa ra để chỉ định người dùng nên sở hữu các tệp."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                560.2220198863636,
+                770.6760955882353,
+                11.971275252525288
+            ],
+            "text": "•On Unix and Unix-like systems, the file access mode is 644 for certificate files (that is, world readable)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Trên các hệ thống UNIX và UNIX, chế độ truy cập tệp là 644 cho các tệp chứng chỉ (nghĩa là thế giới có thể đọc được)"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                575.7523229166667,
+                600.4289215686274,
+                11.971275252525231
+            ],
+            "text": "and 600 for key files (that is, accessible only by the account that runs the server).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và 600 cho các tệp chính (nghĩa là chỉ có thể truy cập bằng tài khoản chạy máy chủ)."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                603.3496843434343,
+                774.5114379084969,
+                11.971275252525288
+            ],
+            "text": "To see the contents of an SSL certificate (for example, to check the range of dates over which it is valid),",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để xem nội dung của chứng chỉ SSL (ví dụ: để kiểm tra phạm vi ngày mà nó hợp lệ),"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                618.8799873737373,
+                53.05882352941177,
+                11.971275252525231
+            ],
+            "text": "invoke ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "gọi "
+        },
+        {
+            "bbox": [
+                193.7450980392157,
+                620.0317922979798,
+                70.34312050653597,
+                10.172374368686803
+            ],
+            "text": "openssl",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "OpenSSL"
+        },
+        {
+            "bbox": [
+                264.08821854575166,
+                618.8799873737373,
+                62.35418341503265,
+                11.971275252525231
+            ],
+            "text": " directly:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trực tiếp:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                645.7215148358587,
+                233.13725490196077,
+                8.137904671717138
+            ],
+            "text": "openssl x509 -text -in ca.pem",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "OpenSSL X509 -Text -in Ca.pem"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                658.1457572601009,
+                305.49017933006536,
+                8.137917613636432
+            ],
+            "text": "openssl x509 -text -in server-cert.pem",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "OpenSSL X509 -Text -in Server -Cert.pem"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                670.5700126262626,
+                305.49017933006536,
+                8.137917613636432
+            ],
+            "text": "openssl x509 -text -in client-cert.pem",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "OpenSSL X509 -Text -in Client -Cert.pem"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                695.9918374368688,
+                668.3602941176471,
+                11.971275252525288
+            ],
+            "text": "It is also possible to check SSL certificate expiration information using this SQL statement:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cũng có thể kiểm tra thông tin hết hạn của chứng chỉ SSL bằng câu lệnh SQL này:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                722.8333648989899,
+                56.274509803921575,
+                8.137904671717195
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                722.8333648989899,
+                281.3725657679738,
+                8.137904671717195
+            ],
+            "text": "SHOW STATUS LIKE ’Ssl_server_not%’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Hiển thị trạng thái như SSL_Server_Not%,;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                735.2576073232324,
+                418.0392324346405,
+                8.137917613636318
+            ],
+            "text": "+-----------------------+--------------------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+-----------------------+--------------------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                747.6818238636364,
+                120.58823529411768,
+                8.137865845959595
+            ],
+            "text": "| Variable_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Biến_name"
+        },
+        {
+            "bbox": [
+                333.62745098039215,
+                747.6818238636364,
+                56.2745098039216,
+                8.137865845959595
+            ],
+            "text": "| Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Giá trị"
+        },
+        {
+            "bbox": [
+                550.686308006536,
+                747.6818238636364,
+                8.039198937908395,
+                8.137865845959595
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                760.106143939394,
+                418.0392324346405,
+                8.137839962121234
+            ],
+            "text": "+-----------------------+--------------------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+-----------------------+--------------------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                772.530360479798,
+                176.86276184640525,
+                8.137827020202025
+            ],
+            "text": "| Ssl_server_not_after",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Ssl_server_not_after"
+        },
+        {
+            "bbox": [
+                333.62745098039215,
+                772.530360479798,
+                225.09805596405226,
+                8.137827020202025
+            ],
+            "text": "| Apr 28 14:16:39 2027 GMT |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Ngày 28 tháng 4 14:16:39 2027 GMT |"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                784.954577020202,
+                233.13725490196077,
+                8.137827020202053
+            ],
+            "text": "| Ssl_server_not_before | May",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Ssl_server_not_befor | Có thể"
+        },
+        {
+            "bbox": [
+                389.90196078431376,
+                784.954577020202,
+                8.039232434640496,
+                8.137827020202053
+            ],
+            "text": "1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "1"
+        },
+        {
+            "bbox": [
+                405.9804089052288,
+                784.954577020202,
+                152.74509803921563,
+                8.137827020202053
+            ],
+            "text": "14:16:39 2017 GMT |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "14:16:39 2017 GMT |"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                797.378858270202,
+                418.0392324346405,
+                8.137839962121205
+            ],
+            "text": "+-----------------------+--------------------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+-----------------------+--------------------------+"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                823.1565340909091,
+                61.459802246732025,
+                14.365582070707092
+            ],
+            "text": "6.3.3.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "6.3.3.2"
+        },
+        {
+            "bbox": [
+                127.34117312091504,
+                823.1565340909091,
+                479.13725825163397,
+                14.365582070707092
+            ],
+            "text": "Creating SSL Certificates and Keys Using openssl",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Tạo chứng chỉ và khóa SSL bằng OpenSSL"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                853.5040921717172,
+                283.9183006535948,
+                11.971275252525231
+            ],
+            "text": "This section describes how to use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phần này mô tả cách sử dụng "
+        },
+        {
+            "bbox": [
+                424.60457516339875,
+                854.6559359217172,
+                70.34317075163392,
+                10.17233554292929
+            ],
+            "text": "openssl",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "OpenSSL"
+        },
+        {
+            "bbox": [
+                494.94769566993466,
+                853.5040921717172,
+                413.3161764705882,
+                11.971275252525231
+            ],
+            "text": " command to set up SSL certificate and key files for use",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " lệnh để thiết lập chứng chỉ SSL và các tệp khóa để sử dụng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                869.0343952020203,
+                752.0853590686274,
+                11.971275252525231
+            ],
+            "text": "by MySQL servers and clients. The first example shows a simplified procedure such as you might use",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bởi các máy chủ và khách hàng MySQL. Ví dụ đầu tiên hiển thị một quy trình đơn giản hóa như bạn có thể sử dụng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                884.5646982323233,
+                770.7262904411764,
+                11.971271369949477
+            ],
+            "text": "from the command line. The second shows a script that contains more detail. The first two examples are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "từ dòng lệnh. Thứ hai cho thấy một kịch bản chứa nhiều chi tiết hơn. Hai ví dụ đầu tiên là"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                900.0949973800505,
+                315.62297426470593,
+                11.97127525252526
+            ],
+            "text": "intended for use on Unix and both use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "dự định sử dụng trên Unix và cả hai đều sử dụng "
+        },
+        {
+            "bbox": [
+                456.30924877450985,
+                901.2468476010101,
+                70.34313725490193,
+                10.172329071969713
+            ],
+            "text": "openssl",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "OpenSSL"
+        },
+        {
+            "bbox": [
+                526.6523860294118,
+                900.0949973800505,
+                400.2859477124183,
+                11.97127525252526
+            ],
+            "text": " command that is part of OpenSSL. The third example",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Lệnh là một phần của OpenSSL. Ví dụ thứ ba"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                915.6253004103536,
+                347.21037581699346,
+                11.97127525252526
+            ],
+            "text": "describes how to set up SSL files on Windows.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mô tả cách thiết lập các tệp SSL trên Windows."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "1298",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1298"
+        }
+    ]
+}

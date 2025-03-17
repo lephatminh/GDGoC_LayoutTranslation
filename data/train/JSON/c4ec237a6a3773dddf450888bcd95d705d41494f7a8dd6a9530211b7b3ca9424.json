@@ -1,3 +1,1876 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e4613e2f688f5ddf0fe73dd904e6e456b6380a37e548d03e74f79b537c325b10
-size 52890
+{
+    "metadata": {
+        "page_hash": "c4ec237a6a3773dddf450888bcd95d705d41494f7a8dd6a9530211b7b3ca9424",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3199,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                365.2483660130719,
+                48.370422979798036,
+                264.3561756535948,
+                11.971275252525288
+            ],
+            "text": "Defining the Row Format of a Table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xác định định dạng hàng của bảng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                362.1331699346406,
+                11.971275252525174
+            ],
+            "text": "the default. It can only be specified explicitly in a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mặc định. Nó chỉ có thể được chỉ định rõ ràng trong một "
+        },
+        {
+            "bbox": [
+                502.8194444444445,
+                96.11317582070706,
+                120.58823529411762,
+                10.172335542929318
+            ],
+            "text": "CREATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo bảng"
+        },
+        {
+            "bbox": [
+                623.4076797385621,
+                94.96133207070716,
+                24.20140563725488,
+                11.971275252525174
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                647.609085375817,
+                96.11317582070706,
+                110.53921568627447,
+                10.172335542929318
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                758.1483010620915,
+                94.96133207070716,
+                167.56743545751624,
+                11.971275252525174
+            ],
+            "text": " statement. Attempting",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố. Cố gắng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                73.55882352941177,
+                11.971275252525288
+            ],
+            "text": "to set the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để đặt "
+        },
+        {
+            "bbox": [
+                214.2450980392157,
+                111.64347885101006,
+                251.2254566993464,
+                10.172335542929432
+            ],
+            "text": "innodb_default_row_format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_default_row_format"
+        },
+        {
+            "bbox": [
+                465.4705547385621,
+                110.49163510101016,
+                86.57232066993458,
+                11.971275252525288
+            ],
+            "text": " variable to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " biến thành "
+        },
+        {
+            "bbox": [
+                552.0428754084967,
+                111.64347885101006,
+                100.49019607843138,
+                10.172335542929432
+            ],
+            "text": "COMPRESSED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nén"
+        },
+        {
+            "bbox": [
+                652.5330714869281,
+                110.49163510101016,
+                124.72508169934645,
+                11.971275252525288
+            ],
+            "text": " returns an error:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Trả về một lỗi:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                136.97336426767686,
+                56.274509803921575,
+                8.137904671717138
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                136.97336426767686,
+                385.88235294117646,
+                8.137904671717138
+            ],
+            "text": "SET GLOBAL innodb_default_row_format=COMPRESSED;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Đặt toàn cầu innodb_default_row_format = nén;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                149.39764551767678,
+                450.19606168300646,
+                8.137839962121234
+            ],
+            "text": "ERROR 1231 (42000): Variable ’innodb_default_row_format’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Lỗi 1231 (42000): biến"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                161.8218620580808,
+                329.60782638888884,
+                8.137904671717251
+            ],
+            "text": "can’t be set to the value of ’COMPRESSED’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Có thể được đặt thành giá trị của nén nén"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                186.79334690656572,
+                413.31617647058823,
+                11.971275252525288
+            ],
+            "text": "Newly created tables use the row format defined by the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các bảng mới được tạo sử dụng định dạng hàng được xác định bởi "
+        },
+        {
+            "bbox": [
+                554.0024509803922,
+                187.94511300505064,
+                251.22549019607845,
+                10.172413194444403
+            ],
+            "text": "innodb_default_row_format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_default_row_format"
+        },
+        {
+            "bbox": [
+                805.2279411764706,
+                186.79334690656572,
+                121.94480269607845,
+                11.971275252525288
+            ],
+            "text": " variable when a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " biến khi a"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                203.47541603535365,
+                100.49019607843138,
+                10.172413194444403
+            ],
+            "text": "ROW_FORMAT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ROW_FORMAT"
+        },
+        {
+            "bbox": [
+                241.1764705882353,
+                202.32364993686883,
+                307.18178104575173,
+                11.971275252525174
+            ],
+            "text": " option is not specified explicitly, or when ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tùy chọn không được chỉ định rõ ràng hoặc khi "
+        },
+        {
+            "bbox": [
+                548.358251633987,
+                203.47541603535365,
+                180.88235294117646,
+                10.172413194444403
+            ],
+            "text": "ROW_FORMAT=DEFAULT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Row_Format = Mặc định"
+        },
+        {
+            "bbox": [
+                729.2406045751635,
+                202.32364993686883,
+                192.68998447712409,
+                11.971275252525174
+            ],
+            "text": " is used. For example, the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được sử dụng. Ví dụ,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                217.85395296717184,
+                69.80718954248368,
+                11.971275252525174
+            ],
+            "text": "following ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tiếp theo "
+        },
+        {
+            "bbox": [
+                210.4934640522876,
+                219.00571906565665,
+                120.5882185457516,
+                10.172413194444403
+            ],
+            "text": "CREATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo bảng"
+        },
+        {
+            "bbox": [
+                331.0816825980392,
+                217.85395296717184,
+                344.44691217320263,
+                11.971275252525174
+            ],
+            "text": " statements use the row format defined by the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các câu lệnh sử dụng định dạng hàng được xác định bởi "
+        },
+        {
+            "bbox": [
+                675.5285947712418,
+                219.00571906565665,
+                251.22543995098044,
+                10.172413194444403
+            ],
+            "text": "innodb_default_row_format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_default_row_format"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                233.38425599747484,
+                63.29207516339872,
+                11.971275252525288
+            ],
+            "text": "variable.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "biến."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                259.8659851641414,
+                200.98039215686276,
+                8.137904671717251
+            ],
+            "text": "CREATE TABLE t1 (c1 INT);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo Bảng T1 (C1 Int);"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                284.1722035984849,
+                353.7255069444445,
+                8.137839962121234
+            ],
+            "text": "CREATE TABLE t2 (c1 INT) ROW_FORMAT=DEFAULT;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo Bảng T2 (C1 Int) Row_Format = Default;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                309.1436237373738,
+                62.370931781045755,
+                11.971275252525288
+            ],
+            "text": "When a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi a "
+        },
+        {
+            "bbox": [
+                203.05718954248366,
+                310.2954674873737,
+                100.49017933006539,
+                10.172335542929432
+            ],
+            "text": "ROW_FORMAT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ROW_FORMAT"
+        },
+        {
+            "bbox": [
+                303.5474023692811,
+                309.1436237373738,
+                307.1817977941176,
+                11.971275252525288
+            ],
+            "text": " option is not specified explicitly, or when ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tùy chọn không được chỉ định rõ ràng hoặc khi "
+        },
+        {
+            "bbox": [
+                610.7291499183007,
+                310.2954674873737,
+                180.88235294117646,
+                10.172335542929432
+            ],
+            "text": "ROW_FORMAT=DEFAULT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Row_Format = Mặc định"
+        },
+        {
+            "bbox": [
+                791.6115028594771,
+                309.1436237373738,
+                85.65112704248372,
+                11.971275252525288
+            ],
+            "text": " is used, an",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được sử dụng, một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                324.6739267676768,
+                752.2193627450981,
+                11.971275252525288
+            ],
+            "text": "operation that rebuilds a table silently changes the row format of the table to the format defined by the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hoạt động xây dựng lại một bảng âm thầm thay đổi định dạng hàng của bảng thành định dạng được xác định bởi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                341.3560735479798,
+                251.22549019607845,
+                10.172335542929318
+            ],
+            "text": "innodb_default_row_format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_default_row_format"
+        },
+        {
+            "bbox": [
+                391.9117647058824,
+                340.2042297979798,
+                67.94813766339871,
+                11.971275252525288
+            ],
+            "text": " variable.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " biến."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                367.35121243686865,
+                265.2941008986928,
+                11.971275252525288
+            ],
+            "text": "Table-rebuilding operations include ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hoạt động xây dựng lại bảng bao gồm "
+        },
+        {
+            "bbox": [
+                405.98037540849674,
+                368.5030561868688,
+                110.53921568627453,
+                10.172335542929204
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                516.5195910947713,
+                367.35121243686865,
+                151.7569779411765,
+                11.971275252525288
+            ],
+            "text": " operations that use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoạt động sử dụng "
+        },
+        {
+            "bbox": [
+                668.2765690359478,
+                368.5030561868688,
+                140.68627450980387,
+                10.172335542929204
+            ],
+            "text": "ALGORITHM=COPY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thuật toán = sao chép"
+        },
+        {
+            "bbox": [
+                808.9628435457516,
+                367.35121243686865,
+                19.545359885620996,
+                11.971275252525288
+            ],
+            "text": " or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                384.0333592171718,
+                170.83333333333331,
+                10.172335542929204
+            ],
+            "text": "ALGORITHM=INPLACE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thuật toán = tại chỗ"
+        },
+        {
+            "bbox": [
+                311.51960784313724,
+                382.88151546717177,
+                632.6359959150326,
+                11.971275252525174
+            ],
+            "text": " where table rebuilding is required. See Section 15.12.1, “Online DDL Operations”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " nơi cần xây dựng lại bảng. Xem phần 15.12.1, hoạt động DDL trực tuyến trực tuyến"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                398.41181849747477,
+                159.15972222222223,
+                11.971275252525288
+            ],
+            "text": "for more information. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin. "
+        },
+        {
+            "bbox": [
+                299.84599673202615,
+                399.5636622474748,
+                140.68627450980387,
+                10.172335542929318
+            ],
+            "text": "OPTIMIZE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa bảng"
+        },
+        {
+            "bbox": [
+                440.53227124183,
+                398.41181849747477,
+                264.37295751633997,
+                11.971275252525288
+            ],
+            "text": " is also a table-rebuilding operation.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cũng là một hoạt động xây dựng lại bảng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                425.5588011363636,
+                781.0098206699347,
+                11.971275252525288
+            ],
+            "text": "The following example demonstrates a table-rebuilding operation that silently changes the row format of a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ sau đây cho thấy một hoạt động xây dựng lại bảng làm thay đổi định dạng hàng của một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                441.08910416666674,
+                393.7541017156863,
+                11.971275252525174
+            ],
+            "text": "table created without an explicitly defined row format.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng được tạo mà không có định dạng hàng được xác định rõ ràng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                467.5708333333333,
+                56.274509803921575,
+                8.137904671717251
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                467.5708333333333,
+                281.3725657679738,
+                8.137904671717251
+            ],
+            "text": "SELECT @@innodb_default_row_format;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn @@ innodb_default_row_format;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                479.99503693181816,
+                249.21568627450984,
+                8.137917613636432
+            ],
+            "text": "+-----------------------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+---------------------------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                492.41929229797984,
+                249.21568627450984,
+                8.137904671717138
+            ],
+            "text": "| @@innodb_default_row_format |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| @@ innodb_default_row_format |"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                504.8435347222222,
+                249.21568627450984,
+                8.137917613636432
+            ],
+            "text": "+-----------------------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+---------------------------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                517.2677900883839,
+                72.35294117647061,
+                8.137917613636375
+            ],
+            "text": "| dynamic",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| năng động"
+        },
+        {
+            "bbox": [
+                381.8627450980392,
+                517.2677900883839,
+                8.039215686274531,
+                8.137917613636375
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                529.6920454545455,
+                249.21568627450984,
+                8.137904671717195
+            ],
+            "text": "+-----------------------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+---------------------------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                554.5405044191918,
+                56.274509803921575,
+                8.137904671717195
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                554.5405044191918,
+                200.98040890522876,
+                8.137904671717195
+            ],
+            "text": "CREATE TABLE t1 (c1 INT);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Tạo Bảng T1 (C1 Int);"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                579.3890022095959,
+                56.274509803921575,
+                8.137917613636375
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                579.3890022095959,
+                602.9411932189543,
+                8.137917613636375
+            ],
+            "text": "SELECT * FROM INFORMATION_SCHEMA.INNODB_TABLES WHERE NAME LIKE ’test/t1’ \\G",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn * Từ thông tin_schema.innodb_tables nơi tên như kiểm tra/t1, \\ g"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                591.8132575757576,
+                498.4313892973856,
+                8.137904671717195
+            ],
+            "text": "*************************** 1. row ***************************",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "****** / TÌM HIỂU 1. Hàng ****** / TÌM HIỂU"
+        },
+        {
+            "bbox": [
+                180.88235294117646,
+                604.2374611742424,
+                96.47060498366017,
+                8.137917613636432
+            ],
+            "text": "TABLE_ID: 54",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "TAGE_ID: 54"
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                616.6617165404041,
+                104.50982066993464,
+                8.137904671717195
+            ],
+            "text": "NAME: test/t1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tên: Kiểm tra/T1"
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                629.0859589646465,
+                64.3137422385621,
+                8.137917613636375
+            ],
+            "text": "FLAG: 33",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Cờ: 33"
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                641.5102143308081,
+                72.35294117647058,
+                8.137917613636375
+            ],
+            "text": "N_COLS: 4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "N_cols: 4"
+        },
+        {
+            "bbox": [
+                205.00000000000003,
+                653.9344696969697,
+                72.3529579248366,
+                8.137904671717195
+            ],
+            "text": "SPACE: 35",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Không gian: 35"
+        },
+        {
+            "bbox": [
+                164.80392491830065,
+                666.3586732954545,
+                152.74511143790852,
+                8.137917613636432
+            ],
+            "text": "ROW_FORMAT: Dynamic",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Row_Format: Dynamic"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                678.7829286616161,
+                128.62745098039215,
+                8.137904671717195
+            ],
+            "text": "ZIP_PAGE_SIZE: 0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Zip_page_size: 0"
+        },
+        {
+            "bbox": [
+                164.80392491830065,
+                691.2071710858586,
+                144.70587900326802,
+                8.137917613636375
+            ],
+            "text": "SPACE_TYPE: Single",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Space_Type: Độc thân"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                716.0556818181818,
+                56.274509803921575,
+                8.137904671717195
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                716.0556818181818,
+                361.7647226307189,
+                8.137904671717195
+            ],
+            "text": "SET GLOBAL innodb_default_row_format=COMPACT;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Đặt toàn cầu innodb_default_row_format = compact;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                740.9041407828283,
+                56.274509803921575,
+                8.137904671717195
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                740.9041407828283,
+                281.3725657679738,
+                8.137904671717195
+            ],
+            "text": "ALTER TABLE t1 ADD COLUMN (c2 INT);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Thay đổi bảng t1 thêm cột (C2 int);"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                765.7526773989899,
+                56.274509803921575,
+                8.137827020201996
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                765.7526773989899,
+                602.9411932189543,
+                8.137827020201996
+            ],
+            "text": "SELECT * FROM INFORMATION_SCHEMA.INNODB_TABLES WHERE NAME LIKE ’test/t1’ \\G",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn * Từ thông tin_schema.innodb_tables nơi tên như kiểm tra/t1, \\ g"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                778.176893939394,
+                498.4313892973856,
+                8.137827020202025
+            ],
+            "text": "*************************** 1. row ***************************",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "****** / TÌM HIỂU 1. Hàng ****** / TÌM HIỂU"
+        },
+        {
+            "bbox": [
+                180.88235294117646,
+                790.601175189394,
+                96.47060498366017,
+                8.137839962121205
+            ],
+            "text": "TABLE_ID: 55",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "TAGE_ID: 55"
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                803.025391729798,
+                104.50982066993464,
+                8.137827020202025
+            ],
+            "text": "NAME: test/t1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tên: Kiểm tra/T1"
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                815.4496859217172,
+                56.274509803921546,
+                8.137827020202025
+            ],
+            "text": "FLAG: 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Cờ: 1"
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                827.873889520202,
+                72.35294117647058,
+                8.137827020202025
+            ],
+            "text": "N_COLS: 5",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "N_cols: 5"
+        },
+        {
+            "bbox": [
+                205.00000000000003,
+                840.2981060606061,
+                72.3529579248366,
+                8.137827020201996
+            ],
+            "text": "SPACE: 36",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Không gian: 36"
+        },
+        {
+            "bbox": [
+                164.80392491830065,
+                852.7223873106061,
+                152.74511143790852,
+                8.137839962121234
+            ],
+            "text": "ROW_FORMAT: Compact",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Row_Format: Compact"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                865.1466038510101,
+                128.62745098039215,
+                8.137827020202025
+            ],
+            "text": "ZIP_PAGE_SIZE: 0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Zip_page_size: 0"
+        },
+        {
+            "bbox": [
+                164.80392491830065,
+                877.5708980429293,
+                144.70587900326802,
+                8.137827020201996
+            ],
+            "text": "SPACE_TYPE: Single",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Space_Type: Độc thân"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                902.5423026515152,
+                693.4996082516341,
+                11.971275252525245
+            ],
+            "text": "Consider the following potential issues before changing the row format of existing tables from ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xem xét các vấn đề tiềm năng sau đây trước khi thay đổi định dạng hàng của các bảng hiện có từ "
+        },
+        {
+            "bbox": [
+                834.1858827614379,
+                903.6941528724748,
+                90.44117647058829,
+                10.172329071969713
+            ],
+            "text": "REDUNDANT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DƯ THỪA"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                918.0726056818182,
+                19.545339787581725,
+                11.97127525252526
+            ],
+            "text": "or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hoặc "
+        },
+        {
+            "bbox": [
+                160.23161429738565,
+                919.2244559027778,
+                70.34314060457513,
+                10.172329071969713
+            ],
+            "text": "COMPACT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhỏ gọn"
+        },
+        {
+            "bbox": [
+                230.57475490196077,
+                918.0726056818182,
+                23.280245506535948,
+                11.97127525252526
+            ],
+            "text": " to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " ĐẾN "
+        },
+        {
+            "bbox": [
+                253.85500040849672,
+                919.2244559027778,
+                70.34313725490199,
+                10.172329071969713
+            ],
+            "text": "DYNAMIC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NĂNG ĐỘNG"
+        },
+        {
+            "bbox": [
+                324.1981376633987,
+                918.0726056818182,
+                4.656045751633997,
+                11.97127525252526
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3170",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3170"
+        }
+    ]
+}

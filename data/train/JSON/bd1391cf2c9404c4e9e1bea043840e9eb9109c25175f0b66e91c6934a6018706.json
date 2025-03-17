@@ -1,3 +1,1456 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2d3b6a150c581dc4d32ca7e92acdad16ee0e49ef6a67a989282a188bcff6fdf4
-size 45427
+{
+    "metadata": {
+        "page_hash": "bd1391cf2c9404c4e9e1bea043840e9eb9109c25175f0b66e91c6934a6018706",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3184,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                424.7218137254902,
+                48.370422979798036,
+                205.703431372549,
+                11.971275252525288
+            ],
+            "text": "InnoDB Table Compression",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nén bàn innodb"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                776.3538251633986,
+                11.971275252525174
+            ],
+            "text": "at a modest cost in terms of increased CPU utilization. You can adjust the balance between compression",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "với chi phí khiêm tốn về mặt sử dụng CPU tăng. Bạn có thể điều chỉnh sự cân bằng giữa nén"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                110.49163510101016,
+                312.7757352941177,
+                11.971275252525288
+            ],
+            "text": "level and CPU overhead by modifying the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cấp độ và chi phí CPU bằng cách sửa đổi "
+        },
+        {
+            "bbox": [
+                483.609068627451,
+                111.64347885101006,
+                241.1764705882353,
+                10.172335542929432
+            ],
+            "text": "innodb_compression_level",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_compression_level"
+        },
+        {
+            "bbox": [
+                724.7855392156863,
+                110.49163510101016,
+                155.47511519607838,
+                11.971275252525288
+            ],
+            "text": " configuration option.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tùy chọn cấu hình."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                140.1765280934344,
+                344.9744857026144,
+                13.168389835858534
+            ],
+            "text": "InnoDB Data Storage and Compression",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Lưu trữ và nén dữ liệu Innodb"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                171.05980397727274,
+                776.3370600490197,
+                11.971275252525288
+            ],
+            "text": "All user data in InnoDB tables is stored in pages comprising a B-tree index (the clustered index). In some",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tất cả dữ liệu người dùng trong các bảng InnoDB được lưu trữ trong các trang bao gồm chỉ mục B-cây (chỉ mục được phân cụm). Trong một số"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                186.59010700757574,
+                604.7165032679738,
+                11.971275252525288
+            ],
+            "text": "other database systems, this type of index is called an “index-organized table”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các hệ thống cơ sở dữ liệu khác, loại chỉ mục này được gọi là bảng tổ chức chỉ mục của người dùng"
+        },
+        {
+            "bbox": [
+                747.9820428921569,
+                186.59010700757574,
+                211.33091584967326,
+                11.971275252525288
+            ],
+            "text": ". Each row in the index node",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Mỗi hàng trong nút chỉ mục"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                202.12041003787886,
+                769.8051470588235,
+                11.971275252525174
+            ],
+            "text": "contains the values of the (user-specified or system-generated) primary key and all the other columns of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chứa các giá trị của khóa chính (do người dùng thực hiện hoặc do hệ thống tạo ra) và tất cả các cột khác của"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                217.65071306818186,
+                68.90277777777774,
+                11.971275252525288
+            ],
+            "text": "the table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bàn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                247.15827588383843,
+                745.6707013888888,
+                11.971275252525174
+            ],
+            "text": "Secondary indexes in InnoDB tables are also B-trees, containing pairs of values: the index key and a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các chỉ mục thứ cấp trong các bảng innodb cũng là B-cây, chứa các cặp giá trị: khóa chỉ mục và A"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                262.68857891414143,
+                788.4796254084968,
+                11.971275252525174
+            ],
+            "text": "pointer to a row in the clustered index. The pointer is in fact the value of the primary key of the table, which",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Con trỏ đến một hàng trong chỉ mục phân cụm. Con trỏ trên thực tế là giá trị của khóa chính của bảng, mà"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                278.21888194444443,
+                760.5265020424837,
+                11.971275252525288
+            ],
+            "text": "is used to access the clustered index if columns other than the index key and primary key are required.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được sử dụng để truy cập chỉ mục được phân cụm nếu các cột khác với khóa chỉ mục và khóa chính được yêu cầu."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                293.74918497474744,
+                482.1854407679739,
+                11.971275252525288
+            ],
+            "text": "Secondary index records must always fit on a single B-tree page.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hồ sơ chỉ mục thứ cấp phải luôn phù hợp trên một trang B-Tree duy nhất."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                323.25681250000014,
+                760.5265020424837,
+                11.971275252525174
+            ],
+            "text": "The compression of B-tree nodes (of both clustered and secondary indexes) is handled differently from",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Việc nén các nút B-cây (của cả hai chỉ mục được phân cụm và thứ cấp) được xử lý khác với"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                338.78711553030314,
+                373.28758169934633,
+                11.971275252525288
+            ],
+            "text": "compression of overflow pages used to store long ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nén các trang tràn được sử dụng để lưu trữ dài "
+        },
+        {
+            "bbox": [
+                544.1209150326797,
+                339.9389722222222,
+                70.34313725490199,
+                10.17232260101025
+            ],
+            "text": "VARCHAR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Varchar"
+        },
+        {
+            "bbox": [
+                614.4640522875817,
+                338.78711553030314,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                623.7761437908497,
+                339.9389722222222,
+                40.1960784313726,
+                10.17232260101025
+            ],
+            "text": "BLOB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BLOB"
+        },
+        {
+            "bbox": [
+                663.9722222222223,
+                338.78711553030314,
+                28.857451388888876,
+                11.971275252525288
+            ],
+            "text": ", or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hoặc "
+        },
+        {
+            "bbox": [
+                692.8296736111112,
+                339.9389722222222,
+                40.196078431372484,
+                10.17232260101025
+            ],
+            "text": "TEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHỮ"
+        },
+        {
+            "bbox": [
+                733.0257520424836,
+                338.78711553030314,
+                215.97016299019617,
+                11.971275252525288
+            ],
+            "text": " columns, as explained in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các cột, như được giải thích trong"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                354.31741856060614,
+                135.89624183006535,
+                11.971275252525174
+            ],
+            "text": "following sections.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các phần sau."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                384.002285669192,
+                263.10175653594774,
+                13.168376893939353
+            ],
+            "text": "Compression of B-Tree Pages",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Nén các trang B-Tree"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                414.8855874368687,
+                767.0416331699346,
+                11.971275252525288
+            ],
+            "text": "Because they are frequently updated, B-tree pages require special treatment. It is important to minimize",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bởi vì chúng thường được cập nhật, các trang B-cây đòi hỏi phải đối xử đặc biệt. Điều quan trọng là phải giảm thiểu"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                430.41589046717183,
+                793.0686609477125,
+                11.971275252525174
+            ],
+            "text": "the number of times B-tree nodes are split, as well as to minimize the need to uncompress and recompress",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lần các nút B-cây được chia"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                445.94619349747484,
+                96.82230392156865,
+                11.971275252525174
+            ],
+            "text": "their content.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "nội dung của họ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                475.4537563131313,
+                773.5400159313726,
+                11.971275252525288
+            ],
+            "text": "One technique MySQL uses is to maintain some system information in the B-tree node in uncompressed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một kỹ thuật MySQL sử dụng là duy trì một số thông tin hệ thống trong nút B-cây trong không nén"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                490.9840593434344,
+                751.1809808006535,
+                11.971275252525174
+            ],
+            "text": "form, thus facilitating certain in-place updates. For example, this allows rows to be delete-marked and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hình thức, do đó tạo điều kiện cho một số cập nhật tại chỗ. Ví dụ: điều này cho phép các hàng bị xóa và"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                506.5143623737374,
+                323.0257352941177,
+                11.971275252525231
+            ],
+            "text": "deleted without any compression operation.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đã xóa mà không có bất kỳ hoạt động nén."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                536.0219640151515,
+                753.0903112745099,
+                11.971275252525231
+            ],
+            "text": "In addition, MySQL attempts to avoid unnecessary uncompression and recompression of index pages",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ngoài ra, MySQL cố gắng tránh sự thiếu hụt không cần thiết và giải phóng các trang chỉ mục"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                551.5522670454545,
+                800.2034816176471,
+                11.971275252525288
+            ],
+            "text": "when they are changed. Within each B-tree page, the system keeps an uncompressed “modification log”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi chúng được thay đổi. Trong mỗi trang B-Tree, hệ thống giữ một bản ghi sửa đổi không nén"
+        },
+        {
+            "bbox": [
+                943.4689709967321,
+                551.5522670454545,
+                18.62416625817002,
+                11.971275252525288
+            ],
+            "text": " to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " ĐẾN"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                567.0825700757576,
+                788.4460951797384,
+                11.971275252525231
+            ],
+            "text": "record changes made to the page. Updates and inserts of small records may be written to this modification",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ghi lại những thay đổi được thực hiện cho trang. Cập nhật và chèn các bản ghi nhỏ có thể được ghi vào sửa đổi này"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                582.6128731060606,
+                503.62338276143794,
+                11.971275252525288
+            ],
+            "text": "log without requiring the entire page to be completely reconstructed.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đăng nhập mà không yêu cầu toàn bộ trang phải được xây dựng lại hoàn toàn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                612.1204359217172,
+                766.170684640523,
+                11.971275252525231
+            ],
+            "text": "When the space for the modification log runs out, InnoDB uncompresses the page, applies the changes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi hết không gian cho nhật ký sửa đổi, InnoDB giải phóng trang, áp dụng các thay đổi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                627.6507389520202,
+                789.3504734477124,
+                11.971275252525231
+            ],
+            "text": "and recompresses the page. If recompression fails (a situation known as a compression failure), the B-tree",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và giới thiệu trang. Nếu sự tái tạo thất bại (một tình huống được gọi là lỗi nén), cây b"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                643.1810419823232,
+                584.6352291666667,
+                11.971275252525231
+            ],
+            "text": "nodes are split and the process is repeated until the update or insert succeeds.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các nút được chia và quá trình được lặp lại cho đến khi cập nhật hoặc chèn thành công."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                672.6885918560606,
+                735.3369930555555,
+                11.971275252525288
+            ],
+            "text": "To avoid frequent compression failures in write-intensive workloads, such as for OLTP applications,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để tránh các lỗi nén thường xuyên trong khối lượng công việc chuyên sâu viết, chẳng hạn như cho các ứng dụng OLTP,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                688.2188948863636,
+                726.9963402777778,
+                11.971275252525231
+            ],
+            "text": "MySQL sometimes reserves some empty space (padding) in the page, so that the modification log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL đôi khi bảo lưu một số không gian trống (đệm) trong trang, để nhật ký sửa đổi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                703.7491979166666,
+                710.2479742647059,
+                11.971275252525288
+            ],
+            "text": "fills up sooner and the page is recompressed while there is still enough room to avoid splitting it.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Điền vào sớm hơn và trang được tái hiện trong khi vẫn còn đủ chỗ để tránh chia tách nó."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                719.2795009469697,
+                721.4861613562092,
+                11.971275252525231
+            ],
+            "text": "The amount of padding space left in each page varies as the system keeps track of the frequency",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lượng không gian đệm còn lại trong mỗi trang thay đổi khi hệ thống theo dõi tần số"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                734.8098039772727,
+                704.704265114379,
+                11.971275252525288
+            ],
+            "text": "of page splits. On a busy server doing frequent writes to compressed tables, you can adjust the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "của việc chia tách trang. Trên một máy chủ bận rộn thực hiện ghi thường xuyên vào các bảng nén, bạn có thể điều chỉnh"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                751.4919636994949,
+                401.9607843137254,
+                10.172361426767736
+            ],
+            "text": "innodb_compression_failure_threshold_pct",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_compression_failure_threshold_pct"
+        },
+        {
+            "bbox": [
+                572.7941176470588,
+                750.3401458333333,
+                41.90439501633989,
+                11.971275252525288
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                614.6985126633987,
+                751.4919636994949,
+                301.47063848039227,
+                10.172361426767736
+            ],
+            "text": "innodb_compression_pad_pct_max",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_compression_pad_pct_max"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                765.8704488636364,
+                368.6315526960784,
+                11.97127525252526
+            ],
+            "text": "configuration options to fine-tune this mechanism.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn cấu hình để tinh chỉnh cơ chế này."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                795.378011679293,
+                740.9979407679738,
+                11.971275252525231
+            ],
+            "text": "Generally, MySQL requires that each B-tree page in an InnoDB table can accommodate at least two",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nói chung, MySQL yêu cầu mỗi trang B-cây trong một bảng Innodb có thể chứa ít nhất hai"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                810.908314709596,
+                779.1506683006536,
+                11.971275252525231
+            ],
+            "text": "records. For compressed tables, this requirement has been relaxed. Leaf pages of B-tree nodes (whether",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hồ sơ. Đối với các bảng nén, yêu cầu này đã được thư giãn. Trang lá của các nút b-cây (cho dù"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                826.438617739899,
+                791.2430388071895,
+                11.971275252525231
+            ],
+            "text": "of the primary key or secondary indexes) only need to accommodate one record, but that record must fit, in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "của khóa chính hoặc chỉ mục thứ cấp) chỉ cần chứa một bản ghi, nhưng bản ghi đó phải phù hợp,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                841.968920770202,
+                414.23737009803915,
+                11.971275252525231
+            ],
+            "text": "uncompressed form, in the per-page modification log. If ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hình thức không nén, trong nhật ký sửa đổi trên mỗi trang. Nếu như "
+        },
+        {
+            "bbox": [
+                585.0706531862745,
+                843.1207774621213,
+                180.88235294117646,
+                10.172322601010052
+            ],
+            "text": "innodb_strict_mode",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_strict_mode"
+        },
+        {
+            "bbox": [
+                765.953006127451,
+                841.968920770202,
+                21.404411764705856,
+                11.971275252525231
+            ],
+            "text": " is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là "
+        },
+        {
+            "bbox": [
+                787.3574178921568,
+                843.1207774621213,
+                20.0980392156863,
+                10.172322601010052
+            ],
+            "text": "ON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÊN"
+        },
+        {
+            "bbox": [
+                807.4554571078431,
+                841.968920770202,
+                149.86434558823532,
+                11.971275252525231
+            ],
+            "text": ", MySQL checks the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", MySQL kiểm tra"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                857.4992238005051,
+                194.4987745098039,
+                11.97127525252526
+            ],
+            "text": "maximum row size during ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kích thước hàng tối đa trong "
+        },
+        {
+            "bbox": [
+                365.33210784313724,
+                858.6510804924243,
+                120.58823529411768,
+                10.172322601010109
+            ],
+            "text": "CREATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo bảng"
+        },
+        {
+            "bbox": [
+                485.9203431372549,
+                857.4992238005051,
+                24.2014223856209,
+                11.97127525252526
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                510.1217655228758,
+                858.6510804924243,
+                120.58823529411762,
+                10.172322601010109
+            ],
+            "text": "CREATE INDEX",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo chỉ mục"
+        },
+        {
+            "bbox": [
+                630.7099505718954,
+                857.4992238005051,
+                307.1985461601307,
+                11.97127525252526
+            ],
+            "text": ". If the row does not fit, the following error",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Nếu hàng không phù hợp, lỗi sau"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                873.0295268308081,
+                147.06740196078434,
+                11.97127525252526
+            ],
+            "text": "message is issued: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tin nhắn được phát hành: "
+        },
+        {
+            "bbox": [
+                317.9007352941177,
+                874.1813835227273,
+                241.17647058823525,
+                10.172322601010109
+            ],
+            "text": "ERROR HY000: Too big row",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Lỗi Hy000: Hàng quá lớn"
+        },
+        {
+            "bbox": [
+                559.0772058823529,
+                873.0295268308081,
+                4.656045751633997,
+                11.97127525252526
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                902.5370896464647,
+                196.4416017156863,
+                11.97127525252526
+            ],
+            "text": "If you create a table when ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu bạn tạo một bảng khi "
+        },
+        {
+            "bbox": [
+                367.2749015522876,
+                903.6889398674242,
+                180.8823361928105,
+                10.172329071969699
+            ],
+            "text": "innodb_strict_mode",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_strict_mode"
+        },
+        {
+            "bbox": [
+                548.1572879901961,
+                902.5370896464647,
+                202.01877410130726,
+                11.97127525252526
+            ],
+            "text": " is OFF, and a subsequent ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là tắt, và một "
+        },
+        {
+            "bbox": [
+                750.1760620915034,
+                903.6889398674242,
+                60.29411764705878,
+                10.172329071969699
+            ],
+            "text": "INSERT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHÈN"
+        },
+        {
+            "bbox": [
+                810.4701797385621,
+                902.5370896464647,
+                24.20142238562096,
+                11.97127525252526
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                834.671551879085,
+                903.6889398674242,
+                60.2941176470589,
+                10.172329071969699
+            ],
+            "text": "UPDATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CẬP NHẬT"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                918.0673926767677,
+                738.2679571078431,
+                11.97127525252526
+            ],
+            "text": "statement attempts to create an index entry that does not fit in the size of the compressed page, the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố cố gắng tạo một mục nhập chỉ mục không phù hợp với kích thước của trang nén,"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "3155",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3155"
+        }
+    ]
+}

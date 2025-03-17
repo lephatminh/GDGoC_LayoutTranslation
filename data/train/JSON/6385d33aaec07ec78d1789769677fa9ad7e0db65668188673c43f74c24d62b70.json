@@ -1,3 +1,1816 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e53bbc457315197a3c21bef5dc5886f1ce402846efc7cab5b48f7da437e74247
-size 53175
+{
+    "metadata": {
+        "page_hash": "6385d33aaec07ec78d1789769677fa9ad7e0db65668188673c43f74c24d62b70",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4934,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                395.40381576797387,
+                48.370422979798036,
+                264.33946078431376,
+                11.971275252525288
+            ],
+            "text": "Performance Schema Event Timing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thời gian sự kiện Lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                772.6858325163398,
+                11.971275252525174
+            ],
+            "text": "troubleshooting, and so forth. Put the statements for each monitoring configuration into their own file and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khắc phục sự cố, và vv. Đặt các câu lệnh cho mỗi cấu hình giám sát vào tệp của riêng họ và"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                110.49163510101016,
+                250.42156862745102,
+                11.971275252525288
+            ],
+            "text": "specify the appropriate file as the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ định tệp thích hợp là "
+        },
+        {
+            "bbox": [
+                421.25490196078437,
+                111.64347885101006,
+                90.44120996732022,
+                10.172335542929432
+            ],
+            "text": "init_file",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "init_file"
+        },
+        {
+            "bbox": [
+                511.6961119281046,
+                110.49163510101016,
+                242.0306037581699,
+                11.971275252525288
+            ],
+            "text": " value when you start the server.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giá trị khi bạn khởi động máy chủ."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                139.72352209595965,
+                65.18463717320265,
+                16.759798295454516
+            ],
+            "text": "27.4.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "27.4.1"
+        },
+        {
+            "bbox": [
+                162.1442743464052,
+                139.72352209595965,
+                393.5229474673203,
+                16.759798295454516
+            ],
+            "text": "Performance Schema Event Timing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Thời gian sự kiện Lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                173.7439968434344,
+                743.7781360294117,
+                11.971275252525174
+            ],
+            "text": "Events are collected by means of instrumentation added to the server source code. Instruments time",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các sự kiện được thu thập bằng phương tiện thiết bị được thêm vào mã nguồn máy chủ. Thời gian nhạc cụ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                189.2742998737374,
+                793.1188558006536,
+                11.971275252525288
+            ],
+            "text": "events, which is how the Performance Schema provides an idea of how long events take. It is also possible",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các sự kiện, đó là cách mà lược đồ hiệu suất cung cấp một ý tưởng về việc mất bao lâu. Nó cũng có thể"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                204.8046029040404,
+                772.5854428104575,
+                11.971275252525288
+            ],
+            "text": "to configure instruments not to collect timing information. This section discusses the available timers and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để định cấu hình các công cụ không thu thập thông tin thời gian. Phần này thảo luận về các bộ đếm thời gian có sẵn và"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                220.3349059343434,
+                518.4791834150327,
+                11.971275252525288
+            ],
+            "text": "their characteristics, and how timing values are represented in events.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đặc điểm của chúng và cách các giá trị thời gian được thể hiện trong các sự kiện."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                249.210941919192,
+                277.0112745098039,
+                14.365491477272712
+            ],
+            "text": "Performance Schema Timers",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Hiệu suất hẹn giờ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                280.48118118686875,
+                774.4444779411765,
+                11.971275252525288
+            ],
+            "text": "Performance Schema timers vary in precision and amount of overhead. To see what timers are available",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bộ hẹn giờ biểu đồ hiệu suất khác nhau về độ chính xác và số tiền chi phí. Để xem những bộ hẹn giờ có sẵn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                296.01148421717176,
+                262.4971070261438,
+                11.971275252525288
+            ],
+            "text": "and their characteristics, check the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và các đặc điểm của chúng, hãy kiểm tra "
+        },
+        {
+            "bbox": [
+                433.33044035947717,
+                297.16334090909095,
+                180.88235294117646,
+                10.172322601010137
+            ],
+            "text": "performance_timers",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Performance_Timers"
+        },
+        {
+            "bbox": [
+                614.2128435457516,
+                296.01148421717176,
+                45.62253227124188,
+                11.971275252525288
+            ],
+            "text": " table:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                323.59071401515155,
+                56.27452655228757,
+                8.13782702020194
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                323.59071401515155,
+                418.0392156862746,
+                8.13782702020194
+            ],
+            "text": "SELECT * FROM performance_schema.performance_timers;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn * từ Performance_Schema.Performance_Timers;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                336.0149305555557,
+                554.7058991013072,
+                8.137904671717138
+            ],
+            "text": "+-------------+-----------------+------------------+----------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+-------------+------------------+------------------+----------------+"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                348.4392118055556,
+                96.47060498366014,
+                8.13783996212112
+            ],
+            "text": "| TIMER_NAME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Timer_Name"
+        },
+        {
+            "bbox": [
+                283.38235294117646,
+                348.4392118055556,
+                442.1568794934641,
+                8.13783996212112
+            ],
+            "text": "| TIMER_FREQUENCY | TIMER_RESOLUTION | TIMER_OVERHEAD |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Timer_Frequency | Timer_Resolution | Timer_overhead |"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                360.8634283459596,
+                554.7058991013072,
+                8.137865845959595
+            ],
+            "text": "+-------------+-----------------+------------------+----------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+-------------+------------------+------------------+----------------+"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                373.28763194444446,
+                56.27452655228757,
+                8.137917613636318
+            ],
+            "text": "| CYCLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| XE ĐẠP"
+        },
+        {
+            "bbox": [
+                283.38235294117646,
+                373.28763194444446,
+                8.039215686274531,
+                8.137917613636318
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                339.65686274509807,
+                373.28763194444446,
+                96.47057148692807,
+                8.137917613636318
+            ],
+            "text": "2389029850 |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "2389029850 |"
+        },
+        {
+            "bbox": [
+                564.7549187091504,
+                373.28763194444446,
+                8.039198937908395,
+                8.137917613636318
+            ],
+            "text": "1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "1"
+        },
+        {
+            "bbox": [
+                580.8333668300654,
+                373.28763194444446,
+                8.039198937908509,
+                8.137917613636318
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                693.3823529411765,
+                373.28763194444446,
+                16.078448120915027,
+                8.137917613636318
+            ],
+            "text": "72",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "72"
+        },
+        {
+            "bbox": [
+                717.500033496732,
+                373.28763194444446,
+                8.039198937908509,
+                8.137917613636318
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                385.7119261363637,
+                96.47060498366014,
+                8.137827020202053
+            ],
+            "text": "| NANOSECOND",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| NanoSecond"
+        },
+        {
+            "bbox": [
+                283.38235294117646,
+                385.7119261363637,
+                8.039215686274531,
+                8.137827020202053
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                339.65686274509807,
+                385.7119261363637,
+                96.47057148692807,
+                8.137827020202053
+            ],
+            "text": "1000000000 |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "1000000000 |"
+        },
+        {
+            "bbox": [
+                564.7549187091504,
+                385.7119261363637,
+                8.039198937908395,
+                8.137827020202053
+            ],
+            "text": "1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "1"
+        },
+        {
+            "bbox": [
+                580.8333668300654,
+                385.7119261363637,
+                8.039198937908509,
+                8.137827020202053
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                685.3431540032681,
+                385.7119261363637,
+                40.196078431372484,
+                8.137827020202053
+            ],
+            "text": "112 |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "112 |"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                398.1361426767677,
+                120.58823529411765,
+                8.137865845959595
+            ],
+            "text": "| MICROSECOND |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Microsecond |"
+        },
+        {
+            "bbox": [
+                363.77450980392155,
+                398.1361426767677,
+                72.35292442810459,
+                8.137865845959595
+            ],
+            "text": "1000000 |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "1000000 |"
+        },
+        {
+            "bbox": [
+                564.7549187091504,
+                398.1361426767677,
+                8.039198937908395,
+                8.137865845959595
+            ],
+            "text": "1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "1"
+        },
+        {
+            "bbox": [
+                580.8333668300654,
+                398.1361426767677,
+                8.039198937908509,
+                8.137865845959595
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                685.3431540032681,
+                398.1361426767677,
+                40.196078431372484,
+                8.137865845959595
+            ],
+            "text": "136 |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "136 |"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                410.5603851010102,
+                120.58823529411765,
+                8.137878787878776
+            ],
+            "text": "| MILLISECOND |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Mili giây |"
+        },
+        {
+            "bbox": [
+                387.8921736111111,
+                410.5603851010102,
+                48.23526062091503,
+                8.137878787878776
+            ],
+            "text": "1036 |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "1036 |"
+        },
+        {
+            "bbox": [
+                564.7549187091504,
+                410.5603851010102,
+                8.039198937908395,
+                8.137878787878776
+            ],
+            "text": "1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "1"
+        },
+        {
+            "bbox": [
+                580.8333668300654,
+                410.5603851010102,
+                8.039198937908509,
+                8.137878787878776
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                685.3431540032681,
+                410.5603851010102,
+                40.196078431372484,
+                8.137878787878776
+            ],
+            "text": "168 |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "168 |"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                422.98464046717174,
+                554.7058991013072,
+                8.137865845959595
+            ],
+            "text": "+-------------+-----------------+------------------+----------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+-------------+------------------+------------------+----------------+"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                449.3291982323233,
+                390.0359477124183,
+                11.971275252525288
+            ],
+            "text": "If the values associated with a given timer name are ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu các giá trị được liên kết với một tên hẹn giờ nhất định là "
+        },
+        {
+            "bbox": [
+                560.8692810457517,
+                450.48100315656575,
+                40.196078431372484,
+                10.17237436868686
+            ],
+            "text": "NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "VÔ GIÁ TRỊ"
+        },
+        {
+            "bbox": [
+                601.0653594771242,
+                449.3291982323233,
+                333.25897017973864,
+                11.971275252525288
+            ],
+            "text": ", that timer is not supported on your platform.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Bộ đếm thời gian đó không được hỗ trợ trên nền tảng của bạn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                477.84931849747477,
+                264.37297426470593,
+                11.971275252525174
+            ],
+            "text": "The columns have these meanings:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các cột có ý nghĩa sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                506.32154071969694,
+                50.26186315359476,
+                11.971275252525288
+            ],
+            "text": "•The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• The "
+        },
+        {
+            "bbox": [
+                221.0951964869281,
+                507.4733585858586,
+                100.49019607843138,
+                10.17236142676768
+            ],
+            "text": "TIMER_NAME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Timer_Name"
+        },
+        {
+            "bbox": [
+                321.58535906862744,
+                506.32154071969694,
+                370.4738562091503,
+                11.971275252525288
+            ],
+            "text": " column shows the names of the available timers. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cột hiển thị tên của các bộ đếm thời gian có sẵn. "
+        },
+        {
+            "bbox": [
+                692.0592152777778,
+                507.4733585858586,
+                50.24509803921569,
+                10.17236142676768
+            ],
+            "text": "CYCLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "XE ĐẠP"
+        },
+        {
+            "bbox": [
+                742.3043133169934,
+                506.32154071969694,
+                185.23694485294118,
+                11.971275252525288
+            ],
+            "text": " refers to the timer that is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đề cập đến bộ hẹn giờ đó là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                521.85184375,
+                334.1634321895425,
+                11.971275252525231
+            ],
+            "text": "based on the CPU (processor) cycle counter.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Dựa trên bộ đếm chu kỳ CPU (bộ xử lý)."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                550.3240659722222,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                551.4758838383839,
+                150.73529411764707,
+                10.17236142676768
+            ],
+            "text": "TIMER_FREQUENCY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Timer_Frequency"
+        },
+        {
+            "bbox": [
+                338.3169934640523,
+                550.3240659722222,
+                592.0212083333332,
+                11.971275252525231
+            ],
+            "text": " indicates the number of timer units per second. For a cycle timer, the frequency",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cho biết số lượng đơn vị hẹn giờ mỗi giây. Đối với bộ hẹn giờ chu kỳ, tần số"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                565.8543690025252,
+                721.435866013072,
+                11.971275252525288
+            ],
+            "text": "is generally related to the CPU speed. The value shown was obtained on a system with a 2.4GHz",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thường liên quan đến tốc độ CPU. Giá trị được hiển thị đã thu được trên một hệ thống với 2,4GHz"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                581.3846720328283,
+                505.46566952614376,
+                11.971275252525231
+            ],
+            "text": "processor. The other timers are based on fixed fractions of seconds.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bộ xử lý. Các bộ hẹn giờ khác dựa trên các phân số cố định của giây."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                609.8568942550505,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                611.008712121212,
+                160.78431372549022,
+                10.17236142676768
+            ],
+            "text": "TIMER_RESOLUTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Timer_Resolution"
+        },
+        {
+            "bbox": [
+                348.36601307189545,
+                609.8568942550505,
+                594.8014873366012,
+                11.971275252525231
+            ],
+            "text": " indicates the number of timer units by which timer values increase at a time. If a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cho biết số lượng đơn vị hẹn giờ mà giá trị hẹn giờ tăng cùng một lúc. Nếu a"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                625.3871972853535,
+                476.608268382353,
+                11.971275252525231
+            ],
+            "text": "timer has a resolution of 10, its value increases by 10 each time.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bộ đếm thời gian có độ phân giải 10, giá trị của nó tăng thêm 10 lần."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                653.8594195075757,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                655.0112373737375,
+                140.68627450980392,
+                10.172361426767623
+            ],
+            "text": "TIMER_OVERHEAD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Timer_Overhead"
+        },
+        {
+            "bbox": [
+                328.26797385620915,
+                653.8594195075757,
+                635.767940359477,
+                11.971275252525231
+            ],
+            "text": " is the minimal number of cycles of overhead to obtain one timing with the given timer.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là số lượng chu kỳ tối thiểu của chi phí để có được một thời gian với bộ đếm thời gian đã cho."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                669.3897225378787,
+                758.717745506536,
+                11.971275252525288
+            ],
+            "text": "The overhead per event is twice the value displayed because the timer is invoked at the beginning and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chi phí cho mỗi sự kiện là gấp đôi giá trị được hiển thị vì bộ hẹn giờ được gọi ở đầu và"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                684.9200255681818,
+                124.77532679738562,
+                11.971275252525288
+            ],
+            "text": "end of the event.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kết thúc sự kiện."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                713.440119949495,
+                389.98571936274504,
+                11.971275252525231
+            ],
+            "text": "The Performance Schema assigns timers as follows:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lược đồ hiệu suất gán bộ hẹn giờ như sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                741.9123421717172,
+                166.59599673202612,
+                11.971275252525288
+            ],
+            "text": "•The wait timer uses ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Bộ định thời chờ sử dụng "
+        },
+        {
+            "bbox": [
+                337.42933006535947,
+                743.0641470959597,
+                50.24509803921569,
+                10.17237436868686
+            ],
+            "text": "CYCLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "XE ĐẠP"
+        },
+        {
+            "bbox": [
+                387.67442810457516,
+                741.9123421717172,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                770.3845643939394,
+                419.8312573529412,
+                11.971275252525231
+            ],
+            "text": "•The idle, stage, statement, and transaction timers use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Việc sử dụng bộ định thời giao dịch nhàn rỗi, giai đoạn, tuyên bố và giao dịch "
+        },
+        {
+            "bbox": [
+                590.6646409313726,
+                771.5364210858586,
+                100.49019607843138,
+                10.172322601010109
+            ],
+            "text": "NANOSECOND",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NanoSecond"
+        },
+        {
+            "bbox": [
+                691.1548370098039,
+                770.3845643939394,
+                175.00370996732022,
+                11.971275252525231
+            ],
+            "text": " on platforms where the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trên các nền tảng nơi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                787.0667241161616,
+                100.49019607843138,
+                10.172322601010109
+            ],
+            "text": "NANOSECOND",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NanoSecond"
+        },
+        {
+            "bbox": [
+                288.0718954248366,
+                785.9148674242424,
+                138.6764705882353,
+                11.971275252525231
+            ],
+            "text": " timer is available, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hẹn giờ có sẵn, "
+        },
+        {
+            "bbox": [
+                426.7483660130719,
+                787.0667241161616,
+                110.53919893790845,
+                10.172322601010109
+            ],
+            "text": "MICROSECOND",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Microsecond"
+        },
+        {
+            "bbox": [
+                537.2875649509804,
+                785.9148674242424,
+                80.97834967320262,
+                11.971275252525231
+            ],
+            "text": " otherwise.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " nếu không thì."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                814.4349618055555,
+                740.9477459150328,
+                11.971275252525231
+            ],
+            "text": "At server startup, the Performance Schema verifies that assumptions made at build time about timer",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tại máy chủ khởi động, lược đồ hiệu suất xác minh rằng các giả định được thực hiện tại thời điểm xây dựng về bộ đếm thời gian"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                829.9652648358586,
+                547.3198696895424,
+                11.971275252525231
+            ],
+            "text": "assignments are correct, and displays a warning if a timer is not available.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bài tập là chính xác và hiển thị cảnh báo nếu không có sẵn bộ đếm thời gian."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                858.4854368686869,
+                754.0281192810457,
+                11.971275252525231
+            ],
+            "text": "To time wait events, the most important criterion is to reduce overhead, at the possible expense of the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Theo thời gian chờ đợi các sự kiện, tiêu chí quan trọng nhất là giảm chi phí, với chi phí có thể của"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                874.01573989899,
+                213.1564375,
+                11.971275252525231
+            ],
+            "text": "timer accuracy, so using the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Độ chính xác của bộ hẹn giờ, vì vậy sử dụng "
+        },
+        {
+            "bbox": [
+                383.9897875816994,
+                875.1675836489899,
+                50.24513153594768,
+                10.17233554292929
+            ],
+            "text": "CYCLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "XE ĐẠP"
+        },
+        {
+            "bbox": [
+                434.23491911764705,
+                874.01573989899,
+                127.5220253267974,
+                11.971275252525231
+            ],
+            "text": " timer is the best.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hẹn giờ là tốt nhất."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                902.5358252209596,
+                757.7463067810457,
+                11.97127525252526
+            ],
+            "text": "The time a statement (or stage) takes to execute is in general orders of magnitude larger than the time",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thời gian một tuyên bố (hoặc giai đoạn) để thực thi là trong các đơn đặt hàng lớn hơn lớn hơn thời gian"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                918.0661282512626,
+                764.2446895424836,
+                11.971275252525245
+            ],
+            "text": "it takes to execute a single wait. To time statements, the most important criterion is to have an accurate",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nó cần phải thực hiện một sự chờ đợi duy nhất. Theo báo cáo thời gian, tiêu chí quan trọng nhất là có một chính xác"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "4905",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4905"
+        }
+    ]
+}

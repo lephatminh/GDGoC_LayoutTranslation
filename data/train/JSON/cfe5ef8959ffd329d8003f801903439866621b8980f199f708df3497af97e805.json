@@ -1,3 +1,996 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:15ec20d2bad504f90bf02dcb31a9a8b51b1f1ade069f265680d999d5761be7f4
-size 29776
+{
+    "metadata": {
+        "page_hash": "cfe5ef8959ffd329d8003f801903439866621b8980f199f708df3497af97e805",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 5308,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                381.8962418300654,
+                48.370422979798036,
+                291.3545919117647,
+                11.971275252525288
+            ],
+            "text": "MySQL 8.0 FAQ: Virtualization Support",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Câu hỏi thường gặp của MySQL 8.0: Hỗ trợ ảo hóa"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                63.30882352941177,
+                11.971275252525174
+            ],
+            "text": "A.17.14.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "A.17,14."
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                94.96133207070716,
+                445.875,
+                11.971275252525174
+            ],
+            "text": "How do I change (rotate, re-key) the master encryption key?",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Làm cách nào để thay đổi (xoay, khóa lại) khóa mã hóa chính?"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                124.58539804292934,
+                60.29411764705881,
+                10.172335542929318
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                281.37254901960785,
+                123.43355429292933,
+                647.8435457516339,
+                11.971275252525288
+            ],
+            "text": " data-at-rest encryption uses a two tier key mechanism. When data-at-rest encryption is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Mã hóa dữ liệu-AT-Rest sử dụng cơ chế khóa hai cấp. Khi mã hóa dữ liệu-at-rest là"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                138.96385732323233,
+                704.7377953431372,
+                11.971275252525288
+            ],
+            "text": "used, individual tablespace keys are stored in the header of the underlying tablespace data file.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Được sử dụng, các khóa không gian bảng riêng lẻ được lưu trữ trong tiêu đề của tệp dữ liệu không gian bảng cơ bản."
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                154.49416035353545,
+                697.2010306372549,
+                11.971275252525174
+            ],
+            "text": "Tablespace keys are encrypted using the master encryption key. The master encryption key is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các khóa bảng không gian được mã hóa bằng khóa mã hóa chính. Khóa mã hóa chính là"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                170.02446338383845,
+                728.0179571078431,
+                11.971275252525288
+            ],
+            "text": "generated when tablespace encryption is enabled, and is stored outside the database. The master",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được tạo khi mã hóa không gian bảng được bật và được lưu trữ bên ngoài cơ sở dữ liệu. Master"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                185.55476641414145,
+                258.79578513071897,
+                11.971275252525288
+            ],
+            "text": "encryption key is rotated using the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "phím mã hóa được xoay "
+        },
+        {
+            "bbox": [
+                479.874216503268,
+                186.70661016414147,
+                391.9117647058825,
+                10.172335542929318
+            ],
+            "text": "ALTER INSTANCE ROTATE INNODB MASTER KEY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi ví dụ xoay khóa chính innodb"
+        },
+        {
+            "bbox": [
+                871.7859812091505,
+                185.55476641414145,
+                82.85411642156862,
+                11.971275252525288
+            ],
+            "text": " statement,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố,"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                201.08506944444446,
+                673.0498198529413,
+                11.971275252525288
+            ],
+            "text": "which generates a new master encryption key, stores the key, and rotates the key into use.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tạo ra một khóa mã hóa chính mới, lưu trữ khóa và xoay khóa vào sử dụng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                229.55729166666674,
+                63.30882352941177,
+                11.971275252525174
+            ],
+            "text": "A.17.15.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "A.17.15."
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                229.55729166666674,
+                288.55756454248365,
+                11.971275252525174
+            ],
+            "text": "How do I migrate data from a cleartext ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Làm cách nào để di chuyển dữ liệu từ một Cleartext "
+        },
+        {
+            "bbox": [
+                509.6359959150327,
+                230.70913541666664,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                569.9301638071895,
+                229.55729166666674,
+                210.40972222222229,
+                11.971275252525174
+            ],
+            "text": " tablespace to an encrypted ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " không gian bảng để mã hóa "
+        },
+        {
+            "bbox": [
+                780.3398860294118,
+                230.70913541666664,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                840.6340036764706,
+                229.55729166666674,
+                94.96321854575172,
+                11.971275252525174
+            ],
+            "text": " tablespace?",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " không gian bảng?"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                258.0295138888889,
+                646.0682189542483,
+                11.971275252525288
+            ],
+            "text": "Transferring data from one tablespace to another is not required. To encrypt data in an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không cần phải chuyển dữ liệu từ một bảng này sang không gian khác. Mã hóa dữ liệu trong một "
+        },
+        {
+            "bbox": [
+                867.1466503267974,
+                259.1813576388889,
+                60.2941176470589,
+                10.172335542929318
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                927.4407679738563,
+                258.0295138888889,
+                31.637680147058745,
+                11.971275252525288
+            ],
+            "text": " file-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tài liệu-"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                273.5598169191919,
+                189.9097222222222,
+                11.971275252525288
+            ],
+            "text": "per-table tablespace, run ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không gian bảng mỗi bàn, chạy "
+        },
+        {
+            "bbox": [
+                410.98815359477123,
+                274.71166066919193,
+                120.58825204248376,
+                10.172335542929318
+            ],
+            "text": "ALTER TABLE ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng "
+        },
+        {
+            "bbox": [
+                531.576405637255,
+                274.71166066919193,
+                80.39215686274508,
+                10.172335542929318
+            ],
+            "text": "tbl_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "tbl_name"
+        },
+        {
+            "bbox": [
+                611.9685625000001,
+                274.71166066919193,
+                170.83333333333326,
+                10.172335542929318
+            ],
+            "text": " ENCRYPTION = ’Y’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": " Mã hóa ="
+        },
+        {
+            "bbox": [
+                782.8018958333333,
+                273.5598169191919,
+                162.91138970588236,
+                11.971275252525288
+            ],
+            "text": ". To encrypt a general",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Để mã hóa một chung"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                289.09011994949503,
+                133.13274468954248,
+                11.971275252525174
+            ],
+            "text": "tablespace or the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "không gian bảng hoặc "
+        },
+        {
+            "bbox": [
+                354.21120955882355,
+                290.24196369949493,
+                50.24509803921569,
+                10.172335542929318
+            ],
+            "text": "mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql"
+        },
+        {
+            "bbox": [
+                404.45630759803925,
+                289.09011994949503,
+                123.82066993464053,
+                11.971275252525174
+            ],
+            "text": " tablespace, run ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Không gian bảng, chạy "
+        },
+        {
+            "bbox": [
+                528.2769775326798,
+                290.24196369949493,
+                170.83333333333326,
+                10.172335542929318
+            ],
+            "text": "ALTER TABLESPACE ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi không gian bảng "
+        },
+        {
+            "bbox": [
+                699.110310866013,
+                290.24196369949493,
+                150.73529411764707,
+                10.172335542929318
+            ],
+            "text": "tablespace_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "TableSpace_Name"
+        },
+        {
+            "bbox": [
+                849.8456049836601,
+                290.24196369949493,
+                110.5392659313726,
+                10.172335542929318
+            ],
+            "text": " ENCRYPTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": " Mã hóa"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                305.77226672979793,
+                50.24509803921566,
+                10.172335542929432
+            ],
+            "text": "= ’Y’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "="
+        },
+        {
+            "bbox": [
+                271.3235294117647,
+                304.62042297979804,
+                662.7998198529413,
+                11.971275252525288
+            ],
+            "text": ". Encryption support for general tablespaces was introduced in MySQL 8.0.13. Encryption",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Hỗ trợ mã hóa cho các không gian bảng chung đã được giới thiệu trong MySQL 8.0.13. Mã hóa"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                320.15072601010104,
+                112.64952655228754,
+                11.971275252525288
+            ],
+            "text": "support for the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hỗ trợ cho "
+        },
+        {
+            "bbox": [
+                333.7279244281046,
+                321.30256976010105,
+                50.24509803921569,
+                10.172335542929318
+            ],
+            "text": "mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql"
+        },
+        {
+            "bbox": [
+                383.9730224673203,
+                320.15072601010104,
+                388.1768958333333,
+                11.971275252525288
+            ],
+            "text": " system tablespace is available as of MySQL 8.0.16.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Không gian bảng hệ thống có sẵn kể từ MySQL 8.0.16."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                349.6906695075759,
+                559.8777610294117,
+                19.15402746212112
+            ],
+            "text": "A.18 MySQL 8.0 FAQ: Virtualization Support",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "A.18 MySQL 8.0 Câu hỏi thường gặp: Hỗ trợ ảo hóa"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                386.41336521464655,
+                701.8235964052287,
+                11.971275252525288
+            ],
+            "text": "A.18.1 Is MySQL supported on virtualized environments such as Oracle VM, VMWare, Docker,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "A.18.1 là MySQL được hỗ trợ trên các môi trường ảo hóa như Oracle VM, VMware, Docker,"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                401.94366824494955,
+                743.6240845588235,
+                11.971275252525288
+            ],
+            "text": "Microsoft Hyper-V, or others? .............................................................................................. 5279",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Microsoft Hyper-V, hay những người khác? .............................................................................................. 5279"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                430.41589046717183,
+                53.996748774509825,
+                11.971275252525174
+            ],
+            "text": "A.18.1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "A.18.1."
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                430.41589046717183,
+                721.3353758169935,
+                11.971275252525174
+            ],
+            "text": "Is MySQL supported on virtualized environments such as Oracle VM, VMWare, Docker, Microsoft",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL có được hỗ trợ trên các môi trường ảo hóa như Oracle VM, VMware, Docker, Microsoft"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                445.94619349747484,
+                146.12949346405227,
+                11.971275252525174
+            ],
+            "text": "Hyper-V, or others?",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hyper-V, hay những người khác?"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                474.418415719697,
+                737.1961286764706,
+                11.971275252525288
+            ],
+            "text": "MySQL is supported on virtualized environments, but is certified only for Oracle VM. Contact Oracle",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL được hỗ trợ trên các môi trường ảo hóa, nhưng chỉ được chứng nhận cho Oracle VM. Liên hệ với Oracle"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                489.94871875,
+                217.81248325163395,
+                11.971275252525288
+            ],
+            "text": "Support for more information.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hỗ trợ để biết thêm thông tin."
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                518.4209409722223,
+                713.061683006536,
+                11.971275252525231
+            ],
+            "text": "Be aware of potential problems when using virtualization software. The usual ones are related to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hãy nhận biết các vấn đề tiềm ẩn khi sử dụng phần mềm ảo hóa. Những cái thông thường có liên quan đến"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                533.9512440025253,
+                707.451013888889,
+                11.971275252525231
+            ],
+            "text": "performance, performance degradations, slowness, or unpredictability of disk, I/O, network, and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hiệu suất, suy giảm hiệu suất, chậm hoặc không thể đoán trước của đĩa, I/O, mạng và"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                549.4815470328283,
+                65.13439542483658,
+                11.971275252525231
+            ],
+            "text": "memory.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ký ức."
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "5279",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "5279"
+        }
+    ]
+}

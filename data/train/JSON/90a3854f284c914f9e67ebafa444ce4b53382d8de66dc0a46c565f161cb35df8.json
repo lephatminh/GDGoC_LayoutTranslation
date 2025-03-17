@@ -1,3 +1,2036 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:85917f5a193c23d7311c76971f9f6fba3fbcb2d5f83d5a623a59f9f1aecad01c
-size 65465
+{
+    "metadata": {
+        "page_hash": "90a3854f284c914f9e67ebafa444ce4b53382d8de66dc0a46c565f161cb35df8",
+        "original_filename": "python_extending.pdf",
+        "page_no": 20,
+        "num_pages": 105,
+        "original_width": 595.28003,
+        "original_height": 841.89001,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                502.17555509127357,
+                43.26615420938424,
+                398.83950205754417,
+                12.129440459805437
+            ],
+            "text": "Extending and Embedding Python, Release 3.9.5",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GIKCQF+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mở rộng và nhúng Python, phát hành 3.9.5"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                90.08628454921313,
+                777.042219104847,
+                12.12942828481846
+            ],
+            "text": "to any objects in a reference cycle, or referenced from the objects in the cycle, even though there are no further",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cho bất kỳ đối tượng nào trong một chu kỳ tham chiếu hoặc được tham chiếu từ các đối tượng trong chu kỳ, mặc dù không có gì nữa"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                104.64149378610625,
+                191.58020091821322,
+                12.129440459805437
+            ],
+            "text": "references to the cycle itself.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tài liệu tham khảo cho chu kỳ chính nó."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                126.47488595333255,
+                777.0253963500169,
+                12.129428284818346
+            ],
+            "text": "The cycle detector is able to detect garbage cycles and can reclaim them. The$_{gc}$module exposes a way to run",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Máy dò chu kỳ có thể phát hiện các chu kỳ rác và có thể lấy lại chúng. Mô -đun $ _ {gc} $ cho thấy cách chạy"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                141.03009519022555,
+                110.71440654577307,
+                12.129440459805437
+            ],
+            "text": "the detector (the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Máy dò (The"
+        },
+        {
+            "bbox": [
+                239.03121737512342,
+                142.44919951004044,
+                125.02116944860384,
+                10.916543896274675
+            ],
+            "text": "collect()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPHTTX+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sưu tầm()"
+        },
+        {
+            "bbox": [
+                336.017739415851,
+                141.03009519022555,
+                565.0141404877969,
+                12.129440459805437
+            ],
+            "text": "function), as well as configuration interfaces and the ability to disable the detector at",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "chức năng), cũng như các giao diện cấu hình và khả năng vô hiệu hóa máy dò tại"
+        },
+        {
+            "bbox": [
+                123.9752521178982,
+                155.58524355218333,
+                777.042129567155,
+                12.129513509727872
+            ],
+            "text": "runtime. The cycle detector is considered an optional component; though it is included by default, it can be disabled",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "thời gian chạy. Máy dò chu kỳ được coi là một thành phần tùy chọn; mặc dù nó được bao gồm theo mặc định, nó có thể bị vô hiệu hóa"
+        },
+        {
+            "bbox": [
+                123.9752521178982,
+                170.14046496406343,
+                390.6208166432191,
+                12.129428284818346
+            ],
+            "text": "at build time using the$_{--without-cycle-gc}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tại thời điểm xây dựng bằng cách sử dụng $ _ {-không có chu kỳ-gc} $"
+        },
+        {
+            "bbox": [
+                472.01514512421994,
+                170.14046496406343,
+                429.0159943715901,
+                12.129428284818346
+            ],
+            "text": "option to the$_{configure}$script on Unix platforms (including",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tùy chọn cho tập lệnh $ _ {configure} $ trên các nền tảng UNIX (bao gồm cả"
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                184.69567420095655,
+                624.301473333483,
+                12.129440459805323
+            ],
+            "text": "Mac OS X). If the cycle detector is disabled in this way, the$_{gc}$module will not be available.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mac OS X). Nếu máy dò chu kỳ bị vô hiệu hóa theo cách này, mô -đun $ _ {GC} $ sẽ không khả dụng."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                224.2680225532074,
+                248.49845080474142,
+                12.129440459805323
+            ],
+            "text": "Reference Counting in Python",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GIKCQF+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tham khảo Đếm trong Python"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                254.28913006106336,
+                151.37030424151806,
+                12.12944045980555
+            ],
+            "text": "There are two macros,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Có hai macro,"
+        },
+        {
+            "bbox": [
+                279.87244087459135,
+                255.70823438087837,
+                135.09081935773997,
+                10.916543896274447
+            ],
+            "text": "Py_INCREF(x)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPHTTX+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Py_incref (x)"
+        },
+        {
+            "bbox": [
+                407.8717544917473,
+                254.28913006106336,
+                24.239161861351192,
+                12.12944045980555
+            ],
+            "text": "and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Và"
+        },
+        {
+            "bbox": [
+                436.59613484766146,
+                255.70823438087837,
+                149.38039791121503,
+                10.916543896274447
+            ],
+            "text": "Py_DECREF(x)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPHTTX+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Py_decref (x)"
+        },
+        {
+            "bbox": [
+                560.1081981533968,
+                254.28913006106336,
+                340.90895968742643,
+                12.12944045980555
+            ],
+            "text": ", which handle the incrementing and decrementing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", trong đó xử lý sự gia tăng và giảm dần"
+        },
+        {
+            "bbox": [
+                123.97529172110814,
+                268.844278423021,
+                152.777001649123,
+                12.129513509727985
+            ],
+            "text": "of the reference count.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "của số lượng tham chiếu."
+        },
+        {
+            "bbox": [
+                283.0097382907335,
+                270.26345579275846,
+                136.99492447277294,
+                10.916470846352013
+            ],
+            "text": "Py_DECREF()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPHTTX+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Py_decref ()"
+        },
+        {
+            "bbox": [
+                400.701851614273,
+                268.844278423021,
+                500.3246732466399,
+                12.129513509727985
+            ],
+            "text": "also frees the object when the count reaches zero. For flexibility, it doesn’t",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Cũng giải phóng đối tượng khi số lượng đạt đến 0. Để linh hoạt, nó không"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                283.39949983490123,
+                106.81008104706618,
+                12.129428284818346
+            ],
+            "text": "call$_{free()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Gọi $ _ {free ()} $"
+        },
+        {
+            "bbox": [
+                217.10309222031182,
+                283.39949983490123,
+                492.10778202991287,
+                12.129428284818346
+            ],
+            "text": "directly — rather, it makes a call through a function pointer in the object’s",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trực tiếp - thay vào đó, nó thực hiện một cuộc gọi qua một con trỏ hàm trong đối tượng"
+        },
+        {
+            "bbox": [
+                713.0540386177578,
+                283.39949983490123,
+                68.97777168839343,
+                12.129428284818346
+            ],
+            "text": "type object",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/IXPAJZ+FreeSerifItalic",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Loại đối tượng"
+        },
+        {
+            "bbox": [
+                782.0221505666836,
+                283.39949983490123,
+                118.99984575326687,
+                12.129428284818346
+            ],
+            "text": ". For this purpose",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ". Cho mục đích này"
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                297.95470907179424,
+                445.73962236730836,
+                12.129440459805437
+            ],
+            "text": "(and others), every object also contains a pointer to its type object.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(và những người khác), mọi đối tượng cũng chứa một con trỏ tới đối tượng loại của nó."
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                319.78810123902053,
+                612.9032218248611,
+                12.12950133474078
+            ],
+            "text": "The big question now remains: when to use$_{Py_INCREF(x)}$and$_{Py_DECREF(x)}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Câu hỏi lớn bây giờ vẫn còn: khi nào nên sử dụng $ _ {py_incref (x)} $ và $ _ {py_decref (x)} $"
+        },
+        {
+            "bbox": [
+                711.0100997340696,
+                319.78810123902053,
+                190.01904238245663,
+                12.12950133474078
+            ],
+            "text": "? Let’s first introduce some",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "? Đầu tiên hãy giới thiệu một số"
+        },
+        {
+            "bbox": [
+                123.97516085832746,
+                334.34331047591365,
+                343.8598310193607,
+                12.129440459805323
+            ],
+            "text": "terms. Nobody “owns” an object; however, you can",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Điều khoản. Không ai sở hữu một đối tượng; Tuy nhiên, bạn có thể"
+        },
+        {
+            "bbox": [
+                472.0821950805236,
+                334.34331047591365,
+                105.31084126910827,
+                12.129440459805323
+            ],
+            "text": "own a reference",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/IXPAJZ+FreeSerifItalic",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Sở hữu một tài liệu tham khảo"
+        },
+        {
+            "bbox": [
+                581.6453535321855,
+                334.34331047591365,
+                319.3802242954463,
+                12.129440459805323
+            ],
+            "text": "to an object. An object’s reference count is now",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "đến một đối tượng. Số lượng tham chiếu đối tượng hiện tại là"
+        },
+        {
+            "bbox": [
+                123.97516085832746,
+                348.89853188779375,
+                659.8949271404249,
+                12.129440459805437
+            ],
+            "text": "defined as the number of owned references to it. The owner of a reference is responsible for calling",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "được định nghĩa là số lượng tài liệu tham khảo sở hữu cho nó. Chủ sở hữu của một tài liệu tham khảo chịu trách nhiệm gọi"
+        },
+        {
+            "bbox": [
+                787.7972800465017,
+                350.31763620760853,
+                136.99492447277305,
+                10.916543896274561
+            ],
+            "text": "Py_DECREF()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPHTTX+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Py_decref ()"
+        },
+        {
+            "bbox": [
+                123.97516085832746,
+                363.45494644840846,
+                277.6609304783834,
+                12.129428284818346
+            ],
+            "text": "when the reference is no longer needed.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Khi tài liệu tham khảo không còn cần thiết."
+        },
+        {
+            "bbox": [
+                412.8893606593858,
+                363.45494644840846,
+                311.66088714583617,
+                12.129428284818346
+            ],
+            "text": "Ownership of a reference can be transferred.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Quyền sở hữu của một tài liệu tham khảo có thể được chuyển giao."
+        },
+        {
+            "bbox": [
+                735.786384434902,
+                363.45494644840846,
+                165.21396786987793,
+                12.129428284818346
+            ],
+            "text": "There are three ways to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Có ba cách để"
+        },
+        {
+            "bbox": [
+                123.97516085832746,
+                378.01015568530147,
+                405.0323438113655,
+                12.129440459805437
+            ],
+            "text": "dispose of an owned reference: pass it on, store it, or call",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Vứt bỏ tài liệu tham khảo sở hữu: Chuyển nó, lưu trữ nó hoặc gọi"
+        },
+        {
+            "bbox": [
+                535.0874583345253,
+                379.42926000511636,
+                136.99497612913376,
+                10.916543896274447
+            ],
+            "text": "Py_DECREF()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPHTTX+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Py_decref ()"
+        },
+        {
+            "bbox": [
+                648.3061480325485,
+                378.01015568530147,
+                4.288614385401161,
+                12.129440459805437
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                663.6765154040191,
+                378.01015568530147,
+                237.34801207760984,
+                12.129440459805437
+            ],
+            "text": "Forgetting to dispose of an owned",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Quên xử lý một sở hữu"
+        },
+        {
+            "bbox": [
+                123.97516085832746,
+                392.565304047259,
+                221.703333933443,
+                12.12946480977962
+            ],
+            "text": "reference creates a memory leak.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tham chiếu tạo ra rò rỉ bộ nhớ."
+        },
+        {
+            "bbox": [
+                123.97516085832746,
+                414.3987205644595,
+                132.68919633504254,
+                12.129476984766711
+            ],
+            "text": "It is also possible to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nó cũng có thể"
+        },
+        {
+            "bbox": [
+                261.0418721756884,
+                414.3987205644595,
+                47.98083853073325,
+                12.129476984766711
+            ],
+            "text": "borrow",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/IXPAJZ+FreeSerifItalic",
+                "size": 9.962599754333496
+            },
+            "text_vi": "vay mượn"
+        },
+        {
+            "bbox": [
+                309.022125267666,
+                412.90732117132495,
+                6.004018814472943,
+                8.490568144406438
+            ],
+            "text": "2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 6.973800182342529
+            },
+            "text_vi": "2"
+        },
+        {
+            "bbox": [
+                320.25910561790556,
+                414.3986840394982,
+                600.2457414874137,
+                12.129476984766711
+            ],
+            "text": "a reference to an object. The borrower of a reference should not call$_{Py_DECREF()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "một tham chiếu đến một đối tượng. Người vay của tham chiếu không nên gọi $ _ {py_decref ()} $"
+        },
+        {
+            "bbox": [
+                896.7285434554221,
+                414.3986840394982,
+                4.288614385401047,
+                12.129476984766711
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                428.95386892641716,
+                777.042169170365,
+                12.129464809779506
+            ],
+            "text": "The borrower must not hold on to the object longer than the owner from which it was borrowed. Using a borrowed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Người vay không được giữ đối tượng lâu hơn chủ sở hữu mà nó đã được mượn. Sử dụng một khoản vay"
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                443.5090416383489,
+                707.4850025205783,
+                12.129476984766711
+            ],
+            "text": "reference after the owner has disposed of it risks using freed memory and should be avoided completely$^{3}$.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tham chiếu sau khi chủ sở hữu đã xử lý các rủi ro của nó bằng cách sử dụng bộ nhớ tự do và nên tránh hoàn toàn $^{3} $."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                465.34250685549773,
+                777.0423224175687,
+                12.129476984766598
+            ],
+            "text": "The advantage of borrowing over owning a reference is that you don’t need to take care of disposing of the reference",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Ưu điểm của việc vay khi sở hữu một tài liệu tham khảo là bạn không cần phải chăm sóc việc xử lý tài liệu tham khảo"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                479.89769174241655,
+                777.0425290430118,
+                12.12946480977962
+            ],
+            "text": "on all possible paths through the code — in other words, with a borrowed reference you don’t run the risk of leaking",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trên tất cả các đường dẫn có thể thông qua mã - nói cách khác, với một tài liệu tham khảo mượn, bạn không có nguy cơ bị rò rỉ"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                494.4528644543484,
+                777.0421157921255,
+                12.129476984766598
+            ],
+            "text": "when a premature exit is taken. The disadvantage of borrowing over owning is that there are some subtle situations",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Khi một lối ra sớm được thực hiện. Nhược điểm của việc vay khi sở hữu là có một số tình huống tinh tế"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                509.00804934126734,
+                777.0423224175687,
+                12.129476984766598
+            ],
+            "text": "where in seemingly correct code a borrowed reference can be used after the owner from which it was borrowed has",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trong đó có thể sử dụng mã có vẻ đúng"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                523.5632342281862,
+                141.6609402300964,
+                12.12946480977962
+            ],
+            "text": "in fact disposed of it.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trong thực tế đã xử lý nó."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                545.3966507453865,
+                618.6374205262689,
+                12.129476984766711
+            ],
+            "text": "A borrowed reference can be changed into an owned reference by calling$_{Py_INCREF()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Một tham chiếu mượn có thể được thay đổi thành một tham chiếu sở hữu bằng cách gọi $ _ {py_incref ()} $"
+        },
+        {
+            "bbox": [
+                733.127734857828,
+                545.3966507453865,
+                167.89006007811145,
+                12.129476984766711
+            ],
+            "text": ". This does not affect the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ". Điều này không ảnh hưởng đến"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                559.9518356323055,
+                777.0425290430118,
+                12.129464809779563
+            ],
+            "text": "status of the owner from which the reference was borrowed — it creates a new owned reference, and gives full owner",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trạng thái của chủ sở hữu mà từ đó tham chiếu đã được mượn - nó tạo ra một tài liệu tham khảo mới thuộc sở hữu và cung cấp cho chủ sở hữu đầy đủ"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                574.508238017933,
+                683.636653744289,
+                12.129476984766711
+            ],
+            "text": "responsibilities (the new owner must dispose of the reference properly, as well as the previous owner).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trách nhiệm (chủ sở hữu mới phải xử lý tham chiếu đúng cách, cũng như chủ sở hữu trước đó)."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                614.0806594201065,
+                141.24922181582338,
+                12.129476984766598
+            ],
+            "text": "Ownership Rules",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GIKCQF+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Quy tắc sở hữu"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                644.1005372542668,
+                777.0423224175687,
+                12.129476984766711
+            ],
+            "text": "Whenever an object reference is passed into or out of a function, it is part of the function’s interface specification",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bất cứ khi nào một tham chiếu đối tượng được chuyển vào hoặc ra khỏi một hàm, nó là một phần của đặc điểm kỹ thuật giao diện của chức năng"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                658.6557221411856,
+                393.9505891034174,
+                12.129476984766711
+            ],
+            "text": "whether ownership is transferred with the reference or not.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Cho dù quyền sở hữu được chuyển giao với tài liệu tham khảo hay không."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                680.4891508333731,
+                777.0423224175687,
+                12.129464809779563
+            ],
+            "text": "Most functions that return a reference to an object pass on ownership with the reference. In particular, all functions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hầu hết các chức năng trả về một tham chiếu đến một đối tượng chuyển quyền sở hữu với tài liệu tham khảo. Cụ thể, tất cả các chức năng"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                695.0443235453049,
+                530.64509740063,
+                12.129476984766654
+            ],
+            "text": "whose function it is to create a new object, such as$_{PyLong_FromLong()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Có chức năng của nó là tạo một đối tượng mới, chẳng hạn như $ _ {pylong_fromlong ()} $"
+        },
+        {
+            "bbox": [
+                643.3438141709541,
+                695.0443235453049,
+                212.05533595675956,
+                12.129476984766654
+            ],
+            "text": "and$_{Py_BuildValue()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "và $ _ {py_BuildValue ()} $"
+        },
+        {
+            "bbox": [
+                826.0815997808628,
+                695.0443235453049,
+                74.94754233566346,
+                12.129476984766654
+            ],
+            "text": ", pass own-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", vượt qua riêng-"
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                709.5995449571851,
+                777.0423757958082,
+                12.129428284818289
+            ],
+            "text": "ership to the receiver. Even if the object is not actually new, you still receive ownership of a new reference to that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "kết hợp với người nhận. Ngay cả khi đối tượng không thực sự mới, bạn vẫn nhận được quyền sở hữu một tài liệu tham khảo mới về điều đó"
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                724.1559473428126,
+                334.38534848044543,
+                12.129440459805437
+            ],
+            "text": "object. For instance,$_{PyLong_FromLong()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sự vật. Ví dụ, $ _ {pylong_fromlong ()} $"
+        },
+        {
+            "bbox": [
+                447.6970179060097,
+                724.1559473428126,
+                453.3047979956592,
+                12.129440459805437
+            ],
+            "text": "maintains a cache of popular values and can return a reference to a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Duy trì bộ nhớ cache của các giá trị phổ biến và có thể trả về một tham chiếu cho một"
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                738.7111687546928,
+                85.3259268163254,
+                12.129428284818346
+            ],
+            "text": "cached item.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "mục lưu trữ."
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                760.5445487469319,
+                718.7516680594845,
+                12.129440459805437
+            ],
+            "text": "Many functions that extract objects from other objects also transfer ownership with the reference,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nhiều chức năng trích xuất các đối tượng từ các đối tượng khác cũng chuyển quyền sở hữu với tài liệu tham khảo,"
+        },
+        {
+            "bbox": [
+                853.3797480154004,
+                760.5445487469319,
+                47.63773698237435,
+                12.129440459805437
+            ],
+            "text": "for in-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cho trong-"
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                775.0997701588121,
+                41.736629691743545,
+                12.129440459805437
+            ],
+            "text": "stance",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "lập trường"
+        },
+        {
+            "bbox": [
+                176.23251068912893,
+                776.5189475285495,
+                270.74770633578953,
+                10.916470846351984
+            ],
+            "text": "PyObject_GetAttrString()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPHTTX+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "PyObject_GetAttrString ()"
+        },
+        {
+            "bbox": [
+                423.25667173817334,
+                775.0997701588121,
+                4.288597166614181,
+                12.129440459805437
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                452.00744849445056,
+                775.0997701588121,
+                187.10292028442478,
+                12.129440459805437
+            ],
+            "text": "The picture is less clear,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hình ảnh ít rõ ràng hơn,"
+        },
+        {
+            "bbox": [
+                651.1870577113094,
+                775.0997701588121,
+                33.48530606679344,
+                12.129440459805437
+            ],
+            "text": "here,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "đây,"
+        },
+        {
+            "bbox": [
+                696.7661854035318,
+                775.0997701588121,
+                60.17752518927932,
+                12.129440459805437
+            ],
+            "text": "however,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tuy nhiên,"
+        },
+        {
+            "bbox": [
+                769.0204167440322,
+                775.0997701588121,
+                132.00295707887244,
+                12.129440459805437
+            ],
+            "text": "since a few com-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Vì một vài com-"
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                789.6549915706922,
+                200.63774947229456,
+                12.129428284818374
+            ],
+            "text": "mon routines are exceptions:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các thói quen mon là ngoại lệ:"
+        },
+        {
+            "bbox": [
+                336.0194096381832,
+                791.0741689404297,
+                201.80420003338588,
+                10.916470846352041
+            ],
+            "text": "PyTuple_GetItem()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPHTTX+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Pytuple_getItem ()"
+        },
+        {
+            "bbox": [
+                510.9950349753879,
+                789.6549915706922,
+                4.2885627290402795,
+                12.129428284818374
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                523.1342625419502,
+                791.0741689404297,
+                178.92026001611373,
+                10.916470846352041
+            ],
+            "text": "PyList_GetItem()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPHTTX+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Pylist_getItem ()"
+        },
+        {
+            "bbox": [
+                687.8164453962952,
+                789.6549915706922,
+                4.288614385401161,
+                12.129428284818374
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                699.9556729628574,
+                791.0741689404297,
+                189.40161112073577,
+                10.916470846352041
+            ],
+            "text": "PyDict_GetItem()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPHTTX+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Pydict_getItem ()"
+        },
+        {
+            "bbox": [
+                864.6378558172024,
+                789.6549915706922,
+                36.384570972421216,
+                12.129428284818374
+            ],
+            "text": ", and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", Và"
+        },
+        {
+            "bbox": [
+                123.97516085832746,
+                805.6293781773227,
+                251.34609550903292,
+                10.916470846352013
+            ],
+            "text": "PyDict_GetItemString()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPHTTX+FreeMono",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Pydict_getItemString ()"
+        },
+        {
+            "bbox": [
+                354.7034636791024,
+                804.2102008075854,
+                467.8342859074241,
+                12.129440459805437
+            ],
+            "text": "all return references that you borrow from the tuple, list or dictionary.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tất cả các tài liệu tham khảo trả lại mà bạn mượn từ tuple, danh sách hoặc từ điển."
+        },
+        {
+            "bbox": [
+                123.97516085832746,
+                826.0435929748115,
+                316.3904247300216,
+                12.129428284818346
+            ],
+            "text": "The function$_{PyImport_AddModule()}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các"
+        },
+        {
+            "bbox": [
+                422.44733709612257,
+                826.0435929748115,
+                478.5729890014956,
+                12.129428284818346
+            ],
+            "text": "also returns a borrowed reference, even though it may actually create the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "hàm $ _ {pyimport_addmodule ()} $"
+        },
+        {
+            "bbox": [
+                123.97516085832746,
+                840.5988022117047,
+                706.6317255342833,
+                12.129440459805409
+            ],
+            "text": "object it returns: this is possible because an owned reference to the object is stored in$_{sys.modules}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cũng trả về một tài liệu tham khảo mượn, mặc dù nó thực sự có thể tạo ra"
+        },
+        {
+            "bbox": [
+                813.1777547619058,
+                840.5988022117047,
+                4.288614385401161,
+                12.129440459805409
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đối tượng nó trả về: Điều này là có thể bởi vì một tham chiếu sở hữu cho đối tượng được lưu trữ trong $ _ {sys.modules} $"
+        },
+        {
+            "bbox": [
+                123.97516085832746,
+                862.4321943789308,
+                777.0251914464525,
+                12.129428284818346
+            ],
+            "text": "When you pass an object reference into another function, in general, the function borrows the reference from you —",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                123.97516085832746,
+                876.9874157908109,
+                777.043891049058,
+                12.129428284818346
+            ],
+            "text": "if it needs to store it, it will use$_{Py_INCREF()}$to become an independent owner. There are exactly two important",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Khi bạn chuyển một tham chiếu đối tượng vào một hàm khác, nói chung, chức năng mượn tham chiếu từ bạn -"
+        },
+        {
+            "bbox": [
+                142.67314834163008,
+                899.3491415226557,
+                5.14635103751084,
+                7.277719063325151
+            ],
+            "text": "2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 5.97760009765625
+            },
+            "text_vi": "Nếu nó cần lưu trữ nó, nó sẽ sử dụng $ _ {py_incref ()} $ để trở thành chủ sở hữu độc lập. Có chính xác hai điều quan trọng"
+        },
+        {
+            "bbox": [
+                152.109050466551,
+                900.8332602735125,
+                594.6688088545486,
+                9.703580370314654
+            ],
+            "text": "The metaphor of “borrowing” a reference is not completely correct: the owner still has a copy of the reference.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 7.970099925994873
+            },
+            "text_vi": "2"
+        },
+        {
+            "bbox": [
+                142.67314834163008,
+                911.1503467656066,
+                5.14635103751084,
+                7.277720280823843
+            ],
+            "text": "3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 5.97760009765625
+            },
+            "text_vi": "Phép ẩn dụ của việc vay mượn, một tham chiếu là không hoàn toàn chính xác: chủ sở hữu vẫn có một bản sao của tài liệu tham khảo."
+        },
+        {
+            "bbox": [
+                152.109050466551,
+                912.6344703864582,
+                242.93424285541712,
+                9.703577935317213
+            ],
+            "text": "Checking that the reference count is at least 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 7.970099925994873
+            },
+            "text_vi": "3"
+        },
+        {
+            "bbox": [
+                398.201683752099,
+                912.6344703864582,
+                80.52976974550955,
+                9.703577935317213
+            ],
+            "text": "does not work",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BYAIEP+FreeSerifBold",
+                "size": 7.970099925994873
+            },
+            "text_vi": "Kiểm tra xem số lượng tham chiếu ít nhất là 1"
+        },
+        {
+            "bbox": [
+                481.87117876270764,
+                912.6344703864582,
+                419.15839382349174,
+                9.703577935317213
+            ],
+            "text": "— the reference count itself could be in freed memory and may thus be reused",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 7.970099925994873
+            },
+            "text_vi": "không hoạt động"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                924.1568647726323,
+                100.29168541064612,
+                9.703577935317242
+            ],
+            "text": "for another object!",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XRQRTM+FreeSerif",
+                "size": 7.970099925994873
+            },
+            "text_vi": "- Bản thân số lượng tham chiếu có thể nằm trong bộ nhớ được giải phóng và do đó có thể được sử dụng lại"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                964.0251176635295,
+                40.48884619059032,
+                12.129434372311891
+            ],
+            "text": "2.1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GIKCQF+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cho một đối tượng khác!"
+        },
+        {
+            "bbox": [
+                172.96161270520025,
+                964.0251176635295,
+                251.86732368629936,
+                12.129434372311891
+            ],
+            "text": "Extending Python with C or C++",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GIKCQF+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "2.1."
+        },
+        {
+            "bbox": [
+                881.9411353342391,
+                964.0251176635295,
+                19.075609255697827,
+                12.129434372311891
+            ],
+            "text": "17",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/GIKCQF+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mở rộng Python với C hoặc C ++"
+        }
+    ]
+}

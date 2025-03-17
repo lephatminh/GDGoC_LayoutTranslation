@@ -1,3 +1,2016 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:29cc14f20e77191edba9b6d48bdff1d377f7922c7792d7746a75b9e2c024e13b
-size 59268
+{
+    "metadata": {
+        "page_hash": "642daace6022ceea4e51b186befee52f57d6be729cb01767ec1b40cad8adbba4",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4645,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                343.8523116830066,
+                48.370422979798036,
+                307.1483178104575,
+                11.971275252525288
+            ],
+            "text": "Known Issues in NDB Cluster Replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các vấn đề đã biết trong sao chép cụm NDB"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                777.2748680555555,
+                11.971275252525174
+            ],
+            "text": "•Using a storage engine which does not perform binary logging for tables on the replica requires special",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Sử dụng công cụ lưu trữ không thực hiện ghi nhật ký nhị phân cho các bảng trên bản sao yêu cầu đặc biệt"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                110.49163510101016,
+                67.9648692810458,
+                11.971275252525288
+            ],
+            "text": "handling.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "xử lý."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                138.96385732323233,
+                730.764722630719,
+                11.971275252525288
+            ],
+            "text": "•Use of a nontransactional storage engine for tables on the replica also requires special handling.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Sử dụng một công cụ lưu trữ không chuyển thể cho các bảng trên bản sao cũng yêu cầu xử lý đặc biệt."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                167.43607954545462,
+                105.17973856209153,
+                11.971275252525174
+            ],
+            "text": "•The source ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Nguồn "
+        },
+        {
+            "bbox": [
+                245.86601307189545,
+                168.58792329545452,
+                60.29411764705884,
+                10.172335542929318
+            ],
+            "text": "mysqld",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqld"
+        },
+        {
+            "bbox": [
+                306.1601307189543,
+                167.43607954545462,
+                159.17647058823525,
+                11.971275252525174
+            ],
+            "text": " must be started with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phải bắt đầu với "
+        },
+        {
+            "bbox": [
+                465.33660130718954,
+                168.58792329545452,
+                271.32352941176464,
+                10.172335542929318
+            ],
+            "text": "--ndb-log-update-as-write=0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--ndb-log-update-as-write = 0"
+        },
+        {
+            "bbox": [
+                736.6601307189542,
+                167.43607954545462,
+                24.201405637254993,
+                11.971275252525174
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                760.8615363562092,
+                168.58792329545452,
+                170.83338357843138,
+                10.172335542929318
+            ],
+            "text": "--ndb-log-update-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--ndb-log-update-"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                184.11822632575752,
+                120.58823529411765,
+                10.172335542929432
+            ],
+            "text": "as-write=OFF",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "As-write = TẮT"
+        },
+        {
+            "bbox": [
+                278.02287581699346,
+                182.96638257575762,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                211.807410669192,
+                707.5012087418299,
+                11.971275252525288
+            ],
+            "text": "The next few paragraphs provide additional information about each of the issues just described.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một vài đoạn tiếp theo cung cấp thông tin bổ sung về từng vấn đề vừa được mô tả."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                240.64852935606064,
+                636.5551638071895,
+                11.971275252525288
+            ],
+            "text": "Multiple sources not supported when replicating NDB to other storage engines. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Nhiều nguồn không được hỗ trợ khi sao chép NDB sang các công cụ lưu trữ khác. "
+        },
+        {
+            "bbox": [
+                793.9898043300655,
+                240.64852935606064,
+                110.75694444444446,
+                11.971275252525288
+            ],
+            "text": " For replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để nhân rộng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                256.17883238636375,
+                38.15277777777777,
+                11.971275252525174
+            ],
+            "text": "from ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "từ "
+        },
+        {
+            "bbox": [
+                178.8390522875817,
+                257.33067613636365,
+                30.14705882352942,
+                10.172335542929318
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                208.98611111111111,
+                256.17883238636375,
+                699.1772708333334,
+                11.971275252525174
+            ],
+            "text": " to a different storage engine, the relationship between the two databases must be one-to-one.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đối với một công cụ lưu trữ khác, mối quan hệ giữa hai cơ sở dữ liệu phải là một-một."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                271.70913541666675,
+                737.2128937908496,
+                11.971275252525288
+            ],
+            "text": "This means that bidirectional or circular replication is not supported between NDB Cluster and other",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Điều này có nghĩa là sao chép hai chiều hoặc tròn không được hỗ trợ giữa cụm NDB và các bản khác"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                287.23943844696976,
+                123.82065318627451,
+                11.971275252525288
+            ],
+            "text": "storage engines.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Động cơ lưu trữ."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                316.080466540404,
+                753.1238415032678,
+                11.971275252525288
+            ],
+            "text": "In addition, it is not possible to configure more than one replication channel when replicating between ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ngoài ra, không thể định cấu hình nhiều hơn một kênh sao chép khi sao chép giữa "
+        },
+        {
+            "bbox": [
+                893.8101160130718,
+                317.2323232323233,
+                30.147058823529505,
+                10.172322601010023
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                331.610769570707,
+                433.81615972222227,
+                11.971275252525288
+            ],
+            "text": "and a different storage engine. (An NDB Cluster database ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và một công cụ lưu trữ khác nhau. (Một cơ sở dữ liệu cụm NDB "
+        },
+        {
+            "bbox": [
+                574.5024342320262,
+                331.610769570707,
+                26.99834926470578,
+                11.971275252525288
+            ],
+            "text": "can",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "Có thể"
+        },
+        {
+            "bbox": [
+                601.5008337418301,
+                331.610769570707,
+                304.35127369281054,
+                11.971275252525288
+            ],
+            "text": " simultaneously replicate to multiple NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đồng thời sao chép thành nhiều NDB"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                347.14107260101014,
+                286.71527777777777,
+                11.971275252525174
+            ],
+            "text": "Cluster databases.) If the source uses ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cơ sở dữ liệu cụm.) Nếu nguồn sử dụng "
+        },
+        {
+            "bbox": [
+                427.4015522875817,
+                348.29292929292933,
+                30.14705882352945,
+                10.172322601010023
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                457.54861111111114,
+                347.14107260101014,
+                465.4203766339869,
+                11.971275252525174
+            ],
+            "text": " tables, it is still possible to have more than one MySQL Server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng, vẫn có thể có nhiều hơn một máy chủ MySQL"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                362.6714144570707,
+                745.637271650327,
+                11.971275252525288
+            ],
+            "text": "maintain a binary log of all changes, but for the replica to change sources (fail over), the new source-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Duy trì nhật ký nhị phân của tất cả các thay đổi, nhưng để bản sao thay đổi nguồn (không thành công), nguồn mới-"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                378.2017174873738,
+                441.21895424836606,
+                11.971275252525174
+            ],
+            "text": "replica relationship must be explicitly defined on the replica.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mối quan hệ bản sao phải được xác định rõ ràng trên bản sao."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                407.0427844065657,
+                649.5853925653596,
+                11.971275252525288
+            ],
+            "text": "Replicating NDB tables to a storage engine that does not perform binary logging. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Tái tạo các bảng NDB thành một công cụ lưu trữ không thực hiện ghi nhật ký nhị phân. "
+        },
+        {
+            "bbox": [
+                816.3321078431374,
+                407.0427844065657,
+                101.4783496732025,
+                11.971275252525288
+            ],
+            "text": "If you attempt",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu bạn cố gắng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                422.5730874368687,
+                742.8737577614379,
+                11.971275252525288
+            ],
+            "text": "to replicate from an NDB Cluster to a replica that uses a storage engine that does not handle its own",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để sao chép từ cụm NDB thành bản sao sử dụng công cụ lưu trữ không tự xử lý"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                438.1033904671717,
+                439.35986887254904,
+                11.971275252525288
+            ],
+            "text": "binary logging, the replication process aborts with the error ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ghi nhật ký nhị phân, quá trình sao chép phá thai với lỗi "
+        },
+        {
+            "bbox": [
+                580.046143382353,
+                439.25520833333337,
+                311.5195575980392,
+                10.17236142676768
+            ],
+            "text": "Binary logging not possible ...",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ghi nhật ký nhị phân không thể ..."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                454.7855113636364,
+                783.8235294117646,
+                10.17236142676768
+            ],
+            "text": "Statement cannot be written atomically since more than one engine involved and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố không thể được viết nguyên tử vì nhiều hơn một động cơ liên quan và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                470.3158143939394,
+                351.71568627450984,
+                10.172361426767793
+            ],
+            "text": "at least one engine is self-logging",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ít nhất một động cơ đang tự truy cập"
+        },
+        {
+            "bbox": [
+                492.40196078431376,
+                469.16399652777784,
+                52.10414991830061,
+                11.971275252525288
+            ],
+            "text": " (Error ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Lỗi "
+        },
+        {
+            "bbox": [
+                544.5061107026144,
+                470.3158143939394,
+                40.1960784313726,
+                10.172361426767793
+            ],
+            "text": "1595",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "1595"
+        },
+        {
+            "bbox": [
+                584.702189133987,
+                469.16399652777784,
+                347.21035906862744,
+                11.971275252525288
+            ],
+            "text": "). It is possible to work around this issue in one",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Có thể giải quyết vấn đề này trong một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                484.69429955808084,
+                159.17648733660133,
+                11.971275252525288
+            ],
+            "text": "of the following ways:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "của các cách sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                513.1665217803031,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                513.1665217803031,
+                306.17687908496737,
+                11.971275252525288
+            ],
+            "text": "Turn off binary logging on the replica. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Tắt đăng nhập nhị phân trên bản sao. "
+        },
+        {
+            "bbox": [
+                480.35988562091507,
+                513.1665217803031,
+                279.2622381535947,
+                11.971275252525288
+            ],
+            "text": " This can be accomplished by setting ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Điều này có thể được thực hiện bằng cách cài đặt "
+        },
+        {
+            "bbox": [
+                759.6221237745098,
+                514.3183396464647,
+                150.73529411764707,
+                10.172361426767736
+            ],
+            "text": "sql_log_bin = 0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SQL_LOG_BIN = 0"
+        },
+        {
+            "bbox": [
+                910.3574178921568,
+                513.1665217803031,
+                4.655995506536101,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                541.6387440025253,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                541.6387440025253,
+                568.65727124183,
+                11.971275252525231
+            ],
+            "text": "Change the storage engine used for the mysql.ndb_apply_status table. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Thay đổi công cụ lưu trữ được sử dụng cho bảng mysql.ndb_apply_status. "
+        },
+        {
+            "bbox": [
+                742.8402777777777,
+                541.6387440025253,
+                188.05065359477123,
+                11.971275252525231
+            ],
+            "text": " Causing this table to use",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Khiến bảng này sử dụng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                557.1690470328283,
+                756.8754587418301,
+                11.971275252525231
+            ],
+            "text": "an engine that does not handle its own binary logging can also eliminate the conflict. This can be done",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một động cơ không xử lý việc ghi nhật ký nhị phân của chính nó cũng có thể loại bỏ xung đột. Điều này có thể được thực hiện"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                572.6993500631313,
+                233.6564375,
+                11.971275252525231
+            ],
+            "text": "by issuing a statement such as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bằng cách đưa ra một tuyên bố như "
+        },
+        {
+            "bbox": [
+                391.0910780228758,
+                573.8511679292928,
+                482.3529746732026,
+                10.172361426767736
+            ],
+            "text": "ALTER TABLE mysql.ndb_apply_status ENGINE=MyISAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng mysql.ndb_apply_status động cơ = myisam"
+        },
+        {
+            "bbox": [
+                873.4440526960784,
+                572.6993500631313,
+                51.21653676470589,
+                11.971275252525231
+            ],
+            "text": " on the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trên"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                588.2296530934343,
+                497.1417316176471,
+                11.971275252525288
+            ],
+            "text": "replica. It is safe to do this when using a storage engine other than ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bản sao. Nó là an toàn để làm điều này khi sử dụng một công cụ lưu trữ khác với "
+        },
+        {
+            "bbox": [
+                654.576372140523,
+                589.381470959596,
+                30.14705882352939,
+                10.172361426767736
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                684.7234309640523,
+                588.2296530934343,
+                236.47022998366015,
+                11.971275252525288
+            ],
+            "text": " on the replica, since you do not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trên bản sao, vì bạn không"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                603.7599561237374,
+                444.015914624183,
+                11.971275252525231
+            ],
+            "text": "need to worry about keeping multiple replicas synchronized.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cần phải lo lắng về việc giữ nhiều bản sao được đồng bộ hóa."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                632.2321783459597,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                632.2321783459597,
+                561.2209967320262,
+                11.971275252525231
+            ],
+            "text": "Filter out changes to the mysql.ndb_apply_status table on the replica. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Lọc ra các thay đổi đối với bảng mysql.ndb_apply_status trên bản sao. "
+        },
+        {
+            "bbox": [
+                735.4040032679738,
+                632.2321783459597,
+                155.4750482026144,
+                11.971275252525231
+            ],
+            "text": " This can be done by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Điều này có thể được thực hiện bởi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                647.7624813762627,
+                175.9248533496732,
+                11.971275252525288
+            ],
+            "text": "starting the replica with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu bản sao với "
+        },
+        {
+            "bbox": [
+                333.359460375817,
+                648.9142992424242,
+                472.30390482026155,
+                10.172361426767736
+            ],
+            "text": "--replicate-ignore-table=mysql.ndb_apply_status",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Replicate-ignore-Table = mysql.ndb_apply_status"
+        },
+        {
+            "bbox": [
+                805.6634154411765,
+                647.7624813762627,
+                116.38442892156866,
+                11.971275252525288
+            ],
+            "text": ". If you need for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Nếu bạn cần"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                663.2927844065657,
+                580.9003267973856,
+                11.971275252525231
+            ],
+            "text": "other tables to be ignored by replication, you might wish to use an appropriate ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các bảng khác bị bỏ qua bởi sự sao chép, bạn có thể muốn sử dụng một "
+        },
+        {
+            "bbox": [
+                738.3349673202614,
+                664.4446022727273,
+                170.83328308823536,
+                10.172361426767736
+            ],
+            "text": "--replicate-wild-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Tái tạo-Wild-"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                679.9749053030303,
+                120.58823529411765,
+                10.172361426767736
+            ],
+            "text": "ignore-table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "bỏ qua bàn"
+        },
+        {
+            "bbox": [
+                278.02287581699346,
+                678.8230874368687,
+                113.58743504901963,
+                11.971275252525288
+            ],
+            "text": " option instead.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tùy chọn thay thế."
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                707.6641672979798,
+                77.22671568627459,
+                11.971275252525231
+            ],
+            "text": "Important",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Quan trọng"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                736.5052342171717,
+                88.44810416666667,
+                11.971275252525231
+            ],
+            "text": "You should ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn nên "
+        },
+        {
+            "bbox": [
+                370.1556205065359,
+                736.5052342171717,
+                23.280228758169983,
+                11.971275252525231
+            ],
+            "text": "not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "không"
+        },
+        {
+            "bbox": [
+                393.4358660130719,
+                736.5052342171717,
+                285.77738602941173,
+                11.971275252525231
+            ],
+            "text": " disable replication or binary logging of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " vô hiệu hóa sao chép hoặc ghi nhật ký nhị phân của"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                753.1873551136364,
+                221.07844812091514,
+                10.17236142676768
+            ],
+            "text": "mysql.ndb_apply_status",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql.ndb_apply_status"
+        },
+        {
+            "bbox": [
+                502.7859644607844,
+                752.0355372474747,
+                359.36970629084965,
+                11.971275252525288
+            ],
+            "text": " or change the storage engine used for this table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc thay đổi công cụ lưu trữ được sử dụng cho bảng này"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                767.5658402777779,
+                605.9894125816995,
+                11.971275252525231
+            ],
+            "text": "when replicating from one NDB Cluster to another. See Replication and binary log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi sao chép từ cụm NDB này sang cụm khác. Xem bản sao và nhật ký nhị phân"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                783.0961433080809,
+                470.96403553921573,
+                11.97127525252526
+            ],
+            "text": "filtering rules with replication between NDB Clusters, for details.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lọc quy tắc với sự sao chép giữa các cụm NDB, để biết chi tiết."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                811.9371843434344,
+                480.20915032679744,
+                11.97127525252526
+            ],
+            "text": "Replication from NDB to a nontransactional storage engine. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Sao chép từ NDB sang một công cụ lưu trữ không chuyển thể. "
+        },
+        {
+            "bbox": [
+                637.6437908496732,
+                811.9371843434344,
+                172.18995098039215,
+                11.97127525252526
+            ],
+            "text": " When replicating from ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Khi sao chép từ "
+        },
+        {
+            "bbox": [
+                809.8337418300654,
+                813.0890280934343,
+                30.14705882352939,
+                10.172335542929318
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                839.9808006535948,
+                811.9371843434344,
+                32.59230351307201,
+                11.97127525252526
+            ],
+            "text": " to a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đến a"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                827.4674873737374,
+                305.35622589869286,
+                11.97127525252526
+            ],
+            "text": "nontransactional storage engine such as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "động cơ lưu trữ không chuyển tiếp như "
+        },
+        {
+            "bbox": [
+                446.0425004084968,
+                828.6193311237373,
+                60.29411764705884,
+                10.172335542929318
+            ],
+            "text": "MyISAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Myisam"
+        },
+        {
+            "bbox": [
+                506.3366180555556,
+                827.4674873737374,
+                402.1283182189542,
+                11.97127525252526
+            ],
+            "text": ", you may encounter unnecessary duplicate key errors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", bạn có thể gặp lỗi chính không cần thiết"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                842.9977904040404,
+                125.66299019607845,
+                11.97127525252526
+            ],
+            "text": "when replicating ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi sao chép "
+        },
+        {
+            "bbox": [
+                266.3492647058824,
+                844.1496341540404,
+                341.6666666666666,
+                10.172335542929318
+            ],
+            "text": "INSERT ... ON DUPLICATE KEY UPDATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Chèn ... trên bản cập nhật khóa trùng lặp"
+        },
+        {
+            "bbox": [
+                608.015931372549,
+                842.9977904040404,
+                297.903219771242,
+                11.97127525252526
+            ],
+            "text": " statements. You can suppress these by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố. Bạn có thể đàn áp những điều này bằng cách"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                858.5280934343434,
+                44.68464052287584,
+                11.97127525252526
+            ],
+            "text": "using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sử dụng "
+        },
+        {
+            "bbox": [
+                185.37091503267976,
+                859.6799371843434,
+                271.3235126633986,
+                10.172335542929318
+            ],
+            "text": "--ndb-log-update-as-write=0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--ndb-log-update-as-write = 0"
+        },
+        {
+            "bbox": [
+                456.6944276960784,
+                858.5280934343434,
+                446.8463884803922,
+                11.97127525252526
+            ],
+            "text": ", which forces updates to be logged as writes, rather than as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", buộc các bản cập nhật phải được ghi lại như ghi, thay vì"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                874.0583964646464,
+                64.2467320261438,
+                11.97127525252526
+            ],
+            "text": "updates.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cập nhật."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                902.899500915404,
+                641.2446895424837,
+                11.971275252525245
+            ],
+            "text": "Replication and binary log filtering rules with replication between NDB Clusters. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Sao chép và quy tắc lọc nhật ký nhị phân với sự sao chép giữa các cụm NDB. "
+        },
+        {
+            "bbox": [
+                798.6793300653595,
+                902.899500915404,
+                119.16465767973864,
+                11.971275252525245
+            ],
+            "text": " If you are using",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Nếu bạn đang sử dụng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                918.4298039457071,
+                136.86764705882354,
+                11.971275252525245
+            ],
+            "text": "any of the options ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bất kỳ tùy chọn nào "
+        },
+        {
+            "bbox": [
+                277.55392156862746,
+                919.5816541666667,
+                160.78431372549022,
+                10.172329071969685
+            ],
+            "text": "--replicate-do-*",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Replicate-do-*"
+        },
+        {
+            "bbox": [
+                438.3382352941177,
+                918.4298039457071,
+                9.31209150326788,
+                11.971275252525245
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                447.65032679738556,
+                919.5816541666667,
+                200.98039215686276,
+                10.172329071969685
+            ],
+            "text": "--replicate-ignore-*",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Replicate-ignore-*"
+        },
+        {
+            "bbox": [
+                648.6307189542483,
+                918.4298039457071,
+                9.312091503267993,
+                11.971275252525245
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                657.9428104575163,
+                919.5816541666667,
+                140.68627450980398,
+                10.172329071969685
+            ],
+            "text": "--binlog-do-db",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Binlog-do-DB"
+        },
+        {
+            "bbox": [
+                798.6290849673203,
+                918.4298039457071,
+                28.857451388888876,
+                11.971275252525245
+            ],
+            "text": ", or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hoặc "
+        },
+        {
+            "bbox": [
+                827.4865363562092,
+                919.5816541666667,
+                90.44117647058829,
+                10.172329071969685
+            ],
+            "text": "--binlog-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Binlog-"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "4616",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4616"
+        }
+    ]
+}

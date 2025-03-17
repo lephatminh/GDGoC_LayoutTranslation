@@ -1,3 +1,2236 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:6e810246a472e64db368394b1a81df887df0ba7e04692cb77c5d218767183c6a
-size 63768
+{
+    "metadata": {
+        "page_hash": "7d24f31739b292afd80d712cd78a94f4fc195ee25e4974fde4ec39d34075efc1",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 2644,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                405.6370674019608,
+                48.370422979798036,
+                243.87292401960786,
+                11.971275252525288
+            ],
+            "text": "DROP TABLESPACE Statement",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thả tuyên bố không gian bảng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                99.61928104575159,
+                11.971275252525174
+            ],
+            "text": "Including the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bao gồm cả "
+        },
+        {
+            "bbox": [
+                270.45263112745096,
+                96.11317582070706,
+                90.44117647058823,
+                10.172335542929318
+            ],
+            "text": "TEMPORARY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TẠM THỜI"
+        },
+        {
+            "bbox": [
+                360.8937908496732,
+                94.96133207070716,
+                453.344720996732,
+                11.971275252525174
+            ],
+            "text": " keyword is a good way to prevent accidentally dropping non-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Từ khóa là một cách tốt để ngăn chặn vô tình bỏ rơi"
+        },
+        {
+            "bbox": [
+                814.2385620915034,
+                96.11317582070706,
+                90.44122671568618,
+                10.172335542929318
+            ],
+            "text": "TEMPORARY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TẠM THỜI"
+        },
+        {
+            "bbox": [
+                904.6797888071895,
+                94.96133207070716,
+                53.99671527777787,
+                11.971275252525174
+            ],
+            "text": " tables.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                122.23383838383836,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                123.38568213383849,
+                80.3921736111111,
+                10.172335542929204
+            ],
+            "text": "RESTRICT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "HẠN CHẾ"
+        },
+        {
+            "bbox": [
+                284.7389873366013,
+                122.23383838383836,
+                37.248349264705894,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                321.9873366013072,
+                123.38568213383849,
+                70.34313725490193,
+                10.172335542929204
+            ],
+            "text": "CASCADE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tầng"
+        },
+        {
+            "bbox": [
+                392.33047385620915,
+                122.23383838383836,
+                559.4457201797386,
+                11.971275252525288
+            ],
+            "text": " keywords do nothing. They are permitted to make porting easier from other",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Từ khóa không làm gì cả. Họ được phép làm cho việc chuyển tiếp dễ dàng hơn từ những người khác"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                137.76414141414148,
+                139.63112745098042,
+                11.971275252525174
+            ],
+            "text": "database systems.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hệ thống cơ sở dữ liệu."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                166.1884914772728,
+                100.49019607843135,
+                10.172335542929204
+            ],
+            "text": "DROP TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bàn thả"
+        },
+        {
+            "bbox": [
+                271.3235294117647,
+                165.03664772727268,
+                184.3157512254902,
+                11.971275252525288
+            ],
+            "text": " is not supported with all ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " không được hỗ trợ với tất cả "
+        },
+        {
+            "bbox": [
+                455.6392806372549,
+                166.1884914772728,
+                211.0294117647059,
+                10.172335542929204
+            ],
+            "text": "innodb_force_recovery",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_force_recovery"
+        },
+        {
+            "bbox": [
+                666.6686924019608,
+                165.03664772727268,
+                307.03106249999996,
+                11.971275252525288
+            ],
+            "text": " settings. See Section 15.21.2, “Forcing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cài đặt. Xem phần 15.21.2, \"cưỡng bức"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                180.5669507575758,
+                150.60130718954244,
+                11.971275252525174
+            ],
+            "text": "InnoDB Recovery”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phục hồi innodb"
+        },
+        {
+            "bbox": [
+                307.6507352941176,
+                180.5669507575758,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                208.5512367424244,
+                78.22156862745098,
+                16.759798295454402
+            ],
+            "text": "13.1.33",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "13.1.33"
+        },
+        {
+            "bbox": [
+                175.18120915032682,
+                208.5512367424244,
+                353.0522226307189,
+                16.759798295454402
+            ],
+            "text": "DROP TABLESPACE Statement",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Thả tuyên bố không gian bảng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                240.63296022727286,
+                184.9019440359477,
+                8.137917613636205
+            ],
+            "text": "DROP [UNDO] TABLESPACE ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thả không gian bảng [hoàn tác] "
+        },
+        {
+            "bbox": [
+                355.73527736928105,
+                240.63296022727286,
+                120.58823529411768,
+                8.137917613636205
+            ],
+            "text": "tablespace_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "TableSpace_Name"
+        },
+        {
+            "bbox": [
+                202.99019607843138,
+                253.05725441919196,
+                96.47058823529414,
+                8.13782702020194
+            ],
+            "text": "[ENGINE [=] ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[Động cơ [=] "
+        },
+        {
+            "bbox": [
+                299.4607843137255,
+                253.05725441919196,
+                88.43138929738558,
+                8.13782702020194
+            ],
+            "text": "engine_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "động cơ_name"
+        },
+        {
+            "bbox": [
+                387.8921736111111,
+                253.05725441919196,
+                8.039215686274531,
+                8.13782702020194
+            ],
+            "text": "]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                278.15418529040403,
+                512.9187091503268,
+                11.971275252525288
+            ],
+            "text": "This statement drops a tablespace that was previously created using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố này giảm một không gian bảng được tạo trước đó bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                683.7520424836601,
+                279.30602904040416,
+                170.83333333333337,
+                10.172335542929204
+            ],
+            "text": "CREATE TABLESPACE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo không gian bảng"
+        },
+        {
+            "bbox": [
+                854.5853758169935,
+                278.15418529040403,
+                35.372549019607845,
+                11.971275252525288
+            ],
+            "text": ". It is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Nó là"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                293.68448832070703,
+                129.41460743464054,
+                11.971275252525288
+            ],
+            "text": "supported by the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được hỗ trợ bởi "
+        },
+        {
+            "bbox": [
+                300.2479407679739,
+                294.83633207070716,
+                30.14705882352939,
+                10.172335542929204
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                330.3950163398693,
+                293.68448832070703,
+                37.24838276143788,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                367.64336560457514,
+                294.83633207070716,
+                60.29411764705884,
+                10.172335542929204
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                427.937483251634,
+                293.68448832070703,
+                128.4767324346406,
+                11.971275252525288
+            ],
+            "text": " storage engines.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Động cơ lưu trữ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                320.95699463383835,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                322.1088383838385,
+                40.196095179738535,
+                10.172335542929204
+            ],
+            "text": "UNDO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hoàn tác"
+        },
+        {
+            "bbox": [
+                244.54290890522876,
+                320.95699463383835,
+                716.8300653594771,
+                11.971275252525288
+            ],
+            "text": " keyword, introduced in MySQL 8.0.14, must be specified to drop an undo tablespace. Only undo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Từ khóa, được giới thiệu trong MySQL 8.0.14, phải được chỉ định để thả một không gian bảng hoàn tác. Chỉ hoàn tác"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                336.48729766414135,
+                199.2218137254902,
+                11.971275252525288
+            ],
+            "text": "tablespaces created using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không gian bảng được tạo bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                370.05514705882354,
+                337.6391414141415,
+                221.07844812091503,
+                10.172335542929204
+            ],
+            "text": "CREATE UNDO TABLESPACE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo không gian bảng hoàn tác"
+        },
+        {
+            "bbox": [
+                591.1335951797386,
+                336.48729766414135,
+                331.45011315359477,
+                11.971275252525288
+            ],
+            "text": " syntax can be dropped. An undo tablespace",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cú pháp có thể được bỏ. Một không gian bảng hoàn tác"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                352.01760069444447,
+                105.19648692810458,
+                11.971275252525288
+            ],
+            "text": "must be in an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phải ở trong một "
+        },
+        {
+            "bbox": [
+                276.0298202614379,
+                353.1694444444445,
+                50.24509803921569,
+                10.172335542929318
+            ],
+            "text": "empty",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "trống"
+        },
+        {
+            "bbox": [
+                326.2749183006536,
+                352.01760069444447,
+                622.6205065359477,
+                11.971275252525288
+            ],
+            "text": " state before it can be dropped. For more information, see Section 15.6.3.4, “Undo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trạng thái trước khi nó có thể được bỏ. Để biết thêm thông tin, xem phần 15.6.3.4, UNDO UNDO"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                367.5479037247476,
+                114.30759803921566,
+                11.971275252525174
+            ],
+            "text": "Tablespaces”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không gian bảng ”"
+        },
+        {
+            "bbox": [
+                271.3570093954249,
+                367.5479037247476,
+                4.65604575163394,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                395.9722537878788,
+                60.29411764705881,
+                10.17236142676768
+            ],
+            "text": "ENGINE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ĐỘNG CƠ"
+        },
+        {
+            "bbox": [
+                231.12745098039215,
+                394.82043592171726,
+                424.5375482026144,
+                11.971275252525174
+            ],
+            "text": " sets the storage engine that uses the tablespace, where ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đặt công cụ lưu trữ sử dụng không gian bảng, trong đó "
+        },
+        {
+            "bbox": [
+                655.6650494281046,
+                395.9722537878788,
+                110.53921568627447,
+                10.17236142676768
+            ],
+            "text": "engine_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "động cơ_name"
+        },
+        {
+            "bbox": [
+                766.204265114379,
+                394.82043592171726,
+                109.85253267973872,
+                11.971275252525174
+            ],
+            "text": " is the name of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là tên của"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                410.35073895202027,
+                306.2773692810457,
+                11.971275252525174
+            ],
+            "text": "the storage engine. Currently, the values ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "động cơ lưu trữ. Hiện tại, các giá trị "
+        },
+        {
+            "bbox": [
+                477.1107026143791,
+                411.5025568181819,
+                60.2941176470589,
+                10.172361426767566
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                537.404820261438,
+                410.35073895202027,
+                37.24834926470578,
+                11.971275252525174
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                574.6531695261438,
+                411.5025568181819,
+                30.14705882352939,
+                10.172361426767566
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                604.8002283496731,
+                410.35073895202027,
+                277.4534816176472,
+                11.971275252525174
+            ],
+            "text": " are supported. If not set, the value of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được hỗ trợ. Nếu không được đặt, giá trị của"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                427.0328598484849,
+                221.07843137254903,
+                10.17236142676768
+            ],
+            "text": "default_storage_engine",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Default_Storage_Engine"
+        },
+        {
+            "bbox": [
+                391.9117647058824,
+                425.88104198232327,
+                512.0477606209149,
+                11.971275252525288
+            ],
+            "text": " is used. If it is not the same as the storage engine used to create the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được sử dụng. Nếu nó không giống như công cụ lưu trữ được sử dụng để tạo"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                441.41134501262627,
+                118.2434808006536,
+                11.971275252525288
+            ],
+            "text": "tablespace, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không gian bảng, The "
+        },
+        {
+            "bbox": [
+                289.07681413398694,
+                442.5631628787879,
+                150.73529411764707,
+                10.17236142676768
+            ],
+            "text": "DROP TABLESPACE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thả không gian bảng"
+        },
+        {
+            "bbox": [
+                439.812108251634,
+                441.41134501262627,
+                117.28879044117645,
+                11.971275252525288
+            ],
+            "text": " statement fails.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố thất bại."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                469.83566919191924,
+                150.73529411764704,
+                10.17236142676768
+            ],
+            "text": "tablespace_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "TableSpace_Name"
+        },
+        {
+            "bbox": [
+                321.5686274509804,
+                468.6838513257576,
+                292.25898692810455,
+                11.971275252525288
+            ],
+            "text": " is a case-sensitive identifier in MySQL.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là một định danh nhạy cảm trường hợp trong MySQL."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                495.9563576388889,
+                53.058806781045746,
+                11.971275252525288
+            ],
+            "text": "For an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho một "
+        },
+        {
+            "bbox": [
+                223.8921401143791,
+                497.1081625631314,
+                60.29411764705881,
+                10.17237436868686
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                284.1862577614379,
+                495.9563576388889,
+                579.0413251633987,
+                11.971275252525288
+            ],
+            "text": " general tablespace, all tables must be dropped from the tablespace prior to a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " không gian bảng chung, tất cả các bảng phải được loại bỏ khỏi không gian bảng trước khi "
+        },
+        {
+            "bbox": [
+                863.2275829248366,
+                497.1081625631314,
+                40.1960784313726,
+                10.17237436868686
+            ],
+            "text": "DROP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LÀM RƠI"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                512.6384655934344,
+                100.49019607843135,
+                10.17237436868686
+            ],
+            "text": "TABLESPACE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Không gian bảng"
+        },
+        {
+            "bbox": [
+                271.3235294117647,
+                511.486660669192,
+                310.95016339869284,
+                11.971275252525174
+            ],
+            "text": " operation. If the tablespace is not empty, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoạt động. Nếu không gian bảng không trống, "
+        },
+        {
+            "bbox": [
+                582.2736928104575,
+                512.6384655934344,
+                150.73529411764707,
+                10.17237436868686
+            ],
+            "text": "DROP TABLESPACE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thả không gian bảng"
+        },
+        {
+            "bbox": [
+                733.0089869281046,
+                511.486660669192,
+                124.72508169934645,
+                11.971275252525174
+            ],
+            "text": " returns an error.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trả về một lỗi."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                538.7591669823232,
+                25.13929738562092,
+                11.971275252525231
+            ],
+            "text": "An ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MỘT "
+        },
+        {
+            "bbox": [
+                195.97261397058824,
+                539.9109719065657,
+                30.14705882352939,
+                10.172374368686917
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                226.11970629084968,
+                538.7591669823232,
+                697.3014203431372,
+                11.971275252525231
+            ],
+            "text": " tablespace to be dropped must not contain any data files; in other words, before you can drop",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Không gian bảng được bỏ không được chứa bất kỳ tệp dữ liệu nào; Nói cách khác, trước khi bạn có thể bỏ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                554.2894700126262,
+                23.280228758169926,
+                11.971275252525231
+            ],
+            "text": "an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MỘT "
+        },
+        {
+            "bbox": [
+                194.11356209150327,
+                555.4412749368687,
+                30.147042075163398,
+                10.17237436868686
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                224.26060416666667,
+                554.2894700126262,
+                434.7373533496733,
+                11.971275252525231
+            ],
+            "text": " tablespace, you must first drop each of its data files using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Không gian bảng, trước tiên bạn phải bỏ từng tệp dữ liệu của mình bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                658.99795751634,
+                555.4412749368687,
+                251.22543995098033,
+                10.17237436868686
+            ],
+            "text": "ALTER TABLESPACE ... DROP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi không gian bảng ... thả"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                570.9715779671717,
+                80.39215686274508,
+                10.172374368686917
+            ],
+            "text": "DATAFILE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DataFile"
+        },
+        {
+            "bbox": [
+                251.22549019607843,
+                569.8197730429293,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                597.4481691919192,
+                55.832351266339884,
+                14.365543244949492
+            ],
+            "text": "Notes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                627.4708333333333,
+                93.08741830065364,
+                11.971275252525288
+            ],
+            "text": "•A general ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Một vị tướng "
+        },
+        {
+            "bbox": [
+                263.920751633987,
+                628.6226382575758,
+                60.29411764705878,
+                10.172374368686917
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                324.21486928104576,
+                627.4708333333333,
+                584.6352459150328,
+                11.971275252525288
+            ],
+            "text": " tablespace is not deleted automatically when the last table in the tablespace is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Không gian bảng không bị xóa tự động khi bảng cuối cùng trong không gian bảng là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                643.0011363636364,
+                432.8782512254902,
+                11.971275252525231
+            ],
+            "text": "dropped. The tablespace must be dropped explicitly using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "rơi xuống. Không gian bảng phải được loại bỏ rõ ràng bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                620.4599505718954,
+                644.1529412878788,
+                160.78431372549016,
+                10.172374368686917
+            ],
+            "text": "DROP TABLESPACE ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thả không gian bảng "
+        },
+        {
+            "bbox": [
+                781.2442642973856,
+                644.1529412878788,
+                150.73524387254906,
+                10.172374368686917
+            ],
+            "text": "tablespace_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "TableSpace_Name"
+        },
+        {
+            "bbox": [
+                931.9795081699347,
+                643.0011363636364,
+                4.65609599673212,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                670.2736426767676,
+                32.575571895424844,
+                11.971275252525288
+            ],
+            "text": "•A ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•MỘT "
+        },
+        {
+            "bbox": [
+                203.4089052287582,
+                671.4254476010101,
+                130.63725490196074,
+                10.17237436868686
+            ],
+            "text": "DROP DATABASE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thả cơ sở dữ liệu"
+        },
+        {
+            "bbox": [
+                334.04616013071893,
+                670.2736426767676,
+                621.9337900326798,
+                11.971275252525288
+            ],
+            "text": " operation can drop tables that belong to a general tablespace but it cannot drop the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Hoạt động có thể thả các bảng thuộc về một không gian bảng chung nhưng nó không thể thả"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                685.8039457070707,
+                767.1422238562092,
+                11.971275252525231
+            ],
+            "text": "tablespace, even if the operation drops all tables that belong to the tablespace. The tablespace must be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không gian bảng, ngay cả khi hoạt động giảm tất cả các bảng thuộc về không gian bảng. Không gian bảng phải là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                701.3342487373737,
+                178.7217969771242,
+                11.971275252525231
+            ],
+            "text": "dropped explicitly using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "rơi rõ ràng bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                366.3035298202615,
+                702.4860536616161,
+                160.78433047385613,
+                10.17237436868686
+            ],
+            "text": "DROP TABLESPACE ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thả không gian bảng "
+        },
+        {
+            "bbox": [
+                527.0878100490196,
+                702.4860536616161,
+                150.73529411764707,
+                10.17237436868686
+            ],
+            "text": "tablespace_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "TableSpace_Name"
+        },
+        {
+            "bbox": [
+                677.8231041666667,
+                701.3342487373737,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                728.6067421085859,
+                767.9796421568627,
+                11.971275252525231
+            ],
+            "text": "•Similar to the system tablespace, truncating or dropping tables stored in a general tablespace creates",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Tương tự như không gian bảng hệ thống, các bảng cắt ngắn hoặc thả được lưu trữ trong một không gian bảng chung tạo ra"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                744.1370451388889,
+                679.5817160947712,
+                11.971275252525288
+            ],
+            "text": "free space internally in the general tablespace .ibd data file which can only be used for new ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không gian trống bên trong trong tệp dữ liệu .ibd không gian bảng chung chỉ có thể được sử dụng cho mới "
+        },
+        {
+            "bbox": [
+                867.1634154411764,
+                745.2888630050505,
+                60.29411764705878,
+                10.17236142676768
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                759.6673481691919,
+                694.454265114379,
+                11.971275252525231
+            ],
+            "text": "data. Space is not released back to the operating system as it is for file-per-table tablespaces.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "dữ liệu. Không gian không được phát hành trở lại hệ điều hành vì nó dành cho các không gian bảng cho mỗi bảng."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                787.2957184343435,
+                170.8735294117647,
+                14.365569128787882
+            ],
+            "text": "InnoDB Examples",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Ví dụ innodb"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                817.3184602272727,
+                325.80596405228755,
+                11.97127525252526
+            ],
+            "text": "This example demonstrates how to drop an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ này trình bày cách bỏ một "
+        },
+        {
+            "bbox": [
+                496.63929738562086,
+                818.4703039772727,
+                60.29411764705884,
+                10.172335542929318
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                556.9334150326797,
+                817.3184602272727,
+                335.15156903594766,
+                11.97127525252526
+            ],
+            "text": " general tablespace. The general tablespace ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Không gian bảng chung. Không gian bảng chung "
+        },
+        {
+            "bbox": [
+                892.0849840686274,
+                818.4703039772727,
+                30.147058823529505,
+                10.172335542929318
+            ],
+            "text": "ts1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TS1"
+        },
+        {
+            "bbox": [
+                922.2320428921569,
+                817.3184602272727,
+                16.74836601307186,
+                11.97127525252526
+            ],
+            "text": " is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                832.8487632575758,
+                644.2426470588235,
+                11.97127525252526
+            ],
+            "text": "created with a single table. Before dropping the tablespace, the table must be dropped.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được tạo bằng một bảng duy nhất. Trước khi bỏ không gian bảng, bảng phải được bỏ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                859.4301710858585,
+                56.27452655228757,
+                8.137827020201996
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                859.4301710858585,
+                490.39212336601315,
+                8.137827020201996
+            ],
+            "text": "CREATE TABLESPACE ‘ts1‘ ADD DATAFILE ’ts1.ibd’ Engine=InnoDB;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Tạo không gian bảng ‘TS1‘ Thêm DataFile xông TS1.IBD Động cơ = Innodb;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                884.2786688762626,
+                56.27452655228757,
+                8.137827020202025
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                884.2786688762626,
+                530.5882017973856,
+                8.137827020202025
+            ],
+            "text": "CREATE TABLE t1 (c1 INT PRIMARY KEY) TABLESPACE ts1 Engine=InnoDB;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Tạo Bảng T1 (Khóa chính C1 Int) Table TS1 Engine = Innodb;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                909.1271679608586,
+                56.27452655228757,
+                8.137832196969697
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                909.1271679608586,
+                112.54898611111113,
+                8.137832196969697
+            ],
+            "text": "DROP TABLE t1;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Bàn thả T1;"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "2615",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2615"
+        }
+    ]
+}

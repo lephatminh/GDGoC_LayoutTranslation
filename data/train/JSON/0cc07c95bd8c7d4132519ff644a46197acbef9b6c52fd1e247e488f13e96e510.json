@@ -1,3 +1,1436 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:572bf6206497e1f0704b94c9cf82015d05657e522b37dae73daaea91b33c941e
-size 42597
+{
+    "metadata": {
+        "page_hash": "0cc07c95bd8c7d4132519ff644a46197acbef9b6c52fd1e247e488f13e96e510",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4233,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                378.7642806372549,
+                48.370422979798036,
+                237.32432965686274,
+                11.971275252525288
+            ],
+            "text": "NDB Cluster Configuration Files",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp cấu hình cụm NDB"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                96.11317582070706,
+                301.47058823529414,
+                10.172335542929318
+            ],
+            "text": "Ndb_api_read_row_count_session",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb_api_read_row_count_session"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                126.02193813131316,
+                753.0735461601306,
+                11.971275252525288
+            ],
+            "text": "The total number of rows that have been read in this client session. This includes all rows read by any",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tổng số hàng đã được đọc trong phiên khách hàng này. Điều này bao gồm tất cả các hàng được đọc bởi bất kỳ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                141.55224116161617,
+                520.3382185457516,
+                11.971275252525288
+            ],
+            "text": "primary key, unique key, or scan operation made in this client session.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khóa chính, khóa duy nhất hoặc hoạt động quét được thực hiện trong phiên khách hàng này."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                172.61284722222229,
+                349.1029411764706,
+                11.971275252525288
+            ],
+            "text": "Although this variable can be read using either ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc dù biến này có thể được đọc bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                506.5375816993464,
+                173.76469097222218,
+                180.88235294117652,
+                10.172335542929432
+            ],
+            "text": "SHOW GLOBAL STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị trạng thái toàn cầu"
+        },
+        {
+            "bbox": [
+                687.4199346405229,
+                172.61284722222229,
+                24.20140563725488,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                711.6213402777778,
+                173.76469097222218,
+                190.93137254901956,
+                10.172335542929432
+            ],
+            "text": "SHOW SESSION STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị trạng thái phiên"
+        },
+        {
+            "bbox": [
+                902.5527128267973,
+                172.61284722222229,
+                17.68627450980398,
+                11.971275252525288
+            ],
+            "text": ", it",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Nó"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                188.1431502525253,
+                599.5244930555556,
+                11.971275252525288
+            ],
+            "text": "relates to the current session only, and is not affected by any other clients of this ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ liên quan đến phiên hiện tại và không bị ảnh hưởng bởi bất kỳ khách hàng nào khác về điều này "
+        },
+        {
+            "bbox": [
+                756.9591335784314,
+                189.2949940025253,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "mysqld",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqld"
+        },
+        {
+            "bbox": [
+                817.2532512254902,
+                188.1431502525253,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                219.2037563131314,
+                679.1462418300654,
+                11.971275252525174
+            ],
+            "text": "For more information, see Section 23.5.13, “NDB API Statistics Counters and Variables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin, xem Phần 23.5.13, Bộ đếm và biến số liệu thống kê API của NDB NDB"
+        },
+        {
+            "bbox": [
+                809.0130886437909,
+                219.2037563131314,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                247.67597853535358,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                248.82782228535348,
+                301.47058823529414,
+                10.172335542929432
+            ],
+            "text": "Ndb_api_read_row_count_replica",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB_API_READ_ROW_COUNT_REPLICA"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                278.7365845959596,
+                767.0081029411765,
+                11.971275252525288
+            ],
+            "text": "The total number of rows that have been read by this replica. This includes all rows read by any primary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tổng số hàng đã được đọc bởi bản sao này. Điều này bao gồm tất cả các hàng được đọc bởi bất kỳ chính nào"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                294.2668876262627,
+                413.3161764705882,
+                11.971275252525174
+            ],
+            "text": "key, unique key, or scan operation made by this replica.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khóa, khóa duy nhất hoặc hoạt động quét được thực hiện bởi bản sao này."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                325.3274936868687,
+                349.1029411764706,
+                11.971275252525288
+            ],
+            "text": "Although this variable can be read using either ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc dù biến này có thể được đọc bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                506.5375816993464,
+                326.4793374368687,
+                180.88235294117652,
+                10.172335542929318
+            ],
+            "text": "SHOW GLOBAL STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị trạng thái toàn cầu"
+        },
+        {
+            "bbox": [
+                687.4199346405229,
+                325.3274936868687,
+                24.20140563725488,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                711.6213402777778,
+                326.4793374368687,
+                190.93137254901956,
+                10.172335542929318
+            ],
+            "text": "SHOW SESSION STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị trạng thái phiên"
+        },
+        {
+            "bbox": [
+                902.5527128267973,
+                325.3274936868687,
+                17.68627450980398,
+                11.971275252525288
+            ],
+            "text": ", it",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Nó"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                340.8577967171717,
+                773.5567810457517,
+                11.971275252525288
+            ],
+            "text": "is effectively global in scope. If this MySQL server does not act as a replica, or does not use NDB tables,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có hiệu quả toàn cầu trong phạm vi. Nếu máy chủ MySQL này không hoạt động như một bản sao hoặc không sử dụng các bảng NDB,"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                356.3880997474748,
+                161.9566993464052,
+                11.971275252525174
+            ],
+            "text": "this value is always 0.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị này luôn luôn là 0."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                387.44870580808083,
+                679.1462418300654,
+                11.971275252525288
+            ],
+            "text": "For more information, see Section 23.5.13, “NDB API Statistics Counters and Variables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin, xem Phần 23.5.13, Bộ đếm và biến số liệu thống kê API của NDB NDB"
+        },
+        {
+            "bbox": [
+                809.0130886437909,
+                387.44870580808083,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                415.9209280303031,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                417.0727717803031,
+                281.37254901960785,
+                10.172335542929204
+            ],
+            "text": "Ndb_api_read_row_count_slave",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB_API_READ_ROW_COUNT_SLAVE"
+        },
+        {
+            "bbox": [
+                298.45588235294116,
+                446.9815340909091,
+                37.214869281045765,
+                11.971275252525288
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                298.45588235294116,
+                478.0421401515151,
+                236.453431372549,
+                11.971275252525288
+            ],
+            "text": "Deprecated in NDB 8.0.23; use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phản đối trong NDB 8.0,23; sử dụng "
+        },
+        {
+            "bbox": [
+                534.9093137254902,
+                479.1939450757576,
+                301.47058823529414,
+                10.17237436868686
+            ],
+            "text": "Ndb_api_read_row_count_replica",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB_API_READ_ROW_COUNT_REPLICA"
+        },
+        {
+            "bbox": [
+                836.3799019607843,
+                478.0421401515151,
+                63.308806781045746,
+                11.971275252525288
+            ],
+            "text": " instead.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " thay vì."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                515.3407642045455,
+                767.0081029411765,
+                11.971275252525288
+            ],
+            "text": "The total number of rows that have been read by this replica. This includes all rows read by any primary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tổng số hàng đã được đọc bởi bản sao này. Điều này bao gồm tất cả các hàng được đọc bởi bất kỳ chính nào"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                530.8710672348486,
+                413.3161764705882,
+                11.971275252525231
+            ],
+            "text": "key, unique key, or scan operation made by this replica.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khóa, khóa duy nhất hoặc hoạt động quét được thực hiện bởi bản sao này."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                561.9316732954546,
+                349.1029411764706,
+                11.971275252525231
+            ],
+            "text": "Although this variable can be read using either ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc dù biến này có thể được đọc bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                506.5375816993464,
+                563.083478219697,
+                180.88235294117652,
+                10.172374368686917
+            ],
+            "text": "SHOW GLOBAL STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị trạng thái toàn cầu"
+        },
+        {
+            "bbox": [
+                687.4199346405229,
+                561.9316732954546,
+                24.20140563725488,
+                11.971275252525231
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                711.6213402777778,
+                563.083478219697,
+                190.93137254901956,
+                10.172374368686917
+            ],
+            "text": "SHOW SESSION STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị trạng thái phiên"
+        },
+        {
+            "bbox": [
+                902.5527128267973,
+                561.9316732954546,
+                17.68627450980398,
+                11.971275252525231
+            ],
+            "text": ", it",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Nó"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                577.4619763257576,
+                773.5567810457517,
+                11.971275252525231
+            ],
+            "text": "is effectively global in scope. If this MySQL server does not act as a replica, or does not use NDB tables,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có hiệu quả toàn cầu trong phạm vi. Nếu máy chủ MySQL này không hoạt động như một bản sao hoặc không sử dụng các bảng NDB,"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                592.9922793560606,
+                161.9566993464052,
+                11.971275252525231
+            ],
+            "text": "this value is always 0.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị này luôn luôn là 0."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                624.0528854166666,
+                679.1462418300654,
+                11.971275252525288
+            ],
+            "text": "For more information, see Section 23.5.13, “NDB API Statistics Counters and Variables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin, xem Phần 23.5.13, Bộ đếm và biến số liệu thống kê API của NDB NDB"
+        },
+        {
+            "bbox": [
+                809.0130886437909,
+                624.0528854166666,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                652.5251076388889,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                653.6769125631313,
+                221.07843137254903,
+                10.172374368686917
+            ],
+            "text": "Ndb_api_read_row_count",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB_API_READ_ROW_COUNT"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                683.585713699495,
+                766.0870600490197,
+                11.971275252525231
+            ],
+            "text": "The total number of rows that have been read by this MySQL Server (SQL node). This includes all rows",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tổng số hàng đã được đọc bởi máy chủ MySQL này (nút SQL). Điều này bao gồm tất cả các hàng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                699.116016729798,
+                717.6842487745098,
+                11.971275252525231
+            ],
+            "text": "read by any primary key, unique key, or scan operation made by this MySQL Server (SQL node).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đọc bởi bất kỳ khóa chính, khóa duy nhất hoặc hoạt động quét được thực hiện bởi máy chủ MySQL này (nút SQL)."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                730.176622790404,
+                713.061683006536,
+                11.971275252525231
+            ],
+            "text": "You should be aware that this value may not be completely accurate with regard to rows read by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn nên lưu ý rằng giá trị này có thể không hoàn toàn chính xác đối với các hàng được đọc bởi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                746.8587307449495,
+                145.34232026143795,
+                10.17237436868686
+            ],
+            "text": "SELECT COUNT(*)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Chọn Đếm (*)"
+        },
+        {
+            "bbox": [
+                302.77696078431376,
+                745.706925820707,
+                552.9640522875816,
+                11.971275252525288
+            ],
+            "text": " queries, due to the fact that, in this case, the MySQL server actually reads",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " truy vấn, do thực tế là, trong trường hợp này, máy chủ MySQL thực sự đọc"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                761.2372288510101,
+                184.29903635620914,
+                11.97127525252526
+            ],
+            "text": "pseudo-rows in the form ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hàng giả trong biểu mẫu "
+        },
+        {
+            "bbox": [
+                341.7336433823529,
+                762.3890726010101,
+                10.04901960784315,
+                10.172335542929346
+            ],
+            "text": "[",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "["
+        },
+        {
+            "bbox": [
+                351.78266299019606,
+                762.3890726010101,
+                170.8333165849674,
+                10.172335542929346
+            ],
+            "text": "table fragment ID",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "bảng ID"
+        },
+        {
+            "bbox": [
+                522.6160298202615,
+                762.3890726010101,
+                30.14705882352939,
+                10.172335542929346
+            ],
+            "text": "]:[",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "]:"
+        },
+        {
+            "bbox": [
+                552.7630886437909,
+                762.3890726010101,
+                261.27450980392155,
+                10.172335542929346
+            ],
+            "text": "number of rows in fragment",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "số lượng hàng trong phân mảnh"
+        },
+        {
+            "bbox": [
+                814.0375984477124,
+                762.3890726010101,
+                10.049019607843206,
+                10.172335542929346
+            ],
+            "text": "]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "]"
+        },
+        {
+            "bbox": [
+                824.0866180555556,
+                761.2372288510101,
+                32.5923035130719,
+                11.97127525252526
+            ],
+            "text": " and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                776.7675318813132,
+                724.1993799019608,
+                11.97127525252526
+            ],
+            "text": "sums the rows per fragment for all fragments in the table to derive an estimated count for all rows.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tổng hợp các hàng trên mỗi mảnh cho tất cả các đoạn trong bảng để lấy số lượng ước tính cho tất cả các hàng."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                793.4496786616162,
+                221.07843137254903,
+                10.17233554292929
+            ],
+            "text": "Ndb_api_read_row_count",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB_API_READ_ROW_COUNT"
+        },
+        {
+            "bbox": [
+                378.51307189542484,
+                792.2978349116162,
+                487.81292524509803,
+                11.971275252525231
+            ],
+            "text": " uses this estimate and not the actual number of rows in the table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Sử dụng ước tính này và không phải là số lượng hàng thực trong bảng."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                823.3584409722223,
+                349.1029411764706,
+                11.971275252525231
+            ],
+            "text": "Although this variable can be read using either ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc dù biến này có thể được đọc bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                506.5375816993464,
+                824.5102847222222,
+                180.88235294117652,
+                10.17233554292929
+            ],
+            "text": "SHOW GLOBAL STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị trạng thái toàn cầu"
+        },
+        {
+            "bbox": [
+                687.4199346405229,
+                823.3584409722223,
+                24.20140563725488,
+                11.971275252525231
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                711.6213402777778,
+                824.5102847222222,
+                190.93137254901956,
+                10.17233554292929
+            ],
+            "text": "SHOW SESSION STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị trạng thái phiên"
+        },
+        {
+            "bbox": [
+                902.5527128267973,
+                823.3584409722223,
+                17.68627450980398,
+                11.971275252525231
+            ],
+            "text": ", it",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Nó"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                838.8887440025253,
+                212.2352941176471,
+                11.971275252525231
+            ],
+            "text": "is effectively global in scope.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có hiệu quả toàn cầu trong phạm vi."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                869.9493500631313,
+                679.1462418300654,
+                11.97127525252526
+            ],
+            "text": "For more information, see Section 23.5.13, “NDB API Statistics Counters and Variables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin, xem Phần 23.5.13, Bộ đếm và biến số liệu thống kê API của NDB NDB"
+        },
+        {
+            "bbox": [
+                809.0130886437909,
+                869.9493500631313,
+                4.656045751633997,
+                11.97127525252526
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "4204",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4204"
+        }
+    ]
+}

@@ -1,3 +1,1856 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2bd02a356edb91df1aef096e84edde9ae9214ce93b72c12ffbb5d7798e90506b
-size 54197
+{
+    "metadata": {
+        "page_hash": "fbdc7f1aa77202f8439995afab852e3d6d654b134255a57f2e05e51daf010498",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 644,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                331.6595012254902,
+                48.370422979798036,
+                394.4407344771241,
+                11.971275252525288
+            ],
+            "text": "mysqlbinlog — Utility for Processing Binary Log Files",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mysqlbinlog - tiện ích để xử lý các tệp nhật ký nhị phân"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                94.96133207070716,
+                38.15277777777777,
+                11.971275252525174
+            ],
+            "text": "With ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Với "
+        },
+        {
+            "bbox": [
+                225.734477124183,
+                96.11317582070706,
+                120.58823529411768,
+                10.172335542929318
+            ],
+            "text": "--stop-never",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--Thop-không bao giờ"
+        },
+        {
+            "bbox": [
+                346.3227124183007,
+                94.96133207070716,
+                91.24511478758171,
+                11.971275252525174
+            ],
+            "text": ", by default, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", theo mặc định, "
+        },
+        {
+            "bbox": [
+                437.5678272058824,
+                96.11317582070706,
+                110.53921568627447,
+                10.172335542929318
+            ],
+            "text": "mysqlbinlog",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqlbinlog"
+        },
+        {
+            "bbox": [
+                548.1070428921569,
+                94.96133207070716,
+                407.7222222222223,
+                11.971275252525174
+            ],
+            "text": " reports a server ID of 1 when it connects to the server.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Báo cáo ID máy chủ là 1 khi kết nối với máy chủ."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                110.49163510101016,
+                34.43464052287584,
+                11.971275252525288
+            ],
+            "text": "Use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng "
+        },
+        {
+            "bbox": [
+                222.01633986928107,
+                111.64347885101006,
+                221.078431372549,
+                10.172335542929432
+            ],
+            "text": "--connection-server-id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Kết nối-server-id"
+        },
+        {
+            "bbox": [
+                443.0947712418301,
+                110.49163510101016,
+                470.109885620915,
+                11.971275252525288
+            ],
+            "text": " to explicitly specify an alternative ID to report. It can be used to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để chỉ định rõ ràng một ID thay thế để báo cáo. Nó có thể được sử dụng để"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                126.02193813131316,
+                417.95545710784313,
+                11.971275252525288
+            ],
+            "text": "avoid a conflict with the ID of a replica server or another ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tránh xung đột với ID của máy chủ bản sao hoặc máy chủ khác "
+        },
+        {
+            "bbox": [
+                605.5371564542484,
+                127.17378188131318,
+                110.53921568627447,
+                10.172335542929318
+            ],
+            "text": "mysqlbinlog",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqlbinlog"
+        },
+        {
+            "bbox": [
+                716.0763721405228,
+                126.02193813131316,
+                223.43990073529426,
+                11.971275252525288
+            ],
+            "text": " process. See Section 4.6.9.4,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " quá trình. Xem Phần 4.6.9.4,"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                141.55224116161617,
+                312.37379125817,
+                11.971275252525288
+            ],
+            "text": "“Specifying the mysqlbinlog Server ID”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "“Chỉ định ID máy chủ MySQLBinLog"
+        },
+        {
+            "bbox": [
+                472.38764665032676,
+                141.55224116161617,
+                4.656095996732063,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                170.02446338383845,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                171.17630713383835,
+                291.421568627451,
+                10.172335542929432
+            ],
+            "text": "--stop-never-slave-server-id=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--Stop-không bao giờ-slave-server-id ="
+        },
+        {
+            "bbox": [
+                479.0032679738562,
+                171.17630713383835,
+                20.0980392156863,
+                10.172335542929432
+            ],
+            "text": "id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "nhận dạng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                198.49668560606062,
+                580.9003267973856,
+                11.971275252525288
+            ],
+            "text": "This option is deprecated; expect it to be removed in a future release. Use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn này không được chấp nhận; Hy vọng nó sẽ được loại bỏ trong một bản phát hành trong tương lai. Sử dụng "
+        },
+        {
+            "bbox": [
+                768.4820261437908,
+                199.64852935606064,
+                130.63720465686276,
+                10.172335542929318
+            ],
+            "text": "--connection-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--sự liên quan-"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                215.17883238636364,
+                90.44117647058823,
+                10.172335542929318
+            ],
+            "text": "server-id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Máy chủ-ID"
+        },
+        {
+            "bbox": [
+                278.02287581699346,
+                214.02698863636374,
+                299.74550653594775,
+                11.971275252525174
+            ],
+            "text": " option instead to specify a server ID for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " thay vào đó tùy chọn để chỉ định ID máy chủ cho "
+        },
+        {
+            "bbox": [
+                577.7683823529412,
+                215.17883238636364,
+                110.53921568627459,
+                10.172335542929318
+            ],
+            "text": "mysqlbinlog",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqlbinlog"
+        },
+        {
+            "bbox": [
+                688.3075980392158,
+                214.02698863636374,
+                71.68298978758162,
+                11.971275252525174
+            ],
+            "text": " to report.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " để báo cáo."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                242.4992108585859,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                243.6510546085858,
+                160.78431372549022,
+                10.172335542929432
+            ],
+            "text": "--stop-position=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--ToP-vị trí ="
+        },
+        {
+            "bbox": [
+                348.36601307189545,
+                243.6510546085858,
+                10.049019607843093,
+                10.172335542929432
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                270.9714330808081,
+                352.85455841503267,
+                11.971275252525288
+            ],
+            "text": "Stop decoding the binary log at the log position ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ngừng giải mã nhật ký nhị phân ở vị trí nhật ký "
+        },
+        {
+            "bbox": [
+                540.4362577614379,
+                272.1232768308081,
+                10.049019607843093,
+                10.172335542929318
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                550.485277369281,
+                270.9714330808081,
+                379.85292442810453,
+                11.971275252525288
+            ],
+            "text": ", excluding from the output any events that begin at",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", không bao gồm từ đầu ra bất kỳ sự kiện nào bắt đầu"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                286.5017361111112,
+                62.37093178104578,
+                11.971275252525174
+            ],
+            "text": "position ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chức vụ "
+        },
+        {
+            "bbox": [
+                249.95259763071897,
+                287.6535798611111,
+                10.04901960784315,
+                10.172335542929318
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                260.0016172385621,
+                286.5017361111112,
+                673.1168635620913,
+                11.971275252525174
+            ],
+            "text": " or after. The position is a byte point in the log file, not an event counter; it needs to point to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc sau. Vị trí là một điểm byte trong tệp nhật ký, không phải là bộ đếm sự kiện; nó cần phải chỉ ra"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                302.0320391414142,
+                744.7998533496733,
+                11.971275252525288
+            ],
+            "text": "a spot after the starting position of the last event you want to include in the output. The event starting",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một vị trí sau vị trí bắt đầu của sự kiện cuối cùng bạn muốn đưa vào đầu ra. Sự kiện bắt đầu"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                317.5623421717172,
+                114.50857843137254,
+                11.971275252525288
+            ],
+            "text": "before position ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trước vị trí "
+        },
+        {
+            "bbox": [
+                302.09027777777777,
+                318.7141859217172,
+                10.04901960784315,
+                10.172335542929318
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                312.1392973856209,
+                317.5623421717172,
+                601.4002430555555,
+                11.971275252525288
+            ],
+            "text": " and finishing at or after the position is the last event to be processed. This option",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " và hoàn thiện tại hoặc sau vị trí là sự kiện cuối cùng được xử lý. Tùy chọn này"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                333.0926452020202,
+                404.0207998366013,
+                11.971275252525288
+            ],
+            "text": "applies to the last log file named on the command line.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Áp dụng cho tệp nhật ký cuối cùng có tên trên dòng lệnh."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                361.5648674242425,
+                791.7119428104576,
+                11.971275252525174
+            ],
+            "text": "This option is useful for point-in-time recovery. See Section 7.5, “Point-in-Time (Incremental) Recovery”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn này hữu ích cho việc phục hồi thời gian. Xem phần 7.5, phục hồi điểm trong thời gian (gia tăng)"
+        },
+        {
+            "bbox": [
+                951.7258986928105,
+                361.5648674242425,
+                4.65609599673212,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                390.03708964646466,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                391.1889333964647,
+                190.9313725490196,
+                10.172335542929318
+            ],
+            "text": "--tls-ciphersuites=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--TLS-CIPHERSUITES ="
+        },
+        {
+            "bbox": [
+                378.51307189542484,
+                391.1889333964647,
+                160.78431372549022,
+                10.172335542929318
+            ],
+            "text": "ciphersuite_list",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "CIPHERSUITE_LIST"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                418.50931186868695,
+                749.3554591503267,
+                11.971275252525174
+            ],
+            "text": "The permissible ciphersuites for encrypted connections that use TLSv1.3. The value is a list of one or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các mật mã cho phép cho các kết nối được mã hóa sử dụng TLSV1.3. Giá trị là danh sách của một hoặc"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                434.03961489898995,
+                744.7328933823529,
+                11.971275252525288
+            ],
+            "text": "more colon-separated ciphersuite names. The ciphersuites that can be named for this option depend",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tên mã hóa được phân tách nhiều hơn. Các mật mã có thể được đặt tên cho tùy chọn này phụ thuộc"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                449.56991792929296,
+                770.5922867647058,
+                11.971275252525288
+            ],
+            "text": "on the SSL library used to compile MySQL. For details, see Section 6.3.2, “Encrypted Connection TLS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trên thư viện SSL được sử dụng để biên dịch MySQL. Để biết chi tiết, xem Phần 6.3.2, TLS kết nối được mã hóa"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                465.10022095959596,
+                184.11477083333335,
+                11.971275252525288
+            ],
+            "text": "Protocols and Ciphers”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các giao thức và mật mã"
+        },
+        {
+            "bbox": [
+                357.9125816993464,
+                465.10022095959596,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                493.57244318181824,
+                301.6213235294117,
+                11.971275252525174
+            ],
+            "text": "This option was added in MySQL 8.0.16.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn này đã được thêm vào trong MySQL 8.0.16."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                522.0446654040404,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                523.1964703282829,
+                140.68627450980392,
+                10.172374368686917
+            ],
+            "text": "--tls-version=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-TLS-Version ="
+        },
+        {
+            "bbox": [
+                328.26797385620915,
+                523.1964703282829,
+                130.63725490196077,
+                10.172374368686917
+            ],
+            "text": "protocol_list",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "Giao thức_List"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                550.5168876262626,
+                739.9929885620916,
+                11.971275252525288
+            ],
+            "text": "The permissible TLS protocols for encrypted connections. The value is a list of one or more comma-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các giao thức TLS cho phép cho các kết nối được mã hóa. Giá trị là danh sách một hoặc nhiều dấu phẩy-"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                566.0471906565657,
+                751.2814709967321,
+                11.971275252525231
+            ],
+            "text": "separated protocol names. The protocols that can be named for this option depend on the SSL library",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên giao thức tách biệt. Các giao thức có thể được đặt tên cho tùy chọn này phụ thuộc vào thư viện SSL"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                581.5774936868687,
+                739.87583374183,
+                11.971275252525231
+            ],
+            "text": "used to compile MySQL. For details, see Section 6.3.2, “Encrypted Connection TLS Protocols and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Được sử dụng để biên dịch MySQL. Để biết chi tiết, xem phần 6.3.2, các giao thức TLS kết nối được mã hóa và"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                597.1077967171718,
+                77.05921527777775,
+                11.971275252525231
+            ],
+            "text": "Ciphers”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mật mã \""
+        },
+        {
+            "bbox": [
+                250.85702614379085,
+                597.1077967171718,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                625.580018939394,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                626.7318238636364,
+                130.63725490196077,
+                10.172374368686917
+            ],
+            "text": "--to-last-log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-đến-Last-log"
+        },
+        {
+            "bbox": [
+                318.218954248366,
+                625.580018939394,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                327.531045751634,
+                626.7318238636364,
+                20.0980392156863,
+                10.172374368686917
+            ],
+            "text": "-t",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-T"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                654.0522411616162,
+                740.0935625,
+                11.971275252525288
+            ],
+            "text": "Do not stop at the end of the requested binary log from a MySQL server, but rather continue printing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không dừng ở cuối nhật ký nhị phân được yêu cầu từ máy chủ MySQL, mà tiếp tục in"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                669.5825441919192,
+                769.9056372549021,
+                11.971275252525231
+            ],
+            "text": "until the end of the last binary log. If you send the output to the same MySQL server, this may lead to an",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho đến khi kết thúc nhật ký nhị phân cuối cùng. Nếu bạn gửi đầu ra đến cùng một máy chủ MySQL, điều này có thể dẫn đến"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                685.1128472222222,
+                255.06083251633993,
+                11.971275252525288
+            ],
+            "text": "endless loop. This option requires ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vòng lặp vô tận. Tùy chọn này yêu cầu "
+        },
+        {
+            "bbox": [
+                442.64253186274516,
+                686.2646521464646,
+                251.22549019607845,
+                10.172374368686917
+            ],
+            "text": "--read-from-remote-server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Đọc từ máy chủ-remote"
+        },
+        {
+            "bbox": [
+                693.8680723039216,
+                685.1128472222222,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                713.5850694444445,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                714.7368743686868,
+                70.34313725490199,
+                10.17237436868686
+            ],
+            "text": "--user=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--User ="
+        },
+        {
+            "bbox": [
+                257.9248366013072,
+                714.7368743686868,
+                90.44117647058823,
+                10.17237436868686
+            ],
+            "text": "user_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "user_name"
+        },
+        {
+            "bbox": [
+                348.36601307189545,
+                713.5850694444445,
+                9.312091503267936,
+                11.971275252525231
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                357.6781045751634,
+                714.7368743686868,
+                30.14705882352945,
+                10.17237436868686
+            ],
+            "text": "-u ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-U "
+        },
+        {
+            "bbox": [
+                387.82516339869284,
+                714.7368743686868,
+                90.44117647058823,
+                10.17237436868686
+            ],
+            "text": "user_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "user_name"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                742.0572916666667,
+                608.8198696895425,
+                11.971275252525231
+            ],
+            "text": "The user name of the MySQL account to use when connecting to a remote server.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên người dùng của tài khoản MySQL để sử dụng khi kết nối với máy chủ từ xa."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                770.5295138888889,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                771.6813576388889,
+                90.44117647058823,
+                10.17233554292929
+            ],
+            "text": "--verbose",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--verbose"
+        },
+        {
+            "bbox": [
+                278.02287581699346,
+                770.5295138888889,
+                9.312091503267993,
+                11.971275252525231
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                287.33496732026146,
+                771.6813576388889,
+                20.098039215686242,
+                10.17233554292929
+            ],
+            "text": "-v",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-V"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                799.0017361111111,
+                689.7646556372549,
+                11.97127525252526
+            ],
+            "text": "Reconstruct row events and display them as commented SQL statements, with table partition",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tái thiết các sự kiện hàng và hiển thị chúng dưới dạng các câu lệnh SQL nhận xét, với phân vùng bảng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                814.5320391414141,
+                727.0968137254902,
+                11.97127525252526
+            ],
+            "text": "information where applicable. If this option is given twice (by passing in either \"-vv\" or \"--verbose --",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thông tin nếu có. Nếu tùy chọn này được đưa ra hai lần (bằng cách truyền trong \"-vv\" hoặc \"--verbose-"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                830.0623421717172,
+                714.3848709150327,
+                11.97127525252526
+            ],
+            "text": "verbose\"), the output includes comments to indicate column data types and some metadata, and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Verbose \"), đầu ra bao gồm các nhận xét để chỉ ra các loại dữ liệu cột và một số siêu dữ liệu và"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                845.5926452020202,
+                444.03267973856214,
+                11.97127525252526
+            ],
+            "text": "informational log events such as row query log events if the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các sự kiện nhật ký thông tin như các sự kiện nhật ký truy vấn hàng nếu "
+        },
+        {
+            "bbox": [
+                631.6143790849674,
+                846.7444889520202,
+                281.37254901960785,
+                10.172335542929318
+            ],
+            "text": "binlog_rows_query_log_events",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BinLog_Rows_Query_Log_Events"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                861.1229482323232,
+                183.3611278594771,
+                11.97127525252526
+            ],
+            "text": "system variable is set to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biến hệ thống được đặt thành "
+        },
+        {
+            "bbox": [
+                370.9428104575163,
+                862.2747919823232,
+                40.19607843137254,
+                10.17233554292929
+            ],
+            "text": "TRUE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ĐÚNG VẬY"
+        },
+        {
+            "bbox": [
+                411.13888888888886,
+                861.1229482323232,
+                4.6560290032679745,
+                11.97127525252526
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                889.5951704545455,
+                274.6229575163399,
+                11.971275252525245
+            ],
+            "text": "For examples that show the effect of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho các ví dụ cho thấy hiệu quả của "
+        },
+        {
+            "bbox": [
+                462.20465686274514,
+                890.7470142045455,
+                150.73529411764713,
+                10.172335542929275
+            ],
+            "text": "--base64-output",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--Base64-Output"
+        },
+        {
+            "bbox": [
+                612.9399509803923,
+                889.5951704545455,
+                37.24834926470578,
+                11.971275252525245
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                650.188300245098,
+                890.7470142045455,
+                90.44117647058829,
+                10.172335542929275
+            ],
+            "text": "--verbose",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--verbose"
+        },
+        {
+            "bbox": [
+                740.6294767156863,
+                889.5951704545455,
+                188.06741870915027,
+                11.971275252525245
+            ],
+            "text": " on row event output, see",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " về đầu ra sự kiện hàng, xem"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                905.1254734848485,
+                393.36887254901967,
+                11.971275252525245
+            ],
+            "text": "Section 4.6.9.2, “mysqlbinlog Row Event Display”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mục 4.6.9.2, Hiển thị sự kiện hàng của MySqlBinLog Hiển thị sự kiện"
+        },
+        {
+            "bbox": [
+                553.3827614379086,
+                905.1254734848485,
+                4.656045751633883,
+                11.971275252525245
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                936.7696245915033,
+                964.6583160037878,
+                27.9362577614379,
+                11.971275252525253
+            ],
+            "text": "615",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "615"
+        }
+    ]
+}

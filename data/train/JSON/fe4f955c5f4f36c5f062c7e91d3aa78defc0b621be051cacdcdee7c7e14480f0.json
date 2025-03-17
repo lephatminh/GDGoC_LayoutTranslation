@@ -1,3 +1,1236 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:63727629bc1cb0df0f5952cb4d96145b4d5629979d10961b80057842089f5027
-size 36074
+{
+    "metadata": {
+        "page_hash": "fe4f955c5f4f36c5f062c7e91d3aa78defc0b621be051cacdcdee7c7e14480f0",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1872,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                337.6973039215686,
+                48.370422979798036,
+                379.75245098039215,
+                11.971275252525288
+            ],
+            "text": "Measuring Performance with performance_schema",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đo lường hiệu suất với Performance_Schema"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                50.26186315359476,
+                11.971275252525174
+            ],
+            "text": "•The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• The "
+        },
+        {
+            "bbox": [
+                221.0951964869281,
+                96.11317582070706,
+                90.44117647058823,
+                10.172335542929318
+            ],
+            "text": "mysqlslap",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqlslap"
+        },
+        {
+            "bbox": [
+                311.5363394607843,
+                94.96133207070716,
+                634.8468304738562,
+                11.971275252525174
+            ],
+            "text": " program can be helpful for simulating a high load produced by multiple clients issuing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Chương trình có thể hữu ích để mô phỏng một tải trọng cao được sản xuất bởi nhiều khách hàng phát hành"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                110.49163510101016,
+                642.6683006535949,
+                11.971275252525288
+            ],
+            "text": "queries simultaneously. See Section 4.5.8, “mysqlslap — A Load Emulation Client”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Truy vấn đồng thời. Xem phần 4.5.8, MySQLLSP - một máy khách mô phỏng tải trọng"
+        },
+        {
+            "bbox": [
+                800.0694611928105,
+                110.49163510101016,
+                4.656045751633883,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                138.83313099747488,
+                694.454265114379,
+                11.971275252525174
+            ],
+            "text": "•You can also try benchmarking packages such as SysBench and DBT2, available at https://",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Bạn cũng có thể thử các gói điểm chuẩn như Sysbench và DBT2, có sẵn tại https: //"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                154.36343402777788,
+                490.6601139705882,
+                11.971275252525174
+            ],
+            "text": "launchpad.net/sysbench, and http://osdldbt.sourceforge.net/#dbt2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Launchpad.net/sysbench và http://osdldbt.sourceforge.net/#dbt2."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                182.7049169823232,
+                727.9509971405228,
+                11.971275252525288
+            ],
+            "text": "These programs or packages can bring a system to its knees, so be sure to use them only on your",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các chương trình hoặc gói này có thể khiến một hệ thống đến đầu gối của nó, vì vậy hãy chắc chắn chỉ sử dụng chúng trên"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                198.2352200126263,
+                166.61276184640522,
+                11.971275252525174
+            ],
+            "text": "development systems.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hệ thống phát triển."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                227.28858617424248,
+                65.18463717320265,
+                16.759798295454516
+            ],
+            "text": "8.13.3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "8.13.3"
+        },
+        {
+            "bbox": [
+                162.1442743464052,
+                227.28858617424248,
+                569.4277027777778,
+                16.759798295454516
+            ],
+            "text": "Measuring Performance with performance_schema",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Đo lường hiệu suất với Performance_Schema"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                261.1303977272727,
+                235.54901960784312,
+                11.971275252525288
+            ],
+            "text": "You can query the tables in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể truy vấn các bảng trong "
+        },
+        {
+            "bbox": [
+                406.38235294117646,
+                262.2822414772728,
+                180.88236968954254,
+                10.172335542929204
+            ],
+            "text": "performance_schema",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Performance_Schema"
+        },
+        {
+            "bbox": [
+                587.264722630719,
+                261.1303977272727,
+                355.6180890522875,
+                11.971275252525288
+            ],
+            "text": " database to see real-time information about the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cơ sở dữ liệu để xem thông tin thời gian thực về"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                276.6607007575758,
+                692.5616997549018,
+                11.971275252525174
+            ],
+            "text": "performance characteristics of your server and the applications it is running. See Chapter 27, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đặc điểm hiệu suất của máy chủ của bạn và các ứng dụng nó đang chạy. Xem Chương 27, "
+        },
+        {
+            "bbox": [
+                863.3950330882352,
+                276.6607007575758,
+                55.839002042483685,
+                11.971275252525174
+            ],
+            "text": "MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "Mysql"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                292.1910037878788,
+                161.9566993464052,
+                11.971275252525174
+            ],
+            "text": "Performance Schema",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "Lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                332.79003267973854,
+                292.1910037878788,
+                81.91625816993468,
+                11.971275252525174
+            ],
+            "text": " for details.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để biết chi tiết."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                321.60022095959596,
+                52.147715767973864,
+                19.154014520202054
+            ],
+            "text": "8.14",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "8.14"
+        },
+        {
+            "bbox": [
+                150.03856209150328,
+                321.60022095959596,
+                607.5771074346405,
+                19.154014520202054
+            ],
+            "text": "Examining Server Thread (Process) Information",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "Kiểm tra thông tin về luồng máy chủ (quy trình)"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                358.1922550505051,
+                725.1205232843138,
+                11.971236426767632
+            ],
+            "text": "To ascertain what your MySQL server is doing, it can be helpful to examine the process list, which",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để xác định máy chủ MySQL của bạn đang làm gì, có thể hữu ích để kiểm tra danh sách quy trình, mà"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                373.72251925505054,
+                766.1204897875816,
+                11.971275252525174
+            ],
+            "text": "indicates the operations currently being performed by the set of threads executing within the server. For",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho biết các hoạt động hiện đang được thực hiện bởi tập hợp các luồng thực thi trong máy chủ. Vì"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                389.25282228535355,
+                67.94813766339868,
+                11.971275252525288
+            ],
+            "text": "example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ví dụ:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                416.6896650883839,
+                56.27452655228757,
+                8.137917613636318
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                416.6896650883839,
+                144.70586560457517,
+                8.137917613636318
+            ],
+            "text": "SHOW PROCESSLIST\\G",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Hiển thị danh sách quy trình \\ g"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                429.11392045454556,
+                498.43138929738564,
+                8.137917613636318
+            ],
+            "text": "*************************** 1. row ***************************",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "****** / TÌM HIỂU 1. Hàng ****** / TÌM HIỂU"
+        },
+        {
+            "bbox": [
+                211.02941176470588,
+                441.53813699494947,
+                40.19607843137254,
+                8.137904671717251
+            ],
+            "text": "Id: 5",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "ID: 5"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                453.96237941919196,
+                168.82352941176467,
+                8.137917613636318
+            ],
+            "text": "User: event_scheduler",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Người dùng: Event_Scheduler"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                466.3866347853535,
+                120.58821854575163,
+                8.137904671717251
+            ],
+            "text": "Host: localhost",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chủ nhà: Localhost"
+        },
+        {
+            "bbox": [
+                211.02941176470588,
+                478.810877209596,
+                64.31370874183008,
+                8.137917613636318
+            ],
+            "text": "db: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "DB: NULL"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                491.2351325757576,
+                120.58823529411765,
+                8.137917613636432
+            ],
+            "text": "Command: Daemon",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Lệnh: Daemon"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                503.6593491161616,
+                104.50980392156865,
+                8.137904671717251
+            ],
+            "text": "Time: 2756681",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thời gian: 2756681"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                516.0835915404041,
+                233.1372549019608,
+                8.137917613636318
+            ],
+            "text": "State: Waiting on empty queue",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bang: Chờ đợi trên hàng đợi trống"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                528.5078469065656,
+                80.39214011437909,
+                8.137904671717195
+            ],
+            "text": "Info: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thông tin: NULL"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                540.9320893308081,
+                498.43138929738564,
+                8.137917613636375
+            ],
+            "text": "*************************** 2. row ***************************",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "****** / TÌM HIỂU 2. Hàng ****** / TÌM HIỂU"
+        },
+        {
+            "bbox": [
+                211.02941176470588,
+                553.3563446969697,
+                48.2352941176471,
+                8.137917613636318
+            ],
+            "text": "Id: 20",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "ID: 20"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                565.7805612373737,
+                64.3137254901961,
+                8.137904671717195
+            ],
+            "text": "User: me",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Người dùng: Tôi"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                578.2048036616162,
+                168.82352941176467,
+                8.137917613636318
+            ],
+            "text": "Host: localhost:52943",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chủ nhà: Localhost: 52943"
+        },
+        {
+            "bbox": [
+                211.02941176470588,
+                590.6290590277778,
+                64.31370874183008,
+                8.137904671717195
+            ],
+            "text": "db: test",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "DB: Kiểm tra"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                603.0533014520203,
+                112.54901960784312,
+                8.137917613636318
+            ],
+            "text": "Command: Query",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Lệnh: Truy vấn"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                615.4775568181819,
+                56.274509803921546,
+                8.137917613636318
+            ],
+            "text": "Time: 0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thời gian: 0"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                627.9017733585858,
+                120.58825204248367,
+                8.137904671717195
+            ],
+            "text": "State: starting",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nhà nước: Bắt đầu"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                640.3260157828283,
+                176.8627450980392,
+                8.137917613636375
+            ],
+            "text": "Info: SHOW PROCESSLIST",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thông tin: Hiển thị danh sách quy trình"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                666.492013888889,
+                226.20343137254903,
+                11.971275252525231
+            ],
+            "text": "Threads can be killed with the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chủ đề có thể bị giết với "
+        },
+        {
+            "bbox": [
+                397.0367647058824,
+                667.6438188131314,
+                40.19607843137254,
+                10.17237436868686
+            ],
+            "text": "KILL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GIẾT"
+        },
+        {
+            "bbox": [
+                437.2328431372549,
+                666.492013888889,
+                406.482859885621,
+                11.971275252525231
+            ],
+            "text": " statement. See Section 13.7.8.4, “KILL Statement”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố. Xem phần 13.7.8.4, Tuyên bố giết người"
+        },
+        {
+            "bbox": [
+                816.1478590686274,
+                666.492013888889,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                695.5453282828283,
+                65.18465057189545,
+                16.759811237373697
+            ],
+            "text": "8.14.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "8.14.1"
+        },
+        {
+            "bbox": [
+                162.14428774509804,
+                695.5453282828283,
+                304.93752679738566,
+                16.759811237373697
+            ],
+            "text": "Accessing the Process List",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Truy cập danh sách quy trình"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                729.3871786616162,
+                759.5719289215687,
+                11.971275252525288
+            ],
+            "text": "The following discussion enumerates the sources of process information, the privileges required to see",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các cuộc thảo luận sau đây liệt kê các nguồn thông tin quy trình, các đặc quyền cần thiết để xem"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                744.9174816919192,
+                513.8398525326796,
+                11.971275252525231
+            ],
+            "text": "process information, and describes the content of process list entries.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin quy trình và mô tả nội dung của các mục nhập quy trình."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                773.2589775883839,
+                250.38807189542482,
+                11.97127525252526
+            ],
+            "text": "•Sources of Process Information",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Nguồn thông tin quy trình"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                801.6004734848485,
+                363.0040682189542,
+                11.971275252525231
+            ],
+            "text": "•Privileges Required to Access the Process List",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Đặc quyền cần thiết để truy cập danh sách quy trình"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                829.941956439394,
+                246.66993464052288,
+                11.97127525252526
+            ],
+            "text": "•Content of Process List Entries",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Nội dung của các mục nhập quy trình"
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                858.6393809974747,
+                303.78186274509807,
+                14.365582070707063
+            ],
+            "text": "Sources of Process Information",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Nguồn thông tin quy trình"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                889.7310347222223,
+                387.2054738562091,
+                11.971275252525245
+            ],
+            "text": "Process information is available from these sources:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin quy trình có sẵn từ các nguồn này:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                918.0726056818182,
+                50.26186315359476,
+                11.97127525252526
+            ],
+            "text": "•The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• The "
+        },
+        {
+            "bbox": [
+                221.0951964869281,
+                919.2244559027778,
+                160.78431372549022,
+                10.172329071969713
+            ],
+            "text": "SHOW PROCESSLIST",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị danh sách quy trình"
+        },
+        {
+            "bbox": [
+                381.8794767156863,
+                918.0726056818182,
+                520.9244113562092,
+                11.97127525252526
+            ],
+            "text": " statement: Section 13.7.7.29, “SHOW PROCESSLIST Statement”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tuyên bố: Mục 13.7.7,29, Tuyên bố về Danh sách xử lý chương trình"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "1843",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1843"
+        }
+    ]
+}

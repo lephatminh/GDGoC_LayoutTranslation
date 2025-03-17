@@ -1,3 +1,2096 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b7fba6fc9a48bd2fc5dcf3efc4df9f9216ddac9160ae1f366dbc42aba37e27e3
-size 58862
+{
+    "metadata": {
+        "page_hash": "afa4dcfea93386feeb0a67209e39b7c03b4b7da00468b04541cf427bfad795a1",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3451,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                389.9103182189543,
+                48.370422979798036,
+                215.03230473856212,
+                11.971275252525288
+            ],
+            "text": "The MERGE Storage Engine",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Động cơ lưu trữ hợp nhất"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                96.61920486111126,
+                56.274509803921575,
+                8.13782702020194
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                96.61920486111126,
+                160.78433047385622,
+                8.13782702020194
+            ],
+            "text": "SELECT * FROM total;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn * từ tổng số;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                109.0434084595961,
+                120.58823529411768,
+                8.137917613636205
+            ],
+            "text": "+---+---------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+---+---------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                121.46770265151508,
+                120.58823529411768,
+                8.137827020202167
+            ],
+            "text": "| a | message |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| A | Tin nhắn |"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                133.89190625000015,
+                120.58823529411768,
+                8.137917613636205
+            ],
+            "text": "+---+---------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+---+---------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                146.31620044191925,
+                120.58823529411768,
+                8.13782702020194
+            ],
+            "text": "| 1 | Testing |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| 1 | Kiểm tra |"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                158.74041698232338,
+                88.43137254901964,
+                8.13782702020194
+            ],
+            "text": "| 2 | table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| 2 | bàn"
+        },
+        {
+            "bbox": [
+                253.23529411764704,
+                158.74041698232338,
+                8.03921568627456,
+                8.13782702020194
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                171.1646205808081,
+                64.3137254901961,
+                8.137917613636318
+            ],
+            "text": "| 3 | t1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| 3 | T1"
+        },
+        {
+            "bbox": [
+                253.23529411764704,
+                171.1646205808081,
+                8.03921568627456,
+                8.137917613636318
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                183.5889147727272,
+                120.58823529411768,
+                8.137827020202167
+            ],
+            "text": "| 1 | Testing |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| 1 | Kiểm tra |"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                196.01311837121227,
+                88.43137254901964,
+                8.137917613636205
+            ],
+            "text": "| 2 | table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| 2 | bàn"
+        },
+        {
+            "bbox": [
+                253.23529411764704,
+                196.01311837121227,
+                8.03921568627456,
+                8.137917613636205
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                208.43741256313126,
+                64.3137254901961,
+                8.137827020202053
+            ],
+            "text": "| 3 | t2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| 3 | T2"
+        },
+        {
+            "bbox": [
+                253.23529411764704,
+                208.43741256313126,
+                8.03921568627456,
+                8.137827020202053
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                220.8616291035355,
+                120.58823529411768,
+                8.13782702020194
+            ],
+            "text": "+---+---------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+---+---------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                245.28174936868697,
+                90.29044117647058,
+                11.971275252525288
+            ],
+            "text": "To remap a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để làm lại a "
+        },
+        {
+            "bbox": [
+                230.9767156862745,
+                246.43352840909097,
+                50.24509803921572,
+                10.172400252525335
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                281.2218137254902,
+                245.28174936868697,
+                236.47019648692805,
+                11.971275252525288
+            ],
+            "text": " table to a different collection of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng cho một bộ sưu tập khác của "
+        },
+        {
+            "bbox": [
+                517.6920102124183,
+                246.43352840909097,
+                60.2941176470589,
+                10.172400252525335
+            ],
+            "text": "MyISAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Myisam"
+        },
+        {
+            "bbox": [
+                577.9861278594772,
+                245.28174936868697,
+                297.9198843954248,
+                11.971275252525288
+            ],
+            "text": " tables, you can use one of the following",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng, bạn có thể sử dụng một trong những điều sau đây"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                260.81205239899,
+                68.8860294117647,
+                11.971275252525288
+            ],
+            "text": "methods:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phương pháp:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                287.4076833964647,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                288.55954008838387,
+                40.19607843137257,
+                10.172322601010137
+            ],
+            "text": "DROP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LÀM RƠI"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                287.4076833964647,
+                32.5923035130719,
+                11.971275252525288
+            ],
+            "text": " the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các "
+        },
+        {
+            "bbox": [
+                230.22302246732028,
+                288.55954008838387,
+                50.24509803921569,
+                10.172322601010137
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                280.468154003268,
+                287.4076833964647,
+                162.9113562091503,
+                11.971275252525288
+            ],
+            "text": " table and re-create it.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng và tạo lại nó."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                314.0033143939395,
+                51.183006535947726,
+                11.971275252525174
+            ],
+            "text": "•Use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•Sử dụng "
+        },
+        {
+            "bbox": [
+                191.86928104575165,
+                315.1551581439394,
+                120.58823529411765,
+                10.172335542929318
+            ],
+            "text": "ALTER TABLE ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng "
+        },
+        {
+            "bbox": [
+                312.4575163398693,
+                315.1551581439394,
+                80.39215686274508,
+                10.172335542929318
+            ],
+            "text": "tbl_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "tbl_name"
+        },
+        {
+            "bbox": [
+                392.8496732026144,
+                315.1551581439394,
+                120.58823529411762,
+                10.172335542929318
+            ],
+            "text": " UNION=(...)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": " Union = (...)"
+        },
+        {
+            "bbox": [
+                513.437908496732,
+                314.0033143939395,
+                285.8108492647059,
+                11.971275252525174
+            ],
+            "text": " to change the list of underlying tables.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để thay đổi danh sách các bảng cơ bản."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                340.5989453914142,
+                182.45669934640526,
+                11.971275252525174
+            ],
+            "text": "It is also possible to use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nó cũng có thể sử dụng "
+        },
+        {
+            "bbox": [
+                339.89133986928107,
+                341.7507891414142,
+                241.17647058823525,
+                10.172335542929204
+            ],
+            "text": "ALTER TABLE ... UNION=()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng ... liên kết = ()"
+        },
+        {
+            "bbox": [
+                581.0678104575163,
+                340.5989453914142,
+                172.2067160947713,
+                11.971275252525174
+            ],
+            "text": " (that is, with an empty ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (nghĩa là, với một trống rỗng "
+        },
+        {
+            "bbox": [
+                753.2745265522876,
+                341.7507891414142,
+                50.24509803921569,
+                10.172335542929204
+            ],
+            "text": "UNION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Liên minh"
+        },
+        {
+            "bbox": [
+                803.5196245915033,
+                340.5989453914142,
+                77.26021241830051,
+                11.971275252525174
+            ],
+            "text": " clause) to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề) đến"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                356.1292484217172,
+                755.8537414215685,
+                11.971275252525288
+            ],
+            "text": "remove all of the underlying tables. However, in this case, the table is effectively empty and inserts fail",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Loại bỏ tất cả các bảng cơ bản. Tuy nhiên, trong trường hợp này, bảng có hiệu quả trống và chèn không thành công"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                371.6595514520202,
+                749.405654003268,
+                11.971275252525288
+            ],
+            "text": "because there is no underlying table to take new rows. Such a table might be useful as a template for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bởi vì không có bảng cơ bản để lấy các hàng mới. Một bảng như vậy có thể hữu ích như một mẫu cho"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                387.1898544823232,
+                99.60253267973857,
+                11.971275252525288
+            ],
+            "text": "creating new ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tạo mới "
+        },
+        {
+            "bbox": [
+                257.0371732026144,
+                388.3416982323232,
+                50.24509803921569,
+                10.172335542929318
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                307.2822712418301,
+                387.1898544823232,
+                88.43137254901961,
+                11.971275252525288
+            ],
+            "text": " tables with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng với "
+        },
+        {
+            "bbox": [
+                395.7136437908497,
+                388.3416982323232,
+                211.0294452614379,
+                10.172335542929318
+            ],
+            "text": "CREATE TABLE ... LIKE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo bảng ... thích"
+        },
+        {
+            "bbox": [
+                606.7430388071896,
+                387.1898544823232,
+                4.656045751633883,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                413.78552430555555,
+                658.1605392156864,
+                11.971275252525288
+            ],
+            "text": "The underlying table definitions and indexes must conform closely to the definition of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các định nghĩa và chỉ mục bảng cơ bản phải phù hợp chặt chẽ với định nghĩa của "
+        },
+        {
+            "bbox": [
+                798.8468137254903,
+                414.937329229798,
+                50.24509803921569,
+                10.17237436868686
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                849.091911764706,
+                413.78552430555555,
+                45.62248202614376,
+                11.971275252525288
+            ],
+            "text": " table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                429.31582733585867,
+                404.0207998366014,
+                11.971275252525174
+            ],
+            "text": "Conformance is checked when a table that is part of a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sự phù hợp được kiểm tra khi một bảng là một phần của "
+        },
+        {
+            "bbox": [
+                544.7071245915033,
+                430.467632260101,
+                50.24509803921569,
+                10.17237436868686
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                594.952222630719,
+                429.31582733585867,
+                228.11271160130707,
+                11.971275252525174
+            ],
+            "text": " table is opened, not when the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng được mở, không phải khi "
+        },
+        {
+            "bbox": [
+                823.0649342320261,
+                430.467632260101,
+                50.24509803921569,
+                10.17237436868686
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                873.3100322712418,
+                429.31582733585867,
+                40.96653676470589,
+                11.971275252525174
+            ],
+            "text": " table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                444.8461303661617,
+                774.578397875817,
+                11.971275252525174
+            ],
+            "text": "is created. If any table fails the conformance checks, the operation that triggered the opening of the table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được tạo ra. Nếu bất kỳ bảng nào không kiểm tra được sự phù hợp, thì thao tác đã kích hoạt việc mở bảng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                460.3764333964647,
+                486.875016748366,
+                11.971275252525288
+            ],
+            "text": "fails. This means that changes to the definitions of tables within a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thất bại. Điều này có nghĩa là thay đổi định nghĩa của các bảng trong một "
+        },
+        {
+            "bbox": [
+                627.56129125817,
+                461.52823832070703,
+                50.24509803921569,
+                10.172374368686974
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                677.8063892973856,
+                460.3764333964647,
+                222.48534436274508,
+                11.971275252525288
+            ],
+            "text": " may cause a failure when the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có thể gây ra thất bại khi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                477.05854135101015,
+                50.24509803921569,
+                10.17237436868686
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                190.9313725490196,
+                475.9067364267677,
+                522.2475657679738,
+                11.971275252525288
+            ],
+            "text": " table is accessed. The conformance checks applied to each table are:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng được truy cập. Kiểm tra sự phù hợp được áp dụng cho mỗi bảng là:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                502.5023544823233,
+                233.67320261437914,
+                11.971275252525231
+            ],
+            "text": "•The underlying table and the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Bảng cơ bản và "
+        },
+        {
+            "bbox": [
+                374.35947712418306,
+                503.65417234848485,
+                50.24509803921569,
+                10.172361426767736
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                424.60457516339875,
+                502.5023544823233,
+                348.1483010620915,
+                11.971275252525231
+            ],
+            "text": " table must have the same number of columns.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng phải có cùng số lượng cột."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                529.0980243055556,
+                381.67852982026153,
+                11.971275252525231
+            ],
+            "text": "•The column order in the underlying table and the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• thứ tự cột trong bảng cơ bản và "
+        },
+        {
+            "bbox": [
+                522.3648043300655,
+                530.2498421717171,
+                50.24509803921569,
+                10.172361426767736
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                572.6099023692811,
+                529.0980243055556,
+                136.83418382352932,
+                11.971275252525231
+            ],
+            "text": " table must match.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng phải khớp."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                555.6936553030303,
+                568.7745265522876,
+                11.971275252525288
+            ],
+            "text": "•Additionally, the specification for each corresponding column in the parent ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Ngoài ra, đặc điểm kỹ thuật cho từng cột tương ứng trong cha mẹ "
+        },
+        {
+            "bbox": [
+                709.4608010620915,
+                556.8454602272727,
+                50.24509803921569,
+                10.172374368686917
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                759.7058991013072,
+                555.6936553030303,
+                101.4950980392158,
+                11.971275252525288
+            ],
+            "text": " table and the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng và"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                571.2239583333334,
+                467.296176879085,
+                11.971275252525231
+            ],
+            "text": "underlying tables are compared and must satisfy these checks:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các bảng cơ bản được so sánh và phải đáp ứng các séc sau:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                597.8196281565657,
+                374.2422553104575,
+                11.971275252525231
+            ],
+            "text": "•The column type in the underlying table and the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Loại cột trong bảng cơ bản và "
+        },
+        {
+            "bbox": [
+                531.6768958333333,
+                598.9714330808081,
+                50.24509803921569,
+                10.172374368686917
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                581.921993872549,
+                597.8196281565657,
+                155.4751151960785,
+                11.971275252525231
+            ],
+            "text": " table must be equal.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng phải bằng nhau."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                624.4152591540404,
+                388.2103423202615,
+                11.971275252525231
+            ],
+            "text": "•The column length in the underlying table and the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Độ dài cột trong bảng bên dưới và "
+        },
+        {
+            "bbox": [
+                545.6450330882353,
+                625.5670640782828,
+                50.24509803921569,
+                10.17237436868686
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                595.890131127451,
+                624.4152591540404,
+                155.47506495098037,
+                11.971275252525231
+            ],
+            "text": " table must be equal.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng phải bằng nhau."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                651.010877209596,
+                338.8697230392157,
+                11.971275252525231
+            ],
+            "text": "•The column of the underlying table and the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• cột của bảng cơ bản và "
+        },
+        {
+            "bbox": [
+                496.3043133169935,
+                652.1626950757576,
+                50.245098039215634,
+                10.17236142676768
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                546.5494113562091,
+                651.010877209596,
+                100.55720629084976,
+                11.971275252525231
+            ],
+            "text": " table can be ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng có thể được "
+        },
+        {
+            "bbox": [
+                647.1066176470589,
+                652.1626950757576,
+                40.196078431372484,
+                10.17236142676768
+            ],
+            "text": "NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "VÔ GIÁ TRỊ"
+        },
+        {
+            "bbox": [
+                687.3026960784314,
+                651.010877209596,
+                4.656029003268031,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                677.6065470328283,
+                494.31129125817,
+                11.971275252525288
+            ],
+            "text": "•The underlying table must have at least as many indexes as the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Bảng cơ bản phải có ít nhất nhiều chỉ mục như "
+        },
+        {
+            "bbox": [
+                634.9975657679739,
+                678.7583648989898,
+                50.24509803921569,
+                10.172361426767736
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                685.2426638071896,
+                677.6065470328283,
+                238.31246650326784,
+                11.971275252525288
+            ],
+            "text": " table. The underlying table may",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn. Bảng cơ bản có thể"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                693.1368500631313,
+                211.33086560457517,
+                11.971275252525231
+            ],
+            "text": "have more indexes than the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có nhiều chỉ mục hơn "
+        },
+        {
+            "bbox": [
+                368.765506127451,
+                694.288667929293,
+                50.24509803921569,
+                10.17236142676768
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                419.01060416666667,
+                693.1368500631313,
+                219.72183047385624,
+                11.971275252525231
+            ],
+            "text": " table, but cannot have fewer.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng, nhưng không thể có ít hơn."
+        },
+        {
+            "bbox": [
+                298.45588235294116,
+                719.732481060606,
+                37.214869281045765,
+                11.971275252525288
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                298.45588235294116,
+                746.3281508838384,
+                579.9121899509805,
+                11.971236426767746
+            ],
+            "text": "A known issue exists where indexes on the same columns must be in identical",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một vấn đề đã biết tồn tại trong đó các chỉ mục trên cùng một cột phải có trong"
+        },
+        {
+            "bbox": [
+                298.45588235294116,
+                761.8584150883839,
+                131.27367606209157,
+                11.971275252525231
+            ],
+            "text": "order, in both the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thứ tự, trong cả hai "
+        },
+        {
+            "bbox": [
+                429.72960866013074,
+                763.0102588383838,
+                50.24509803921569,
+                10.172335542929318
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                479.9747066993464,
+                761.8584150883839,
+                188.06736846405232,
+                11.971275252525231
+            ],
+            "text": " table and the underlying ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng và cơ bản "
+        },
+        {
+            "bbox": [
+                668.0420751633987,
+                763.0102588383838,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "MyISAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Myisam"
+        },
+        {
+            "bbox": [
+                728.3361928104575,
+                761.8584150883839,
+                114.52532679738567,
+                11.971275252525231
+            ],
+            "text": " table. See Bug",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn. Xem lỗi"
+        },
+        {
+            "bbox": [
+                298.45588235294116,
+                777.3887181186869,
+                60.52859477124184,
+                11.97127525252526
+            ],
+            "text": "#33653.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "#33653."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                803.9844267676767,
+                282.9804256535948,
+                11.97127525252526
+            ],
+            "text": "Each index must satisfy these checks:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mỗi chỉ mục phải đáp ứng các séc sau:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                830.5800448232324,
+                361.22874142156854,
+                11.97127525252526
+            ],
+            "text": "•The index type of the underlying table and the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• loại chỉ mục của bảng cơ bản và "
+        },
+        {
+            "bbox": [
+                518.6633819444444,
+                831.7319015151515,
+                50.24509803921569,
+                10.172322601010109
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                568.9084799836601,
+                830.5800448232324,
+                183.39460784313724,
+                11.97127525252526
+            ],
+            "text": " table must be the same.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng phải giống nhau."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                857.175675820707,
+                757.7128770424837,
+                11.971275252525288
+            ],
+            "text": "•The number of index parts (that is, multiple columns within a compound index) in the index definition",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Số lượng các phần chỉ mục (nghĩa là nhiều cột trong một chỉ mục hợp chất) trong định nghĩa chỉ số"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                872.7059788510101,
+                235.54901960784312,
+                11.97127525252526
+            ],
+            "text": "for the underlying table and the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cho bảng cơ bản và "
+        },
+        {
+            "bbox": [
+                409.73202614379085,
+                873.8578355429293,
+                50.24511478758177,
+                10.172322601010109
+            ],
+            "text": "MERGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hợp nhất"
+        },
+        {
+            "bbox": [
+                459.9771409313726,
+                872.7059788510101,
+                183.39460784313718,
+                11.97127525252526
+            ],
+            "text": " table must be the same.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng phải giống nhau."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                899.3016098484849,
+                165.69156821895425,
+                11.971275252525245
+            ],
+            "text": "•For each index part:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Đối với mỗi phần chỉ mục:"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3422",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3422"
+        }
+    ]
+}

@@ -1,3 +1,1876 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:efd68e39343d0afbed87a20145d6cb7de5be2d248ef769daa313530284c5c043
-size 53173
+{
+    "metadata": {
+        "page_hash": "e9160898c0cb7776441b2adb393e21b0bb09f733c6bc100a17ddb1ecd4ef8ddb",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4662,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                334.92546609477125,
+                48.370422979798036,
+                385.29617687908495,
+                11.971275252525288
+            ],
+            "text": "NDB Cluster Backups With NDB Cluster Replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao lưu cụm NDB với sao chép cụm NDB"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                13.968137254901961,
+                11.971275252525174
+            ],
+            "text": "8.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "8."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                94.96133207070716,
+                611.6335784313726,
+                11.971275252525174
+            ],
+            "text": "Using the values obtained in the previous step, you can now issue the appropriate ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng các giá trị thu được trong bước trước, giờ đây bạn có thể phát hành "
+        },
+        {
+            "bbox": [
+                809.2642973856209,
+                96.11317582070706,
+                60.2941176470589,
+                10.172335542929318
+            ],
+            "text": "CHANGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "THAY ĐỔI"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                111.64347885101006,
+                211.02941176470586,
+                10.172335542929432
+            ],
+            "text": "REPLICATION SOURCE TO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nguồn nhân rộng để"
+        },
+        {
+            "bbox": [
+                408.66013071895424,
+                110.49163510101016,
+                295.08946078431376,
+                11.971275252525288
+            ],
+            "text": " statement (MySQL 8.0.23 and later) or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố (mysql 8.0,23 trở lên) hoặc "
+        },
+        {
+            "bbox": [
+                703.749591503268,
+                111.64347885101006,
+                160.78431372549028,
+                10.172335542929432
+            ],
+            "text": "CHANGE MASTER TO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi chủ thành"
+        },
+        {
+            "bbox": [
+                864.5339052287583,
+                110.49163510101016,
+                78.19812091503263,
+                11.971275252525288
+            ],
+            "text": " statement",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                126.02193813131316,
+                291.33784354575164,
+                11.971275252525288
+            ],
+            "text": "(prior to MySQL 8.0.23) in the replica’s ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "(trước MySQL 8.0,23) trong bản sao "
+        },
+        {
+            "bbox": [
+                488.4493631535948,
+                127.17378188131318,
+                50.24509803921575,
+                10.172335542929318
+            ],
+            "text": "mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql"
+        },
+        {
+            "bbox": [
+                538.6944611928105,
+                126.02193813131316,
+                48.402777777777715,
+                11.971275252525288
+            ],
+            "text": " client:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " khách hàng:"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                152.45714109848484,
+                40.19607843137254,
+                8.137827020202053
+            ],
+            "text": "mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                152.45714109848484,
+                8.039215686274531,
+                8.137827020202053
+            ],
+            "text": "R",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "R"
+        },
+        {
+            "bbox": [
+                245.86601307189545,
+                152.45714109848484,
+                16.078414624182983,
+                8.137827020202053
+            ],
+            "text": "> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "> "
+        },
+        {
+            "bbox": [
+                261.94442769607844,
+                152.45714109848484,
+                128.6274844771242,
+                8.137827020202053
+            ],
+            "text": "CHANGE MASTER TO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Thay đổi chủ thành"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                164.88134469696968,
+                16.078448120915027,
+                8.137917613636432
+            ],
+            "text": "->",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "->"
+        },
+        {
+            "bbox": [
+                294.1013239379085,
+                164.88134469696968,
+                192.9411429738562,
+                8.137917613636432
+            ],
+            "text": "MASTER_LOG_FILE=’@file’,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Master_log_file = xông@tập tin,"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                177.3055612373738,
+                16.078448120915027,
+                8.137904671717138
+            ],
+            "text": "->",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "->"
+        },
+        {
+            "bbox": [
+                294.1013239379085,
+                177.3055612373738,
+                160.78431372549022,
+                8.137904671717138
+            ],
+            "text": "MASTER_LOG_POS=@pos;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Master_log_pos =@pos;"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                202.22008869949502,
+                511.09313725490205,
+                11.971275252525288
+            ],
+            "text": "In MySQL 8.0.23 and later, you can also use the following statement:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong MySQL 8.0,23 trở lên, bạn cũng có thể sử dụng câu lệnh sau:"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                228.6552140151516,
+                40.19607843137254,
+                8.137904671717138
+            ],
+            "text": "mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                228.6552140151516,
+                8.039215686274531,
+                8.137904671717138
+            ],
+            "text": "R",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "R"
+        },
+        {
+            "bbox": [
+                245.86601307189545,
+                228.6552140151516,
+                16.078414624182983,
+                8.137904671717138
+            ],
+            "text": "> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "> "
+        },
+        {
+            "bbox": [
+                261.94442769607844,
+                228.6552140151516,
+                225.09803921568624,
+                8.137904671717138
+            ],
+            "text": "CHANGE REPLICATION SOURCE TO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Thay đổi nguồn sao chép thành"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                241.07950820707072,
+                16.078448120915027,
+                8.137827020202053
+            ],
+            "text": "->",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "->"
+        },
+        {
+            "bbox": [
+                294.1013239379085,
+                241.07950820707072,
+                192.9411429738562,
+                8.137827020202053
+            ],
+            "text": "SOURCE_LOG_FILE=’@file’,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Source_Log_File = xông@File,"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                253.50371180555555,
+                16.078448120915027,
+                8.137917613636432
+            ],
+            "text": "->",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "->"
+        },
+        {
+            "bbox": [
+                294.1013239379085,
+                253.50371180555555,
+                160.78431372549022,
+                8.137917613636432
+            ],
+            "text": "SOURCE_LOG_POS=@pos;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Source_log_pos =@pos;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                278.41825220959595,
+                13.968137254901961,
+                11.971275252525288
+            ],
+            "text": "9.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "9."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                278.41825220959595,
+                767.0248680555555,
+                11.971275252525288
+            ],
+            "text": "Now that the replica knows from what point in which binary log file to start reading data from the source,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bây giờ bản sao đã biết từ điểm nào trong đó tệp nhật ký nhị phân để bắt đầu đọc dữ liệu từ nguồn,"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                293.94855523989895,
+                483.140114379085,
+                11.971275252525288
+            ],
+            "text": "you can cause the replica to begin replicating with this statement:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể khiến bản sao bắt đầu sao chép với câu lệnh này:"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                320.38366761363636,
+                40.19607843137254,
+                8.137917613636432
+            ],
+            "text": "mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                320.38366761363636,
+                8.039215686274531,
+                8.137917613636432
+            ],
+            "text": "R",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "R"
+        },
+        {
+            "bbox": [
+                245.86601307189545,
+                320.38366761363636,
+                16.078414624182983,
+                8.137917613636432
+            ],
+            "text": "> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "> "
+        },
+        {
+            "bbox": [
+                261.94442769607844,
+                320.38366761363636,
+                96.47060498366011,
+                8.137917613636432
+            ],
+            "text": "START SLAVE;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Bắt đầu nô lệ;"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                345.29820801767676,
+                536.2156862745098,
+                11.971275252525288
+            ],
+            "text": "Beginning with MySQL 8.0.22, you can also use the following statement:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu với MySQL 8.0.22, bạn cũng có thể sử dụng câu lệnh sau:"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                371.73332039141417,
+                40.19607843137254,
+                8.137917613636318
+            ],
+            "text": "mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                371.73332039141417,
+                8.039215686274531,
+                8.137917613636318
+            ],
+            "text": "R",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "R"
+        },
+        {
+            "bbox": [
+                245.86601307189545,
+                371.73332039141417,
+                16.078414624182983,
+                8.137917613636318
+            ],
+            "text": "> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "> "
+        },
+        {
+            "bbox": [
+                261.94442769607844,
+                371.73332039141417,
+                112.5490531045752,
+                8.137917613636318
+            ],
+            "text": "START REPLICA;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Bắt đầu bản sao;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                396.647821969697,
+                751.2479407679738,
+                11.971275252525288
+            ],
+            "text": "To perform a backup and restore on a second replication channel, it is necessary only to repeat these",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để thực hiện sao lưu và khôi phục trên kênh sao chép thứ hai, chỉ cần lặp lại những điều này"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                412.178125,
+                762.4190674019608,
+                11.971275252525288
+            ],
+            "text": "steps, substituting the host names and IDs of the secondary source and replica for those of the primary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các bước, thay thế tên máy chủ và ID của nguồn thứ cấp và bản sao cho các tên chính"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                427.708428030303,
+                696.313316993464,
+                11.971275252525288
+            ],
+            "text": "source and replica servers where appropriate, and running the preceding statements on them.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các máy chủ nguồn và bản sao khi thích hợp và chạy các câu lệnh trước trên chúng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                454.7984662247475,
+                723.2446225490196,
+                11.971275252525288
+            ],
+            "text": "For additional information on performing Cluster backups and restoring Cluster from backups, see",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin về việc thực hiện sao lưu cụm và khôi phục cụm từ các bản sao lưu, hãy xem"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                470.3287692550506,
+                380.3554089052287,
+                11.971275252525174
+            ],
+            "text": "Section 23.5.8, “Online Backup of NDB Cluster”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mục 23.5.8, bản sao lưu trực tuyến của cụm NDB"
+        },
+        {
+            "bbox": [
+                523.6209317810458,
+                470.3287692550506,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                497.77469728535357,
+                72.6343070261438,
+                14.365543244949436
+            ],
+            "text": "23.6.9.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "23.6.9.1"
+        },
+        {
+            "bbox": [
+                168.66272834967322,
+                497.77469728535357,
+                789.5112577614378,
+                14.365543244949436
+            ],
+            "text": "NDB Cluster Replication: Automating Synchronization of the Replica to the Source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Sao chép cụm NDB: Tự động hóa đồng bộ hóa bản sao với nguồn"
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                516.411047979798,
+                104.97204207516342,
+                14.365543244949492
+            ],
+            "text": "Binary Log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Nhật ký nhị phân"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                546.2512440025253,
+                802.2467320261438,
+                11.971275252525231
+            ],
+            "text": "It is possible to automate much of the process described in the previous section (see Section 23.6.9, “NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Có thể tự động hóa phần lớn quy trình được mô tả trong phần trước (xem Phần 23.6.9, ND NDB"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                561.7815470328283,
+                364.64542483660136,
+                11.971275252525231
+            ],
+            "text": "Cluster Backups With NDB Cluster Replication”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao lưu cụm với sao chép cụm NDB"
+        },
+        {
+            "bbox": [
+                521.6948361928104,
+                561.7815470328283,
+                197.3125000000001,
+                11.971275252525231
+            ],
+            "text": "). The following Perl script ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Tập lệnh Perl sau đây "
+        },
+        {
+            "bbox": [
+                719.0073361928105,
+                562.9333519570707,
+                160.78431372549016,
+                10.172374368686803
+            ],
+            "text": "reset-replica.pl",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Đặt lại-replica.pl"
+        },
+        {
+            "bbox": [
+                879.7916499183007,
+                561.7815470328283,
+                76.3223206699347,
+                11.971275252525231
+            ],
+            "text": " serves as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phục vụ như"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                577.3118500631313,
+                262.530637254902,
+                11.971275252525231
+            ],
+            "text": "an example of how you can do this.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một ví dụ về cách bạn có thể làm điều này."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                603.7469624368687,
+                152.74509803921566,
+                8.137917613636375
+            ],
+            "text": "#!/user/bin/perl -w",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#!/user/bin/perl -w"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                628.595473169192,
+                8.039215686274503,
+                8.137904671717195
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                628.595473169192,
+                176.8627450980392,
+                8.137904671717195
+            ],
+            "text": "file: reset-replica.pl",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tệp: Đặt lại-replica.pl"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                653.443970959596,
+                8.039215686274503,
+                8.137904671717195
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                653.443970959596,
+                610.9804089052287,
+                8.137904671717195
+            ],
+            "text": "Copyright (c) 2005, 2020, Oracle and/or its affiliates. All rights reserved.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bản quyền (c) 2005, 2020, Oracle và/hoặc các chi nhánh của nó. Tất cả quyền được bảo lưu."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                678.2924299242425,
+                8.039215686274503,
+                8.137917613636318
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                678.2924299242425,
+                546.6666499183005,
+                8.137917613636318
+            ],
+            "text": "This program is free software; you can redistribute it and/or modify",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chương trình này là phần mềm miễn phí; bạn có thể phân phối lại nó và/hoặc sửa đổi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                690.716685290404,
+                8.039215686274503,
+                8.137904671717138
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                690.716685290404,
+                546.6666499183005,
+                8.137904671717138
+            ],
+            "text": "it under the terms of the GNU General Public License as published by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "nó theo các điều khoản của giấy phép công cộng GNU được công bố bởi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                703.1409277146465,
+                8.039215686274503,
+                8.137917613636375
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                703.1409277146465,
+                522.5490028594771,
+                8.137917613636375
+            ],
+            "text": "the Free Software Foundation; either version 2 of the License, or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Quỹ phần mềm miễn phí; Phiên bản 2 của giấy phép, hoặc"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                715.5651830808081,
+                8.039215686274503,
+                8.137904671717195
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                715.5651830808081,
+                281.3725322712419,
+                8.137904671717195
+            ],
+            "text": "(at your option) any later version.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "(tại tùy chọn của bạn) bất kỳ phiên bản sau."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                740.4136420454546,
+                8.039215686274503,
+                8.137917613636318
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                740.4136420454546,
+                506.47057148692807,
+                8.137917613636318
+            ],
+            "text": "This program is distributed in the hope that it will be useful,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chương trình này được phân phối với hy vọng nó sẽ hữu ích,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                752.8378974116163,
+                8.039215686274503,
+                8.137865845959539
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                752.8378974116163,
+                498.43137254901956,
+                8.137865845959539
+            ],
+            "text": "but WITHOUT ANY WARRANTY; without even the implied warranty of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nhưng không có bất kỳ bảo hành nào; mà thậm chí không có bảo hành ngụ ý của"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                765.2621398358585,
+                8.039215686274503,
+                8.137839962121234
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                765.2621398358585,
+                418.0392156862745,
+                8.137839962121234
+            ],
+            "text": "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tính thương mại hoặc thể lực cho một mục đích cụ thể."
+        },
+        {
+            "bbox": [
+                629.0686441993464,
+                765.2621398358585,
+                56.27450980392166,
+                8.137839962121234
+            ],
+            "text": "See the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Xem"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                777.6864340277778,
+                8.039215686274503,
+                8.137827020202025
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                777.6864340277778,
+                353.7255069444444,
+                8.137827020202025
+            ],
+            "text": "GNU General Public License for more details.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Giấy phép công cộng GNU để biết thêm chi tiết."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                802.5349318181818,
+                8.039215686274503,
+                8.137839962121205
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                802.5349318181818,
+                522.5490028594771,
+                8.137839962121205
+            ],
+            "text": "You should have received a copy of the GNU General Public License",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bạn nên nhận được một bản sao của Giấy phép Công cộng GNU"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                814.9591483585858,
+                8.039215686274503,
+                8.137827020202025
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                814.9591483585858,
+                337.6470588235294,
+                8.137827020202025
+            ],
+            "text": "along with this program; if not, write to:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "cùng với chương trình này; Nếu không, hãy viết thư cho:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                827.3833519570708,
+                8.039215686274503,
+                8.137839962121234
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                827.3833519570708,
+                241.17645383986925,
+                8.137839962121234
+            ],
+            "text": "Free Software Foundation, Inc.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Foundation Foundation miễn phí, Inc."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                839.80764614899,
+                8.039215686274503,
+                8.137827020201996
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                839.80764614899,
+                16.078431372549005,
+                8.137827020201996
+            ],
+            "text": "59",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "59"
+        },
+        {
+            "bbox": [
+                219.06862745098042,
+                839.80764614899,
+                184.90196078431367,
+                8.137827020201996
+            ],
+            "text": "Temple Place, Suite 330",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đền thờ, bộ 330"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                852.2318497474747,
+                8.039215686274503,
+                8.137839962121234
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                852.2318497474747,
+                200.9803754084967,
+                8.137839962121234
+            ],
+            "text": "Boston, MA 02111-1307 USA",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Boston, MA 02111-1307 Hoa Kỳ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                864.6561439393939,
+                8.039215686274503,
+                8.137839962121205
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                877.080360479798,
+                8.039215686274503,
+                8.137827020201996
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                194.95098039215688,
+                877.080360479798,
+                88.43137254901958,
+                8.137827020201996
+            ],
+            "text": "Version 1.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Phiên bản 1.1"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                914.3530683396465,
+                522.5490196078431,
+                8.137832196969697
+            ],
+            "text": "######################## Includes ###############################",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "################## chăn"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "4633",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4633"
+        }
+    ]
+}

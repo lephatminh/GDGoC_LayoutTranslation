@@ -1,3 +1,1096 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:eb0c73efaff0daa96959fb68e5d45faffb6e950ee4a05bae4285bba6df58d391
-size 34497
+{
+    "metadata": {
+        "page_hash": "10f88a6aace2f132c33ec460325077e09cefce8d305de3102cf1f556d5b0dd63",
+        "original_filename": "cm-oreilly-kubernetes-patterns-ebook-f19824-201910-en.pdf",
+        "page_no": 103,
+        "num_pages": 266,
+        "original_width": 504,
+        "original_height": 661.5,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                146.42857142857142,
+                81.03777059712763,
+                732.1427961309523,
+                21.94800037792902
+            ],
+            "text": "Camel has a Kubernetes connector that also provides leader election and singleton",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Camel có đầu nối Kubernetes cũng cung cấp bầu cử lãnh đạo và Singleton"
+        },
+        {
+            "bbox": [
+                146.42248854166667,
+                100.56154913076341,
+                732.1427981646825,
+                21.94800037792902
+            ],
+            "text": "capabilities. This connector goes a step further, and rather than accessing the Etcd",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "khả năng. Đầu nối này tiến thêm một bước và thay vì truy cập vào ETCD"
+        },
+        {
+            "bbox": [
+                146.43775778769842,
+                120.08540513983371,
+                732.143046279762,
+                21.948000377928906
+            ],
+            "text": "API directly, it uses Kubernetes APIs to leverage ConfigMaps as a distributed lock. It",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "API trực tiếp, nó sử dụng API Kubernetes để tận dụng Cấu hình làm khóa phân tán. Nó"
+        },
+        {
+            "bbox": [
+                146.43176845238094,
+                139.6091836734695,
+                732.1427717261904,
+                21.948000377928906
+            ],
+            "text": "relies on Kubernetes optimistic locking guarantees for editing resources such as Con‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "dựa vào các đảm bảo khóa lạc quan Kubernetes để chỉnh sửa tài nguyên như Con‐"
+        },
+        {
+            "bbox": [
+                146.42557777777776,
+                159.1330551776266,
+                541.0292114087301,
+                21.948000377928906
+            ],
+            "text": "figMaps where only one Pod can update a ConfigMap at a time.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Figmaps trong đó chỉ có một nhóm có thể cập nhật cấu hình tại một thời điểm."
+        },
+        {
+            "bbox": [
+                146.42557777777776,
+                187.95387037037028,
+                732.1428815476189,
+                21.94800037792902
+            ],
+            "text": "The Camel implementation uses this guarantee to ensure only one Camel route",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Việc triển khai lạc đà sử dụng bảo đảm này để đảm bảo chỉ có một tuyến lạc đà"
+        },
+        {
+            "bbox": [
+                146.419494890873,
+                207.47764890400606,
+                732.1428632440476,
+                21.94800037792902
+            ],
+            "text": "instance is active, and any other instance has to wait and acquire the lock before acti‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "ví dụ đang hoạt động và bất kỳ trường hợp nào khác phải chờ và có được khóa trước Acti‐"
+        },
+        {
+            "bbox": [
+                146.43477837301586,
+                227.00150491307636,
+                732.1429750992063,
+                21.948000377928906
+            ],
+            "text": "vating. It is a custom implementation of a lock, but achieves the same goal: when",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "chứng tỏ. Đó là một triển khai tùy chỉnh của khóa, nhưng đạt được mục tiêu tương tự: khi"
+        },
+        {
+            "bbox": [
+                146.42877276785714,
+                246.52528344671202,
+                732.142777827381,
+                21.948046863189802
+            ],
+            "text": "there are multiple Pods with the same Camel application, only one of them becomes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Có nhiều nhóm có cùng một ứng dụng lạc đà, chỉ một trong số chúng trở thành"
+        },
+        {
+            "bbox": [
+                146.42268988095236,
+                266.04910846560847,
+                485.01719156746026,
+                21.948046863189802
+            ],
+            "text": "the active singleton, and the others wait in passive mode.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Singleton hoạt động và những người khác chờ đợi ở chế độ thụ động."
+        },
+        {
+            "bbox": [
+                146.42268988095236,
+                294.86997014361305,
+                732.1429018849207,
+                21.948000377928906
+            ],
+            "text": "An implementation with ZooKeeper, Etcd, or any other distributed lock implementa‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Một triển khai với ZooKeeper, ETCD, hoặc bất kỳ triển khai khóa phân tán nào khác"
+        },
+        {
+            "bbox": [
+                146.4379733630952,
+                314.3937951625095,
+                732.1429527281745,
+                21.94804686318969
+            ],
+            "text": "tion would be similar to the one described: only one instance of the application",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "tion sẽ tương tự như mô tả: chỉ một trường hợp của ứng dụng"
+        },
+        {
+            "bbox": [
+                146.43189250992063,
+                333.9176046863189,
+                732.1427696924603,
+                21.948046863189802
+            ],
+            "text": "becomes the leader and activates itself, and other instances are passive and wait for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "trở thành người lãnh đạo và tự kích hoạt, và các trường hợp khác là thụ động và chờ đợi"
+        },
+        {
+            "bbox": [
+                146.42580962301588,
+                353.44147619047624,
+                732.1428937499999,
+                21.948000377928906
+            ],
+            "text": "the lock. This ensures that even if multiple Pod replicas are started and all are healthy,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Khóa. Điều này đảm bảo rằng ngay cả khi nhiều bản sao pod được bắt đầu và tất cả đều khỏe mạnh,"
+        },
+        {
+            "bbox": [
+                146.41980401785713,
+                372.9652547241119,
+                732.1429405257936,
+                21.94804686318969
+            ],
+            "text": "up, and running, only one service is active and performs the business functionality as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "lên và chạy, chỉ có một dịch vụ hoạt động và thực hiện chức năng kinh doanh là"
+        },
+        {
+            "bbox": [
+                146.43507326388888,
+                392.4891107331821,
+                732.1428632440476,
+                21.94800037792902
+            ],
+            "text": "a singleton, and other instances are waiting to acquire the lock in case the master fails",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Một singleton và các trường hợp khác đang chờ để có được khóa trong trường hợp Master không thành công"
+        },
+        {
+            "bbox": [
+                146.42908392857143,
+                412.01293575207865,
+                126.37395426587298,
+                21.94804686318969
+            ],
+            "text": "or shuts down.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "hoặc tắt."
+        },
+        {
+            "bbox": [
+                146.43964915674604,
+                447.0500854119425,
+                238.51890937499996,
+                29.274077475434638
+            ],
+            "text": "Pod Disruption Budget",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 15.77000045776367
+            },
+            "text_vi": "Ngân sách gián đoạn pod"
+        },
+        {
+            "bbox": [
+                146.4325433035714,
+                482.3745604686319,
+                61.387386259920646,
+                21.948000377928906
+            ],
+            "text": "While ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Trong khi "
+        },
+        {
+            "bbox": [
+                207.81992956349205,
+                482.16305253212397,
+                144.58322569444442,
+                22.159508314436835
+            ],
+            "text": "Singleton Service",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Dịch vụ singleton"
+        },
+        {
+            "bbox": [
+                352.4031552579365,
+                482.3745604686319,
+                526.1723611111111,
+                21.948000377928906
+            ],
+            "text": " and leader election try to limit the maximum number of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " và cuộc bầu cử lãnh đạo cố gắng giới hạn số lượng tối đa của"
+        },
+        {
+            "bbox": [
+                146.4264299107143,
+                501.8984319727891,
+                732.1427615575395,
+                21.948000377928963
+            ],
+            "text": "instances a service is running at a time, the PodDisruptionBudget functionality of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các trường hợp một dịch vụ đang chạy tại một thời điểm, chức năng PoddisruptionBudget của"
+        },
+        {
+            "bbox": [
+                146.42033278769838,
+                521.4222569916856,
+                732.1428998511905,
+                21.948000377928963
+            ],
+            "text": "Kubernetes provides a complementary and somewhat opposite functionality—limit‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Kubernetes cung cấp một chức năng bổ sung và hơi ngược lại"
+        },
+        {
+            "bbox": [
+                146.43561626984126,
+                540.9460665154951,
+                644.6182617063491,
+                21.948000377928906
+            ],
+            "text": "ing the number of instances that are simultaneously down for maintenance.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "ing số lượng các trường hợp đồng thời giảm để bảo trì."
+        },
+        {
+            "bbox": [
+                146.43564677579363,
+                569.7669436885865,
+                731.6578755456349,
+                21.948000377928963
+            ],
+            "text": "At its core, PodDisruptionBudget ensures a certain number or percentage of Pods will",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tại cốt lõi của nó, PoddisruptionBudget đảm bảo một số hoặc tỷ lệ phần trăm nhất định sẽ"
+        },
+        {
+            "bbox": [
+                146.4356935515873,
+                589.290768707483,
+                545.9681169642856,
+                21.948000377928906
+            ],
+            "text": "not voluntarily be evicted from a node at any one point in time. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Không tự nguyện bị đuổi khỏi một nút tại bất kỳ thời điểm nào. "
+        },
+        {
+            "bbox": [
+                692.4038105158729,
+                589.0792452758881,
+                83.43060714285718,
+                22.159523809523762
+            ],
+            "text": "Voluntary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Tự nguyện"
+        },
+        {
+            "bbox": [
+                775.8344176587301,
+                589.290768707483,
+                102.67085367063487,
+                21.948000377928906
+            ],
+            "text": " here means",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " Đây có nghĩa là"
+        },
+        {
+            "bbox": [
+                146.42034702380954,
+                608.8145782312924,
+                732.1430076388889,
+                21.948000377928963
+            ],
+            "text": "an eviction that can be delayed for a particular time—for example, when it is trig‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ví dụ, một sự trục xuất có thể bị trì hoãn trong một thời gian cụ thể, ví dụ, khi nó được kích hoạt"
+        },
+        {
+            "bbox": [
+                146.43558373015873,
+                629.2576647770219,
+                482.35030019841275,
+                21.948000377928963
+            ],
+            "text": "gered by draining a node for maintenance or upgrade (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "bằng cách rút cạn một nút để bảo trì hoặc nâng cấp ("
+        },
+        {
+            "bbox": [
+                628.7859449404762,
+                632.519783446712,
+                133.26208035714285,
+                15.456302721088377
+            ],
+            "text": "kubectl drain",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "Thoát nước Kubectl"
+        },
+        {
+            "bbox": [
+                762.0479642857142,
+                629.2576647770219,
+                116.53048065476185,
+                21.948000377928963
+            ],
+            "text": "), or a cluster",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "), hoặc một cụm"
+        },
+        {
+            "bbox": [
+                146.42947237103175,
+                648.7814433106576,
+                732.142830704365,
+                21.948000377928963
+            ],
+            "text": "scaling down, rather than a node becoming unhealthy, which cannot be predicted or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Việc mở rộng quy mô, thay vì một nút trở nên không lành mạnh, điều không thể dự đoán được hoặc"
+        },
+        {
+            "bbox": [
+                146.423249156746,
+                668.305299319728,
+                92.54895223214285,
+                21.948000377928963
+            ],
+            "text": "controlled.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "kiểm soát."
+        },
+        {
+            "bbox": [
+                146.423249156746,
+                697.1261764928194,
+                732.1429730654761,
+                21.948000377928963
+            ],
+            "text": "The PodDisruptionBudget in Example 10-1 applies to Pods that match its selector",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Poddisruptionbudget trong ví dụ 10-1 áp dụng cho các pod phù hợp với bộ chọn của nó"
+        },
+        {
+            "bbox": [
+                146.43851636904762,
+                716.6499860166289,
+                441.7109374999999,
+                21.948000377928963
+            ],
+            "text": "and ensures two Pods must be available all the time.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "và đảm bảo hai nhóm phải có sẵn mọi lúc."
+        },
+        {
+            "bbox": [
+                146.43851636904762,
+                759.5535729402873,
+                306.1973348214285,
+                22.15952380952382
+            ],
+            "text": "Example 10-1. PodDisruptionBudget",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Ví dụ 10-1. Poddisruptionbudget"
+        },
+        {
+            "bbox": [
+                146.4364378968254,
+                797.9232509448224,
+                86.43353581349206,
+                13.170823885109598
+            ],
+            "text": "apiVersion",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "Apiversion"
+        },
+        {
+            "bbox": [
+                232.86997371031745,
+                797.9232509448224,
+                138.2936711309524,
+                13.170823885109598
+            ],
+            "text": ": policy/v1beta1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": Chính sách/V1beta1"
+        },
+        {
+            "bbox": [
+                146.4364378968254,
+                813.7282705971278,
+                34.57341269841268,
+                13.17082388510957
+            ],
+            "text": "kind",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "loại"
+        },
+        {
+            "bbox": [
+                181.00985059523808,
+                813.7282705971278,
+                181.51044107142857,
+                13.17082388510957
+            ],
+            "text": ": PodDisruptionBudget",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": Poddisruptionbudget"
+        },
+        {
+            "bbox": [
+                146.4364378968254,
+                829.5332747543462,
+                69.1468294642857,
+                13.170823885109598
+            ],
+            "text": "metadata",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "Siêu dữ liệu"
+        },
+        {
+            "bbox": [
+                215.5832673611111,
+                829.5332747543462,
+                8.643353174603192,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                163.72314424603172,
+                845.3382789115647,
+                34.57341269841271,
+                13.170823885109598
+            ],
+            "text": "name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "tên"
+        },
+        {
+            "bbox": [
+                198.29655694444443,
+                845.3382789115647,
+                190.15379424603174,
+                13.170823885109598
+            ],
+            "text": ": random-generator-pdb",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": Máy phát điện ngẫu nhiên-PDB"
+        },
+        {
+            "bbox": [
+                146.4364378968254,
+                861.143283068783,
+                34.57341269841268,
+                13.17082698412699
+            ],
+            "text": "spec",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "thông số kỹ thuật"
+        },
+        {
+            "bbox": [
+                181.00985059523808,
+                861.143283068783,
+                8.643353174603163,
+                13.17082698412699
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                163.72314424603172,
+                876.9482469387756,
+                69.14682946428573,
+                13.170823885109598
+            ],
+            "text": "selector",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "người chọn"
+        },
+        {
+            "bbox": [
+                232.86997371031745,
+                876.9482469387756,
+                8.643353174603192,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                181.00985059523808,
+                893.0280874527589,
+                95.07690932539683,
+                13.170823885109613
+            ],
+            "text": "matchLabels",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "Matchlabels"
+        },
+        {
+            "bbox": [
+                276.0867599206349,
+                893.0280874527589,
+                8.643353174603192,
+                13.170823885109613
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                146.4302634920635,
+                945.5380626984127,
+                17.82767450396824,
+                16.706799622071053
+            ],
+            "text": "84 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "84 "
+        },
+        {
+            "bbox": [
+                179.66955124007933,
+                945.5380626984127,
+                6.735708184523844,
+                16.706799622071053
+            ],
+            "text": "| ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "| "
+        },
+        {
+            "bbox": [
+                201.81687266865077,
+                945.5380626984127,
+                175.8607081845238,
+                16.706799622071053
+            ],
+            "text": "Chapter 10: Singleton Service",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "Chương 10: Dịch vụ Singleton"
+        }
+    ]
+}

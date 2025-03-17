@@ -1,3 +1,1616 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:45d0872c22954d9b9d78e33971c137ba064e8ec569cf62bdfd6c0b28639b3940
-size 46950
+{
+    "metadata": {
+        "page_hash": "551c27ee54ea1221b9fd4943871b2a22476da484bcdf6ecd25d8a338db8cf6f3",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4084,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                408.91133946078435,
+                48.370422979798036,
+                237.3243296568628,
+                11.971275252525288
+            ],
+            "text": "NDB Cluster Configuration Files",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp cấu hình cụm NDB"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                569.7124183006537,
+                11.971275252525174
+            ],
+            "text": "Default values are defined for most parameters, and can also be specified in ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định được xác định cho hầu hết các tham số và cũng có thể được chỉ định trong "
+        },
+        {
+            "bbox": [
+                740.545751633987,
+                96.11317582070706,
+                100.49019607843138,
+                10.172335542929318
+            ],
+            "text": "config.ini",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cấu hình.ini"
+        },
+        {
+            "bbox": [
+                841.0359477124184,
+                94.96133207070716,
+                94.02531004901948,
+                11.971275252525174
+            ],
+            "text": ". To create a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Để tạo a"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                110.49163510101016,
+                315.5726789215687,
+                11.971275252525288
+            ],
+            "text": "default value section, simply add the word ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "phần giá trị mặc định, chỉ cần thêm từ "
+        },
+        {
+            "bbox": [
+                486.406012254902,
+                111.64347885101006,
+                70.34313725490193,
+                10.172335542929432
+            ],
+            "text": "default",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mặc định"
+        },
+        {
+            "bbox": [
+                556.749199754902,
+                110.49163510101016,
+                285.7941008986928,
+                11.971275252525288
+            ],
+            "text": " to the section name. For example, an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đến tên phần. Ví dụ, một "
+        },
+        {
+            "bbox": [
+                842.5433006535948,
+                111.64347885101006,
+                60.29411764705878,
+                10.172335542929432
+            ],
+            "text": "[ndbd]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[NDBD]"
+        },
+        {
+            "bbox": [
+                902.8374183006536,
+                110.49163510101016,
+                57.714902777777866,
+                11.971275252525288
+            ],
+            "text": " section",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phần"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                126.02193813131316,
+                514.8112745098039,
+                11.971275252525288
+            ],
+            "text": "contains parameters that apply to a particular data node, whereas an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chứa các tham số áp dụng cho một nút dữ liệu cụ thể, trong khi "
+        },
+        {
+            "bbox": [
+                685.6446078431372,
+                127.17378188131318,
+                140.68627450980398,
+                10.172335542929318
+            ],
+            "text": "[ndbd default]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[Mặc định NDBD]"
+        },
+        {
+            "bbox": [
+                826.3308823529412,
+                126.02193813131316,
+                124.74181331699356,
+                11.971275252525288
+            ],
+            "text": " section contains",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phần chứa"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                141.55224116161617,
+                768.046501633987,
+                11.971275252525288
+            ],
+            "text": "parameters that apply to all data nodes. Suppose that all data nodes should use the same data memory",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các tham số áp dụng cho tất cả các nút dữ liệu. Giả sử rằng tất cả các nút dữ liệu nên sử dụng cùng một bộ nhớ dữ liệu"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                157.08254419191928,
+                279.2622381535947,
+                11.971275252525174
+            ],
+            "text": "size. To configure them all, create an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "kích cỡ. Để định cấu hình tất cả, hãy tạo một "
+        },
+        {
+            "bbox": [
+                450.09557148692807,
+                158.23438794191918,
+                140.68627450980398,
+                10.172335542929318
+            ],
+            "text": "[ndbd default]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[Mặc định NDBD]"
+        },
+        {
+            "bbox": [
+                590.781845996732,
+                157.08254419191928,
+                175.95833333333326,
+                11.971275252525174
+            ],
+            "text": " section that contains a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phần chứa một "
+        },
+        {
+            "bbox": [
+                766.7401793300653,
+                158.23438794191918,
+                100.49019607843138,
+                10.172335542929318
+            ],
+            "text": "DataMemory",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Datamemory"
+        },
+        {
+            "bbox": [
+                867.2303754084967,
+                157.08254419191928,
+                49.34071977124188,
+                11.971275252525174
+            ],
+            "text": " line to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " dòng đến"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                172.61284722222229,
+                221.53063725490196,
+                11.971275252525288
+            ],
+            "text": "specify the data memory size.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ định kích thước bộ nhớ dữ liệu."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                199.41037215909103,
+                87.52694403594771,
+                11.971275252525288
+            ],
+            "text": "If used, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu được sử dụng, "
+        },
+        {
+            "bbox": [
+                258.3603108660131,
+                200.5622288510101,
+                140.68627450980392,
+                10.17232260101025
+            ],
+            "text": "[ndbd default]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[Mặc định NDBD]"
+        },
+        {
+            "bbox": [
+                399.046551879085,
+                199.41037215909103,
+                200.14300735294125,
+                11.971275252525288
+            ],
+            "text": " section must precede any ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phần phải đi trước bất kỳ "
+        },
+        {
+            "bbox": [
+                599.1895592320262,
+                200.5622288510101,
+                60.29411764705878,
+                10.17232260101025
+            ],
+            "text": "[ndbd]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[NDBD]"
+        },
+        {
+            "bbox": [
+                659.483676879085,
+                199.41037215909103,
+                296.01060416666667,
+                11.971275252525288
+            ],
+            "text": " sections in the configuration file. This is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các phần trong tệp cấu hình. Đây là"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                214.94067518939403,
+                93.08741830065364,
+                11.971275252525288
+            ],
+            "text": "also true for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cũng đúng cho "
+        },
+        {
+            "bbox": [
+                263.920751633987,
+                216.0925318813131,
+                70.34313725490193,
+                10.17232260101025
+            ],
+            "text": "default",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mặc định"
+        },
+        {
+            "bbox": [
+                334.2638888888889,
+                214.94067518939403,
+                200.15972222222217,
+                11.971275252525288
+            ],
+            "text": " sections of any other type.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các phần thuộc bất kỳ loại khác."
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                241.73821306818184,
+                37.214869281045765,
+                11.971275252525174
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                268.53581565656566,
+                514.7610126633988,
+                11.971275252525174
+            ],
+            "text": "In some older releases of NDB Cluster, there was no default value for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong một số bản phát hành cũ hơn của cụm NDB, không có giá trị mặc định cho"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                285.21789772727277,
+                120.5882520424837,
+                10.172400252525222
+            ],
+            "text": "NoOfReplicas",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Noofreplicas"
+        },
+        {
+            "bbox": [
+                432.4428272058824,
+                284.06611868686866,
+                371.4117312091503,
+                11.971275252525288
+            ],
+            "text": ", which always had to be specified explicitly in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", mà luôn phải được chỉ định rõ ràng trong "
+        },
+        {
+            "bbox": [
+                803.8545584150327,
+                285.21789772727277,
+                50.24509803921569,
+                10.172400252525222
+            ],
+            "text": "[ndbd",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[NDBD"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                300.7482007575759,
+                80.39215686274508,
+                10.172400252525108
+            ],
+            "text": "default]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mặc định]"
+        },
+        {
+            "bbox": [
+                392.2467320261438,
+                299.59642171717167,
+                526.9035780228758,
+                11.971275252525288
+            ],
+            "text": " section. Although this parameter now has a default value of 2, which is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phần. Mặc dù tham số này hiện có giá trị mặc định là 2, đó là"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                315.1267247474748,
+                618.0481523692811,
+                11.971275252525174
+            ],
+            "text": "the recommended setting in most common usage scenarios, it is still recommended",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cài đặt được đề xuất trong hầu hết các kịch bản sử dụng phổ biến, nó vẫn được khuyến nghị"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                330.6570277777778,
+                288.5408161764706,
+                11.971275252525174
+            ],
+            "text": "practice to set this parameter explicitly.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thực hành để thiết lập tham số này một cách rõ ràng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                357.45447506313144,
+                758.7009803921568,
+                11.971327020201898
+            ],
+            "text": "The global configuration file must define the computers and nodes involved in the cluster and on which",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp cấu hình toàn cầu phải xác định các máy tính và nút liên quan đến cụm và trên đó"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                372.98482986111117,
+                761.4644942810459,
+                11.971275252525174
+            ],
+            "text": "computers these nodes are located. An example of a simple configuration file for a cluster consisting of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Máy tính Những nút này được định vị. Một ví dụ về tệp cấu hình đơn giản cho một cụm bao gồm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                388.51513289141417,
+                600.4121564542484,
+                11.971275252525288
+            ],
+            "text": "one management server, two data nodes and two MySQL servers is shown here:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một máy chủ quản lý, hai nút dữ liệu và hai máy chủ MySQL được hiển thị ở đây:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                414.7173424873738,
+                8.039215686274503,
+                8.137865845959595
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                414.7173424873738,
+                385.88235294117646,
+                8.137865845959595
+            ],
+            "text": "file \"config.ini\" - 2 data nodes and 2 SQL nodes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tệp \"config.ini\" - 2 nút dữ liệu và 2 nút SQL"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                427.14154608585864,
+                8.039215686274503,
+                8.137917613636318
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                427.14154608585864,
+                490.3921401143791,
+                8.137917613636318
+            ],
+            "text": "This file is placed in the startup directory of ndb_mgmd (the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tệp này được đặt trong thư mục khởi động của NDB_MGMD ("
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                439.5658014520202,
+                8.039215686274503,
+                8.137904671717251
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                439.5658014520202,
+                144.7058823529412,
+                8.137904671717251
+            ],
+            "text": "management server)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "máy chủ quản lý)"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                451.99005681818187,
+                8.039215686274503,
+                8.137904671717138
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                451.99005681818187,
+                506.47058823529414,
+                8.137904671717138
+            ],
+            "text": "The first MySQL Server can be started from any host. The second",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Máy chủ MySQL đầu tiên có thể được bắt đầu từ bất kỳ máy chủ nào. Thứ hai"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                464.41429924242436,
+                8.039215686274503,
+                8.137917613636318
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                464.41429924242436,
+                401.9608010620916,
+                8.137917613636318
+            ],
+            "text": "can be started only on the host mysqld_5.mysql.com",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "chỉ có thể được bắt đầu trên máy chủ mysqld_5.mysql.com"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                489.26275820707076,
+                112.54901960784312,
+                8.137917613636318
+            ],
+            "text": "[ndbd default]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[Mặc định NDBD]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                501.6870135732323,
+                120.58823529411765,
+                8.137904671717251
+            ],
+            "text": "NoOfReplicas= 2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Noofreplicas = 2"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                514.111268939394,
+                249.2156862745098,
+                8.137904671717195
+            ],
+            "text": "DataDir= /var/lib/mysql-cluster",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Datadir =/var/lib/mysql cluster"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                538.9597279040404,
+                80.39215686274508,
+                8.137904671717195
+            ],
+            "text": "[ndb_mgmd]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[NDB_MGMD]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                551.3839703282829,
+                225.09802246732025,
+                8.137917613636318
+            ],
+            "text": "Hostname= ndb_mgmd.mysql.com",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tên máy chủ = ndb_mgmd.mysql.com"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                563.8082256944444,
+                249.2156862745098,
+                8.137904671717195
+            ],
+            "text": "DataDir= /var/lib/mysql-cluster",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Datadir =/var/lib/mysql cluster"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                588.6567234848485,
+                48.23529411764707,
+                8.137917613636318
+            ],
+            "text": "[ndbd]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[NDBD]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                601.0809400252525,
+                209.01960784313727,
+                8.137904671717195
+            ],
+            "text": "HostName= ndbd_2.mysql.com",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tên máy chủ = ndbd_2.mysql.com"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                625.9294378156566,
+                48.23529411764707,
+                8.137904671717195
+            ],
+            "text": "[ndbd]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[NDBD]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                638.3536931818182,
+                209.01960784313727,
+                8.137904671717195
+            ],
+            "text": "HostName= ndbd_3.mysql.com",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tên máy chủ = ndbd_3.mysql.com"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                663.2021521464646,
+                64.31370874183006,
+                8.137904671717195
+            ],
+            "text": "[mysqld]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[MySQLD]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                675.6263945707071,
+                64.31370874183006,
+                8.137917613636375
+            ],
+            "text": "[mysqld]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[MySQLD]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                688.0506499368687,
+                225.09802246732025,
+                8.137904671717195
+            ],
+            "text": "HostName= mysqld_5.mysql.com",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tên máy chủ = mysqld_5.mysql.com"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                712.6726770833334,
+                37.214869281045765,
+                11.971275252525288
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                739.4702149621212,
+                617.1605392156864,
+                11.971275252525231
+            ],
+            "text": "The preceding example is intended as a minimal starting configuration for purposes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ trước được dự định là cấu hình khởi đầu tối thiểu cho các mục đích"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                755.0005568181818,
+                585.4726642156863,
+                11.971275252525288
+            ],
+            "text": "of familiarization with NDB Cluster , and is almost certain not to be sufficient for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "làm quen với cụm NDB và gần như chắc chắn là không đủ cho"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                770.5308598484849,
+                614.2295751633987,
+                11.97127525252526
+            ],
+            "text": "production settings. See Section 23.3.3.2, “Recommended Starting Configuration",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cài đặt sản xuất. Xem Phần 23.3.3.2, Cấu hình bắt đầu được đề xuất"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                786.0611628787879,
+                136.61640482026144,
+                11.97127525252526
+            ],
+            "text": "for NDB Cluster”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cho cụm ndb ”"
+        },
+        {
+            "bbox": [
+                434.687058006536,
+                786.0611628787879,
+                482.1687258986927,
+                11.97127525252526
+            ],
+            "text": ", which provides a more complete example starting configuration.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", cung cấp một ví dụ hoàn chỉnh hơn khi bắt đầu cấu hình."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                812.8586878156566,
+                276.49877450980387,
+                11.971275252525231
+            ],
+            "text": "Each node has its own section in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mỗi nút có phần riêng trong "
+        },
+        {
+            "bbox": [
+                447.33210784313724,
+                814.0105445075758,
+                100.49019607843138,
+                10.172322601010109
+            ],
+            "text": "config.ini",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cấu hình.ini"
+        },
+        {
+            "bbox": [
+                547.8223039215686,
+                812.8586878156566,
+                394.6919934640523,
+                11.971275252525231
+            ],
+            "text": " file. For example, this cluster has two data nodes, so",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tài liệu. Ví dụ, cụm này có hai nút dữ liệu, vì vậy"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                828.3889908459596,
+                330.4787749183007,
+                11.971275252525231
+            ],
+            "text": "the preceding configuration file contains two ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp cấu hình trước chứa hai "
+        },
+        {
+            "bbox": [
+                501.312108251634,
+                829.5408475378788,
+                60.29411764705884,
+                10.172322601010109
+            ],
+            "text": "[ndbd]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[NDBD]"
+        },
+        {
+            "bbox": [
+                561.6062258986929,
+                828.3889908459596,
+                229.95504861111112,
+                11.971275252525231
+            ],
+            "text": " sections defining these nodes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các phần xác định các nút này."
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                855.1865157828283,
+                37.214869281045765,
+                11.97127525252526
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                881.9840536616161,
+                512.0142471405229,
+                11.97127525252526
+            ],
+            "text": "Do not place comments on the same line as a section heading in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không đặt nhận xét trên cùng một dòng với một phần trong "
+        },
+        {
+            "bbox": [
+                823.8688725490197,
+                883.1358974116162,
+                100.49024632352939,
+                10.172335542929318
+            ],
+            "text": "config.ini",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cấu hình.ini"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                897.5143553977273,
+                590.2123848039216,
+                11.97127525252526
+            ],
+            "text": "file; this causes the management server not to start because it cannot parse the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tài liệu; Điều này khiến máy chủ quản lý không bắt đầu vì nó không thể phân tích được"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                913.0446584280303,
+                232.71852900326797,
+                11.971275252525245
+            ],
+            "text": "configuration file in such cases.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp cấu hình trong các trường hợp như vậy."
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "4055",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4055"
+        }
+    ]
+}

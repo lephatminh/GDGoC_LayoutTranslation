@@ -1,3 +1,2516 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b7ee2cbdbe3a884125f4dd36d1613abb3eb4c3e3fa7f0f2f9c5b6177dcfb9a4d
-size 71865
+{
+    "metadata": {
+        "page_hash": "61630b5c10d5de32d64ba7891ca0b520bdc027e600e039b7d578e0cd07d716aa",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4721,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                333.59393750000004,
+                48.370422979798036,
+                327.66506617647065,
+                11.971275252525288
+            ],
+            "text": "Management of RANGE and LIST Partitions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Quản lý phạm vi và phân vùng danh sách"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                284.8394775326797,
+                11.971275252525174
+            ],
+            "text": "In effect, this command splits partition ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong thực tế, lệnh này phân chia phân vùng "
+        },
+        {
+            "bbox": [
+                425.52575204248365,
+                96.11317582070706,
+                20.098039215686356,
+                10.172335542929318
+            ],
+            "text": "p0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "P0"
+        },
+        {
+            "bbox": [
+                445.62379125817,
+                94.96133207070716,
+                175.00365972222215,
+                11.971275252525174
+            ],
+            "text": " into two new partitions ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " thành hai phân vùng mới "
+        },
+        {
+            "bbox": [
+                620.6274509803922,
+                96.11317582070706,
+                20.0980392156863,
+                10.172335542929318
+            ],
+            "text": "s0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "S0"
+        },
+        {
+            "bbox": [
+                640.7254901960785,
+                94.96133207070716,
+                37.248349264705894,
+                11.971275252525174
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                677.9738394607843,
+                96.11317582070706,
+                20.098039215686185,
+                10.172335542929318
+            ],
+            "text": "s1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "S1"
+        },
+        {
+            "bbox": [
+                698.0718786764705,
+                94.96133207070716,
+                205.7537267156864,
+                11.971275252525174
+            ],
+            "text": ". It also moves the data that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Nó cũng di chuyển dữ liệu"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                103.32066993464053,
+                11.971275252525288
+            ],
+            "text": "was stored in ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được lưu trữ trong "
+        },
+        {
+            "bbox": [
+                244.00694444444446,
+                111.64347885101006,
+                20.098039215686242,
+                10.172335542929432
+            ],
+            "text": "p0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "P0"
+        },
+        {
+            "bbox": [
+                264.1049836601307,
+                110.49163510101016,
+                491.5310625,
+                11.971275252525288
+            ],
+            "text": " into the new partitions according to the rules embodied in the two ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " vào các phân vùng mới theo các quy tắc được thể hiện trong hai "
+        },
+        {
+            "bbox": [
+                755.6360461601307,
+                111.64347885101006,
+                130.63730514705878,
+                10.172335542929432
+            ],
+            "text": "PARTITION ...",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phân vùng ..."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                127.17378188131318,
+                100.49019607843138,
+                10.172335542929318
+            ],
+            "text": "VALUES ...",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Giá trị ..."
+        },
+        {
+            "bbox": [
+                241.1764705882353,
+                126.02193813131316,
+                125.6797553104575,
+                11.971275252525288
+            ],
+            "text": " clauses, so that ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề, vì vậy "
+        },
+        {
+            "bbox": [
+                366.85619240196075,
+                127.17378188131318,
+                20.0980392156863,
+                10.172335542929318
+            ],
+            "text": "s0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "S0"
+        },
+        {
+            "bbox": [
+                386.95423161764705,
+                126.02193813131316,
+                284.83946078431376,
+                11.971275252525288
+            ],
+            "text": " contains only those records for which ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chỉ chứa những hồ sơ đó "
+        },
+        {
+            "bbox": [
+                671.7936924019608,
+                127.17378188131318,
+                90.44117647058818,
+                10.172335542929318
+            ],
+            "text": "YEAR(dob)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Năm (DOB)"
+        },
+        {
+            "bbox": [
+                762.234868872549,
+                126.02193813131316,
+                162.92813807189543,
+                11.971275252525288
+            ],
+            "text": " is less than 1960 and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là ít hơn 1960 và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                142.70408491161618,
+                20.09803921568627,
+                10.172335542929318
+            ],
+            "text": "s1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "S1"
+        },
+        {
+            "bbox": [
+                160.7843137254902,
+                141.55224116161617,
+                222.46854575163403,
+                11.971275252525288
+            ],
+            "text": " contains those rows in which ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chứa những hàng trong đó "
+        },
+        {
+            "bbox": [
+                383.2528594771242,
+                142.70408491161618,
+                90.44120996732022,
+                10.172335542929318
+            ],
+            "text": "YEAR(dob)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Năm (DOB)"
+        },
+        {
+            "bbox": [
+                473.69406944444444,
+                141.55224116161617,
+                383.5877765522876,
+                11.971275252525288
+            ],
+            "text": " is greater than or equal to 1960 but less than 1970.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " lớn hơn hoặc bằng năm 1960 nhưng nhỏ hơn 1970."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                169.10042329545468,
+                15.827200857843138,
+                11.971275252525174
+            ],
+            "text": "A ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MỘT "
+        },
+        {
+            "bbox": [
+                156.51347536764706,
+                170.25227998737375,
+                200.98039718137255,
+                10.172322601010137
+            ],
+            "text": "REORGANIZE PARTITION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tổ chức lại phân vùng"
+        },
+        {
+            "bbox": [
+                357.4938725490196,
+                169.10042329545468,
+                550.1503100490195,
+                11.971275252525174
+            ],
+            "text": " clause may also be used for merging adjacent partitions. You can reverse",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Điều khoản cũng có thể được sử dụng để hợp nhất các phân vùng liền kề. Bạn có thể đảo ngược"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                184.63072632575768,
+                317.48202614379085,
+                11.971275252525288
+            ],
+            "text": "the effect of the previous statement on the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ảnh hưởng của tuyên bố trước đó đối với "
+        },
+        {
+            "bbox": [
+                458.16830065359477,
+                185.78258301767676,
+                70.34313725490199,
+                10.17232260101025
+            ],
+            "text": "members",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "thành viên"
+        },
+        {
+            "bbox": [
+                528.5114379084968,
+                184.63072632575768,
+                159.19320220588236,
+                11.971275252525288
+            ],
+            "text": " table as shown here:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng như được hiển thị ở đây:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                211.43338920454562,
+                426.07841462418304,
+                8.137917613636205
+            ],
+            "text": "ALTER TABLE members REORGANIZE PARTITION s0,s1 INTO (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Các thành viên bảng thay đổi tổ chức lại phân vùng S0, S1 thành ("
+        },
+        {
+            "bbox": [
+                172.84313725490196,
+                223.85768339646472,
+                289.4117647058823,
+                8.13782702020194
+            ],
+            "text": "PARTITION p0 VALUES LESS THAN (1970)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Phân vùng giá trị P0 nhỏ hơn (1970)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                236.28188699494945,
+                16.078428022875812,
+                8.137917613636432
+            ],
+            "text": ");",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ");"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                261.6545842803031,
+                391.8782344771242,
+                11.971275252525174
+            ],
+            "text": "No data is lost in splitting or merging partitions using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không có dữ liệu nào bị mất trong việc phân tách hoặc hợp nhất các phân vùng bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                532.5645592320261,
+                262.8064280303031,
+                200.98039215686276,
+                10.172335542929204
+            ],
+            "text": "REORGANIZE PARTITION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tổ chức lại phân vùng"
+        },
+        {
+            "bbox": [
+                733.5449513888889,
+                261.6545842803031,
+                177.83418382352943,
+                11.971275252525174
+            ],
+            "text": ". In executing the above",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Trong việc thực hiện những điều trên"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                277.1848873106061,
+                540.8214869281046,
+                11.971275252525174
+            ],
+            "text": "statement, MySQL moves all of the records that were stored in partitions ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố, MySQL di chuyển tất cả các bản ghi được lưu trữ trong các phân vùng "
+        },
+        {
+            "bbox": [
+                681.5077614379086,
+                278.3367310606062,
+                20.0980392156863,
+                10.17233554292909
+            ],
+            "text": "s0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "S0"
+        },
+        {
+            "bbox": [
+                701.6058006535949,
+                277.1848873106061,
+                37.24834926470578,
+                11.971275252525174
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                738.8541499183007,
+                278.3367310606062,
+                20.0980392156863,
+                10.17233554292909
+            ],
+            "text": "s1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "S1"
+        },
+        {
+            "bbox": [
+                758.952189133987,
+                277.1848873106061,
+                100.5404411764705,
+                11.971275252525174
+            ],
+            "text": " into partition ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " thành phân vùng "
+        },
+        {
+            "bbox": [
+                859.4926303104575,
+                278.3367310606062,
+                20.0980392156863,
+                10.17233554292909
+            ],
+            "text": "p0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "P0"
+        },
+        {
+            "bbox": [
+                879.5906695261438,
+                277.1848873106061,
+                4.655995506536101,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                304.7330694444445,
+                171.28552246732028,
+                11.971275252525288
+            ],
+            "text": "The general syntax for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cú pháp chung cho "
+        },
+        {
+            "bbox": [
+                311.9718137254902,
+                305.8848355429293,
+                200.98042565359475,
+                10.172413194444516
+            ],
+            "text": "REORGANIZE PARTITION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tổ chức lại phân vùng"
+        },
+        {
+            "bbox": [
+                512.952189133987,
+                304.7330694444445,
+                112.63276143790847,
+                11.971275252525288
+            ],
+            "text": " is shown here:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được hiển thị ở đây:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                331.5357323232324,
+                96.47060498366014,
+                8.13782702020194
+            ],
+            "text": "ALTER TABLE ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thay đổi bảng "
+        },
+        {
+            "bbox": [
+                237.15687949346406,
+                331.5357323232324,
+                64.31370874183008,
+                8.13782702020194
+            ],
+            "text": "tbl_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "tbl_name"
+        },
+        {
+            "bbox": [
+                172.84313725490196,
+                343.95993592171726,
+                168.82352941176472,
+                8.137917613636205
+            ],
+            "text": "REORGANIZE PARTITION ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tổ chức lại phân vùng "
+        },
+        {
+            "bbox": [
+                341.6666666666667,
+                343.95993592171726,
+                112.54903635620917,
+                8.137917613636205
+            ],
+            "text": "partition_list",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "phân vùng_list"
+        },
+        {
+            "bbox": [
+                172.84313725490196,
+                356.3842301136365,
+                48.23529411764707,
+                8.137865845959595
+            ],
+            "text": "INTO (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "VÀO TRONG ("
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                356.3842301136365,
+                168.82352941176472,
+                8.137865845959595
+            ],
+            "text": "partition_definitions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "phân vùng_definitions"
+        },
+        {
+            "bbox": [
+                389.90196078431376,
+                356.3842301136365,
+                16.078448120915027,
+                8.137865845959595
+            ],
+            "text": ");",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ");"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                381.7568368055556,
+                45.60580065359477,
+                11.971275252525174
+            ],
+            "text": "Here, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đây, "
+        },
+        {
+            "bbox": [
+                186.2920751633987,
+                382.90868055555563,
+                80.3921736111111,
+                10.172335542929204
+            ],
+            "text": "tbl_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "tbl_name"
+        },
+        {
+            "bbox": [
+                266.6842487745098,
+                381.7568368055556,
+                303.5138888888889,
+                11.971275252525174
+            ],
+            "text": " is the name of the partitioned table, and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là tên của bảng được phân vùng, và "
+        },
+        {
+            "bbox": [
+                570.1981376633987,
+                382.90868055555563,
+                140.68627450980398,
+                10.172335542929204
+            ],
+            "text": "partition_list",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "phân vùng_list"
+        },
+        {
+            "bbox": [
+                710.8844121732027,
+                381.7568368055556,
+                170.33089910130718,
+                11.971275252525174
+            ],
+            "text": " is a comma-separated",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là một dấu phẩy được phân tách"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                397.2871398358586,
+                461.73570261437914,
+                11.971275252525288
+            ],
+            "text": "list of names of one or more existing partitions to be changed. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Danh sách tên của một hoặc nhiều phân vùng hiện có sẽ được thay đổi. "
+        },
+        {
+            "bbox": [
+                602.4219771241831,
+                398.43898358585864,
+                211.02941176470586,
+                10.172335542929318
+            ],
+            "text": "partition_definitions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "phân vùng_definitions"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                412.8174428661616,
+                677.638905637255,
+                11.971275252525288
+            ],
+            "text": "is a comma-separated list of new partition definitions, which follow the same rules as for the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "là một danh sách các định nghĩa phân vùng mới được phân tách bằng dấu phẩy, tuân theo các quy tắc tương tự như đối với"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                429.49958964646476,
+                211.0294117647059,
+                10.172374368686746
+            ],
+            "text": "partition_definitions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "phân vùng_definitions"
+        },
+        {
+            "bbox": [
+                351.71568627450984,
+                428.3477847222223,
+                88.43135580065353,
+                11.971275252525174
+            ],
+            "text": " list used in ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Danh sách được sử dụng trong "
+        },
+        {
+            "bbox": [
+                440.14704207516337,
+                429.49958964646476,
+                120.58823529411762,
+                10.172374368686746
+            ],
+            "text": "CREATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo bảng"
+        },
+        {
+            "bbox": [
+                560.735277369281,
+                428.3477847222223,
+                363.9587418300655,
+                11.971275252525174
+            ],
+            "text": ". You are not limited to merging several partitions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Bạn không giới hạn trong việc hợp nhất một số phân vùng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                443.8780877525253,
+                436.6131535947713,
+                11.971275252525174
+            ],
+            "text": "into one, or to splitting one partition into many, when using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thành một, hoặc chia một phân vùng thành nhiều, khi sử dụng "
+        },
+        {
+            "bbox": [
+                577.2994281045752,
+                445.02989267676776,
+                200.98039215686276,
+                10.172374368686746
+            ],
+            "text": "REORGANIZE PARTITION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tổ chức lại phân vùng"
+        },
+        {
+            "bbox": [
+                778.279820261438,
+                443.8780877525253,
+                138.69321895424832,
+                11.971275252525174
+            ],
+            "text": ". For example, you",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Ví dụ, bạn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                459.4083907828283,
+                289.51223815359475,
+                11.971275252525288
+            ],
+            "text": "can reorganize all four partitions of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có thể tổ chức lại tất cả bốn phân vùng của "
+        },
+        {
+            "bbox": [
+                430.1985126633987,
+                460.56019570707076,
+                70.34313725490199,
+                10.17237436868686
+            ],
+            "text": "members",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "thành viên"
+        },
+        {
+            "bbox": [
+                500.54164991830066,
+                459.4083907828283,
+                173.14460784313724,
+                11.971275252525288
+            ],
+            "text": " table into two, like this:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng thành hai, như thế này:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                486.21105366161623,
+                474.31374223856216,
+                8.137917613636318
+            ],
+            "text": "ALTER TABLE members REORGANIZE PARTITION p0,p1,p2,p3 INTO (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Các thành viên bảng thay đổi tổ chức lại phân vùng P0, P1, P2, P3 thành ("
+        },
+        {
+            "bbox": [
+                172.84313725490196,
+                498.6353090277778,
+                297.45096364379083,
+                8.137904671717251
+            ],
+            "text": "PARTITION m0 VALUES LESS THAN (1980),",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Phân vùng giá trị M0 nhỏ hơn (1980),"
+        },
+        {
+            "bbox": [
+                172.84313725490196,
+                511.0595514520203,
+                289.4117647058823,
+                8.137917613636318
+            ],
+            "text": "PARTITION m1 VALUES LESS THAN (2000)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Phân vùng giá trị M1 nhỏ hơn (2000)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                523.4838068181818,
+                16.078428022875812,
+                8.13790467171708
+            ],
+            "text": ");",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ");"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                548.8564523358586,
+                133.1327446895425,
+                11.971275252525231
+            ],
+            "text": "You can also use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn cũng có thể sử dụng "
+        },
+        {
+            "bbox": [
+                273.8190191993464,
+                550.0082572601011,
+                200.9803921568627,
+                10.17237436868686
+            ],
+            "text": "REORGANIZE PARTITION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tổ chức lại phân vùng"
+        },
+        {
+            "bbox": [
+                474.79941135620913,
+                548.8564523358586,
+                255.07764787581698,
+                11.971275252525231
+            ],
+            "text": " with tables that are partitioned by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " với các bảng được phân vùng bởi "
+        },
+        {
+            "bbox": [
+                729.8770592320261,
+                550.0082572601011,
+                40.1960784313726,
+                10.17237436868686
+            ],
+            "text": "LIST",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DANH SÁCH"
+        },
+        {
+            "bbox": [
+                770.0731376633987,
+                548.8564523358586,
+                149.89792606209141,
+                11.971275252525231
+            ],
+            "text": ". Let us return to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Hãy để chúng tôi trở lại"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                564.3867553661617,
+                407.7389873366014,
+                11.971275252525288
+            ],
+            "text": "problem of adding a new partition to the list-partitioned ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vấn đề của việc thêm một phân vùng mới vào danh sách-phân vùng "
+        },
+        {
+            "bbox": [
+                548.4252618464053,
+                565.5385602904041,
+                20.0980392156863,
+                10.172374368686917
+            ],
+            "text": "tt",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TT"
+        },
+        {
+            "bbox": [
+                568.5233010620916,
+                564.3867553661617,
+                350.05761478758154,
+                11.971275252525288
+            ],
+            "text": " table and failing because the new partition had",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng và thất bại vì phân vùng mới có"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                579.9170583964647,
+                763.357076388889,
+                11.971275252525231
+            ],
+            "text": "a value that was already present in the value-list of one of the existing partitions. We can handle this by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một giá trị đã có mặt trong danh sách giá trị của một trong các phân vùng hiện có. Chúng ta có thể xử lý việc này bằng cách"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                595.4473614267677,
+                782.9525808823528,
+                11.971275252525288
+            ],
+            "text": "adding a partition that contains only nonconflicting values, and then reorganizing the new partition and the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thêm một phân vùng chỉ chứa các giá trị không kết hợp, sau đó tổ chức lại phân vùng mới và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                610.9776644570708,
+                715.8921568627452,
+                11.971275252525231
+            ],
+            "text": "existing one so that the value which was stored in the existing one is now moved to the new one:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hiện tại để giá trị được lưu trữ trong cái hiện tại hiện đang được chuyển sang cái mới:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                637.7803661616163,
+                490.39214011437906,
+                8.137917613636375
+            ],
+            "text": "ALTER TABLE tt ADD PARTITION (PARTITION np VALUES IN (4, 8));",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bảng thay đổi TT thêm phân vùng (giá trị NP phân vùng trong (4, 8));"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                650.2045827020202,
+                385.88233619281044,
+                8.137904671717195
+            ],
+            "text": "ALTER TABLE tt REORGANIZE PARTITION p1,np INTO (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "ALTER Bảng TT tổ chức lại phân vùng P1, NP thành ("
+        },
+        {
+            "bbox": [
+                172.84313725490196,
+                662.6288251262627,
+                249.2156862745098,
+                8.137917613636375
+            ],
+            "text": "PARTITION p1 VALUES IN (6, 18),",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Các giá trị P1 phân vùng trong (6, 18),"
+        },
+        {
+            "bbox": [
+                172.84313725490196,
+                675.0530804924242,
+                265.29413439542486,
+                8.137904671717195
+            ],
+            "text": "PARTITION np VALUES in (4, 8, 12)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Các giá trị NP phân vùng trong (4, 8, 12)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                687.4773358585859,
+                16.078428022875812,
+                8.137904671717138
+            ],
+            "text": ");",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ");"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                712.8499813762626,
+                403.06617647058835,
+                11.971275252525231
+            ],
+            "text": "Here are some key points to keep in mind when using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Dưới đây là một số điểm chính cần ghi nhớ khi sử dụng "
+        },
+        {
+            "bbox": [
+                543.7524509803923,
+                714.001786300505,
+                361.76475612745094,
+                10.17237436868686
+            ],
+            "text": "ALTER TABLE ... REORGANIZE PARTITION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bảng thay đổi ... Tổ chức lại phân vùng"
+        },
+        {
+            "bbox": [
+                905.5172071078432,
+                712.8499813762626,
+                18.624183006535873,
+                11.971275252525231
+            ],
+            "text": " to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " ĐẾN"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                728.3802844065656,
+                295.10622589869286,
+                11.971275252525288
+            ],
+            "text": "repartition tables that are partitioned by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bảng phân tích lại được phân vùng bởi "
+        },
+        {
+            "bbox": [
+                435.7925004084968,
+                729.532089330808,
+                50.24509803921569,
+                10.17237436868686
+            ],
+            "text": "RANGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "PHẠM VI"
+        },
+        {
+            "bbox": [
+                486.03759844771247,
+                728.3802844065656,
+                24.201355392156813,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                510.2389538398693,
+                729.532089330808,
+                40.1960784313726,
+                10.17237436868686
+            ],
+            "text": "LIST",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DANH SÁCH"
+        },
+        {
+            "bbox": [
+                550.4350322712419,
+                728.3802844065656,
+                4.656045751633883,
+                11.971275252525288
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                755.9284665404041,
+                50.261846405228766,
+                11.971275252525288
+            ],
+            "text": "•The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• The "
+        },
+        {
+            "bbox": [
+                190.9481209150327,
+                757.0803102904041,
+                90.44119321895425,
+                10.172335542929261
+            ],
+            "text": "PARTITION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phân vùng"
+        },
+        {
+            "bbox": [
+                281.3892806372549,
+                755.9284665404041,
+                652.5666184640522,
+                11.971275252525288
+            ],
+            "text": " options used to determine the new partitioning scheme are subject to the same rules as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các tùy chọn được sử dụng để xác định sơ đồ phân vùng mới phải tuân theo các quy tắc giống như"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                771.4587695707071,
+                134.99184681372552,
+                11.971275252525231
+            ],
+            "text": "those used with a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "những người được sử dụng với một "
+        },
+        {
+            "bbox": [
+                292.4264873366013,
+                772.6106133207071,
+                120.58823529411762,
+                10.172335542929261
+            ],
+            "text": "CREATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo bảng"
+        },
+        {
+            "bbox": [
+                413.01472263071895,
+                771.4587695707071,
+                82.85416666666674,
+                11.971275252525231
+            ],
+            "text": " statement.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                799.0069517045455,
+                51.19975490196077,
+                11.97127525252526
+            ],
+            "text": "A new ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một cái mới "
+        },
+        {
+            "bbox": [
+                208.63439542483658,
+                800.1587954545455,
+                50.24511478758174,
+                10.172335542929318
+            ],
+            "text": "RANGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "PHẠM VI"
+        },
+        {
+            "bbox": [
+                258.8795102124183,
+                799.0069517045455,
+                483.15687949346403,
+                11.97127525252526
+            ],
+            "text": " partitioning scheme cannot have any overlapping ranges; a new ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Sơ đồ phân vùng không thể có bất kỳ phạm vi chồng chéo nào; một cái mới "
+        },
+        {
+            "bbox": [
+                742.0363394607843,
+                800.1587954545455,
+                40.196078431372484,
+                10.172335542929318
+            ],
+            "text": "LIST",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DANH SÁCH"
+        },
+        {
+            "bbox": [
+                782.2324178921568,
+                799.0069517045455,
+                149.86434558823544,
+                11.97127525252526
+            ],
+            "text": " partitioning scheme",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " sơ đồ phân vùng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                814.5372547348485,
+                325.83944403594774,
+                11.97127525252526
+            ],
+            "text": "cannot have any overlapping sets of values.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không thể có bất kỳ bộ giá trị chồng chéo nào."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                842.0853592171718,
+                282.0592320261438,
+                11.97127525252526
+            ],
+            "text": "•The combination of partitions in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• sự kết hợp của các phân vùng trong "
+        },
+        {
+            "bbox": [
+                422.7455065359477,
+                843.2372029671717,
+                211.02941176470597,
+                10.172335542929318
+            ],
+            "text": "partition_definitions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "phân vùng_definitions"
+        },
+        {
+            "bbox": [
+                633.7749183006537,
+                842.0853592171718,
+                287.65323651960784,
+                11.97127525252526
+            ],
+            "text": " list should account for the same range",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Danh sách nên chiếm cùng một phạm vi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                857.6156622474748,
+                473.82802287581706,
+                11.971275252525231
+            ],
+            "text": "or set of values overall as the combined partitions named in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hoặc tập hợp các giá trị tổng thể như các phân vùng kết hợp có tên trong "
+        },
+        {
+            "bbox": [
+                631.2626633986929,
+                858.7675059974747,
+                140.68627450980387,
+                10.17233554292929
+            ],
+            "text": "partition_list",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "phân vùng_list"
+        },
+        {
+            "bbox": [
+                771.9489379084968,
+                857.6156622474748,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                885.1638443813131,
+                174.9869448529412,
+                11.971273958333342
+            ],
+            "text": "For example, partitions ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ, phân vùng "
+        },
+        {
+            "bbox": [
+                332.421568627451,
+                886.3156881313131,
+                20.098039215686242,
+                10.1723342487374
+            ],
+            "text": "p1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "P1"
+        },
+        {
+            "bbox": [
+                352.51960784313724,
+                885.1638443813131,
+                37.248366013071916,
+                11.971273958333342
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                389.76797385620915,
+                886.3156881313131,
+                20.0980392156863,
+                10.1723342487374
+            ],
+            "text": "p2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "P2"
+        },
+        {
+            "bbox": [
+                409.86601307189545,
+                885.1638443813131,
+                380.7908831699346,
+                11.971273958333342
+            ],
+            "text": " together cover the years 1980 through 1999 in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cùng nhau bao gồm các năm 1980 đến năm 1999 trong "
+        },
+        {
+            "bbox": [
+                790.656845996732,
+                886.3156881313131,
+                70.34308700980398,
+                10.1723342487374
+            ],
+            "text": "members",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "thành viên"
+        },
+        {
+            "bbox": [
+                860.999933006536,
+                885.1638443813131,
+                40.96653676470589,
+                11.971273958333342
+            ],
+            "text": " table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                900.6941461174242,
+                745.6539362745099,
+                11.97127525252526
+            ],
+            "text": "used as an example in this section. Any reorganization of these two partitions should cover the same",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được sử dụng như một ví dụ trong phần này. Bất kỳ sự tái tổ chức nào của hai phân vùng này sẽ bao gồm cùng một"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                916.2244491477272,
+                165.69156821895425,
+                11.97127525252526
+            ],
+            "text": "range of years overall.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi của năm tổng thể."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "4692",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4692"
+        }
+    ]
+}

@@ -1,3 +1,1096 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:601543c001e4f206b221538d51f409cb0a317a94ffa6dd560701f08f6cc40f8b
-size 34543
+{
+    "metadata": {
+        "page_hash": "d9a7a7dd1ebafa744d28cbdee18740d31302b86b89202e510bbb458b754ac815",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3661,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                341.96812050653597,
+                48.370422979798036,
+                310.91670016339873,
+                11.971275252525288
+            ],
+            "text": "Handling an Unexpected Halt of a Replica",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xử lý một sự dừng lại bất ngờ của một bản sao"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                517.5579897875816,
+                11.971275252525174
+            ],
+            "text": "While S1 is read only, perform the backup. For example, you can use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong khi S1 chỉ được đọc, hãy thực hiện sao lưu. Ví dụ: bạn có thể sử dụng "
+        },
+        {
+            "bbox": [
+                658.2442642973856,
+                96.11317582070706,
+                90.44117647058829,
+                10.172335542929318
+            ],
+            "text": "mysqldump",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqldump"
+        },
+        {
+            "bbox": [
+                748.6854407679739,
+                94.96133207070716,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                125.24798547979799,
+                781.0600155228758,
+                11.971275252525288
+            ],
+            "text": "After the backup operation on S1 completes, restore S1 to its normal operational state by executing these",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau khi hoạt động sao lưu trên S1 hoàn thành, hãy khôi phục S1 về trạng thái hoạt động bình thường bằng cách thực hiện chúng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                140.778288510101,
+                86.57230392156862,
+                11.971275252525288
+            ],
+            "text": "statements:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                169.77208301767678,
+                56.274509803921575,
+                8.137917613636432
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                169.77208301767678,
+                217.05884027777776,
+                8.137917613636432
+            ],
+            "text": "SET GLOBAL read_only = OFF;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Đặt toàn cầu read_only = off;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                182.196377209596,
+                56.274509803921575,
+                8.137827020202053
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                182.196377209596,
+                112.54900285947716,
+                8.137827020202053
+            ],
+            "text": "UNLOCK TABLES;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Mở khóa bàn;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                210.3074551767678,
+                750.3100322712419,
+                11.971275252525174
+            ],
+            "text": "Although performing the backup on S1 is safe (as far as the backup is concerned), it is not optimal for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc dù việc thực hiện sao lưu trên S1 là an toàn (theo như bản sao lưu có liên quan), nhưng nó không tối ưu cho"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                225.8377582070708,
+                532.4807839052287,
+                11.971275252525288
+            ],
+            "text": "performance because clients of S1 are blocked from executing updates.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hiệu suất vì máy khách của S1 bị chặn thực hiện các bản cập nhật."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                256.1244892676767,
+                786.6205735294118,
+                11.971275252525288
+            ],
+            "text": "This strategy applies to backing up a source in a replication setup, but can also be used for a single server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chiến lược này áp dụng để sao lưu một nguồn trong thiết lập sao chép, nhưng cũng có thể được sử dụng cho một máy chủ duy nhất"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                271.65479229797984,
+                194.56576797385617,
+                11.971275252525174
+            ],
+            "text": "in a nonreplication setting.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong một cài đặt không sao chép."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                301.9414327651515,
+                360.2071245915033,
+                11.971275252525288
+            ],
+            "text": "Scenario 2: Backup with a Read-Only Replica",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Kịch bản 2: Sao lưu với bản sao chỉ đọc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                332.22816382575763,
+                552.0428754084967,
+                11.971275252525288
+            ],
+            "text": "Put the replica R1 in a read-only state by executing these statements on it:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đặt bản sao R1 ở trạng thái chỉ đọc bằng cách thực hiện các câu lệnh này trên đó:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                361.2218936237375,
+                56.274509803921575,
+                8.137904671717024
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                361.2218936237375,
+                225.09803921568627,
+                8.137904671717024
+            ],
+            "text": "FLUSH TABLES WITH READ LOCK;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Bảng Flush có khóa đọc;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                373.64617487373744,
+                56.274509803921575,
+                8.137839962121234
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                373.64617487373744,
+                209.01959109477124,
+                8.137839962121234
+            ],
+            "text": "SET GLOBAL read_only = ON;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Đặt toàn cầu read_only = on;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                401.7572916666667,
+                480.3096405228758,
+                11.971275252525288
+            ],
+            "text": "While R1 is in a read-only state, the following properties are true:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc dù R1 ở trạng thái chỉ đọc, các thuộc tính sau là đúng:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                430.22951388888885,
+                632.1168468137255,
+                11.971275252525288
+            ],
+            "text": "•The source S1 continues to operate, so making a backup on the source is not safe.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Nguồn S1 tiếp tục hoạt động, do đó, việc sao lưu nguồn không an toàn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                458.70173611111113,
+                553.8684808006537,
+                11.971275252525288
+            ],
+            "text": "•The replica R1 is stopped, so making a backup on the replica R1 is safe.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Bản sao R1 được dừng lại, do đó, việc sao lưu trên bản sao R1 là an toàn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                488.9884283459596,
+                754.9325980392157,
+                11.971275252525288
+            ],
+            "text": "These properties provide the basis for a popular backup scenario: Having one replica busy performing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Những thuộc tính này cung cấp cơ sở cho một kịch bản sao lưu phổ biến: có một bản sao bận biểu diễn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                504.5187313762626,
+                745.6707013888888,
+                11.971275252525288
+            ],
+            "text": "a backup for a while is not a problem because it does not affect the entire network, and the system is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao lưu trong một thời gian không phải là vấn đề vì nó không ảnh hưởng đến toàn bộ mạng và hệ thống là"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                520.0490344065656,
+                772.6021074346404,
+                11.971275252525231
+            ],
+            "text": "still running during the backup. In particular, clients can still perform updates on the source server, which",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vẫn đang chạy trong quá trình sao lưu. Cụ thể, khách hàng vẫn có thể thực hiện cập nhật trên máy chủ nguồn, trong đó"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                535.5793374368687,
+                389.11482107843136,
+                11.971275252525231
+            ],
+            "text": "remains unaffected by backup activity on the replica.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vẫn không bị ảnh hưởng bởi hoạt động sao lưu trên bản sao."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                565.8660296717172,
+                518.4791834150328,
+                11.971275252525231
+            ],
+            "text": "While R1 is read only, perform the backup. For example, you can use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong khi R1 chỉ được đọc, hãy thực hiện sao lưu. Ví dụ: bạn có thể sử dụng "
+        },
+        {
+            "bbox": [
+                659.1654579248367,
+                567.0178345959596,
+                90.44117647058818,
+                10.17237436868686
+            ],
+            "text": "mysqldump",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqldump"
+        },
+        {
+            "bbox": [
+                749.6066343954249,
+                565.8660296717172,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                596.1526701388889,
+                782.9023860294119,
+                11.971275252525288
+            ],
+            "text": "After the backup operation on R1 completes, restore R1 to its normal operational state by executing these",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau khi hoạt động sao lưu trên R1 hoàn thành, hãy khôi phục R1 về trạng thái hoạt động bình thường bằng cách thực hiện chúng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                611.682973169192,
+                86.57230392156862,
+                11.971275252525231
+            ],
+            "text": "statements:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                640.6767417929293,
+                56.274509803921575,
+                8.137904671717138
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                640.6767417929293,
+                217.05884027777776,
+                8.137904671717138
+            ],
+            "text": "SET GLOBAL read_only = OFF;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Đặt toàn cầu read_only = off;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                653.1009842171717,
+                56.274509803921575,
+                8.137917613636375
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                653.1009842171717,
+                112.54900285947716,
+                8.137917613636375
+            ],
+            "text": "UNLOCK TABLES;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Mở khóa bàn;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                681.2121398358586,
+                791.2598039215688,
+                11.971275252525231
+            ],
+            "text": "After the replca is restored to normal operation, it again synchronizes to the source by catching up with any",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau khi thay thế được khôi phục về hoạt động bình thường, nó lại đồng bộ hóa với nguồn bằng cách bắt kịp với bất kỳ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                696.7424428661616,
+                365.85130718954247,
+                11.971275252525231
+            ],
+            "text": "outstanding updates from the source’s binary log.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cập nhật nổi bật từ nhật ký nhị phân nguồn."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                727.7409277146464,
+                65.18463717320263,
+                16.759798295454573
+            ],
+            "text": "17.4.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "17.4.2"
+        },
+        {
+            "bbox": [
+                131.99721552287582,
+                727.7409277146464,
+                462.5530128267973,
+                16.759798295454573
+            ],
+            "text": "Handling an Unexpected Halt of a Replica",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Xử lý một sự dừng lại bất ngờ của một bản sao"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                763.5279744318182,
+                756.7748848039216,
+                11.971275252525231
+            ],
+            "text": "In order for replication to be resilient to unexpected halts of the server (sometimes described as crash-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để sao chép có khả năng dừng lại không mong muốn của máy chủ (đôi khi được mô tả là sự cố-"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                779.0582774621213,
+                791.2263741830066,
+                11.971275252525231
+            ],
+            "text": "safe) it must be possible for the replica to recover its state before halting. This section describes the impact",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "An toàn) Các bản sao phải có thể phục hồi trạng thái của nó trước khi tạm dừng. Phần này mô tả tác động"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                794.5885804924243,
+                777.3586768790849,
+                11.971275252525231
+            ],
+            "text": "of an unexpected halt of a replica during replication, and how to configure a replica for the best chance of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tạm dừng một bản sao bất ngờ trong quá trình sao chép và cách định cấu hình một bản sao để có cơ hội tốt nhất"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                810.1188835227273,
+                236.43668300653593,
+                11.971275252525231
+            ],
+            "text": "recovery to continue replication.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "phục hồi để tiếp tục nhân rộng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                840.4055239898989,
+                754.966128267974,
+                11.971275252525231
+            ],
+            "text": "After an unexpected halt of a replica, upon restart the replication SQL thread must recover information",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau khi dừng lại không mong muốn của bản sao, khi khởi động lại, luồng SQL sao chép phải khôi phục thông tin"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                855.935827020202,
+                752.1523190359478,
+                11.97127525252526
+            ],
+            "text": "about which transactions have been executed already. The information required for recovery is stored",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "về những giao dịch đã được thực hiện. Thông tin cần thiết để phục hồi được lưu trữ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                871.4661300505051,
+                765.1490678104574,
+                11.97127525252526
+            ],
+            "text": "in the replica’s applier metadata repository. From MySQL 8.0, this repository is created by default as an",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong kho lưu trữ siêu dữ liệu applica bản sao. Từ MySQL 8.0, kho lưu trữ này được tạo theo mặc định dưới dạng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                888.1482897727273,
+                60.29411764705884,
+                10.172327777777767
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                200.98039215686276,
+                886.9964330808081,
+                101.47834967320262,
+                11.971280429292918
+            ],
+            "text": " table named ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng được đặt tên "
+        },
+        {
+            "bbox": [
+                302.4587418300654,
+                888.1482897727273,
+                261.27450980392155,
+                10.172327777777767
+            ],
+            "text": "mysql.slave_relay_log_info",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql.slave_relay_log_info"
+        },
+        {
+            "bbox": [
+                563.7332516339869,
+                886.9964330808081,
+                347.2438390522876,
+                11.971280429292918
+            ],
+            "text": ". By using this transactional storage engine the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Bằng cách sử dụng công cụ lưu trữ giao dịch này,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                902.5267412878788,
+                778.1793300653594,
+                11.971275252525245
+            ],
+            "text": "information is always recoverable upon restart. Updates to the applier metadata repository are committed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin luôn có thể phục hồi khi khởi động lại. Cập nhật kho lưu trữ siêu dữ liệu ứng dụng được cam kết"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                918.0570443181819,
+                775.4158161764706,
+                11.971275252525245
+            ],
+            "text": "together with the transactions, meaning that the replica’s progress information recorded in that repository",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cùng với các giao dịch, có nghĩa là thông tin tiến trình của bản sao được ghi lại trong kho lưu trữ đó"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3632",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3632"
+        }
+    ]
+}
