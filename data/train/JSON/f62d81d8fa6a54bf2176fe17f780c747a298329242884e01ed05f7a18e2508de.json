@@ -1,0 +1,1376 @@
+{
+    "metadata": {
+        "page_hash": "f62d81d8fa6a54bf2176fe17f780c747a298329242884e01ed05f7a18e2508de",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1515,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                407.60498366013076,
+                48.370422979798036,
+                179.6429738562091,
+                11.971275252525288
+            ],
+            "text": "MySQL Enterprise Audit",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL Enterprise Audit"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                94.96133207070716,
+                274.5894775326798,
+                11.971275252525174
+            ],
+            "text": "A string representing a UTC value in ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một chuỗi đại diện cho một giá trị UTC trong "
+        },
+        {
+            "bbox": [
+                432.0241180555556,
+                96.11317582070706,
+                190.93137254901956,
+                10.172335542929318
+            ],
+            "text": "YYYY-MM-DD hh:mm:ss",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "YYYY-MM-DD HH: MM: SS"
+        },
+        {
+            "bbox": [
+                622.9554906045752,
+                94.96133207070716,
+                306.2773692810458,
+                11.971275252525174
+            ],
+            "text": " format indicating the date and time when",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " định dạng chỉ ra ngày và giờ khi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                110.49163510101016,
+                768.9844938725489,
+                11.971275252525288
+            ],
+            "text": "the audit event was generated. For example, the event corresponding to execution of an SQL statement",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sự kiện kiểm toán đã được tạo ra. Ví dụ: sự kiện tương ứng với việc thực thi câu lệnh SQL"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                126.02193813131316,
+                209.4383169934641,
+                11.971275252525288
+            ],
+            "text": "received from a client has a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "nhận được từ một khách hàng có một "
+        },
+        {
+            "bbox": [
+                366.8729575163399,
+                127.17378188131318,
+                90.44115972222215,
+                10.172335542929318
+            ],
+            "text": "timestamp",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Dấu thời gian"
+        },
+        {
+            "bbox": [
+                457.31411723856206,
+                126.02193813131316,
+                448.6887589869282,
+                11.971275252525288
+            ],
+            "text": " value occurring after the statement finishes, not when it was",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị xảy ra sau khi tuyên bố kết thúc, không phải khi nó"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                141.55224116161617,
+                67.94813766339871,
+                11.971275252525288
+            ],
+            "text": "received.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đã nhận."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                172.61284722222229,
+                69.80717279411766,
+                11.971275252525288
+            ],
+            "text": "Example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                202.22522664141422,
+                273.33335008169945,
+                8.137917613636318
+            ],
+            "text": "\"timestamp\": \"2019-10-03 13:50:01\"",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"Dấu thời gian\": \"2019-10-03 13:50:01\""
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                231.11033491161618,
+                278.34109477124184,
+                11.971275252525288
+            ],
+            "text": "For audit records that have the same ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các hồ sơ kiểm toán có cùng "
+        },
+        {
+            "bbox": [
+                435.7757352941177,
+                232.2621139520203,
+                90.44117647058818,
+                10.172400252525222
+            ],
+            "text": "timestamp",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Dấu thời gian"
+        },
+        {
+            "bbox": [
+                526.2169117647059,
+                231.11033491161618,
+                91.22834967320273,
+                11.971275252525288
+            ],
+            "text": " value, their ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị, của họ "
+        },
+        {
+            "bbox": [
+                617.4452614379086,
+                232.2621139520203,
+                20.0980392156863,
+                10.172400252525222
+            ],
+            "text": "id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "nhận dạng"
+        },
+        {
+            "bbox": [
+                637.5433006535949,
+                231.11033491161618,
+                263.4350657679738,
+                11.971275252525288
+            ],
+            "text": " values distinguish them and form a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị phân biệt chúng và hình thành một"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                246.6406379419193,
+                233.6732026143791,
+                11.971275252525174
+            ],
+            "text": "sequence. Within the audit log, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sự liên tiếp. Trong nhật ký kiểm toán, "
+        },
+        {
+            "bbox": [
+                391.1078431372549,
+                247.7924169823233,
+                90.44120996732022,
+                10.172400252525222
+            ],
+            "text": "timestamp",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Dấu thời gian"
+        },
+        {
+            "bbox": [
+                481.54905310457514,
+                246.6406379419193,
+                4.65599550653593,
+                11.971275252525174
+            ],
+            "text": "/",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "/"
+        },
+        {
+            "bbox": [
+                486.20504861111107,
+                247.7924169823233,
+                20.0980392156863,
+                10.172400252525222
+            ],
+            "text": "id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "nhận dạng"
+        },
+        {
+            "bbox": [
+                506.30308782679737,
+                246.6406379419193,
+                427.2675318627452,
+                11.971275252525174
+            ],
+            "text": " pairs are unique. These pairs are bookmarks that identify",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cặp là duy nhất. Những cặp này là dấu trang xác định"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                262.1709409722223,
+                218.7671568627451,
+                11.971275252525288
+            ],
+            "text": "event locations within the log.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vị trí sự kiện trong nhật ký."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                293.2315470328283,
+                748.3671715686276,
+                11.971275252525288
+            ],
+            "text": "These items appear within hash values associated with top-level items of JSON-format audit records:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các mục này xuất hiện trong các giá trị băm liên quan đến các mục cấp cao nhất của hồ sơ kiểm toán định dạng JSON:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                321.7037692550506,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                322.85562594696967,
+                40.19607843137257,
+                10.17232260101025
+            ],
+            "text": "args",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Args"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                352.7643753156566,
+                759.5886940359477,
+                11.971275252525288
+            ],
+            "text": "An array of options that were given on the command line or in option files when the MySQL server was",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một mảng các tùy chọn được đưa ra trên dòng lệnh hoặc trong các tệp tùy chọn khi máy chủ MySQL"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                368.2946783459597,
+                441.26919934640523,
+                11.971275252525174
+            ],
+            "text": "started. The first option is the path to the server executable.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bắt đầu. Tùy chọn đầu tiên là đường dẫn đến máy chủ có thể thực thi."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                399.3552844065657,
+                69.80717279411766,
+                11.971275252525288
+            ],
+            "text": "Example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                428.96766382575754,
+                313.52942851307193,
+                8.137917613636432
+            ],
+            "text": "\"args\": [\"/usr/local/mysql/bin/mysqld\",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"Args\": [\"/usr/local/mysql/bin/mysqld\","
+        },
+        {
+            "bbox": [
+                229.7875816993464,
+                441.3919191919192,
+                257.2548852124183,
+                8.137904671717138
+            ],
+            "text": "\"--loose-audit-log-format=JSON\",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"-Loose-audit-log-format = json\","
+        },
+        {
+            "bbox": [
+                229.7875816993464,
+                453.81613573232323,
+                176.86274509803928,
+                8.137904671717251
+            ],
+            "text": "\"--log-error=log.err\",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"-log-error = log.err\","
+        },
+        {
+            "bbox": [
+                229.7875816993464,
+                466.2403781565657,
+                192.94115972222227,
+                8.137917613636318
+            ],
+            "text": "\"--pid-file=mysqld.pid\",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"--pid-file = mysqld.pid\","
+        },
+        {
+            "bbox": [
+                229.7875816993464,
+                478.6646335227273,
+                120.58823529411768,
+                8.137904671717138
+            ],
+            "text": "\"--port=3306\" ]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"--port = 3306\"]"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                504.9613579545455,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                506.1131628787879,
+                70.34313725490196,
+                10.172374368686917
+            ],
+            "text": "command",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "yêu cầu"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                536.0219640151515,
+                765.266406862745,
+                11.971275252525231
+            ],
+            "text": "A string representing the type of instruction that generated the audit event, such as a command that the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một chuỗi đại diện cho loại hướng dẫn đã tạo sự kiện kiểm toán, chẳng hạn như một lệnh"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                551.5522670454545,
+                214.99877450980395,
+                11.971275252525288
+            ],
+            "text": "server received from a client.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Máy chủ nhận được từ một khách hàng."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                582.6128731060606,
+                69.80717279411766,
+                11.971275252525288
+            ],
+            "text": "Example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                612.2252525252525,
+                144.70586560457517,
+                8.137904671717195
+            ],
+            "text": "\"command\": \"Query\"",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"Lệnh\": \"Truy vấn\""
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                638.5219381313132,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                639.6737430555556,
+                150.7352941176471,
+                10.17237436868686
+            ],
+            "text": "connection_type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Connection_Type"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                669.5825441919192,
+                529.6838402777778,
+                11.971275252525231
+            ],
+            "text": "The security state of the connection to the server. Permitted values are ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trạng thái bảo mật của kết nối với máy chủ. Giá trị được phép là "
+        },
+        {
+            "bbox": [
+                687.1184808006536,
+                670.7343491161616,
+                60.2941176470589,
+                10.17237436868686
+            ],
+            "text": "tcp/ip",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TCP/IP"
+        },
+        {
+            "bbox": [
+                747.4125984477125,
+                669.5825441919192,
+                149.86434558823532,
+                11.971275252525231
+            ],
+            "text": " (TCP/IP connection",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Kết nối TCP/IP"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                685.1128472222222,
+                239.23366013071896,
+                11.971275252525288
+            ],
+            "text": "established without encryption), ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được thiết lập mà không cần mã hóa), "
+        },
+        {
+            "bbox": [
+                396.66830065359477,
+                686.2646521464646,
+                30.14705882352945,
+                10.172374368686917
+            ],
+            "text": "ssl",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SSL"
+        },
+        {
+            "bbox": [
+                426.8153594771242,
+                685.1128472222222,
+                370.4738227124183,
+                11.971275252525288
+            ],
+            "text": " (TCP/IP connection established with encryption), ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Kết nối TCP/IP được thiết lập với mã hóa), "
+        },
+        {
+            "bbox": [
+                797.2892324346406,
+                686.2646521464646,
+                60.29416789215679,
+                10.172374368686917
+            ],
+            "text": "socket",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ổ cắm"
+        },
+        {
+            "bbox": [
+                857.5834003267973,
+                685.1128472222222,
+                43.729950163398826,
+                11.971275252525288
+            ],
+            "text": " (Unix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (UNIX"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                700.6431502525253,
+                175.00365972222224,
+                11.971275252525231
+            ],
+            "text": "socket file connection), ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "kết nối tệp ổ cắm), "
+        },
+        {
+            "bbox": [
+                332.4383337418301,
+                701.7949551767676,
+                100.49016258169928,
+                10.17237436868686
+            ],
+            "text": "named_pipe",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Được đặt tên_pipe"
+        },
+        {
+            "bbox": [
+                432.9284963235294,
+                700.6431502525253,
+                303.46364379084974,
+                11.971275252525231
+            ],
+            "text": " (Windows named pipe connection), and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Kết nối đường ống có tên Windows) và "
+        },
+        {
+            "bbox": [
+                736.3921401143791,
+                701.7949551767676,
+                130.63725490196077,
+                10.17237436868686
+            ],
+            "text": "shared_memory",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Shared_Memory"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                716.1734532828283,
+                290.3831699346405,
+                11.971275252525288
+            ],
+            "text": "(Windows shared memory connection).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "(Kết nối bộ nhớ chia sẻ Windows)."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                747.2340593434344,
+                69.80717279411766,
+                11.971275252525231
+            ],
+            "text": "Example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                776.8465164141414,
+                225.0980224673203,
+                8.137839962121177
+            ],
+            "text": "\"connection_type\": \"tcp/tcp\"",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"Connection_Type\": \"TCP/TCP\""
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                803.1431631944445,
+                19.361107761437893,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                804.2950198863637,
+                20.0980392156863,
+                10.17232260101008
+            ],
+            "text": "db",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DB"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                834.2037692550505,
+                327.6817642973856,
+                11.97127525252526
+            ],
+            "text": "A string representing a database name. For ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một chuỗi đại diện cho một tên cơ sở dữ liệu. Vì "
+        },
+        {
+            "bbox": [
+                485.11640482026144,
+                835.3556259469697,
+                150.73529411764707,
+                10.17232260101008
+            ],
+            "text": "connection_data",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Connection_Data"
+        },
+        {
+            "bbox": [
+                635.8516989379085,
+                834.2037692550505,
+                225.29900285947713,
+                11.97127525252526
+            ],
+            "text": ", it is the default database. For",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", nó là cơ sở dữ liệu mặc định. Vì"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                850.8859289772728,
+                170.83333333333334,
+                10.17232260101008
+            ],
+            "text": "table_access_data",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TAGE_ACCESS_DATA"
+        },
+        {
+            "bbox": [
+                328.26797385620915,
+                849.7340722853535,
+                181.55227083333335,
+                11.97127525252526
+            ],
+            "text": ", it is the table database.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", nó là cơ sở dữ liệu bảng."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                880.7946783459596,
+                69.80717279411766,
+                11.971275252525231
+            ],
+            "text": "Example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                910.4070629419192,
+                96.47060498366014,
+                8.137832196969697
+            ],
+            "text": "\"db\": \"test\"",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "\"DB\": \"Kiểm tra\""
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                936.7037873737374,
+                19.361107761437893,
+                11.971275252525245
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                937.855637594697,
+                40.19607843137257,
+                10.172329071969699
+            ],
+            "text": "host",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "chủ nhà"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "1486",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1486"
+        }
+    ]
+}

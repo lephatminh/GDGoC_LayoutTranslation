@@ -1,0 +1,1916 @@
+{
+    "metadata": {
+        "page_hash": "d9aaa6e9f5f0aea24cc8e364aae68905f69be96c460165ee99afbd249b04cead",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3457,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                363.406045751634,
+                48.370422979798036,
+                268.04083292483665,
+                11.971275252525288
+            ],
+            "text": "How to Create FEDERATED Tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cách tạo bảng liên kết"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                94.96133207070716,
+                578.0865845588237,
+                11.971275252525174
+            ],
+            "text": "and subsequently executed locally. This reduces the network traffic that would",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và sau đó được thực hiện tại địa phương. Điều này làm giảm lưu lượng mạng sẽ"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                110.49163510101016,
+                518.4792001633988,
+                11.971275252525288
+            ],
+            "text": "otherwise request the entire table from the server for local processing.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu không, yêu cầu toàn bộ bảng từ máy chủ để xử lý cục bộ."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                141.35420391414152,
+                72.63430702614379,
+                14.365582070706978
+            ],
+            "text": "16.8.2.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "16.8.2.1"
+        },
+        {
+            "bbox": [
+                138.515689624183,
+                141.35420391414152,
+                486.87497990196084,
+                14.365582070706978
+            ],
+            "text": "Creating a FEDERATED Table Using CONNECTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Tạo bảng liên kết bằng cách sử dụng kết nối"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                174.61109248737375,
+                337.9150494281046,
+                11.971275252525174
+            ],
+            "text": "To use the first method, you must specify the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để sử dụng phương pháp đầu tiên, bạn phải chỉ định "
+        },
+        {
+            "bbox": [
+                478.60132393790855,
+                175.76293623737388,
+                100.49019607843138,
+                10.17233554292909
+            ],
+            "text": "CONNECTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỰ LIÊN QUAN"
+        },
+        {
+            "bbox": [
+                579.0915200163399,
+                174.61109248737375,
+                239.267140114379,
+                11.971275252525174
+            ],
+            "text": " string after the engine type in a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chuỗi sau loại động cơ trong một "
+        },
+        {
+            "bbox": [
+                818.3586601307189,
+                175.76293623737388,
+                60.2941176470589,
+                10.17233554292909
+            ],
+            "text": "CREATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TẠO NÊN"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                191.29323926767688,
+                50.24509803921569,
+                10.172335542929204
+            ],
+            "text": "TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BÀN"
+        },
+        {
+            "bbox": [
+                190.9313725490196,
+                190.14139551767676,
+                185.23694485294118,
+                11.971275252525288
+            ],
+            "text": " statement. For example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố. Ví dụ:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                219.3099188762627,
+                241.1764705882353,
+                8.137839962121234
+            ],
+            "text": "CREATE TABLE federated_table (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo bảng federated_table ("
+        },
+        {
+            "bbox": [
+                172.84313725490196,
+                231.73413541666673,
+                16.078431372549034,
+                8.13782702020194
+            ],
+            "text": "id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "nhận dạng"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                231.73413541666673,
+                257.25488521241823,
+                8.13782702020194
+            ],
+            "text": "INT(20) NOT NULL AUTO_INCREMENT,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Int (20) không phải null auto_increment,"
+        },
+        {
+            "bbox": [
+                171.87601960784312,
+                244.15833901515157,
+                31.18972834967323,
+                8.137917613636432
+            ],
+            "text": "name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "tên"
+        },
+        {
+            "bbox": [
+                226.45807352941176,
+                244.15833901515157,
+                259.91445874183006,
+                8.137917613636432
+            ],
+            "text": "VARCHAR(32) NOT NULL DEFAULT ’’,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Varchar (32) không phải là mặc định"
+        },
+        {
+            "bbox": [
+                171.80581045751634,
+                256.5826332070708,
+                38.89943668300654,
+                8.137827020202053
+            ],
+            "text": "other",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "khác"
+        },
+        {
+            "bbox": [
+                226.26501511437908,
+                256.5826332070708,
+                235.98988684640523,
+                8.137827020202053
+            ],
+            "text": "INT(20) NOT NULL DEFAULT ’0’,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Int (20) không null mặc định 0, 0,"
+        },
+        {
+            "bbox": [
+                172.84313725490196,
+                269.0068368055556,
+                88.43137254901964,
+                8.137917613636432
+            ],
+            "text": "PRIMARY KEY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Khóa chính"
+        },
+        {
+            "bbox": [
+                277.35295792483663,
+                269.0068368055556,
+                40.19607843137254,
+                8.137917613636432
+            ],
+            "text": "(id),",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "(nhận dạng),"
+        },
+        {
+            "bbox": [
+                172.84313725490196,
+                281.43113099747484,
+                144.7058991013072,
+                8.13783996212112
+            ],
+            "text": "INDEX name (name),",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tên chỉ mục (tên),"
+        },
+        {
+            "bbox": [
+                172.84313725490196,
+                293.85534753787886,
+                184.90197753267975,
+                8.13782702020194
+            ],
+            "text": "INDEX other_key (other)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Index other_key (khác)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                306.2795511363637,
+                8.03922071078432,
+                8.137917613636432
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                318.7038453282829,
+                128.62745098039215,
+                8.13782702020194
+            ],
+            "text": "ENGINE=FEDERATED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Động cơ = Federated"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                331.12804892676775,
+                184.90194403594774,
+                8.137917613636432
+            ],
+            "text": "DEFAULT CHARSET=utf8mb4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Charset mặc định = UTF8MB4"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                343.55234311868696,
+                546.6666499183007,
+                8.13783996212112
+            ],
+            "text": "CONNECTION=’mysql://fed_user@remote_host:9306/federated/test_table’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Kết nối = xông MySQL: // fed_user@remote_host: 9306/federated/test_table."
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                371.8834854797981,
+                37.214869281045765,
+                11.971275252525174
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                403.54198232323233,
+                100.49019607843138,
+                10.17236142676768
+            ],
+            "text": "CONNECTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỰ LIÊN QUAN"
+        },
+        {
+            "bbox": [
+                382.1977124183006,
+                402.3901644570707,
+                100.54040767973862,
+                11.971275252525288
+            ],
+            "text": " replaces the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Thay thế "
+        },
+        {
+            "bbox": [
+                482.73812009803925,
+                403.54198232323233,
+                70.34313725490193,
+                10.17236142676768
+            ],
+            "text": "COMMENT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BÌNH LUẬN"
+        },
+        {
+            "bbox": [
+                553.0813075980392,
+                402.3901644570707,
+                322.9922553104575,
+                11.971275252525288
+            ],
+            "text": " used in some previous versions of MySQL.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Được sử dụng trong một số phiên bản trước của MySQL."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                439.68878851010106,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                440.8405934343434,
+                100.49021282679738,
+                10.172374368686974
+            ],
+            "text": "CONNECTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỰ LIÊN QUAN"
+        },
+        {
+            "bbox": [
+                274.68993423202613,
+                439.68878851010106,
+                611.6000816993464,
+                11.971275252525288
+            ],
+            "text": " string contains the information required to connect to the remote server containing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Chuỗi chứa thông tin cần thiết để kết nối với máy chủ từ xa chứa"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                455.21909154040407,
+                740.0432839052289,
+                11.971275252525288
+            ],
+            "text": "the table in which the data physically resides. The connection string specifies the server name, login",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng trong đó dữ liệu cư trú vật lý. Chuỗi kết nối chỉ định tên máy chủ, đăng nhập"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                470.74939457070707,
+                783.8402945261437,
+                11.971275252525288
+            ],
+            "text": "credentials, port number and database/table information. In the example, the remote table is on the server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin xác thực, số cổng và thông tin cơ sở dữ liệu/bảng. Trong ví dụ, bảng từ xa nằm trên máy chủ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                487.43150252525254,
+                110.5392156862745,
+                10.17237436868686
+            ],
+            "text": "remote_host",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Remote_host"
+        },
+        {
+            "bbox": [
+                251.22549019607843,
+                486.2796976010102,
+                667.4726809640523,
+                11.971275252525174
+            ],
+            "text": ", using port 9306. The name and port number should match the host name (or IP address)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", sử dụng cổng 9306. Tên và số cổng phải khớp với tên máy chủ (hoặc địa chỉ IP)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                501.8100006313132,
+                688.860277369281,
+                11.971275252525231
+            ],
+            "text": "and port number of the remote MySQL server instance you want to use as your remote table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và số cổng của phiên bản máy chủ MySQL từ xa mà bạn muốn sử dụng làm bảng từ xa của mình."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                532.3166796085859,
+                358.3815024509804,
+                11.971275252525288
+            ],
+            "text": "The format of the connection string is as follows:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng của chuỗi kết nối như sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                561.4851382575757,
+                48.23529411764707,
+                8.137904671717138
+            ],
+            "text": "scheme",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "cơ chế"
+        },
+        {
+            "bbox": [
+                188.921568627451,
+                561.4851382575757,
+                24.117647058823536,
+                8.137904671717138
+            ],
+            "text": "://",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ": //"
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                561.4851382575757,
+                72.35292442810459,
+                8.137904671717138
+            ],
+            "text": "user_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "user_name"
+        },
+        {
+            "bbox": [
+                285.3921401143791,
+                561.4851382575757,
+                16.078448120915027,
+                8.137904671717138
+            ],
+            "text": "[:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[:"
+        },
+        {
+            "bbox": [
+                301.47058823529414,
+                561.4851382575757,
+                64.31370874183006,
+                8.137904671717138
+            ],
+            "text": "password",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "mật khẩu"
+        },
+        {
+            "bbox": [
+                365.7842969771242,
+                561.4851382575757,
+                16.078448120915027,
+                8.137904671717138
+            ],
+            "text": "]@",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "]@"
+        },
+        {
+            "bbox": [
+                381.8627450980392,
+                561.4851382575757,
+                72.35295792483663,
+                8.137904671717138
+            ],
+            "text": "host_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "host_name"
+        },
+        {
+            "bbox": [
+                454.21570302287586,
+                561.4851382575757,
+                16.078397875816904,
+                8.137904671717138
+            ],
+            "text": "[:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[:"
+        },
+        {
+            "bbox": [
+                470.29410089869276,
+                561.4851382575757,
+                64.31375898692824,
+                8.137904671717138
+            ],
+            "text": "port_num",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "port_num"
+        },
+        {
+            "bbox": [
+                534.607859885621,
+                561.4851382575757,
+                16.078448120915027,
+                8.137904671717138
+            ],
+            "text": "]/",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "]"
+        },
+        {
+            "bbox": [
+                550.6862577614379,
+                561.4851382575757,
+                56.274509803921546,
+                8.137904671717138
+            ],
+            "text": "db_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "db_name"
+        },
+        {
+            "bbox": [
+                606.9607675653594,
+                561.4851382575757,
+                8.039198937908509,
+                8.137904671717138
+            ],
+            "text": "/",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "/"
+        },
+        {
+            "bbox": [
+                615.0000167483661,
+                561.4851382575757,
+                64.31372549019602,
+                8.137904671717138
+            ],
+            "text": "tbl_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "tbl_name"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                589.8163194444444,
+                53.97998366013073,
+                11.971275252525231
+            ],
+            "text": "Where:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ở đâu:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                618.2885416666667,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                619.4403465909091,
+                60.29411764705884,
+                10.172374368686803
+            ],
+            "text": "scheme",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "cơ chế"
+        },
+        {
+            "bbox": [
+                217.72875816993465,
+                618.2885416666667,
+                305.3394607843138,
+                11.971275252525231
+            ],
+            "text": ": A recognized connection protocol. Only ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Một giao thức kết nối được công nhận. Chỉ một "
+        },
+        {
+            "bbox": [
+                523.0682189542484,
+                619.4403465909091,
+                50.24509803921569,
+                10.172374368686803
+            ],
+            "text": "mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql"
+        },
+        {
+            "bbox": [
+                573.3133169934641,
+                618.2885416666667,
+                150.81901919934637,
+                11.971275252525231
+            ],
+            "text": " is supported as the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được hỗ trợ như "
+        },
+        {
+            "bbox": [
+                724.1323361928105,
+                619.4403465909091,
+                60.29411764705878,
+                10.172374368686803
+            ],
+            "text": "scheme",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "cơ chế"
+        },
+        {
+            "bbox": [
+                784.4264538398693,
+                618.2885416666667,
+                139.64787581699352,
+                11.971275252525231
+            ],
+            "text": " value at this point.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị tại thời điểm này."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                646.760763888889,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                647.9125688131314,
+                90.44117647058826,
+                10.172374368686803
+            ],
+            "text": "user_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "user_name"
+        },
+        {
+            "bbox": [
+                247.87581699346407,
+                646.760763888889,
+                686.080082107843,
+                11.971275252525231
+            ],
+            "text": ": The user name for the connection. This user must have been created on the remote server,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Tên người dùng cho kết nối. Người dùng này phải được tạo trên máy chủ từ xa,"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                662.291066919192,
+                490.55962377450976,
+                11.971275252525288
+            ],
+            "text": "and must have suitable privileges to perform the required actions (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và phải có các đặc quyền phù hợp để thực hiện các hành động cần thiết ("
+        },
+        {
+            "bbox": [
+                647.9942642973856,
+                663.4428718434344,
+                60.2941176470589,
+                10.17237436868686
+            ],
+            "text": "SELECT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LỰA CHỌN"
+        },
+        {
+            "bbox": [
+                708.2883819444445,
+                662.291066919192,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                717.6004734477125,
+                663.4428718434344,
+                60.29411764705878,
+                10.17237436868686
+            ],
+            "text": "INSERT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHÈN"
+        },
+        {
+            "bbox": [
+                777.8945910947713,
+                662.291066919192,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                787.2066825980393,
+                663.4428718434344,
+                60.29411764705878,
+                10.17237436868686
+            ],
+            "text": "UPDATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CẬP NHẬT"
+        },
+        {
+            "bbox": [
+                847.500800245098,
+                662.291066919192,
+                59.590669526143756,
+                11.971275252525288
+            ],
+            "text": ", and so",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", và như vậy"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                677.821369949495,
+                192.70669934640526,
+                11.971275252525231
+            ],
+            "text": "forth) on the remote table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ra) trên bàn từ xa."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                706.2935921717171,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                707.4453970959596,
+                80.39215686274511,
+                10.172374368686917
+            ],
+            "text": "password",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "mật khẩu"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                706.2935921717171,
+                332.3043300653595,
+                11.971275252525288
+            ],
+            "text": ": (Optional) The corresponding password for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": (Tùy chọn) Mật khẩu tương ứng cho "
+        },
+        {
+            "bbox": [
+                570.1311274509804,
+                707.4453970959596,
+                90.44117647058829,
+                10.172374368686917
+            ],
+            "text": "user_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "user_name"
+        },
+        {
+            "bbox": [
+                660.5723039215687,
+                706.2935921717171,
+                4.656045751633883,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                734.7658143939394,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                735.9176193181818,
+                90.44117647058826,
+                10.17237436868686
+            ],
+            "text": "host_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "host_name"
+        },
+        {
+            "bbox": [
+                247.87581699346407,
+                734.7658143939394,
+                384.45872508169936,
+                11.971275252525231
+            ],
+            "text": ": The host name or IP address of the remote server.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Tên máy chủ hoặc địa chỉ IP của máy chủ từ xa."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                763.2380754419191,
+                19.361107761437893,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                764.3899191919193,
+                80.39215686274511,
+                10.17233554292929
+            ],
+            "text": "port_num",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "port_num"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                763.2380754419191,
+                527.8080232843138,
+                11.97127525252526
+            ],
+            "text": ": (Optional) The port number for the remote server. The default is 3306.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": (Tùy chọn) Số cổng cho máy chủ từ xa. Mặc định là 3306."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                791.7102976641414,
+                19.361107761437893,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                792.8621414141414,
+                70.34313725490196,
+                10.17233554292929
+            ],
+            "text": "db_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "db_name"
+        },
+        {
+            "bbox": [
+                227.77777777777777,
+                791.7102976641414,
+                393.8210951797386,
+                11.97127525252526
+            ],
+            "text": ": The name of the database holding the remote table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Tên của cơ sở dữ liệu giữ bảng từ xa."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                820.1825198863637,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                821.3343636363636,
+                80.39215686274511,
+                10.172335542929261
+            ],
+            "text": "tbl_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "tbl_name"
+        },
+        {
+            "bbox": [
+                237.82679738562092,
+                820.1825198863637,
+                668.4607843137255,
+                11.971275252525231
+            ],
+            "text": ": The name of the remote table. The name of the local and the remote table do not have to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Tên của bảng từ xa. Tên của địa phương và bảng điều khiển từ xa không phải"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                835.7128229166667,
+                50.261846405228766,
+                11.971275252525231
+            ],
+            "text": "match.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cuộc thi đấu."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                866.2194630681818,
+                201.06413398692814,
+                11.97127525252526
+            ],
+            "text": "Sample connection strings:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chuỗi kết nối mẫu:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                895.3879864267677,
+                570.7842969771241,
+                8.137836079545437
+            ],
+            "text": "CONNECTION=’mysql://username:password@hostname:port/database/tablename’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Connection = xông MySQL: // Tên người dùng: Mật khẩu@HostName: Cổng/Cơ sở dữ liệu/TableName"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                907.8122016729798,
+                458.2353108660131,
+                8.137832196969683
+            ],
+            "text": "CONNECTION=’mysql://username@hostname/database/tablename’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Connection = xông MySQL: // Tên người dùng@Tên HostName/Cơ sở dữ liệu/TableName"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                920.2364906881313,
+                530.5882185457517,
+                8.137832196969697
+            ],
+            "text": "CONNECTION=’mysql://username:password@hostname/database/tablename’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Connection = xông MySQL: // Tên người dùng: Mật khẩu@HostName/Cơ sở dữ liệu/TableName"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3428",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3428"
+        }
+    ]
+}

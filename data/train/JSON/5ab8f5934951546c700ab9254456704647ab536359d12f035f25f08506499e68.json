@@ -1,0 +1,956 @@
+{
+    "metadata": {
+        "page_hash": "5ab8f5934951546c700ab9254456704647ab536359d12f035f25f08506499e68",
+        "original_filename": "sg248366.pdf",
+        "page_no": 232,
+        "num_pages": 988,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "redbooks",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                671.8774509803923,
+                977.8111768308081,
+                195.8668982843136,
+                10.774146433080809
+            ],
+            "text": "Chapter 5. Disaster recovery ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Chương 5. Phục hồi thảm họa "
+        },
+        {
+            "bbox": [
+                888.5343472222223,
+                976.9191149305556,
+                28.034704656862573,
+                11.923388857323232
+            ],
+            "text": "205",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "205"
+        },
+        {
+            "bbox": [
+                108.5294167892157,
+                92.32081818181814,
+                49.448058374183006,
+                15.514811553030427
+            ],
+            "text": "5.1.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "5.1.2"
+        },
+        {
+            "bbox": [
+                164.1584830882353,
+                92.32081818181814,
+                228.56388578431375,
+                15.514811553030427
+            ],
+            "text": "Deferred Copy Queue",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Hàng đợi bản sao hoãn lại"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                126.16910069444441,
+                633.7789379084968,
+                11.923403093434445
+            ],
+            "text": "Besides a copy policy of No Copy, a Deferred Copy policy has the least impact to the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Bên cạnh chính sách sao chép không có bản sao, chính sách bản sao hoãn lại có tác động ít nhất đến "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                141.69917077020204,
+                686.8106625816994,
+                11.923403093434445
+            ],
+            "text": "applications that are running on the host. Immediately after the volume is closed, device end ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các ứng dụng đang chạy trên máy chủ. Ngay sau khi âm lượng được đóng lại, thiết bị kết thúc "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                157.2292279040405,
+                682.2882855392156,
+                11.923403093434331
+            ],
+            "text": "is passed back to the application and a copy is then queued to be made later. These copies ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "được chuyển trở lại ứng dụng và một bản sao sau đó được xếp hàng sau đó. Những bản sao này "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                172.75929797979802,
+                281.0228263888888,
+                11.923403093434445
+            ],
+            "text": "are put on the Deferred Copy Queue. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "được đặt trên hàng đợi bản sao hoãn lại. "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                201.25687342171716,
+                687.5227528594771,
+                11.923403093434445
+            ],
+            "text": "With the standard settings, host application I/O always has a higher priority than the Deferred ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Với các cài đặt tiêu chuẩn, ứng dụng máy chủ I/O luôn được ưu tiên cao hơn so với hàng hoãn lại "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                216.7869434974748,
+                670.1056413398693,
+                11.923403093434445
+            ],
+            "text": "Copy Queue. It is normally expected that the configuration and capacity of the grid is such ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Sao chép hàng đợi. Thông thường người ta thường dự đoán rằng cấu hình và công suất của lưới là như vậy "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                232.31701357323232,
+                663.7164411764705,
+                11.923403093434445
+            ],
+            "text": "that the entire queue has the copies completed each day; otherwise, the incoming copies ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "rằng toàn bộ hàng đợi có các bản sao hoàn thành mỗi ngày; Nếu không, các bản sao đến "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                247.84707070707077,
+                643.9643227124183,
+                11.923403093434217
+            ],
+            "text": "cause the Deferred Copy Queue to grow continually and the RPO might not be fulfilled.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "khiến hàng đợi bản sao hoãn phát triển liên tục và RPO có thể không được thực hiện."
+        },
+        {
+            "bbox": [
+                229.11598897058826,
+                276.3446461489899,
+                687.4829084967321,
+                11.923416035353625
+            ],
+            "text": "When a cluster becomes unavailable due to broken grid links, error, or disaster, the incoming ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khi một cụm trở nên không khả dụng do các liên kết, lỗi hoặc thảm họa bị hỏng, "
+        },
+        {
+            "bbox": [
+                229.11598897058826,
+                291.87471622474754,
+                676.5395261437909,
+                11.923403093434217
+            ],
+            "text": "copy queue might not be complete, and the data might not be available on other clusters in ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Hàng đợi sao chép có thể không hoàn tất và dữ liệu có thể không có sẵn trên các cụm khác trong "
+        },
+        {
+            "bbox": [
+                229.11598897058826,
+                307.40478630050507,
+                687.3208848039217,
+                11.923403093434331
+            ],
+            "text": "the grid. You can use BVIR to analyze the incoming copy queue, but the possibility exists that ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Lưới. Bạn có thể sử dụng BVIR để phân tích hàng đợi bản sao đến, nhưng khả năng tồn tại "
+        },
+        {
+            "bbox": [
+                229.11598897058826,
+                322.9348563762627,
+                657.6830098039215,
+                11.923403093434217
+            ],
+            "text": "volumes are not available. For backups, this might be acceptable, but for primary data, it ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khối lượng không có sẵn. Đối với các bản sao lưu, điều này có thể được chấp nhận, nhưng đối với dữ liệu chính, nó "
+        },
+        {
+            "bbox": [
+                229.11598897058826,
+                338.46491351010104,
+                507.27216503267977,
+                11.923403093434331
+            ],
+            "text": "might be preferable to use a Synch copy policy rather than Deferred.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "có thể được sử dụng chính sách sao chép đồng bộ hơn là hoãn lại."
+        },
+        {
+            "bbox": [
+                108.5294167892157,
+                377.0689501262626,
+                49.57893010620916,
+                15.514733901515228
+            ],
+            "text": "5.1.3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "5.1.3"
+        },
+        {
+            "bbox": [
+                164.3057095996732,
+                377.0689501262626,
+                198.20423157679738,
+                15.514733901515228
+            ],
+            "text": "Volume ownership",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Quyền sở hữu khối lượng"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                410.9172326388889,
+                657.8246674836603,
+                11.923364267676789
+            ],
+            "text": "If a logical volume is written on one of the clusters in the grid configuration and copied to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Nếu một khối lượng logic được ghi trên một trong các cụm trong cấu hình lưới và được sao chép để "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                426.44728977272723,
+                684.9340416666666,
+                11.92337720959597
+            ],
+            "text": "another cluster, the copy can be accessed through the either the original cluster or the other ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "một cụm khác, bản sao có thể được truy cập thông qua cụm gốc hoặc cụm khác "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                441.97735984848487,
+                53.844120915032676,
+                11.923364267676789
+            ],
+            "text": "cluster.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "cụm."
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                470.47489646464646,
+                617.611154003268,
+                11.92337720959597
+            ],
+            "text": "At any time however, a logical volume is owned by a single cluster. We call this the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Tuy nhiên, bất cứ lúc nào, một khối lượng logic được sở hữu bởi một cụm duy nhất. Chúng tôi gọi đây là "
+        },
+        {
+            "bbox": [
+                846.830714869281,
+                467.0697481060606,
+                58.81939052287589,
+                15.73070864898989
+            ],
+            "text": "owning ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPDOEO+TimesNewRoman,Italic",
+                "size": 1
+            },
+            "text_vi": "sở hữu "
+        },
+        {
+            "bbox": [
+                229.11685988562093,
+                482.60008996212116,
+                50.08250490196079,
+                15.730708648990003
+            ],
+            "text": "cluster",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPDOEO+TimesNewRoman,Italic",
+                "size": 1
+            },
+            "text_vi": "cụm"
+        },
+        {
+            "bbox": [
+                279.16174795751635,
+                486.00623484848495,
+                587.0490371732027,
+                11.923364267676675
+            ],
+            "text": ". The owning cluster has control over access to the volume and changes to the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": ". Cụm sở hữu có quyền kiểm soát truy cập vào âm lượng và thay đổi "
+        },
+        {
+            "bbox": [
+                229.1175968137255,
+                501.5362919823233,
+                682.008135620915,
+                11.923377209595913
+            ],
+            "text": "attributes that are associated with the volume (such as category or storage constructs). The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các thuộc tính được liên kết với khối lượng (như danh mục hoặc cấu trúc lưu trữ). Các "
+        },
+        {
+            "bbox": [
+                229.1175968137255,
+                517.0663620580808,
+                687.2043831699347,
+                11.923364267676789
+            ],
+            "text": "cluster that has ownership of a logical volume can surrender it dynamically to another cluster ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "cụm có quyền sở hữu khối lượng logic có thể từ bỏ nó một cách linh hoạt cho một cụm khác "
+        },
+        {
+            "bbox": [
+                229.1175968137255,
+                532.5964321338383,
+                485.71986519607844,
+                11.923364267676789
+            ],
+            "text": "in the grid configuration that is requesting a mount of the volume. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Trong cấu hình lưới đang yêu cầu gắn kết của âm lượng. "
+        },
+        {
+            "bbox": [
+                229.1175968137255,
+                561.0166407828283,
+                655.1360187908497,
+                11.923364267676789
+            ],
+            "text": "When a mount request is received on a virtual device address, the cluster for that virtual ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khi nhận được yêu cầu gắn kết trên địa chỉ thiết bị ảo, cụm cho ảo đó "
+        },
+        {
+            "bbox": [
+                229.1175968137255,
+                576.5466979166667,
+                687.5425326797385,
+                11.923377209595913
+            ],
+            "text": "device must have ownership of the volume to be mounted, or must obtain the ownership from ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "thiết bị phải có quyền sở hữu khối lượng để được gắn kết hoặc phải có được quyền sở hữu từ "
+        },
+        {
+            "bbox": [
+                229.1175968137255,
+                592.0767679924243,
+                667.9468272058824,
+                11.923364267676732
+            ],
+            "text": "the cluster that owns it. If the clusters in a grid configuration and the communication paths ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các cụm sở hữu nó. Nếu các cụm trong cấu hình lưới và đường dẫn giao tiếp "
+        },
+        {
+            "bbox": [
+                229.1175968137255,
+                607.6068380681818,
+                230.02800449346412,
+                11.923364267676732
+            ],
+            "text": "between them are operational (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "giữa họ đang hoạt động ("
+        },
+        {
+            "bbox": [
+                459.2402128267974,
+                604.2023497474747,
+                94.09287295751636,
+                15.730708648989946
+            ],
+            "text": "grid network",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JPDOEO+TimesNewRoman,Italic",
+                "size": 1
+            },
+            "text_vi": "Mạng lưới"
+        },
+        {
+            "bbox": [
+                553.3995265522876,
+                607.608533459596,
+                363.1902765522875,
+                11.923364267676789
+            ],
+            "text": "), the change of ownership and the processing of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "), sự thay đổi quyền sở hữu và xử lý "
+        },
+        {
+            "bbox": [
+                229.11699387254902,
+                623.1386035353536,
+                607.6742647058825,
+                11.923364267676789
+            ],
+            "text": "logical volume-related commands are transparent to the operation of the TS7700. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các lệnh liên quan đến âm lượng logic là minh bạch với hoạt động của TS7700. "
+        },
+        {
+            "bbox": [
+                229.11699387254902,
+                651.6361401515152,
+                687.4710674019607,
+                11.923364267676732
+            ],
+            "text": "However, if a cluster that owns a volume is unable to respond to requests from other clusters, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Tuy nhiên, nếu một cụm sở hữu khối lượng không thể trả lời các yêu cầu từ các cụm khác, "
+        },
+        {
+            "bbox": [
+                229.11701062091504,
+                667.1661972853535,
+                642.8967316176471,
+                11.92337720959597
+            ],
+            "text": "the operation against that volume fails, unless more direction is given. Clusters will not ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Hoạt động chống lại khối lượng đó không thành công, trừ khi được đưa ra nhiều hướng hơn. Các cụm sẽ không "
+        },
+        {
+            "bbox": [
+                229.11699387254902,
+                682.696267361111,
+                654.9922843137256,
+                11.923390151515207
+            ],
+            "text": "automatically assume or take over ownership of a logical volume without being directed. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Tự động giả định hoặc đảm nhận quyền sở hữu một khối lượng logic mà không được chỉ đạo. "
+        },
+        {
+            "bbox": [
+                229.11699387254902,
+                711.1938039772728,
+                653.2090857843136,
+                11.92339015151515
+            ],
+            "text": "This is done to prevent the failure of the grid network communication paths between the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Điều này được thực hiện để ngăn chặn sự thất bại của các đường dẫn giao tiếp mạng lưới giữa "
+        },
+        {
+            "bbox": [
+                229.11699387254902,
+                726.7238481691919,
+                671.8992071078433,
+                11.92339015151515
+            ],
+            "text": "clusters, resulting in both clusters thinking that they have ownership of the volume. If more ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các cụm, dẫn đến cả hai cụm nghĩ rằng chúng có quyền sở hữu khối lượng. Nếu nhiều hơn "
+        },
+        {
+            "bbox": [
+                229.11699387254902,
+                742.2539053030303,
+                644.630154003268,
+                11.92337720959597
+            ],
+            "text": "than one cluster has ownership of a volume, that might result in the volume’s data or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "hơn một cụm có quyền sở hữu khối lượng, điều đó có thể dẫn đến dữ liệu khối lượng hoặc "
+        },
+        {
+            "bbox": [
+                229.11699387254902,
+                757.7839494949495,
+                687.5096053921568,
+                11.92339015151515
+            ],
+            "text": "attributes being changed differently on each cluster, resulting in a data integrity issue with the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "các thuộc tính được thay đổi khác nhau trên mỗi cụm, dẫn đến vấn đề toàn vẹn dữ liệu với "
+        },
+        {
+            "bbox": [
+                229.11699387254902,
+                773.3139936868687,
+                63.21236968954253,
+                11.92339015151515
+            ],
+            "text": "volume. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "âm lượng. "
+        },
+        {
+            "bbox": [
+                229.11699387254902,
+                801.8115303030303,
+                670.8177651143792,
+                11.923390151515179
+            ],
+            "text": "If a cluster fails, is known to be unavailable (for example, a power fault in the IT center), or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Nếu một cụm không thành công, được biết là không có sẵn (ví dụ: lỗi nguồn trong trung tâm CNTT) hoặc "
+        },
+        {
+            "bbox": [
+                229.11699387254902,
+                817.3415744949496,
+                683.0836151960787,
+                11.92339015151515
+            ],
+            "text": "must be serviced, its ownership of logical volumes is transferred to the other cluster through ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Phải được phục vụ, quyền sở hữu khối lượng logic của nó được chuyển sang cụm khác thông qua "
+        },
+        {
+            "bbox": [
+                229.11699387254902,
+                832.8716186868687,
+                203.7680069444445,
+                11.923390151515122
+            ],
+            "text": "one of the following modes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Một trong những chế độ sau đây."
+        }
+    ]
+}

@@ -1,0 +1,1436 @@
+{
+    "metadata": {
+        "page_hash": "7d5db8e0f6592e0bd85f3cb4e96b591a58204127566d4a9633bad304fccb7990",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3679,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                387.13010620915037,
+                48.370422979798036,
+                220.5927455065359,
+                11.971275252525288
+            ],
+            "text": "Semisynchronous Replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao chép hình thành"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                109.85253267973857,
+                11.971275252525174
+            ],
+            "text": "On the source:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Về nguồn:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                122.34126925505063,
+                514.5098206699347,
+                8.13782702020194
+            ],
+            "text": "INSTALL PLUGIN rpl_semi_sync_master SONAME ’semisync_master.so’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Cài đặt plugin rpl_semi_sync_master soname, semisync_master.so"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                148.4347408459597,
+                121.94485294117646,
+                11.971275252525174
+            ],
+            "text": "On each replica:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trên mỗi bản sao:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                175.81467803030318,
+                498.4313892973856,
+                8.13782702020194
+            ],
+            "text": "INSTALL PLUGIN rpl_semi_sync_slave SONAME ’semisync_slave.so’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Cài đặt plugin rpl_semi_sync_slave Soname, semisync_slave.so"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                201.90816256313133,
+                745.6205065359479,
+                11.971275252525288
+            ],
+            "text": "If an attempt to install a plugin results in an error on Linux similar to that shown here, you must install",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu cố gắng cài đặt plugin dẫn đến lỗi trên Linux tương tự như hiển thị ở đây, bạn phải cài đặt"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                218.59030934343434,
+                60.29411764705884,
+                10.172335542929318
+            ],
+            "text": "libimf",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "libimf"
+        },
+        {
+            "bbox": [
+                200.98039215686276,
+                217.43846559343433,
+                4.656045751633968,
+                11.971275252525288
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                244.81838983585874,
+                56.274509803921575,
+                8.137917613636205
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                244.81838983585874,
+                514.5098374183007,
+                8.137917613636205
+            ],
+            "text": "INSTALL PLUGIN rpl_semi_sync_master SONAME ’semisync_master.so’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Cài đặt plugin rpl_semi_sync_master soname, semisync_master.so"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                257.24260637626264,
+                361.7647058823529,
+                8.137904671717138
+            ],
+            "text": "ERROR 1126 (HY000): Can’t open shared library",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Lỗi 1126 (HY000): Thư viện có thể mở Mở"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                269.6668876262627,
+                385.88233619281044,
+                8.137917613636318
+            ],
+            "text": "’/usr/local/mysql/lib/plugin/semisync_master.so’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tiết /usr/local/mysql/lib/plugin/semisync_master.so"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                282.0911041666668,
+                426.07841462418304,
+                8.137904671717024
+            ],
+            "text": "(errno: 22 libimf.so: cannot open shared object file:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "(errno: 22 libimf.so: Không thể mở tệp đối tượng được chia sẻ:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                294.5153983585858,
+                209.0196078431373,
+                8.137827020202053
+            ],
+            "text": "No such file or directory)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Không có tệp hoặc thư mục đó)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                320.6088699494951,
+                116.38437867647059,
+                11.971275252525174
+            ],
+            "text": "You can obtain ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể có được "
+        },
+        {
+            "bbox": [
+                257.0706531862745,
+                321.7607266414142,
+                60.29411764705884,
+                10.172322601010137
+            ],
+            "text": "libimf",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "libimf"
+        },
+        {
+            "bbox": [
+                317.3648043300654,
+                320.6088699494951,
+                392.7826797385621,
+                11.971275252525174
+            ],
+            "text": " from https://dev.mysql.com/downloads/os-linux.html.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " từ https://dev.mysql.com/doads/os-linux.html."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                348.8779299242424,
+                320.2287749183007,
+                11.971275252525288
+            ],
+            "text": "To see which plugins are installed, use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để xem các plugin nào được cài đặt, hãy sử dụng "
+        },
+        {
+            "bbox": [
+                460.9150494281046,
+                350.0297866161617,
+                120.58823529411762,
+                10.172322601010023
+            ],
+            "text": "SHOW PLUGINS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị các plugin"
+        },
+        {
+            "bbox": [
+                581.5032847222222,
+                348.8779299242424,
+                176.87947671568622,
+                11.971275252525288
+            ],
+            "text": " statement, or query the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố, hoặc truy vấn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                365.56005082070715,
+                261.2745098039216,
+                10.17236142676768
+            ],
+            "text": "INFORMATION_SCHEMA.PLUGINS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thông tin_schema.plugins"
+        },
+        {
+            "bbox": [
+                401.9607843137255,
+                364.4082329545455,
+                45.62253227124177,
+                11.971275252525288
+            ],
+            "text": " table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                392.67725410353535,
+                302.5257352941176,
+                11.971275252525288
+            ],
+            "text": "To verify plugin installation, examine the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để xác minh cài đặt plugin, hãy kiểm tra "
+        },
+        {
+            "bbox": [
+                443.21200980392155,
+                393.8290590277778,
+                261.27450980392155,
+                10.17237436868686
+            ],
+            "text": "INFORMATION_SCHEMA.PLUGINS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thông tin_schema.plugins"
+        },
+        {
+            "bbox": [
+                704.4865196078431,
+                392.67725410353535,
+                124.7585784313726,
+                11.971275252525288
+            ],
+            "text": " table or use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng hoặc sử dụng "
+        },
+        {
+            "bbox": [
+                829.2450980392157,
+                393.8290590277778,
+                40.1960784313726,
+                10.17237436868686
+            ],
+            "text": "SHOW",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÌNH DIỄN"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                409.3593620580808,
+                70.34313725490196,
+                10.17237436868686
+            ],
+            "text": "PLUGINS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Plugin"
+        },
+        {
+            "bbox": [
+                211.02941176470588,
+                408.20755713383846,
+                531.1744113562092,
+                11.971275252525174
+            ],
+            "text": " statement (see Section 5.6.2, “Obtaining Server Plugin Information”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tuyên bố (xem Phần 5.6.2, Thông tin plugin máy chủ có được thông tin trực tuyến"
+        },
+        {
+            "bbox": [
+                714.6360294117648,
+                408.20755713383846,
+                112.61599632352932,
+                11.971275252525174
+            ],
+            "text": "). For example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Ví dụ:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                435.5874425505051,
+                56.274509803921575,
+                8.137917613636318
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                435.5874425505051,
+                265.2941176470588,
+                8.137917613636318
+            ],
+            "text": "SELECT PLUGIN_NAME, PLUGIN_STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn Plugin_Name, Plugin_Status"
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                448.0116979166668,
+                249.21566952614378,
+                8.137904671717024
+            ],
+            "text": "FROM INFORMATION_SCHEMA.PLUGINS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Từ thông tin_schema.plugins"
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                460.43595328282834,
+                257.2549187091504,
+                8.137904671717138
+            ],
+            "text": "WHERE PLUGIN_NAME LIKE ’%semi%’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Trong đó plugin_name giống như%semi%semi%;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                472.8601957070707,
+                321.5686274509804,
+                8.137917613636318
+            ],
+            "text": "+----------------------+---------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+----------------------+---------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                485.28441224747473,
+                104.50978717320262,
+                8.137904671717251
+            ],
+            "text": "| PLUGIN_NAME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Plugin_name"
+        },
+        {
+            "bbox": [
+                325.58821854575166,
+                485.28441224747473,
+                136.66668341503265,
+                8.137904671717251
+            ],
+            "text": "| PLUGIN_STATUS |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Plugin_status |"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                497.7086546717172,
+                321.5686274509804,
+                8.137917613636318
+            ],
+            "text": "+----------------------+---------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+----------------------+---------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                510.1329100378788,
+                249.21568627450984,
+                8.137904671717195
+            ],
+            "text": "| rpl_semi_sync_master | ACTIVE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| rpl_semi_sync_master | TÍCH CỰC"
+        },
+        {
+            "bbox": [
+                454.21570302287586,
+                510.1329100378788,
+                8.039198937908452,
+                8.137904671717195
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                522.5571654040405,
+                321.5686274509804,
+                8.137904671717138
+            ],
+            "text": "+----------------------+---------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+----------------------+---------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                548.6506758207072,
+                592.9424019607843,
+                11.971275252525231
+            ],
+            "text": "If the plugin fails to initialize, check the server error log for diagnostic messages.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu plugin không khởi tạo, hãy kiểm tra nhật ký lỗi máy chủ để biết tin nhắn chẩn đoán."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                576.919696969697,
+                769.8386772875817,
+                11.971275252525288
+            ],
+            "text": "After a semisynchronous replication plugin has been installed, it is disabled by default. The plugins must",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau khi một plugin sao chép semisynchronous đã được cài đặt, nó bị tắt theo mặc định. Các plugin phải"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                592.45,
+                787.5919117647059,
+                11.971275252525231
+            ],
+            "text": "be enabled both on the source side and the replica side to enable semisynchronous replication. If only one",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được kích hoạt cả ở phía nguồn và phía bản sao để cho phép sao chép bán đồng bộ hóa. Nếu chỉ có một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                607.980303030303,
+                327.6650494281046,
+                11.971275252525288
+            ],
+            "text": "side is enabled, replication is asynchronous.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bên được kích hoạt, sao chép là không đồng bộ."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                636.2493630050506,
+                780.1054424019608,
+                11.971275252525231
+            ],
+            "text": "To control whether an installed plugin is enabled, set the appropriate system variables. You can set these",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để kiểm soát xem một plugin được cài đặt có được bật hay không, hãy đặt các biến hệ thống phù hợp. Bạn có thể đặt những thứ này"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                651.7796660353536,
+                195.47016299019612,
+                11.971275252525288
+            ],
+            "text": "variables at runtime using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các biến trong thời gian chạy bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                336.156470996732,
+                652.931470959596,
+                100.49021282679735,
+                10.172374368686803
+            ],
+            "text": "SET GLOBAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Đặt toàn cầu"
+        },
+        {
+            "bbox": [
+                436.6466838235294,
+                651.7796660353536,
+                451.4857193627452,
+                11.971275252525288
+            ],
+            "text": ", or at server startup on the command line or in an option file.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hoặc tại máy chủ khởi động trên dòng lệnh hoặc trong một tệp tùy chọn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                680.0486871843434,
+                451.4354742647059,
+                11.971275252525288
+            ],
+            "text": "At runtime, these source-side system variables are available:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi chạy, các biến hệ thống phía nguồn này có sẵn:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                707.42857260101,
+                385.88233619281044,
+                8.137917613636375
+            ],
+            "text": "SET GLOBAL rpl_semi_sync_master_enabled = {0|1};",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt toàn cầu rpl_semi_sync_master_enables = {0 | 1};"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                719.8528279671717,
+                337.6470755718954,
+                8.137904671717195
+            ],
+            "text": "SET GLOBAL rpl_semi_sync_master_timeout = ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt toàn cầu rpl_semi_sync_master_timeout = "
+        },
+        {
+            "bbox": [
+                478.33335008169934,
+                719.8528279671717,
+                8.039232434640496,
+                8.137904671717195
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                486.3725322712418,
+                719.8528279671717,
+                8.039198937908509,
+                8.137904671717195
+            ],
+            "text": ";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ";"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                745.9463383838383,
+                388.14338235294116,
+                11.971275252525231
+            ],
+            "text": "On the replica side, this system variable is available:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Về phía bản sao, biến hệ thống này có sẵn:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                773.3262755681818,
+                377.843154003268,
+                8.137827020202025
+            ],
+            "text": "SET GLOBAL rpl_semi_sync_slave_enabled = {0|1};",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt toàn cầu rpl_semi_sync_slave_enables = {0 | 1};"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                799.4197601010101,
+                29.778594771241842,
+                11.97127525252526
+            ],
+            "text": "For ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vì "
+        },
+        {
+            "bbox": [
+                170.46486928104576,
+                800.5716038510101,
+                281.3725490196078,
+                10.172335542929318
+            ],
+            "text": "rpl_semi_sync_master_enabled",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "rpl_semi_sync_master_enables"
+        },
+        {
+            "bbox": [
+                451.83741830065355,
+                799.4197601010101,
+                24.201355392156927,
+                11.97127525252526
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                476.0387736928105,
+                800.5716038510101,
+                271.3235294117647,
+                10.172335542929318
+            ],
+            "text": "rpl_semi_sync_slave_enabled",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "rpl_semi_sync_slave_enables"
+        },
+        {
+            "bbox": [
+                747.3623533496732,
+                799.4197601010101,
+                187.1462753267973,
+                11.97127525252526
+            ],
+            "text": ", the value should be 1 to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", giá trị phải là 1 đến"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                814.9500631313132,
+                687.939133986928,
+                11.97127525252526
+            ],
+            "text": "enable semisynchronous replication or 0 to disable it. By default, these variables are set to 0.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cho phép sao chép bán nguyệt hoặc 0 để vô hiệu hóa nó. Theo mặc định, các biến này được đặt thành 0."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                843.2191231060606,
+                29.778594771241842,
+                11.97127525252526
+            ],
+            "text": "For ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vì "
+        },
+        {
+            "bbox": [
+                170.46486928104576,
+                844.3709668560606,
+                281.3725490196078,
+                10.17233554292929
+            ],
+            "text": "rpl_semi_sync_master_timeout",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "rpl_semi_sync_master_timeout"
+        },
+        {
+            "bbox": [
+                451.83741830065355,
+                843.2191231060606,
+                81.93302328431378,
+                11.97127525252526
+            ],
+            "text": ", the value ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", giá trị "
+        },
+        {
+            "bbox": [
+                533.7704415849673,
+                844.3709668560606,
+                10.049019607843206,
+                10.17233554292929
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                543.8194611928105,
+                843.2191231060606,
+                380.7238729575164,
+                11.97127525252526
+            ],
+            "text": " is given in milliseconds. The default value is 10000",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được đưa ra trong mili giây. Giá trị mặc định là 10000"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                858.7494261363636,
+                101.46160130718957,
+                11.97127525252526
+            ],
+            "text": "(10 seconds).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "(10 giây)."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                887.0184731691919,
+                767.9628770424838,
+                11.971279135101
+            ],
+            "text": "If you enable semisynchronous replication on a replica at runtime, you must also start the replication I/O",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu bạn kích hoạt sao chép hình bán nguyệt trên bản sao vào thời gian chạy, bạn cũng phải bắt đầu bản sao I/O sao"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                902.5487800820707,
+                782.8856209150329,
+                11.971275252525245
+            ],
+            "text": "thread (stopping it first if it is already running) to cause the replica to connect to the source and register as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chủ đề (dừng nó trước nếu nó đã chạy) để khiến bản sao kết nối với nguồn và đăng ký dưới dạng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                918.0790831123737,
+                202.90643750000004,
+                11.971275252525245
+            ],
+            "text": "a semisynchronous replica:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "một bản sao bán kết hợp:"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3650",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3650"
+        }
+    ]
+}

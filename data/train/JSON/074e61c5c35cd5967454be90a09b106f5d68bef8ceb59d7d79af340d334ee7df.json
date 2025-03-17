@@ -1,0 +1,1676 @@
+{
+    "metadata": {
+        "page_hash": "074e61c5c35cd5967454be90a09b106f5d68bef8ceb59d7d79af340d334ee7df",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4415,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                319.64258210784317,
+                48.370422979798036,
+                358.1805723039215,
+                11.971275252525288
+            ],
+            "text": "ndb_restore — Restore an NDB Cluster Backup",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "NDB_RESTORE - Khôi phục bản sao lưu cụm NDB"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                97.54971590909099,
+                37.23161764705884,
+                11.971275252525174
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                97.54971590909099,
+                61.44975490196077,
+                11.971275252525174
+            ],
+            "text": "Boolean",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Boolean"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                118.90388257575762,
+                100.54044117647061,
+                11.971275252525288
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                120.05572632575763,
+                50.24509803921569,
+                10.172335542929318
+            ],
+            "text": "FALSE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SAI"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                152.8764204545455,
+                53.0588235294118,
+                11.971275252525288
+            ],
+            "text": "Cause ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gây ra "
+        },
+        {
+            "bbox": [
+                210.4934640522876,
+                154.0282642045455,
+                110.53919893790851,
+                10.172335542929318
+            ],
+            "text": "ndb_restore",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ndb_restore"
+        },
+        {
+            "bbox": [
+                321.0326629901961,
+                152.8764204545455,
+                141.52369281045748,
+                11.971275252525288
+            ],
+            "text": " to output its log to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để xuất nhật ký của nó đến "
+        },
+        {
+            "bbox": [
+                462.5563558006536,
+                154.0282642045455,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "stdout",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Stdout"
+        },
+        {
+            "bbox": [
+                522.8504734477124,
+                152.8764204545455,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                181.34864267676778,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                182.50048642676768,
+                120.58823529411765,
+                10.172335542929318
+            ],
+            "text": "--print-meta",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-in-meta"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                225.674715909091,
+                172.17320261437914,
+                11.971275252525174
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                226.8265596590909,
+                120.58823529411768,
+                10.172335542929318
+            ],
+            "text": "--print-meta",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-in-meta"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                247.02888257575762,
+                37.23161764705884,
+                11.971275252525288
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                247.02888257575762,
+                61.44975490196077,
+                11.971275252525288
+            ],
+            "text": "Boolean",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Boolean"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                268.38304924242425,
+                100.54044117647061,
+                11.971275252525288
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                269.53489299242426,
+                50.24509803921569,
+                10.172335542929318
+            ],
+            "text": "FALSE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SAI"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                302.3555871212121,
+                153.59924795751638,
+                11.971275252525288
+            ],
+            "text": "Print all metadata to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "In tất cả siêu dữ liệu "
+        },
+        {
+            "bbox": [
+                311.03392197712424,
+                303.50743087121214,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "stdout",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Stdout"
+        },
+        {
+            "bbox": [
+                371.328039624183,
+                302.3555871212121,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                330.8278093434344,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                331.9796530934343,
+                130.6372549019608,
+                10.172335542929318
+            ],
+            "text": "print-sql-log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "In-SQL-LOG"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                375.1538825757576,
+                172.17320261437914,
+                11.971275252525288
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                376.30572632575763,
+                150.73529411764707,
+                10.172335542929318
+            ],
+            "text": "--print-sql-log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-dấu-SQL-LOG"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                396.50804924242425,
+                37.23161764705884,
+                11.971275252525288
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                396.50804924242425,
+                61.44975490196077,
+                11.971275252525288
+            ],
+            "text": "Boolean",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Boolean"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                417.862215909091,
+                100.54044117647061,
+                11.971275252525174
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                419.014059659091,
+                50.24509803921569,
+                10.172335542929204
+            ],
+            "text": "FALSE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SAI"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                451.83475378787887,
+                175.95833333333334,
+                11.971275252525174
+            ],
+            "text": "Log SQL statements to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đăng nhập các câu lệnh SQL vào "
+        },
+        {
+            "bbox": [
+                333.39297385620915,
+                452.9865587121212,
+                60.29411764705884,
+                10.17237436868686
+            ],
+            "text": "stdout",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Stdout"
+        },
+        {
+            "bbox": [
+                393.687091503268,
+                451.83475378787887,
+                535.2778280228758,
+                11.971275252525174
+            ],
+            "text": ". Use the option to enable; normally this behavior is disabled. The option",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Sử dụng tùy chọn để bật; Thông thường hành vi này bị vô hiệu hóa. Tùy chọn"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                467.36505681818187,
+                736.3251801470587,
+                11.971275252525288
+            ],
+            "text": "checks before attempting to log whether all the tables being restored have explicitly defined primary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểm tra trước khi thử đăng nhập xem tất cả các bảng được khôi phục có xác định rõ ràng chính không"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                482.8953598484849,
+                567.8366180555555,
+                11.971275252525288
+            ],
+            "text": "keys; queries on a table having only the hidden primary key implemented by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chìa khóa; Truy vấn trên bảng chỉ có khóa chính ẩn được thực hiện bởi "
+        },
+        {
+            "bbox": [
+                725.2712585784313,
+                484.0471647727272,
+                30.147058823529505,
+                10.172374368686974
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                755.4183174019608,
+                482.8953598484849,
+                175.03713970588228,
+                11.971275252525288
+            ],
+            "text": " cannot be converted to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " không thể được chuyển đổi thành"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                498.4256628787879,
+                77.26021241830065,
+                11.971275252525288
+            ],
+            "text": "valid SQL.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "SQL hợp lệ."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                529.486268939394,
+                333.25895343137256,
+                11.971275252525231
+            ],
+            "text": "This option does not work with tables having ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn này không hoạt động với các bảng có "
+        },
+        {
+            "bbox": [
+                490.6936441993464,
+                530.6380738636364,
+                40.1960784313726,
+                10.172374368686917
+            ],
+            "text": "BLOB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BLOB"
+        },
+        {
+            "bbox": [
+                530.889722630719,
+                529.486268939394,
+                71.66627491830059,
+                11.971275252525231
+            ],
+            "text": " columns.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cột."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                557.9584911616162,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                559.1102960858586,
+                200.98039215686273,
+                10.172374368686917
+            ],
+            "text": "--progress-frequency",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Tương tự"
+        },
+        {
+            "bbox": [
+                358.41503267973854,
+                557.9584911616162,
+                9.781045751633997,
+                11.971275252525288
+            ],
+            "text": "=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "="
+        },
+        {
+            "bbox": [
+                368.19607843137254,
+                559.1102960858586,
+                10.04901960784315,
+                10.172374368686917
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                602.2845643939395,
+                172.17320261437914,
+                11.971275252525231
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                603.4364081439394,
+                221.07843137254906,
+                10.172335542929261
+            ],
+            "text": "--progress-frequency=#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-ProTrogress-frequency =#"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                623.638731060606,
+                37.23161764705884,
+                11.971275252525288
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                623.638731060606,
+                62.33741830065367,
+                11.971275252525288
+            ],
+            "text": "Numeric",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                644.9928977272727,
+                100.54044117647061,
+                11.971275252525231
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                646.1447414772728,
+                10.049019607843206,
+                10.172335542929261
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                666.3470643939395,
+                115.39622508169936,
+                11.971275252525231
+            ],
+            "text": "Minimum Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị tối thiểu"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                667.4989081439394,
+                10.049019607843206,
+                10.172335542929261
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                687.701231060606,
+                120.05227083333335,
+                11.971275252525288
+            ],
+            "text": "Maximum Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị tối đa"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                688.8530748106061,
+                50.24509803921569,
+                10.172335542929261
+            ],
+            "text": "65535",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "65535"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                721.673768939394,
+                191.7687908496732,
+                11.971275252525288
+            ],
+            "text": "Print a status report each ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "In một báo cáo trạng thái mỗi "
+        },
+        {
+            "bbox": [
+                349.203431372549,
+                722.8255738636365,
+                10.04901960784315,
+                10.17237436868686
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                359.25245098039215,
+                721.673768939394,
+                543.6519272875817,
+                11.971275252525288
+            ],
+            "text": " seconds while the backup is in progress. 0 (the default) causes no status",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giây trong khi bản sao lưu đang được tiến hành. 0 (mặc định) không gây ra trạng thái"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                737.204071969697,
+                337.8982843137255,
+                11.971275252525231
+            ],
+            "text": "reports to be printed. The maximum is 65535.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Báo cáo sẽ được in. Tối đa là 65535."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                765.6762941919192,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                766.8281379419192,
+                200.98039215686273,
+                10.172335542929318
+            ],
+            "text": "--promote-attributes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Tử thuộc tính"
+        },
+        {
+            "bbox": [
+                358.41503267973854,
+                765.6762941919192,
+                9.312091503267993,
+                11.971275252525231
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                367.72712418300654,
+                766.8281379419192,
+                20.0980392156863,
+                10.172335542929318
+            ],
+            "text": "-A",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-MỘT"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                810.0023674242425,
+                172.17320261437914,
+                11.97127525252526
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                811.1541982323232,
+                200.98039215686276,
+                10.172348484848499
+            ],
+            "text": "--promote-attributes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Tử thuộc tính"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                845.1267490530303,
+                110.5392156862745,
+                10.172335542929318
+            ],
+            "text": "ndb_restore",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ndb_restore"
+        },
+        {
+            "bbox": [
+                267.9738562091503,
+                843.9749053030303,
+                126.58415032679744,
+                11.97127525252526
+            ],
+            "text": " supports limited ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Hỗ trợ giới hạn "
+        },
+        {
+            "bbox": [
+                394.55800653594775,
+                843.9749053030303,
+                139.63114419934647,
+                11.97127525252526
+            ],
+            "text": "attribute promotion",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "Thúc đẩy thuộc tính"
+        },
+        {
+            "bbox": [
+                534.1891507352942,
+                843.9749053030303,
+                395.61318709150316,
+                11.97127525252526
+            ],
+            "text": " in much the same way that it is supported by MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " theo cách tương tự như nó được MySQL hỗ trợ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                859.5052083333334,
+                763.3570763888889,
+                11.97127525252526
+            ],
+            "text": "replication; that is, data backed up from a column of a given type can generally be restored to a column",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sao chép; nghĩa là, dữ liệu được sao lưu từ một cột của một loại đã cho thường có thể được khôi phục thành một cột"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                875.0355113636364,
+                197.86519607843135,
+                11.97127525252526
+            ],
+            "text": "using a “larger, similar”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sử dụng \"lớn hơn, tương tự\""
+        },
+        {
+            "bbox": [
+                327.7320093954248,
+                875.0355113636364,
+                237.37455800653595,
+                11.97127525252526
+            ],
+            "text": " type. For example, data from a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " kiểu. Ví dụ: dữ liệu từ một "
+        },
+        {
+            "bbox": [
+                565.1066176470589,
+                876.1873551136364,
+                80.39215686274508,
+                10.17233554292929
+            ],
+            "text": "CHAR(20)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Char (20)"
+        },
+        {
+            "bbox": [
+                645.498774509804,
+                875.0355113636364,
+                270.88810539215694,
+                11.97127525252526
+            ],
+            "text": " column can be restored to a column",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cột có thể được khôi phục về một cột"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                890.5658143939394,
+                91.22834967320262,
+                11.971275252525245
+            ],
+            "text": "declared as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tuyên bố là "
+        },
+        {
+            "bbox": [
+                248.66299019607843,
+                891.7176581439394,
+                110.5392156862745,
+                10.172335542929275
+            ],
+            "text": "VARCHAR(20)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Varchar (20)"
+        },
+        {
+            "bbox": [
+                359.2022058823529,
+                890.5658143939394,
+                9.312091503267993,
+                11.971275252525245
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                368.5142973856209,
+                891.7176581439394,
+                110.53921568627447,
+                10.172335542929275
+            ],
+            "text": "VARCHAR(30)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Varchar (30)"
+        },
+        {
+            "bbox": [
+                479.0535130718954,
+                890.5658143939394,
+                28.85745138888899,
+                11.971275252525245
+            ],
+            "text": ", or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hoặc "
+        },
+        {
+            "bbox": [
+                507.9109644607844,
+                891.7176581439394,
+                80.39215686274508,
+                10.172335542929275
+            ],
+            "text": "CHAR(30)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Char (30)"
+        },
+        {
+            "bbox": [
+                588.3031213235295,
+                890.5658143939394,
+                98.68133905228751,
+                11.971275252525245
+            ],
+            "text": "; data from a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "; dữ liệu từ a "
+        },
+        {
+            "bbox": [
+                686.984460375817,
+                891.7176581439394,
+                90.44117647058818,
+                10.172335542929275
+            ],
+            "text": "MEDIUMINT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Trung bình"
+        },
+        {
+            "bbox": [
+                777.4256368464052,
+                890.5658143939394,
+                113.5706699346407,
+                11.971275252525245
+            ],
+            "text": " column can be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cột có thể"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "4386",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4386"
+        }
+    ]
+}

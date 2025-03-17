@@ -1,0 +1,1256 @@
+{
+    "metadata": {
+        "page_hash": "25a19eb8b01d63091558fad8b64bc849235b83a93f6e1852cccc8e0894be1918",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4307,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                180.94097222222223,
+                48.370422979798036,
+                635.5837250816994,
+                11.971275252525288
+            ],
+            "text": "ndb_blob_tool — Check and Repair BLOB and TEXT columns of NDB Cluster Tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "NDB_BLOB_TOOL - Kiểm tra và sửa chữa các cột Blob và văn bản của bảng cụm NDB"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                94.96133207070716,
+                651.5616830065359,
+                11.971275252525174
+            ],
+            "text": "Remove BLOB parts from NDB Cluster tables which have no corresponding inline parts.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hủy bỏ các bộ phận BLOB khỏi các bảng cụm NDB không có các bộ phận nội tuyến tương ứng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                121.9555482954546,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                123.10740498737368,
+                120.58823529411765,
+                10.17232260101025
+            ],
+            "text": "--dump-file=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--Dump-file ="
+        },
+        {
+            "bbox": [
+                278.02287581699346,
+                123.10740498737368,
+                40.19607843137254,
+                10.17232260101025
+            ],
+            "text": "file",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "tài liệu"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                149.64220896464656,
+                172.17320261437914,
+                11.971275252525288
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                150.79405271464645,
+                160.78431372549028,
+                10.172335542929432
+            ],
+            "text": "--dump-file=file",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--Dump-file = Tệp"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                170.99637563131319,
+                37.23161764705884,
+                11.971275252525288
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                170.99637563131319,
+                73.52531004901971,
+                11.971275252525288
+            ],
+            "text": "File name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên tập tin"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                192.35054229797993,
+                100.54044117647061,
+                11.971275252525174
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                193.50238604797983,
+                60.2941176470589,
+                10.172335542929318
+            ],
+            "text": "[none]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[không có]"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                222.25676799242433,
+                353.72550694444453,
+                11.971275252525174
+            ],
+            "text": "Writes a list of orphaned BLOB column parts to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Viết một danh sách các phần cột Blob mồ côi để "
+        },
+        {
+            "bbox": [
+                511.1601474673203,
+                223.40861174242423,
+                40.19607843137254,
+                10.172335542929318
+            ],
+            "text": "file",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "tài liệu"
+        },
+        {
+            "bbox": [
+                551.3562258986929,
+                222.25676799242433,
+                346.28923243464044,
+                11.971275252525174
+            ],
+            "text": ". The information written to the file includes the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Thông tin được ghi vào tệp bao gồm"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                237.78707102272733,
+                472.00246772875823,
+                11.971275252525288
+            ],
+            "text": "table key and BLOB part number for each orphaned BLOB part.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phím bảng và số phần BLOB cho mỗi phần BLOB mồ côi."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                264.78136489899,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                265.9331309974748,
+                60.29411764705884,
+                10.172413194444403
+            ],
+            "text": "--help",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--giúp đỡ"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                292.46794791666673,
+                172.17320261437914,
+                11.971275252525288
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                293.61979166666674,
+                60.2941176470589,
+                10.172335542929318
+            ],
+            "text": "--help",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--giúp đỡ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                322.37417361111113,
+                190.8308823529412,
+                11.971275252525288
+            ],
+            "text": "Display help text and exit.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hiển thị trợ giúp văn bản và thoát."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                349.3683898358587,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                350.5202335858586,
+                120.58823529411765,
+                10.172335542929432
+            ],
+            "text": "--login-path",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--Login-path"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                377.05503756313135,
+                172.17320261437914,
+                11.971275252525288
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                378.20689425505054,
+                170.83333333333337,
+                10.172322601010137
+            ],
+            "text": "--login-path=path",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Login-path = đường dẫn"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                398.4092042297981,
+                37.23161764705884,
+                11.971275252525174
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                398.4092042297981,
+                43.74673202614383,
+                11.971275252525174
+            ],
+            "text": "String",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sợi dây"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                419.7633708964647,
+                100.54044117647061,
+                11.971275252525288
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                420.9152275883839,
+                60.2941176470589,
+                10.172322601010137
+            ],
+            "text": "[none]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[không có]"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                449.66957070707076,
+                230.85947712418303,
+                11.971275252525174
+            ],
+            "text": "Read given path from login file.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đọc đường dẫn đã cho từ tệp đăng nhập."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                476.66382575757575,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                477.8156306818182,
+                190.93137254901964,
+                10.17237436868686
+            ],
+            "text": "--ndb-connectstring",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--NDB-ConnectString"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                504.3504734848485,
+                172.17320261437914,
+                11.971275252525231
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                505.5023301767677,
+                371.81372549019613,
+                10.17232260101008
+            ],
+            "text": "--ndb-connectstring=connection-string",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--NDB-ConnectedTring = chuỗi kết nối"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                525.7046401515152,
+                37.23161764705884,
+                11.971275252525231
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                525.7046401515152,
+                43.74673202614383,
+                11.971275252525231
+            ],
+            "text": "String",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sợi dây"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                547.0588068181819,
+                100.54044117647061,
+                11.971275252525231
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                548.2106635101011,
+                60.2941176470589,
+                10.172322601010023
+            ],
+            "text": "[none]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[không có]"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                576.9649936868686,
+                768.75,
+                11.971275252525231
+            ],
+            "text": "Set connect string for connecting to ndb_mgmd. Syntax: \"[nodeid=id;][host=]hostname[:port]\". Overrides",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đặt chuỗi kết nối để kết nối với NDB_MGMD. Cú pháp: \"[nodeId = id;] [host =] hostName [: port]\". Ghi đè"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                592.4952967171716,
+                354.5796903594771,
+                11.971275252525288
+            ],
+            "text": "entries in NDB_CONNECTSTRING and my.cnf.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các mục trong NDB_ConnectString và My.cnf."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                619.4895647095959,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                620.6413696338384,
+                150.7352941176471,
+                10.172374368686917
+            ],
+            "text": "--ndb-mgmd-host",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--NDB-MGMD-HOST"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                647.1762124368687,
+                172.17320261437914,
+                11.971275252525231
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                648.3280691287879,
+                331.61764705882354,
+                10.17232260101008
+            ],
+            "text": "--ndb-mgmd-host=connection-string",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--ndb-mgmd-host = chuỗi kết nối"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                668.5303791035353,
+                37.23161764705884,
+                11.971275252525231
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                668.5303791035353,
+                43.74673202614383,
+                11.971275252525231
+            ],
+            "text": "String",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sợi dây"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                689.8845457702021,
+                100.54044117647061,
+                11.971275252525288
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                691.0364024621213,
+                60.2941176470589,
+                10.172322601010137
+            ],
+            "text": "[none]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[không có]"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                719.7907326388888,
+                70.74511478758174,
+                11.971275252525288
+            ],
+            "text": "Same as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giống như "
+        },
+        {
+            "bbox": [
+                228.1797218137255,
+                720.9425505050506,
+                190.9313725490196,
+                10.17236142676768
+            ],
+            "text": "--ndb-connectstring",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--NDB-ConnectString"
+        },
+        {
+            "bbox": [
+                419.11112785947716,
+                719.7907326388888,
+                4.6560290032679745,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                746.7850006313131,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                747.9368055555556,
+                120.58823529411765,
+                10.17237436868686
+            ],
+            "text": "--ndb-nodeid",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--NDB-NodeId"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                774.4716483585859,
+                172.17320261437914,
+                11.97127525252526
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                775.6234791666667,
+                140.68627450980398,
+                10.17234848484847
+            ],
+            "text": "--ndb-nodeid=#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--ndb-nodeid =#"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                795.8258150252525,
+                37.23161764705884,
+                11.97127525252526
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                795.8258150252525,
+                52.137663398692894,
+                11.97127525252526
+            ],
+            "text": "Integer",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số nguyên"
+        },
+        {
+            "bbox": [
+                161.203022875817,
+                817.1799816919192,
+                100.54044117647061,
+                11.971275252525231
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                549.7651143790849,
+                818.3318125000001,
+                60.2941176470589,
+                10.172348484848442
+            ],
+            "text": "[none]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "[không có]"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                847.0861297348486,
+                524.0898860294118,
+                11.971275252525231
+            ],
+            "text": "Set node ID for this node, overriding any ID set by --ndb-connectstring.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đặt ID nút cho nút này, ghi đè bất kỳ ID nào được đặt bởi--NDB-ConnectedTring."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                874.0804236111111,
+                19.361107761437893,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                875.2322803030303,
+                301.47058823529414,
+                10.172322601010109
+            ],
+            "text": "--ndb-optimized-node-selection",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--NDB-Tối ưu hóa nút"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "4278",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4278"
+        }
+    ]
+}

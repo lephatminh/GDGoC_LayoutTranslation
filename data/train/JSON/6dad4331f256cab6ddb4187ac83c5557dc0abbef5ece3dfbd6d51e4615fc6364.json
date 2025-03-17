@@ -1,0 +1,1996 @@
+{
+    "metadata": {
+        "page_hash": "6dad4331f256cab6ddb4187ac83c5557dc0abbef5ece3dfbd6d51e4615fc6364",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4998,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                371.1856617647059,
+                48.370422979798036,
+                312.7757352941176,
+                11.971275252525288
+            ],
+            "text": "Performance Schema Stage Event Tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng sự kiện giai đoạn biểu đồ"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                94.96133207070716,
+                33.51349714052287,
+                11.971275252525174
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                221.0951964869281,
+                96.11317582070706,
+                80.39215686274508,
+                10.172335542929318
+            ],
+            "text": "EVENT_ID",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sự kiện_id"
+        },
+        {
+            "bbox": [
+                301.4873533496732,
+                94.96133207070716,
+                651.6788880718956,
+                11.971275252525174
+            ],
+            "text": " value of the event within which this event is nested. The nesting event for a stage event",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giá trị của sự kiện trong đó sự kiện này được lồng. Sự kiện làm tổ cho một sự kiện sân khấu"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                110.49163510101016,
+                211.31413398692808,
+                11.971275252525288
+            ],
+            "text": "is usually a statement event.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thường là một sự kiện tuyên bố."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                138.90689993686874,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                140.05875662878793,
+                180.88235294117646,
+                10.172322601010137
+            ],
+            "text": "NESTING_EVENT_TYPE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nesting_event_type"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                167.3221777146465,
+                273.70176388888893,
+                11.971275252525174
+            ],
+            "text": "The nesting event type. The value is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Loại sự kiện làm tổ. Giá trị là "
+        },
+        {
+            "bbox": [
+                461.28346323529416,
+                168.4740214646465,
+                110.53921568627453,
+                10.172335542929204
+            ],
+            "text": "TRANSACTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GIAO DỊCH"
+        },
+        {
+            "bbox": [
+                571.8227291666667,
+                167.3221777146465,
+                9.312091503267993,
+                11.971275252525174
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                581.1348206699347,
+                168.4740214646465,
+                90.44117647058818,
+                10.172335542929204
+            ],
+            "text": "STATEMENT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TUYÊN BỐ"
+        },
+        {
+            "bbox": [
+                671.5759971405229,
+                167.3221777146465,
+                9.312091503267993,
+                11.971275252525174
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                680.8880886437909,
+                168.4740214646465,
+                50.24509803921569,
+                10.172335542929204
+            ],
+            "text": "STAGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SÂN KHẤU"
+        },
+        {
+            "bbox": [
+                731.1331866830066,
+                167.3221777146465,
+                28.857451388888876,
+                11.971275252525174
+            ],
+            "text": ", or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hoặc "
+        },
+        {
+            "bbox": [
+                759.9905878267974,
+                168.4740214646465,
+                40.1960784313726,
+                10.172335542929204
+            ],
+            "text": "WAIT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHỜ ĐỢI"
+        },
+        {
+            "bbox": [
+                800.18666625817,
+                167.3221777146465,
+                4.656045751633883,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                195.73744255050508,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                196.88929924242439,
+                211.02942851307188,
+                10.172322601010023
+            ],
+            "text": "events_stages_current",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_stages_cien"
+        },
+        {
+            "bbox": [
+                415.37620874183006,
+                195.73744255050508,
+                185.27044158496733,
+                11.971275252525288
+            ],
+            "text": " table has these indexes:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng có các chỉ mục này:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                224.15270738636377,
+                138.65973897058822,
+                11.971275252525174
+            ],
+            "text": "•Primary key on (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Khóa chính trên ("
+        },
+        {
+            "bbox": [
+                309.4930388071895,
+                225.30456407828285,
+                90.44117647058823,
+                10.172322601010137
+            ],
+            "text": "THREAD_ID",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thread_id"
+        },
+        {
+            "bbox": [
+                399.93421527777775,
+                224.15270738636377,
+                9.312091503267993,
+                11.971275252525174
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                409.2463402777778,
+                225.30456407828285,
+                80.39215686274508,
+                10.172322601010137
+            ],
+            "text": "EVENT_ID",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sự kiện_id"
+        },
+        {
+            "bbox": [
+                489.6384971405229,
+                224.15270738636377,
+                5.577172385620884,
+                11.971275252525174
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                253.71982891414143,
+                140.6862745098039,
+                10.172413194444516
+            ],
+            "text": "TRUNCATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bàn cắt ngắn"
+        },
+        {
+            "bbox": [
+                311.51960784313724,
+                252.56806281565662,
+                148.00531045751637,
+                11.971275252525288
+            ],
+            "text": " is permitted for the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được phép cho "
+        },
+        {
+            "bbox": [
+                459.5249183006536,
+                253.71982891414143,
+                211.0294117647059,
+                10.172413194444516
+            ],
+            "text": "events_stages_current",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_stages_cien"
+        },
+        {
+            "bbox": [
+                670.5543300653595,
+                252.56806281565662,
+                201.0641004901961,
+                11.971275252525288
+            ],
+            "text": " table. It removes the rows.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn. Nó loại bỏ các hàng."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                281.33919160353537,
+                83.8088235294118,
+                14.365491477272712
+            ],
+            "text": "27.12.5.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "27.12.5.2"
+        },
+        {
+            "bbox": [
+                179.8372549019608,
+                281.33919160353537,
+                316.10196078431375,
+                14.365491477272712
+            ],
+            "text": "The events_stages_history Table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Bảng sự kiện_stages_history"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                312.50469191919194,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                313.65645801767675,
+                211.02942851307188,
+                10.172413194444516
+            ],
+            "text": "events_stages_history",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_stages_history"
+        },
+        {
+            "bbox": [
+                415.37620874183006,
+                312.50469191919194,
+                140.58581781045757,
+                11.971275252525288
+            ],
+            "text": " table contains the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng chứa "
+        },
+        {
+            "bbox": [
+                555.9620265522876,
+                313.65645801767675,
+                10.049019607843093,
+                10.172413194444516
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                566.0110461601307,
+                312.50469191919194,
+                345.40151879084965,
+                11.971275252525288
+            ],
+            "text": " most recent stage events that have ended per",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các sự kiện giai đoạn gần đây nhất đã kết thúc"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                328.03499494949494,
+                730.8819611928104,
+                11.971275252525288
+            ],
+            "text": "thread. Stage events are not added to the table until they have ended. When the table contains the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chủ đề. Các sự kiện giai đoạn không được thêm vào bảng cho đến khi chúng kết thúc. Khi bảng chứa"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                343.56529797979806,
+                769.8051470588235,
+                11.971275252525174
+            ],
+            "text": "maximum number of rows for a given thread, the oldest thread row is discarded when a new row for that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng hàng tối đa cho một luồng đã cho, hàng luồng cũ nhất bị loại bỏ khi một hàng mới cho điều đó"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                359.09560101010106,
+                473.82802287581706,
+                11.971236426767632
+            ],
+            "text": "thread is added. When a thread ends, all its rows are discarded.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chủ đề được thêm vào. Khi một chủ đề kết thúc, tất cả các hàng của nó bị loại bỏ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                387.5108270202021,
+                366.7724505718953,
+                11.971275252525174
+            ],
+            "text": "The Performance Schema autosizes the value of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lược đồ hiệu suất tự động hóa giá trị của "
+        },
+        {
+            "bbox": [
+                537.6057839052287,
+                388.66264488636364,
+                10.049019607843206,
+                10.17236142676768
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                547.6548035130719,
+                387.5108270202021,
+                390.9570910947713,
+                11.971275252525174
+            ],
+            "text": " during server startup. To set the number of rows per",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Trong quá trình khởi động máy chủ. Để đặt số lượng hàng trên mỗi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                403.0411300505051,
+                179.65970547385623,
+                11.971275252525288
+            ],
+            "text": "thread explicitly, set the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chủ đề một cách rõ ràng, đặt "
+        },
+        {
+            "bbox": [
+                350.4930555555556,
+                404.19294791666675,
+                452.2059158496732,
+                10.17236142676768
+            ],
+            "text": "performance_schema_events_stages_history_size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Performance_Schema_events_stages_history_size"
+        },
+        {
+            "bbox": [
+                802.6989211601308,
+                403.0411300505051,
+                139.61439583333322,
+                11.971275252525288
+            ],
+            "text": " system variable at",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống tại"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                418.5714330808081,
+                107.0388071895425,
+                11.971275252525288
+            ],
+            "text": "server startup.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Máy chủ khởi động."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                446.98671085858587,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                448.13851578282834,
+                211.02942851307188,
+                10.17237436868686
+            ],
+            "text": "events_stages_history",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_stages_history"
+        },
+        {
+            "bbox": [
+                415.37620874183006,
+                446.98671085858587,
+                335.1348039215686,
+                11.971275252525288
+            ],
+            "text": " table has the same columns and indexing as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng có cùng các cột và lập chỉ mục là"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                463.66881881313134,
+                211.02941176470588,
+                10.17237436868686
+            ],
+            "text": "events_stages_current",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_stages_cien"
+        },
+        {
+            "bbox": [
+                381.8627450980392,
+                462.517013888889,
+                471.63400367647057,
+                11.971275252525174
+            ],
+            "text": ". See Section 27.12.5.1, “The events_stages_current Table”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Xem phần 27.12.5.1, Bảng sự kiện_stages_ci hiện"
+        },
+        {
+            "bbox": [
+                825.9289383169935,
+                462.517013888889,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                492.08413541666664,
+                140.6862745098039,
+                10.17236142676768
+            ],
+            "text": "TRUNCATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bàn cắt ngắn"
+        },
+        {
+            "bbox": [
+                311.51960784313724,
+                490.9323175505051,
+                148.00531045751637,
+                11.971275252525174
+            ],
+            "text": " is permitted for the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được phép cho "
+        },
+        {
+            "bbox": [
+                459.5249183006536,
+                492.08413541666664,
+                211.0294117647059,
+                10.17236142676768
+            ],
+            "text": "events_stages_history",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_stages_history"
+        },
+        {
+            "bbox": [
+                670.5543300653595,
+                490.9323175505051,
+                201.0641004901961,
+                11.971275252525174
+            ],
+            "text": " table. It removes the rows.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn. Nó loại bỏ các hàng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                519.3475953282829,
+                738.2512924836601,
+                11.971275252525231
+            ],
+            "text": "For more information about the relationship between the three stage event tables, see Section 27.9,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin về mối quan hệ giữa các bảng sự kiện ba giai đoạn, xem Phần 27.9,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                534.8778983585859,
+                502.25,
+                11.971275252525288
+            ],
+            "text": "“Performance Schema Tables for Current and Historical Events”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng lược đồ hiệu suất cho các sự kiện hiện tại và lịch sử ”"
+        },
+        {
+            "bbox": [
+                645.515539624183,
+                534.8778983585859,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                563.2931631944444,
+                762.2348688725491,
+                11.971275252525288
+            ],
+            "text": "For information about configuring whether to collect stage events, see Section 27.12.5, “Performance",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thông tin về việc định cấu hình có nên thu thập các sự kiện giai đoạn hay không, hãy xem Phần 27.12.5, Hiệu suất của Hồi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                578.8234662247476,
+                231.61313684640518,
+                11.971275252525231
+            ],
+            "text": "Schema Stage Event Tables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng sự kiện giai đoạn lược đồ ”"
+        },
+        {
+            "bbox": [
+                388.66258169934645,
+                578.8234662247476,
+                4.65604575163394,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                607.5946338383839,
+                83.8088235294118,
+                14.365530303030255
+            ],
+            "text": "27.12.5.3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "27.12.5.3"
+        },
+        {
+            "bbox": [
+                179.8372549019608,
+                607.5946338383839,
+                369.70343137254895,
+                14.365530303030255
+            ],
+            "text": "The events_stages_history_long Table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Các sự kiện_stages_history_long"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                638.7600953282829,
+                33.51348039215688,
+                11.971275252525231
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                639.9119131944444,
+                261.2745265522876,
+                10.17236142676768
+            ],
+            "text": "events_stages_history_long",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_stages_history_long"
+        },
+        {
+            "bbox": [
+                465.62134027777785,
+                638.7600953282829,
+                140.58578431372547,
+                11.971275252525231
+            ],
+            "text": " table contains the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng chứa "
+        },
+        {
+            "bbox": [
+                606.2071245915033,
+                639.9119131944444,
+                10.049019607843093,
+                10.17236142676768
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                616.2561441993464,
+                638.7600953282829,
+                316.5441176470589,
+                11.971275252525231
+            ],
+            "text": " most recent stage events that have ended",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các sự kiện giai đoạn gần đây nhất đã kết thúc"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                654.2903983585859,
+                785.7663901143791,
+                11.971275252525288
+            ],
+            "text": "globally, across all threads. Stage events are not added to the table until they have ended. When the table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trên toàn cầu, trên tất cả các chủ đề. Các sự kiện giai đoạn không được thêm vào bảng cho đến khi chúng kết thúc. Khi bàn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                669.8207013888889,
+                781.0098206699347,
+                11.971275252525231
+            ],
+            "text": "becomes full, the oldest row is discarded when a new row is added, regardless of which thread generated",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trở nên đầy đủ, hàng cũ nhất bị loại bỏ khi một hàng mới được thêm vào, bất kể luồng nào được tạo ra"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                685.3510044191919,
+                78.18135580065359,
+                11.971275252525288
+            ],
+            "text": "either row.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hoặc hàng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                713.7662692550505,
+                366.7724505718953,
+                11.971275252525231
+            ],
+            "text": "The Performance Schema autosizes the value of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lược đồ hiệu suất tự động hóa giá trị của "
+        },
+        {
+            "bbox": [
+                537.6057839052287,
+                714.9180871212121,
+                10.049019607843206,
+                10.17236142676768
+            ],
+            "text": "N",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "N"
+        },
+        {
+            "bbox": [
+                547.6548035130719,
+                713.7662692550505,
+                417.017548611111,
+                11.971275252525231
+            ],
+            "text": " during server startup. To set the table size explicitly, set",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Trong quá trình khởi động máy chủ. Để đặt kích thước bảng một cách rõ ràng, đã đặt"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                729.2965722853535,
+                27.936274509803923,
+                11.971275252525231
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                198.76960784313727,
+                730.4483901515152,
+                502.45096364379083,
+                10.172361426767623
+            ],
+            "text": "performance_schema_events_stages_history_long_size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Performance_Schema_events_stages_history_long_size"
+        },
+        {
+            "bbox": [
+                701.2205714869281,
+                729.2965722853535,
+                251.30921527777775,
+                11.971275252525231
+            ],
+            "text": " system variable at server startup.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống tại máy chủ khởi động."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                757.7118500631314,
+                33.51348039215688,
+                11.971275252525231
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                758.8636938131312,
+                261.2745265522876,
+                10.172335542929318
+            ],
+            "text": "events_stages_history_long",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_stages_history_long"
+        },
+        {
+            "bbox": [
+                465.62134027777785,
+                757.7118500631314,
+                240.1715016339869,
+                11.971275252525231
+            ],
+            "text": " table has the same columns as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng có cùng các cột như "
+        },
+        {
+            "bbox": [
+                705.7928921568628,
+                758.8636938131312,
+                211.02946200980398,
+                10.172335542929318
+            ],
+            "text": "events_stages_current",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_stages_cien"
+        },
+        {
+            "bbox": [
+                916.8223541666667,
+                757.7118500631314,
+                4.655995506535987,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                773.2421530934344,
+                462.3219121732026,
+                11.97127525252526
+            ],
+            "text": "See Section 27.12.5.1, “The events_stages_current Table”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xem phần 27.12.5.1, Bảng sự kiện_stages_ci hiện"
+        },
+        {
+            "bbox": [
+                605.5874015522876,
+                773.2421530934344,
+                60.49508129084961,
+                11.97127525252526
+            ],
+            "text": ". Unlike ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Không giống như "
+        },
+        {
+            "bbox": [
+                666.0825330882353,
+                774.3939968434344,
+                211.02941176470586,
+                10.17233554292929
+            ],
+            "text": "events_stages_current",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_stages_cien"
+        },
+        {
+            "bbox": [
+                877.1119448529412,
+                773.2421530934344,
+                4.655995506535874,
+                11.97127525252526
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                789.9242998737374,
+                261.27450980392155,
+                10.17233554292929
+            ],
+            "text": "events_stages_history_long",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_stages_history_long"
+        },
+        {
+            "bbox": [
+                432.1078431372549,
+                788.7724561237374,
+                126.6176638071895,
+                11.97127525252526
+            ],
+            "text": " has no indexing.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " không có lập chỉ mục."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                818.3395776515151,
+                140.6862745098039,
+                10.17232260101008
+            ],
+            "text": "TRUNCATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bàn cắt ngắn"
+        },
+        {
+            "bbox": [
+                311.51960784313724,
+                817.1877209595959,
+                148.00531045751637,
+                11.97127525252526
+            ],
+            "text": " is permitted for the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được phép cho "
+        },
+        {
+            "bbox": [
+                459.5249183006536,
+                818.3395776515151,
+                261.2745098039216,
+                10.17232260101008
+            ],
+            "text": "events_stages_history_long",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Events_stages_history_long"
+        },
+        {
+            "bbox": [
+                720.7994281045752,
+                817.1877209595959,
+                201.0641004901961,
+                11.97127525252526
+            ],
+            "text": " table. It removes the rows.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn. Nó loại bỏ các hàng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                845.6029987373738,
+                738.2512924836601,
+                11.97127525252526
+            ],
+            "text": "For more information about the relationship between the three stage event tables, see Section 27.9,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin về mối quan hệ giữa các bảng sự kiện ba giai đoạn, xem Phần 27.9,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                861.1333017676768,
+                502.25,
+                11.971275252525231
+            ],
+            "text": "“Performance Schema Tables for Current and Historical Events”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng lược đồ hiệu suất cho các sự kiện hiện tại và lịch sử ”"
+        },
+        {
+            "bbox": [
+                645.515539624183,
+                861.1333017676768,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                889.5485666035354,
+                762.2348688725491,
+                11.971273958333327
+            ],
+            "text": "For information about configuring whether to collect stage events, see Section 27.12.5, “Performance",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thông tin về việc định cấu hình có nên thu thập các sự kiện giai đoạn hay không, hãy xem Phần 27.12.5, Hiệu suất của Hồi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                905.0788683396464,
+                231.61313684640518,
+                11.97127525252526
+            ],
+            "text": "Schema Stage Event Tables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng sự kiện giai đoạn lược đồ ”"
+        },
+        {
+            "bbox": [
+                388.66258169934645,
+                905.0788683396464,
+                4.65604575163394,
+                11.97127525252526
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "4969",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4969"
+        }
+    ]
+}

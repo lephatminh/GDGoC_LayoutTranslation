@@ -1,0 +1,616 @@
+{
+    "metadata": {
+        "page_hash": "8dea9022b5b9346fb0e2394fe59a4325546bb2d67aba03601815ca5f5bbbb89e",
+        "original_filename": "openshift_tutorial.pdf",
+        "page_no": 21,
+        "num_pages": 37,
+        "original_width": 595.32001,
+        "original_height": 841.91998,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                824.1391046136682,
+                46.311977891295555,
+                81.36198210438101,
+                13.440743798478366
+            ],
+            "text": "OpenShift ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Calibri",
+                "size": 11.03999996185303
+            },
+            "text_vi": "OpenShift "
+        },
+        {
+            "bbox": [
+                881.990360528953,
+                898.0145351818352,
+                23.510726189096204,
+                13.440707274817257
+            ],
+            "text": "17 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Calibri",
+                "size": 11.03999996185303
+            },
+            "text_vi": "17 "
+        },
+        {
+            "bbox": [
+                124.00826582328384,
+                76.93850429823499,
+                437.64268892960615,
+                21.6651174497606
+            ],
+            "text": "StepbyStepGuidetoOpenShiftSetup ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica,Bold",
+                "size": 15.96000003814697
+            },
+            "text_vi": "Stepbystepguidetoopenshiftsetup "
+        },
+        {
+            "bbox": [
+                124.00826582328384,
+                108.2197660281206,
+                783.1819048884314,
+                14.696561186254371
+            ],
+            "text": "In the following description, we are going to set up OpenShift lab environment, which can ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Verdana",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Trong mô tả sau, chúng tôi sẽ thiết lập môi trường phòng thí nghiệm OpenShift, có thể "
+        },
+        {
+            "bbox": [
+                124.00826582328384,
+                124.14410660500062,
+                783.2215226563609,
+                14.696549011700654
+            ],
+            "text": "be later extended to a bigger cluster. As OpenShift requires master and node setup, we ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Verdana",
+                "size": 9.960000038146973
+            },
+            "text_vi": "sau đó được mở rộng đến một cụm lớn hơn. Vì OpenShift yêu cầu thiết lập Master và Node, chúng tôi "
+        },
+        {
+            "bbox": [
+                124.00826582328384,
+                139.92235253758906,
+                767.5308204405897,
+                14.696561186254371
+            ],
+            "text": "would need at least two machines hosted on either cloud, physical, or virtual machines. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Verdana",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Sẽ cần ít nhất hai máy được lưu trữ trên các máy đám mây, vật lý hoặc ảo. "
+        },
+        {
+            "bbox": [
+                124.00826582328384,
+                165.7810924026295,
+                69.67542582685908,
+                14.696561186254371
+            ],
+            "text": "Step 1:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Verdana,Bold",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Bước 1:"
+        },
+        {
+            "bbox": [
+                193.6294733314944,
+                165.7810924026295,
+                713.1736450451244,
+                14.696561186254371
+            ],
+            "text": " First install Linux on both the machines, where the Linux 7 should be the least ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Verdana",
+                "size": 9.960000038146973
+            },
+            "text_vi": " Cài đặt Linux đầu tiên trên cả hai máy, trong đó Linux 7 phải là ít nhất "
+        },
+        {
+            "bbox": [
+                124.00826582328384,
+                181.7054329795095,
+                783.2154276151409,
+                14.696549011700654
+            ],
+            "text": "version. This can be done using the following commands if one has an active Red Hat ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Verdana",
+                "size": 9.960000038146973
+            },
+            "text_vi": "phiên bản. Điều này có thể được thực hiện bằng cách sử dụng các lệnh sau nếu một người có mũ đỏ hoạt động "
+        },
+        {
+            "bbox": [
+                124.00826582328384,
+                197.62970050906733,
+                116.56666126509003,
+                14.69654901170054
+            ],
+            "text": "subscription. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Verdana",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Đăng ký. "
+        },
+        {
+            "bbox": [
+                136.40495466463491,
+                233.3858290190476,
+                9.465046328612402,
+                12.125818952532768
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                155.33506109596416,
+                233.3858290190476,
+                388.0671336328843,
+                12.125818952532768
+            ],
+            "text": "subscription-manager repos --disable=\"*\" ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Repos người quản lý đăng ký--Disable = \"*\" "
+        },
+        {
+            "bbox": [
+                136.40495466463491,
+                297.5213778630125,
+                9.465729868545822,
+                12.12580677797905
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                155.33641440172656,
+                297.5213778630125,
+                539.5464596007785,
+                12.12580677797905
+            ],
+            "text": "subscription-manager repos --enable=\"rhel-7-server-rpms\" ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Repos người quản lý đăng ký --Enable = \"Rhel-7-server-rpms\" "
+        },
+        {
+            "bbox": [
+                136.40495466463491,
+                361.8395571868955,
+                9.466675116463819,
+                12.125806777979165
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                155.3382928452212,
+                361.8395571868955,
+                605.8669285280702,
+                12.125806777979165
+            ],
+            "text": "subscription-manager repos --enable=\"rhel-7-server-extras-rpms\" ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Repos người quản lý đăng ký --Enable = \"Rhel-7-server-extras-rpms\" "
+        },
+        {
+            "bbox": [
+                136.40495466463491,
+                426.12118850059835,
+                9.468303904315263,
+                12.125843301640089
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                164.8098543252393,
+                426.12118850059835,
+                624.9077632633246,
+                12.125843301640089
+            ],
+            "text": "subscription-manager repos --enable=\"rhel-7-server-optional-rpms\" ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Repos người quản lý đăng ký --Enable = \"Rhel-7-server-optional-rpms\" "
+        },
+        {
+            "bbox": [
+                136.40495466463491,
+                490.2567616936707,
+                9.467227802404949,
+                12.125855476193806
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                155.33940854768178,
+                490.2567616936707,
+                615.3699276797365,
+                12.125855476193806
+            ],
+            "text": "subscription-manager repos --enable=\"rhel-7-server-ose-3.0-rpms\" ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Repos người quản lý đăng ký --Enable = \"Rhel-7-server-ose-3.0-rpms\" "
+        },
+        {
+            "bbox": [
+                136.40495466463491,
+                554.5383930073734,
+                9.469106245899582,
+                12.125843301640145
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                155.3431533823296,
+                554.5383930073734,
+                691.2442979616962,
+                12.125843301640145
+            ],
+            "text": "yum install wget git net-tools bind-utils iptables-services bridge-utils ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Yum Cài đặt Wget Git Net-Tools Bind-Utils Iptables-Service-Utils "
+        },
+        {
+            "bbox": [
+                136.40495466463491,
+                618.6983031332741,
+                9.469106245899582,
+                12.125855476193806
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                155.3431533823296,
+                618.6983031332741,
+                691.2442979616962,
+                12.125855476193806
+            ],
+            "text": "yum install wget git net-tools bind-utils iptables-services bridge-utils ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Yum Cài đặt Wget Git Net-Tools Bind-Utils Iptables-Service-Utils "
+        },
+        {
+            "bbox": [
+                136.40495466463491,
+                682.9799344469768,
+                9.464534964984608,
+                12.125843301640145
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                155.3340228728411,
+                682.9799344469768,
+                283.93592498259886,
+                12.125843301640145
+            ],
+            "text": "yum install python-virtualenv ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Yum Cài đặt Python-Virtualenv "
+        },
+        {
+            "bbox": [
+                136.40495466463491,
+                747.1154589418343,
+                9.465295984255562,
+                12.125867650747523
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                155.3355466331461,
+                747.1154589418343,
+                151.44473402632642,
+                12.125867650747523
+            ],
+            "text": "yum install gcc ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Yum Cài đặt GCC "
+        },
+        {
+            "bbox": [
+                136.40495466463491,
+                811.4336260911637,
+                9.463338339660368,
+                12.125867650747495
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                155.33163306571873,
+                811.4336260911637,
+                227.12013392595355,
+                12.125867650747495
+            ],
+            "text": "yum install httpd-tools ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ABCDEE+Consolas",
+                "size": 9.960000038146973
+            },
+            "text_vi": "Yum Cài đặt công cụ HTTPD"
+        }
+    ]
+}

@@ -1,0 +1,1056 @@
+{
+    "metadata": {
+        "page_hash": "0d00b8c84ae15d7687f507b07e1ef12eebd240ff21a1b237486d2eda76c03cf3",
+        "original_filename": "cm-oreilly-kubernetes-patterns-ebook-f19824-201910-en.pdf",
+        "page_no": 100,
+        "num_pages": 266,
+        "original_width": 504,
+        "original_height": 661.5,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                146.42857142857142,
+                81.03777059712763,
+                676.0241884920634,
+                21.94800037792902
+            ],
+            "text": "thanks to the controller performing health checks as described in Chapter 4, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Nhờ bộ điều khiển thực hiện kiểm tra sức khỏe như được mô tả trong Chương 4, "
+        },
+        {
+            "bbox": [
+                822.4526989087301,
+                80.82621617535892,
+                56.118729662698456,
+                22.15955479969773
+            ],
+            "text": "Health",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Sức khỏe"
+        },
+        {
+            "bbox": [
+                146.42248854166667,
+                100.35007218442934,
+                47.76926066468255,
+                22.159477324263094
+            ],
+            "text": "Probe",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Thăm dò"
+        },
+        {
+            "bbox": [
+                194.19174920634921,
+                100.56154913076341,
+                332.05728353174595,
+                21.94800037792902
+            ],
+            "text": " and healing the Pod in case of failures.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " và chữa bệnh cho pod trong trường hợp thất bại."
+        },
+        {
+            "bbox": [
+                146.42247430555554,
+                129.38245729402865,
+                732.1428734126983,
+                21.94800037792902
+            ],
+            "text": "The main thing to keep an eye on with this approach is the replica count, which",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Điều chính để theo dõi cách tiếp cận này là số lượng bản sao, mà"
+        },
+        {
+            "bbox": [
+                146.43774151785712,
+                148.90623582766443,
+                732.1429405257936,
+                21.94800037792902
+            ],
+            "text": "should not be increased accidentally, as there is no platform-level mechanism to pre‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Không nên vô tình tăng lên, vì không có cơ chế cấp nền tảng để trước"
+        },
+        {
+            "bbox": [
+                146.43165863095237,
+                168.42999886621317,
+                291.6125244047619,
+                21.948108843537398
+            ],
+            "text": "vent a change of the replica count.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Thông hơi thay đổi số lượng bản sao."
+        },
+        {
+            "bbox": [
+                146.43165863095237,
+                197.25092252456534,
+                732.1430035714286,
+                21.948000377928906
+            ],
+            "text": "It’s not entirely true that only one instance is running at all times, especially when",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Nó không hoàn toàn đúng khi chỉ có một trường hợp nào chạy mọi lúc, đặc biệt là khi"
+        },
+        {
+            "bbox": [
+                146.42557777777776,
+                216.77470105820112,
+                732.1428815476189,
+                21.94804686318969
+            ],
+            "text": "things go wrong. Kubernetes primitives such as ReplicaSet, favor availability over",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Mọi thứ đi sai. Kubernetes nguyên thủy như ReplicAset, ưu tiên"
+        },
+        {
+            "bbox": [
+                146.4194013392857,
+                236.29851058201052,
+                732.1428347718253,
+                21.94804686318969
+            ],
+            "text": "consistency—a deliberate decision for achieving highly available and scalable dis‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tính nhất quán của một quyết định có chủ ý để đạt được sự thay đổi cao và có thể mở rộng"
+        },
+        {
+            "bbox": [
+                146.43457703373016,
+                255.82233560090697,
+                732.1430544146824,
+                21.94800037792902
+            ],
+            "text": "tributed systems. That means a ReplicaSet applies “at least” rather than “at most”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Hệ thống kết nối. Điều đó có nghĩa là một bản sao áp dụng cho ít nhất là"
+        },
+        {
+            "bbox": [
+                146.42864871031745,
+                276.26537566137563,
+                679.3563577380952,
+                21.94800037792902
+            ],
+            "text": "semantics for its replicas. If we configure a ReplicaSet to be a singleton with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "ngữ nghĩa cho bản sao của nó. Nếu chúng ta định cấu hình một bản sao để trở thành một người độc thân với "
+        },
+        {
+            "bbox": [
+                825.7850064484127,
+                279.52747883597885,
+                50.71614583333337,
+                15.456364701436087
+            ],
+            "text": "repli",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "thay thế"
+        },
+        {
+            "bbox": [
+                146.4321101190476,
+                299.9705653817082,
+                62.641837797619075,
+                15.456302721088491
+            ],
+            "text": "cas: 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "CAS: 1"
+        },
+        {
+            "bbox": [
+                209.07396825396825,
+                296.70840022675736,
+                669.5009990079365,
+                21.94804686318969
+            ],
+            "text": ", the controller makes sure at least one instance is always running, but occa‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": ", bộ điều khiển đảm bảo ít nhất một trường hợp luôn chạy, nhưng thỉnh thoảng‐"
+        },
+        {
+            "bbox": [
+                146.4260740079365,
+                316.2322717309146,
+                281.597391765873,
+                21.948000377928906
+            ],
+            "text": "sionally it can be more instances.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Về mặt điều đó, nó có thể là nhiều trường hợp hơn."
+        },
+        {
+            "bbox": [
+                146.4260740079365,
+                345.0531024187453,
+                732.142934424603,
+                21.94804686318969
+            ],
+            "text": "The most popular corner case here occurs when a node with a controller-managed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Vỏ góc phổ biến nhất ở đây xảy ra khi một nút có người quản lý bộ điều khiển"
+        },
+        {
+            "bbox": [
+                146.41999112103173,
+                364.5769584278156,
+                732.1426924107143,
+                21.948000377928906
+            ],
+            "text": "Pod becomes unhealthy and disconnects from the rest of the Kubernetes cluster. In",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Pod trở nên không lành mạnh và ngắt kết nối với phần còn lại của cụm Kubernetes. TRONG"
+        },
+        {
+            "bbox": [
+                146.4352583333333,
+                384.10078344671206,
+                732.1430645833334,
+                21.94804686318969
+            ],
+            "text": "this scenario, a ReplicaSet controller starts another Pod instance on a healthy node",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Kịch bản này, bộ điều khiển bản sao bắt đầu một phiên bản pod khác trên một nút khỏe mạnh"
+        },
+        {
+            "bbox": [
+                146.42917748015873,
+                403.62459297052146,
+                732.142881547619,
+                21.94800037792902
+            ],
+            "text": "(assuming there is enough capacity), without ensuring the Pod on the disconnected",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "(Giả sử có đủ dung lượng), mà không đảm bảo nhóm trên bị ngắt kết nối"
+        },
+        {
+            "bbox": [
+                146.42318814484128,
+                423.1484179894179,
+                732.1429120535713,
+                21.948046863189802
+            ],
+            "text": "node is shut down. Similarly, when changing the number of replicas or relocating",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Nút bị tắt. Tương tự, khi thay đổi số lượng bản sao hoặc di dời"
+        },
+        {
+            "bbox": [
+                146.43845535714283,
+                442.67224300831435,
+                732.1428978174603,
+                21.94800037792902
+            ],
+            "text": "Pods to different nodes, the number of Pods can temporarily go above the desired",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Pods đến các nút khác nhau, số lượng vỏ có thể tạm thời vượt lên trên"
+        },
+        {
+            "bbox": [
+                146.43237247023808,
+                462.19609901738465,
+                732.1427168154762,
+                21.94800037792902
+            ],
+            "text": "number. That temporary increase is done with the intention of ensuring high availa‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "con số. Sự gia tăng tạm thời đó được thực hiện với mục đích đảm bảo cao"
+        },
+        {
+            "bbox": [
+                146.42628958333333,
+                481.7199240362811,
+                673.4677327380953,
+                21.94800037792902
+            ],
+            "text": "bility and avoiding disruption, as needed for stateless and scalable applications.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Bility và tránh sự gián đoạn, khi cần thiết cho các ứng dụng không trạng thái và có thể mở rộng."
+        },
+        {
+            "bbox": [
+                146.42636889880953,
+                510.5408012093726,
+                732.1428835813491,
+                21.948000377928963
+            ],
+            "text": "Singletons can be resilient and recover, but by definition, are not highly available.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Singletons có thể kiên cường và phục hồi, nhưng theo định nghĩa, không có sẵn cao."
+        },
+        {
+            "bbox": [
+                146.42030228174605,
+                530.0646107331822,
+                732.1429303571429,
+                21.948000377928963
+            ],
+            "text": "Singletons typically favor consistency over availability. The Kubernetes resource that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Singletons thường ủng hộ tính nhất quán hơn khả năng. Tài nguyên kubernetes"
+        },
+        {
+            "bbox": [
+                146.4355694940476,
+                549.5884357520786,
+                732.1428754464284,
+                21.948000377928906
+            ],
+            "text": "also favors consistency over availability and provides the desired strict singleton",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ngoài ra ủng hộ tính nhất quán hơn tính sẵn có và cung cấp Singleton nghiêm ngặt mong muốn"
+        },
+        {
+            "bbox": [
+                146.42948660714285,
+                569.1122452758882,
+                732.1429995039682,
+                21.948000377928963
+            ],
+            "text": "guarantees is the StatefulSet. If ReplicaSets do not provide the desired guarantees for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Đảm bảo là trạng thái. Nếu các bản sao không cung cấp các bảo đảm mong muốn cho"
+        },
+        {
+            "bbox": [
+                146.42348303571427,
+                588.6361167800453,
+                732.1429222222221,
+                21.948000377928906
+            ],
+            "text": "your application, and you have strict singleton requirements, StatefulSets might be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ứng dụng của bạn và bạn có các yêu cầu singleton nghiêm ngặt, các trạng thái có thể là"
+        },
+        {
+            "bbox": [
+                146.43884379960315,
+                608.1599417989419,
+                732.1430178075398,
+                21.948000377928906
+            ],
+            "text": "the answer. StatefulSets are intended for stateful applications and offer many features,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "câu trả lời. Statefulsets dành cho các ứng dụng trạng thái và cung cấp nhiều tính năng,"
+        },
+        {
+            "bbox": [
+                146.43291547619046,
+                627.6837513227513,
+                732.1428652777777,
+                21.948000377928906
+            ],
+            "text": "including stronger singleton guarantees, but they come with increased complexity as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "bao gồm các đảm bảo singleton mạnh hơn, nhưng chúng đi kèm với sự phức tạp tăng lên"
+        },
+        {
+            "bbox": [
+                146.42684885912698,
+                647.2075763416478,
+                732.1427086805555,
+                21.948000377928906
+            ],
+            "text": "well. We discuss concerns around singletons and cover StatefulSets in more detail in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tốt. Chúng tôi thảo luận về các mối quan tâm xung quanh các đơn lẻ và bao gồm các chi tiết hơn về trạng thái"
+        },
+        {
+            "bbox": [
+                146.4207659722222,
+                666.7314013605442,
+                104.33645426587302,
+                21.947984882842036
+            ],
+            "text": "Chapter 11, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Chương 11, "
+        },
+        {
+            "bbox": [
+                250.75722023809521,
+                666.5198779289494,
+                127.44164632936508,
+                22.15950831443689
+            ],
+            "text": "Stateful Service",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Dịch vụ trạng thái"
+        },
+        {
+            "bbox": [
+                378.1988665674603,
+                666.7314013605442,
+                4.868749999999977,
+                21.947984882842036
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                146.42073546626983,
+                695.5522630385487,
+                732.1428632440475,
+                21.948000377928963
+            ],
+            "text": "Typically, singleton applications running in Pods on Kubernetes open outgoing con‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Thông thường, các ứng dụng singleton chạy trong các pod trên kubernetes mở ra con đường đi"
+        },
+        {
+            "bbox": [
+                146.4361125,
+                715.0760880574452,
+                732.1428815476189,
+                21.948000377928963
+            ],
+            "text": "nections to message brokers, relational databases, file servers, or other systems run‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Nections cho các nhà môi giới tin nhắn, cơ sở dữ liệu quan hệ, máy chủ tệp hoặc các hệ thống khác chạy"
+        },
+        {
+            "bbox": [
+                146.43002961309523,
+                734.5999440665155,
+                732.1427005456349,
+                21.948000377928963
+            ],
+            "text": "ning on other Pods or external systems. However, occasionally, your singleton Pod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ning trên các nhóm khác hoặc các hệ thống bên ngoài. Tuy nhiên, thỉnh thoảng, pod singleton của bạn"
+        },
+        {
+            "bbox": [
+                146.42394672619048,
+                754.1237690854119,
+                732.1427635912698,
+                21.948000377928963
+            ],
+            "text": "may need to accept incoming connections, and the way to enable that on Kubernetes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "có thể cần phải chấp nhận các kết nối đến và cách để kích hoạt trên kubernetes"
+        },
+        {
+            "bbox": [
+                146.43930952380953,
+                773.6475941043084,
+                268.8275838293651,
+                21.948000377928935
+            ],
+            "text": "is through the Service resource.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "là thông qua tài nguyên dịch vụ."
+        },
+        {
+            "bbox": [
+                146.43932375992063,
+                802.468455782313,
+                471.25593814484125,
+                21.948000377928935
+            ],
+            "text": "We cover Kubernetes Services in depth in Chapter 12, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Chúng tôi bao gồm các dịch vụ Kubernetes chuyên sâu trong Chương 12, "
+        },
+        {
+            "bbox": [
+                617.6952619047619,
+                802.2569478458049,
+                146.64518402777776,
+                22.15950831443689
+            ],
+            "text": "Service Discovery",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Khám phá dịch vụ"
+        },
+        {
+            "bbox": [
+                764.3404459325396,
+                802.468455782313,
+                114.24165972222215,
+                21.948000377928935
+            ],
+            "text": ", but let’s dis‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": ", nhưng hãy để dis dis"
+        },
+        {
+            "bbox": [
+                146.43324087301588,
+                822.9115423280423,
+                681.4267601190476,
+                21.948000377928935
+            ],
+            "text": "cuss briefly the part that applies to singletons here. A regular Service (with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Cuss ngắn gọn phần áp dụng cho singletons ở đây. Một dịch vụ thường xuyên (với "
+        },
+        {
+            "bbox": [
+                827.8599399801587,
+                826.1736609977324,
+                50.71614583333326,
+                15.456302721088434
+            ],
+            "text": "type:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "kiểu:"
+        },
+        {
+            "bbox": [
+                146.43791235119048,
+                846.6166855631142,
+                91.28905639880949,
+                15.456318216175362
+            ],
+            "text": "ClusterIP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "Cụm"
+        },
+        {
+            "bbox": [
+                237.72696874999997,
+                843.354582388511,
+                640.8537743055555,
+                21.948000377928963
+            ],
+            "text": ") creates a virtual IP and performs load balancing among all the Pod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": ") tạo IP ảo và thực hiện cân bằng tải giữa tất cả các nhóm"
+        },
+        {
+            "bbox": [
+                146.43179895833333,
+                862.8783454270597,
+                732.1428632440477,
+                21.94805151171579
+            ],
+            "text": "instances that its selector matches. But a singleton Pod managed through a StatefulSet",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các trường hợp mà bộ chọn của nó phù hợp. Nhưng một pod singleton được quản lý thông qua một trạng thái"
+        },
+        {
+            "bbox": [
+                146.42573234126982,
+                882.4020743764172,
+                732.1430320436508,
+                21.94809489795918
+            ],
+            "text": "has only one Pod and a stable network identity. In such a case, it is better to create a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Chỉ có một nhóm và một danh tính mạng ổn định. Trong trường hợp như vậy, tốt hơn là tạo ra một"
+        },
+        {
+            "bbox": [
+                772.6273472222222,
+                945.5380580498866,
+                53.446428571428555,
+                16.70680427059714
+            ],
+            "text": "Solution ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "Giải pháp "
+        },
+        {
+            "bbox": [
+                841.4854032738094,
+                945.5380580498866,
+                6.735734623016015,
+                16.70680427059714
+            ],
+            "text": "| ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "| "
+        },
+        {
+            "bbox": [
+                863.6327450396825,
+                945.5380580498866,
+                14.935714285714198,
+                16.70680427059714
+            ],
+            "text": "81",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "81"
+        }
+    ]
+}

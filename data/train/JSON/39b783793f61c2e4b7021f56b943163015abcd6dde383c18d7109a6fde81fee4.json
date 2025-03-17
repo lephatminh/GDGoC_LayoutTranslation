@@ -1,0 +1,2456 @@
+{
+    "metadata": {
+        "page_hash": "39b783793f61c2e4b7021f56b943163015abcd6dde383c18d7109a6fde81fee4",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 2484,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                391.69403594771245,
+                48.370422979798036,
+                271.7589869281046,
+                11.971275252525288
+            ],
+            "text": "DECIMAL Data Type Characteristics",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đặc điểm kiểu dữ liệu thập phân"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                767.9963067810457,
+                11.971275252525174
+            ],
+            "text": "The scope of precision math for exact-value operations includes the exact-value data types (integer and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi toán học chính xác cho các hoạt động có giá trị chính xác bao gồm các loại dữ liệu giá trị chính xác (số nguyên và"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                111.64347885101006,
+                70.34313725490196,
+                10.172335542929432
+            ],
+            "text": "DECIMAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỐ THẬP PHÂN"
+        },
+        {
+            "bbox": [
+                241.1764705882353,
+                110.49163510101016,
+                699.9644440359477,
+                11.971275252525288
+            ],
+            "text": " types) and exact-value numeric literals. Approximate-value data types and numeric literals are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " loại) và chữ số có giá trị chính xác. Các kiểu dữ liệu giá trị gần đúng và các chữ số là"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                126.02193813131316,
+                256.936683006536,
+                11.971275252525288
+            ],
+            "text": "handled as floating-point numbers.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được xử lý như số điểm nổi."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                153.77849810606062,
+                793.0854260620915,
+                11.971275252525174
+            ],
+            "text": "Exact-value numeric literals have an integer part or fractional part, or both. They may be signed. Examples:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các chữ số có giá trị chính xác có một phần số nguyên hoặc phần phân số, hoặc cả hai. Họ có thể được ký kết. Ví dụ:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                170.46058017676773,
+                10.049019607843121,
+                10.172400252525222
+            ],
+            "text": "1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "1"
+        },
+        {
+            "bbox": [
+                180.88235294117646,
+                169.30880113636363,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                190.19444444444446,
+                170.46058017676773,
+                20.09803921568627,
+                10.172400252525222
+            ],
+            "text": ".2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": ".2"
+        },
+        {
+            "bbox": [
+                210.29248366013073,
+                169.30880113636363,
+                9.312091503267965,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                219.6045751633987,
+                170.46058017676773,
+                30.14705882352942,
+                10.172400252525222
+            ],
+            "text": "3.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "3.4"
+        },
+        {
+            "bbox": [
+                249.7516339869281,
+                169.30880113636363,
+                9.312074754901943,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                259.06370874183006,
+                170.46058017676773,
+                20.0980392156863,
+                10.172400252525222
+            ],
+            "text": "-5",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-5"
+        },
+        {
+            "bbox": [
+                279.16174795751635,
+                169.30880113636363,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                288.47383946078435,
+                170.46058017676773,
+                50.24509803921569,
+                10.172400252525222
+            ],
+            "text": "-6.78",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-6,78"
+        },
+        {
+            "bbox": [
+                338.7189709967321,
+                169.30880113636363,
+                9.312074754901914,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                348.031045751634,
+                170.46058017676773,
+                50.24509803921569,
+                10.172400252525222
+            ],
+            "text": "+9.10",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "+9.10"
+        },
+        {
+            "bbox": [
+                398.2761437908497,
+                169.30880113636363,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                197.06528345959612,
+                761.4309640522875,
+                11.971275252525174
+            ],
+            "text": "Approximate-value numeric literals are represented in scientific notation with a mantissa and exponent.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các chữ số có giá trị gần đúng được thể hiện trong ký hiệu khoa học với một mantissa và số mũ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                212.59558648989912,
+                348.1482843137255,
+                11.971275252525288
+            ],
+            "text": "Either or both parts may be signed. Examples: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hoặc hoặc cả hai phần có thể được ký kết. Ví dụ: "
+        },
+        {
+            "bbox": [
+                518.9816176470589,
+                213.7474431818182,
+                50.24509803921569,
+                10.17232260101025
+            ],
+            "text": "1.2E3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "1.2E3"
+        },
+        {
+            "bbox": [
+                569.2267156862746,
+                212.59558648989912,
+                9.3120747549018,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                578.5387904411764,
+                213.7474431818182,
+                60.2941176470589,
+                10.17232260101025
+            ],
+            "text": "1.2E-3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "1.2E-3"
+        },
+        {
+            "bbox": [
+                638.8329080882353,
+                212.59558648989912,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                648.1449995915033,
+                213.7474431818182,
+                60.29411764705878,
+                10.17232260101025
+            ],
+            "text": "-1.2E3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-1.2e3"
+        },
+        {
+            "bbox": [
+                708.4391172385621,
+                212.59558648989912,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                717.75120874183,
+                213.7474431818182,
+                70.34313725490199,
+                10.17232260101025
+            ],
+            "text": "-1.2E-3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-1.2e-3"
+        },
+        {
+            "bbox": [
+                788.094345996732,
+                212.59558648989912,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                240.35214646464647,
+                527.7577446895424,
+                11.971275252525288
+            ],
+            "text": "Two numbers that look similar may be treated differently. For example, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hai số trông giống nhau có thể được đối xử khác nhau. Ví dụ, "
+        },
+        {
+            "bbox": [
+                698.5910780228758,
+                241.50400315656566,
+                40.1960784313726,
+                10.172322601010137
+            ],
+            "text": "2.34",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "2.34"
+        },
+        {
+            "bbox": [
+                738.7871564542484,
+                240.35214646464647,
+                223.38970588235304,
+                11.971275252525288
+            ],
+            "text": " is an exact-value (fixed-point)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là một giá trị chính xác (điểm cố định)"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                255.88244949494958,
+                134.03717320261435,
+                11.971275252525174
+            ],
+            "text": "number, whereas ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "số, trong khi đó "
+        },
+        {
+            "bbox": [
+                304.8705065359477,
+                257.03430618686866,
+                60.29411764705884,
+                10.172322601010137
+            ],
+            "text": "2.34E0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "2.34e0"
+        },
+        {
+            "bbox": [
+                365.16462418300654,
+                255.88244949494958,
+                360.2238394607843,
+                11.971275252525174
+            ],
+            "text": " is an approximate-value (floating-point) number.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là số giá trị gần đúng (điểm nổi)."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                283.63900946969693,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                284.79078851010115,
+                70.34315400326795,
+                10.172400252525108
+            ],
+            "text": "DECIMAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỐ THẬP PHÂN"
+        },
+        {
+            "bbox": [
+                274.6899677287582,
+                283.63900946969693,
+                541.809640522876,
+                11.971275252525288
+            ],
+            "text": " data type is a fixed-point type and calculations are exact. In MySQL, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Kiểu dữ liệu là một loại điểm cố định và tính toán là chính xác. Trong MySQL, The "
+        },
+        {
+            "bbox": [
+                816.4996082516341,
+                284.79078851010115,
+                70.34313725490188,
+                10.172400252525108
+            ],
+            "text": "DECIMAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỐ THẬP PHÂN"
+        },
+        {
+            "bbox": [
+                886.842745506536,
+                283.63900946969693,
+                67.96490277777775,
+                11.971275252525288
+            ],
+            "text": " type has",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Loại có"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                299.16931250000005,
+                143.33251633986933,
+                11.971275252525174
+            ],
+            "text": "several synonyms: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một số từ đồng nghĩa: "
+        },
+        {
+            "bbox": [
+                314.1658496732027,
+                300.32109154040415,
+                70.34313725490193,
+                10.172400252525108
+            ],
+            "text": "NUMERIC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Số"
+        },
+        {
+            "bbox": [
+                384.5089869281046,
+                299.16931250000005,
+                9.312091503267936,
+                11.971275252525174
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                393.82107843137254,
+                300.32109154040415,
+                30.14705882352939,
+                10.172400252525108
+            ],
+            "text": "DEC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "THÁNG MƯỜI HAI"
+        },
+        {
+            "bbox": [
+                423.96813725490193,
+                299.16931250000005,
+                9.312108251634072,
+                11.971275252525174
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                433.280245506536,
+                300.32109154040415,
+                50.24509803921569,
+                10.172400252525108
+            ],
+            "text": "FIXED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Đã sửa"
+        },
+        {
+            "bbox": [
+                483.5253435457517,
+                299.16931250000005,
+                342.5710449346405,
+                11.971275252525174
+            ],
+            "text": ". The integer types also are exact-value types.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Các loại số nguyên cũng là các loại giá trị chính xác."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                326.9258077651516,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                328.0776515151515,
+                50.245114787581684,
+                10.172335542929432
+            ],
+            "text": "FLOAT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÔI NỔI"
+        },
+        {
+            "bbox": [
+                254.5919285130719,
+                326.9258077651516,
+                37.248349264705865,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                291.84027777777777,
+                328.0776515151515,
+                60.29411764705884,
+                10.172335542929432
+            ],
+            "text": "DOUBLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GẤP ĐÔI"
+        },
+        {
+            "bbox": [
+                352.1343954248366,
+                326.9258077651516,
+                594.8517826797386,
+                11.971275252525288
+            ],
+            "text": " data types are floating-point types and calculations are approximate. In MySQL,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các loại dữ liệu là các loại điểm nổi và tính toán là gần đúng. Trong mysql,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                342.4561107954546,
+                239.23366013071896,
+                11.971275252525288
+            ],
+            "text": "types that are synonymous with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các loại đồng nghĩa với "
+        },
+        {
+            "bbox": [
+                410.0669934640523,
+                343.6079545454546,
+                50.245098039215634,
+                10.172335542929318
+            ],
+            "text": "FLOAT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÔI NỔI"
+        },
+        {
+            "bbox": [
+                460.31209150326794,
+                342.4561107954546,
+                24.201355392156927,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                484.51344689542486,
+                343.6079545454546,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "DOUBLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GẤP ĐÔI"
+        },
+        {
+            "bbox": [
+                544.8076147875817,
+                342.4561107954546,
+                33.513497140522986,
+                11.971275252525288
+            ],
+            "text": " are ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là "
+        },
+        {
+            "bbox": [
+                578.3210616830065,
+                343.6079545454546,
+                160.78431372549016,
+                10.172335542929318
+            ],
+            "text": "DOUBLE PRECISION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Độ chính xác gấp đôi"
+        },
+        {
+            "bbox": [
+                739.1053754084967,
+                342.4561107954546,
+                37.24834926470601,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                776.3537749183007,
+                343.6079545454546,
+                40.196078431372484,
+                10.172335542929318
+            ],
+            "text": "REAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "THỰC TẾ"
+        },
+        {
+            "bbox": [
+                816.5498533496732,
+                342.4561107954546,
+                4.65604575163411,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                370.92445044191925,
+                78.22156862745098,
+                16.759811237373697
+            ],
+            "text": "12.25.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "12.25.2"
+        },
+        {
+            "bbox": [
+                175.18120915032682,
+                370.92445044191925,
+                401.3075812908496,
+                16.759811237373697
+            ],
+            "text": "DECIMAL Data Type Characteristics",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Đặc điểm kiểu dữ liệu thập phân"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                404.1813390151515,
+                358.3647875816994,
+                11.971275252525288
+            ],
+            "text": "This section discusses the characteristics of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phần này thảo luận về các đặc điểm của "
+        },
+        {
+            "bbox": [
+                529.1981209150327,
+                405.33314393939395,
+                70.34313725490199,
+                10.17237436868686
+            ],
+            "text": "DECIMAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỐ THẬP PHÂN"
+        },
+        {
+            "bbox": [
+                599.5412581699347,
+                404.1813390151515,
+                331.3664383169935,
+                11.971275252525288
+            ],
+            "text": " data type (and its synonyms), with particular",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Kiểu dữ liệu (và các từ đồng nghĩa của nó), với"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                419.7116420454546,
+                217.8292483660131,
+                11.971275252525174
+            ],
+            "text": "regard to the following topics:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "liên quan đến các chủ đề sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                447.4681631944445,
+                213.12295751633988,
+                11.971275252525174
+            ],
+            "text": "•Maximum number of digits",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Số chữ số tối đa"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                475.2246843434343,
+                127.52205882352936,
+                11.971275252525288
+            ],
+            "text": "•Storage format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Định dạng lưu trữ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                502.9812443181818,
+                177.78388848039216,
+                11.971275252525288
+            ],
+            "text": "•Storage requirements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Yêu cầu lưu trữ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                530.7377654671718,
+                445.00410171568626,
+                11.971275252525288
+            ],
+            "text": "•The nonstandard MySQL extension to the upper range of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Phần mở rộng MySQL không đạt tiêu chuẩn cho phạm vi trên của "
+        },
+        {
+            "bbox": [
+                615.8374350490196,
+                531.8895703914142,
+                70.34313725490199,
+                10.172374368686917
+            ],
+            "text": "DECIMAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỐ THẬP PHÂN"
+        },
+        {
+            "bbox": [
+                686.1805723039216,
+                530.7377654671718,
+                67.01022916666659,
+                11.971275252525288
+            ],
+            "text": " columns",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cột"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                558.4942866161616,
+                211.3141339869281,
+                11.971275252525288
+            ],
+            "text": "The declaration syntax for a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cú pháp khai báo cho một "
+        },
+        {
+            "bbox": [
+                382.14746732026146,
+                559.6461044823233,
+                70.34310375816995,
+                10.17236142676768
+            ],
+            "text": "DECIMAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỐ THẬP PHÂN"
+        },
+        {
+            "bbox": [
+                452.4905710784314,
+                558.4942866161616,
+                80.04045792483663,
+                11.971275252525288
+            ],
+            "text": " column is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cột là "
+        },
+        {
+            "bbox": [
+                532.531029003268,
+                559.6461044823233,
+                80.39215686274508,
+                10.17236142676768
+            ],
+            "text": "DECIMAL(",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỐ THẬP PHÂN("
+        },
+        {
+            "bbox": [
+                612.9231858660131,
+                559.6461044823233,
+                10.049019607843093,
+                10.17236142676768
+            ],
+            "text": "M",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "M"
+        },
+        {
+            "bbox": [
+                622.9722054738562,
+                559.6461044823233,
+                10.049019607843206,
+                10.17236142676768
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                633.0212250816994,
+                559.6461044823233,
+                10.049019607843093,
+                10.17236142676768
+            ],
+            "text": "D",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "D"
+        },
+        {
+            "bbox": [
+                643.0702446895425,
+                559.6461044823233,
+                10.049019607843093,
+                10.17236142676768
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                653.1192642973856,
+                558.4942866161616,
+                301.6213235294118,
+                11.971275252525288
+            ],
+            "text": ". The ranges of values for the arguments",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Phạm vi của các giá trị cho các đối số"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                574.0245896464646,
+                107.0388071895425,
+                11.971275252525231
+            ],
+            "text": "are as follows:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "như sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                601.7811107954547,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                602.9329286616162,
+                10.04901960784315,
+                10.172361426767623
+            ],
+            "text": "M",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "M"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                601.7811107954547,
+                547.3533496732027,
+                11.971275252525231
+            ],
+            "text": " is the maximum number of digits (the precision). It has a range of 1 to 65.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là số lượng chữ số tối đa (độ chính xác). Nó có phạm vi từ 1 đến 65."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                629.5376707702021,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                630.6894886363636,
+                10.04901960784315,
+                10.172361426767736
+            ],
+            "text": "D",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "D"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                629.5376707702021,
+                744.7663231209151,
+                11.971275252525288
+            ],
+            "text": " is the number of digits to the right of the decimal point (the scale). It has a range of 0 to 30 and must",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là số chữ số ở bên phải của điểm thập phân (tỷ lệ). Nó có phạm vi từ 0 đến 30 và phải"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                645.0679738005051,
+                131.27369281045753,
+                11.971275252525231
+            ],
+            "text": "be no larger than ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "không lớn hơn "
+        },
+        {
+            "bbox": [
+                318.85539215686276,
+                646.2197916666667,
+                10.049019607843093,
+                10.172361426767736
+            ],
+            "text": "M",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "M"
+        },
+        {
+            "bbox": [
+                328.90441176470586,
+                645.0679738005051,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                672.8244949494949,
+                13.968137254901961,
+                11.971275252525231
+            ],
+            "text": "If ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu như "
+        },
+        {
+            "bbox": [
+                184.8014705882353,
+                673.9763128156566,
+                10.04901960784315,
+                10.17236142676768
+            ],
+            "text": "D",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "D"
+        },
+        {
+            "bbox": [
+                194.85049019607845,
+                672.8244949494949,
+                217.84599673202615,
+                11.971275252525231
+            ],
+            "text": " is omitted, the default is 0. If ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bị bỏ qua, mặc định là 0. Nếu "
+        },
+        {
+            "bbox": [
+                412.6964869281046,
+                673.9763128156566,
+                10.049019607843093,
+                10.17236142676768
+            ],
+            "text": "M",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "M"
+        },
+        {
+            "bbox": [
+                422.7455065359477,
+                672.8244949494949,
+                208.53392197712424,
+                11.971275252525231
+            ],
+            "text": " is omitted, the default is 10.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bị bỏ qua, mặc định là 10."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                700.581029040404,
+                221.53063725490196,
+                11.971275252525231
+            ],
+            "text": "The maximum value of 65 for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị tối đa là 65 cho "
+        },
+        {
+            "bbox": [
+                392.3639705882353,
+                701.7328339646465,
+                10.04901960784315,
+                10.17237436868686
+            ],
+            "text": "M",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "M"
+        },
+        {
+            "bbox": [
+                402.41299019607845,
+                700.581029040404,
+                207.59599673202615,
+                11.971275252525231
+            ],
+            "text": " means that calculations on ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có nghĩa là các tính toán trên "
+        },
+        {
+            "bbox": [
+                610.0089869281046,
+                701.7328339646465,
+                70.34313725490199,
+                10.17237436868686
+            ],
+            "text": "DECIMAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỐ THẬP PHÂN"
+        },
+        {
+            "bbox": [
+                680.3521241830066,
+                700.581029040404,
+                264.389739379085,
+                11.971275252525231
+            ],
+            "text": " values are accurate up to 65 digits.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giá trị là chính xác lên đến 65 chữ số."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                716.111332070707,
+                759.5216335784314,
+                11.971275252525288
+            ],
+            "text": "This limit of 65 digits of precision also applies to exact-value numeric literals, so the maximum range of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giới hạn này là 65 chữ số của độ chính xác cũng áp dụng cho các chữ số có giá trị chính xác, do đó phạm vi tối đa của"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                731.6416351010101,
+                565.9440359477125,
+                11.971275252525231
+            ],
+            "text": "such literals differs from before. (There is also a limit on how long the text of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biết chữ như vậy khác với trước đây. (Ngoài ra còn có giới hạn về thời gian văn bản của "
+        },
+        {
+            "bbox": [
+                736.7773692810458,
+                732.7934400252525,
+                70.34313725490199,
+                10.17237436868686
+            ],
+            "text": "DECIMAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỐ THẬP PHÂN"
+        },
+        {
+            "bbox": [
+                807.1205065359478,
+                731.6416351010101,
+                144.2871732026142,
+                11.971275252525231
+            ],
+            "text": " literals can be; see",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " nghĩa đen có thể được; nhìn thấy"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                747.1719769570707,
+                318.00122549019613,
+                11.971275252525231
+            ],
+            "text": "Section 12.25.3, “Expression Handling”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mục 12.25.3, Xử lý biểu thức của người Viking"
+        },
+        {
+            "bbox": [
+                461.26674836601313,
+                747.1719769570707,
+                10.233285130718912,
+                11.971275252525231
+            ],
+            "text": ".)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ".)"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                774.9284592803031,
+                80.05718954248368,
+                11.97127525252526
+            ],
+            "text": "Values for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị cho "
+        },
+        {
+            "bbox": [
+                250.89052287581703,
+                776.0803030303031,
+                70.34313725490196,
+                10.17233554292929
+            ],
+            "text": "DECIMAL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SỐ THẬP PHÂN"
+        },
+        {
+            "bbox": [
+                321.233660130719,
+                774.9284592803031,
+                626.4725972222222,
+                11.97127525252526
+            ],
+            "text": " columns are stored using a binary format that packs nine decimal digits into 4 bytes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các cột được lưu trữ bằng định dạng nhị phân có chín chữ số thập phân thành 4 byte."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                790.4587623106061,
+                754.9661282679739,
+                11.97127525252526
+            ],
+            "text": "The storage requirements for the integer and fractional parts of each value are determined separately.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các yêu cầu lưu trữ cho các phần số nguyên và phân đoạn của mỗi giá trị được xác định riêng biệt."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                805.9890653409091,
+                772.6188725490196,
+                11.97127525252526
+            ],
+            "text": "Each multiple of nine digits requires 4 bytes, and any remaining digits left over require some fraction of 4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mỗi bội số của chín chữ số yêu cầu 4 byte và bất kỳ chữ số nào còn lại còn lại yêu cầu một số phần 4"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                821.5193683712121,
+                578.0698361928105,
+                11.97127525252526
+            ],
+            "text": "bytes. The storage required for remaining digits is given by the following table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Byte. Bộ lưu trữ cần thiết cho các chữ số còn lại được đưa ra bởi bảng sau."
+        },
+        {
+            "bbox": [
+                174.6017156862745,
+                851.112386679293,
+                117.25532720588237,
+                11.97127525252526
+            ],
+            "text": "Leftover Digits",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Chữ số còn sót lại"
+        },
+        {
+            "bbox": [
+                571.5379901960785,
+                851.112386679293,
+                134.00369321895425,
+                11.97127525252526
+            ],
+            "text": "Number of Bytes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Số byte"
+        },
+        {
+            "bbox": [
+                174.6017156862745,
+                872.4665533459596,
+                9.312091503267993,
+                11.97127525252526
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                571.5379901960785,
+                872.4665533459596,
+                9.312091503267993,
+                11.97127525252526
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                174.6017156862745,
+                893.8207200126262,
+                37.98529411764707,
+                11.97128172348485
+            ],
+            "text": "1–2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1 trận2"
+        },
+        {
+            "bbox": [
+                571.5379901960785,
+                893.8207200126262,
+                9.312091503267993,
+                11.97128172348485
+            ],
+            "text": "1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1"
+        },
+        {
+            "bbox": [
+                174.6017156862745,
+                915.1748931502525,
+                37.98529411764707,
+                11.971275252525245
+            ],
+            "text": "3–4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3 trận4"
+        },
+        {
+            "bbox": [
+                571.5379901960785,
+                915.1748931502525,
+                9.312091503267993,
+                11.971275252525245
+            ],
+            "text": "2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "2455",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2455"
+        }
+    ]
+}

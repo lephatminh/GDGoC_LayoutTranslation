@@ -1,0 +1,2036 @@
+{
+    "metadata": {
+        "page_hash": "437c0806398afd36fc5429ee9a0e3e1280d42a35ed14fe39b14b355920abb89c",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1714,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                408.43404452614385,
+                48.370422979798036,
+                238.2790032679739,
+                11.971275252525288
+            ],
+            "text": "Optimizing SELECT Statements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa các câu lệnh chọn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                738.1507017973855,
+                11.971275252525174
+            ],
+            "text": "•For columns in the index, full column values must be indexed, not just a prefix. For example, with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Đối với các cột trong chỉ mục, các giá trị cột đầy đủ phải được lập chỉ mục, không chỉ là tiền tố. Ví dụ, với "
+        },
+        {
+            "bbox": [
+                908.9840351307189,
+                96.11317582070706,
+                20.0980392156863,
+                10.172335542929318
+            ],
+            "text": "c1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "C1"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                111.64347885101006,
+                271.3235294117647,
+                10.172335542929432
+            ],
+            "text": "VARCHAR(20), INDEX (c1(10))",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Varchar (20), Index (C1 (10))"
+        },
+        {
+            "bbox": [
+                458.9052287581699,
+                110.49163510101016,
+                235.53227124183007,
+                11.971275252525288
+            ],
+            "text": ", the index uses only a prefix of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", chỉ mục chỉ sử dụng một tiền tố của "
+        },
+        {
+            "bbox": [
+                694.4375,
+                111.64347885101006,
+                20.0980392156863,
+                10.172335542929432
+            ],
+            "text": "c1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "C1"
+        },
+        {
+            "bbox": [
+                714.5355392156863,
+                110.49163510101016,
+                229.03390522875816,
+                11.971275252525288
+            ],
+            "text": " values and cannot be used for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị và không thể được sử dụng cho"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                126.02193813131316,
+                138.72671568627453,
+                11.971275252525288
+            ],
+            "text": "Loose Index Scan.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Quét chỉ số lỏng lẻo."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                153.33330902777777,
+                361.22874142156854,
+                11.971275252525288
+            ],
+            "text": "If Loose Index Scan is applicable to a query, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu quét chỉ mục lỏng lẻo được áp dụng cho một truy vấn, "
+        },
+        {
+            "bbox": [
+                532.0620747549019,
+                154.4850751262627,
+                70.34313725490199,
+                10.172413194444403
+            ],
+            "text": "EXPLAIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GIẢI THÍCH"
+        },
+        {
+            "bbox": [
+                602.4052120098039,
+                153.33330902777777,
+                107.99348080065363,
+                11.971275252525288
+            ],
+            "text": " output shows ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đầu ra cho thấy "
+        },
+        {
+            "bbox": [
+                710.3986928104575,
+                154.4850751262627,
+                241.17652083333337,
+                10.172413194444403
+            ],
+            "text": "Using index for group-by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sử dụng chỉ mục cho nhóm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                168.8636120580809,
+                45.62253227124182,
+                11.971275252525174
+            ],
+            "text": "in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trong "
+        },
+        {
+            "bbox": [
+                216.45586560457517,
+                170.0153781565657,
+                50.24509803921572,
+                10.172413194444403
+            ],
+            "text": "Extra",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thêm"
+        },
+        {
+            "bbox": [
+                266.7009636437909,
+                168.8636120580809,
+                63.29209191176466,
+                11.971275252525174
+            ],
+            "text": " column.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cột."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                196.17489236111123,
+                225.28225449346402,
+                11.971275252525288
+            ],
+            "text": "Assume that there is an index ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giả sử rằng có một chỉ mục "
+        },
+        {
+            "bbox": [
+                396.11558782679737,
+                197.3267490530303,
+                130.63728839869287,
+                10.17232260101025
+            ],
+            "text": "idx(c1,c2,c3)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "IDX (C1, C2, C3)"
+        },
+        {
+            "bbox": [
+                526.7528762254902,
+                196.17489236111123,
+                68.90279452614368,
+                11.971275252525288
+            ],
+            "text": " on table ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trên bàn "
+        },
+        {
+            "bbox": [
+                595.655620506536,
+                197.3267490530303,
+                150.73529411764696,
+                10.17232260101025
+            ],
+            "text": "t1(c1,c2,c3,c4)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T1 (C1, C2, C3, C4)"
+        },
+        {
+            "bbox": [
+                746.390914624183,
+                196.17489236111123,
+                176.8962920751635,
+                11.971275252525288
+            ],
+            "text": ". The Loose Index Scan",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Quét chỉ số lỏng lẻo"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                211.70519539141424,
+                394.70870833333333,
+                11.971275252525288
+            ],
+            "text": "access method can be used for the following queries:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phương thức truy cập có thể được sử dụng cho các truy vấn sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                238.31899684343443,
+                305.4901793300654,
+                8.137827020202053
+            ],
+            "text": "SELECT c1, c2 FROM t1 GROUP BY c1, c2;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn C1, C2 từ nhóm T1 bởi C1, C2;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                250.74321338383845,
+                249.2156862745098,
+                8.137904671717138
+            ],
+            "text": "SELECT DISTINCT c1, c2 FROM t1;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn C1, C2 khác biệt từ T1;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                263.1674169823233,
+                313.52942851307193,
+                8.137917613636432
+            ],
+            "text": "SELECT c1, MIN(c2) FROM t1 GROUP BY c1;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn C1, tối thiểu (C2) từ nhóm T1 của C1;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                275.5917111742425,
+                265.2941008986928,
+                8.137904671717138
+            ],
+            "text": "SELECT c1, c2 FROM t1 WHERE c1 < ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn C1, C2 từ T1 trong đó C1 < "
+        },
+        {
+            "bbox": [
+                436.12743423202613,
+                275.5917111742425,
+                40.1960784313726,
+                8.137904671717138
+            ],
+            "text": "const",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "hằng số"
+        },
+        {
+            "bbox": [
+                476.32351266339873,
+                275.5917111742425,
+                136.66668341503265,
+                8.137904671717138
+            ],
+            "text": " GROUP BY c1, c2;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " Nhóm bởi C1, C2;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                288.01591477272734,
+                409.9999832516339,
+                8.137917613636318
+            ],
+            "text": "SELECT MAX(c3), MIN(c3), c1, c2 FROM t1 WHERE c2 > ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn Max (C3), Min (C3), C1, C2 từ T1 trong đó C2> "
+        },
+        {
+            "bbox": [
+                580.8333165849673,
+                288.01591477272734,
+                40.1960784313726,
+                8.137917613636318
+            ],
+            "text": "const",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "hằng số"
+        },
+        {
+            "bbox": [
+                621.0293950163399,
+                288.01591477272734,
+                136.66666666666663,
+                8.137917613636318
+            ],
+            "text": " GROUP BY c1, c2;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " Nhóm bởi C1, C2;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                300.44020896464656,
+                233.13725490196074,
+                8.137827020202053
+            ],
+            "text": "SELECT c2 FROM t1 WHERE c1 < ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn C2 từ T1 trong đó C1 < "
+        },
+        {
+            "bbox": [
+                403.9705882352941,
+                300.44020896464656,
+                40.19609517973862,
+                8.137827020202053
+            ],
+            "text": "const",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "hằng số"
+        },
+        {
+            "bbox": [
+                444.1666834150327,
+                300.44020896464656,
+                136.66663316993458,
+                8.137827020202053
+            ],
+            "text": " GROUP BY c1, c2;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " Nhóm bởi C1, C2;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                312.8644255050506,
+                265.2941008986928,
+                8.13782702020194
+            ],
+            "text": "SELECT c1, c2 FROM t1 WHERE c3 = ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn C1, C2 từ T1 trong đó C3 = "
+        },
+        {
+            "bbox": [
+                436.12743423202613,
+                312.8644255050506,
+                40.1960784313726,
+                8.13782702020194
+            ],
+            "text": "const",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "hằng số"
+        },
+        {
+            "bbox": [
+                476.32351266339873,
+                312.8644255050506,
+                136.66668341503265,
+                8.13782702020194
+            ],
+            "text": " GROUP BY c1, c2;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " Nhóm bởi C1, C2;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                338.00020801767687,
+                697.251225490196,
+                11.971275252525288
+            ],
+            "text": "The following queries cannot be executed with this quick select method, for the reasons given:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các truy vấn sau đây không thể được thực thi với phương thức chọn nhanh này, vì những lý do đã đưa ra:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                365.3115789141415,
+                325.83944403594774,
+                11.971275252525174
+            ],
+            "text": "•There are aggregate functions other than ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Có các chức năng tổng hợp khác ngoài "
+        },
+        {
+            "bbox": [
+                496.67277736928105,
+                366.46338383838395,
+                50.245098039215634,
+                10.172374368686746
+            ],
+            "text": "MIN()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tối thiểu ()"
+        },
+        {
+            "bbox": [
+                546.9178754084967,
+                365.3115789141415,
+                24.201405637254993,
+                11.971275252525174
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                571.1192810457517,
+                366.46338383838395,
+                50.24509803921569,
+                10.172374368686746
+            ],
+            "text": "MAX()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Max ()"
+        },
+        {
+            "bbox": [
+                621.3643790849674,
+                365.3115789141415,
+                4.656045751633883,
+                11.971275252525174
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                391.9252897727273,
+                313.52942851307193,
+                8.137917613636318
+            ],
+            "text": "SELECT c1, SUM(c2) FROM t1 GROUP BY c1;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn C1, Sum (C2) từ nhóm T1 bởi C1;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                417.0611240530303,
+                162.89462459150323,
+                11.971275252525288
+            ],
+            "text": "•The columns in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các cột trong "
+        },
+        {
+            "bbox": [
+                333.7279244281046,
+                418.21294191919196,
+                80.39215686274508,
+                10.17236142676768
+            ],
+            "text": "GROUP BY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhóm theo"
+        },
+        {
+            "bbox": [
+                414.12008129084967,
+                417.0611240530303,
+                361.19524468954256,
+                11.971275252525288
+            ],
+            "text": " clause do not form a leftmost prefix of the index:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề không tạo thành một tiền tố ngoài cùng bên trái của chỉ mục:"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                443.6748478535354,
+                305.49017933006536,
+                8.137904671717138
+            ],
+            "text": "SELECT c1, c2 FROM t1 GROUP BY c2, c3;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn C1, C2 từ nhóm T1 bởi C2, C3;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                468.81066919191926,
+                426.3631703431373,
+                11.971275252525288
+            ],
+            "text": "•The query refers to a part of a key that comes after the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Truy vấn đề cập đến một phần của khóa đi sau "
+        },
+        {
+            "bbox": [
+                597.1965036764707,
+                469.9624870580808,
+                80.39215686274508,
+                10.172361426767793
+            ],
+            "text": "GROUP BY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhóm theo"
+        },
+        {
+            "bbox": [
+                677.5886605392158,
+                468.81066919191926,
+                225.28228799019598,
+                11.971275252525288
+            ],
+            "text": " part, and for which there is no",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " một phần, và không có"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                484.34097222222226,
+                178.7385620915033,
+                11.971275252525288
+            ],
+            "text": "equality with a constant:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bình đẳng với một hằng số:"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                510.9547348484848,
+                305.49017933006536,
+                8.137904671717251
+            ],
+            "text": "SELECT c1, c3 FROM t1 GROUP BY c1, c2;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn C1, C3 từ nhóm T1 bởi C1, C2;"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                536.0905303030304,
+                195.48692810457516,
+                11.971275252525288
+            ],
+            "text": "Were the query to include ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Là truy vấn để bao gồm "
+        },
+        {
+            "bbox": [
+                383.0686274509804,
+                537.2423352272727,
+                110.53921568627459,
+                10.17237436868686
+            ],
+            "text": "WHERE c3 = ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Trong đó C3 = "
+        },
+        {
+            "bbox": [
+                493.607843137255,
+                537.2423352272727,
+                50.245098039215634,
+                10.17237436868686
+            ],
+            "text": "const",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "hằng số"
+        },
+        {
+            "bbox": [
+                543.8529411764706,
+                536.0905303030304,
+                256.97016299019606,
+                11.971275252525288
+            ],
+            "text": ", Loose Index Scan could be used.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Quét chỉ số lỏng lẻo có thể được sử dụng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                563.4018494318182,
+                769.905637254902,
+                11.971275252525288
+            ],
+            "text": "The Loose Index Scan access method can be applied to other forms of aggregate function references in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phương pháp truy cập quét chỉ số lỏng lẻo có thể được áp dụng cho các hình thức tham chiếu chức năng tổng hợp khác trong"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                578.9321524621212,
+                233.6732026143791,
+                11.971275252525231
+            ],
+            "text": "the select list, in addition to the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "danh sách chọn, ngoài "
+        },
+        {
+            "bbox": [
+                404.50653594771245,
+                580.0839703282829,
+                50.24513153594768,
+                10.172361426767623
+            ],
+            "text": "MIN()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tối thiểu ()"
+        },
+        {
+            "bbox": [
+                454.7516674836601,
+                578.9321524621212,
+                37.24834926470595,
+                11.971275252525231
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                492.0000167483661,
+                580.0839703282829,
+                50.24509803921569,
+                10.172361426767623
+            ],
+            "text": "MAX()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Max ()"
+        },
+        {
+            "bbox": [
+                542.2451147875818,
+                578.9321524621212,
+                227.141323120915,
+                11.971275252525231
+            ],
+            "text": " references already supported:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tài liệu tham khảo đã được hỗ trợ:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                606.2435233585859,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                607.3953412247474,
+                130.63725490196077,
+                10.17236142676768
+            ],
+            "text": "AVG(DISTINCT)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "AVG (khác biệt)"
+        },
+        {
+            "bbox": [
+                318.218954248366,
+                606.2435233585859,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                327.531045751634,
+                607.3953412247474,
+                130.63725490196077,
+                10.17236142676768
+            ],
+            "text": "SUM(DISTINCT)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tổng (khác biệt)"
+        },
+        {
+            "bbox": [
+                458.16830065359477,
+                606.2435233585859,
+                41.9044452614379,
+                11.971275252525288
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                500.07274591503267,
+                607.3953412247474,
+                150.73529411764707,
+                10.17236142676768
+            ],
+            "text": "COUNT(DISTINCT)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Đếm (khác biệt)"
+        },
+        {
+            "bbox": [
+                650.8079897875817,
+                606.2435233585859,
+                117.30557230392151,
+                11.971275252525288
+            ],
+            "text": " are supported. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được hỗ trợ. "
+        },
+        {
+            "bbox": [
+                768.1135620915032,
+                607.3953412247474,
+                130.6372549019609,
+                10.17236142676768
+            ],
+            "text": "AVG(DISTINCT)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "AVG (khác biệt)"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                621.7738263888889,
+                32.5923035130719,
+                11.971275252525231
+            ],
+            "text": "and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Và "
+        },
+        {
+            "bbox": [
+                220.17400285947713,
+                622.9256442550504,
+                130.63725490196077,
+                10.17236142676768
+            ],
+            "text": "SUM(DISTINCT)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tổng (khác biệt)"
+        },
+        {
+            "bbox": [
+                350.81129125816994,
+                621.7738263888889,
+                183.3946245915032,
+                11.971275252525231
+            ],
+            "text": " take a single argument. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Lấy một đối số duy nhất. "
+        },
+        {
+            "bbox": [
+                534.2058656045751,
+                622.9256442550504,
+                150.73529411764707,
+                10.17236142676768
+            ],
+            "text": "COUNT(DISTINCT)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Đếm (khác biệt)"
+        },
+        {
+            "bbox": [
+                684.9411597222222,
+                621.7738263888889,
+                243.90642075163396,
+                11.971275252525231
+            ],
+            "text": " can have more than one column",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có thể có nhiều hơn một cột"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                637.3041294191919,
+                75.40114379084969,
+                11.971275252525288
+            ],
+            "text": "argument.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "lý lẽ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                664.615461489899,
+                152.66133946078432,
+                11.971275252525288
+            ],
+            "text": "•There must be no ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Không có "
+        },
+        {
+            "bbox": [
+                323.49467279411766,
+                665.7672664141414,
+                80.39215686274508,
+                10.172374368686803
+            ],
+            "text": "GROUP BY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhóm theo"
+        },
+        {
+            "bbox": [
+                403.88682965686274,
+                664.615461489899,
+                24.201388888888914,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                428.08825204248365,
+                665.7672664141414,
+                80.39215686274514,
+                10.172374368686803
+            ],
+            "text": "DISTINCT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "RIÊNG BIỆT"
+        },
+        {
+            "bbox": [
+                508.4804089052288,
+                664.615461489899,
+                149.8811107026143,
+                11.971275252525288
+            ],
+            "text": " clause in the query.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề trong truy vấn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                691.926780618687,
+                498.9170919117647,
+                11.971275252525231
+            ],
+            "text": "•The Loose Index Scan limitations described previously still apply.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các giới hạn quét chỉ số lỏng lẻo được mô tả trước đây vẫn được áp dụng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                719.238112689394,
+                225.28225449346402,
+                11.971275252525231
+            ],
+            "text": "Assume that there is an index ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giả sử rằng có một chỉ mục "
+        },
+        {
+            "bbox": [
+                396.11558782679737,
+                720.3899305555556,
+                130.63728839869287,
+                10.17236142676768
+            ],
+            "text": "idx(c1,c2,c3)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "IDX (C1, C2, C3)"
+        },
+        {
+            "bbox": [
+                526.7528762254902,
+                719.238112689394,
+                68.90279452614368,
+                11.971275252525231
+            ],
+            "text": " on table ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trên bàn "
+        },
+        {
+            "bbox": [
+                595.655620506536,
+                720.3899305555556,
+                150.73529411764696,
+                10.17236142676768
+            ],
+            "text": "t1(c1,c2,c3,c4)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T1 (C1, C2, C3, C4)"
+        },
+        {
+            "bbox": [
+                746.390914624183,
+                719.238112689394,
+                176.8962920751635,
+                11.971275252525231
+            ],
+            "text": ". The Loose Index Scan",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Quét chỉ số lỏng lẻo"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                734.768415719697,
+                394.70870833333333,
+                11.971275252525288
+            ],
+            "text": "access method can be used for the following queries:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phương thức truy cập có thể được sử dụng cho các truy vấn sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                761.3821783459596,
+                418.03923243464055,
+                8.137827020202053
+            ],
+            "text": "SELECT COUNT(DISTINCT c1), SUM(DISTINCT c1) FROM t1;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn Đếm (Biên giới C1), SUM (C1 khác biệt) từ T1;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                786.2306761363636,
+                498.43138929738564,
+                8.137827020202025
+            ],
+            "text": "SELECT COUNT(DISTINCT c1, c2), COUNT(DISTINCT c2, c1) FROM t1;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn Đếm (Biên giới khác biệt C1, C2), Đếm (C2, C1) từ T1;"
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                811.5437241161617,
+                147.42246732026143,
+                13.16838983585859
+            ],
+            "text": "Tight Index Scan",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Quét chỉ số chặt chẽ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                840.2307951388889,
+                723.3619616013073,
+                11.971275252525231
+            ],
+            "text": "A Tight Index Scan may be either a full index scan or a range index scan, depending on the query",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Quét chỉ mục chặt chẽ có thể là quét chỉ số đầy đủ hoặc quét chỉ mục phạm vi, tùy thuộc vào truy vấn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                855.7610981691919,
+                80.05718954248368,
+                11.97127525252526
+            ],
+            "text": "conditions.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "điều kiện."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                883.0724690656566,
+                736.3587103758169,
+                11.97127525252526
+            ],
+            "text": "When the conditions for a Loose Index Scan are not met, it still may be possible to avoid creation of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi các điều kiện để quét chỉ số lỏng lẻo không được đáp ứng, vẫn có thể tránh được việc tạo ra"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                898.6027746843434,
+                153.58251633986927,
+                11.97127525252526
+            ],
+            "text": "temporary tables for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bảng tạm thời cho "
+        },
+        {
+            "bbox": [
+                324.4158496732026,
+                899.754624905303,
+                80.39215686274508,
+                10.172329071969699
+            ],
+            "text": "GROUP BY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhóm theo"
+        },
+        {
+            "bbox": [
+                404.8080065359477,
+                898.6027746843434,
+                327.6985126633987,
+                11.97127525252526
+            ],
+            "text": " queries. If there are range conditions in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Truy vấn. Nếu có các điều kiện phạm vi trong "
+        },
+        {
+            "bbox": [
+                732.5065191993464,
+                899.754624905303,
+                50.24509803921569,
+                10.172329071969699
+            ],
+            "text": "WHERE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ở ĐÂU"
+        },
+        {
+            "bbox": [
+                782.7516172385621,
+                898.6027746843434,
+                148.94320220588247,
+                11.97127525252526
+            ],
+            "text": " clause, this method",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề, phương pháp này"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                914.1330777146464,
+                740.9812761437908,
+                11.97127525252526
+            ],
+            "text": "reads only the keys that satisfy these conditions. Otherwise, it performs an index scan. Because this",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ đọc các khóa thỏa mãn các điều kiện này. Nếu không, nó thực hiện quét chỉ mục. Bởi vì điều này"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "1685",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1685"
+        }
+    ]
+}

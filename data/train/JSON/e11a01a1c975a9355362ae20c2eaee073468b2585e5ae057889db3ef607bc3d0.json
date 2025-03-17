@@ -1,0 +1,956 @@
+{
+    "metadata": {
+        "page_hash": "e11a01a1c975a9355362ae20c2eaee073468b2585e5ae057889db3ef607bc3d0",
+        "original_filename": "sg248651.pdf",
+        "page_no": 86,
+        "num_pages": 498,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "redbooks",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                518.9313725490196,
+                977.8111768308081,
+                357.99309109477133,
+                10.774146433080809
+            ],
+            "text": "Chapter 3. Central processor complex system design ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Chương 3. Thiết kế hệ thống phức tạp của bộ xử lý trung tâm "
+        },
+        {
+            "bbox": [
+                897.8798684640523,
+                976.9191149305556,
+                18.689803104575162,
+                11.923388857323232
+            ],
+            "text": "67",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "67"
+        },
+        {
+            "bbox": [
+                108.5294167892157,
+                92.32081818181814,
+                49.077994852941146,
+                15.514811553030427
+            ],
+            "text": "3.3.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "3.3.1"
+        },
+        {
+            "bbox": [
+                163.74215053104575,
+                92.32081818181814,
+                372.8294385212418,
+                15.514811553030427
+            ],
+            "text": "Cache levels and memory structure",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Mức bộ nhớ cache và cấu trúc bộ nhớ"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                126.16910069444441,
+                707.3886429738562,
+                11.923403093434445
+            ],
+            "text": "The z14 ZR1 memory subsystem focuses on keeping data “closer” to the PU core. With the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Hệ thống con bộ nhớ Z14 ZR1 tập trung vào việc giữ dữ liệu gần gũi hơn với lõi PU. Với "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                141.69917077020204,
+                494.14389133986924,
+                11.923403093434445
+            ],
+            "text": "current processor configuration, all on chip cache levels increased.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Cấu hình bộ xử lý hiện tại, tất cả trên các mức bộ nhớ cache chip tăng lên."
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                170.19674621212118,
+                687.4879162581699,
+                11.923403093434445
+            ],
+            "text": "Although L1, L2, and L3 caches are implemented on the PU SCM, the fourth cache level (L4) ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Mặc dù bộ đệm L1, L2 và L3 được triển khai trên PU SCM, mức bộ đệm thứ tư (L4) "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                185.72680334595964,
+                687.632772875817,
+                11.923416035353512
+            ],
+            "text": "is implemented within the system controller (SC) SCM. One L4 cache is present in each CPC ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "được triển khai trong SCM của Bộ điều khiển hệ thống (SC). Một bộ đệm L4 có mặt trong mỗi CPC "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                201.25687342171716,
+                633.6853145424835,
+                11.923403093434445
+            ],
+            "text": "drawer, which is shared by all PU SCMs. The cache structure of the z14 ZR1 has the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "ngăn kéo, được chia sẻ bởi tất cả các PU SCMS. Cấu trúc bộ nhớ cache của Z14 ZR1 có "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                216.7869434974748,
+                181.53170383986927,
+                11.923403093434445
+            ],
+            "text": "following characteristics:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Đặc điểm sau:"
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                238.95542866161622,
+                8.340669526143756,
+                11.356249368686917
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23554534313726,
+                238.76206344696982,
+                446.7871160130719,
+                11.923403093434217
+            ],
+            "text": "Larger L1, L2, and L3 caches (more data closer to the core).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Bộ đệm L1, L2 và L3 lớn hơn (nhiều dữ liệu gần hơn với lõi)."
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                261.0078765782829,
+                8.340669526143756,
+                11.356249368686804
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23554534313726,
+                260.8145113636365,
+                18.623044117647026,
+                11.923403093434217
+            ],
+            "text": "L1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "L1"
+        },
+        {
+            "bbox": [
+                276.5143839869281,
+                260.8145113636365,
+                459.83191584967324,
+                11.923403093434217
+            ],
+            "text": "and L2 caches use eDRAM, and are private for each PU core.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "và bộ đệm L2 sử dụng EDRAM, và là riêng tư cho mỗi lõi PU."
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                282.9829965277778,
+                8.340669526143756,
+                11.356249368686917
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23554534313726,
+                282.7896183712122,
+                197.33562949346404,
+                11.923416035353512
+            ],
+            "text": "L2-L3 interface has a new ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Giao diện L2-L3 có một giao diện mới "
+        },
+        {
+            "bbox": [
+                450.49756576797387,
+                279.3859712752525,
+                94.64630596405226,
+                15.730786300505201
+            ],
+            "text": "Fetch cancel",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/APPJAG+TimesNewRoman,Italic",
+                "size": 1
+            },
+            "text_vi": "Tìm nạp Hủy"
+        },
+        {
+            "bbox": [
+                545.0588235294118,
+                282.7921549873738,
+                169.2840257352941,
+                11.923403093434331
+            ],
+            "text": " protocol, a revised L2 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " giao thức, một l2 sửa đổi "
+        },
+        {
+            "bbox": [
+                714.3848206699347,
+                279.3859712752525,
+                136.88384272875817,
+                15.730786300505201
+            ],
+            "text": "Least Recent Used",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/APPJAG+TimesNewRoman,Italic",
+                "size": 1
+            },
+            "text_vi": "Ít được sử dụng gần đây nhất"
+        },
+        {
+            "bbox": [
+                851.3527569444444,
+                282.7921549873738,
+                53.862594362745085,
+                11.923403093434331
+            ],
+            "text": " (LRU) ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " (Lru) "
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                298.32221212121215,
+                128.31475898692815,
+                11.923416035353512
+            ],
+            "text": "demote handling.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Xử lý hạ bệ."
+        },
+        {
+            "bbox": [
+                229.11754656862743,
+                320.49071022727276,
+                8.340686274509835,
+                11.356249368686804
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                320.29733207070717,
+                18.6184885620915,
+                11.923403093434217
+            ],
+            "text": "L3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "L3"
+        },
+        {
+            "bbox": [
+                276.5085555555556,
+                320.29733207070717,
+                630.9185012254902,
+                11.923403093434217
+            ],
+            "text": "cache also uses eDRAM and is shared by all activated cores within the PU chip. The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Bộ đệm cũng sử dụng EDRAM và được chia sẻ bởi tất cả các lõi được kích hoạt trong chip PU. Các "
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                335.8274021464647,
+                647.7760330882353,
+                11.923403093434331
+            ],
+            "text": "CPC drawer has up to four L3 caches, depending on CPC drawer feature. Therefore, a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Ngăn kéo CPC có tối đa bốn bộ nhớ cache L3, tùy thuộc vào tính năng ngăn kéo CPC. Do đó, a "
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                351.3574722222223,
+                660.6339546568629,
+                11.923403093434331
+            ],
+            "text": "Max24 and Max30 CPC drawer feature four L3 caches, which results in 512 MB (4 x 128 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Ngăn kéo CPC MAX24 và MAX30 Tính năng bốn bộ nhớ cache L3, dẫn đến 512 MB (4 x 128 "
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                366.8875681818182,
+                624.2886605392157,
+                11.923364267676789
+            ],
+            "text": "MB) of this shared PU chip-level cache. For availability and reliability, L3 cache now ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "MB) của bộ đệm cấp độ PU được chia sẻ này. Để có tính khả dụng và độ tin cậy, L3 Cache ngay bây giờ "
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                382.41763825757573,
+                192.69152532679738,
+                11.923364267676789
+            ],
+            "text": "implements symbol ECC. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "thực hiện biểu tượng ECC. "
+        },
+        {
+            "bbox": [
+                229.11754656862743,
+                404.6634513888889,
+                8.340686274509835,
+                11.356249368686917
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                404.47012500000005,
+                18.256154411764726,
+                11.923364267676789
+            ],
+            "text": "L4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "L4"
+        },
+        {
+            "bbox": [
+                276.05564624183006,
+                404.47012500000005,
+                640.5413084150327,
+                11.923364267676789
+            ],
+            "text": "cache also uses eDRAM, and is shared by all PU chips. L4 cache has 672 MB inclusive ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Bộ đệm cũng sử dụng EDRAM và được chia sẻ bởi tất cả các chip PU. L4 Cache có 672 MB bao gồm "
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                420.0001950757576,
+                453.1262050653595,
+                11.923364267676789
+            ],
+            "text": "of L3’s, 42w Set Associative and 256 bytes cache line size.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "của L3, 42W đặt kích thước dòng bộ đệm liên kết và 256 byte."
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                441.9753020833334,
+                663.4096446078432,
+                11.92337720959597
+            ],
+            "text": "In most real-world situations, several cache lines exist in multiple L3s underneath L4. The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Trong hầu hết các tình huống trong thế giới thực, một số dòng bộ đệm tồn tại trong nhiều L3 bên dưới L4. Các "
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                457.50537215909094,
+                18.61810334967322,
+                11.923364267676789
+            ],
+            "text": "L4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "L4"
+        },
+        {
+            "bbox": [
+                276.50806985294116,
+                457.50537215909094,
+                633.7349566993464,
+                11.923364267676789
+            ],
+            "text": "does not contain the same line multiple times, but rather once with an indication of all ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "không chứa cùng một dòng nhiều lần, mà là một lần với một dấu hiệu của tất cả "
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                473.0354422348486,
+                654.3400359477124,
+                11.923364267676675
+            ],
+            "text": "the cores that have a copy of that line. As such, 672 MB of inclusive L4 can easily cover ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các lõi có một bản sao của dòng đó. Như vậy, 672 MB L4 bao gồm có thể dễ dàng bao phủ "
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                488.5655123106061,
+                243.8132998366013,
+                11.923364267676789
+            ],
+            "text": "512 MB of underlying L3 caches.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "512 MB bộ nhớ cache L3 cơ bản."
+        },
+        {
+            "bbox": [
+                229.11754656862743,
+                510.73395864898987,
+                8.340686274509835,
+                11.356249368686917
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                510.5406193181818,
+                632.8197422385622,
+                11.92337720959597
+            ],
+            "text": "Main storage has up to 8 TB addressable memory in the CPC drawer, which uses 20 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Bộ lưu trữ chính có tới 8 bộ nhớ có thể địa chỉ TB trong ngăn kéo CPC, sử dụng 20 "
+        },
+        {
+            "bbox": [
+                253.23546160130718,
+                526.0706893939393,
+                57.600779411764734,
+                11.923364267676789
+            ],
+            "text": "DIMMs.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Dimms."
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                559.5878787878788,
+                146.20921568627446,
+                14.365543244949492
+            ],
+            "text": "Considerations",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Cân nhắc"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                579.1880530303031,
+                680.1397381535947,
+                11.923364267676732
+            ],
+            "text": "Cache sizes are limited by ever-diminishing cycle times because they must respond quickly ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Kích thước bộ nhớ cache bị giới hạn bởi thời gian chu kỳ luôn giảm dần vì chúng phải phản hồi nhanh chóng "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                594.7181101641414,
+                686.4434714052287,
+                11.92337720959597
+            ],
+            "text": "without creating bottlenecks. Access to large caches costs more cycles. Instruction and data ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "mà không tạo ra tắc nghẽn. Truy cập vào bộ nhớ cache lớn có giá cao hơn chu kỳ. Hướng dẫn và dữ liệu "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                610.248180239899,
+                664.4341589052287,
+                11.923364267676789
+            ],
+            "text": "cache (L1) sizes must be limited because larger distances must be traveled to reach long ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Kích thước bộ nhớ cache (l1) phải bị giới hạn vì khoảng cách lớn hơn phải được di chuyển để đạt được lâu "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                625.7782503156566,
+                663.5318239379085,
+                11.923364267676789
+            ],
+            "text": "cache lines. This L1 access time generally occurs in one cycle, which prevents increased ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "dòng cache. Thời gian truy cập L1 này thường xảy ra trong một chu kỳ, điều này ngăn chặn tăng "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                641.308307449495,
+                57.71254125816992,
+                11.92337720959597
+            ],
+            "text": "latency.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "độ trễ."
+        }
+    ]
+}

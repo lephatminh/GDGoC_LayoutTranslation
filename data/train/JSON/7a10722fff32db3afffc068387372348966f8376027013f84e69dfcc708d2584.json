@@ -1,0 +1,1356 @@
+{
+    "metadata": {
+        "page_hash": "7a10722fff32db3afffc068387372348966f8376027013f84e69dfcc708d2584",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3672,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                309.30044934640523,
+                48.370422979798036,
+                436.546176879085,
+                11.971275252525288
+            ],
+            "text": "Switching Sources with Asynchronous Connection Failover",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chuyển đổi nguồn với chuyển đổi dự phòng kết nối không đồng bộ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                509.10008169934645,
+                11.971275252525174
+            ],
+            "text": "Figure 17.5 Redundancy Using Replication, After Source Failure",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Hình 17.5 Dự phòng sử dụng sao chép, sau khi nguồn gốc thất bại"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                539.2755366161616,
+                48.40276102941178,
+                11.971275252525231
+            ],
+            "text": "When ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi "
+        },
+        {
+            "bbox": [
+                219.23609436274512,
+                540.4273415404041,
+                60.29411764705884,
+                10.17237436868686
+            ],
+            "text": "Source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nguồn"
+        },
+        {
+            "bbox": [
+                279.53021200980396,
+                539.2755366161616,
+                429.1433991013071,
+                11.971275252525231
+            ],
+            "text": " becomes available again, you should make it a replica of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trở lại một lần nữa, bạn nên biến nó thành một bản sao của "
+        },
+        {
+            "bbox": [
+                708.6736111111111,
+                540.4273415404041,
+                90.44117647058829,
+                10.17237436868686
+            ],
+            "text": "Replica 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bản sao 1"
+        },
+        {
+            "bbox": [
+                799.1147875816994,
+                539.2755366161616,
+                154.53720669934648,
+                11.971275252525231
+            ],
+            "text": ". To do this, issue on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Để làm điều này, vấn đề về"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                555.9576445707071,
+                60.29411764705881,
+                10.172374368686917
+            ],
+            "text": "Source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nguồn"
+        },
+        {
+            "bbox": [
+                231.12745098039215,
+                554.8058396464646,
+                78.19812091503269,
+                11.971275252525288
+            ],
+            "text": " the same ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giống nhau "
+        },
+        {
+            "bbox": [
+                309.32557189542484,
+                555.9576445707071,
+                281.3725490196079,
+                10.172374368686917
+            ],
+            "text": "CHANGE REPLICATION SOURCE TO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi nguồn sao chép thành"
+        },
+        {
+            "bbox": [
+                590.6981209150327,
+                554.8058396464646,
+                13.666683415032594,
+                11.971275252525288
+            ],
+            "text": " | ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " | "
+        },
+        {
+            "bbox": [
+                604.3648043300653,
+                555.9576445707071,
+                160.78431372549028,
+                10.172374368686917
+            ],
+            "text": "CHANGE MASTER TO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi chủ thành"
+        },
+        {
+            "bbox": [
+                765.1491180555556,
+                554.8058396464646,
+                186.19160171568626,
+                11.971275252525288
+            ],
+            "text": " statement as that issued",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố như đã ban hành"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                570.3361426767677,
+                23.280228758169926,
+                11.971275252525231
+            ],
+            "text": "on ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "TRÊN "
+        },
+        {
+            "bbox": [
+                194.11356209150327,
+                571.4879476010101,
+                90.44115972222224,
+                10.17237436868686
+            ],
+            "text": "Replica 2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bản sao 2"
+        },
+        {
+            "bbox": [
+                284.5547218137255,
+                570.3361426767677,
+                37.24838276143788,
+                11.971275252525231
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                321.8031045751634,
+                571.4879476010101,
+                90.44117647058823,
+                10.17237436868686
+            ],
+            "text": "Replica 3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bản sao 3"
+        },
+        {
+            "bbox": [
+                412.2442810457516,
+                570.3361426767677,
+                89.35251593137252,
+                11.971275252525231
+            ],
+            "text": " previously. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Trước đây. "
+        },
+        {
+            "bbox": [
+                501.59679697712414,
+                571.4879476010101,
+                60.29411764705884,
+                10.17237436868686
+            ],
+            "text": "Source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nguồn"
+        },
+        {
+            "bbox": [
+                561.890914624183,
+                570.3361426767677,
+                201.08088235294122,
+                11.971275252525231
+            ],
+            "text": " then becomes a replica of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " sau đó trở thành một bản sao của "
+        },
+        {
+            "bbox": [
+                762.9717969771242,
+                571.4879476010101,
+                90.44117647058818,
+                10.17237436868686
+            ],
+            "text": "Replica 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bản sao 1"
+        },
+        {
+            "bbox": [
+                853.4129734477124,
+                570.3361426767677,
+                98.68133905228763,
+                11.971275252525231
+            ],
+            "text": " and picks up",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " và nhặt lên"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                585.8664457070707,
+                27.936274509803923,
+                11.971275252525288
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                198.76960784313727,
+                587.0182506313131,
+                100.49017933006539,
+                10.172374368686917
+            ],
+            "text": "Web Client",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Máy khách web"
+        },
+        {
+            "bbox": [
+                299.25978717320265,
+                585.8664457070707,
+                295.9771241830065,
+                11.971275252525288
+            ],
+            "text": " writes that it missed while it was offline.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " viết rằng nó đã bỏ lỡ trong khi nó là ngoại tuyến."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                616.8960041035353,
+                69.80717279411766,
+                11.971275252525288
+            ],
+            "text": "To make ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để làm "
+        },
+        {
+            "bbox": [
+                240.640506127451,
+                618.0478090277777,
+                60.29411764705881,
+                10.172374368686917
+            ],
+            "text": "Source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nguồn"
+        },
+        {
+            "bbox": [
+                300.9346237745098,
+                616.8960041035353,
+                377.03921568627453,
+                11.971275252525288
+            ],
+            "text": " a source again, use the preceding procedure as if ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " một nguồn một lần nữa, sử dụng quy trình trước như thể "
+        },
+        {
+            "bbox": [
+                677.9738394607843,
+                618.0478090277777,
+                90.44117647058818,
+                10.172374368686917
+            ],
+            "text": "Replica 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bản sao 1"
+        },
+        {
+            "bbox": [
+                768.4150159313725,
+                616.8960041035353,
+                156.39624183006538,
+                11.971275252525288
+            ],
+            "text": " was unavailable and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " không có sẵn và"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                633.5781120580808,
+                60.29411764705881,
+                10.17237436868686
+            ],
+            "text": "Source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nguồn"
+        },
+        {
+            "bbox": [
+                231.12745098039215,
+                632.4263071338385,
+                519.467320261438,
+                11.971275252525231
+            ],
+            "text": " was to be the new source. During this procedure, do not forget to run ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là nguồn mới. Trong thủ tục này, đừng quên chạy "
+        },
+        {
+            "bbox": [
+                750.5947712418301,
+                633.5781120580808,
+                120.58828553921569,
+                10.17237436868686
+            ],
+            "text": "RESET MASTER",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Đặt lại Master"
+        },
+        {
+            "bbox": [
+                871.1830567810458,
+                632.4263071338385,
+                23.280178513071746,
+                11.971275252525231
+            ],
+            "text": " on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " TRÊN"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                649.1084150883838,
+                90.44117647058826,
+                10.172374368686917
+            ],
+            "text": "Replica 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bản sao 1"
+        },
+        {
+            "bbox": [
+                261.2745098039216,
+                647.9566101641415,
+                115.42973856209147,
+                11.971275252525288
+            ],
+            "text": " before making ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trước khi làm "
+        },
+        {
+            "bbox": [
+                376.7042483660131,
+                649.1084150883838,
+                90.44114297385624,
+                10.172374368686917
+            ],
+            "text": "Replica 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bản sao 1"
+        },
+        {
+            "bbox": [
+                467.1453913398693,
+                647.9566101641415,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                476.4574828431373,
+                649.1084150883838,
+                90.44117647058818,
+                10.172374368686917
+            ],
+            "text": "Replica 2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bản sao 2"
+        },
+        {
+            "bbox": [
+                566.8987095588235,
+                647.9566101641415,
+                41.90439501633989,
+                11.971275252525288
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                608.8031045751634,
+                649.1084150883838,
+                90.44117647058829,
+                10.172374368686917
+            ],
+            "text": "Replica 3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bản sao 3"
+        },
+        {
+            "bbox": [
+                699.2442810457517,
+                647.9566101641415,
+                85.63439542483661,
+                11.971275252525288
+            ],
+            "text": " replicas of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bản sao của "
+        },
+        {
+            "bbox": [
+                784.8786764705883,
+                649.1084150883838,
+                60.29411764705878,
+                10.172374368686917
+            ],
+            "text": "Source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nguồn"
+        },
+        {
+            "bbox": [
+                845.1727941176471,
+                647.9566101641415,
+                118.2434305555555,
+                11.971275252525288
+            ],
+            "text": ". If you fail to do",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Nếu bạn không làm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                663.4869131944445,
+                374.1752450980392,
+                11.971275252525231
+            ],
+            "text": "this, the replicas may pick up stale writes from the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cái này, các bản sao có thể chọn viết cũ từ "
+        },
+        {
+            "bbox": [
+                545.0085784313726,
+                664.6387181186869,
+                100.49019607843138,
+                10.17237436868686
+            ],
+            "text": "Web Client",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Máy khách web"
+        },
+        {
+            "bbox": [
+                645.498774509804,
+                663.4869131944445,
+                302.5592320261437,
+                11.971275252525231
+            ],
+            "text": " applications dating from before the point",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các ứng dụng có niên đại từ trước điểm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                679.0172162247475,
+                66.0890355392157,
+                11.971275252525288
+            ],
+            "text": "at which ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ở đó "
+        },
+        {
+            "bbox": [
+                236.92236887254904,
+                680.1690211489899,
+                60.29411764705884,
+                10.172374368686917
+            ],
+            "text": "Source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nguồn"
+        },
+        {
+            "bbox": [
+                297.2164865196079,
+                679.0172162247475,
+                158.25534395424836,
+                11.971275252525288
+            ],
+            "text": " became unavailable.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trở nên không có sẵn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                710.0467746212121,
+                770.8100155228757,
+                11.971275252525231
+            ],
+            "text": "You should be aware that there is no synchronization between replicas, even when they share the same",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn nên lưu ý rằng không có sự đồng bộ hóa giữa các bản sao, ngay cả khi chúng chia sẻ giống nhau"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                725.5770776515151,
+                788.4628602941177,
+                11.971275252525288
+            ],
+            "text": "source, and thus some replicas might be considerably ahead of others. This means that in some cases the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nguồn, và do đó một số bản sao có thể đi trước đáng kể so với những người khác. Điều này có nghĩa là trong một số trường hợp"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                741.1073806818182,
+                792.1809473039216,
+                11.971275252525231
+            ],
+            "text": "procedure outlined in the previous example might not work as expected. In practice, however, relay logs on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Quy trình được nêu trong ví dụ trước có thể không hoạt động như mong đợi. Trong thực tế, tuy nhiên, các bản ghi chuyển tiếp vào"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                756.6376448863637,
+                341.6164215686275,
+                11.971275252525231
+            ],
+            "text": "all replicas should be relatively close together.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tất cả các bản sao nên tương đối gần nhau."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                787.6672032828283,
+                790.3386605392157,
+                11.971275252525231
+            ],
+            "text": "One way to keep applications informed about the location of the source is to have a dynamic DNS entry for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một cách để thông báo các ứng dụng về vị trí của nguồn là có mục nhập DNS động cho"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                803.1975063131313,
+                176.84599673202612,
+                11.971275252525231
+            ],
+            "text": "the source server. With ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Máy chủ nguồn. Với "
+        },
+        {
+            "bbox": [
+                347.67933006535947,
+                804.3493630050505,
+                40.1960784313726,
+                10.17232260101008
+            ],
+            "text": "bind",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ràng buộc"
+        },
+        {
+            "bbox": [
+                387.87540849673206,
+                803.1975063131313,
+                99.61929779411764,
+                11.971275252525231
+            ],
+            "text": " you can use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bạn có thể sử dụng "
+        },
+        {
+            "bbox": [
+                487.4947062908497,
+                804.3493630050505,
+                80.39215686274514,
+                10.17232260101008
+            ],
+            "text": "nsupdate",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "nsupdate"
+        },
+        {
+            "bbox": [
+                567.8868631535948,
+                803.1975063131313,
+                239.23364338235297,
+                11.971275252525231
+            ],
+            "text": " to update the DNS dynamically.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để cập nhật DNS một cách linh hoạt."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                834.9388702651515,
+                65.18463717320265,
+                16.759798295454516
+            ],
+            "text": "17.4.9",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "17.4.9"
+        },
+        {
+            "bbox": [
+                162.14428774509804,
+                834.9388702651515,
+                665.7978041666668,
+                16.759798295454516
+            ],
+            "text": "Switching Sources with Asynchronous Connection Failover",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Chuyển đổi nguồn với chuyển đổi dự phòng kết nối không đồng bộ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                871.4687443181818,
+                710.281404003268,
+                11.971275252525231
+            ],
+            "text": "Beginning with MySQL 8.0.22, you can use the asynchronous connection failover mechanism to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu với MySQL 8.0.22, bạn có thể sử dụng cơ chế chuyển đổi dự phòng kết nối không đồng bộ để"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                886.9990473484849,
+                767.0248680555555,
+                11.971273958333327
+            ],
+            "text": "automatically establish an asynchronous (source to replica) replication connection to a new source after",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tự động thiết lập kết nối sao chép không đồng bộ (nguồn cho bản sao) với nguồn mới"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                902.529349084596,
+                787.4914215686275,
+                11.971275252525245
+            ],
+            "text": "the existing connection from a replica to its source fails. The asynchronous connection failover mechanism",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kết nối hiện có từ một bản sao đến nguồn của nó không thành công. Cơ chế chuyển đổi dự phòng kết nối không đồng bộ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                918.059652114899,
+                771.6641989379085,
+                11.971275252525245
+            ],
+            "text": "can be used to keep a replica synchronized with multiple MySQL servers or groups of servers that share",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có thể được sử dụng để giữ một bản sao được đồng bộ hóa với nhiều máy chủ hoặc nhóm máy chủ MySQL chia sẻ"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "3643",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3643"
+        }
+    ]
+}

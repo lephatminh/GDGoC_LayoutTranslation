@@ -1,0 +1,1216 @@
+{
+    "metadata": {
+        "page_hash": "1a2f5bfc02fef2af1b4d236b97f65ff92b6317f99ef29bab12865fedd0f7c498",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 2089,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                347.11825980392155,
+                48.370422979798036,
+                300.6164215686275,
+                11.971275252525288
+            ],
+            "text": "Geometry Well-Formedness and Validity",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hình học hình thành và tính hợp lệ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                793.0518958333332,
+                11.971275252525174
+            ],
+            "text": "•Polygon rings can be specified both clockwise and counterclockwise. MySQL flips the rings automatically",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Vòng đa giác có thể được chỉ định cả theo chiều kim đồng hồ và ngược chiều kim đồng hồ. MySQL tự động lật các vòng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                110.49163510101016,
+                142.4448529411765,
+                11.971275252525288
+            ],
+            "text": "when reading data.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi đọc dữ liệu."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                138.5911041666668,
+                772.6523022875817,
+                11.971275252525174
+            ],
+            "text": "Cartesian coordinates are stored in the length unit of the spatial reference system, with X values in the X",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tọa độ Cartesian được lưu trữ trong đơn vị chiều dài của hệ thống tham chiếu không gian, với các giá trị x trong X trong X"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                154.1214071969698,
+                781.9644775326797,
+                11.971275252525288
+            ],
+            "text": "coordinates and Y values in the Y coordinates. Axis directions are those specified by the spatial reference",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tọa độ và giá trị y trong tọa độ y. Hướng dẫn trục được chỉ định bởi tham chiếu không gian"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                169.65171022727282,
+                57.69812091503269,
+                11.971275252525288
+            ],
+            "text": "system.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hệ thống."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                197.75124400252525,
+                779.1841985294118,
+                11.971275252525288
+            ],
+            "text": "Geographic coordinates are stored in the angle unit of the spatial reference system, with longitudes in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tọa độ địa lý được lưu trữ trong đơn vị góc của hệ thống tham chiếu không gian, với kinh độ trong"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                213.28154703282826,
+                11.171156781045767,
+                11.971275252525288
+            ],
+            "text": "X",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "X"
+        },
+        {
+            "bbox": [
+                156.51347536764706,
+                213.28154703282826,
+                753.1070144199347,
+                11.971275252525288
+            ],
+            "text": "coordinates and latitudes in the Y coordinates. Axis directions and the meridian are those specified by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tọa độ và vĩ độ trong tọa độ y. Hướng dẫn trục và kinh tuyến là những hướng dẫn được chỉ định bởi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                228.81185006313126,
+                214.09436274509807,
+                11.971275252525288
+            ],
+            "text": "the spatial reference system.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hệ thống tham chiếu không gian."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                256.9113191287879,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                258.0631628787878,
+                80.3921736111111,
+                10.172335542929432
+            ],
+            "text": "LENGTH()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHIỀU DÀI()"
+        },
+        {
+            "bbox": [
+                254.5919285130719,
+                256.9113191287879,
+                534.3398860294118,
+                11.971275252525288
+            ],
+            "text": " function returns the space in bytes required for value storage. Example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Chức năng trả về không gian trong byte cần thiết để lưu trữ giá trị. Ví dụ:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                284.1541237373739,
+                56.274509803921575,
+                8.13782702020194
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                284.1541237373739,
+                321.5686441993464,
+                8.13782702020194
+            ],
+            "text": "SET @g = ST_GeomFromText(’POINT(1 -1)’);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Đặt @g = st_geomfromtext (điểm (1 -1),);"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                296.5783273358587,
+                56.274509803921575,
+                8.13782702020194
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                296.5783273358587,
+                144.7058823529412,
+                8.13782702020194
+            ],
+            "text": "SELECT LENGTH(@g);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn độ dài (@g);"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                309.0025438762626,
+                112.54901960784312,
+                8.137904671717138
+            ],
+            "text": "+------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                321.42682512626277,
+                112.54901960784312,
+                8.13783996212112
+            ],
+            "text": "| LENGTH(@g) |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Chiều dài (@g) |"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                333.8510416666667,
+                112.54901960784312,
+                8.137904671717138
+            ],
+            "text": "+------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                346.275335858586,
+                8.03922071078432,
+                8.13782702020194
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                346.275335858586,
+                16.078448120915027,
+                8.13782702020194
+            ],
+            "text": "25",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "25"
+        },
+        {
+            "bbox": [
+                245.19606168300655,
+                346.275335858586,
+                8.039232434640496,
+                8.13782702020194
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                358.69953945707084,
+                112.54901960784312,
+                8.13782702020194
+            ],
+            "text": "+------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                371.12375599747475,
+                56.274509803921575,
+                8.137904671717251
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                371.12375599747475,
+                120.58825204248367,
+                8.137904671717251
+            ],
+            "text": "SELECT HEX(@g);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn hex (@g);"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                383.5480372474748,
+                434.11766380718956,
+                8.137839962121234
+            ],
+            "text": "+----------------------------------------------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+--------------------------------------------------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                395.9722537878788,
+                72.35294117647061,
+                8.137865845959595
+            ],
+            "text": "| HEX(@g)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Hex (@g)"
+        },
+        {
+            "bbox": [
+                566.764739379085,
+                395.9722537878788,
+                8.039198937908509,
+                8.137865845959595
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                408.3964962121212,
+                434.11766380718956,
+                8.13787878787889
+            ],
+            "text": "+----------------------------------------------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+--------------------------------------------------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                420.82075157828285,
+                434.11766380718956,
+                8.137878787878776
+            ],
+            "text": "| 000000000101000000000000000000F03F000000000000F0BF |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| 00000000010100000000000000000000F03F00000000000000F0BF |"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                433.24496811868687,
+                434.11766380718956,
+                8.137904671717251
+            ],
+            "text": "+----------------------------------------------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+--------------------------------------------------------+"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                459.1689264520203,
+                786.6372381535948,
+                11.971275252525174
+            ],
+            "text": "The value length is 25 bytes, made up of these components (as can be seen from the hexadecimal value):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Độ dài giá trị là 25 byte, được tạo thành từ các thành phần này (như có thể thấy từ giá trị thập lục phân):"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                487.26843434343436,
+                220.59271200980396,
+                11.971275252525288
+            ],
+            "text": "•4 bytes for integer SRID (0)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• 4 byte cho số nguyên SRID (0)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                515.3679292929294,
+                352.33537581699346,
+                11.971275252525288
+            ],
+            "text": "•1 byte for integer byte order (1 = little-endian)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• 1 byte cho thứ tự byte số nguyên (1 = Little-endian)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                543.4674371843435,
+                313.2446895424836,
+                11.971275252525231
+            ],
+            "text": "•4 bytes for integer type information (1 = ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• 4 byte cho thông tin loại số nguyên (1 = "
+        },
+        {
+            "bbox": [
+                453.93096405228755,
+                544.6192421085859,
+                50.24509803921569,
+                10.172374368686803
+            ],
+            "text": "Point",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Điểm"
+        },
+        {
+            "bbox": [
+                504.17606209150324,
+                543.4674371843435,
+                5.577189133986963,
+                11.971275252525231
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                571.5669321338385,
+                346.27246732026146,
+                11.971275252525288
+            ],
+            "text": "•8 bytes for double-precision X coordinate (1)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• 8 byte cho tọa độ x chính xác x kép (1)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                599.6664400252525,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                599.7958333333333,
+                9.312088153594772,
+                11.971275252525231
+            ],
+            "text": "8",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "8"
+        },
+        {
+            "bbox": [
+                171.4027777777778,
+                599.7958333333333,
+                300.66664991830066,
+                11.971275252525231
+            ],
+            "text": "bytes for double-precision Y coordinate (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Byte cho tọa độ y có độ chính xác kép ("
+        },
+        {
+            "bbox": [
+                472.06942769607844,
+                595.1367294823233,
+                9.764314133986943,
+                18.20929324494955
+            ],
+            "text": "−",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/EAAAAA+ArialUnicodeMS",
+                "size": 10
+            },
+            "text_vi": "-"
+        },
+        {
+            "bbox": [
+                481.8337418300654,
+                599.7958333333333,
+                14.889330882352908,
+                11.971275252525231
+            ],
+            "text": "1)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1)"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                628.6330306186869,
+                65.18463717320263,
+                16.759798295454516
+            ],
+            "text": "11.4.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "11.4.4"
+        },
+        {
+            "bbox": [
+                131.99721552287582,
+                628.6330306186869,
+                449.5395491830066,
+                16.759798295454516
+            ],
+            "text": "Geometry Well-Formedness and Validity",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Hình học hình thành và tính hợp lệ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                662.2328412247475,
+                724.1826147875818,
+                11.971275252525231
+            ],
+            "text": "For geometry values, MySQL distinguishes between the concepts of syntactically well-formed and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các giá trị hình học, MySQL phân biệt giữa các khái niệm về được hình thành tốt về mặt"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                677.7631442550505,
+                142.39459109477127,
+                11.971275252525231
+            ],
+            "text": "geometrically valid.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hợp lệ về mặt hình học."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                705.8626521464646,
+                769.7548684640522,
+                11.971275252525231
+            ],
+            "text": "A geometry is syntactically well-formed if it satisfies conditions such as those in this (nonexhaustive) list:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một hình học được hình thành tốt về mặt cú pháp nếu nó thỏa mãn các điều kiện như trong danh sách này (không có điều này): danh sách này:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                733.9621212121212,
+                277.4031862745098,
+                11.971275252525231
+            ],
+            "text": "•Linestrings have at least two points",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Linestrings có ít nhất hai điểm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                762.0616549873737,
+                250.421568627451,
+                11.97127525252526
+            ],
+            "text": "•Polygons have at least one ring",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Đa giác có ít nhất một vòng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                790.1611240530303,
+                429.10991911764705,
+                11.971275252525231
+            ],
+            "text": "•Polygon rings are closed (first and last points the same)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Vòng đa giác được đóng (điểm đầu tiên và cuối cùng giống nhau)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                818.2605801767677,
+                770.7262904411764,
+                11.971275252525231
+            ],
+            "text": "•Polygon rings have at least 4 points (minimum polygon is a triangle with first and last points the same)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Vòng đa giác có ít nhất 4 điểm (đa giác tối thiểu là một hình tam giác với các điểm đầu tiên và cuối cùng giống nhau)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                846.3601268939394,
+                269.9334150326797,
+                11.97127525252526
+            ],
+            "text": "•Collections are not empty (except ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Bộ sưu tập không trống (ngoại trừ "
+        },
+        {
+            "bbox": [
+                410.6196895424836,
+                847.5119706439394,
+                180.88231944444448,
+                10.172335542929261
+            ],
+            "text": "GeometryCollection",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hình họcCollection"
+        },
+        {
+            "bbox": [
+                591.5020592320261,
+                846.3601268939394,
+                5.577189133986963,
+                11.97127525252526
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                874.4595830176768,
+                777.1912434640524,
+                11.97127525252526
+            ],
+            "text": "A geometry is geometrically valid if it is syntactically well-formed and satisfies conditions such as those in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một hình học có giá trị về mặt hình học nếu nó được hình thành tốt về mặt cú pháp và thỏa mãn các điều kiện như các điều kiện trong"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                889.9898860479798,
+                179.64299060457517,
+                11.971279135101
+            ],
+            "text": "this (nonexhaustive) list:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Danh sách này (không có gì):"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                918.0894314709597,
+                264.35620915032683,
+                11.971275252525245
+            ],
+            "text": "•Polygons are not self-intersecting",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Đa giác không tự giao nhau"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "2060",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2060"
+        }
+    ]
+}

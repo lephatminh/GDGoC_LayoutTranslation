@@ -1,0 +1,1096 @@
+{
+    "metadata": {
+        "page_hash": "99ea7d0acf729a5e761042bddabc783855b6def56018c85b800d1638eeba862e",
+        "original_filename": "tips1346.pdf",
+        "page_no": 6,
+        "num_pages": 10,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "redbooks",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                120.58823529411765,
+                965.1966856060606,
+                509.0421156045751,
+                13.161934406565663
+            ],
+            "text": "Changing Physical Disk Storage in IBM DB2 pureScale: A Practical Example",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Thay đổi lưu trữ đĩa vật lý trong IBM DB2 Purescale: Một ví dụ thực tế"
+        },
+        {
+            "bbox": [
+                896.1062834967321,
+                965.1966856060606,
+                8.362827614378944,
+                13.161934406565663
+            ],
+            "text": "7",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "7"
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                93.1968308080809,
+                642.1781429738562,
+                14.653578598484728
+            ],
+            "text": "Change the GPFS tiebreaker disk by running the following commands as the root user:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Thay đổi đĩa TieBreaker GPFS bằng cách chạy các lệnh sau làm người dùng gốc:"
+        },
+        {
+            "bbox": [
+                115.6642123366013,
+                95.78829482323226,
+                9.98379979575165,
+                11.442973169191987
+            ],
+            "text": "",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAOAA+Wingdings",
+                "size": 1
+            },
+            "text_vi": ""
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                122.07245265151528,
+                10.049748161764683,
+                14.679565972222122
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                170.83477369281047,
+                122.07245265151528,
+                422.08922181372543,
+                14.679565972222122
+            ],
+            "text": "db2cluster -cfs -set -tiebreaker -majority",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "db2cluster -cfs -set -tiebreaker -Majority"
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                135.97261742424246,
+                592.8176433823529,
+                14.679565972222235
+            ],
+            "text": "The quorum type has been successfully change to GLYPH<145>majorityGLYPH<146>.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "Loại đại biểu đã được thay đổi thành công thành Glyph <145> Majorityglyph <146>."
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                149.87278219696975,
+                10.046808823529403,
+                14.679565972222235
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                170.8289285130719,
+                149.87278219696975,
+                532.481102124183,
+                14.679565972222235
+            ],
+            "text": "db2cluster -cfs -set -tiebreaker -disk /dev/hdisk151/",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "db2cluster -cfs -set -tiebreaker -disk/dev/hdisk151/"
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                163.77294696969705,
+                512.4375453431372,
+                14.679565972222122
+            ],
+            "text": "The quorum has been successfully changed to GLYPH<145>diskGLYPH<146>.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "Quorum đã được thay đổi thành công thành Glyph <145> Diskglyph <146>."
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                192.8247989267677,
+                566.9030473856209,
+                14.653578598484955
+            ],
+            "text": "Exit maintenance mode by running the following commands as the root user:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Chế độ bảo trì thoát bằng cách chạy các lệnh sau làm người dùng gốc:"
+        },
+        {
+            "bbox": [
+                115.6642123366013,
+                195.4151628787879,
+                9.98379979575165,
+                11.442973169191873
+            ],
+            "text": "",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAOAA+Wingdings",
+                "size": 1
+            },
+            "text_vi": ""
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                221.699398358586,
+                10.047716584967304,
+                14.679578914141302
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                170.83073733660132,
+                221.699398358586,
+                381.8134546568628,
+                14.679578914141302
+            ],
+            "text": "db2cluster -cm -exit -maintenance -all",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "db2cluster -cm -exit -mainter -all"
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                235.59956313131318,
+                532.5019538398693,
+                14.679565972222122
+            ],
+            "text": "Host GLYPH<145>hostname1GLYPH<146> has exited maintenance mode. Domain ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "Máy chủ Glyph <145> hostName1glyph <146> đã thoát khỏi chế độ bảo trì. Lãnh địa "
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                249.42192108585868,
+                452.1570776143791,
+                14.679565972222122
+            ],
+            "text": "GLYPH<145>db2domain_20130718132645GLYPH<146> has been started. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "Glyph <145> db2domain_20130718132645GLYPH <146> đã được bắt đầu. "
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                263.398624368687,
+                10.046706658496731,
+                14.679565972222122
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                170.82871078431373,
+                263.398624368687,
+                401.8681491013072,
+                14.679565972222122
+            ],
+            "text": "db2cluster -cfs -exit -maintenance -all ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "db2cluster -cfs -exit -mainter -all "
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                277.2987891414142,
+                643.0541495098039,
+                14.679565972222122
+            ],
+            "text": "The shared file system has successfully exited maintenance mode.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "Hệ thống tệp được chia sẻ đã thoát khỏi chế độ bảo trì thành công."
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                306.35064109848486,
+                621.4945138888888,
+                14.653578598484955
+            ],
+            "text": "Start the DB2 instance by running the following command as the DB2 instance user:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Bắt đầu thể hiện DB2 bằng cách chạy lệnh sau làm người dùng cá thể DB2:"
+        },
+        {
+            "bbox": [
+                115.6642123366013,
+                308.9415615530304,
+                9.98379979575165,
+                11.442973169191873
+            ],
+            "text": "",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAOAA+Wingdings",
+                "size": 1
+            },
+            "text_vi": ""
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                335.22588762626265,
+                321.5354489379085,
+                14.679565972222122
+            ],
+            "text": "$ db2start instance on hostname1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "$ db2start cá thể trên hostname1"
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                349.12603945707076,
+                321.5354489379085,
+                14.679604797979778
+            ],
+            "text": "$ db2start instance on hostname2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "$ db2start cá thể trên hostname2"
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                363.02628188131314,
+                100.56363766339868,
+                14.679565972222235
+            ],
+            "text": "$ db2start",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "$ dB2Start"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                406.7231190025253,
+                299.8828431372549,
+                17.5492294823232
+            ],
+            "text": "Changing the TSA tiebreaker disk",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Thay đổi đĩa TSA Tiebreaker"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                438.9790148358586,
+                787.0660800653595,
+                14.653617424242384
+            ],
+            "text": "Finally, the TSA tiebreaker disk should be changed to a disk from the new EMC storage. This work can be ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Cuối cùng, đĩa TSA Tiebreaker nên được thay đổi thành đĩa từ bộ lưu trữ EMC mới. Công việc này có thể là "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                453.57686553030305,
+                770.460410130719,
+                14.653617424242384
+            ],
+            "text": "done while the DB2 pureScale cluster is online. In the scenario, a new disk that is named hdisk200 from ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Được thực hiện trong khi cụm Purescale DB2 trực tuyến. Trong kịch bản, một đĩa mới được đặt tên là HDISK200 từ "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                468.2525230429293,
+                319.5165841503268,
+                14.653617424242498
+            ],
+            "text": "EMC storage is set as new TSA tiebreaker.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Lưu trữ EMC được đặt làm TSA Tiebreaker mới."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                497.68295202020204,
+                218.60054411764705,
+                14.653617424242384
+            ],
+            "text": "Complete the following steps:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Hoàn thành các bước sau:"
+        },
+        {
+            "bbox": [
+                150.73516683006534,
+                527.0355612373737,
+                756.2343413398694,
+                14.653630366161622
+            ],
+            "text": "Check the current TSA tiebreaker disk by running the following command as the DB2 instance user or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Kiểm tra đĩa TSA Tiebreaker hiện tại bằng cách chạy lệnh sau làm người dùng phiên bản DB2 hoặc "
+        },
+        {
+            "bbox": [
+                115.6642123366013,
+                529.6272711489898,
+                9.98379979575165,
+                11.443063762626252
+            ],
+            "text": "",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAOAA+Wingdings",
+                "size": 1
+            },
+            "text_vi": ""
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                541.6342919823232,
+                98.51625040849669,
+                14.653617424242384
+            ],
+            "text": "the root user:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "người dùng gốc:"
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                570.587487689394,
+                351.62537908496734,
+                14.679565972222235
+            ],
+            "text": "$ db2cluster -cm -list -tiebreaker ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "$ db2Cluster -cm -list -tiebreaker "
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                584.4876912878788,
+                733.4026070261439,
+                14.679565972222292
+            ],
+            "text": " The current quorum device is of type Disk with the following specifics: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": " Thiết bị đại biểu hiện tại thuộc loại đĩa với các chi tiết cụ thể sau: "
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                598.3100880681818,
+                190.930602124183,
+                14.679565972222179
+            ],
+            "text": "DEVICE=/dev/hdisk2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "Thiết bị =/dev/hdisk2."
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                627.4396691919192,
+                620.6704775326798,
+                14.65361742424244
+            ],
+            "text": "Change the TSA tiebreaker disk by running the following command as the root user:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Thay đổi đĩa TSA Tiebreaker bằng cách chạy lệnh sau làm người dùng gốc:"
+        },
+        {
+            "bbox": [
+                115.6642123366013,
+                630.030537878788,
+                9.98379979575165,
+                11.443063762626252
+            ],
+            "text": "",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAOAA+Wingdings",
+                "size": 1
+            },
+            "text_vi": ""
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                656.3149416035353,
+                10.047780228758171,
+                14.679565972222235
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                170.8308545751634,
+                656.3149416035353,
+                512.4366911764705,
+                14.679565972222235
+            ],
+            "text": "db2cluster -cm -set -tiebreaker -disk /dev/hdisk200",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "db2cluster -cm -set -tirebreaker -disk /dev /hdisk200"
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                670.2151452020203,
+                653.1887867647059,
+                14.679565972222179
+            ],
+            "text": "Configuring quorum device for domain GLYPH<145>db2domain_20130718132645GLYPH<146> GLYPH<133>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "Định cấu hình thiết bị đại biểu cho miền glyph <145> db2domain_20130718132645glyph <146> glyph <133>"
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                684.1153099747476,
+                683.2870241013072,
+                14.679565972222179
+            ],
+            "text": "Configuring quorum device for domain GLYPH<145>db2domain_20130718132645GLYPH<146> was ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "Định cấu hình thiết bị đại biểu cho miền glyph <145> db2domain_20130718132645glyph <146> "
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                697.9377067550505,
+                110.54209640522879,
+                14.679540088383874
+            ],
+            "text": "successful.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CourierNew",
+                "size": 1
+            },
+            "text_vi": "thành công."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                741.7116000631313,
+                85.97941176470587,
+                17.549242424242436
+            ],
+            "text": "Summary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Bản tóm tắt"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                773.9675088383839,
+                218.6962107843137,
+                14.65361742424244
+            ],
+            "text": "Consider the following points:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Xem xét các điểm sau:"
+        },
+        {
+            "bbox": [
+                150.73516683006534,
+                803.3201309974747,
+                700.3877355392158,
+                14.653617424242412
+            ],
+            "text": "Multiple disks can be added to file systems by running one command, and multiple commands ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Có thể thêm nhiều đĩa vào các hệ thống tệp bằng cách chạy một lệnh và nhiều lệnh "
+        },
+        {
+            "bbox": [
+                115.6642123366013,
+                805.9112326388889,
+                9.98379979575165,
+                11.443037878787862
+            ],
+            "text": "",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAOAA+Wingdings",
+                "size": 1
+            },
+            "text_vi": ""
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                817.9183958333333,
+                372.4650526960785,
+                14.653617424242412
+            ],
+            "text": "against multiple file systems can be run in parallel.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Chống lại nhiều hệ thống tệp có thể được chạy song song."
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                839.9714390782829,
+                731.1957920751635,
+                14.653617424242412
+            ],
+            "text": "In the process of adding disks to a GPFS file system, there might be a delay when the applications ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Trong quá trình thêm đĩa vào hệ thống tệp GPFS, có thể có độ trễ khi các ứng dụng "
+        },
+        {
+            "bbox": [
+                115.6642123366013,
+                842.562877209596,
+                9.98379979575165,
+                11.443037878787862
+            ],
+            "text": "",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAOAA+Wingdings",
+                "size": 1
+            },
+            "text_vi": ""
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                854.5697815656565,
+                420.91258210784315,
+                14.653617424242412
+            ],
+            "text": "access the file system during the allocation of disk maps.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Truy cập hệ thống tệp trong quá trình phân bổ bản đồ đĩa."
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                876.6228248106061,
+                755.6654395424836,
+                14.65361742424244
+            ],
+            "text": "Depending on the storage vendor product, GPFS rebalancing might happen when you add disks. You ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Tùy thuộc vào sản phẩm của nhà cung cấp lưu trữ, việc cân bằng lại GPFS có thể xảy ra khi bạn thêm đĩa. Bạn "
+        },
+        {
+            "bbox": [
+                115.6642123366013,
+                879.2144053030303,
+                9.98379979575165,
+                11.44302493686871
+            ],
+            "text": "",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAOAA+Wingdings",
+                "size": 1
+            },
+            "text_vi": ""
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                891.2214261363637,
+                752.9132642973856,
+                14.653614835858576
+            ],
+            "text": "must confirm whether the GPFS rebalancing was done to the new disks; if not, the GPFS rebalancing ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "phải xác nhận xem việc tái cân bằng GPFS có được thực hiện cho các đĩa mới hay không; Nếu không, việc cân bằng lại GPFS "
+        },
+        {
+            "bbox": [
+                150.73529411764707,
+                905.8970991792929,
+                177.60076184640525,
+                14.653609659090918
+            ],
+            "text": "must be done manually.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/HGAMGI+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "phải được thực hiện thủ công."
+        }
+    ]
+}

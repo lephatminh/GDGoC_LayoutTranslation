@@ -1,0 +1,1256 @@
+{
+    "metadata": {
+        "page_hash": "c98532adea998f153d784fe8ac62d80d08ae27431fc492e3b67a7ab524198270",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4685,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                369.9128026960785,
+                48.370422979798036,
+                255.02736928104576,
+                11.971275252525288
+            ],
+            "text": "Overview of Partitioning in MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tổng quan về phân vùng trong MySQL"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                757.5788733660131,
+                11.971275252525174
+            ],
+            "text": "Several types of partitioning are supported, as well as subpartitioning; see Section 24.2, “Partitioning",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một số loại phân vùng được hỗ trợ, cũng như phân chia phụ; Xem Phần 24.2, Phân vùng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                64.96691176470588,
+                11.971275252525288
+            ],
+            "text": "Types”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các loại ”"
+        },
+        {
+            "bbox": [
+                191.86928104575165,
+                110.49163510101016,
+                308.72264746732026,
+                11.971275252525288
+            ],
+            "text": ", and Section 24.2.6, “Subpartitioning”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và Mục 24.2.6, Subpartitioning trực tuyến"
+        },
+        {
+            "bbox": [
+                473.0240845588235,
+                110.49163510101016,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                137.00447664141427,
+                304.9709967320261,
+                11.971275252525288
+            ],
+            "text": "Section 24.3, “Partition Management”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mục 24.3, Quản lý phân vùng ”"
+        },
+        {
+            "bbox": [
+                418.0894607843137,
+                137.00447664141427,
+                466.374949754902,
+                11.971275252525288
+            ],
+            "text": ", covers methods of adding, removing, and altering partitions in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", bao gồm các phương pháp thêm, loại bỏ và thay đổi các phân vùng trong"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                152.53477967171727,
+                193.62785947712422,
+                11.971275252525288
+            ],
+            "text": "existing partitioned tables.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng phân vùng hiện có."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                179.0475435606062,
+                344.078431372549,
+                11.971275252525174
+            ],
+            "text": "Section 24.3.4, “Maintenance of Partitions”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mục 24.3.4, Bảo trì các phân vùng"
+        },
+        {
+            "bbox": [
+                457.1968619281046,
+                179.0475435606062,
+                401.1904264705883,
+                11.971275252525174
+            ],
+            "text": ", discusses table maintenance commands for use with",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", thảo luận về các lệnh bảo trì bảng để sử dụng với"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                194.5778465909092,
+                132.19483619281044,
+                11.971275252525288
+            ],
+            "text": "partitioned tables.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bảng phân vùng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                221.09070107323225,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                222.24254482323238,
+                100.49021282679738,
+                10.172335542929204
+            ],
+            "text": "PARTITIONS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phân vùng"
+        },
+        {
+            "bbox": [
+                274.68993423202613,
+                221.09070107323225,
+                91.24509803921569,
+                11.971275252525288
+            ],
+            "text": " table in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng trong "
+        },
+        {
+            "bbox": [
+                365.93506576797387,
+                222.24254482323238,
+                180.88231944444436,
+                10.172335542929204
+            ],
+            "text": "INFORMATION_SCHEMA",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thông tin_schema"
+        },
+        {
+            "bbox": [
+                546.8173852124182,
+                221.09070107323225,
+                380.75730269607857,
+                11.971275252525288
+            ],
+            "text": " database provides information about partitions and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cơ sở dữ liệu cung cấp thông tin về các phân vùng và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                236.62100410353537,
+                719.141339869281,
+                11.971275252525174
+            ],
+            "text": "partitioned tables. See Section 26.3.21, “The INFORMATION_SCHEMA PARTITIONS Table”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bảng phân vùng. Xem Phần 26.3.21, Bảng phân vùng thông tin_Schema"
+        },
+        {
+            "bbox": [
+                832.2598206699347,
+                236.62100410353537,
+                71.66627491830059,
+                11.971275252525174
+            ],
+            "text": ", for more",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", để biết thêm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                252.15130713383837,
+                801.2920584150327,
+                11.971275252525288
+            ],
+            "text": "information; for some examples of queries against this table, see Section 24.2.7, “How MySQL Partitioning",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thông tin; Để biết một số ví dụ về các truy vấn đối với bảng này, xem Phần 24.2.7, Cách phân vùng MySQL"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                267.6816101641414,
+                128.2589869281046,
+                11.971275252525288
+            ],
+            "text": "Handles NULL”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xử lý null ”"
+        },
+        {
+            "bbox": [
+                255.16137295751633,
+                267.6816101641414,
+                4.6560290032679745,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                294.1943740530304,
+                748.216486519608,
+                11.971275252525288
+            ],
+            "text": "For known issues with partitioning in MySQL 8.0, see Section 24.6, “Restrictions and Limitations on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các vấn đề đã biết với phân vùng trong MySQL 8.0, xem Phần 24.6, Hạn chế và hạn chế về"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                309.7246770833334,
+                103.13643790849676,
+                11.971275252525288
+            ],
+            "text": "Partitioning”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phân vùng ”"
+        },
+        {
+            "bbox": [
+                230.0388239379085,
+                309.7246770833334,
+                4.6560290032679745,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                336.2375186237374,
+                678.610277369281,
+                11.971275252525288
+            ],
+            "text": "You may also find the following resources to be useful when working with partitioned tables.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn cũng có thể tìm thấy các tài nguyên sau đây hữu ích khi làm việc với các bảng được phân vùng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                362.7503731060607,
+                181.48529411764707,
+                11.971275252525174
+            ],
+            "text": "Additional Resources. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Tài nguyên bổ sung. "
+        },
+        {
+            "bbox": [
+                338.9199346405229,
+                362.7503731060607,
+                582.7258651960784,
+                11.971275252525174
+            ],
+            "text": " Other sources of information about user-defined partitioning in MySQL include",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các nguồn thông tin khác về phân vùng do người dùng xác định trong MySQL bao gồm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                378.2806761363637,
+                97.7434640522876,
+                11.971275252525288
+            ],
+            "text": "the following:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau đây:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                404.79347885101015,
+                214.06086601307192,
+                11.971275252525288
+            ],
+            "text": "•MySQL Partitioning Forum",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Diễn đàn phân vùng MySQL"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                431.3062815656566,
+                737.1961286764706,
+                11.971275252525174
+            ],
+            "text": "This is the official discussion forum for those interested in or experimenting with MySQL Partitioning",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đây là diễn đàn thảo luận chính thức cho những người quan tâm hoặc thử nghiệm phân vùng MySQL"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                446.8365845959596,
+                768.9509803921569,
+                11.971275252525288
+            ],
+            "text": "technology. It features announcements and updates from MySQL developers and others. It is monitored",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "công nghệ. Nó có các thông báo và cập nhật từ các nhà phát triển MySQL và các nhà phát triển khác. Nó được theo dõi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                462.3668876262626,
+                540.8214869281046,
+                11.971275252525288
+            ],
+            "text": "by members of the Partitioning Development and Documentation Teams.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bởi các thành viên của các nhóm phát triển và tài liệu phân vùng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                488.87969034090906,
+                202.6887087418301,
+                11.971275252525288
+            ],
+            "text": "•Mikael Ronström’s Blog",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Blog Mikael Ronström"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                515.3925448232324,
+                728.6376466503268,
+                11.971275252525288
+            ],
+            "text": "MySQL Partitioning Architect and Lead Developer Mikael Ronström frequently posts articles here",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiến trúc sư phân vùng MySQL và nhà phát triển chính Mikael Ronström thường xuyên đăng bài viết ở đây"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                530.9228478535354,
+                466.30802328431366,
+                11.971275252525231
+            ],
+            "text": "concerning his work with MySQL Partitioning and NDB Cluster.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Liên quan đến công việc của anh ấy với phân vùng MySQL và cụm NDB."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                557.4356505681818,
+                120.0690359477124,
+                11.971275252525231
+            ],
+            "text": "•PlanetMySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Planetmysql"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                583.9484532828283,
+                708.4055870098039,
+                11.971275252525231
+            ],
+            "text": "A MySQL news site featuring MySQL-related blogs, which should be of interest to anyone using",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một trang web tin tức MySQL có các blog liên quan đến MySQL, điều này sẽ được bất cứ ai sử dụng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                599.4787563131313,
+                725.1205232843138,
+                11.971275252525231
+            ],
+            "text": "my MySQL. We encourage you to check here for links to blogs kept by those working with MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL của tôi. Chúng tôi khuyến khích bạn kiểm tra ở đây để biết các liên kết đến blog được lưu giữ bởi những người làm việc với MySQL"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                615.0090593434344,
+                460.83127410130714,
+                11.971275252525231
+            ],
+            "text": "Partitioning, or to have your own blog added to those covered.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phân vùng, hoặc để có blog của riêng bạn được thêm vào những người được bảo hiểm."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                642.5895962752526,
+                52.147715767973864,
+                19.15405334595954
+            ],
+            "text": "24.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "24.1"
+        },
+        {
+            "bbox": [
+                119.89150326797386,
+                642.5895962752526,
+                439.2895592320262,
+                19.15405334595954
+            ],
+            "text": "Overview of Partitioning in MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "Tổng quan về phân vùng trong MySQL"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                677.3528724747475,
+                543.6184473039216,
+                11.971275252525231
+            ],
+            "text": "This section provides a conceptual overview of partitioning in MySQL 8.0.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phần này cung cấp một cái nhìn tổng quan về khái niệm về phân vùng trong MySQL 8.0."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                703.8657140151515,
+                759.3877136437909,
+                11.971275252525231
+            ],
+            "text": "For information on partitioning restrictions and feature limitations, see Section 24.6, “Restrictions and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thông tin về các hạn chế phân vùng và giới hạn tính năng, xem phần 24.6, hạn chế và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                719.3960170454545,
+                211.1131535947713,
+                11.971275252525288
+            ],
+            "text": "Limitations on Partitioning”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hạn chế về phân vùng ”"
+        },
+        {
+            "bbox": [
+                338.015539624183,
+                719.3960170454545,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                745.9088197601011,
+                713.0951629901961,
+                11.971275252525231
+            ],
+            "text": "The SQL standard does not provide much in the way of guidance regarding the physical aspects",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tiêu chuẩn SQL không cung cấp nhiều theo cách hướng dẫn về các khía cạnh vật lý"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                761.4391227904041,
+                719.6437741013071,
+                11.97127525252526
+            ],
+            "text": "of data storage. The SQL language itself is intended to work independently of any data structures",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "lưu trữ dữ liệu. Bản thân ngôn ngữ SQL nhằm mục đích hoạt động độc lập với bất kỳ cấu trúc dữ liệu nào"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                776.9694258207071,
+                727.8671883169934,
+                11.971275252525231
+            ],
+            "text": "or media underlying the schemas, tables, rows, or columns with which it works. Nonetheless, most",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hoặc phương tiện truyền thông cơ sở các lược đồ, bảng, hàng hoặc cột mà nó hoạt động. Tuy nhiên, hầu hết"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                792.4997288510101,
+                722.3737745098038,
+                11.97127525252526
+            ],
+            "text": "advanced database management systems have evolved some means of determining the physical",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hệ thống quản lý cơ sở dữ liệu nâng cao đã phát triển một số phương tiện để xác định vật lý"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                808.0300318813131,
+                783.8235294117646,
+                11.97127525252526
+            ],
+            "text": "location to be used for storing specific pieces of data in terms of the file system, hardware or even both. In",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vị trí sẽ được sử dụng để lưu trữ các phần dữ liệu cụ thể về hệ thống tệp, phần cứng hoặc thậm chí cả hai. TRONG"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                823.5603349116161,
+                93.08741830065361,
+                11.97127525252526
+            ],
+            "text": "MySQL, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mysql, The "
+        },
+        {
+            "bbox": [
+                233.77369281045753,
+                824.7121916035353,
+                60.29411764705884,
+                10.172322601010109
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                294.0678104575164,
+                823.5603349116161,
+                612.6217152777779,
+                11.97127525252526
+            ],
+            "text": " storage engine has long supported the notion of a tablespace (see Section 15.6.3,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Công cụ lưu trữ từ lâu đã hỗ trợ khái niệm về một không gian bảng (xem Phần 15.6.3,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                839.0906379419192,
+                133.66870915032683,
+                11.97127525252526
+            ],
+            "text": "“Tablespaces”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "“Không gian bảng”"
+        },
+        {
+            "bbox": [
+                246.7871899509804,
+                839.0906379419192,
+                667.4726139705882,
+                11.97127525252526
+            ],
+            "text": "), and the MySQL Server, even prior to the introduction of partitioning, could be configured",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ") và máy chủ MySQL, ngay cả trước khi giới thiệu phân vùng, có thể được cấu hình"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                854.6209409722222,
+                804.0723541666666,
+                11.97127525252526
+            ],
+            "text": "to employ different physical directories for storing different databases (see Section 8.12.2, “Using Symbolic",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để sử dụng các thư mục vật lý khác nhau để lưu trữ các cơ sở dữ liệu khác nhau (xem Phần 8.12.2, sử dụng biểu tượng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                870.1512440025252,
+                58.45179738562092,
+                11.97127525252526
+            ],
+            "text": "Links”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Liên kết ”"
+        },
+        {
+            "bbox": [
+                185.35416666666669,
+                870.1512440025252,
+                296.04410089869276,
+                11.97127525252526
+            ],
+            "text": ", for an explanation of how this is done).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", để giải thích về cách thực hiện điều này)."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                896.6640933080809,
+                83.77532679738565,
+                11.971275252525245
+            ],
+            "text": "Partitioning",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "Phân vùng"
+        },
+        {
+            "bbox": [
+                224.46158455882355,
+                896.6640933080809,
+                707.5012589869281,
+                11.971275252525245
+            ],
+            "text": " takes this notion a step further, by enabling you to distribute portions of individual tables across",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đưa khái niệm này một bước xa hơn, bằng cách cho phép bạn phân phối các phần của các bảng riêng lẻ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                912.1943963383839,
+                781.0432504084968,
+                11.97127525252526
+            ],
+            "text": "a file system according to rules which you can set largely as needed. In effect, different portions of a table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một hệ thống tệp theo các quy tắc mà bạn có thể đặt phần lớn khi cần thiết. Trong thực tế, các phần khác nhau của bảng"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "4656",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4656"
+        }
+    ]
+}

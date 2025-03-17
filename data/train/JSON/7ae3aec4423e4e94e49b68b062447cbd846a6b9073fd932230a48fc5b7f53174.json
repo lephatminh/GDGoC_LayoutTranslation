@@ -1,0 +1,776 @@
+{
+    "metadata": {
+        "page_hash": "7ae3aec4423e4e94e49b68b062447cbd846a6b9073fd932230a48fc5b7f53174",
+        "original_filename": "MongoDB-manual.pdf",
+        "page_no": 439,
+        "num_pages": 946,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                120.58823529411765,
+                46.997324179292946,
+                318.9477091503268,
+                12.106971275252477
+            ],
+            "text": "MongoDB Documentation, Release 3.0.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tài liệu MongoDB, Phát hành 3.0.4"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                94.9048535353536,
+                45.227436642156846,
+                14.528533775252527
+            ],
+            "text": "7.1.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "7.1.1"
+        },
+        {
+            "bbox": [
+                171.4690845588235,
+                94.9048535353536,
+                224.85599183006542,
+                14.528533775252527
+            ],
+            "text": "Aggregation Modalities",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 11.9552001953125
+            },
+            "text_vi": "Phương thức tổng hợp"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                130.36265782828298,
+                176.0010584150327,
+                12.106984217171544
+            ],
+            "text": "Aggregation Pipelines",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đường ống tổng hợp"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                162.46295296717176,
+                225.44084477124184,
+                11.526785037878767
+            ],
+            "text": "MongoDB 2.2 introduced a new",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "MongoDB 2.2 đã giới thiệu một mới"
+        },
+        {
+            "bbox": [
+                352.79093137254904,
+                162.57899021464652,
+                158.5143741830065,
+                11.114222537878845
+            ],
+            "text": "aggregation framework",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Khung tổng hợp"
+        },
+        {
+            "bbox": [
+                518.3552287581699,
+                162.46295296717176,
+                386.05765808823537,
+                11.526785037878767
+            ],
+            "text": "(page 440), modeled on the concept of data processing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(trang 440), được mô hình hóa trên khái niệm xử lý dữ liệu"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                177.93629861111117,
+                710.1779995915033,
+                11.526797979797948
+            ],
+            "text": "pipelines. Documents enter a multi-stage pipeline that transforms the documents into an aggregated result.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "đường ống. Các tài liệu nhập một đường ống nhiều giai đoạn chuyển đổi các tài liệu thành một kết quả tổng hợp."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                201.14376104797986,
+                260.414112745098,
+                11.526785037878767
+            ],
+            "text": "The most basic pipeline stages provide",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các giai đoạn đường ống cơ bản nhất cung cấp"
+        },
+        {
+            "bbox": [
+                385.4971405228758,
+                201.25979829545452,
+                37.84323447712421,
+                11.114222537878845
+            ],
+            "text": "filters",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "bộ lọc"
+        },
+        {
+            "bbox": [
+                427.83196854575164,
+                201.14376104797986,
+                189.24953513071904,
+                11.526785037878767
+            ],
+            "text": "that operate like queries and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "hoạt động như các truy vấn và"
+        },
+        {
+            "bbox": [
+                621.5737336601308,
+                201.25979829545452,
+                175.73405596405223,
+                11.114222537878845
+            ],
+            "text": "document transformations",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Chuyển đổi tài liệu"
+        },
+        {
+            "bbox": [
+                801.8028835784314,
+                201.14376104797986,
+                102.61715482026148,
+                11.526785037878767
+            ],
+            "text": "that modify the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Điều đó sửa đổi"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                216.61710669191928,
+                196.04057883986926,
+                11.526797979797948
+            ],
+            "text": "form of the output document.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hình thức của tài liệu đầu ra."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                239.82456912878797,
+                783.8288386437907,
+                11.526785037878653
+            ],
+            "text": "Other pipeline operations provide tools for grouping and sorting documents by specific field or fields as well as tools",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các hoạt động đường ống khác cung cấp các công cụ để nhóm và sắp xếp các tài liệu theo trường hoặc trường cụ thể cũng như các công cụ"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                255.2966594065657,
+                714.5328427287582,
+                11.52678503787888
+            ],
+            "text": "for aggregating the contents of arrays, including arrays of documents. In addition, pipeline stages can use",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để tổng hợp nội dung của các mảng, bao gồm các mảng tài liệu. Ngoài ra, các giai đoạn đường ống có thể sử dụng"
+        },
+        {
+            "bbox": [
+                839.9389297385621,
+                255.41269665404047,
+                64.47375612745088,
+                11.114222537878732
+            ],
+            "text": "operators",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "người vận hành"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                270.7700050505051,
+                440.0860612745098,
+                11.526797979797948
+            ],
+            "text": "for tasks such as calculating the average or concatenating a string.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đối với các nhiệm vụ như tính toán trung bình hoặc nối một chuỗi."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                293.9774674873738,
+                783.8286376633987,
+                11.526785037878767
+            ],
+            "text": "The pipeline provides efficient data aggregation using native operations within MongoDB, and is the preferred method",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đường ống cung cấp tổng hợp dữ liệu hiệu quả bằng cách sử dụng các hoạt động gốc trong MongoDB và là phương pháp ưa thích"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                309.4508131313131,
+                230.91375857843136,
+                11.526797979798062
+            ],
+            "text": "for data aggregation in MongoDB.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cho tập hợp dữ liệu trong MongoDB."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                816.8809974747475,
+                99.19665277777776,
+                12.107010101010104
+            ],
+            "text": "Map-Reduce",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bản đồ-giảm"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                848.9813055555555,
+                162.51900898692813,
+                11.526810921717157
+            ],
+            "text": "MongoDB also provides",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "MongoDB cũng cung cấp"
+        },
+        {
+            "bbox": [
+                286.6264946895425,
+                849.0973428030303,
+                79.07367524509806,
+                11.11420959595958
+            ],
+            "text": "map-reduce",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bản đồ-giảm"
+        },
+        {
+            "bbox": [
+                369.2210784313726,
+                848.9813055555555,
+                535.194772875817,
+                11.526810921717157
+            ],
+            "text": "(page 442) operations to perform aggregation. In general, map-reduce operations",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(Trang 442) Hoạt động để thực hiện tổng hợp. Nói chung, các hoạt động REDUCE MAP"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                864.4533699494949,
+                127.76261560457513,
+                11.526810921717185
+            ],
+            "text": "have two phases: a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "có hai giai đoạn: a"
+        },
+        {
+            "bbox": [
+                253.01419893790853,
+                864.5694071969697,
+                28.7328267973856,
+                11.114222537878788
+            ],
+            "text": "map",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "bản đồ"
+        },
+        {
+            "bbox": [
+                286.40375816993463,
+                864.4533699494949,
+                267.00503022875824,
+                11.526810921717185
+            ],
+            "text": "stage that processes each document and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "giai đoạn xử lý từng tài liệu và"
+        },
+        {
+            "bbox": [
+                558.0722871732027,
+                864.5694071969697,
+                35.22355555555555,
+                11.114222537878788
+            ],
+            "text": "emits",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "phát ra"
+        },
+        {
+            "bbox": [
+                597.9518382352942,
+                864.4533699494949,
+                306.4668770424836,
+                11.526810921717185
+            ],
+            "text": "one or more objects for each input document,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "một hoặc nhiều đối tượng cho mỗi tài liệu đầu vào,"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                879.9254472853536,
+                24.09418929738561,
+                11.526797979797976
+            ],
+            "text": "and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Và"
+        },
+        {
+            "bbox": [
+                149.27148525326797,
+                880.0414845328282,
+                44.78449595588236,
+                11.11420959595958
+            ],
+            "text": "reduce",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "giảm bớt"
+        },
+        {
+            "bbox": [
+                198.64399509803923,
+                879.9254472853536,
+                596.5313925653595,
+                11.526797979797976
+            ],
+            "text": "phase that combines the output of the map operation. Optionally, map-reduce can have a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Giai đoạn kết hợp đầu ra của hoạt động bản đồ. Tùy chọn, bản đồ-Reduce có thể có một"
+        },
+        {
+            "bbox": [
+                799.7596164215687,
+                880.0414845328282,
+                48.205080065359425,
+                11.11420959595958
+            ],
+            "text": "finalize",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "hoàn thiện"
+        },
+        {
+            "bbox": [
+                852.5538325163399,
+                879.9254472853536,
+                51.85915482026144,
+                11.526797979797976
+            ],
+            "text": "stage to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "giai đoạn đến"
+        },
+        {
+            "bbox": [
+                120.5882872140523,
+                895.398792929293,
+                783.8287867238561,
+                11.526810921717171
+            ],
+            "text": "make final modifications to the result. Like other aggregation operations, map-reduce can specify a query condition to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thực hiện sửa đổi cuối cùng cho kết quả. Giống như các hoạt động tổng hợp khác, bản đồ-Reduce có thể chỉ định một điều kiện truy vấn để"
+        },
+        {
+            "bbox": [
+                120.5882872140523,
+                910.8708599116162,
+                416.19203672385623,
+                11.526810921717185
+            ],
+            "text": "select the input documents as well as sort and limit the results.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Chọn các tài liệu đầu vào cũng như sắp xếp và giới hạn kết quả."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                961.18987260101,
+                27.83178982843137,
+                12.10701139520203
+            ],
+            "text": "436",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "436"
+        },
+        {
+            "bbox": [
+                714.3462826797386,
+                961.18987260101,
+                190.0671233660131,
+                12.10701139520203
+            ],
+            "text": "Chapter 7. Aggregation",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Chương 7. Tập hợp"
+        }
+    ]
+}

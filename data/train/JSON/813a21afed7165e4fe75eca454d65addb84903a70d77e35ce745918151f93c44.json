@@ -1,0 +1,1016 @@
+{
+    "metadata": {
+        "page_hash": "813a21afed7165e4fe75eca454d65addb84903a70d77e35ce745918151f93c44",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4666,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                297.6854407679739,
+                48.370422979798036,
+                459.7761270424836,
+                11.971275252525288
+            ],
+            "text": "NDB Cluster Replication: Bidrectional and Circular Replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao chép cụm NDB: sao chép hai giai đoạn và tròn"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                96.61920486111126,
+                56.27452655228757,
+                8.13782702020194
+            ],
+            "text": "SELECT ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "LỰA CHỌN "
+        },
+        {
+            "bbox": [
+                253.90524550653595,
+                96.61920486111126,
+                104.5097871732026,
+                8.13782702020194
+            ],
+            "text": "@LATEST_EPOCH",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "@Latest_epoch"
+        },
+        {
+            "bbox": [
+                358.41503267973854,
+                96.61920486111126,
+                96.47060498366017,
+                8.13782702020194
+            ],
+            "text": ":=MAX(epoch)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ": = Max (Epoch)"
+        },
+        {
+            "bbox": [
+                229.7875816993464,
+                109.0434084595961,
+                225.09805596405232,
+                8.137917613636205
+            ],
+            "text": "FROM mysql.ndb_apply_status;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Từ mysql.ndb_apply_status;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                135.3401328914142,
+                23.172754493464055,
+                11.971275252525288
+            ],
+            "text": "10.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "10."
+        },
+        {
+            "bbox": [
+                198.6406286764706,
+                135.3401328914142,
+                217.74049877450983,
+                11.971275252525288
+            ],
+            "text": "Find the latest binary log file (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tìm tệp nhật ký nhị phân mới nhất ("
+        },
+        {
+            "bbox": [
+                416.38112745098044,
+                136.4919895833333,
+                110.5391989379084,
+                10.17232260101025
+            ],
+            "text": "@FIRST_FILE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "@First_file"
+        },
+        {
+            "bbox": [
+                526.9203263888888,
+                135.3401328914142,
+                110.77370955882361,
+                11.971275252525288
+            ],
+            "text": ") and position (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ") và vị trí ("
+        },
+        {
+            "bbox": [
+                637.6940359477125,
+                136.4919895833333,
+                80.39215686274508,
+                10.17232260101025
+            ],
+            "text": "Position",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Chức vụ"
+        },
+        {
+            "bbox": [
+                718.0861928104575,
+                135.3401328914142,
+                245.73197589869278,
+                11.971275252525288
+            ],
+            "text": " column value) within this file that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị cột) trong tệp này"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                150.87043592171722,
+                107.05555555555554,
+                11.971275252525288
+            ],
+            "text": "correspond to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tương ứng với "
+        },
+        {
+            "bbox": [
+                304.6862745098039,
+                152.0222926136364,
+                130.6372214052288,
+                10.172322601010137
+            ],
+            "text": "@LATEST_EPOCH",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "@Latest_epoch"
+        },
+        {
+            "bbox": [
+                435.3234959150327,
+                150.87043592171722,
+                50.27862826797383,
+                11.971275252525288
+            ],
+            "text": " in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trong "
+        },
+        {
+            "bbox": [
+                485.60212418300654,
+                152.0222926136364,
+                160.78431372549022,
+                10.172322601010137
+            ],
+            "text": "ndb_binlog_index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ndb_binlog_index"
+        },
+        {
+            "bbox": [
+                646.3864379084968,
+                150.87043592171722,
+                45.62253227124177,
+                11.971275252525288
+            ],
+            "text": " table:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn:"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                180.48281534090916,
+                136.66668341503265,
+                8.137917613636318
+            ],
+            "text": "SELECT Position, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn vị trí, "
+        },
+        {
+            "bbox": [
+                334.29740236928103,
+                180.48281534090916,
+                88.43137254901967,
+                8.137917613636318
+            ],
+            "text": "@FIRST_FILE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "@First_file"
+        },
+        {
+            "bbox": [
+                422.72874142156866,
+                180.48281534090916,
+                48.235327614379116,
+                8.137917613636318
+            ],
+            "text": ":=File",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ": = Tệp"
+        },
+        {
+            "bbox": [
+                229.7875816993464,
+                192.90710953282826,
+                217.05880678104575,
+                8.137827020202053
+            ],
+            "text": "FROM mysql.ndb_binlog_index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Từ mysql.ndb_binlog_index"
+        },
+        {
+            "bbox": [
+                229.7875816993464,
+                205.3313260732324,
+                112.54900285947713,
+                8.137827020202053
+            ],
+            "text": "WHERE epoch > ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Trong đó kỷ nguyên> "
+        },
+        {
+            "bbox": [
+                342.3365845588235,
+                205.3313260732324,
+                104.50980392156862,
+                8.137827020202053
+            ],
+            "text": "@LATEST_EPOCH",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "@Latest_epoch"
+        },
+        {
+            "bbox": [
+                446.84638848039214,
+                205.3313260732324,
+                225.0980727124184,
+                8.137827020202053
+            ],
+            "text": " ORDER BY epoch ASC LIMIT 1;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": " Đặt hàng theo thời đại ASC giới hạn 1;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                231.6279728535353,
+                22.928596813725477,
+                11.971275252525288
+            ],
+            "text": "11.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "11."
+        },
+        {
+            "bbox": [
+                198.34763276143792,
+                231.6279728535353,
+                46.747955473856194,
+                11.971275252525288
+            ],
+            "text": "Using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng "
+        },
+        {
+            "bbox": [
+                245.09558823529412,
+                232.77981660353544,
+                110.5392156862745,
+                10.172335542929204
+            ],
+            "text": "mysqlbinlog",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqlbinlog"
+        },
+        {
+            "bbox": [
+                355.6348039215686,
+                231.6279728535353,
+                603.2762107843138,
+                11.971275252525288
+            ],
+            "text": ", replay the binary log events from the given file and position up to the point of the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Phát lại các sự kiện nhật ký nhị phân từ tệp đã cho và định vị đến điểm"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                247.15827588383843,
+                635.1817810457517,
+                11.971275252525174
+            ],
+            "text": "failure. (See Section 4.6.9, “mysqlbinlog — Utility for Processing Binary Log Files”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sự thất bại. ."
+        },
+        {
+            "bbox": [
+                802.6319611928104,
+                247.15827588383843,
+                10.23323488562096,
+                11.971275252525174
+            ],
+            "text": ".)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ".)"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                278.21888194444443,
+                479.9076964869281,
+                11.971275252525288
+            ],
+            "text": "See also Section 7.5, “Point-in-Time (Incremental) Recovery”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xem thêm Phần 7.5, Phục hồi điểm trong thời gian (gia tăng)"
+        },
+        {
+            "bbox": [
+                623.1731858660131,
+                278.21888194444443,
+                315.5727291666667,
+                11.971275252525288
+            ],
+            "text": ", for more information about the binary log,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", để biết thêm thông tin về nhật ký nhị phân,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                293.74918497474744,
+                278.30756454248365,
+                11.971275252525288
+            ],
+            "text": "replication, and incremental recovery.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "nhân rộng, và phục hồi gia tăng."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                325.52164835858594,
+                78.22155187908498,
+                16.7597335858585
+            ],
+            "text": "23.6.10",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "23.6.10"
+        },
+        {
+            "bbox": [
+                175.1811924019608,
+                325.52164835858594,
+                697.0535445261437,
+                16.7597335858585
+            ],
+            "text": "NDB Cluster Replication: Bidrectional and Circular Replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Sao chép cụm NDB: sao chép hai giai đoạn và tròn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                362.08257007575764,
+                766.0200163398692,
+                11.971275252525174
+            ],
+            "text": "It is possible to use NDB Cluster for bidirectional replication between two clusters, as well as for circular",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Có thể sử dụng cụm NDB để sao chép hai chiều giữa hai cụm, cũng như cho tròn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                377.61287310606065,
+                323.0089701797385,
+                11.971275252525174
+            ],
+            "text": "replication between any number of clusters.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sao chép giữa bất kỳ số lượng cụm."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                408.67347916666665,
+                233.63970588235296,
+                11.971275252525288
+            ],
+            "text": "Circular replication example. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ví dụ sao chép tròn. "
+        },
+        {
+            "bbox": [
+                421.22140522875816,
+                408.67347916666665,
+                506.4203431372549,
+                11.971275252525288
+            ],
+            "text": " In the next few paragraphs we consider the example of a replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Trong một vài đoạn tiếp theo, chúng tôi xem xét ví dụ về bản sao"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                424.2037433712121,
+                786.5702781862744,
+                11.971275252525288
+            ],
+            "text": "setup involving three NDB Clusters numbered 1, 2, and 3, in which Cluster 1 acts as the replication source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thiết lập liên quan đến ba cụm NDB được đánh số 1, 2 và 3, trong đó cụm 1 đóng vai trò là nguồn sao chép"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                439.73404640151523,
+                753.9779244281045,
+                11.971275252525174
+            ],
+            "text": "for Cluster 2, Cluster 2 acts as the source for Cluster 3, and Cluster 3 acts as the source for Cluster 1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với cụm 2, cụm 2 đóng vai trò là nguồn cho cụm 3 và cụm 3 đóng vai trò là nguồn cho cụm 1."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                455.26434943181823,
+                761.5146891339868,
+                11.971275252525288
+            ],
+            "text": "Each cluster has two SQL nodes, with SQL nodes A and B belonging to Cluster 1, SQL nodes C and D",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mỗi cụm có hai nút SQL, với các nút SQL A và B thuộc cụm 1, nút SQL C và D"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                470.79465246212123,
+                524.140131127451,
+                11.971275252525288
+            ],
+            "text": "belonging to Cluster 2, and SQL nodes E and F belonging to Cluster 3.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thuộc cụm 2 và các nút SQL E và F thuộc cụm 3."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                501.85525852272735,
+                712.0903447712418,
+                11.971275252525231
+            ],
+            "text": "Circular replication using these clusters is supported as long as the following conditions are met:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao chép tròn bằng cách sử dụng các cụm này được hỗ trợ miễn là đáp ứng các điều kiện sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                530.3274807449495,
+                444.032679738562,
+                11.971275252525231
+            ],
+            "text": "•The SQL nodes on all sources and replicas are the same.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các nút SQL trên tất cả các nguồn và bản sao là như nhau."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                558.7997029671717,
+                505.46566952614376,
+                11.971275252525231
+            ],
+            "text": "•All SQL nodes acting as sources and replicas are started with the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Tất cả các nút SQL hoạt động như các nguồn và bản sao được bắt đầu với "
+        },
+        {
+            "bbox": [
+                676.2990028594771,
+                559.9515208333335,
+                170.83333333333337,
+                10.172361426767623
+            ],
+            "text": "log_slave_updates",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "log_slave_updates"
+        },
+        {
+            "bbox": [
+                847.1323361928105,
+                558.7997029671717,
+                57.69813766339871,
+                11.971275252525231
+            ],
+            "text": " system",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hệ thống"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                574.3300059974747,
+                127.5387904411765,
+                11.971275252525288
+            ],
+            "text": "variable enabled.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biến được bật."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                605.3906120580808,
+                526.8366013071895,
+                11.971275252525288
+            ],
+            "text": "This type of circular replication setup is shown in the following diagram:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Loại thiết lập sao chép tròn này được hiển thị trong sơ đồ sau:"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "4637",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4637"
+        }
+    ]
+}

@@ -1,0 +1,1496 @@
+{
+    "metadata": {
+        "page_hash": "9f965b75d170b452d8754c06b118ef04e7ab5564a4ed53bbbf6d4d2cb029c092",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1041,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                315.4470996732026,
+                48.370422979798036,
+                363.9587418300654,
+                11.971275252525288
+            ],
+            "text": "Server Tracking of Client Session State Changes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Theo dõi máy chủ của các thay đổi trạng thái phiên khách hàng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                724.2663398692812,
+                11.971275252525174
+            ],
+            "text": "tracker information in OK packets so that session state changes can be detected. To enable client",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin theo dõi trong các gói OK để có thể phát hiện thay đổi trạng thái phiên. Để cho phép khách hàng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                790.3051470588236,
+                11.971275252525288
+            ],
+            "text": "applications to extract state-change information from OK packets returned by the server, the MySQL C API",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các ứng dụng để trích xuất thông tin thay đổi trạng thái từ các gói OK được trả về bởi máy chủ, API MySQL C"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                126.02193813131316,
+                204.79901960784315,
+                11.971275252525288
+            ],
+            "text": "provides a pair of functions:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cung cấp một cặp chức năng:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                154.49416035353545,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                155.64600410353535,
+                311.51960784313724,
+                10.172335542929318
+            ],
+            "text": "mysql_session_track_get_first()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql_session_track_get_first ()"
+        },
+        {
+            "bbox": [
+                468.9542483660131,
+                154.49416035353545,
+                455.22057148692807,
+                11.971275252525174
+            ],
+            "text": " fetches the first part of the state-change information received",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tìm nạp phần đầu tiên của thông tin thay đổi trạng thái nhận được"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                170.02446338383845,
+                396.50080024509805,
+                11.971275252525288
+            ],
+            "text": "from the server. See mysql_session_track_get_first().",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "từ máy chủ. Xem mysql_session_track_get_first ()."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                198.49668560606062,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                199.64852935606064,
+                301.47058823529414,
+                10.172335542929318
+            ],
+            "text": "mysql_session_track_get_next()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql_session_track_get_next ()"
+        },
+        {
+            "bbox": [
+                458.9052287581699,
+                198.49668560606062,
+                463.56132475490205,
+                11.971275252525288
+            ],
+            "text": " fetches any remaining state-change information received from",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tìm nạp mọi thông tin thay đổi trạng thái còn lại nhận được từ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                214.02698863636374,
+                304.3680220588236,
+                11.971275252525174
+            ],
+            "text": "the server. Following a successful call to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "máy chủ. Sau một cuộc gọi thành công đến "
+        },
+        {
+            "bbox": [
+                461.8026625816994,
+                215.17883238636364,
+                311.5196078431373,
+                10.172335542929318
+            ],
+            "text": "mysql_session_track_get_first()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql_session_track_get_first ()"
+        },
+        {
+            "bbox": [
+                773.3223206699347,
+                214.02698863636374,
+                128.45993382352935,
+                11.971275252525174
+            ],
+            "text": ", call this function",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", gọi chức năng này"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                229.55729166666674,
+                582.7091670751634,
+                11.971275252525174
+            ],
+            "text": "repeatedly as long as it returns success. See mysql_session_track_get_next().",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhiều lần miễn là nó trở lại thành công. Xem mysql_session_track_get_next ()."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                260.11448295454557,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                261.26626199494956,
+                90.44119321895423,
+                10.172400252525335
+            ],
+            "text": "mysqltest",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqltest"
+        },
+        {
+            "bbox": [
+                264.640948120915,
+                260.11448295454557,
+                103.32065318627451,
+                11.971275252525288
+            ],
+            "text": " program has ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chương trình có "
+        },
+        {
+            "bbox": [
+                367.96160130718954,
+                261.26626199494956,
+                261.2745265522876,
+                10.172400252525335
+            ],
+            "text": "disable_session_track_info",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "vô hiệu hóa_session_track_info"
+        },
+        {
+            "bbox": [
+                629.2361278594772,
+                260.11448295454557,
+                37.248349264705894,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                666.4844771241831,
+                261.26626199494956,
+                251.22549019607845,
+                10.172400252525335
+            ],
+            "text": "enable_session_track_info",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "enable_session_track_info"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                275.64478598484857,
+                774.4780081699346,
+                11.971275252525288
+            ],
+            "text": "commands that control whether session tracker notifications occur. You can use these commands to see",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các lệnh kiểm soát xem thông báo theo dõi phiên có xảy ra hay không. Bạn có thể sử dụng các lệnh này để xem"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                291.17508901515157,
+                646.0514538398693,
+                11.971275252525288
+            ],
+            "text": "from the command line what notifications SQL statements produce. Suppose that a file ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Từ dòng lệnh, những gì thông báo Các câu lệnh SQL tạo ra. Giả sử rằng một tệp "
+        },
+        {
+            "bbox": [
+                786.7377283496731,
+                292.3268680555557,
+                100.4901960784315,
+                10.172400252525222
+            ],
+            "text": "testscript",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TestScript"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                306.7053920454547,
+                164.7704248366013,
+                11.971275252525174
+            ],
+            "text": "contains the following ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chứa những điều sau đây "
+        },
+        {
+            "bbox": [
+                305.45669934640523,
+                307.8571710858587,
+                90.44117647058823,
+                10.172400252525222
+            ],
+            "text": "mysqltest",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqltest"
+        },
+        {
+            "bbox": [
+                395.89787581699346,
+                306.7053920454547,
+                49.32397140522875,
+                11.971275252525174
+            ],
+            "text": " script:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " kịch bản:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                335.91397064393936,
+                233.13725490196077,
+                8.137917613636432
+            ],
+            "text": "DROP TABLE IF EXISTS test.t1;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bảng thả nếu tồn tại test.t1;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                348.3382648358587,
+                305.49017933006536,
+                8.13782702020194
+            ],
+            "text": "CREATE TABLE test.t1 (i INT, f FLOAT);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo bảng kiểm tra.t1 (i int, f float);"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                360.7624684343434,
+                217.0588402777778,
+                8.13787878787889
+            ],
+            "text": "--enable_session_track_info",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "--Enable_Session_Track_info"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                373.18668497474755,
+                305.49017933006536,
+                8.137917613636318
+            ],
+            "text": "SET @@SESSION.session_track_schema=ON;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt @@ session.session_track_schema = on;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                385.61097916666665,
+                393.9215853758171,
+                8.137827020202053
+            ],
+            "text": "SET @@SESSION.session_track_system_variables=’*’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt @@ session.session_track_system_variables = xông*xông;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                398.0351827651515,
+                353.7255069444445,
+                8.137917613636432
+            ],
+            "text": "SET @@SESSION.session_track_state_change=ON;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt @@ session.session_track_state_change = on;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                410.45943813131316,
+                184.90194403594774,
+                8.137865845959595
+            ],
+            "text": "USE information_schema;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Sử dụng thông tin_schema;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                422.88368055555554,
+                160.78431372549022,
+                8.13787878787889
+            ],
+            "text": "SET NAMES ’utf8mb4’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt tên của UTF8MB4"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                435.3078970959597,
+                506.4705714869281,
+                8.137917613636318
+            ],
+            "text": "SET @@SESSION.session_track_transaction_info=’CHARACTERISTICS’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt @@ session.session_track_transaction_info = đặc điểm của Hồi giáo;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                447.73215246212123,
+                361.7647058823529,
+                8.137904671717251
+            ],
+            "text": "SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt cấp độ phân lập giao dịch có thể nối tiếp;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                460.1563948863636,
+                217.0588402777778,
+                8.137917613636432
+            ],
+            "text": "SET TRANSACTION READ WRITE;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt giao dịch đọc viết;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                472.5806502525253,
+                144.7058656045752,
+                8.137904671717138
+            ],
+            "text": "START TRANSACTION;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bắt đầu giao dịch;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                485.0048538510101,
+                72.35294117647061,
+                8.137917613636432
+            ],
+            "text": "SELECT 1;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn 1;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                497.4291092171718,
+                257.25491870915033,
+                8.137917613636318
+            ],
+            "text": "INSERT INTO test.t1 () VALUES();",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chèn vào test.t1 () giá trị ();"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                509.85336458333336,
+                329.60782638888884,
+                8.137904671717195
+            ],
+            "text": "INSERT INTO test.t1 () VALUES(1, RAND());",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chèn vào test.t1 () giá trị (1, rand ());"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                522.2776070075757,
+                56.274509803921575,
+                8.137917613636432
+            ],
+            "text": "COMMIT;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "LÀM;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                550.6592746212121,
+                643.2377450980393,
+                11.971275252525288
+            ],
+            "text": "Run the script as follows to see the information provided by the enabled trackers. For a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chạy tập lệnh như sau để xem thông tin được cung cấp bởi Trình theo dõi được bật. Cho a"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                566.1895776515153,
+                132.19483619281044,
+                11.971275252525231
+            ],
+            "text": "description of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mô tả về "
+        },
+        {
+            "bbox": [
+                272.88111070261436,
+                567.3413825757576,
+                80.39215686274514,
+                10.17237436868686
+            ],
+            "text": "Tracker:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Trình theo dõi:"
+        },
+        {
+            "bbox": [
+                353.2732675653595,
+                566.1895776515153,
+                189.89299060457512,
+                11.971275252525231
+            ],
+            "text": " information displayed by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " thông tin được hiển thị bởi "
+        },
+        {
+            "bbox": [
+                543.1662581699346,
+                567.3413825757576,
+                90.44117647058829,
+                10.17237436868686
+            ],
+            "text": "mysqltest",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysqltest"
+        },
+        {
+            "bbox": [
+                633.6074346405229,
+                566.1895776515153,
+                211.29738562091507,
+                11.971275252525231
+            ],
+            "text": " for the various trackers, see",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đối với các trình theo dõi khác nhau, xem"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                581.7198806818183,
+                240.12132352941177,
+                11.971275252525288
+            ],
+            "text": "mysql_session_track_get_first().",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mysql_session_track_get_first ()."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                610.9284592803031,
+                56.274509803921575,
+                8.137904671717195
+            ],
+            "text": "shell> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Vỏ> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                610.9284592803031,
+                176.8627450980392,
+                8.137904671717195
+            ],
+            "text": "mysqltest < testscript",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "mysqltest <testScript"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                623.3527017045456,
+                233.13725490196077,
+                8.137917613636375
+            ],
+            "text": "DROP TABLE IF EXISTS test.t1;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bảng thả nếu tồn tại test.t1;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                635.7769570707071,
+                305.49017933006536,
+                8.137904671717138
+            ],
+            "text": "CREATE TABLE test.t1 (i INT, f FLOAT);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo bảng kiểm tra.t1 (i int, f float);"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                648.201160669192,
+                305.49017933006536,
+                8.137917613636375
+            ],
+            "text": "SET @@SESSION.session_track_schema=ON;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt @@ session.session_track_schema = on;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                660.6254160353535,
+                393.9215853758171,
+                8.137904671717195
+            ],
+            "text": "SET @@SESSION.session_track_system_variables=’*’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt @@ session.session_track_system_variables = xông*xông;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                673.0496714015152,
+                345.6862577614379,
+                8.137904671717195
+            ],
+            "text": "-- Tracker : SESSION_TRACK_SYSTEM_VARIABLES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- Trình theo dõi: session_track_system_variables"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                685.4739138257576,
+                265.2941008986928,
+                8.137917613636375
+            ],
+            "text": "-- session_track_system_variables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- session_track_system_variables"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                697.8981691919191,
+                32.15686274509804,
+                8.137904671717195
+            ],
+            "text": "-- *",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- *"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                722.7466281565657,
+                353.7255069444445,
+                8.137904671717138
+            ],
+            "text": "SET @@SESSION.session_track_state_change=ON;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt @@ session.session_track_state_change = on;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                735.1708835227273,
+                345.6862577614379,
+                8.137904671717138
+            ],
+            "text": "-- Tracker : SESSION_TRACK_SYSTEM_VARIABLES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- Trình theo dõi: session_track_system_variables"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                747.5951259469697,
+                233.13725490196077,
+                8.137917613636432
+            ],
+            "text": "-- session_track_state_change",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- session_track_state_change"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                760.0194201388889,
+                40.19607843137254,
+                8.137827020201996
+            ],
+            "text": "-- ON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "-- TRÊN"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                784.867917929293,
+                184.90194403594774,
+                8.137827020202025
+            ],
+            "text": "USE information_schema;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Sử dụng thông tin_schema;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                797.292134469697,
+                265.2941008986928,
+                8.137827020201996
+            ],
+            "text": "-- Tracker : SESSION_TRACK_SCHEMA",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- Trình theo dõi: session_track_schema"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                809.7163380681818,
+                168.82352941176475,
+                8.137839962121234
+            ],
+            "text": "-- information_schema",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- Thông tin_Schema"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                834.5648358585859,
+                313.52942851307193,
+                8.137839962121177
+            ],
+            "text": "-- Tracker : SESSION_TRACK_STATE_CHANGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- Trình theo dõi: session_track_state_change"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                846.9891300505051,
+                32.15686274509804,
+                8.137827020202025
+            ],
+            "text": "-- 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- 1"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                871.8375501893939,
+                160.78431372549022,
+                8.137839962121205
+            ],
+            "text": "SET NAMES ’utf8mb4’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt tên của UTF8MB4"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                884.2618443813132,
+                345.6862577614379,
+                8.137827020201996
+            ],
+            "text": "-- Tracker : SESSION_TRACK_SYSTEM_VARIABLES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- Trình theo dõi: session_track_system_variables"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                896.6860531565657,
+                184.90194403594774,
+                8.137832196969711
+            ],
+            "text": "-- character_set_client",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- ký tự_set_client"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                909.1103434659091,
+                80.39215686274511,
+                8.137830902777765
+            ],
+            "text": "-- utf8mb4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- UTF8MB4"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                921.5345535353536,
+                217.0588402777778,
+                8.137832196969697
+            ],
+            "text": "-- character_set_connection",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- ký tự_set_connection"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "1012",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1012"
+        }
+    ]
+}

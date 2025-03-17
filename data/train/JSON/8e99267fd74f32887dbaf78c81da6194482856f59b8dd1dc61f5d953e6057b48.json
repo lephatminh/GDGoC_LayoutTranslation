@@ -1,0 +1,1096 @@
+{
+    "metadata": {
+        "page_hash": "8e99267fd74f32887dbaf78c81da6194482856f59b8dd1dc61f5d953e6057b48",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3466,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                441.0095996732026,
+                48.370422979798036,
+                173.12785947712416,
+                11.971275252525288
+            ],
+            "text": "Configuring Replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cấu hình sao chép"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                372.9191176470589,
+                11.971275252525174
+            ],
+            "text": "see Section 17.5, “Replication Notes and Tips”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xem phần 17.5, Ghi chú nhân rộng và Mẹo"
+        },
+        {
+            "bbox": [
+                516.1846572712419,
+                94.96133207070716,
+                436.5963884803921,
+                11.971275252525174
+            ],
+            "text": ". For answers to some questions often asked by those who",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Để có câu trả lời cho một số câu hỏi thường được hỏi bởi những người"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                110.49163510101016,
+                625.1662414215687,
+                11.971275252525288
+            ],
+            "text": "are new to MySQL Replication, see Section A.14, “MySQL 8.0 FAQ: Replication”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "là người mới sao chép MySQL, xem Phần A.14, Câu hỏi thường gặp của MySQL 8.0: Sao chép"
+        },
+        {
+            "bbox": [
+                768.4317810457517,
+                110.49163510101016,
+                4.656045751633883,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                138.6843118686869,
+                742.8235629084968,
+                11.971275252525288
+            ],
+            "text": "For detailed information on the implementation of replication, how replication works, the process and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thông tin chi tiết về việc thực hiện sao chép, cách sao chép hoạt động, quá trình và"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                154.2146148989899,
+                781.076780637255,
+                11.971275252525288
+            ],
+            "text": "contents of the binary log, background threads and the rules used to decide how statements are recorded",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nội dung của nhật ký nhị phân, các luồng nền và các quy tắc được sử dụng để quyết định cách ghi lại"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                169.74491792929302,
+                489.2867814542484,
+                11.971275252525174
+            ],
+            "text": "and replicated, see Section 17.2, “Replication Implementation”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và nhân rộng, xem phần 17.2, triển khai sao chép của người dùng"
+        },
+        {
+            "bbox": [
+                632.5522708333333,
+                169.74491792929302,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                199.00531597222232,
+                52.147702369281035,
+                19.15401452020194
+            ],
+            "text": "17.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "17.1"
+        },
+        {
+            "bbox": [
+                150.03856209150328,
+                199.00531597222232,
+                303.72153513071896,
+                19.15401452020194
+            ],
+            "text": "Configuring Replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "Cấu hình sao chép"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                235.44845328282838,
+                778.2128602941177,
+                11.971275252525174
+            ],
+            "text": "This section describes how to configure the different types of replication available in MySQL and includes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phần này mô tả cách định cấu hình các loại sao chép khác nhau có sẵn trong MySQL và bao gồm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                250.97875631313138,
+                769.8386772875817,
+                11.971275252525288
+            ],
+            "text": "the setup and configuration required for a replication environment, including step-by-step instructions for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thiết lập và cấu hình cần thiết cho môi trường sao chép, bao gồm các hướng dẫn từng bước cho"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                266.5090593434344,
+                607.8484309640522,
+                11.971275252525288
+            ],
+            "text": "creating a new replication environment. The major components of this section are:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tạo một môi trường sao chép mới. Các thành phần chính của phần này là:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                294.70173611111113,
+                678.5767973856209,
+                11.971275252525288
+            ],
+            "text": "•For a guide to setting up two or more servers for replication using binary log file positions,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Để hướng dẫn thiết lập hai hoặc nhiều máy chủ để sao chép bằng cách sử dụng các vị trí tệp nhật ký nhị phân,"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                310.23203914141425,
+                553.516731617647,
+                11.971275252525174
+            ],
+            "text": "Section 17.1.2, “Setting Up Binary Log File Position Based Replication”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mục 17.1.2, Thiết lập bản sao dựa trên vị trí tệp nhật ký nhị phân"
+        },
+        {
+            "bbox": [
+                713.530637254902,
+                310.23203914141425,
+                230.87622549019602,
+                11.971275252525174
+            ],
+            "text": ", deals with the configuration of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", thỏa thuận với cấu hình của"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                325.76234217171725,
+                626.5061441993465,
+                11.971275252525174
+            ],
+            "text": "the servers and provides methods for copying data between the source and replicas.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các máy chủ và cung cấp các phương thức sao chép dữ liệu giữa nguồn và bản sao."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                353.955018939394,
+                760.5097369281046,
+                11.971275252525288
+            ],
+            "text": "•For a guide to setting up two or more servers for replication using GTID transactions, Section 17.1.3,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Để hướng dẫn thiết lập hai hoặc nhiều máy chủ để sao chép bằng các giao dịch GTID, phần 17.1.3,"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                369.485321969697,
+                378.4628267973857,
+                11.971275252525288
+            ],
+            "text": "“Replication with Global Transaction Identifiers”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tái tạo với các định danh giao dịch toàn cầu"
+        },
+        {
+            "bbox": [
+                538.4767324346406,
+                369.485321969697,
+                323.0257185457516,
+                11.971275252525288
+            ],
+            "text": ", deals with the configuration of the servers.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", thỏa thuận với cấu hình của các máy chủ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                397.67798579545456,
+                762.3856376633987,
+                11.971275252525288
+            ],
+            "text": "•Events in the binary log are recorded using a number of formats. These are referred to as statement-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Các sự kiện trong nhật ký nhị phân được ghi lại bằng một số định dạng. Chúng được gọi là tuyên bố-"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                413.2082888257577,
+                766.9077132352942,
+                11.971275252525174
+            ],
+            "text": "based replication (SBR) or row-based replication (RBR). A third type, mixed-format replication (MIXED),",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sao chép dựa trên (SBR) hoặc sao chép dựa trên hàng (RBR). Một loại thứ ba, sao chép định dạng hỗn hợp (hỗn hợp),"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                428.7386306818182,
+                732.6237577614379,
+                11.971275252525288
+            ],
+            "text": "uses SBR or RBR replication automatically to take advantage of the benefits of both SBR and RBR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sử dụng bản sao SBR hoặc RBR tự động để tận dụng lợi ích của cả SBR và RBR"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                444.2689337121212,
+                788.06091625817,
+                11.971275252525288
+            ],
+            "text": "formats when appropriate. The different formats are discussed in Section 17.2.1, “Replication Formats”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "định dạng khi thích hợp. Các định dạng khác nhau được thảo luận trong phần 17.2.1, các định dạng sao chép của người dùng"
+        },
+        {
+            "bbox": [
+                948.0747716503269,
+                444.2689337121212,
+                4.656095996732006,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                472.46161047979797,
+                739.1389056372549,
+                11.971275252525288
+            ],
+            "text": "•Detailed information on the different configuration options and variables that apply to replication is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Thông tin chi tiết về các tùy chọn và biến cấu hình khác nhau áp dụng cho sao chép là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                487.9919135101011,
+                642.9028112745099,
+                11.971275252525174
+            ],
+            "text": "provided in Section 17.1.6, “Replication and Binary Logging Options and Variables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Được cung cấp trong phần 17.1.6, Tùy chọn sao chép và ghi nhật ký nhị phân và các biến"
+        },
+        {
+            "bbox": [
+                802.9166499183007,
+                487.9919135101011,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                516.1845902777777,
+                750.2263071895426,
+                11.971275252525288
+            ],
+            "text": "•Once started, the replication process should require little administration or monitoring. However, for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Sau khi bắt đầu, quá trình sao chép nên yêu cầu ít quản trị hoặc giám sát. Tuy nhiên, cho"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                531.7148933080808,
+                738.9379252450981,
+                11.971275252525231
+            ],
+            "text": "advice on common tasks that you may want to execute, see Section 17.1.7, “Common Replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lời khuyên về các nhiệm vụ phổ biến mà bạn có thể muốn thực hiện, xem Phần 17.1.7, Bản sao phổ biến"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                547.2451963383838,
+                174.7859477124183,
+                11.971275252525288
+            ],
+            "text": "Administration Tasks”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhiệm vụ quản lý ”"
+        },
+        {
+            "bbox": [
+                348.5837418300654,
+                547.2451963383838,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                576.1496527777778,
+                65.18463717320265,
+                16.759798295454573
+            ],
+            "text": "17.1.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "17.1.1"
+        },
+        {
+            "bbox": [
+                162.14428774509804,
+                576.1496527777778,
+                749.2013172385621,
+                16.759798295454573
+            ],
+            "text": "Binary Log File Position Based Replication Configuration Overview",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Tổng quan về cấu hình sao chép dựa trên vị trí tệp nhật ký nhị phân"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                609.8426452020202,
+                767.0248680555555,
+                11.971275252525231
+            ],
+            "text": "This section describes replication between MySQL servers based on the binary log file position method,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phần này mô tả sự sao chép giữa các máy chủ MySQL dựa trên phương thức vị trí tệp nhật ký nhị phân,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                625.3729482323232,
+                740.9979407679738,
+                11.971275252525288
+            ],
+            "text": "where the MySQL instance operating as the source (where the database changes take place) writes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trường hợp phiên bản MySQL hoạt động như nguồn (nơi diễn ra cơ sở dữ liệu)"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                640.9032512626263,
+                275.20916707516346,
+                11.971275252525231
+            ],
+            "text": "updates and changes as “events”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cập nhật và thay đổi như những sự kiện ”"
+        },
+        {
+            "bbox": [
+                418.47467320261444,
+                640.9032512626263,
+                523.1686756535946,
+                11.971275252525231
+            ],
+            "text": " to the binary log. The information in the binary log is stored in different",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đến nhật ký nhị phân. Thông tin trong nhật ký nhị phân được lưu trữ trong các khác nhau"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                656.4335542929293,
+                766.170684640523,
+                11.971275252525288
+            ],
+            "text": "logging formats according to the database changes being recorded. Replicas are configured to read the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng ghi nhật ký theo các thay đổi cơ sở dữ liệu được ghi lại. Bản sao được cấu hình để đọc"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                671.9638573232323,
+                747.5465183823529,
+                11.971275252525231
+            ],
+            "text": "binary log from the source and to execute the events in the binary log on the replica’s local database.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhật ký nhị phân từ nguồn và để thực hiện các sự kiện trong nhật ký nhị phân trên cơ sở dữ liệu cục bộ bản sao."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                700.1565211489899,
+                781.9644775326797,
+                11.971275252525288
+            ],
+            "text": "Each replica receives a copy of the entire contents of the binary log. It is the responsibility of the replica to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mỗi bản sao nhận được một bản sao của toàn bộ nội dung của nhật ký nhị phân. Trách nhiệm của bản sao"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                715.6868241792929,
+                779.1506683006536,
+                11.971275252525231
+            ],
+            "text": "decide which statements in the binary log should be executed. Unless you specify otherwise, all events in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Quyết định câu nào trong nhật ký nhị phân nên được thực thi. Trừ khi bạn chỉ định khác, tất cả các sự kiện trong"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                731.2171272095959,
+                764.2781192810457,
+                11.971275252525288
+            ],
+            "text": "the source’s binary log are executed on the replica. If required, you can configure the replica to process",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhật ký nhị phân nguồn được thực hiện trên bản sao. Nếu được yêu cầu, bạn có thể định cấu hình bản sao để xử lý"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                746.7474690656566,
+                409.61480433006534,
+                11.971275252525288
+            ],
+            "text": "only events that apply to particular databases or tables.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ các sự kiện áp dụng cho cơ sở dữ liệu hoặc bảng cụ thể."
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                774.9401458333333,
+                77.22671568627453,
+                11.97127525252526
+            ],
+            "text": "Important",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Quan trọng"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                803.1328226010102,
+                435.69204370915037,
+                11.97127525252526
+            ],
+            "text": "You cannot configure the source to log only certain events.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn không thể định cấu hình nguồn để chỉ ghi lại một số sự kiện nhất định."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                840.4314337121212,
+                769.8722075163398,
+                11.97127525252526
+            ],
+            "text": "Each replica keeps a record of the binary log coordinates: the file name and position within the file that it",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mỗi bản sao giữ một bản ghi của tọa độ nhật ký nhị phân: tên tệp và vị trí trong tệp mà nó"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                855.9617367424243,
+                792.1977124183006,
+                11.97127525252526
+            ],
+            "text": "has read and processed from the source. This means that multiple replicas can be connected to the source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đã đọc và xử lý từ nguồn. Điều này có nghĩa là nhiều bản sao có thể được kết nối với nguồn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                871.4920397727273,
+                773.5735294117646,
+                11.97127525252526
+            ],
+            "text": "and executing different parts of the same binary log. Because the replicas control this process, individual",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và thực hiện các phần khác nhau của cùng một nhật ký nhị phân. Vì các bản sao kiểm soát quá trình này, cá nhân"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                887.0223428030304,
+                789.4174334150326,
+                11.971280429292918
+            ],
+            "text": "replicas can be connected and disconnected from the server without affecting the source’s operation. Also,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các bản sao có thể được kết nối và ngắt kết nối khỏi máy chủ mà không ảnh hưởng đến hoạt động của nguồn. Cũng,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                902.552651010101,
+                747.4795584150327,
+                11.971275252525245
+            ],
+            "text": "because each replica records the current position within the binary log, it is possible for replicas to be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bởi vì mỗi bản sao ghi lại vị trí hiện tại trong nhật ký nhị phân, có thể các bản sao có thể"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                918.082954040404,
+                402.1617647058823,
+                11.971275252525245
+            ],
+            "text": "disconnected, reconnect and then resume processing.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ngắt kết nối, kết nối lại và sau đó tiếp tục xử lý."
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "3437",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3437"
+        }
+    ]
+}

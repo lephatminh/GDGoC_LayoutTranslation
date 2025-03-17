@@ -1,0 +1,1976 @@
+{
+    "metadata": {
+        "page_hash": "a349971ef3af3a44ea92b5a94a31e9151abdda0df51cf3b37afec7950219dcc2",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3121,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                398.29289215686276,
+                48.370422979798036,
+                198.26715686274508,
+                11.971275252525288
+            ],
+            "text": "InnoDB Transaction Model",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mô hình giao dịch Innodb"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                94.96133207070716,
+                160.09763071895426,
+                11.971275252525174
+            ],
+            "text": "From MySQL 8.0.22, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Từ MySQL 8.0,22, "
+        },
+        {
+            "bbox": [
+                317.5322712418301,
+                96.11317582070706,
+                200.9803921568627,
+                10.172335542929318
+            ],
+            "text": "SELECT ... FOR SHARE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Chọn ... để chia sẻ"
+        },
+        {
+            "bbox": [
+                518.5126633986928,
+                94.96133207070716,
+                404.9419934640523,
+                11.971275252525174
+            ],
+            "text": " statements do not acquire read locks on MySQL grant",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Báo cáo không có được khóa đọc trên Grant MySQL"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                110.49163510101016,
+                443.06129125816994,
+                11.971275252525288
+            ],
+            "text": "tables. For more information, see Grant Table Concurrency.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bàn. Để biết thêm thông tin, xem đồng thời bảng cấp."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                137.52598421717175,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                138.67782796717177,
+                211.02941176470588,
+                10.172335542929204
+            ],
+            "text": "SELECT ... FOR UPDATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Chọn ... để cập nhật"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                164.56041098484855,
+                765.1825980392157,
+                11.971275252525174
+            ],
+            "text": "For index records the search encounters, locks the rows and any associated index entries, the same as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với chỉ mục ghi lại các cuộc gặp gỡ tìm kiếm, khóa các hàng và bất kỳ mục chỉ mục liên quan nào, giống như"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                180.09071401515155,
+                121.02370955882353,
+                11.971275252525174
+            ],
+            "text": "if you issued an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu bạn đã phát hành một "
+        },
+        {
+            "bbox": [
+                278.4583165849673,
+                181.24248011363636,
+                60.29411764705884,
+                10.172413194444403
+            ],
+            "text": "UPDATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CẬP NHẬT"
+        },
+        {
+            "bbox": [
+                338.75243423202613,
+                180.09071401515155,
+                578.0865845588237,
+                11.971275252525174
+            ],
+            "text": " statement for those rows. Other transactions are blocked from updating those",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố cho những hàng đó. Các giao dịch khác bị chặn cập nhật chúng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                195.62101704545455,
+                128.44321895424835,
+                11.971275252525288
+            ],
+            "text": "rows, from doing ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hàng, từ làm "
+        },
+        {
+            "bbox": [
+                285.87785947712416,
+                196.77278314393936,
+                200.98039215686276,
+                10.172413194444516
+            ],
+            "text": "SELECT ... FOR SHARE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Chọn ... để chia sẻ"
+        },
+        {
+            "bbox": [
+                486.8582516339869,
+                195.62101704545455,
+                413.31612622549017,
+                11.971275252525288
+            ],
+            "text": ", or from reading the data in certain transaction isolation",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hoặc từ việc đọc dữ liệu trong một số giao dịch nhất định"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                211.15132007575755,
+                762.3688725490197,
+                11.971275252525288
+            ],
+            "text": "levels. Consistent reads ignore any locks set on the records that exist in the read view. (Old versions of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cấp độ. Các lần đọc nhất quán bỏ qua bất kỳ khóa được đặt trên các bản ghi tồn tại trong chế độ xem đọc. (Phiên bản cũ của"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                226.68162310606067,
+                752.1858492647059,
+                11.971275252525174
+            ],
+            "text": "a record cannot be locked; they are reconstructed by applying undo logs on an in-memory copy of the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một bản ghi không thể bị khóa; Chúng được xây dựng lại bằng cách áp dụng nhật ký hoàn tác trên bản sao trong bộ nhớ của"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                242.21192613636367,
+                57.69812091503266,
+                11.971275252525174
+            ],
+            "text": "record.)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ghi.)"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                270.3981190025253,
+                211.02941176470588,
+                10.172322601010137
+            ],
+            "text": "SELECT ... FOR UPDATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Chọn ... để cập nhật"
+        },
+        {
+            "bbox": [
+                368.4640522875817,
+                269.2462623106062,
+                97.74344730392158,
+                11.971275252525174
+            ],
+            "text": " requires the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " yêu cầu "
+        },
+        {
+            "bbox": [
+                466.2074995915033,
+                270.3981190025253,
+                60.29411764705878,
+                10.172322601010137
+            ],
+            "text": "SELECT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LỰA CHỌN"
+        },
+        {
+            "bbox": [
+                526.5016172385621,
+                269.2462623106062,
+                242.06411723856206,
+                11.971275252525174
+            ],
+            "text": " privilege and at least one of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đặc quyền và ít nhất một trong những "
+        },
+        {
+            "bbox": [
+                768.5657847222222,
+                270.3981190025253,
+                60.2941176470589,
+                10.172322601010137
+            ],
+            "text": "DELETE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "XÓA BỎ"
+        },
+        {
+            "bbox": [
+                828.8599023692811,
+                269.2462623106062,
+                9.31209150326788,
+                11.971275252525174
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                838.171993872549,
+                270.3981190025253,
+                40.1960784313726,
+                10.172322601010137
+            ],
+            "text": "LOCK",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "KHÓA"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                285.9284220328283,
+                60.29411764705884,
+                10.17232260101025
+            ],
+            "text": "TABLES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bàn"
+        },
+        {
+            "bbox": [
+                217.72875816993465,
+                284.7765653409092,
+                28.857434640522854,
+                11.971275252525288
+            ],
+            "text": ", or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hoặc "
+        },
+        {
+            "bbox": [
+                246.58620955882353,
+                285.9284220328283,
+                60.29411764705881,
+                10.17232260101025
+            ],
+            "text": "UPDATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CẬP NHẬT"
+        },
+        {
+            "bbox": [
+                306.8803104575163,
+                284.7765653409092,
+                80.04042442810464,
+                11.971275252525288
+            ],
+            "text": " privileges.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đặc quyền."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                311.8109921085859,
+                772.5854428104576,
+                11.971275252525174
+            ],
+            "text": "These clauses are primarily useful when dealing with tree-structured or graph-structured data, either in a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các mệnh đề này chủ yếu hữu ích khi xử lý dữ liệu có cấu trúc cây hoặc cấu trúc đồ thị, trong một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                327.3412951388889,
+                785.6658161764706,
+                11.971275252525288
+            ],
+            "text": "single table or split across multiple tables. You traverse edges or tree branches from one place to another,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bảng đơn hoặc chia trên nhiều bảng. Bạn đi qua các cạnh hoặc cành cây từ nơi này sang nơi khác,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                342.8715981691919,
+                563.7667818627451,
+                11.971275252525288
+            ],
+            "text": "while reserving the right to come back and change any of these “pointer”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong khi bảo lưu quyền quay lại và thay đổi bất kỳ con trỏ nào trong số này"
+        },
+        {
+            "bbox": [
+                676.8851956699347,
+                342.8715981691919,
+                57.71486928104571,
+                11.971275252525288
+            ],
+            "text": " values.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                369.9059472853536,
+                115.41299019607845,
+                11.971275252525288
+            ],
+            "text": "All locks set by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tất cả các khóa được đặt bởi "
+        },
+        {
+            "bbox": [
+                256.0992647058824,
+                371.0577910353536,
+                90.44117647058823,
+                10.172335542929318
+            ],
+            "text": "FOR SHARE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Để chia sẻ"
+        },
+        {
+            "bbox": [
+                346.5404411764706,
+                369.9059472853536,
+                37.24838276143794,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                383.7887904411765,
+                371.0577910353536,
+                100.49019607843138,
+                10.172335542929318
+            ],
+            "text": "FOR UPDATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Để cập nhật"
+        },
+        {
+            "bbox": [
+                484.2789865196079,
+                369.9059472853536,
+                434.70377287581687,
+                11.971275252525288
+            ],
+            "text": " queries are released when the transaction is committed or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Truy vấn được phát hành khi giao dịch được thực hiện hoặc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                385.4362503156566,
+                85.63439542483661,
+                11.971275252525288
+            ],
+            "text": "rolled back.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "quay trở lại."
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                412.47062531565655,
+                37.214869281045765,
+                11.971275252525288
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                439.5050132575758,
+                605.9894125816995,
+                11.971275252525288
+            ],
+            "text": "Locking reads are only possible when autocommit is disabled (either by beginning",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khóa đọc chỉ có thể khi AutoCommit bị vô hiệu hóa (khi bắt đầu"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                455.0353162878788,
+                121.00694444444446,
+                11.971275252525288
+            ],
+            "text": "transaction with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "giao dịch với "
+        },
+        {
+            "bbox": [
+                402.7144607843137,
+                456.18713415404045,
+                170.83335008169945,
+                10.17236142676768
+            ],
+            "text": "START TRANSACTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu giao dịch"
+        },
+        {
+            "bbox": [
+                573.5478108660132,
+                455.0353162878788,
+                100.5404411764705,
+                11.971275252525288
+            ],
+            "text": " or by setting ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc bằng cách cài đặt "
+        },
+        {
+            "bbox": [
+                674.0882520424836,
+                456.18713415404045,
+                100.49019607843138,
+                10.17236142676768
+            ],
+            "text": "autocommit",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "AutoCommit"
+        },
+        {
+            "bbox": [
+                774.578448120915,
+                455.0353162878788,
+                37.24834926470601,
+                11.971275252525288
+            ],
+            "text": " to 0.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đến 0."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                482.0696654040405,
+                779.2009636437908,
+                11.971275252525174
+            ],
+            "text": "A locking read clause in an outer statement does not lock the rows of a table in a nested subquery unless",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một mệnh đề đọc khóa trong một câu lệnh bên ngoài không khóa các hàng của bảng trong một trình điều khiển phụ trừ khi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                497.5999684343435,
+                785.6658161764706,
+                11.971275252525288
+            ],
+            "text": "a locking read clause is also specified in the subquery. For example, the following statement does not lock",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một mệnh đề đọc khóa cũng được chỉ định trong truy vấn con. Ví dụ: câu lệnh sau không khóa"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                513.1302714646465,
+                98.66462418300654,
+                11.971275252525288
+            ],
+            "text": "rows in table ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hàng trong bảng "
+        },
+        {
+            "bbox": [
+                239.35089869281046,
+                514.282076388889,
+                20.0980392156863,
+                10.172374368686917
+            ],
+            "text": "t2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T2"
+        },
+        {
+            "bbox": [
+                259.44893790849676,
+                513.1302714646465,
+                4.65604575163394,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                539.5226884469698,
+                474.31374223856216,
+                8.137917613636318
+            ],
+            "text": "SELECT * FROM t1 WHERE c1 = (SELECT c1 FROM t2) FOR UPDATE;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn * từ T1 trong đó C1 = (chọn C1 từ T2) để cập nhật;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                564.3815785984848,
+                157.30065359477123,
+                11.971275252525288
+            ],
+            "text": "To lock rows in table ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để khóa các hàng trong bảng "
+        },
+        {
+            "bbox": [
+                297.98692810457516,
+                565.5333964646466,
+                20.098039215686242,
+                10.17236142676768
+            ],
+            "text": "t2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T2"
+        },
+        {
+            "bbox": [
+                318.0849673202614,
+                564.3815785984848,
+                323.9803754084968,
+                11.971275252525288
+            ],
+            "text": ", add a locking read clause to the subquery:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Thêm một mệnh đề đọc khóa vào trình điều khiển con:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                590.7740085227274,
+                562.7450980392157,
+                8.13790467171708
+            ],
+            "text": "SELECT * FROM t1 WHERE c1 = (SELECT c1 FROM t2 FOR UPDATE) FOR UPDATE;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn * Từ T1 trong đó C1 = (chọn C1 từ T2 để cập nhật) để cập nhật;"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                615.810151199495,
+                211.94053962418297,
+                13.16842866161619
+            ],
+            "text": "Locking Read Examples",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Khóa các ví dụ đọc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                644.2202910353535,
+                406.83455882352945,
+                11.971275252525288
+            ],
+            "text": "Suppose that you want to insert a new row into a table ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giả sử rằng bạn muốn chèn một hàng mới vào bảng "
+        },
+        {
+            "bbox": [
+                547.5208333333334,
+                645.372095959596,
+                50.24509803921569,
+                10.172374368686917
+            ],
+            "text": "child",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "đứa trẻ"
+        },
+        {
+            "bbox": [
+                597.7659313725491,
+                644.2202910353535,
+                282.99714052287584,
+                11.971275252525288
+            ],
+            "text": ", and make sure that the child row has",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và đảm bảo rằng hàng trẻ em có"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                659.7505940656566,
+                156.39624183006538,
+                11.971275252525231
+            ],
+            "text": "a parent row in table ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "một hàng cha mẹ trong bảng "
+        },
+        {
+            "bbox": [
+                297.0825163398693,
+                660.902398989899,
+                60.29411764705878,
+                10.17237436868686
+            ],
+            "text": "parent",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "cha mẹ"
+        },
+        {
+            "bbox": [
+                357.3766339869281,
+                659.7505940656566,
+                515.7324346405228,
+                11.971275252525231
+            ],
+            "text": ". Your application code can ensure referential integrity throughout this",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Mã ứng dụng của bạn có thể đảm bảo tính toàn vẹn tham chiếu trong suốt quá trình này"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                675.2808970959596,
+                178.75532720588234,
+                11.971275252525288
+            ],
+            "text": "sequence of operations.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trình tự hoạt động."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                702.315233270202,
+                339.7908496732026,
+                11.971275252525231
+            ],
+            "text": "First, use a consistent read to query the table ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đầu tiên, sử dụng một lần đọc nhất quán để truy vấn bảng "
+        },
+        {
+            "bbox": [
+                480.47712418300654,
+                703.4670511363637,
+                60.29411764705884,
+                10.172361426767623
+            ],
+            "text": "PARENT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cha mẹ"
+        },
+        {
+            "bbox": [
+                540.7712418300654,
+                702.315233270202,
+                389.1148210784313,
+                11.971275252525231
+            ],
+            "text": " and verify that the parent row exists. Can you safely",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " và xác minh rằng hàng cha mẹ tồn tại. Bạn có thể an toàn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                717.845536300505,
+                203.86111111111114,
+                11.971275252525288
+            ],
+            "text": "insert the child row to table ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chèn hàng trẻ em vào bảng "
+        },
+        {
+            "bbox": [
+                344.54738562091507,
+                718.9973541666667,
+                50.245098039215634,
+                10.17236142676768
+            ],
+            "text": "CHILD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ĐỨA TRẺ"
+        },
+        {
+            "bbox": [
+                394.7924836601307,
+                717.845536300505,
+                510.155245506536,
+                11.971275252525288
+            ],
+            "text": "? No, because some other session could delete the parent row in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "? Không, bởi vì một số phiên khác có thể xóa hàng cha mẹ trong"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                733.375839330808,
+                170.34761397058827,
+                11.971275252525231
+            ],
+            "text": "moment between your ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thời điểm giữa bạn "
+        },
+        {
+            "bbox": [
+                311.03392197712424,
+                734.5276571969697,
+                60.29411764705878,
+                10.17236142676768
+            ],
+            "text": "SELECT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LỰA CHỌN"
+        },
+        {
+            "bbox": [
+                371.328039624183,
+                733.375839330808,
+                74.47995016339866,
+                11.971275252525231
+            ],
+            "text": " and your ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và của bạn "
+        },
+        {
+            "bbox": [
+                445.8079897875817,
+                734.5276571969697,
+                60.29411764705884,
+                10.17236142676768
+            ],
+            "text": "INSERT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHÈN"
+        },
+        {
+            "bbox": [
+                506.1021074346405,
+                733.375839330808,
+                226.2201964869281,
+                11.971275252525231
+            ],
+            "text": ", without you being aware of it.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", mà không có bạn nhận thức được nó."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                760.4102660984848,
+                306.26060416666667,
+                11.97127525252526
+            ],
+            "text": "To avoid this potential issue, perform the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để tránh vấn đề tiềm năng này, hãy thực hiện "
+        },
+        {
+            "bbox": [
+                446.9468786764706,
+                761.5621098484849,
+                60.29411764705878,
+                10.17233554292929
+            ],
+            "text": "SELECT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LỰA CHỌN"
+        },
+        {
+            "bbox": [
+                507.2409963235294,
+                760.4102660984848,
+                49.34066952614381,
+                11.97127525252526
+            ],
+            "text": " using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " sử dụng "
+        },
+        {
+            "bbox": [
+                556.5817160947713,
+                761.5621098484849,
+                90.44117647058818,
+                10.17233554292929
+            ],
+            "text": "FOR SHARE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Để chia sẻ"
+        },
+        {
+            "bbox": [
+                647.0228925653595,
+                760.4102660984848,
+                4.656045751633997,
+                11.97127525252526
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                786.8027348484849,
+                418.0392324346405,
+                8.137827020202025
+            ],
+            "text": "SELECT * FROM parent WHERE NAME = ’Jones’ FOR SHARE;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn * từ cha mẹ nơi tên = xông Jones, để chia sẻ;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                811.6614955808082,
+                67.96486928104576,
+                11.97127525252526
+            ],
+            "text": "After the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau "
+        },
+        {
+            "bbox": [
+                208.6511437908497,
+                812.8133522727273,
+                90.44117647058823,
+                10.172322601010109
+            ],
+            "text": "FOR SHARE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Để chia sẻ"
+        },
+        {
+            "bbox": [
+                299.0923202614379,
+                811.6614955808082,
+                188.0506368464052,
+                11.97127525252526
+            ],
+            "text": " query returns the parent ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Truy vấn trả về cha mẹ "
+        },
+        {
+            "bbox": [
+                487.14295710784313,
+                812.8133522727273,
+                70.34313725490199,
+                10.172322601010109
+            ],
+            "text": "’Jones’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "\"Jones Jones"
+        },
+        {
+            "bbox": [
+                557.4860943627451,
+                811.6614955808082,
+                319.3243966503269,
+                11.97127525252526
+            ],
+            "text": ", you can safely add the child record to the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", bạn có thể thêm bản ghi trẻ em vào "
+        },
+        {
+            "bbox": [
+                876.810491013072,
+                812.8133522727273,
+                50.24509803921569,
+                10.172322601010109
+            ],
+            "text": "CHILD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ĐỨA TRẺ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                827.1917986111112,
+                770.7764852941177,
+                11.97127525252526
+            ],
+            "text": "table and commit the transaction. Any transaction that tries to acquire an exclusive lock in the applicable",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bảng và cam kết giao dịch. Bất kỳ giao dịch nào cố gắng có được một khóa độc quyền trong"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                842.7221016414142,
+                77.26021241830065,
+                11.97127525252526
+            ],
+            "text": "row in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hàng trong "
+        },
+        {
+            "bbox": [
+                217.94648692810458,
+                843.8739583333333,
+                60.29411764705881,
+                10.172322601010109
+            ],
+            "text": "PARENT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cha mẹ"
+        },
+        {
+            "bbox": [
+                278.2406045751634,
+                842.7221016414142,
+                618.1319611928105,
+                11.97127525252526
+            ],
+            "text": " table waits until you are finished, that is, until the data in all tables is in a consistent",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng chờ cho đến khi bạn hoàn thành, nghĩa là cho đến khi dữ liệu trong tất cả các bảng ở trong một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                858.2524046717172,
+                40.96650326797385,
+                11.97127525252526
+            ],
+            "text": "state.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tình trạng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                885.286831439394,
+                479.421977124183,
+                11.971276546717164
+            ],
+            "text": "For another example, consider an integer counter field in a table ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ khác, hãy xem xét trường truy cập số nguyên trong bảng "
+        },
+        {
+            "bbox": [
+                620.1082516339869,
+                886.4386881313131,
+                110.53921568627459,
+                10.172323895201998
+            ],
+            "text": "CHILD_CODES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Child_codes"
+        },
+        {
+            "bbox": [
+                730.6474673202615,
+                885.286831439394,
+                186.20831658496718,
+                11.971276546717164
+            ],
+            "text": ", used to assign a unique",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", được sử dụng để gán một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                900.8171357638889,
+                277.43666625816996,
+                11.97127525252526
+            ],
+            "text": "identifier to each child added to table ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "định danh cho mỗi đứa trẻ được thêm vào bảng "
+        },
+        {
+            "bbox": [
+                418.1229407679739,
+                901.9689846906566,
+                50.24509803921569,
+                10.172330366161603
+            ],
+            "text": "CHILD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ĐỨA TRẺ"
+        },
+        {
+            "bbox": [
+                468.3680388071896,
+                900.8171357638889,
+                447.7843472222222,
+                11.97127525252526
+            ],
+            "text": ". Do not use either consistent read or a shared mode read to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Không sử dụng đọc nhất quán hoặc chế độ chia sẻ đọc để đọc"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3092",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3092"
+        }
+    ]
+}

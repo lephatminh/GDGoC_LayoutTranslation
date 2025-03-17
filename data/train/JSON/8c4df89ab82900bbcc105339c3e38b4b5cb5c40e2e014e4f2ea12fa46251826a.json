@@ -1,0 +1,1356 @@
+{
+    "metadata": {
+        "page_hash": "8c4df89ab82900bbcc105339c3e38b4b5cb5c40e2e014e4f2ea12fa46251826a",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3262,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                432.1664624183007,
+                48.370422979798036,
+                190.81413398692808,
+                11.971275252525288
+            ],
+            "text": "InnoDB System Variables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biến hệ thống Innodb"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                97.54971590909099,
+                120.05227083333332,
+                11.971275252525174
+            ],
+            "text": "Maximum Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị tối đa"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                98.70155965909089,
+                30.14705882352939,
+                10.172335542929318
+            ],
+            "text": "100",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "100"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                131.52225378787887,
+                722.3737745098039,
+                11.971275252525174
+            ],
+            "text": "Defines the compression failure rate threshold for a table, as a percentage, at which point MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xác định ngưỡng tỷ lệ lỗi nén cho bảng, theo tỷ lệ phần trăm, tại thời điểm đó MySQL"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                147.05255681818187,
+                716.7797700163399,
+                11.971275252525288
+            ],
+            "text": "begins adding padding within compressed pages to avoid expensive compression failures. When",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu thêm phần đệm trong các trang nén để tránh các lỗi nén đắt tiền. Khi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                162.58285984848487,
+                736.3251801470587,
+                11.971275252525288
+            ],
+            "text": "this threshold is passed, MySQL begins to leave additional free space within each new compressed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ngưỡng này được thông qua, MySQL bắt đầu để lại dung lượng trống bổ sung trong mỗi lần nén mới"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                178.11316287878788,
+                719.6437741013071,
+                11.971275252525288
+            ],
+            "text": "page, dynamically adjusting the amount of free space up to the percentage of page size specified",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trang, tự động điều chỉnh lượng không gian trống lên đến tỷ lệ phần trăm của kích thước trang được chỉ định"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                193.643465909091,
+                22.34232026143792,
+                11.971275252525174
+            ],
+            "text": "by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "qua "
+        },
+        {
+            "bbox": [
+                209.92401960784315,
+                194.7953096590909,
+                301.4705882352941,
+                10.172335542929318
+            ],
+            "text": "innodb_compression_pad_pct_max",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_compression_pad_pct_max"
+        },
+        {
+            "bbox": [
+                511.39460784313724,
+                193.643465909091,
+                406.78426348039216,
+                11.971275252525174
+            ],
+            "text": ". A value of zero disables the mechanism that monitors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Giá trị bằng không vô hiệu hóa cơ chế theo dõi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                209.173768939394,
+                509.18380678104575,
+                11.971275252525288
+            ],
+            "text": "compression efficiency and dynamically adjusts the padding amount.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hiệu quả nén và tự động điều chỉnh lượng đệm."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                240.234375,
+                620.4767156862746,
+                11.971275252525288
+            ],
+            "text": "For more information, see Section 15.9.1.6, “Compression for OLTP Workloads”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin, xem Phần 15.9.1.6, nén cho khối lượng công việc của OLTP"
+        },
+        {
+            "bbox": [
+                780.4906213235295,
+                240.234375,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                268.7065972222223,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                269.8584409722222,
+                241.1764705882353,
+                10.172335542929432
+            ],
+            "text": "innodb_compression_level",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_compression_level"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                313.0326704545455,
+                172.1732026143791,
+                11.971275252525288
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                314.1845142045454,
+                281.37254901960785,
+                10.172335542929432
+            ],
+            "text": "--innodb-compression-level=#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--innodb-compression-level =#"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                334.3868371212121,
+                121.92810457516342,
+                11.971275252525288
+            ],
+            "text": "System Variable",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biến hệ thống"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                335.53868087121214,
+                241.17647058823525,
+                10.172335542929318
+            ],
+            "text": "innodb_compression_level",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_compression_level"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                355.74100378787887,
+                47.481634395424834,
+                11.971275252525174
+            ],
+            "text": "Scope",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                355.74100378787887,
+                48.40276102941175,
+                11.971275252525174
+            ],
+            "text": "Global",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Toàn cầu"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                377.0951704545455,
+                65.13439542483658,
+                11.971275252525288
+            ],
+            "text": "Dynamic",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Năng động"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                377.0951704545455,
+                28.857451388888876,
+                11.971275252525288
+            ],
+            "text": "Yes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đúng"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                399.60118087121214,
+                70.34313725490196,
+                10.172335542929318
+            ],
+            "text": "SET_VAR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Set_var"
+        },
+        {
+            "bbox": [
+                261.6932189542484,
+                398.4493371212121,
+                94.00857843137254,
+                11.971275252525288
+            ],
+            "text": " Hint Applies",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Gợi ý áp dụng"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                398.4493371212121,
+                21.404411764705742,
+                11.971275252525288
+            ],
+            "text": "No",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "KHÔNG"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                419.80350378787887,
+                37.23161764705881,
+                11.971275252525174
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                419.80350378787887,
+                52.13766339869278,
+                11.971275252525174
+            ],
+            "text": "Integer",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số nguyên"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                441.1576704545455,
+                100.54044117647058,
+                11.971275252525288
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                442.3095142045455,
+                10.049019607843093,
+                10.172335542929318
+            ],
+            "text": "6",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "6"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                462.5118371212121,
+                115.39622508169933,
+                11.971275252525288
+            ],
+            "text": "Minimum Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị tối thiểu"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                463.66368087121214,
+                10.049019607843093,
+                10.172335542929318
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                483.86600378787887,
+                120.05227083333332,
+                11.971275252525174
+            ],
+            "text": "Maximum Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị tối đa"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                485.0178475378789,
+                10.049019607843093,
+                10.172335542929204
+            ],
+            "text": "9",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "9"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                517.8385416666667,
+                362.0996899509804,
+                11.971275252525288
+            ],
+            "text": "Specifies the level of zlib compression to use for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ định mức độ nén zlib để sử dụng cho "
+        },
+        {
+            "bbox": [
+                549.6813892973856,
+                518.9903465909091,
+                60.2941176470589,
+                10.172374368686917
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                609.9755069444445,
+                517.8385416666667,
+                311.8545919117647,
+                11.971275252525288
+            ],
+            "text": " compressed tables and indexes. A higher",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng nén và chỉ mục. Cao hơn"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                533.3688446969697,
+                711.2361613562092,
+                11.971275252525231
+            ],
+            "text": "value lets you fit more data onto a storage device, at the expense of more CPU overhead during",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị cho phép bạn phù hợp với nhiều dữ liệu hơn vào thiết bị lưu trữ, với chi phí chi phí CPU nhiều hơn trong"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                548.8991477272727,
+                744.6658496732026,
+                11.971275252525231
+            ],
+            "text": "compression. A lower value lets you reduce CPU overhead when storage space is not critical, or you",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "nén. Giá trị thấp hơn cho phép bạn giảm chi phí CPU khi không gian lưu trữ không quan trọng hoặc bạn"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                564.4294507575758,
+                345.35132393790855,
+                11.971275252525231
+            ],
+            "text": "expect the data is not especially compressible.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mong đợi dữ liệu không đặc biệt có thể nén."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                595.4900568181819,
+                620.4767156862746,
+                11.971275252525231
+            ],
+            "text": "For more information, see Section 15.9.1.6, “Compression for OLTP Workloads”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thêm thông tin, xem Phần 15.9.1.6, nén cho khối lượng công việc của OLTP"
+        },
+        {
+            "bbox": [
+                780.4906213235295,
+                595.4900568181819,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                623.962279040404,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                625.1140839646464,
+                301.47058823529414,
+                10.172374368686917
+            ],
+            "text": "innodb_compression_pad_pct_max",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_compression_pad_pct_max"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                668.2883522727273,
+                172.1732026143791,
+                11.971275252525231
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                669.4401960227274,
+                341.66666666666663,
+                10.172335542929261
+            ],
+            "text": "--innodb-compression-pad-pct-max=#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--innodb-compression-pad-pct-max =#"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                689.642518939394,
+                121.92810457516342,
+                11.971275252525288
+            ],
+            "text": "System Variable",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biến hệ thống"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                690.794362689394,
+                301.47058823529403,
+                10.172335542929261
+            ],
+            "text": "innodb_compression_pad_pct_max",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_compression_pad_pct_max"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                710.9966856060606,
+                47.481634395424834,
+                11.971275252525231
+            ],
+            "text": "Scope",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phạm vi"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                710.9966856060606,
+                48.40276102941175,
+                11.971275252525231
+            ],
+            "text": "Global",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Toàn cầu"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                732.3508522727273,
+                65.13439542483658,
+                11.971275252525231
+            ],
+            "text": "Dynamic",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Năng động"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                732.3508522727273,
+                28.857451388888876,
+                11.971275252525231
+            ],
+            "text": "Yes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đúng"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                754.8568497474748,
+                70.34313725490196,
+                10.172348484848499
+            ],
+            "text": "SET_VAR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Set_var"
+        },
+        {
+            "bbox": [
+                261.6932189542484,
+                753.705018939394,
+                94.00857843137254,
+                11.971275252525288
+            ],
+            "text": " Hint Applies",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Gợi ý áp dụng"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                753.705018939394,
+                21.404411764705742,
+                11.971275252525288
+            ],
+            "text": "No",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "KHÔNG"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                775.0591856060606,
+                37.23161764705881,
+                11.97127525252526
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                775.0591856060606,
+                52.13766339869278,
+                11.97127525252526
+            ],
+            "text": "Integer",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số nguyên"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                796.4133522727273,
+                100.54044117647058,
+                11.97127525252526
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                797.5651830808081,
+                20.098039215686185,
+                10.172348484848499
+            ],
+            "text": "50",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "50"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                817.767518939394,
+                115.39622508169933,
+                11.97127525252526
+            ],
+            "text": "Minimum Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị tối thiểu"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                818.9193497474747,
+                10.049019607843093,
+                10.172348484848499
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                839.1216856060606,
+                120.05227083333332,
+                11.97127525252526
+            ],
+            "text": "Maximum Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị tối đa"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                840.2735164141413,
+                20.098039215686185,
+                10.172348484848499
+            ],
+            "text": "75",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "75"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                873.0942234848485,
+                708.3888218954249,
+                11.97127525252526
+            ],
+            "text": "Specifies the maximum percentage that can be reserved as free space within each compressed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ định tỷ lệ phần trăm tối đa có thể được đặt trước là không gian trống trong mỗi lần nén"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                888.6245265151515,
+                647.0061274509804,
+                11.971275252525245
+            ],
+            "text": "page, allowing room to reorganize the data and modification log within the page when a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trang, cho phép phòng tổ chức lại dữ liệu và nhật ký sửa đổi trong trang khi một"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                904.1548295454545,
+                701.907220996732,
+                11.97127525252526
+            ],
+            "text": "compressed table or index is updated and the data might be recompressed. Only applies when",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng hoặc chỉ mục nén được cập nhật và dữ liệu có thể được tái hiện. Chỉ áp dụng khi"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "3233",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3233"
+        }
+    ]
+}

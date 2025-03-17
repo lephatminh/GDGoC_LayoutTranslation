@@ -1,0 +1,1236 @@
+{
+    "metadata": {
+        "page_hash": "1f9b96946f9774f2c798d1fcfbcb5290f71fa5112caafb83406b21606a45730f",
+        "original_filename": "ubuntu-install-en.pdf",
+        "page_no": 92,
+        "num_pages": 137,
+        "original_width": 595,
+        "original_height": 842,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                123.56866483193278,
+                89.76185510688845,
+                675.1377095378152,
+                24.217962292161474
+            ],
+            "text": "Appendix B. Automating the installation",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LRIVSC+NimbusSanL-Bold",
+                "size": 20.65850067138672
+            },
+            "text_vi": "Phụ lục B. Tự động cài đặt"
+        },
+        {
+            "bbox": [
+                123.56866483193278,
+                122.45513093824229,
+                294.6334368487395,
+                24.21795011876486
+            ],
+            "text": "using preseeding",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LRIVSC+NimbusSanL-Bold",
+                "size": 20.65850067138672
+            },
+            "text_vi": "Sử dụng preseeding"
+        },
+        {
+            "bbox": [
+                205.95766008403362,
+                168.54722624703095,
+                448.69903865546235,
+                11.460936460807602
+            ],
+            "text": "This appendix explains how to preseed answers to questions in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Phụ lục này giải thích cách trả lời câu trả lời cho các câu hỏi trong"
+        },
+        {
+            "bbox": [
+                660.9435147058824,
+                170.07291805225657,
+                148.33992941176473,
+                9.321522862232769
+            ],
+            "text": "debian-installer",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TCGTYJ+NimbusMonL-Regu",
+                "size": 8.96638011932373
+            },
+            "text_vi": "Debian-Installer"
+        },
+        {
+            "bbox": [
+                815.5205777310924,
+                168.54722624703095,
+                82.5212168067228,
+                11.460936460807602
+            ],
+            "text": "to automate",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "để tự động hóa"
+        },
+        {
+            "bbox": [
+                205.9574016806723,
+                184.31276098574835,
+                116.30831764705877,
+                11.460924287410876
+            ],
+            "text": "your installation.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Cài đặt của bạn."
+        },
+        {
+            "bbox": [
+                205.9574016806723,
+                206.14826781472686,
+                692.0690436974791,
+                11.460936460807716
+            ],
+            "text": "The configuration fragments used in this appendix are also available as an example preconfiguration",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Các đoạn cấu hình được sử dụng trong Phụ lục này cũng có sẵn dưới dạng cấu hình trước ví dụ"
+        },
+        {
+            "bbox": [
+                205.9574016806723,
+                221.9142407957246,
+                219.90758277310923,
+                11.460936460807488
+            ],
+            "text": "file from ../example-preseed.txt.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Tệp từ ../example-preseed.txt."
+        },
+        {
+            "bbox": [
+                123.56840126050422,
+                270.22622802850356,
+                235.07077815126047,
+                20.181726543943114
+            ],
+            "text": "B.1. Introduction",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LRIVSC+NimbusSanL-Bold",
+                "size": 17.21549987792969
+            },
+            "text_vi": "B.1. Giới thiệu"
+        },
+        {
+            "bbox": [
+                205.9574016806723,
+                303.24121021377664,
+                692.1046861344537,
+                11.460936460807716
+            ],
+            "text": "Preseeding provides a way to set answers to questions asked during the installation process, without",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Preseeding cung cấp một cách để đặt câu trả lời cho các câu hỏi được hỏi trong quá trình cài đặt mà không cần"
+        },
+        {
+            "bbox": [
+                205.95736722689077,
+                319.00674495249405,
+                692.1150222689075,
+                11.460924287410876
+            ],
+            "text": "having to manually enter the answers while the installation is running. This makes it possible to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Phải nhập thủ công các câu trả lời trong khi cài đặt đang chạy. Điều này làm cho nó có thể"
+        },
+        {
+            "bbox": [
+                205.95736722689077,
+                334.7727179334918,
+                692.0887340336135,
+                11.460924287410876
+            ],
+            "text": "fully automate most types of installation and even offers some features not available during normal",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "hoàn toàn tự động hóa hầu hết các loại cài đặt và thậm chí cung cấp một số tính năng không có sẵn trong thời gian bình thường"
+        },
+        {
+            "bbox": [
+                205.95735000000002,
+                350.53825267220907,
+                87.25354705882353,
+                11.46092428741099
+            ],
+            "text": "installations.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "cài đặt."
+        },
+        {
+            "bbox": [
+                205.95735000000002,
+                372.3737595011877,
+                692.1155563025211,
+                11.460924287410876
+            ],
+            "text": "Preseeding is not required. If you use an empty preseed file, the installer will behave just the same",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Không cần thiết. Nếu bạn sử dụng một tệp trống rỗng, trình cài đặt sẽ hoạt động giống nhau"
+        },
+        {
+            "bbox": [
+                205.95735000000002,
+                388.1392820665084,
+                692.099156302521,
+                11.460936460807602
+            ],
+            "text": "way as in a normal manual installation. Each question you preseed will (if you got it right!) modify",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "cách như trong một cài đặt thủ công thông thường. Mỗi câu hỏi bạn đã đưa ra sẽ (nếu bạn hiểu đúng!) Sửa đổi"
+        },
+        {
+            "bbox": [
+                205.95735000000002,
+                403.9053402612826,
+                324.90246722689074,
+                11.460851247030973
+            ],
+            "text": "the installation in some way from that baseline.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Việc cài đặt theo một cách nào đó từ đường cơ sở đó."
+        },
+        {
+            "bbox": [
+                205.95735000000002,
+                447.66168942992874,
+                315.8822777310925,
+                16.818034441805253
+            ],
+            "text": "B.1.1. Preseeding methods",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LRIVSC+NimbusSanL-Bold",
+                "size": 14.34619998931885
+            },
+            "text_vi": "B.1.1. Phương pháp preseing"
+        },
+        {
+            "bbox": [
+                205.95735000000002,
+                476.33560184085513,
+                398.91954327731094,
+                11.46085124703086
+            ],
+            "text": "There are three methods that can be used for preseeding:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Có ba phương pháp có thể được sử dụng để preseeding:"
+        },
+        {
+            "bbox": [
+                610.368912184874,
+                476.86922268408557,
+                37.52783403361343,
+                10.818083729216141
+            ],
+            "text": "initrd",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJUEDG+NimbusRomNo9L-ReguItal",
+                "size": 9.962639808654785
+            },
+            "text_vi": "initrd"
+        },
+        {
+            "bbox": [
+                648.3541718487395,
+                476.33560184085513,
+                4.290650000000028,
+                11.46085124703086
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                658.1062285714287,
+                476.86922268408557,
+                20.969260504201657,
+                10.818083729216141
+            ],
+            "text": "file",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJUEDG+NimbusRomNo9L-ReguItal",
+                "size": 9.962639808654785
+            },
+            "text_vi": "tài liệu"
+        },
+        {
+            "bbox": [
+                684.540737394958,
+                476.33560184085513,
+                24.76760042016815,
+                11.46085124703086
+            ],
+            "text": "and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Và"
+        },
+        {
+            "bbox": [
+                714.7894176470588,
+                476.86922268408557,
+                55.280093277310925,
+                10.818083729216141
+            ],
+            "text": "network",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJUEDG+NimbusRomNo9L-ReguItal",
+                "size": 9.962639808654785
+            },
+            "text_vi": "mạng"
+        },
+        {
+            "bbox": [
+                770.35628697479,
+                476.33560184085513,
+                127.68412941176473,
+                11.46085124703086
+            ],
+            "text": ". Initrd preseeding",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": ". Initrd preseeding"
+        },
+        {
+            "bbox": [
+                205.95681596638656,
+                492.1016113420428,
+                692.1155735294118,
+                11.46085124703086
+            ],
+            "text": "will work with any installation method and supports preseeding of more things, but it requires the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "sẽ làm việc với bất kỳ phương thức cài đặt nào và hỗ trợ cho việc tạo ra nhiều thứ hơn, nhưng nó đòi hỏi"
+        },
+        {
+            "bbox": [
+                205.95681596638656,
+                507.8676208432304,
+                684.3204571428573,
+                11.460851247030917
+            ],
+            "text": "most preparation. File and network preseeding each can be used with different installation methods.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "hầu hết chuẩn bị. Tệp và mạng có thể được sử dụng với các phương thức cài đặt khác nhau."
+        },
+        {
+            "bbox": [
+                205.95685042016808,
+                529.6917333729216,
+                681.7313588235295,
+                11.460851247030917
+            ],
+            "text": "The following table shows which preseeding methods can be used with which installation methods.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Bảng sau đây cho thấy phương pháp preeseing nào có thể được sử dụng với các phương thức cài đặt nào."
+        },
+        {
+            "bbox": [
+                211.7873949579832,
+                565.3444593230404,
+                157.32668151260506,
+                11.679181116389543
+            ],
+            "text": "Installation method",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LRIVSC+NimbusSanL-Bold",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Phương pháp cài đặt"
+        },
+        {
+            "bbox": [
+                385.49647058823535,
+                565.3444593230404,
+                42.580205462184836,
+                11.679181116389543
+            ],
+            "text": "initrd",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LRIVSC+NimbusSanL-Bold",
+                "size": 9.962639808654785
+            },
+            "text_vi": "initrd"
+        },
+        {
+            "bbox": [
+                559.221050420168,
+                565.3444593230404,
+                24.798453781512762,
+                11.679181116389543
+            ],
+            "text": "file",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LRIVSC+NimbusSanL-Bold",
+                "size": 9.962639808654785
+            },
+            "text_vi": "tài liệu"
+        },
+        {
+            "bbox": [
+                732.9301260504202,
+                565.3444593230404,
+                65.45047058823525,
+                11.679181116389543
+            ],
+            "text": "network",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LRIVSC+NimbusSanL-Bold",
+                "size": 9.962639808654785
+            },
+            "text_vi": "mạng"
+        },
+        {
+            "bbox": [
+                211.7873949579832,
+                584.2307173396674,
+                65.09004957983197,
+                11.460863420427643
+            ],
+            "text": "CD/DVD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "CD/DVD"
+        },
+        {
+            "bbox": [
+                385.49647058823535,
+                584.2307173396674,
+                22.862616386554578,
+                11.460863420427643
+            ],
+            "text": "yes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Đúng"
+        },
+        {
+            "bbox": [
+                559.221050420168,
+                584.2307173396674,
+                22.8625474789917,
+                11.460863420427643
+            ],
+            "text": "yes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Đúng"
+        },
+        {
+            "bbox": [
+                732.9301260504202,
+                584.2307173396674,
+                27.440800420168102,
+                11.460863420427643
+            ],
+            "text": "yesa",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Yesa"
+        },
+        {
+            "bbox": [
+                211.7873949579832,
+                602.9108067102138,
+                51.45432815126051,
+                11.46085124703086
+            ],
+            "text": "netboot",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "netboot"
+        },
+        {
+            "bbox": [
+                385.49647058823535,
+                602.9108067102138,
+                22.862616386554578,
+                11.46085124703086
+            ],
+            "text": "yes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Đúng"
+        },
+        {
+            "bbox": [
+                559.221050420168,
+                602.9108067102138,
+                17.15508907563037,
+                11.46085124703086
+            ],
+            "text": "no",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "KHÔNG"
+        },
+        {
+            "bbox": [
+                732.9301260504202,
+                602.9108067102138,
+                22.862650840336187,
+                11.46085124703086
+            ],
+            "text": "yes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Đúng"
+        },
+        {
+            "bbox": [
+                211.7873949579832,
+                621.5799156769597,
+                64.79970756302524,
+                11.460863420427529
+            ],
+            "text": "hd-media",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "HD-Media"
+        },
+        {
+            "bbox": [
+                385.49647058823535,
+                621.5799156769597,
+                22.862616386554578,
+                11.460863420427529
+            ],
+            "text": "yes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Đúng"
+        },
+        {
+            "bbox": [
+                559.221050420168,
+                621.5799156769597,
+                22.8625474789917,
+                11.460863420427529
+            ],
+            "text": "yes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Đúng"
+        },
+        {
+            "bbox": [
+                732.9301260504202,
+                621.5799156769597,
+                27.440800420168102,
+                11.460863420427529
+            ],
+            "text": "yesa",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Yesa"
+        },
+        {
+            "bbox": [
+                211.7873949579832,
+                640.2599928741092,
+                44.80300840336136,
+                11.460863420427586
+            ],
+            "text": "Notes:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Ghi chú:"
+        },
+        {
+            "bbox": [
+                211.7873949579832,
+                656.0260145486936,
+                11.90319579831933,
+                11.46085124703086
+            ],
+            "text": "a.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Một."
+        },
+        {
+            "bbox": [
+                239.24543949579834,
+                656.0260145486936,
+                302.49805168067223,
+                11.46085124703086
+            ],
+            "text": "but only if you have network access, and set",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Nhưng chỉ khi bạn có quyền truy cập mạng và đặt"
+        },
+        {
+            "bbox": [
+                546.0424962184874,
+                657.5516941805225,
+                101.98252142857143,
+                9.321522862232882
+            ],
+            "text": "preseed/url",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TCGTYJ+NimbusMonL-Regu",
+                "size": 8.96638011932373
+            },
+            "text_vi": "preseed/url"
+        },
+        {
+            "bbox": [
+                652.2772861344538,
+                656.0260145486936,
+                91.48211134453788,
+                11.46085124703086
+            ],
+            "text": "appropriately",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "một cách thích hợp"
+        },
+        {
+            "bbox": [
+                205.95781512605043,
+                706.2373681710214,
+                692.0692504201681,
+                11.460899940617594
+            ],
+            "text": "An important difference between the preseeding methods is the point at which the preconfiguration",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Một sự khác biệt quan trọng giữa các phương pháp preseeding là điểm mà cấu hình trước"
+        },
+        {
+            "bbox": [
+                205.95781512605043,
+                722.0029029097387,
+                692.1007928571428,
+                11.460887767220868
+            ],
+            "text": "file is loaded and processed. For initrd preseeding this is right at the start of the installation, before",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Tệp được tải và xử lý. Đối với initrd preseeding, điều này là ngay khi bắt đầu cài đặt, trước đó"
+        },
+        {
+            "bbox": [
+                205.95784957983196,
+                737.7689124109263,
+                692.1011890756303,
+                11.460887767220925
+            ],
+            "text": "the first question is even asked. Preseeding from the kernel command line happens just after. It is thus",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Câu hỏi đầu tiên thậm chí được hỏi. Preeseing từ dòng lệnh kernel xảy ra ngay sau đó. Nó là như vậy"
+        },
+        {
+            "bbox": [
+                205.95784957983196,
+                753.534921912114,
+                692.1154873949579,
+                11.460899940617537
+            ],
+            "text": "possible to override configuration set in the initrd by editing the kernel command line (either in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "có thể ghi đè cấu hình được đặt trong initrd bằng cách chỉnh sửa dòng lệnh kernel (trong"
+        },
+        {
+            "bbox": [
+                205.95781512605043,
+                769.3004566508314,
+                692.0837726890757,
+                11.460887767220925
+            ],
+            "text": "bootloader configuration or manually at boot time for bootloaders that allow it). For file preseeding",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Cấu hình bộ tải khởi động hoặc thủ công tại thời điểm khởi động cho bộ tải khởi động cho phép nó). Cho tập tin preseeding"
+        },
+        {
+            "bbox": [
+                205.95784957983196,
+                785.0664661520191,
+                692.0996042016808,
+                11.460887767220896
+            ],
+            "text": "this is after the CD or CD image has been loaded. For network preseeding it is only after the network",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "Đây là sau khi hình ảnh CD hoặc CD đã được tải. Đối với mạng, chỉ sau khi mạng"
+        },
+        {
+            "bbox": [
+                205.9578668067227,
+                800.8320008907364,
+                141.48757184873946,
+                11.460887767220925
+            ],
+            "text": "has been configured.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/UVLVGJ+NimbusRomNo9L-Regu",
+                "size": 9.962639808654785
+            },
+            "text_vi": "đã được cấu hình."
+        },
+        {
+            "bbox": [
+                240.26902689075632,
+                833.9141193586698,
+                76.71070714285713,
+                10.511277612826575
+            ],
+            "text": "Important:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LRIVSC+NimbusSanL-Bold",
+                "size": 8.96638011932373
+            },
+            "text_vi": "Quan trọng:"
+        },
+        {
+            "bbox": [
+                321.092774789916,
+                833.9468657957245,
+                576.975187394958,
+                10.46759946555818
+            ],
+            "text": "Obviously, any questions that have been processed before the preconfiguration file is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KKUSQG+NimbusSanL-Regu",
+                "size": 8.96638011932373
+            },
+            "text_vi": "Rõ ràng, bất kỳ câu hỏi nào đã được xử lý trước khi cấu hình sẵn"
+        },
+        {
+            "bbox": [
+                240.26764873949583,
+                848.1350813539193,
+                657.8008474789916,
+                10.467611638954878
+            ],
+            "text": "loaded cannot be preseeded (this will include questions that are only displayed at medium or low",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KKUSQG+NimbusSanL-Regu",
+                "size": 8.96638011932373
+            },
+            "text_vi": "Không thể tải được không thể được đăng ký (điều này sẽ bao gồm các câu hỏi chỉ được hiển thị ở mức trung bình hoặc thấp"
+        },
+        {
+            "bbox": [
+                240.26764873949583,
+                862.3233090855107,
+                657.7981084033614,
+                10.46761163895485
+            ],
+            "text": "priority, like the first hardware detection run). A not so convenient way to avoid these questions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KKUSQG+NimbusSanL-Regu",
+                "size": 8.96638011932373
+            },
+            "text_vi": "Ưu tiên, như chạy phát hiện phần cứng đầu tiên). Một cách không quá thuận tiện để tránh những câu hỏi này"
+        },
+        {
+            "bbox": [
+                240.26768319327735,
+                876.5115124703088,
+                657.7971264705882,
+                10.467611638954878
+            ],
+            "text": "from being asked is to preseed them through the boot parameters, as described in Section B.2.2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KKUSQG+NimbusSanL-Regu",
+                "size": 8.96638011932373
+            },
+            "text_vi": "Từ việc được yêu cầu là đưa chúng đến chúng thông qua các tham số khởi động, như được mô tả trong Phần B.2.2."
+        },
+        {
+            "bbox": [
+                880.9023819327732,
+                967.525160391924,
+                17.155175210084053,
+                10.818099554631829
+            ],
+            "text": "84",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJUEDG+NimbusRomNo9L-ReguItal",
+                "size": 9.962639808654785
+            },
+            "text_vi": "84"
+        }
+    ]
+}

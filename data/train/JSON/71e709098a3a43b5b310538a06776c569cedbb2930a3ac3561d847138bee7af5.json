@@ -1,0 +1,1896 @@
+{
+    "metadata": {
+        "page_hash": "71e709098a3a43b5b310538a06776c569cedbb2930a3ac3561d847138bee7af5",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 2115,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                321.50165073529416,
+                48.370422979798036,
+                351.8496732026144,
+                11.971275252525288
+            ],
+            "text": "Explicit Default Handling Prior to MySQL 8.0.13",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xử lý mặc định rõ ràng trước MySQL 8.0.13"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                765.2161115196077,
+                11.971275252525174
+            ],
+            "text": "If a default value evaluates to a data type that differs from the declared column type, implicit coercion to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu giá trị mặc định đánh giá thành một loại dữ liệu khác với loại cột được khai báo, thì sự ép buộc ngầm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                778.045326388889,
+                11.971275252525288
+            ],
+            "text": "the declared type occurs according to the usual MySQL type-conversion rules. See Section 12.3, “Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Loại được khai báo xảy ra theo các quy tắc chuyển đổi loại MySQL thông thường. Xem Phần 12.3, Loại"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                126.02193813131316,
+                292.0914865196079,
+                11.971275252525288
+            ],
+            "text": "Conversion in Expression Evaluation”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chuyển đổi trong đánh giá biểu thức"
+        },
+        {
+            "bbox": [
+                418.9938725490196,
+                126.02193813131316,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                155.2059529671717,
+                525.1115196078431,
+                16.75979829545463
+            ],
+            "text": "Explicit Default Handling Prior to MySQL 8.0.13",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Xử lý mặc định rõ ràng trước MySQL 8.0.13"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                189.17849084595957,
+                381.69524468954245,
+                11.971275252525288
+            ],
+            "text": "With one exception, the default value specified in a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Với một ngoại lệ, giá trị mặc định được chỉ định trong một "
+        },
+        {
+            "bbox": [
+                522.3815191993464,
+                190.3303345959597,
+                70.34313725490199,
+                10.172335542929204
+            ],
+            "text": "DEFAULT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MẶC ĐỊNH"
+        },
+        {
+            "bbox": [
+                592.7246564542484,
+                189.17849084595957,
+                339.7909166666667,
+                11.971275252525288
+            ],
+            "text": " clause must be a literal constant; it cannot be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề phải là một hằng số theo nghĩa đen; nó không thể"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                204.7087938762627,
+                780.1388721405228,
+                11.971275252525174
+            ],
+            "text": "a function or an expression. This means, for example, that you cannot set the default for a date column to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "một chức năng hoặc một biểu thức. Điều này có nghĩa là, ví dụ, bạn không thể đặt mặc định cho cột ngày thành"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                220.2390969065657,
+                254.17318586601306,
+                11.971275252525288
+            ],
+            "text": "be the value of a function such as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "là giá trị của một hàm như "
+        },
+        {
+            "bbox": [
+                394.859460375817,
+                221.39094065656582,
+                50.24513153594779,
+                10.172335542929204
+            ],
+            "text": "NOW()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "HIỆN NAY()"
+        },
+        {
+            "bbox": [
+                445.10459191176477,
+                220.2390969065657,
+                24.201355392156813,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                469.3059975490196,
+                221.39094065656582,
+                120.58823529411768,
+                10.172335542929204
+            ],
+            "text": "CURRENT_DATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Current_date"
+        },
+        {
+            "bbox": [
+                589.8941825980393,
+                220.2390969065657,
+                197.3627450980391,
+                11.971275252525288
+            ],
+            "text": ". The exception is that, for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Ngoại lệ là, đối với "
+        },
+        {
+            "bbox": [
+                787.2569276960784,
+                221.39094065656582,
+                90.44117647058829,
+                10.172335542929204
+            ],
+            "text": "TIMESTAMP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Dấu thời gian"
+        },
+        {
+            "bbox": [
+                877.6981041666667,
+                220.2390969065657,
+                32.59235375816991,
+                11.971275252525288
+            ],
+            "text": " and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                236.92124368686882,
+                80.39215686274511,
+                10.172335542929204
+            ],
+            "text": "DATETIME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DateTime"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                235.7693999368687,
+                196.4080714869281,
+                11.971275252525288
+            ],
+            "text": " columns, you can specify ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các cột, bạn có thể chỉ định "
+        },
+        {
+            "bbox": [
+                417.48651960784315,
+                236.92124368686882,
+                170.83336683006536,
+                10.172335542929204
+            ],
+            "text": "CURRENT_TIMESTAMP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Current_timestamp"
+        },
+        {
+            "bbox": [
+                588.3198361928105,
+                235.7693999368687,
+                359.1854407679738,
+                11.971275252525288
+            ],
+            "text": " as the default. See Section 11.2.5, “Automatic",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " như mặc định. Xem phần 11.2.5, tự động"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                251.2997029671717,
+                459.625391748366,
+                11.971275252525288
+            ],
+            "text": "Initialization and Updating for TIMESTAMP and DATETIME”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khởi tạo và cập nhật cho Timestamp và DateTime"
+        },
+        {
+            "bbox": [
+                586.5277945261438,
+                251.2997029671717,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                279.771925189394,
+                33.51348039215688,
+                11.971275252525174
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                280.9237689393941,
+                40.196095179738535,
+                10.17233554292909
+            ],
+            "text": "BLOB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BLOB"
+        },
+        {
+            "bbox": [
+                214.39585008169934,
+                279.771925189394,
+                9.312091503267993,
+                11.971275252525174
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                223.70794158496733,
+                280.9237689393941,
+                40.19607843137254,
+                10.17233554292909
+            ],
+            "text": "TEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHỮ"
+        },
+        {
+            "bbox": [
+                263.90402001633987,
+                279.771925189394,
+                9.312074754901971,
+                11.971275252525174
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                273.21609477124184,
+                280.9237689393941,
+                80.39215686274508,
+                10.17233554292909
+            ],
+            "text": "GEOMETRY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hình học"
+        },
+        {
+            "bbox": [
+                353.6082516339869,
+                279.771925189394,
+                41.904428513071935,
+                11.971275252525174
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                395.5126466503268,
+                280.9237689393941,
+                40.19607843137254,
+                10.17233554292909
+            ],
+            "text": "JSON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Json"
+        },
+        {
+            "bbox": [
+                435.70872508169936,
+                279.771925189394,
+                350.07432965686274,
+                11.971275252525174
+            ],
+            "text": " data types cannot be assigned a default value.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các loại dữ liệu không thể được gán một giá trị mặc định."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                308.24414741161615,
+                765.2161115196077,
+                11.971275252525288
+            ],
+            "text": "If a default value evaluates to a data type that differs from the declared column type, implicit coercion to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu giá trị mặc định đánh giá thành một loại dữ liệu khác với loại cột được khai báo, thì sự ép buộc ngầm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                323.77445044191916,
+                778.045326388889,
+                11.971275252525288
+            ],
+            "text": "the declared type occurs according to the usual MySQL type-conversion rules. See Section 12.3, “Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Loại được khai báo xảy ra theo các quy tắc chuyển đổi loại MySQL thông thường. Xem Phần 12.3, Loại"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                339.3047534722223,
+                292.0914865196079,
+                11.971275252525174
+            ],
+            "text": "Conversion in Expression Evaluation”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chuyển đổi trong đánh giá biểu thức"
+        },
+        {
+            "bbox": [
+                418.9938725490196,
+                339.3047534722223,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                368.4887683080809,
+                274.90098039215684,
+                16.759798295454402
+            ],
+            "text": "Implicit Default Handling",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Xử lý mặc định ngầm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                402.46134501262634,
+                343.50900367647057,
+                11.971275252525174
+            ],
+            "text": "If a data type specification includes no explicit ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu một đặc điểm kỹ thuật kiểu dữ liệu bao gồm không rõ ràng "
+        },
+        {
+            "bbox": [
+                484.1952781862745,
+                403.6131499368687,
+                70.34313725490193,
+                10.17237436868686
+            ],
+            "text": "DEFAULT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MẶC ĐỊNH"
+        },
+        {
+            "bbox": [
+                554.5384154411764,
+                402.46134501262634,
+                347.2271744281046,
+                11.971275252525174
+            ],
+            "text": " value, MySQL determines the default value as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị, MySQL xác định giá trị mặc định là"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                417.99164804292934,
+                55.83905228758172,
+                11.971275252525288
+            ],
+            "text": "follows:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "theo sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                446.4638702651515,
+                168.50531045751637,
+                11.971275252525288
+            ],
+            "text": "If the column can take ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu cột có thể lấy "
+        },
+        {
+            "bbox": [
+                309.1915849673203,
+                447.615675189394,
+                40.19607843137254,
+                10.17237436868686
+            ],
+            "text": "NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "VÔ GIÁ TRỊ"
+        },
+        {
+            "bbox": [
+                349.38766339869284,
+                446.4638702651515,
+                366.7724840686274,
+                11.971275252525288
+            ],
+            "text": " as a value, the column is defined with an explicit ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " như một giá trị, cột được xác định với một "
+        },
+        {
+            "bbox": [
+                716.1601474673203,
+                447.615675189394,
+                120.58823529411768,
+                10.17237436868686
+            ],
+            "text": "DEFAULT NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Mặc định null"
+        },
+        {
+            "bbox": [
+                836.7483827614379,
+                446.4638702651515,
+                57.71485253267963,
+                11.971275252525288
+            ],
+            "text": " clause.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                474.9360924873738,
+                191.78555596405226,
+                11.971275252525174
+            ],
+            "text": "If the column cannot take ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu cột không thể lấy "
+        },
+        {
+            "bbox": [
+                332.4717969771242,
+                476.08789741161615,
+                40.19607843137254,
+                10.17237436868686
+            ],
+            "text": "NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "VÔ GIÁ TRỊ"
+        },
+        {
+            "bbox": [
+                372.66787540849674,
+                474.9360924873738,
+                409.58130759803925,
+                11.971275252525174
+            ],
+            "text": " as a value, MySQL defines the column with no explicit ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Như một giá trị, MySQL định nghĩa cột không có "
+        },
+        {
+            "bbox": [
+                782.249183006536,
+                476.08789741161615,
+                70.34313725490199,
+                10.17237436868686
+            ],
+            "text": "DEFAULT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MẶC ĐỊNH"
+        },
+        {
+            "bbox": [
+                852.592320261438,
+                474.9360924873738,
+                57.714902777777866,
+                11.971275252525174
+            ],
+            "text": " clause.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                503.40831470959597,
+                154.53715645424836,
+                11.971275252525288
+            ],
+            "text": "For data entry into a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để nhập dữ liệu vào một "
+        },
+        {
+            "bbox": [
+                295.2234477124183,
+                504.56011963383844,
+                80.39215686274514,
+                10.17237436868686
+            ],
+            "text": "NOT NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Không phải null"
+        },
+        {
+            "bbox": [
+                375.61560457516345,
+                503.40831470959597,
+                206.6580882352941,
+                11.971275252525288
+            ],
+            "text": " column that has no explicit ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cột không có rõ ràng "
+        },
+        {
+            "bbox": [
+                582.2736928104575,
+                504.56011963383844,
+                70.34313725490199,
+                10.17237436868686
+            ],
+            "text": "DEFAULT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MẶC ĐỊNH"
+        },
+        {
+            "bbox": [
+                652.6168300653595,
+                503.40831470959597,
+                98.6814060457516,
+                11.971275252525288
+            ],
+            "text": " clause, if an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề, nếu một "
+        },
+        {
+            "bbox": [
+                751.2981858660131,
+                504.56011963383844,
+                60.29411764705878,
+                10.17237436868686
+            ],
+            "text": "INSERT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHÈN"
+        },
+        {
+            "bbox": [
+                811.5923035130719,
+                503.40831470959597,
+                24.20140563725488,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                835.7937091503268,
+                504.56011963383844,
+                70.34318750000011,
+                10.17237436868686
+            ],
+            "text": "REPLACE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "THAY THẾ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                518.938617739899,
+                370.5073529411765,
+                11.971275252525231
+            ],
+            "text": "statement includes no value for the column, or an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "câu lệnh không bao gồm giá trị cho cột hoặc "
+        },
+        {
+            "bbox": [
+                511.19362745098044,
+                520.0904226641414,
+                60.29411764705878,
+                10.17237436868686
+            ],
+            "text": "UPDATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CẬP NHẬT"
+        },
+        {
+            "bbox": [
+                571.4877450980392,
+                518.938617739899,
+                223.42320261437908,
+                11.971275252525231
+            ],
+            "text": " statement sets the column to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " câu lệnh đặt cột thành "
+        },
+        {
+            "bbox": [
+                794.9109477124183,
+                520.0904226641414,
+                40.1960784313726,
+                10.17237436868686
+            ],
+            "text": "NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "VÔ GIÁ TRỊ"
+        },
+        {
+            "bbox": [
+                835.1070261437909,
+                518.938617739899,
+                65.15117728758173,
+                11.971275252525231
+            ],
+            "text": ", MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Mysql"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                534.468920770202,
+                504.57800612745103,
+                11.971275252525288
+            ],
+            "text": "handles the column according to the SQL mode in effect at the time:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xử lý cột theo chế độ SQL có hiệu lực tại thời điểm:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                562.9411429924243,
+                772.6188725490194,
+                11.971275252525231
+            ],
+            "text": "•If strict SQL mode is enabled, an error occurs for transactional tables and the statement is rolled back.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Nếu chế độ SQL nghiêm ngặt được bật, xảy ra lỗi đối với các bảng giao dịch và câu lệnh được cuộn lại."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                578.4714460227274,
+                754.9828933823529,
+                11.971275252525231
+            ],
+            "text": "For nontransactional tables, an error occurs, but if this happens for the second or subsequent row of a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các bảng không chuyển hóa, xảy ra lỗi, nhưng nếu điều này xảy ra cho hàng thứ hai hoặc sau đó của"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                594.0017490530304,
+                417.0007834967321,
+                11.971275252525231
+            ],
+            "text": "multiple-row statement, the preceding rows are inserted.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Câu lệnh nhiều hàng, các hàng trước được chèn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                622.4739712752526,
+                758.6674501633986,
+                11.971275252525231
+            ],
+            "text": "•If strict mode is not enabled, MySQL sets the column to the implicit default value for the column data",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Nếu chế độ nghiêm ngặt không được bật, MySQL sẽ đặt cột thành giá trị mặc định ẩn cho dữ liệu cột"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                638.0042743055556,
+                36.31045751633988,
+                11.971275252525288
+            ],
+            "text": "type.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "kiểu."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                666.4764965277777,
+                158.2888239379085,
+                11.971275252525288
+            ],
+            "text": "Suppose that a table ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giả sử rằng một cái bàn "
+        },
+        {
+            "bbox": [
+                298.97506495098037,
+                667.6283014520202,
+                10.04901960784315,
+                10.172374368686917
+            ],
+            "text": "t",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "t"
+        },
+        {
+            "bbox": [
+                309.0240845588235,
+                666.4764965277777,
+                159.1764705882353,
+                11.971275252525288
+            ],
+            "text": " is defined as follows:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được định nghĩa như sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                694.0181559343434,
+                257.25491870915033,
+                8.137917613636375
+            ],
+            "text": "CREATE TABLE t (i INT NOT NULL);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo bảng t (i int không null);"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                720.3148803661616,
+                94.02532679738562,
+                11.971275252525231
+            ],
+            "text": "In this case, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong trường hợp này, "
+        },
+        {
+            "bbox": [
+                234.71160130718954,
+                721.4666982323233,
+                10.049019607843121,
+                10.172361426767623
+            ],
+            "text": "i",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tôi"
+        },
+        {
+            "bbox": [
+                244.76062091503266,
+                720.3148803661616,
+                669.3149844771243,
+                11.971275252525231
+            ],
+            "text": " has no explicit default, so in strict mode each of the following statements produce an error",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Không có mặc định rõ ràng, vì vậy ở chế độ nghiêm ngặt, mỗi câu lệnh sau đây tạo ra lỗi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                735.8451833964647,
+                784.7112430555555,
+                11.971275252525231
+            ],
+            "text": "and no row is inserted. When not using strict mode, only the third statement produces an error; the implicit",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và không có hàng được chèn. Khi không sử dụng chế độ nghiêm ngặt, chỉ có câu lệnh thứ ba tạo ra lỗi; những người tiềm ẩn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                751.3754864267677,
+                537.1368296568628,
+                11.971275252525231
+            ],
+            "text": "default is inserted for the first two statements, but the third fails because ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc định được chèn cho hai câu lệnh đầu tiên, nhưng lần thứ ba thất bại vì "
+        },
+        {
+            "bbox": [
+                677.8231041666667,
+                752.5273042929293,
+                100.49019607843138,
+                10.172361426767623
+            ],
+            "text": "DEFAULT(i)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Mặc định (i)"
+        },
+        {
+            "bbox": [
+                778.313300245098,
+                751.3754864267677,
+                134.07070343137252,
+                11.971275252525231
+            ],
+            "text": " cannot produce a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " không thể sản xuất a"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                766.9057894570708,
+                44.68464052287584,
+                11.971275252525231
+            ],
+            "text": "value:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "giá trị:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                794.4475006313131,
+                184.90194403594774,
+                8.137827020202025
+            ],
+            "text": "INSERT INTO t VALUES();",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chèn vào các giá trị t ();"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                806.8717042297981,
+                241.1764705882353,
+                8.137839962121177
+            ],
+            "text": "INSERT INTO t VALUES(DEFAULT);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chèn vào các giá trị T (mặc định);"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                819.2959984217172,
+                265.2941008986928,
+                8.137827020202025
+            ],
+            "text": "INSERT INTO t VALUES(DEFAULT(i));",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chèn vào các giá trị T (mặc định (i));"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                845.5926452020202,
+                331.96934599673205,
+                11.97127525252526
+            ],
+            "text": "See Section 5.1.11, “Server SQL Modes”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xem Phần 5.1.11, Chế độ SQL Server SQL"
+        },
+        {
+            "bbox": [
+                445.0878267973856,
+                845.5926452020202,
+                4.65604575163394,
+                11.97127525252526
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                874.0648674242425,
+                161.99019607843138,
+                11.97127525252526
+            ],
+            "text": "For a given table, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với một bảng nhất định, "
+        },
+        {
+            "bbox": [
+                302.6764705882353,
+                875.2167111742424,
+                170.83333333333337,
+                10.17233554292929
+            ],
+            "text": "SHOW CREATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị bảng tạo"
+        },
+        {
+            "bbox": [
+                473.5098039215687,
+                874.0648674242425,
+                382.5661932189542,
+                11.97127525252526
+            ],
+            "text": " statement displays which columns have an explicit ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " câu lệnh hiển thị cột nào có một "
+        },
+        {
+            "bbox": [
+                856.0759971405229,
+                875.2167111742424,
+                70.34313725490188,
+                10.17233554292929
+            ],
+            "text": "DEFAULT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MẶC ĐỊNH"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                889.5951704545455,
+                53.05882352941177,
+                11.971275252525245
+            ],
+            "text": "clause.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mệnh đề."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                918.0673926767677,
+                286.69851266339873,
+                11.97127525252526
+            ],
+            "text": "Implicit defaults are defined as follows:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc định ngầm được xác định như sau:"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "2086",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2086"
+        }
+    ]
+}

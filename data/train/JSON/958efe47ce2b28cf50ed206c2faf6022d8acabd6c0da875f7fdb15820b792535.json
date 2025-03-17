@@ -1,0 +1,1056 @@
+{
+    "metadata": {
+        "page_hash": "958efe47ce2b28cf50ed206c2faf6022d8acabd6c0da875f7fdb15820b792535",
+        "original_filename": "sg248464.pdf",
+        "page_no": 236,
+        "num_pages": 978,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "redbooks",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                671.8774509803923,
+                977.8111768308081,
+                195.8668982843136,
+                10.774146433080809
+            ],
+            "text": "Chapter 5. Disaster recovery ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Chương 5. Phục hồi thảm họa "
+        },
+        {
+            "bbox": [
+                888.5343472222223,
+                976.9191149305556,
+                28.034704656862573,
+                11.923388857323232
+            ],
+            "text": "207",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "207"
+        },
+        {
+            "bbox": [
+                108.5294167892157,
+                45.993018308080764,
+                357.83652234477125,
+                10.774095959596025
+            ],
+            "text": "Draft Document for Review February 7, 2020 3:15 pm",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Tài liệu dự thảo để xem xét ngày 7 tháng 2 năm 2020 3:15 chiều"
+        },
+        {
+            "bbox": [
+                665.2451147875818,
+                45.10089299242429,
+                251.1196907679738,
+                11.923416035353512
+            ],
+            "text": "8464ch05_DisasterRecovery.fm",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "8464Ch05_DisasterRecovery.fm"
+        },
+        {
+            "bbox": [
+                229.1173120915033,
+                92.54569696969702,
+                655.9801699346405,
+                11.923416035353512
+            ],
+            "text": "With a stand-alone system, a single cluster is installed. If the site at which that system is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Với một hệ thống độc lập, một cụm duy nhất được cài đặt. Nếu trang web mà hệ thống đó là "
+        },
+        {
+            "bbox": [
+                229.1173120915033,
+                108.07576704545454,
+                687.3844783496731,
+                11.923403093434445
+            ],
+            "text": "installed is destroyed, the data that is associated with the TS7700 might be lost unless COPY ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Đã cài đặt bị phá hủy, dữ liệu được liên kết với TS7700 có thể bị mất trừ khi bản sao "
+        },
+        {
+            "bbox": [
+                229.1173120915033,
+                123.60583712121218,
+                650.3884097222223,
+                11.923403093434331
+            ],
+            "text": "EXPORT was used and the tapes were removed from the site. If the cluster goes out of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Xuất khẩu đã được sử dụng và các băng được gỡ bỏ khỏi trang web. Nếu cụm đi ra khỏi "
+        },
+        {
+            "bbox": [
+                229.1173120915033,
+                139.13589425505052,
+                652.4616229575163,
+                11.923416035353625
+            ],
+            "text": "service because of failures, whether the data is recoverable depends on the failure type.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Dịch vụ vì thất bại, liệu dữ liệu có thể phục hồi hay không phụ thuộc vào loại lỗi."
+        },
+        {
+            "bbox": [
+                229.1173120915033,
+                167.63348263888884,
+                687.4626764705881,
+                11.923403093434445
+            ],
+            "text": "The recovery process assumes that the only elements that are available for recovery are the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Quá trình phục hồi giả định rằng các yếu tố duy nhất có sẵn để phục hồi là "
+        },
+        {
+            "bbox": [
+                229.1173120915033,
+                183.1635397727273,
+                677.4389133986928,
+                11.923416035353625
+            ],
+            "text": "stacked volumes that are produced by COPY EXPORT and removed from the site or in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "khối lượng xếp chồng được sản xuất bằng cách xuất bản sao và xóa khỏi trang web hoặc trong "
+        },
+        {
+            "bbox": [
+                229.1173120915033,
+                198.69360984848493,
+                687.5959767156863,
+                11.923403093434331
+            ],
+            "text": "case of TS7700C access to the object store in the cloud. It further assumes that only a subset ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Trường hợp truy cập TS7700C vào cửa hàng đối tượng trong đám mây. Nó tiếp tục giả định rằng chỉ có một tập hợp con "
+        },
+        {
+            "bbox": [
+                229.1173120915033,
+                214.22367992424245,
+                651.3007602124181,
+                11.923403093434445
+            ],
+            "text": "of the volumes is undamaged after the event. If the physical cartridges are destroyed or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "của các tập không bị hư hại sau sự kiện. Nếu các hộp mực vật lý bị phá hủy hoặc "
+        },
+        {
+            "bbox": [
+                229.1173120915033,
+                229.7537370580809,
+                627.8679705882353,
+                11.923416035353512
+            ],
+            "text": "irreparably damaged, recovery is not possible, as with any other cartridge types. It is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Không thể khắc phục được, không thể phục hồi, như với bất kỳ loại hộp mực nào khác. Nó là "
+        },
+        {
+            "bbox": [
+                229.1173120915033,
+                245.28380713383842,
+                687.5277941176471,
+                11.923403093434331
+            ],
+            "text": "important that you integrate the TS7700 recovery procedure into your current DR procedures.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Quan trọng là bạn tích hợp quy trình phục hồi TS7700 vào các quy trình DR hiện tại của bạn."
+        },
+        {
+            "bbox": [
+                229.1173120915033,
+                334.5828942550505,
+                615.998185866013,
+                11.923403093434445
+            ],
+            "text": "For many clients, the potential data loss or the recovery time that is required with a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Đối với nhiều máy khách, mất dữ liệu tiềm năng hoặc thời gian phục hồi được yêu cầu "
+        },
+        {
+            "bbox": [
+                229.1173120915033,
+                350.11296433080804,
+                687.4577691993463,
+                11.923403093434445
+            ],
+            "text": "stand-alone TS7700 is not acceptable because the COPY EXPORT method or recovery from ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "TS7700 độc lập không được chấp nhận vì phương thức xuất bản sao hoặc phục hồi từ "
+        },
+        {
+            "bbox": [
+                229.1190036764706,
+                365.64306029040404,
+                683.087031862745,
+                11.923377209596083
+            ],
+            "text": "the object store in the cloud might take considerable time to complete. For those clients, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Cửa hàng đối tượng trong đám mây có thể mất thời gian đáng kể để hoàn thành. Cho những khách hàng đó, "
+        },
+        {
+            "bbox": [
+                229.1190036764706,
+                381.1731303661617,
+                648.5801221405229,
+                11.923364267676789
+            ],
+            "text": "TS7700 grid provides a near-zero data loss and expedited recovery-time solution when ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "TS7700 Grid cung cấp mất dữ liệu gần như bằng không và giải pháp thời gian phục hồi nhanh chóng khi "
+        },
+        {
+            "bbox": [
+                229.1190036764706,
+                396.7032004419192,
+                170.31019812091503,
+                11.923364267676789
+            ],
+            "text": "implemented properly. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "thực hiện đúng. "
+        },
+        {
+            "bbox": [
+                229.1190036764706,
+                425.12340909090915,
+                662.5186482843138,
+                11.923364267676789
+            ],
+            "text": "With a multi-cluster grid configuration, up to eight clusters are installed, typically at two or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Với cấu hình lưới đa cụm, tối đa tám cụm được cài đặt, thường ở hai hoặc hai cụm "
+        },
+        {
+            "bbox": [
+                229.1190036764706,
+                440.6534662247475,
+                687.4473852124183,
+                11.923364267676789
+            ],
+            "text": "three sites, and interconnected so that data is replicated among them. The way that the sites ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Ba trang web và được kết nối với nhau để dữ liệu được sao chép giữa chúng. Cách mà các trang web "
+        },
+        {
+            "bbox": [
+                229.1190036764706,
+                456.1835363005051,
+                407.61437949346407,
+                11.923364267676789
+            ],
+            "text": "are used then differs, depending on your requirements.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "được sử dụng sau đó khác nhau, tùy thuộc vào yêu cầu của bạn."
+        },
+        {
+            "bbox": [
+                229.1190036764706,
+                484.6810729166667,
+                661.6732577614379,
+                11.923364267676675
+            ],
+            "text": "In a two-cluster grid, one potential use case is that one of the sites is the local production ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Trong lưới hai cụm, một trường hợp sử dụng tiềm năng là một trong những trang web là sản phẩm địa phương "
+        },
+        {
+            "bbox": [
+                229.1190036764706,
+                500.21114299242424,
+                674.5795486111111,
+                11.923364267676789
+            ],
+            "text": "center and the other site is a backup or DR center, which is separated by a distance that is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "trung tâm và trang web khác là một bản sao lưu hoặc trung tâm DR, được phân tách bởi một khoảng cách "
+        },
+        {
+            "bbox": [
+                229.1189869281046,
+                515.7412130681819,
+                652.1501033496733,
+                11.923364267676675
+            ],
+            "text": "dictated by your company’s requirements for DR. Depending on the physical distance ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Được quyết định bởi các yêu cầu của công ty bạn đối với DR. Tùy thuộc vào khoảng cách vật lý "
+        },
+        {
+            "bbox": [
+                229.1189869281046,
+                531.2712702020202,
+                687.3960849673201,
+                11.923364267676789
+            ],
+            "text": "between the sites, it might be possible to have two clusters be both a high availability and DR ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Giữa các trang web, có thể có hai cụm đều có tính sẵn sàng cao và DR "
+        },
+        {
+            "bbox": [
+                229.11895343137257,
+                546.8013402777779,
+                663.3049170751634,
+                11.923364267676789
+            ],
+            "text": "solution. Also, if the two clusters are TS7700C, they can share access to the cloud object ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "giải pháp. Ngoài ra, nếu hai cụm là TS7700C, chúng có thể chia sẻ quyền truy cập vào đối tượng đám mây "
+        },
+        {
+            "bbox": [
+                229.1189869281046,
+                562.3314103535354,
+                41.79017116013071,
+                11.923364267676789
+            ],
+            "text": "store.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "cửa hàng."
+        },
+        {
+            "bbox": [
+                229.1189869281046,
+                590.828946969697,
+                638.3309595588236,
+                11.923364267676789
+            ],
+            "text": "In a three-cluster grid, the typical use is that two sites are connected to a host and the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Trong lưới ba cụm, việc sử dụng điển hình là hai trang web được kết nối với máy chủ và "
+        },
+        {
+            "bbox": [
+                229.1189869281046,
+                606.3590041035354,
+                687.2875220588235,
+                11.923377209595913
+            ],
+            "text": "workload is spread evenly between them. The third site is strictly for DR and it is likely that no ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khối lượng công việc được trải đều giữa chúng. Trang web thứ ba hoàn toàn cho DR và ​​có khả năng là không "
+        },
+        {
+            "bbox": [
+                229.1189869281046,
+                621.889074179293,
+                667.8833843954249,
+                11.923364267676675
+            ],
+            "text": "connections exist from the production host to the third site. Another use for a three-cluster ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các kết nối tồn tại từ máy chủ sản xuất đến trang web thứ ba. Một cách sử dụng khác cho ba cụm "
+        },
+        {
+            "bbox": [
+                229.11895343137257,
+                637.4191442550505,
+                654.1701740196079,
+                11.923364267676732
+            ],
+            "text": "grid might consist of three production sites, which are all interconnected and holding the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Lưới có thể bao gồm ba trang web sản xuất, tất cả đều được kết nối với nhau và giữ "
+        },
+        {
+            "bbox": [
+                229.11895343137257,
+                652.9492143308081,
+                682.0743419117648,
+                11.923364267676732
+            ],
+            "text": "backups of each other. Also, two or more of the production clusters can share access to the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "sao lưu của nhau. Ngoài ra, hai hoặc nhiều cụm sản xuất có thể chia sẻ quyền truy cập vào "
+        },
+        {
+            "bbox": [
+                229.11895343137257,
+                668.4792714646464,
+                251.08294485294113,
+                11.923364267676789
+            ],
+            "text": "cloud object store as the DR host.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Cửa hàng đối tượng đám mây làm máy chủ DR."
+        },
+        {
+            "bbox": [
+                229.11895343137257,
+                696.976808080808,
+                687.3825187908496,
+                11.92339015151515
+            ],
+            "text": "In a four or more cluster grid, DR and high availability can be achieved. The high availability is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Trong lưới bốn hoặc nhiều cụm, DR và ​​tính sẵn sàng cao có thể đạt được. Tính khả dụng cao là "
+        },
+        {
+            "bbox": [
+                229.11721160130722,
+                712.5068652146465,
+                673.4383651960784,
+                11.92337720959597
+            ],
+            "text": "achieved with two local clusters that keep RUN or SYNC volume copies, with both clusters ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "đạt được với hai cụm cục bộ để giữ hoặc đồng bộ hóa các bản sao âm lượng, với cả hai cụm "
+        },
+        {
+            "bbox": [
+                229.1172450980392,
+                728.0369094065657,
+                657.0993794934641,
+                11.92337720959597
+            ],
+            "text": "attached to the host and optionally to a cloud object store. The third and fourth (or more) ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "gắn vào máy chủ và tùy chọn vào một cửa hàng đối tượng đám mây. Thứ ba và thứ tư (hoặc nhiều hơn) "
+        },
+        {
+            "bbox": [
+                229.1172450980392,
+                743.5669535984848,
+                687.2559513888889,
+                11.92339015151515
+            ],
+            "text": "remote clusters can hold deferred volume copies for DR and optionally have those copies in a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các cụm từ xa có thể giữ các bản sao khối lượng hoãn lại cho DR và ​​tùy chọn có các bản sao đó trong một "
+        },
+        {
+            "bbox": [
+                229.1172450980392,
+                759.0969977904041,
+                663.4380833333333,
+                11.923390151515122
+            ],
+            "text": "cloud object store shared with the production clusters. This design can be configured in a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Cửa hàng Cloud Object được chia sẻ với các cụm sản xuất. Thiết kế này có thể được cấu hình trong một "
+        },
+        {
+            "bbox": [
+                229.1172450980392,
+                774.6270419823232,
+                619.799612745098,
+                11.92339015151515
+            ],
+            "text": "crossed way, which means that you can run two production data centers, with each ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "chéo đường, có nghĩa là bạn có thể chạy hai trung tâm dữ liệu sản xuất, với mỗi trung tâm "
+        },
+        {
+            "bbox": [
+                229.1172450980392,
+                790.1570861742424,
+                419.81355433006536,
+                11.923390151515179
+            ],
+            "text": "production data center serving as a backup for the other.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Trung tâm dữ liệu sản xuất phục vụ như một bản sao lưu cho cái khác."
+        },
+        {
+            "bbox": [
+                229.1172450980392,
+                818.5772948232324,
+                687.6577781862744,
+                11.923390151515122
+            ],
+            "text": "With the addition of the TS7700C, the option to off load data to the cloud adds possibilities for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Với việc bổ sung TS7700C, tùy chọn tắt dữ liệu vào đám mây thêm các khả năng cho "
+        },
+        {
+            "bbox": [
+                229.1172450980392,
+                834.1073390151515,
+                674.6581821895425,
+                11.923390151515179
+            ],
+            "text": "recovery if a disaster occurs such that any of the clusters in the grid that are cloud-capable ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "phục hồi nếu một thảm họa xảy ra sao cho bất kỳ cụm nào trong lưới có khả năng đám mây "
+        },
+        {
+            "bbox": [
+                229.1172450980392,
+                849.6373961489899,
+                310.8390714869281,
+                11.923377209595941
+            ],
+            "text": "models can access the cloud object store.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các mô hình có thể truy cập vào cửa hàng đối tượng đám mây."
+        },
+        {
+            "bbox": [
+                229.1172450980392,
+                878.1349327651515,
+                687.4377046568627,
+                11.92339015151515
+            ],
+            "text": "The only connection between the production sites and the DR site is the grid interconnection. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Kết nối duy nhất giữa các trang web sản xuất và trang web DR là kết nối lưới. "
+        },
+        {
+            "bbox": [
+                229.1172450980392,
+                893.6649898989899,
+                703.0300147058823,
+                11.923391445707082
+            ],
+            "text": "Normally, no host connectivity exists between the production hosts and the DR site’s TS7700. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Thông thường, không có kết nối máy chủ tồn tại giữa các máy chủ sản xuất và trang web DR TS7700. "
+        },
+        {
+            "bbox": [
+                229.11726184640523,
+                909.1950405618687,
+                674.7015102124184,
+                11.923397916666659
+            ],
+            "text": "When client data is created at the production sites, it is replicated to the DR site as defined ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khi dữ liệu khách hàng được tạo tại các trang web sản xuất, nó được sao chép vào trang DR như được định nghĩa "
+        },
+        {
+            "bbox": [
+                229.11726184640523,
+                924.7250976957071,
+                645.8557491830065,
+                11.92339662247474
+            ],
+            "text": "through Outboard policy management definitions and storage management subsystem ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Thông qua các định nghĩa quản lý chính sách bên ngoài và hệ thống con quản lý lưu trữ "
+        },
+        {
+            "bbox": [
+                229.11726184640523,
+                940.2551535353535,
+                449.3928937908497,
+                11.92339662247474
+            ],
+            "text": "(SMS) settings or is made available in the cloud object store.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "(SMS) Cài đặt hoặc được cung cấp trong Cửa hàng đối tượng đám mây."
+        },
+        {
+            "bbox": [
+                239.16666666666669,
+                281.4721309974748,
+                96.66188807189542,
+                11.923403093434331
+            ],
+            "text": "Remember: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Nhớ: "
+        },
+        {
+            "bbox": [
+                335.8385702614379,
+                281.4721309974748,
+                570.6781960784315,
+                11.923403093434331
+            ],
+            "text": "The DR process is a joint exercise that requires your involvement and that of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Quy trình DR là một bài tập chung đòi hỏi sự tham gia của bạn và "
+        },
+        {
+            "bbox": [
+                239.16670016339867,
+                297.0022010732323,
+                421.25795016339873,
+                11.923403093434445
+            ],
+            "text": "your IBM SSR to make it as comprehensive as possible. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "của bạn"
+        }
+    ]
+}

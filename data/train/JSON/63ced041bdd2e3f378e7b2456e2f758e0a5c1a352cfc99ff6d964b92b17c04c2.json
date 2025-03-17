@@ -1,0 +1,1576 @@
+{
+    "metadata": {
+        "page_hash": "63ced041bdd2e3f378e7b2456e2f758e0a5c1a352cfc99ff6d964b92b17c04c2",
+        "original_filename": "sg247521.pdf",
+        "page_no": 318,
+        "num_pages": 530,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "redbooks",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                750.56129125817,
+                977.8111768308081,
+                116.99477287581703,
+                10.774146433080809
+            ],
+            "text": "Chapter 6. Hosts ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Chương 6. Chủ nhà "
+        },
+        {
+            "bbox": [
+                888.5343472222223,
+                976.9191149305556,
+                28.034704656862573,
+                11.923388857323232
+            ],
+            "text": "297",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "297"
+        },
+        {
+            "bbox": [
+                229.11798202614378,
+                92.54640877525264,
+                638.294347630719,
+                11.923416035353398
+            ],
+            "text": "The persistent reserve commands are incompatible with the earlier reserve or release ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các lệnh dự trữ liên tục không tương thích với dự trữ hoặc phát hành trước đó "
+        },
+        {
+            "bbox": [
+                229.11798202614378,
+                108.07647885101028,
+                687.5527826797387,
+                11.923403093434217
+            ],
+            "text": "mechanism. Also, target devices can support only reservations from the earlier mechanism or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "cơ chế. Ngoài ra, các thiết bị mục tiêu chỉ có thể hỗ trợ đặt chỗ từ cơ chế trước đó hoặc "
+        },
+        {
+            "bbox": [
+                229.11798202614378,
+                123.6065489267678,
+                681.914411764706,
+                11.923403093434217
+            ],
+            "text": "the new mechanism. Attempting to mix persistent reserve commands with earlier reserve or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "cơ chế mới. Cố gắng kết hợp các lệnh dự trữ liên tục với dự trữ trước đó hoặc "
+        },
+        {
+            "bbox": [
+                229.11796527777776,
+                139.13660606060603,
+                615.0520706699347,
+                11.923416035353625
+            ],
+            "text": "release commands results in the target device returning a reservation conflict error.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Phát hành lệnh kết quả trong thiết bị đích trả về lỗi xung đột đặt phòng."
+        },
+        {
+            "bbox": [
+                229.11796527777776,
+                167.63419444444457,
+                650.3433901143792,
+                11.923403093434217
+            ],
+            "text": "Earlier reserve and release mechanisms (SCSI-2) reserved the entire LUN (volume) for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các cơ chế dự trữ và phát hành trước đó (SCSI-2) đã dành toàn bộ LUN (khối lượng) cho "
+        },
+        {
+            "bbox": [
+                229.11796527777776,
+                183.1642515782828,
+                687.3308668300654,
+                11.923416035353625
+            ],
+            "text": "exclusive use down a single path. This approach prevents access from any other host or even ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Sử dụng độc quyền xuống một đường dẫn duy nhất. Cách tiếp cận này ngăn chặn quyền truy cập từ bất kỳ máy chủ nào khác hoặc thậm chí "
+        },
+        {
+            "bbox": [
+                229.11798202614378,
+                198.69432165404044,
+                683.9980424836602,
+                11.923403093434331
+            ],
+            "text": "access from the same host that uses a different host adapter. The persistent reserve design ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Truy cập từ cùng một máy chủ sử dụng một bộ điều hợp máy chủ khác. Thiết kế dự trữ liên tục "
+        },
+        {
+            "bbox": [
+                229.11798202614378,
+                214.22439172979796,
+                664.1635388071895,
+                11.923403093434445
+            ],
+            "text": "establishes a method and interface through a reserve policy attribute for SCSI disks. This ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Thiết lập một phương thức và giao diện thông qua thuộc tính chính sách dự trữ cho các đĩa SCSI. Cái này "
+        },
+        {
+            "bbox": [
+                229.11798202614378,
+                229.7544488636364,
+                642.2011384803922,
+                11.923416035353512
+            ],
+            "text": "design specifies the type of reservation (if any) that the operating system device driver ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Thiết kế chỉ định loại đặt chỗ (nếu có) mà trình điều khiển thiết bị hệ điều hành "
+        },
+        {
+            "bbox": [
+                229.11798202614378,
+                245.28451893939393,
+                350.7791678921569,
+                11.923403093434445
+            ],
+            "text": "establishes before it accesses data on the disk.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Thiết lập trước khi nó truy cập dữ liệu trên đĩa."
+        },
+        {
+            "bbox": [
+                229.11798202614378,
+                273.70468876262635,
+                490.5272826797386,
+                11.923403093434217
+            ],
+            "text": "The following possible values are supported for the reserve policy:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các giá trị có thể sau đây được hỗ trợ cho chính sách dự trữ:"
+        },
+        {
+            "bbox": [
+                229.11798202614378,
+                295.9505018939394,
+                8.340686274509835,
+                11.356249368686917
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23589705882353,
+                295.7571366792929,
+                373.2290461601308,
+                11.923403093434445
+            ],
+            "text": "No_reserve: No reservations are used on the disk.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "NO_RESERVE: Không có đặt chỗ nào được sử dụng trên đĩa."
+        },
+        {
+            "bbox": [
+                229.11798202614378,
+                311.48057196969694,
+                8.340686274509835,
+                11.356249368687031
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23589705882353,
+                311.28720675505053,
+                532.2994158496732,
+                11.923403093434331
+            ],
+            "text": "Single_path: Earlier reserve or release commands are used on the disk.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Đơn_path: Các lệnh dự trữ hoặc phát hành trước đó được sử dụng trên đĩa."
+        },
+        {
+            "bbox": [
+                229.11798202614378,
+                327.0106420454546,
+                8.340686274509835,
+                11.356249368686917
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23589705882353,
+                326.8172638888889,
+                423.24991707516347,
+                11.923416035353625
+            ],
+            "text": "PR_exclusive: Persistent reservation is used to establish ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "PR_Exclusive: Đặt phòng liên tục được sử dụng để thiết lập "
+        },
+        {
+            "bbox": [
+                676.2990028594771,
+                323.41440625000007,
+                158.16252450980403,
+                15.730786300504974
+            ],
+            "text": "exclusive host access",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TimesNewRoman,Italic",
+                "size": 1
+            },
+            "text_vi": "Truy cập máy chủ độc quyền"
+        },
+        {
+            "bbox": [
+                831.3552414215686,
+                326.8205899621212,
+                85.11157843137266,
+                11.923403093434445
+            ],
+            "text": " to the disk.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " đến đĩa."
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                342.5440252525252,
+                8.340669526143756,
+                11.356249368687031
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23554534313726,
+                342.35064709595963,
+                406.55010457516346,
+                11.923416035353625
+            ],
+            "text": "PR_shared: Persistent reservation is used to establish ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "PR_Shared: Đặt phòng liên tục được sử dụng để thiết lập "
+        },
+        {
+            "bbox": [
+                659.8186107026144,
+                338.9447092803031,
+                140.30794566993472,
+                15.730786300504974
+            ],
+            "text": "shared host access",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TimesNewRoman,Italic",
+                "size": 1
+            },
+            "text_vi": "Truy cập máy chủ chia sẻ"
+        },
+        {
+            "bbox": [
+                797.0882520424836,
+                342.3508929924243,
+                85.6089044117648,
+                11.923403093434331
+            ],
+            "text": " to the disk.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " đến đĩa."
+        },
+        {
+            "bbox": [
+                229.11758006535948,
+                370.7711404671718,
+                399.13526797385623,
+                11.923364267676675
+            ],
+            "text": "When a device is opened (for example, when the AIX ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khi một thiết bị được mở (ví dụ: khi AIX "
+        },
+        {
+            "bbox": [
+                628.2644881535948,
+                370.96446685606065,
+                66.92564991830068,
+                11.420700126262659
+            ],
+            "text": "varyonvg",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": "VaryonVG"
+        },
+        {
+            "bbox": [
+                695.1901883169935,
+                370.7711404671718,
+                161.03522099673205,
+                11.923364267676675
+            ],
+            "text": " command opens the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " Lệnh mở ra "
+        },
+        {
+            "bbox": [
+                229.1159387254902,
+                386.30119760101013,
+                606.7831176470588,
+                11.923364267676789
+            ],
+            "text": "underlying hdisks), the device driver checks the object data manager (ODM) for a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "HDISKS bên dưới), trình điều khiển thiết bị kiểm tra Trình quản lý dữ liệu đối tượng (ODM) cho một "
+        },
+        {
+            "bbox": [
+                229.1159387254902,
+                402.02459406565663,
+                117.16992728758174,
+                11.356249368686917
+            ],
+            "text": "reserve_policy",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Dự trữ_policy"
+        },
+        {
+            "bbox": [
+                346.2875743464052,
+                401.83126767676765,
+                51.146763071895464,
+                11.923364267676789
+            ],
+            "text": " and a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " và a "
+        },
+        {
+            "bbox": [
+                397.4376535947713,
+                402.02459406565663,
+                100.48858823529412,
+                11.356249368686917
+            ],
+            "text": "PR_key_value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "PR_KEY_VALUE"
+        },
+        {
+            "bbox": [
+                497.9279334150327,
+                401.83126767676765,
+                369.48715972222215,
+                11.923364267676789
+            ],
+            "text": ". The driver then opens the device. For persistent ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": ". Trình điều khiển sau đó mở thiết bị. Cho dai dẳng "
+        },
+        {
+            "bbox": [
+                229.1159387254902,
+                417.3613377525253,
+                656.8305012254901,
+                11.923364267676789
+            ],
+            "text": "reserve, each host that is attached to the shared disk must use a unique registration key ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Dự trữ, mỗi máy chủ được gắn vào đĩa chung phải sử dụng khóa đăng ký duy nhất "
+        },
+        {
+            "bbox": [
+                229.1159387254902,
+                432.89139488636374,
+                44.70607843137259,
+                11.923377209595856
+            ],
+            "text": "value.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "giá trị."
+        },
+        {
+            "bbox": [
+                108.5294167892157,
+                471.57083112373743,
+                49.64787977941177,
+                15.514733901515115
+            ],
+            "text": "6.5.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "6.5.1"
+        },
+        {
+            "bbox": [
+                164.38328468137254,
+                471.57083112373743,
+                187.36271613562096,
+                15.514733901515115
+            ],
+            "text": "Clearing reserves",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Xóa dự trữ"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                505.4191136363637,
+                687.5060882352941,
+                11.923364267676732
+            ],
+            "text": "It is possible to accidentally leave a reserve on the IBM Spectrum Virtualize volume or on the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Có thể vô tình để lại dự trữ trên khối lượng ảo hóa phổ IBM hoặc trên "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                520.949170770202,
+                687.5541392973855,
+                11.923377209595913
+            ],
+            "text": "IBM Spectrum Virtualize MDisk during migration into IBM Spectrum Virtualize, or when disks ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "IBM Spectrum Virtualize MDisk trong quá trình di chuyển vào Virtualize phổ IBM hoặc khi các đĩa "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                536.4792408459596,
+                656.8938100490197,
+                11.923364267676789
+            ],
+            "text": "are reused for another purpose. Several tools are available from the hosts to clear these ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "được tái sử dụng cho một mục đích khác. Một số công cụ có sẵn từ các máy chủ để xóa chúng "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                552.0093109217172,
+                311.716568627451,
+                11.923364267676789
+            ],
+            "text": "reserves. The easiest tools to use are the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "dự trữ. Các công cụ dễ sử dụng nhất là "
+        },
+        {
+            "bbox": [
+                540.8391229575163,
+                552.2026373106061,
+                83.60705596405228,
+                11.42071306818184
+            ],
+            "text": "pcmquerypr",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": "PCMQuerypr"
+        },
+        {
+            "bbox": [
+                624.5479419934641,
+                552.0093109217172,
+                252.10727491830073,
+                11.923364267676789
+            ],
+            "text": " (AIX SDDPCM host) commands. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " (Máy chủ AIX SDDPCM) Các lệnh. "
+        },
+        {
+            "bbox": [
+                229.11933864379085,
+                567.5393680555555,
+                404.83339705882355,
+                11.92337720959597
+            ],
+            "text": "Another tool is a menu-driven Windows SDDDSM tool.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Một công cụ khác là một công cụ Windows SDDDSM điều khiển menu."
+        },
+        {
+            "bbox": [
+                229.11933864379085,
+                595.9595767045455,
+                354.5375012254902,
+                11.92337720959597
+            ],
+            "text": "The Windows Persistent Reserve Tool is called ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Công cụ dự trữ liên tục Windows được gọi "
+        },
+        {
+            "bbox": [
+                583.5484779411764,
+                596.1529160353535,
+                83.60705596405228,
+                11.356249368686917
+            ],
+            "text": "PRTool.exe",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Protool.exe"
+        },
+        {
+            "bbox": [
+                667.2572969771242,
+                595.9595767045455,
+                222.2893717320262,
+                11.92337720959597
+            ],
+            "text": " and is installed automatically ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " và được cài đặt tự động "
+        },
+        {
+            "bbox": [
+                229.11937214052287,
+                611.489646780303,
+                250.17553513071894,
+                11.923364267676732
+            ],
+            "text": "when SDDDSM is installed in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khi SDDDSM được cài đặt trong "
+        },
+        {
+            "bbox": [
+                479.339943627451,
+                611.682973169192,
+                318.04701552287577,
+                11.356249368686804
+            ],
+            "text": "C:\\Program Files\\IBM\\Subsystem Device ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "C: \\ Tệp chương trình \\ IBM \\ Thiết bị hệ thống con "
+        },
+        {
+            "bbox": [
+                229.11937214052287,
+                627.2903712121213,
+                142.19196936274514,
+                11.35624936868686
+            ],
+            "text": "Driver\\PRTool.exe",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Trình điều khiển \\ prtool.exe"
+        },
+        {
+            "bbox": [
+                371.41313807189545,
+                627.0970448232324,
+                545.1322986111111,
+                11.923364267676732
+            ],
+            "text": " directory. You can clear the IBM Spectrum Virtualize volume reserves by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " Thư mục. Bạn có thể xóa dự trữ âm lượng ảo hóa phổ IBM bằng cách "
+        },
+        {
+            "bbox": [
+                229.11933864379085,
+                642.6271148989899,
+                236.29827450980395,
+                11.923364267676732
+            ],
+            "text": "removing all the host mappings.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Loại bỏ tất cả các ánh xạ máy chủ."
+        },
+        {
+            "bbox": [
+                229.11933864379085,
+                671.0473235479798,
+                213.13458088235296,
+                11.923364267676789
+            ],
+            "text": "Example 6-7 shows a failing ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Ví dụ 6-7 cho thấy sự thất bại "
+        },
+        {
+            "bbox": [
+                442.1588055555556,
+                671.2406499368687,
+                83.7071274509803,
+                11.420700126262659
+            ],
+            "text": "pcmquerypr",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": "PCMQuerypr"
+        },
+        {
+            "bbox": [
+                525.8676245915033,
+                671.0473235479798,
+                331.388864379085,
+                11.923364267676789
+            ],
+            "text": " command to clear the reserve and the error.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " lệnh để xóa dự trữ và lỗi."
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                699.5857954545454,
+                84.49279330065357,
+                10.774160669191929
+            ],
+            "text": "Example 6-7",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 1
+            },
+            "text_vi": "Ví dụ 6-7"
+        },
+        {
+            "bbox": [
+                326.16469730392157,
+                699.5857954545454,
+                240.95425326797385,
+                10.774160669191929
+            ],
+            "text": "Output of the pcmquerypr command",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 1
+            },
+            "text_vi": "Đầu ra của lệnh pcmquerypr"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                721.7166455176769,
+                16.68138929738558,
+                11.356210542929318
+            ],
+            "text": "# ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "# "
+        },
+        {
+            "bbox": [
+                245.79903635620914,
+                721.7166455176769,
+                259.46203513071896,
+                11.420661300505003
+            ],
+            "text": "pcmquerypr -ph /dev/hdisk232 -V",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": "PCMQuerypr -ph /dev /hdisk232 -v"
+        },
+        {
+            "bbox": [
+                229.11768055555555,
+                737.246689709596,
+                200.8770379901961,
+                11.356210542929318
+            ],
+            "text": "connection type: fscsi0 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Loại kết nối: FSCSI0 "
+        },
+        {
+            "bbox": [
+                229.11768055555555,
+                752.7767339015152,
+                200.8770379901961,
+                11.356210542929261
+            ],
+            "text": "open dev: /dev/hdisk232 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Mở dev: /dev /hdisk232 "
+        },
+        {
+            "bbox": [
+                229.11768055555555,
+                768.3067780934343,
+                318.04701552287577,
+                11.356210542929261
+            ],
+            "text": "couldn't open /dev/hdisk232, errno=16 ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Không thể mở /dev /hdisk232, errno = 16 "
+        },
+        {
+            "bbox": [
+                229.11768055555555,
+                805.6972509469697,
+                94.00119240196082,
+                11.92339015151515
+            ],
+            "text": "Use the AIX ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Sử dụng AIX "
+        },
+        {
+            "bbox": [
+                323.0755114379085,
+                805.890603219697,
+                58.58496364379084,
+                11.356210542929261
+            ],
+            "text": "errno.h",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "errno.h"
+        },
+        {
+            "bbox": [
+                381.6604918300654,
+                805.6972509469697,
+                502.4109685457517,
+                11.92339015151515
+            ],
+            "text": " include file to determine what error number 16 indicates. This error ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " Bao gồm tệp để xác định số lỗi số 16 cho biết. Lỗi này "
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                821.2272951388888,
+                679.1203488562093,
+                11.923390151515179
+            ],
+            "text": "indicates a busy condition, which can indicate a legacy reserve or a persistent reserve from ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "chỉ ra một điều kiện bận rộn, có thể chỉ ra một dự trữ di sản hoặc dự trữ dai dẳng từ "
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                836.7573393308081,
+                666.434265522876,
+                11.92339015151515
+            ],
+            "text": "another host (or that this host is from a different adapter). However, some AIX technology ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Một máy chủ khác (hoặc máy chủ này là từ một bộ chuyển đổi khác). Tuy nhiên, một số công nghệ AIX "
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                852.2873835227273,
+                392.94128676470586,
+                11.923403093434331
+            ],
+            "text": "levels have a diagnostic open issue that prevents the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các mức có vấn đề mở chẩn đoán ngăn chặn "
+        },
+        {
+            "bbox": [
+                622.1324926470588,
+                852.4807357954545,
+                83.6070392156862,
+                11.420674242424269
+            ],
+            "text": "pcmquerypr",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": "PCMQuerypr"
+        },
+        {
+            "bbox": [
+                705.8412949346405,
+                852.2873835227273,
+                210.63922508169935,
+                11.923403093434331
+            ],
+            "text": " command from opening the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " lệnh từ mở "
+        },
+        {
+            "bbox": [
+                229.11603921568627,
+                867.8174406565656,
+                359.3335130718954,
+                11.92340309343436
+            ],
+            "text": "device to display the status or to clear a reserve.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "thiết bị để hiển thị trạng thái hoặc để xóa dự trữ."
+        },
+        {
+            "bbox": [
+                229.11603921568627,
+                896.2376493055556,
+                516.9621331699348,
+                11.923396622474726
+            ],
+            "text": "For more information about older AIX technology levels that break the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Để biết thêm thông tin về các cấp độ công nghệ AIX cũ hơn mà phá vỡ "
+        },
+        {
+            "bbox": [
+                745.9366319444445,
+                896.4310106376263,
+                83.70712745098035,
+                11.420666477272746
+            ],
+            "text": "pcmquerypr",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Bold",
+                "size": 1
+            },
+            "text_vi": "PCMQuerypr"
+        },
+        {
+            "bbox": [
+                829.6454509803922,
+                896.2376493055556,
+                86.84999183006528,
+                11.923396622474726
+            ],
+            "text": " command, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " yêu cầu, "
+        },
+        {
+            "bbox": [
+                229.11603921568627,
+                911.7677051452021,
+                31.54114256535945,
+                11.923397916666659
+            ],
+            "text": "see ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "nhìn thấy "
+        },
+        {
+            "bbox": [
+                260.7706184640523,
+                911.7677051452021,
+                93.04536315359479,
+                11.923397916666659
+            ],
+            "text": "IBM Support",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 1
+            },
+            "text_vi": "Hỗ trợ IBM"
+        },
+        {
+            "bbox": [
+                353.82430555555555,
+                911.7677051452021,
+                254.81463153594774,
+                11.923397916666659
+            ],
+            "text": ", which is available at this website:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": ", có sẵn tại trang web này:"
+        },
+        {
+            "bbox": [
+                229.11603921568627,
+                933.8201750631313,
+                93.04536315359479,
+                11.92339662247474
+            ],
+            "text": "IBM Support",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Hỗ trợ IBM"
+        }
+    ]
+}

@@ -1,0 +1,2376 @@
+{
+    "metadata": {
+        "page_hash": "5ad7e6b983d52f56727c21d30742fd40cb1d5ff10bd58082b0026e12c8dfc347",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 2544,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                425.1907679738562,
+                48.370422979798036,
+                204.765522875817,
+                11.971275252525288
+            ],
+            "text": "CREATE INDEX Statement",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tạo câu lệnh INDEX"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                81.89949305555555,
+                11.971275252525174
+            ],
+            "text": "•Prefixes ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Tiền tố "
+        },
+        {
+            "bbox": [
+                252.7328263888889,
+                94.96133207070716,
+                36.29374264705882,
+                11.971275252525174
+            ],
+            "text": "must",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "phải"
+        },
+        {
+            "bbox": [
+                289.0265690359477,
+                94.96133207070716,
+                122.8827446895425,
+                11.971275252525174
+            ],
+            "text": " be specified for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được chỉ định cho "
+        },
+        {
+            "bbox": [
+                411.9093137254902,
+                96.11317582070706,
+                40.19607843137254,
+                10.172335542929318
+            ],
+            "text": "BLOB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BLOB"
+        },
+        {
+            "bbox": [
+                452.10539215686276,
+                94.96133207070716,
+                37.24834926470584,
+                11.971275252525174
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                489.3537414215686,
+                96.11317582070706,
+                40.19607843137254,
+                10.172335542929318
+            ],
+            "text": "TEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHỮ"
+        },
+        {
+            "bbox": [
+                529.5498198529411,
+                94.96133207070716,
+                176.8627618464052,
+                11.971275252525174
+            ],
+            "text": " key parts. Additionally, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các bộ phận chính. Ngoài ra, "
+        },
+        {
+            "bbox": [
+                706.4125816993463,
+                96.11317582070706,
+                40.1960784313726,
+                10.172335542929318
+            ],
+            "text": "BLOB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BLOB"
+        },
+        {
+            "bbox": [
+                746.6086601307189,
+                94.96133207070716,
+                37.248349264705894,
+                11.971275252525174
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                783.8570093954248,
+                96.11317582070706,
+                40.1960784313726,
+                10.172335542929318
+            ],
+            "text": "TEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHỮ"
+        },
+        {
+            "bbox": [
+                824.0530878267974,
+                94.96133207070716,
+                121.94480269607845,
+                11.971275252525174
+            ],
+            "text": " columns can be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các cột có thể được"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                110.49163510101016,
+                122.88276143790853,
+                11.971275252525288
+            ],
+            "text": "indexed only for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ được lập chỉ mục cho "
+        },
+        {
+            "bbox": [
+                310.46446078431376,
+                111.64347885101006,
+                60.29411764705878,
+                10.172335542929432
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                370.75857843137254,
+                110.49163510101016,
+                9.312074754901971,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                380.0706531862745,
+                111.64347885101006,
+                60.29411764705878,
+                10.172335542929432
+            ],
+            "text": "MyISAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Myisam"
+        },
+        {
+            "bbox": [
+                440.3647708333333,
+                110.49163510101016,
+                41.90444526143801,
+                11.971275252525288
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                482.2692160947713,
+                111.64347885101006,
+                90.44117647058818,
+                10.172335542929432
+            ],
+            "text": "BLACKHOLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Lỗ đen"
+        },
+        {
+            "bbox": [
+                572.7103925653595,
+                110.49163510101016,
+                53.99671527777775,
+                11.971275252525288
+            ],
+            "text": " tables.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                138.15371906565656,
+                64.21323529411765,
+                11.971275252525288
+            ],
+            "text": "•Prefix ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Tiền tố "
+        },
+        {
+            "bbox": [
+                235.046568627451,
+                138.15371906565656,
+                38.136029411764696,
+                11.971275252525288
+            ],
+            "text": "limits",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "giới hạn"
+        },
+        {
+            "bbox": [
+                273.1825980392157,
+                138.15371906565656,
+                300.64991830065367,
+                11.971275252525288
+            ],
+            "text": " are measured in bytes. However, prefix ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được đo bằng byte. Tuy nhiên, tiền tố "
+        },
+        {
+            "bbox": [
+                573.8325163398694,
+                138.15371906565656,
+                53.99671527777764,
+                11.971275252525288
+            ],
+            "text": "lengths",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "chiều dài"
+        },
+        {
+            "bbox": [
+                627.829231617647,
+                138.15371906565656,
+                196.4080547385622,
+                11.971275252525288
+            ],
+            "text": " for index specifications in ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đối với thông số kỹ thuật chỉ mục trong "
+        },
+        {
+            "bbox": [
+                824.2373366013072,
+                139.30549810606055,
+                120.58823529411768,
+                10.172400252525335
+            ],
+            "text": "CREATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo bảng"
+        },
+        {
+            "bbox": [
+                944.8255718954249,
+                138.15371906565656,
+                4.656095996732006,
+                11.971275252525288
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                154.83580113636367,
+                110.53921568627453,
+                10.172400252525222
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                298.12091503267976,
+                153.68402209595956,
+                41.90441176470591,
+                11.971275252525288
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                340.0253267973857,
+                154.83580113636367,
+                120.58826879084961,
+                10.172400252525222
+            ],
+            "text": "CREATE INDEX",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo chỉ mục"
+        },
+        {
+            "bbox": [
+                460.6135955882353,
+                153.68402209595956,
+                487.7793950163399,
+                11.971275252525288
+            ],
+            "text": " statements are interpreted as number of characters for nonbinary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các câu lệnh được hiểu là số ký tự cho không phải là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                169.21432512626268,
+                95.86766380718956,
+                11.971275252525174
+            ],
+            "text": "string types (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "loại chuỗi ("
+        },
+        {
+            "bbox": [
+                283.44932965686274,
+                170.36610416666667,
+                40.19607843137254,
+                10.172400252525222
+            ],
+            "text": "CHAR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Char"
+        },
+        {
+            "bbox": [
+                323.64544158496733,
+                169.21432512626268,
+                9.312074754901971,
+                11.971275252525174
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                332.9575163398693,
+                170.36610416666667,
+                70.34313725490199,
+                10.172400252525222
+            ],
+            "text": "VARCHAR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Varchar"
+        },
+        {
+            "bbox": [
+                403.3006535947713,
+                169.21432512626268,
+                9.312091503267936,
+                11.971275252525174
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                412.6127450980392,
+                170.36610416666667,
+                40.19606168300652,
+                10.172400252525222
+            ],
+            "text": "TEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHỮ"
+        },
+        {
+            "bbox": [
+                452.80880678104575,
+                169.21432512626268,
+                337.8982843137255,
+                11.971275252525174
+            ],
+            "text": ") and number of bytes for binary string types (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ") và số byte cho các loại chuỗi nhị phân ("
+        },
+        {
+            "bbox": [
+                790.7070910947713,
+                170.36610416666667,
+                60.29411764705878,
+                10.172400252525222
+            ],
+            "text": "BINARY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhị phân"
+        },
+        {
+            "bbox": [
+                851.00120874183,
+                169.21432512626268,
+                9.312074754902028,
+                11.971275252525174
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                860.3133839869281,
+                170.36610416666667,
+                90.44117647058818,
+                10.172400252525222
+            ],
+            "text": "VARBINARY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Varbinary"
+        },
+        {
+            "bbox": [
+                950.7544599673203,
+                169.21432512626268,
+                4.65609599673212,
+                11.971275252525174
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                185.89640719696968,
+                40.19607843137254,
+                10.172400252525335
+            ],
+            "text": "BLOB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BLOB"
+        },
+        {
+            "bbox": [
+                227.77777777777777,
+                184.74462815656568,
+                718.6555870098039,
+                11.971275252525288
+            ],
+            "text": "). Take this into account when specifying a prefix length for a nonbinary string column that uses a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Đưa nó vào tài khoản khi chỉ định độ dài tiền tố cho cột chuỗi không sử dụng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                200.27493118686868,
+                173.12785947712422,
+                11.971275252525288
+            ],
+            "text": "multibyte character set.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bộ ký tự đa dạng."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                227.93695044191918,
+                752.185849264706,
+                11.971275252525288
+            ],
+            "text": "Prefix support and lengths of prefixes (where supported) are storage engine dependent. For example,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hỗ trợ tiền tố và độ dài của tiền tố (nơi được hỗ trợ) phụ thuộc vào động cơ lưu trữ. Ví dụ,"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                243.46725347222218,
+                294.201797385621,
+                11.971275252525288
+            ],
+            "text": "a prefix can be up to 767 bytes long for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một tiền tố có thể dài tới 767 byte cho "
+        },
+        {
+            "bbox": [
+                481.7834967320262,
+                244.6190972222223,
+                60.29411764705884,
+                10.172335542929204
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                542.077614379085,
+                243.46725347222218,
+                146.17973856209142,
+                11.971275252525288
+            ],
+            "text": " tables that use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng sử dụng "
+        },
+        {
+            "bbox": [
+                688.2573529411765,
+                244.6190972222223,
+                90.44117647058829,
+                10.172335542929204
+            ],
+            "text": "REDUNDANT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "DƯ THỪA"
+        },
+        {
+            "bbox": [
+                778.6985294117648,
+                243.46725347222218,
+                24.20140563725488,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                802.8999350490196,
+                244.6190972222223,
+                70.34313725490188,
+                10.172335542929204
+            ],
+            "text": "COMPACT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nhỏ gọn"
+        },
+        {
+            "bbox": [
+                873.2430723039215,
+                243.46725347222218,
+                31.637696895424938,
+                11.971275252525288
+            ],
+            "text": " row",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hàng ngang"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                258.9975565025253,
+                348.13151919934637,
+                11.971275252525174
+            ],
+            "text": "format. The prefix length limit is 3072 bytes for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "định dạng. Giới hạn độ dài tiền tố là 3072 byte cho "
+        },
+        {
+            "bbox": [
+                535.7132185457516,
+                260.1494002525253,
+                60.2941176470589,
+                10.172335542929204
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                596.0073361928105,
+                258.9975565025253,
+                146.17972181372545,
+                11.971275252525174
+            ],
+            "text": " tables that use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng sử dụng "
+        },
+        {
+            "bbox": [
+                742.1871082516341,
+                260.1494002525253,
+                70.34313725490188,
+                10.172335542929204
+            ],
+            "text": "DYNAMIC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NĂNG ĐỘNG"
+        },
+        {
+            "bbox": [
+                812.530245506536,
+                258.9975565025253,
+                24.20142238562096,
+                11.971275252525174
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                836.7316176470588,
+                260.1494002525253,
+                100.49014583333337,
+                10.172335542929204
+            ],
+            "text": "COMPRESSED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nén"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                274.5278595328283,
+                118.1932357026144,
+                11.971275252525174
+            ],
+            "text": "row format. For ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng hàng. Vì "
+        },
+        {
+            "bbox": [
+                305.77493504901963,
+                275.6797032828284,
+                60.29411764705878,
+                10.17233554292909
+            ],
+            "text": "MyISAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Myisam"
+        },
+        {
+            "bbox": [
+                366.0690526960784,
+                274.5278595328283,
+                358.39826756535956,
+                11.971275252525174
+            ],
+            "text": " tables, the prefix length limit is 1000 bytes. The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng, giới hạn độ dài tiền tố là 1000 byte. Các "
+        },
+        {
+            "bbox": [
+                724.467320261438,
+                275.6797032828284,
+                30.14705882352939,
+                10.17233554292909
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                754.6143790849674,
+                274.5278595328283,
+                184.34926470588232,
+                11.971275252525174
+            ],
+            "text": " storage engine does not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Công cụ lưu trữ không"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                290.0581625631313,
+                693.0975637254903,
+                11.971275252525288
+            ],
+            "text": "support prefixes (see Section 23.1.7.6, “Unsupported or Missing Features in NDB Cluster”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tiền tố hỗ trợ (xem Phần 23.1.7.6, các tính năng không được hỗ trợ hoặc thiếu trong cụm NDB"
+        },
+        {
+            "bbox": [
+                853.1115196078432,
+                290.0581625631313,
+                10.233218137254767,
+                11.971275252525288
+            ],
+            "text": ").",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                317.72024652777793,
+                532.4473039215686,
+                11.971275252525174
+            ],
+            "text": "If a specified index prefix exceeds the maximum column data type size, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu một tiền tố chỉ mục được chỉ định vượt quá kích thước kiểu dữ liệu cột tối đa, "
+        },
+        {
+            "bbox": [
+                703.280637254902,
+                318.87209027777783,
+                120.58823529411768,
+                10.172335542929318
+            ],
+            "text": "CREATE INDEX",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo chỉ mục"
+        },
+        {
+            "bbox": [
+                823.8688725490197,
+                317.72024652777793,
+                135.9297553104575,
+                11.971275252525174
+            ],
+            "text": " handles the index",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Xử lý chỉ mục"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                333.25054955808093,
+                78.18135580065359,
+                11.971275252525174
+            ],
+            "text": "as follows:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "như sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                360.91255587121225,
+                745.6205065359478,
+                11.971314078282717
+            ],
+            "text": "•For a nonunique index, either an error occurs (if strict SQL mode is enabled), or the index length is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Đối với chỉ mục không liên quan, xảy ra lỗi (nếu chế độ SQL nghiêm ngặt được bật) hoặc độ dài chỉ mục là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                376.4428977272728,
+                764.2112598039215,
+                11.971275252525174
+            ],
+            "text": "reduced to lie within the maximum column data type size and a warning is produced (if strict SQL mode",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "giảm để nằm trong kích thước kiểu dữ liệu cột tối đa và cảnh báo được tạo ra (nếu chế độ SQL nghiêm ngặt"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                391.9732007575758,
+                114.50857843137254,
+                11.971275252525174
+            ],
+            "text": "is not enabled).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "không được bật)."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                419.63525883838383,
+                768.9174501633986,
+                11.971275252525288
+            ],
+            "text": "•For a unique index, an error occurs regardless of SQL mode because reducing the index length might",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Đối với một chỉ mục duy nhất, xảy ra lỗi bất kể chế độ SQL vì giảm độ dài chỉ mục có thể"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                435.16556186868695,
+                687.9894293300654,
+                11.971275252525174
+            ],
+            "text": "enable insertion of nonunique entries that do not meet the specified uniqueness requirement.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho phép chèn các mục không liên quan không đáp ứng yêu cầu duy nhất được chỉ định."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                462.82764583333335,
+                587.4154579248366,
+                11.971275252525288
+            ],
+            "text": "The statement shown here creates an index using the first 10 characters of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Câu lệnh được hiển thị ở đây tạo ra một chỉ mục bằng 10 ký tự đầu tiên của "
+        },
+        {
+            "bbox": [
+                758.24879125817,
+                463.9794507575758,
+                40.1960784313726,
+                10.17237436868686
+            ],
+            "text": "name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "tên"
+        },
+        {
+            "bbox": [
+                798.4448696895425,
+                462.82764583333335,
+                140.53553921568619,
+                11.971275252525288
+            ],
+            "text": " column (assuming",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cột (giả sử"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                478.35794886363635,
+                32.59232026143789,
+                11.971275252525288
+            ],
+            "text": "that ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cái đó "
+        },
+        {
+            "bbox": [
+                203.42565359477123,
+                479.5097537878788,
+                40.19606168300655,
+                10.17237436868686
+            ],
+            "text": "name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "tên"
+        },
+        {
+            "bbox": [
+                243.62171527777778,
+                478.35794886363635,
+                215.97019648692813,
+                11.971275252525288
+            ],
+            "text": " has a nonbinary string type):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có loại chuỗi không phân biệt):"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                505.2512181186869,
+                393.921585375817,
+                8.137904671717138
+            ],
+            "text": "CREATE INDEX part_of_name ON customer (name(10));",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo chỉ mục part_of_name trên khách hàng (tên (10));"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                530.7377654671718,
+                772.6188725490196,
+                11.971275252525288
+            ],
+            "text": "If names in the column usually differ in the first 10 characters, lookups performed using this index should",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu tên trong cột thường khác nhau trong 10 ký tự đầu tiên, thì tra cứu được thực hiện bằng chỉ mục này"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                546.2680684974748,
+                472.90684599673193,
+                11.971275252525231
+            ],
+            "text": "not be much slower than using an index created from the entire ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "không chậm hơn nhiều so với việc sử dụng một chỉ mục được tạo ra từ toàn bộ "
+        },
+        {
+            "bbox": [
+                643.7401793300653,
+                547.4198734217172,
+                40.1960784313726,
+                10.172374368686917
+            ],
+            "text": "name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "tên"
+        },
+        {
+            "bbox": [
+                683.9362577614379,
+                546.2680684974748,
+                271.7925171568627,
+                11.971275252525231
+            ],
+            "text": " column. Also, using column prefixes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cột. Ngoài ra, sử dụng tiền tố cột"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                561.7983715277778,
+                751.1977459150328,
+                11.971275252525288
+            ],
+            "text": "for indexes can make the index file much smaller, which could save a lot of disk space and might also",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các chỉ mục có thể làm cho tệp chỉ mục nhỏ hơn nhiều, có thể tiết kiệm nhiều không gian đĩa và cũng có thể"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                577.3286745580808,
+                73.55882352941174,
+                11.971275252525231
+            ],
+            "text": "speed up ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tăng tốc "
+        },
+        {
+            "bbox": [
+                244.39215686274508,
+                578.4804794823233,
+                60.29411764705884,
+                10.172374368686917
+            ],
+            "text": "INSERT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHÈN"
+        },
+        {
+            "bbox": [
+                304.6862745098039,
+                577.3286745580808,
+                87.51021241830063,
+                11.971275252525231
+            ],
+            "text": " operations.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoạt động."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                605.3466224747475,
+                199.9151960784314,
+                14.365530303030312
+            ],
+            "text": "Functional Key Parts",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Các bộ phận khóa chức năng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                635.7588642676768,
+                105.73243464052288,
+                11.971275252525231
+            ],
+            "text": "A “normal”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "\"Bình thường\""
+        },
+        {
+            "bbox": [
+                248.99795751633985,
+                635.7588642676768,
+                699.99795751634,
+                11.971275252525231
+            ],
+            "text": " index indexes column values or prefixes of column values. For example, in the following table,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Chỉ mục các giá trị cột hoặc tiền tố của các giá trị cột. Ví dụ, trong bảng sau,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                651.2891672979798,
+                197.3627450980392,
+                11.971275252525288
+            ],
+            "text": "the index entry for a given ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mục nhập chỉ mục cho một "
+        },
+        {
+            "bbox": [
+                368.19607843137254,
+                652.4409722222222,
+                20.0980392156863,
+                10.172374368686917
+            ],
+            "text": "t1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "T1"
+        },
+        {
+            "bbox": [
+                388.29411764705884,
+                651.2891672979798,
+                156.37947671568628,
+                11.971275252525288
+            ],
+            "text": " row includes the full ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Hàng bao gồm đầy đủ "
+        },
+        {
+            "bbox": [
+                544.6735943627451,
+                652.4409722222222,
+                40.1960784313726,
+                10.172374368686917
+            ],
+            "text": "col1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "col1"
+        },
+        {
+            "bbox": [
+                584.8696727941177,
+                651.2891672979798,
+                188.06741870915027,
+                11.971275252525288
+            ],
+            "text": " value and a prefix of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị và tiền tố của "
+        },
+        {
+            "bbox": [
+                772.937091503268,
+                652.4409722222222,
+                40.1960784313726,
+                10.172374368686917
+            ],
+            "text": "col2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "col2"
+        },
+        {
+            "bbox": [
+                813.1331699346406,
+                651.2891672979798,
+                142.42807107843134,
+                11.971275252525288
+            ],
+            "text": " value consisting of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giá trị bao gồm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                666.8194703282829,
+                159.1597222222222,
+                11.971275252525231
+            ],
+            "text": "its first 10 characters:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "10 ký tự đầu tiên của nó:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                693.7127395833334,
+                136.66668341503268,
+                8.137904671717138
+            ],
+            "text": "CREATE TABLE t1 (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo Bảng T1 ("
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                706.1369949494949,
+                136.66666666666666,
+                8.137904671717138
+            ],
+            "text": "col1 VARCHAR(10),",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "col1 varchar (10),"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                718.5612373737374,
+                136.66666666666666,
+                8.137917613636318
+            ],
+            "text": "col2 VARCHAR(20),",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "col2 varchar (20),"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                730.9854539141414,
+                176.8627450980392,
+                8.137904671717195
+            ],
+            "text": "INDEX (col1, col2(10))",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "INDEX (COL1, COL2 (10))"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                743.4096963383838,
+                16.078431372549005,
+                8.137917613636375
+            ],
+            "text": ");",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ");"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                768.8962954545455,
+                788.4796254084968,
+                11.971275252525231
+            ],
+            "text": "MySQL 8.0.13 and higher supports functional key parts that index expression values rather than column or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL 8.0.13 và hỗ trợ cao hơn các phần khóa chức năng mà các giá trị biểu thức chỉ số thay vì cột hoặc cột"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                784.4265984848485,
+                789.4006683006536,
+                11.97127525252526
+            ],
+            "text": "column prefix values. Use of functional key parts enables indexing of values not stored directly in the table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị tiền tố cột. Việc sử dụng các phần khóa chức năng cho phép lập chỉ mục các giá trị không được lưu trữ trực tiếp trong bảng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                799.9569015151516,
+                78.18135580065359,
+                11.97127525252526
+            ],
+            "text": "Examples:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                826.850170770202,
+                554.7058991013072,
+                8.137827020202025
+            ],
+            "text": "CREATE TABLE t1 (col1 INT, col2 INT, INDEX func_index ((ABS(col1))));",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo Bảng T1 (col1 int, col2 int, index func_index ((abs (col1)))));"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                839.274452020202,
+                321.56862745098044,
+                8.137839962121234
+            ],
+            "text": "CREATE INDEX idx1 ON t1 ((col1 + col2));",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo chỉ mục idx1 trên t1 ((col1 + col2));"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                851.698668560606,
+                490.392140114379,
+                8.137827020202025
+            ],
+            "text": "CREATE INDEX idx2 ON t1 ((col1 + col2), (col1 - col2), col1);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo chỉ mục idx2 trên t1 ((col1 + col2), (col1 - col2), col1);"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                864.1228721590909,
+                353.7255069444444,
+                8.137839962121205
+            ],
+            "text": "ALTER TABLE t1 ADD INDEX ((col1 * 40) DESC);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thay đổi bảng t1 Thêm chỉ mục ((col1 * 40) desc);"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                889.6093936237373,
+                587.3819276960784,
+                11.971270075757573
+            ],
+            "text": "An index with multiple key parts can mix nonfunctional and functional key parts.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một chỉ mục với nhiều phần chính có thể trộn các phần khóa không chức năng và chức năng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                918.4233265151515,
+                30.14705882352942,
+                10.172330366161603
+            ],
+            "text": "ASC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ASC"
+        },
+        {
+            "bbox": [
+                200.98039215686276,
+                917.2714775883838,
+                37.248349264705894,
+                11.97127525252526
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                238.22874142156866,
+                918.4233265151515,
+                40.19607843137254,
+                10.172330366161603
+            ],
+            "text": "DESC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Desc"
+        },
+        {
+            "bbox": [
+                278.4248198529412,
+                917.2714775883838,
+                285.7941343954248,
+                11.97127525252526
+            ],
+            "text": " are supported for functional key parts.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được hỗ trợ cho các phần khóa chức năng."
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "2515",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2515"
+        }
+    ]
+}

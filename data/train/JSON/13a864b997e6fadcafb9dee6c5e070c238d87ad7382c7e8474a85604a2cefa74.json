@@ -1,0 +1,1776 @@
+{
+    "metadata": {
+        "page_hash": "13a864b997e6fadcafb9dee6c5e070c238d87ad7382c7e8474a85604a2cefa74",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4504,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                383.311495506536,
+                48.370422979798036,
+                288.5241013071896,
+                11.971275252525288
+            ],
+            "text": "Summary of NDB Cluster Start Phases",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tóm tắt các giai đoạn bắt đầu cụm NDB"
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                95.6731246843434,
+                65.18463717320265,
+                16.75979829545463
+            ],
+            "text": "23.5.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "23.5.4"
+        },
+        {
+            "bbox": [
+                162.14428774509804,
+                95.6731246843434,
+                428.6710884803922,
+                16.75979829545463
+            ],
+            "text": "Summary of NDB Cluster Start Phases",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Tóm tắt các giai đoạn bắt đầu cụm NDB"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                128.05895738636377,
+                776.3370600490197,
+                11.971275252525174
+            ],
+            "text": "This section provides a simplified outline of the steps involved when NDB Cluster data nodes are started.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phần này cung cấp một phác thảo đơn giản hóa các bước liên quan khi các nút dữ liệu cụm NDB được bắt đầu."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                143.58926041666678,
+                570.6167965686274,
+                11.971275252525288
+            ],
+            "text": "More complete information can be found in NDB Cluster Start Phases, in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin đầy đủ hơn có thể được tìm thấy trong các giai đoạn bắt đầu cụm NDB, trong "
+        },
+        {
+            "bbox": [
+                741.4501801470589,
+                144.74111710858585,
+                30.14705882352939,
+                10.17232260101025
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                771.5972389705883,
+                143.58926041666678,
+                118.22676593137248,
+                11.971275252525288
+            ],
+            "text": " Internals Guide",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": " Hướng dẫn nội bộ"
+        },
+        {
+            "bbox": [
+                889.8240049019607,
+                143.58926041666678,
+                4.655995506536101,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                170.4748680555556,
+                510.171960375817,
+                11.971275252525288
+            ],
+            "text": "These phases are the same as those reported in the output from the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các giai đoạn này giống như các giai đoạn được báo cáo trong đầu ra từ "
+        },
+        {
+            "bbox": [
+                681.0052937091504,
+                171.62664709595958,
+                70.34313725490188,
+                10.172400252525335
+            ],
+            "text": "node_id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "Node_id"
+        },
+        {
+            "bbox": [
+                751.3484309640522,
+                171.62664709595958,
+                70.34313725490199,
+                10.172400252525335
+            ],
+            "text": " STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": " TRẠNG THÁI"
+        },
+        {
+            "bbox": [
+                821.6915682189542,
+                170.4748680555556,
+                123.80388807189559,
+                11.971275252525288
+            ],
+            "text": " command in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " lệnh trong"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                186.0051710858587,
+                717.2990698529412,
+                11.971275252525174
+            ],
+            "text": "management client (see Section 23.5.1, “Commands in the NDB Cluster Management Client”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khách hàng quản lý (xem Phần 23.5.1, các lệnh trong Trình quản lý cụm NDB khách hàng"
+        },
+        {
+            "bbox": [
+                860.5645592320262,
+                186.0051710858587,
+                98.66457393790836,
+                11.971275252525174
+            ],
+            "text": "). These start",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Những điều này bắt đầu"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                201.5354741161617,
+                235.53227124183005,
+                11.971275252525288
+            ],
+            "text": "phases are also reported in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các giai đoạn cũng được báo cáo trong "
+        },
+        {
+            "bbox": [
+                406.3656045751634,
+                202.6872531565657,
+                110.53921568627447,
+                10.172400252525335
+            ],
+            "text": "start_phase",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "start_phase"
+        },
+        {
+            "bbox": [
+                516.9048202614379,
+                201.5354741161617,
+                109.85253267973872,
+                11.971275252525288
+            ],
+            "text": " column of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cột của "
+        },
+        {
+            "bbox": [
+                626.7573529411766,
+                202.6872531565657,
+                130.63725490196077,
+                10.172400252525335
+            ],
+            "text": "ndbinfo.nodes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ndbinfo.Nodes"
+        },
+        {
+            "bbox": [
+                757.3946078431374,
+                201.5354741161617,
+                45.62253227124177,
+                11.971275252525288
+            ],
+            "text": " table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                228.42100410353544,
+                95.86766380718959,
+                11.971275252525288
+            ],
+            "text": "Start types. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Loại bắt đầu. "
+        },
+        {
+            "bbox": [
+                283.44932965686274,
+                228.42100410353544,
+                614.3802434640522,
+                11.971275252525288
+            ],
+            "text": " There are several different startup types and modes, as shown in the following list:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Có một số loại và chế độ khởi động khác nhau, như được hiển thị trong danh sách sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                255.30653409090905,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                255.30653409090905,
+                94.00857843137254,
+                11.971275252525288
+            ],
+            "text": "Initial start. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu ban đầu. "
+        },
+        {
+            "bbox": [
+                298.3386437908497,
+                255.30653409090905,
+                656.251158496732,
+                11.971275252525288
+            ],
+            "text": " The cluster starts with a clean file system on all data nodes. This occurs either when the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cụm bắt đầu với một hệ thống tệp sạch trên tất cả các nút dữ liệu. Điều này xảy ra khi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                270.83683712121206,
+                616.2393790849674,
+                11.971275252525288
+            ],
+            "text": "cluster started for the very first time, or when all data nodes are restarted using the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cụm bắt đầu lần đầu tiên hoặc khi tất cả các nút dữ liệu được khởi động lại bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                803.8210784313726,
+                271.9886808712122,
+                90.44117647058829,
+                10.172335542929204
+            ],
+            "text": "--initial",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--ban đầu"
+        },
+        {
+            "bbox": [
+                894.2622549019609,
+                270.83683712121206,
+                54.93462377450976,
+                11.971275252525288
+            ],
+            "text": " option.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " lựa chọn."
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                297.7224318181818,
+                37.214869281045765,
+                11.971275252525288
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                324.60788415404045,
+                457.98410212418304,
+                11.971275252525288
+            ],
+            "text": "Disk Data files are not removed when restarting a node using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các tệp dữ liệu đĩa không bị xóa khi khởi động lại một nút bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                786.5869930555556,
+                325.75972790404046,
+                90.4412267156863,
+                10.172335542929318
+            ],
+            "text": "--initial",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--ban đầu"
+        },
+        {
+            "bbox": [
+                877.0282197712419,
+                324.60788415404045,
+                4.655995506535874,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                361.9065858585859,
+                19.361111111111114,
+                11.971236426767632
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                361.9065858585859,
+                125.66299019607845,
+                11.971236426767632
+            ],
+            "text": "System restart. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Khởi động lại hệ thống. "
+        },
+        {
+            "bbox": [
+                329.99305555555554,
+                361.9065858585859,
+                573.4473709150327,
+                11.971236426767632
+            ],
+            "text": " The cluster starts and reads data stored in the data nodes. This occurs when",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cụm bắt đầu và đọc dữ liệu được lưu trữ trong các nút dữ liệu. Điều này xảy ra khi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                377.4368500631314,
+                739.155570261438,
+                11.971275252525174
+            ],
+            "text": "the cluster has been shut down after having been in use, when it is desired for the cluster to resume",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cụm đã bị tắt sau khi đã được sử dụng, khi cụm từ mong muốn tiếp tục"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                392.9671530934344,
+                303.4804089052288,
+                11.971275252525288
+            ],
+            "text": "operations from the point where it left off.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hoạt động từ điểm mà nó rời đi."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                419.8526701388889,
+                19.361111111111114,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                419.8526701388889,
+                107.95995057189543,
+                11.971275252525174
+            ],
+            "text": "Node restart. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Khởi động lại nút. "
+        },
+        {
+            "bbox": [
+                312.2900494281046,
+                419.8526701388889,
+                556.6486928104575,
+                11.971275252525174
+            ],
+            "text": " This is the online restart of a cluster node while the cluster itself is running.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đây là khởi động lại trực tuyến của một nút cụm trong khi bản thân cụm đang chạy."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                446.7382389520202,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                446.7382389520202,
+                154.50367647058823,
+                11.971275252525288
+            ],
+            "text": "Initial node restart. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Khởi động lại nút ban đầu. "
+        },
+        {
+            "bbox": [
+                358.8337418300654,
+                446.7382389520202,
+                555.7609624183007,
+                11.971275252525288
+            ],
+            "text": " This is the same as a node restart, except that the node is reinitialized and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Điều này giống như khởi động lại nút, ngoại trừ nút được tái tạo và"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                462.2685419823232,
+                232.70179738562092,
+                11.971275252525288
+            ],
+            "text": "started with a clean file system.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu với một hệ thống tệp sạch."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                489.15407196969704,
+                275.47709068627455,
+                11.971275252525174
+            ],
+            "text": "Setup and initialization (phase -1). ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Thiết lập và khởi tạo (pha -1). "
+        },
+        {
+            "bbox": [
+                463.0587900326798,
+                489.15407196969704,
+                249.50045874183013,
+                11.971275252525174
+            ],
+            "text": " Prior to startup, each data node (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Trước khi khởi động, mỗi nút dữ liệu ("
+        },
+        {
+            "bbox": [
+                712.5592487745099,
+                490.3058768939394,
+                40.196078431372484,
+                10.17237436868686
+            ],
+            "text": "ndbd",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDBD"
+        },
+        {
+            "bbox": [
+                752.7553272058824,
+                489.15407196969704,
+                211.2806875,
+                11.971275252525174
+            ],
+            "text": " process) must be initialized.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " quá trình) phải được khởi tạo."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                504.68437500000005,
+                318.35297467320265,
+                11.971275252525231
+            ],
+            "text": "Initialization consists of the following steps:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khởi tạo bao gồm các bước sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                531.5699438131314,
+                13.968137254901961,
+                11.971275252525231
+            ],
+            "text": "1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                531.5699438131314,
+                126.61766380718956,
+                11.971275252525231
+            ],
+            "text": "Obtain a node ID",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lấy ID nút"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                558.4554608585859,
+                13.968137254901961,
+                11.971275252525231
+            ],
+            "text": "2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                558.4554608585859,
+                179.6764705882353,
+                11.971275252525231
+            ],
+            "text": "Fetch configuration data",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tìm nạp dữ liệu cấu hình"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                585.3410296717173,
+                13.968137254901961,
+                11.971275252525231
+            ],
+            "text": "3.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                585.3410296717173,
+                414.2373700980392,
+                11.971275252525231
+            ],
+            "text": "Allocate ports to be used for inter-node communications",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phân bổ các cổng được sử dụng để liên lạc giữa các nút"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                612.226559659091,
+                13.968137254901961,
+                11.971275252525231
+            ],
+            "text": "4.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                612.226559659091,
+                544.5563892973857,
+                11.971275252525231
+            ],
+            "text": "Allocate memory according to settings obtained from the configuration file",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phân bổ bộ nhớ theo các cài đặt thu được từ tệp cấu hình"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                639.1120767045454,
+                777.3419117647059,
+                11.971275252525231
+            ],
+            "text": "When a data node or SQL node first connects to the management node, it reserves a cluster node ID. To",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi một nút dữ liệu hoặc nút SQL trước tiên kết nối với nút quản lý, nó sẽ đặt một ID nút cụm. ĐẾN"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                654.6423797348484,
+                776.420684640523,
+                11.971275252525288
+            ],
+            "text": "make sure that no other node allocates the same node ID, this ID is retained until the node has managed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đảm bảo rằng không có nút nào khác phân bổ cùng một ID nút, ID này được giữ lại cho đến khi nút được quản lý"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                670.1726827651515,
+                306.31088276143794,
+                11.971275252525231
+            ],
+            "text": "to connect to the cluster and at least one ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "để kết nối với cụm và ít nhất một "
+        },
+        {
+            "bbox": [
+                477.1442160947713,
+                671.3245006313132,
+                40.196078431372484,
+                10.17236142676768
+            ],
+            "text": "ndbd",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDBD"
+        },
+        {
+            "bbox": [
+                517.3402945261438,
+                670.1726827651515,
+                418.00565196078435,
+                11.971275252525231
+            ],
+            "text": " reports that this node is connected. This retention of the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " báo cáo rằng nút này được kết nối. Sự duy trì này của"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                685.7029857954545,
+                538.1417483660131,
+                11.971275252525288
+            ],
+            "text": "node ID is guarded by the connection between the node in question and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ID nút được bảo vệ bởi kết nối giữa nút trong câu hỏi và "
+        },
+        {
+            "bbox": [
+                708.9750816993464,
+                686.8548036616162,
+                80.39215686274508,
+                10.17236142676768
+            ],
+            "text": "ndb_mgmd",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NDB_MGMD"
+        },
+        {
+            "bbox": [
+                789.3672385620915,
+                685.7029857954545,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                712.5885546085858,
+                772.6858325163398,
+                11.971275252525231
+            ],
+            "text": "After each data node has been initialized, the cluster startup process can proceed. The stages which the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau khi mỗi nút dữ liệu đã được khởi tạo, quá trình khởi động cụm có thể tiến hành. Các giai đoạn mà"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                728.1188576388888,
+                412.3782679738563,
+                11.971275252525288
+            ],
+            "text": "cluster goes through during this process are listed here:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cụm đi qua trong quá trình này được liệt kê ở đây:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                755.0044264520202,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                755.0044264520202,
+                72.62091503267976,
+                11.971275252525288
+            ],
+            "text": "Phase 0. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Giai đoạn 0. "
+        },
+        {
+            "bbox": [
+                276.9509803921569,
+                755.0044264520202,
+                38.169509395424825,
+                11.971275252525288
+            ],
+            "text": " The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các "
+        },
+        {
+            "bbox": [
+                315.12048978758173,
+                756.1562702020202,
+                50.24509803921569,
+                10.172335542929318
+            ],
+            "text": "NDBFS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndbfs"
+        },
+        {
+            "bbox": [
+                365.3655878267974,
+                755.0044264520202,
+                37.24838276143788,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                402.6139705882353,
+                756.1562702020202,
+                70.34315400326801,
+                10.172335542929318
+            ],
+            "text": "NDBCNTR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndbcntr"
+        },
+        {
+            "bbox": [
+                472.9571245915033,
+                755.0044264520202,
+                462.65684599673205,
+                11.971275252525288
+            ],
+            "text": " blocks start. Data node file systems are cleared on those data",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Khối bắt đầu. Hệ thống tệp nút dữ liệu được xóa trên các dữ liệu đó"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                770.5347294823232,
+                214.11111111111114,
+                11.971275252525231
+            ],
+            "text": "nodes that were started with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các nút đã được bắt đầu với "
+        },
+        {
+            "bbox": [
+                401.6928104575164,
+                771.6865732323232,
+                90.44117647058818,
+                10.17233554292929
+            ],
+            "text": "--initial",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--ban đầu"
+        },
+        {
+            "bbox": [
+                492.13398692810455,
+                770.5347294823232,
+                54.93460702614385,
+                11.971275252525231
+            ],
+            "text": " option.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " lựa chọn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                797.4202594696969,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                797.4202594696969,
+                72.62091503267976,
+                11.971275252525231
+            ],
+            "text": "Phase 1. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Giai đoạn 1. "
+        },
+        {
+            "bbox": [
+                276.9509803921569,
+                797.4202594696969,
+                203.86114460784307,
+                11.971275252525231
+            ],
+            "text": " In this stage, all remaining ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Trong giai đoạn này, tất cả còn lại "
+        },
+        {
+            "bbox": [
+                480.812125,
+                798.5721032196969,
+                30.14705882352945,
+                10.17233554292929
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                510.95918382352943,
+                797.4202594696969,
+                412.3447879901961,
+                11.971275252525231
+            ],
+            "text": " kernel blocks are started. NDB Cluster connections are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các khối kernel được bắt đầu. Kết nối cụm NDB là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                812.9505625,
+                747.5465183823529,
+                11.971275252525231
+            ],
+            "text": "set up, inter-block communications are established, and heartbeats are started. In the case of a node",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thiết lập, liên lạc giữa các khối được thiết lập và nhịp tim được bắt đầu. Trong trường hợp của một nút"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                828.480865530303,
+                355.6180890522876,
+                11.971275252525231
+            ],
+            "text": "restart, API node connections are also checked.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khởi động lại, kết nối nút API cũng được kiểm tra."
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                855.3663825757576,
+                37.214869281045765,
+                11.971275252525288
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                882.2519125631313,
+                575.3231544117648,
+                11.97127525252526
+            ],
+            "text": "When one or more nodes hang in Phase 1 while the remaining node or nodes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi một hoặc nhiều nút bị treo trong Giai đoạn 1 trong khi nút hoặc nút còn lại"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                897.7822142992425,
+                562.2761102941176,
+                11.971275252525245
+            ],
+            "text": "hang in Phase 2, this often indicates network problems. One possible cause",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Treo trong Giai đoạn 2, điều này thường chỉ ra các vấn đề về mạng. Một nguyên nhân có thể"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                913.3125173295455,
+                578.0363897058824,
+                11.971275252525245
+            ],
+            "text": "of such issues is one or more cluster hosts having multiple network interfaces.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong số các vấn đề như vậy là một hoặc nhiều máy chủ cụm có nhiều giao diện mạng."
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "4475",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4475"
+        }
+    ]
+}

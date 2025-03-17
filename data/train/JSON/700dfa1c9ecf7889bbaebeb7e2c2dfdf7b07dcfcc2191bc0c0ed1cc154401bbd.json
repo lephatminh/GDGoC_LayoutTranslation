@@ -1,0 +1,1136 @@
+{
+    "metadata": {
+        "page_hash": "700dfa1c9ecf7889bbaebeb7e2c2dfdf7b07dcfcc2191bc0c0ed1cc154401bbd",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3820,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                399.5825163398693,
+                48.370422979798036,
+                255.9819926470588,
+                11.971275252525288
+            ],
+            "text": "Group Replication Online Upgrade",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tái tạo nhóm trực tuyến nâng cấp trực tuyến"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                735.3537581699345,
+                11.971275252525174
+            ],
+            "text": "When an upgraded member joins a group which has any member running an earlier MySQL Server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi một thành viên được nâng cấp tham gia một nhóm có bất kỳ thành viên nào chạy máy chủ MySQL sớm hơn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                110.49163510101016,
+                306.24388929738564,
+                11.971275252525288
+            ],
+            "text": "version, the upgraded member joins with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "phiên bản, thành viên được nâng cấp tham gia với "
+        },
+        {
+            "bbox": [
+                477.07722263071895,
+                111.64347885101006,
+                180.88235294117652,
+                10.172335542929432
+            ],
+            "text": "super_read_only=on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Super_read_only = ON"
+        },
+        {
+            "bbox": [
+                657.9595755718955,
+                110.49163510101016,
+                303.4636940359477,
+                11.971275252525288
+            ],
+            "text": ". This ensures that no writes are made to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Điều này đảm bảo rằng không có văn bản nào được thực hiện"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                126.02193813131316,
+                784.6609477124183,
+                11.971275252525288
+            ],
+            "text": "upgraded members until all members are running the newer version. In a multi-primary mode group, when",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các thành viên được nâng cấp cho đến khi tất cả các thành viên đang chạy phiên bản mới hơn. Trong một nhóm chế độ đa tiểu học, khi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                141.55224116161617,
+                767.0583982843137,
+                11.971275252525288
+            ],
+            "text": "the upgrade has been completed successfully and the group is ready to process transactions, members",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Việc nâng cấp đã được hoàn thành thành công và nhóm đã sẵn sàng xử lý các giao dịch, các thành viên"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                157.08254419191928,
+                759.5551638071895,
+                11.971275252525174
+            ],
+            "text": "that are intended as writeable primaries must be set to read-write mode. From MySQL 8.0.17, when all",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được dự định là các nguyên tắc có thể viết phải được đặt thành chế độ đọc-viết. Từ mysql 8.0,17, khi tất cả"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                172.61284722222229,
+                766.1540200163399,
+                11.971275252525288
+            ],
+            "text": "members of a group have been upgraded to the same release, they all change back to read-write mode",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các thành viên của một nhóm đã được nâng cấp lên cùng một bản phát hành, tất cả đều thay đổi trở lại chế độ đọc-viết"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                188.1431502525253,
+                764.1777295751634,
+                11.971275252525288
+            ],
+            "text": "automatically. For earlier releases you must set each member manually to read-write mode. Connect to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tự động. Đối với các bản phát hành trước đó, bạn phải đặt từng thành viên theo cách thủ công thành chế độ đọc-viết. Kết nối với"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                203.6734532828283,
+                183.37784272875817,
+                11.971275252525288
+            ],
+            "text": "each member and issue:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mỗi thành viên và vấn đề:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                231.9425132575758,
+                249.2156862745098,
+                8.137827020202053
+            ],
+            "text": "SET GLOBAL super_read_only=OFF;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Đặt toàn cầu Super_Read_only = TẮT;"
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                259.50490561868685,
+                72.6343070261438,
+                14.365504419192007
+            ],
+            "text": "18.8.3.3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "18.8.3.3"
+        },
+        {
+            "bbox": [
+                168.66272834967322,
+                259.50490561868685,
+                417.65735294117644,
+                14.365504419192007
+            ],
+            "text": "Group Replication Online Upgrade Methods",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Phương pháp nâng cấp trực tuyến của nhóm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                291.63711553030305,
+                578.1200812908496,
+                11.971275252525288
+            ],
+            "text": "Choose one of the following methods of upgrading a Group Replication group:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chọn một trong các phương pháp nâng cấp nhóm sao chép nhóm sau:"
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                321.19640719696974,
+                225.18680555555557,
+                13.168389835858648
+            ],
+            "text": "Rolling In-Group Upgrade",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Cuộn nâng cấp trong nhóm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                351.95415940656574,
+                791.2598039215687,
+                11.971327020202011
+            ],
+            "text": "This method is supported provided that servers running a newer version are not generating workload to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phương pháp này được hỗ trợ với điều kiện các máy chủ chạy phiên bản mới hơn không tạo ra khối lượng công việc cho"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                367.48451420454546,
+                766.9579080882353,
+                11.971275252525288
+            ],
+            "text": "group while there are still servers with an older version in it. In other words servers with a newer version",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhóm trong khi vẫn còn các máy chủ có phiên bản cũ hơn trong đó. Nói cách khác, máy chủ có phiên bản mới hơn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                383.01481723484846,
+                741.9526143790849,
+                11.971275252525288
+            ],
+            "text": "can join the group only as secondaries. In this method there is only ever one group, and each server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chỉ có thể tham gia nhóm như thứ hai. Trong phương pháp này chỉ có một nhóm và mỗi máy chủ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                398.5451202651516,
+                575.3398525326797,
+                11.971275252525174
+            ],
+            "text": "instance is removed from the group, upgraded and then rejoined to the group.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ được xóa khỏi nhóm, nâng cấp và sau đó gia nhập lại cho nhóm."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                427.9271594065657,
+                774.4109477124183,
+                11.971275252525288
+            ],
+            "text": "This method is well suited to single-primary groups. When the group is operating in single-primary mode,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phương pháp này rất phù hợp với các nhóm chính đơn. Khi nhóm đang hoạt động ở chế độ chính đơn,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                443.4574624368687,
+                735.3871879084968,
+                11.971275252525288
+            ],
+            "text": "if you require the primary to remain the same throughout (except when it is being upgraded itself), it",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu bạn yêu cầu chính là giữ nguyên trong suốt (ngoại trừ khi nó đang được nâng cấp chính nó), nó"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                458.9877654671718,
+                778.1960951797384,
+                11.971275252525174
+            ],
+            "text": "should be the last member to be upgraded. The primary cannot remain as the primary unless it is running",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nên là thành viên cuối cùng được nâng cấp. Chính không thể vẫn là chính trừ khi nó đang chạy"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                474.5180684974748,
+                751.2479407679738,
+                11.971275252525288
+            ],
+            "text": "the lowest MySQL Server version in the group. After the primary has been upgraded, you can use the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phiên bản máy chủ MySQL thấp nhất trong nhóm. Sau khi chính đã được nâng cấp, bạn có thể sử dụng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                491.2001764520203,
+                341.66666666666663,
+                10.17237436868686
+            ],
+            "text": "group_replication_set_as_primary()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_set_as_primary ()"
+        },
+        {
+            "bbox": [
+                512.5,
+                490.0483715277778,
+                422.6449828431372,
+                11.971275252525288
+            ],
+            "text": " function to reappoint it as the primary. If you do not mind",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chức năng để bổ nhiệm lại nó là chính. Nếu bạn không phiền"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                505.5786745580808,
+                788.3957998366012,
+                11.971275252525288
+            ],
+            "text": "which member is the primary, the members can be upgraded in any order. The group elects a new primary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thành viên nào là chính, các thành viên có thể được nâng cấp theo bất kỳ thứ tự nào. Nhóm chọn một chính mới"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                521.1089775883838,
+                766.0535298202614,
+                11.971275252525288
+            ],
+            "text": "whenever necessary from among the members running the lowest MySQL Server version, following the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bất cứ khi nào cần thiết trong số các thành viên chạy phiên bản máy chủ MySQL thấp nhất, theo sau"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                536.6392806186869,
+                543.2332683823529,
+                11.971275252525231
+            ],
+            "text": "election policies described in Section 18.1.3.1, “Single-Primary Mode”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các chính sách bầu cử được mô tả trong phần 18.1.3.1, Chế độ đơn chính"
+        },
+        {
+            "bbox": [
+                686.49879125817,
+                536.6392806186869,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                566.021319760101,
+                753.9444946895425,
+                11.971275252525231
+            ],
+            "text": "For groups operating in multi-primary mode, during a rolling in-group upgrade the number of primaries",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các nhóm hoạt động ở chế độ đa chính, trong quá trình nâng cấp trong nhóm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                581.551622790404,
+                753.0400326797386,
+                11.971275252525231
+            ],
+            "text": "is decreased, causing a reduction in write availability. This is because if a member joins a group when",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được giảm, gây ra giảm tính khả dụng ghi. Điều này là do nếu một thành viên tham gia một nhóm khi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                597.081925820707,
+                743.7447062908496,
+                11.971275252525231
+            ],
+            "text": "it is running a higher MySQL Server version than the lowest version that the existing group members",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nó đang chạy phiên bản MySQL Server cao hơn so với phiên bản thấp nhất mà các thành viên nhóm hiện có"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                612.6122288510101,
+                417.92197712418294,
+                11.971275252525231
+            ],
+            "text": "are running, it automatically remains in read-only mode (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đang chạy, nó tự động ở chế độ chỉ đọc ("
+        },
+        {
+            "bbox": [
+                588.7553104575163,
+                613.7640467171718,
+                180.88235294117646,
+                10.172361426767623
+            ],
+            "text": "super_read_only=ON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Super_read_only = ON"
+        },
+        {
+            "bbox": [
+                769.6376633986928,
+                612.6122288510101,
+                157.3006703431373,
+                11.971275252525231
+            ],
+            "text": "). Note that members",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Lưu ý rằng các thành viên"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                628.1425318813131,
+                786.654003267974,
+                11.971275252525288
+            ],
+            "text": "running MySQL 8.0.17 or higher take into account the patch version of the release when checking this, but",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chạy MySQL 8.0.17 trở lên có tính đến phiên bản bản vá của bản phát hành khi kiểm tra điều này, nhưng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                643.6728349116162,
+                776.3202949346406,
+                11.971275252525231
+            ],
+            "text": "members running MySQL 8.0.16 or lower, or MySQL 5.7, only take into account the major version. When",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các thành viên chạy MySQL 8.0.16 hoặc thấp hơn hoặc MySQL 5.7, chỉ tính đến phiên bản chính. Khi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                659.2031379419192,
+                780.1054424019608,
+                11.971275252525288
+            ],
+            "text": "all members have been upgraded to the same release, from MySQL 8.0.17, they all change back to read-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tất cả các thành viên đã được nâng cấp lên cùng một bản phát hành, từ MySQL 8.0.17, tất cả đều thay đổi trở lại để đọc-"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                674.7334409722223,
+                446.7626633986928,
+                11.971275252525231
+            ],
+            "text": "write mode automatically. For earlier releases, you must set ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chế độ ghi tự động. Đối với các bản phát hành trước đó, bạn phải đặt "
+        },
+        {
+            "bbox": [
+                617.5959967320262,
+                675.8852588383838,
+                190.93137254901967,
+                10.172361426767623
+            ],
+            "text": "super_read_only=OFF",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Super_read_only = TẮT"
+        },
+        {
+            "bbox": [
+                808.5273692810458,
+                674.7334409722223,
+                135.9130236928105,
+                11.971275252525231
+            ],
+            "text": " manually on each",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " theo cách thủ công trên mỗi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                690.2637440025253,
+                476.608268382353,
+                11.971275252525288
+            ],
+            "text": "member that should function as a primary following the upgrade.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thành viên nên hoạt động như một chính sau khi nâng cấp."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                719.6457831439394,
+                752.1523190359477,
+                11.971275252525231
+            ],
+            "text": "For full information on version compatibility in a group and how this influences the behavior of a group",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết đầy đủ thông tin về khả năng tương thích phiên bản trong một nhóm và cách điều này ảnh hưởng đến hành vi của một nhóm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                735.1760861742424,
+                762.017123366013,
+                11.971275252525288
+            ],
+            "text": "during an upgrade process, see Section 18.8.1, “Combining Different Member Versions in a Group”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong quá trình nâng cấp, xem Phần 18.8.1, Kết hợp các phiên bản thành viên khác nhau trong một nhóm"
+        },
+        {
+            "bbox": [
+                905.2827132352942,
+                735.1760861742424,
+                9.31199101307186,
+                11.971275252525288
+            ],
+            "text": " .",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " ."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                764.735429608586,
+                230.30845588235297,
+                13.16838983585859
+            ],
+            "text": "Rolling Migration Upgrade",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Nâng cấp di chuyển lăn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                795.4931818181818,
+                783.8402945261437,
+                11.971275252525231
+            ],
+            "text": "In this method you remove members from the group, upgrade them and then create a second group using",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong phương pháp này, bạn loại bỏ các thành viên khỏi nhóm, nâng cấp chúng và sau đó tạo một nhóm thứ hai bằng cách sử dụng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                811.0234848484848,
+                761.4142156862745,
+                11.971275252525231
+            ],
+            "text": "the upgraded members. For groups operating in multi-primary mode, during this process the number of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các thành viên nâng cấp. Đối với các nhóm hoạt động ở chế độ đa chính, trong quá trình này, số lượng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                826.553787878788,
+                774.4444779411765,
+                11.971275252525231
+            ],
+            "text": "primaries is decreased, causing a reduction in write availability. This does not impact groups operating in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tính nguyên thủy bị giảm, gây giảm tính khả dụng ghi. Điều này không ảnh hưởng đến các nhóm hoạt động trong"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                842.084090909091,
+                156.34601348039214,
+                11.97127525252526
+            ],
+            "text": "single-primary mode.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chế độ đơn chính."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                871.4661300505051,
+                758.7009803921568,
+                11.97127525252526
+            ],
+            "text": "Because the group running the older version is online while you are upgrading the members, you need",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bởi vì nhóm chạy phiên bản cũ hơn là trực tuyến trong khi bạn đang nâng cấp các thành viên, bạn cần"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                886.9964330808081,
+                774.4946727941176,
+                11.971280429292918
+            ],
+            "text": "the group running the newer version to catch up with any transactions executed while the members were",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhóm chạy phiên bản mới hơn để bắt kịp với bất kỳ giao dịch nào được thực hiện trong khi các thành viên"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                902.5267412878788,
+                786.6038084150326,
+                11.971275252525245
+            ],
+            "text": "being upgraded. Therefore one of the servers in the new group is configured as a replica of a primary from",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đang được nâng cấp. Do đó, một trong những máy chủ trong nhóm mới được cấu hình như một bản sao của chính từ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                918.0570443181819,
+                764.3116495098038,
+                11.971275252525245
+            ],
+            "text": "the older group. This ensures that the new group catches up with the older group. Because this method",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "nhóm cũ. Điều này đảm bảo rằng nhóm mới bắt kịp với nhóm cũ. Bởi vì phương pháp này"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "3791",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3791"
+        }
+    ]
+}

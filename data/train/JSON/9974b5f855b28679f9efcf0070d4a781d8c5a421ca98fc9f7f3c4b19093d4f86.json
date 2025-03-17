@@ -1,0 +1,1876 @@
+{
+    "metadata": {
+        "page_hash": "9974b5f855b28679f9efcf0070d4a781d8c5a421ca98fc9f7f3c4b19093d4f86",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 5154,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                365.156233251634,
+                48.370422979798036,
+                324.8345420751635,
+                11.971275252525288
+            ],
+            "text": "Query Profiling Using Performance Schema",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hồ sơ truy vấn bằng cách sử dụng lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                96.61920486111126,
+                385.88233619281044,
+                8.13782702020194
+            ],
+            "text": "SELECT * FROM performance_schema.mutex_instances",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn * Từ Performance_Schema.mutex_instances"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                109.0434084595961,
+                241.1764705882353,
+                8.137917613636205
+            ],
+            "text": "WHERE OBJECT_INSTANCE_BEGIN = ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Trong đó Object_instance_begin = "
+        },
+        {
+            "bbox": [
+                438.8071895424837,
+                109.0434084595961,
+                56.27452655228757,
+                8.137917613636205
+            ],
+            "text": "mutex_A",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "MUTEX_A"
+        },
+        {
+            "bbox": [
+                495.08171609477125,
+                109.0434084595961,
+                8.039232434640496,
+                8.137917613636205
+            ],
+            "text": ";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ";"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                135.11880018939405,
+                564.1519607843136,
+                11.971275252525174
+            ],
+            "text": "Say the query result identifies that it is thread 2 holding mutex A, as found in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giả sử kết quả truy vấn xác định rằng đó là chủ đề 2 giữ mutex a, như được tìm thấy trong"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                151.80095991161613,
+                351.7156862745098,
+                10.17232260101025
+            ],
+            "text": "mutex_instances.LOCKED_BY_THREAD_ID",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Mutex_instances.locked_by_thread_id"
+        },
+        {
+            "bbox": [
+                549.3464052287582,
+                150.64910321969705,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                178.90007039141415,
+                13.968137254901961,
+                11.971275252525288
+            ],
+            "text": "4.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                178.90007039141415,
+                266.265489379085,
+                11.971275252525288
+            ],
+            "text": "You can see what thread 2 is doing:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể thấy chủ đề 2 đang làm gì:"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                206.26443844696985,
+                426.07841462418304,
+                8.13783996212112
+            ],
+            "text": "SELECT * FROM performance_schema.events_waits_current",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chọn * Từ Performance_Schema.events_waits_cien"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                218.68865498737375,
+                144.70586560457514,
+                8.137904671717138
+            ],
+            "text": "WHERE THREAD_ID = ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Trong đó thread_id = "
+        },
+        {
+            "bbox": [
+                342.3365845588235,
+                218.68865498737375,
+                64.31372549019613,
+                8.137904671717138
+            ],
+            "text": "thread_2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "Thread_2"
+        },
+        {
+            "bbox": [
+                406.6503267973857,
+                218.68865498737375,
+                8.039232434640496,
+                8.137904671717138
+            ],
+            "text": ";",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ";"
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                245.47583933080807,
+                78.22156862745098,
+                16.75979829545463
+            ],
+            "text": "27.19.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "27.19.1"
+        },
+        {
+            "bbox": [
+                175.18120915032682,
+                245.47583933080807,
+                487.33723815359485,
+                16.75979829545463
+            ],
+            "text": "Query Profiling Using Performance Schema",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Hồ sơ truy vấn bằng cách sử dụng lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                279.22712215909087,
+                789.4006683006536,
+                11.971275252525288
+            ],
+            "text": "The following example demonstrates how to use Performance Schema statement events and stage events",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ sau đây cho thấy cách sử dụng các sự kiện tuyên bố Lược đồ hiệu suất và các sự kiện giai đoạn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                294.75742518939387,
+                469.15522875816987,
+                11.971275252525288
+            ],
+            "text": "to retrieve data comparable to profiling information provided by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "để truy xuất dữ liệu có thể so sánh với thông tin định hình được cung cấp bởi "
+        },
+        {
+            "bbox": [
+                639.9885620915032,
+                295.909268939394,
+                130.6372549019609,
+                10.172335542929204
+            ],
+            "text": "SHOW PROFILES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị hồ sơ"
+        },
+        {
+            "bbox": [
+                770.6258169934641,
+                294.75742518939387,
+                37.24834926470578,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                807.8741662581699,
+                295.909268939394,
+                120.5882352941178,
+                10.172335542929204
+            ],
+            "text": "SHOW PROFILE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị hồ sơ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                310.287728219697,
+                86.57230392156865,
+                11.971275252525174
+            ],
+            "text": "statements.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tuyên bố."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                338.538617739899,
+                33.51348039215688,
+                11.971275252525174
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                339.690461489899,
+                120.58825204248365,
+                10.172335542929204
+            ],
+            "text": "setup_actors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "setup_actors"
+        },
+        {
+            "bbox": [
+                324.9350322712418,
+                338.538617739899,
+                623.7091168300656,
+                11.971275252525174
+            ],
+            "text": " table can be used to limit the collection of historical events by host, user, or account",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng có thể được sử dụng để giới hạn việc thu thập các sự kiện lịch sử bởi máy chủ, người dùng hoặc tài khoản"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                354.068920770202,
+                726.142156862745,
+                11.971275252525288
+            ],
+            "text": "to reduce runtime overhead and the amount of data collected in history tables. The first step of the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để giảm chi phí thời gian chạy và lượng dữ liệu được thu thập trong các bảng lịch sử. Bước đầu tiên của"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                369.5992238005051,
+                556.6151960784313,
+                11.971275252525174
+            ],
+            "text": "example shows how to limit collection of historical events to a specific user.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ cho thấy cách hạn chế thu thập các sự kiện lịch sử cho một người dùng cụ thể."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                397.8501133207071,
+                709.2765355392157,
+                11.971275252525288
+            ],
+            "text": "Performance Schema displays event timer information in picoseconds (trillionths of a second) to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lược đồ hiệu suất hiển thị thông tin hẹn giờ sự kiện tính bằng picoseconds (nghìn tỷ giây) để"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                413.3804163510101,
+                491.5142973856209,
+                11.971275252525288
+            ],
+            "text": "normalize timing data to a standard unit. In the following example, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bình thường hóa dữ liệu thời gian đến một đơn vị tiêu chuẩn. Trong ví dụ sau, "
+        },
+        {
+            "bbox": [
+                662.3476307189543,
+                414.53226010101014,
+                100.49019607843138,
+                10.172335542929318
+            ],
+            "text": "TIMER_WAIT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Timer_Wait"
+        },
+        {
+            "bbox": [
+                762.8378267973857,
+                413.3804163510101,
+                161.97343096405223,
+                11.971275252525288
+            ],
+            "text": " values are divided by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị được chia cho"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                428.91075820707067,
+                786.670768382353,
+                11.971275252525288
+            ],
+            "text": "1000000000000 to show data in units of seconds. Values are also truncated to 6 decimal places to display",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1000000000000 để hiển thị dữ liệu theo đơn vị giây. Các giá trị cũng bị cắt ngắn thành 6 chữ số thập phân để hiển thị"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                444.4410612373738,
+                202.93995098039213,
+                11.971275252525174
+            ],
+            "text": "data in the same format as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "dữ liệu ở cùng định dạng như "
+        },
+        {
+            "bbox": [
+                373.77328431372547,
+                445.59286616161626,
+                130.6372214052288,
+                10.172374368686746
+            ],
+            "text": "SHOW PROFILES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị hồ sơ"
+        },
+        {
+            "bbox": [
+                504.41050571895425,
+                444.4410612373738,
+                37.24839950980402,
+                11.971275252525174
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                541.6589052287583,
+                445.59286616161626,
+                120.58823529411757,
+                10.172374368686746
+            ],
+            "text": "SHOW PROFILE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị hồ sơ"
+        },
+        {
+            "bbox": [
+                662.2471405228758,
+                444.4410612373738,
+                91.22834967320262,
+                11.971275252525174
+            ],
+            "text": " statements.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                472.6919507575758,
+                13.968137254901961,
+                11.971275252525174
+            ],
+            "text": "1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                472.6919507575758,
+                602.3047385620914,
+                11.971275252525174
+            ],
+            "text": "Limit the collection of historical events to the user that runs the query. By default, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giới hạn bộ sưu tập các sự kiện lịch sử cho người dùng chạy truy vấn. Theo mặc định, "
+        },
+        {
+            "bbox": [
+                799.9354575163399,
+                473.84375568181827,
+                120.58823529411768,
+                10.172374368686746
+            ],
+            "text": "setup_actors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "setup_actors"
+        },
+        {
+            "bbox": [
+                920.5236928104575,
+                472.6919507575758,
+                16.74836601307186,
+                11.971275252525174
+            ],
+            "text": " is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                488.2222537878788,
+                642.2998366013071,
+                11.971275252525288
+            ],
+            "text": "configured to allow monitoring and historical event collection for all foreground threads:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Được định cấu hình để cho phép giám sát và thu thập sự kiện lịch sử cho tất cả các chủ đề tiền cảnh:"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                515.5866218434344,
+                56.27452655228757,
+                8.137904671717195
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                253.90524550653595,
+                515.5866218434344,
+                369.80388807189547,
+                8.137904671717195
+            ],
+            "text": "SELECT * FROM performance_schema.setup_actors;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn * từ Performance_Schema.setup_actors;"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                528.010877209596,
+                337.6470755718954,
+                8.137904671717195
+            ],
+            "text": "+------+------+------+---------+---------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+------+------+------+---------+---------+"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                540.4351196338384,
+                337.6470755718954,
+                8.137917613636318
+            ],
+            "text": "| HOST | USER | ROLE | ENABLED | HISTORY |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Máy chủ | Người dùng | Vai trò | Đã bật | Lịch sử |"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                552.859375,
+                337.6470755718954,
+                8.137904671717195
+            ],
+            "text": "+------+------+------+---------+---------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+------+------+------+---------+---------+"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                565.2835785984848,
+                24.117630310457514,
+                8.137917613636375
+            ],
+            "text": "| %",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Phần trăm"
+        },
+        {
+            "bbox": [
+                253.90524550653595,
+                565.2835785984848,
+                24.117630310457514,
+                8.137917613636375
+            ],
+            "text": "| %",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Phần trăm"
+        },
+        {
+            "bbox": [
+                310.1797385620915,
+                565.2835785984848,
+                24.117663807189558,
+                8.137917613636375
+            ],
+            "text": "| %",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Phần trăm"
+        },
+        {
+            "bbox": [
+                366.4542483660131,
+                565.2835785984848,
+                40.1960784313726,
+                8.137917613636375
+            ],
+            "text": "| YES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| ĐÚNG"
+        },
+        {
+            "bbox": [
+                446.84643872549026,
+                565.2835785984848,
+                40.19607843137254,
+                8.137917613636375
+            ],
+            "text": "| YES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| ĐÚNG"
+        },
+        {
+            "bbox": [
+                527.2385955882353,
+                565.2835785984848,
+                8.039198937908509,
+                8.137917613636375
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                577.7078339646464,
+                337.6470755718954,
+                8.137904671717195
+            ],
+            "text": "+------+------+------+---------+---------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+------+------+------+---------+---------+"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                603.783264520202,
+                218.78390522875816,
+                11.971275252525231
+            ],
+            "text": "Update the default row in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cập nhật hàng mặc định trong "
+        },
+        {
+            "bbox": [
+                416.41462418300654,
+                604.9350694444445,
+                120.58823529411762,
+                10.17237436868686
+            ],
+            "text": "setup_actors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "setup_actors"
+        },
+        {
+            "bbox": [
+                537.0028594771242,
+                603.783264520202,
+                423.54946160130726,
+                11.971275252525231
+            ],
+            "text": " table to disable historical event collection and monitoring",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng để vô hiệu hóa bộ sưu tập và giám sát sự kiện lịch sử"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                619.3135675505051,
+                753.09031127451,
+                11.971275252525231
+            ],
+            "text": "for all foreground threads, and insert a new row that enables monitoring and historical event collection",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với tất cả các chủ đề tiền cảnh, và chèn một hàng mới cho phép giám sát và thu thập sự kiện lịch sử"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                634.8438705808081,
+                233.67323611111107,
+                11.971275252525231
+            ],
+            "text": "for the user that runs the query:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với người dùng chạy truy vấn:"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                662.2082386363636,
+                56.27452655228757,
+                8.137917613636375
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                253.90524550653595,
+                662.2082386363636,
+                305.4901793300654,
+                8.137917613636375
+            ],
+            "text": "UPDATE performance_schema.setup_actors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Cập nhật hiệu suất_schema.setup_actors"
+        },
+        {
+            "bbox": [
+                253.90524550653595,
+                674.6324551767677,
+                273.3332998366013,
+                8.137904671717195
+            ],
+            "text": "SET ENABLED = ’NO’, HISTORY = ’NO’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Đặt ENABLE =, NO NO, Lịch sử = không có"
+        },
+        {
+            "bbox": [
+                253.90524550653595,
+                687.0566976010101,
+                257.25490196078437,
+                8.137917613636375
+            ],
+            "text": "WHERE HOST = ’%’ AND USER = ’%’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Trong đó host = xông%, và người dùng = phiên bản%;"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                711.9052083333333,
+                56.27452655228757,
+                8.137904671717138
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                253.90524550653595,
+                711.9052083333333,
+                345.6862577614379,
+                8.137904671717138
+            ],
+            "text": "INSERT INTO performance_schema.setup_actors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chèn vào Performance_Schema.setup_actors"
+        },
+        {
+            "bbox": [
+                253.90524550653595,
+                724.3294507575758,
+                257.25490196078437,
+                8.137917613636375
+            ],
+            "text": "(HOST,USER,ROLE,ENABLED,HISTORY)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "(Máy chủ, người dùng, vai trò, đã kích hoạt, lịch sử)"
+        },
+        {
+            "bbox": [
+                253.90524550653595,
+                736.7536672979797,
+                385.8823361928105,
+                8.137904671717195
+            ],
+            "text": "VALUES(’localhost’,’test_user’,’%’,’YES’,’YES’);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Các giá trị (Vòng localhost, thì Test Test_user, thì%, thì có, đúng"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                762.8290590277778,
+                85.65114379084963,
+                11.971275252525231
+            ],
+            "text": "Data in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Dữ liệu trong "
+        },
+        {
+            "bbox": [
+                283.281862745098,
+                763.9809027777778,
+                120.58823529411768,
+                10.172335542929318
+            ],
+            "text": "setup_actors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "setup_actors"
+        },
+        {
+            "bbox": [
+                403.8700980392157,
+                762.8290590277778,
+                361.17847957516346,
+                11.971275252525231
+            ],
+            "text": " table should now appear similar to the following:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng bây giờ sẽ xuất hiện tương tự như sau:"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                790.1935047348485,
+                56.27452655228757,
+                8.137827020202025
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                253.90524550653595,
+                790.1935047348485,
+                369.80388807189547,
+                8.137827020202025
+            ],
+            "text": "SELECT * FROM performance_schema.setup_actors;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn * từ Performance_Schema.setup_actors;"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                802.6177212752525,
+                418.0392324346405,
+                8.137827020202081
+            ],
+            "text": "+-----------+-----------+------+---------+---------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+-----------+-----------+------+---------+----------+"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                815.0420025252525,
+                48.23529411764707,
+                8.137839962121234
+            ],
+            "text": "| HOST",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| CHỦ NHÀ"
+        },
+        {
+            "bbox": [
+                294.1013239379085,
+                815.0420025252525,
+                48.23529411764707,
+                8.137839962121234
+            ],
+            "text": "| USER",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Người dùng"
+        },
+        {
+            "bbox": [
+                390.5718954248366,
+                815.0420025252525,
+                225.09805596405226,
+                8.137839962121234
+            ],
+            "text": "| ROLE | ENABLED | HISTORY |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Vai trò | Đã bật | Lịch sử |"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                827.4662190656566,
+                418.0392324346405,
+                8.137827020202025
+            ],
+            "text": "+-----------+-----------+------+---------+---------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+-----------+-----------+------+---------+----------+"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                839.8904226641414,
+                24.117630310457514,
+                8.137839962121205
+            ],
+            "text": "| %",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Phần trăm"
+        },
+        {
+            "bbox": [
+                294.1013239379085,
+                839.8904226641414,
+                24.117630310457514,
+                8.137839962121205
+            ],
+            "text": "| %",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Phần trăm"
+        },
+        {
+            "bbox": [
+                390.5718954248366,
+                839.8904226641414,
+                24.117663807189558,
+                8.137839962121205
+            ],
+            "text": "| %",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Phần trăm"
+        },
+        {
+            "bbox": [
+                446.84643872549026,
+                839.8904226641414,
+                32.156829248365966,
+                8.137839962121205
+            ],
+            "text": "| NO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| KHÔNG"
+        },
+        {
+            "bbox": [
+                527.2385955882353,
+                839.8904226641414,
+                32.15682924836608,
+                8.137839962121205
+            ],
+            "text": "| NO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| KHÔNG"
+        },
+        {
+            "bbox": [
+                607.6307524509805,
+                839.8904226641414,
+                8.039198937908395,
+                8.137839962121205
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                852.3147168560606,
+                217.0588402777778,
+                8.137827020202025
+            ],
+            "text": "| localhost | test_user | %",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Localhost | test_user | Phần trăm"
+        },
+        {
+            "bbox": [
+                446.84643872549026,
+                852.3147168560606,
+                40.19607843137254,
+                8.137827020202025
+            ],
+            "text": "| YES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| ĐÚNG"
+        },
+        {
+            "bbox": [
+                527.2385955882353,
+                852.3147168560606,
+                40.1960784313726,
+                8.137827020202025
+            ],
+            "text": "| YES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| ĐÚNG"
+        },
+        {
+            "bbox": [
+                607.6307524509805,
+                852.3147168560606,
+                8.039198937908395,
+                8.137827020202025
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                864.7389333964646,
+                418.0392324346405,
+                8.137827020202025
+            ],
+            "text": "+-----------+-----------+------+---------+---------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+-----------+-----------+------+---------+----------+"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                890.8143251262627,
+                13.968137254901961,
+                11.971271369949491
+            ],
+            "text": "2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                890.8143251262627,
+                566.0445261437908,
+                11.971271369949491
+            ],
+            "text": "Ensure that statement and stage instrumentation is enabled by updating the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đảm bảo rằng câu lệnh và thiết bị giai đoạn được bật bằng cách cập nhật "
+        },
+        {
+            "bbox": [
+                763.6752450980392,
+                891.9661688762626,
+                170.83328308823525,
+                10.17233166035355
+            ],
+            "text": "setup_instruments",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "setup_instrument"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                906.3446242739899,
+                445.90847998366013,
+                11.971275252525245
+            ],
+            "text": "table. Some instruments may already be enabled by default.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bàn. Một số công cụ có thể đã được bật theo mặc định."
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "5125",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "5125"
+        }
+    ]
+}

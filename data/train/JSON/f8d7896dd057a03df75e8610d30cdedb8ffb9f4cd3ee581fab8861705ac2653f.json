@@ -1,0 +1,2536 @@
+{
+    "metadata": {
+        "page_hash": "f8d7896dd057a03df75e8610d30cdedb8ffb9f4cd3ee581fab8861705ac2653f",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 2751,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                258.70363562091507,
+                48.370422979798036,
+                477.4456699346406,
+                11.971275252525288
+            ],
+            "text": "START TRANSACTION, COMMIT, and ROLLBACK Statements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu các câu lệnh giao dịch, cam kết và rollback"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                96.61920486111126,
+                136.6666834150327,
+                8.13782702020194
+            ],
+            "text": "SET autocommit=0;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt AutoCommit = 0;"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                123.2265224116162,
+                352.8043133169935,
+                11.971275252525174
+            ],
+            "text": "After disabling autocommit mode by setting the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sau khi vô hiệu hóa chế độ AutoCommit bằng cách đặt "
+        },
+        {
+            "bbox": [
+                493.4905878267974,
+                124.37828851010102,
+                100.49019607843138,
+                10.172413194444403
+            ],
+            "text": "autocommit",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "AutoCommit"
+        },
+        {
+            "bbox": [
+                593.9807839052288,
+                123.2265224116162,
+                334.1969121732027,
+                11.971275252525174
+            ],
+            "text": " variable to zero, changes to transaction-safe",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến thành 0, thay đổi để an toàn giao dịch"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                138.7568254419192,
+                187.11274509803923,
+                11.971275252525288
+            ],
+            "text": "tables (such as those for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bảng (chẳng hạn như những người cho "
+        },
+        {
+            "bbox": [
+                327.79901960784315,
+                139.90859154040402,
+                60.29411764705884,
+                10.172413194444516
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                388.093137254902,
+                138.7568254419192,
+                24.201388888888857,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                412.29452614379085,
+                139.90859154040402,
+                30.147025326797404,
+                10.172413194444516
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                442.44155147058825,
+                138.7568254419192,
+                403.98737009803926,
+                11.971275252525288
+            ],
+            "text": ") are not made permanent immediately. You must use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ") không được thực hiện vĩnh viễn ngay lập tức. Bạn phải sử dụng "
+        },
+        {
+            "bbox": [
+                846.4289215686275,
+                139.90859154040402,
+                60.29411764705878,
+                10.172413194444516
+            ],
+            "text": "COMMIT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LÀM"
+        },
+        {
+            "bbox": [
+                906.7230392156863,
+                138.7568254419192,
+                18.624183006535986,
+                11.971275252525288
+            ],
+            "text": " to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " ĐẾN"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                154.2871284722222,
+                219.688316993464,
+                11.971275252525288
+            ],
+            "text": "store your changes to disk or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lưu trữ các thay đổi của bạn vào đĩa hoặc "
+        },
+        {
+            "bbox": [
+                360.37459150326794,
+                155.43889457070702,
+                80.39212336601315,
+                10.172413194444516
+            ],
+            "text": "ROLLBACK",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "RELBACK"
+        },
+        {
+            "bbox": [
+                440.7667148692811,
+                154.2871284722222,
+                170.38114419934635,
+                11.971275252525288
+            ],
+            "text": " to ignore the changes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " để bỏ qua các thay đổi."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                184.22170991161624,
+                100.49019607843138,
+                10.172413194444403
+            ],
+            "text": "autocommit",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "AutoCommit"
+        },
+        {
+            "bbox": [
+                241.1764705882353,
+                183.06994381313132,
+                654.392106617647,
+                11.971275252525288
+            ],
+            "text": " is a session variable and must be set for each session. To disable autocommit mode for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là một biến phiên và phải được đặt cho mỗi phiên. Để vô hiệu hóa chế độ AutoCommit cho"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                198.60024684343443,
+                358.4317977941177,
+                11.971275252525174
+            ],
+            "text": "each new connection, see the description of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mỗi kết nối mới, xem mô tả của "
+        },
+        {
+            "bbox": [
+                499.1180723039216,
+                199.75201294191925,
+                100.49019607843138,
+                10.172413194444403
+            ],
+            "text": "autocommit",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "AutoCommit"
+        },
+        {
+            "bbox": [
+                599.608268382353,
+                198.60024684343443,
+                320.0277107843136,
+                11.971275252525174
+            ],
+            "text": " system variable at Section 5.1.8, “Server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống tại Mục 5.1.8, Máy chủ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                214.13054987373744,
+                149.66339869281046,
+                11.971275252525174
+            ],
+            "text": "System Variables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các biến hệ thống ”"
+        },
+        {
+            "bbox": [
+                276.5657679738562,
+                214.13054987373744,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                244.06520896464644,
+                50.24509803921569,
+                10.172335542929432
+            ],
+            "text": "BEGIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BẮT ĐẦU"
+        },
+        {
+            "bbox": [
+                190.9313725490196,
+                242.91336521464655,
+                37.248349264705894,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                228.1797218137255,
+                244.06520896464644,
+                100.49019607843138,
+                10.172335542929432
+            ],
+            "text": "BEGIN WORK",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu công việc"
+        },
+        {
+            "bbox": [
+                328.66995138888893,
+                242.91336521464655,
+                210.39299060457512,
+                11.971275252525288
+            ],
+            "text": " are supported as aliases of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được hỗ trợ như bí danh của "
+        },
+        {
+            "bbox": [
+                539.062891748366,
+                244.06520896464644,
+                170.83333333333326,
+                10.172335542929432
+            ],
+            "text": "START TRANSACTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu giao dịch"
+        },
+        {
+            "bbox": [
+                709.8962250816993,
+                242.91336521464655,
+                195.4868778594772,
+                11.971275252525288
+            ],
+            "text": " for initiating a transaction.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " để bắt đầu một giao dịch."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                259.59551199494956,
+                170.83333333333331,
+                10.172335542929318
+            ],
+            "text": "START TRANSACTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu giao dịch"
+        },
+        {
+            "bbox": [
+                311.51960784313724,
+                258.44366824494955,
+                599.4910130718955,
+                11.971275252525288
+            ],
+            "text": " is standard SQL syntax, is the recommended way to start an ad-hoc transaction,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là cú pháp SQL tiêu chuẩn, là cách được khuyến nghị để bắt đầu giao dịch đặc biệt,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                273.97397127525255,
+                197.3292651143791,
+                11.971275252525288
+            ],
+            "text": "and permits modifiers that ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và cho phép sửa đổi "
+        },
+        {
+            "bbox": [
+                338.015539624183,
+                275.12581502525256,
+                50.24509803921569,
+                10.172335542929318
+            ],
+            "text": "BEGIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BẮT ĐẦU"
+        },
+        {
+            "bbox": [
+                388.2606376633987,
+                273.97397127525255,
+                73.55879003267967,
+                11.971275252525288
+            ],
+            "text": " does not.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Không."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                302.75678661616155,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                303.9086303661617,
+                50.245114787581684,
+                10.172335542929204
+            ],
+            "text": "BEGIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BẮT ĐẦU"
+        },
+        {
+            "bbox": [
+                224.4448696895425,
+                302.75678661616155,
+                277.41990114379087,
+                11.971275252525288
+            ],
+            "text": " statement differs from the use of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố khác với việc sử dụng "
+        },
+        {
+            "bbox": [
+                501.86477083333335,
+                303.9086303661617,
+                50.245098039215634,
+                10.172335542929204
+            ],
+            "text": "BEGIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BẮT ĐẦU"
+        },
+        {
+            "bbox": [
+                552.109868872549,
+                302.75678661616155,
+                163.83253308823544,
+                11.971275252525288
+            ],
+            "text": " keyword that starts a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Từ khóa bắt đầu "
+        },
+        {
+            "bbox": [
+                715.9424019607844,
+                303.9086303661617,
+                130.63725490196077,
+                10.172335542929204
+            ],
+            "text": "BEGIN ... END",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu ... kết thúc"
+        },
+        {
+            "bbox": [
+                846.5796568627452,
+                302.75678661616155,
+                82.85416666666663,
+                11.971275252525288
+            ],
+            "text": " compound",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Hợp chất"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                318.28708964646466,
+                745.5032679738563,
+                11.971275252525174
+            ],
+            "text": "statement. The latter does not begin a transaction. See Section 13.6.1, “BEGIN ... END Compound",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tuyên bố. Cái sau không bắt đầu một giao dịch. Xem Phần 13.6.1, Bắt đầu ... Hợp chất kết thúc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                333.81739267676767,
+                95.70016339869278,
+                11.971275252525174
+            ],
+            "text": "Statement”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tuyên bố\""
+        },
+        {
+            "bbox": [
+                222.60253267973857,
+                333.81739267676767,
+                4.656045751633968,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                362.6002080176768,
+                37.214869281045765,
+                11.971275252525288
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                391.38306218434343,
+                610.6286429738562,
+                11.971275252525288
+            ],
+            "text": "Within all stored programs (stored procedures and functions, triggers, and events),",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong tất cả các chương trình được lưu trữ (các quy trình và chức năng được lưu trữ, kích hoạt và sự kiện),"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                406.91336521464655,
+                126.6008819444445,
+                11.971275252525174
+            ],
+            "text": "the parser treats ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các trình phân tích cú pháp đối xử "
+        },
+        {
+            "bbox": [
+                408.30839828431374,
+                408.0651701388889,
+                120.5882185457516,
+                10.17237436868686
+            ],
+            "text": "BEGIN [WORK]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu [công việc]"
+        },
+        {
+            "bbox": [
+                528.8966670751634,
+                406.91336521464655,
+                164.80390482026155,
+                11.971275252525174
+            ],
+            "text": " as the beginning of a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Là sự khởi đầu của một "
+        },
+        {
+            "bbox": [
+                693.7005718954249,
+                408.0651701388889,
+                130.63725490196077,
+                10.17237436868686
+            ],
+            "text": "BEGIN ... END",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu ... kết thúc"
+        },
+        {
+            "bbox": [
+                824.3378267973857,
+                406.91336521464655,
+                48.402727532679705,
+                11.971275252525174
+            ],
+            "text": " block.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " khối."
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                422.44366824494955,
+                289.5122549019609,
+                11.971275252525174
+            ],
+            "text": "Begin a transaction in this context with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu một giao dịch trong bối cảnh này với "
+        },
+        {
+            "bbox": [
+                571.2197712418301,
+                423.5954731691919,
+                170.83333333333326,
+                10.17237436868686
+            ],
+            "text": "START TRANSACTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu giao dịch"
+        },
+        {
+            "bbox": [
+                742.0531045751634,
+                422.44366824494955,
+                63.308806781045746,
+                11.971275252525174
+            ],
+            "text": " instead.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " thay vì."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                451.22648358585855,
+                96.82230392156865,
+                11.971275252525288
+            ],
+            "text": "The optional ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn "
+        },
+        {
+            "bbox": [
+                237.50857843137257,
+                452.378288510101,
+                40.19607843137251,
+                10.17237436868686
+            ],
+            "text": "WORK",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CÔNG VIỆC"
+        },
+        {
+            "bbox": [
+                277.7046568627451,
+                451.22648358585855,
+                191.75202573529413,
+                11.971275252525288
+            ],
+            "text": " keyword is supported for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Từ khóa được hỗ trợ cho "
+        },
+        {
+            "bbox": [
+                469.4566825980392,
+                452.378288510101,
+                60.29411764705884,
+                10.17237436868686
+            ],
+            "text": "COMMIT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LÀM"
+        },
+        {
+            "bbox": [
+                529.750800245098,
+                451.22648358585855,
+                37.248349264705894,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                566.999199754902,
+                452.378288510101,
+                80.39215686274508,
+                10.17237436868686
+            ],
+            "text": "ROLLBACK",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "RELBACK"
+        },
+        {
+            "bbox": [
+                647.391356617647,
+                451.22648358585855,
+                88.44812091503275,
+                11.971275252525288
+            ],
+            "text": ", as are the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", cũng như "
+        },
+        {
+            "bbox": [
+                735.8394775326798,
+                452.378288510101,
+                50.24509803921569,
+                10.17237436868686
+            ],
+            "text": "CHAIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "XÍCH"
+        },
+        {
+            "bbox": [
+                786.0845755718955,
+                451.22648358585855,
+                37.24834926470578,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                823.3329248366013,
+                452.378288510101,
+                70.34308700980398,
+                10.17237436868686
+            ],
+            "text": "RELEASE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GIẢI PHÓNG"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                466.75678661616166,
+                66.0890522875817,
+                11.971275252525174
+            ],
+            "text": "clauses. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "mệnh đề. "
+        },
+        {
+            "bbox": [
+                206.77532679738562,
+                467.90859154040413,
+                50.24508129084967,
+                10.172374368686746
+            ],
+            "text": "CHAIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "XÍCH"
+        },
+        {
+            "bbox": [
+                257.0204080882353,
+                466.75678661616166,
+                37.24838276143788,
+                11.971275252525174
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                294.26879084967317,
+                467.90859154040413,
+                70.34313725490199,
+                10.172374368686746
+            ],
+            "text": "RELEASE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GIẢI PHÓNG"
+        },
+        {
+            "bbox": [
+                364.61192810457516,
+                466.75678661616166,
+                562.2761102941176,
+                11.971275252525174
+            ],
+            "text": " can be used for additional control over transaction completion. The value of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có thể được sử dụng để kiểm soát bổ sung về hoàn thành giao dịch. Giá trị của"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                482.28708964646466,
+                27.936274509803923,
+                11.971275252525174
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                168.62254901960785,
+                483.43889457070713,
+                150.73527736928105,
+                10.172374368686746
+            ],
+            "text": "completion_type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hoàn thành_Type"
+        },
+        {
+            "bbox": [
+                319.3578263888889,
+                482.28708964646466,
+                592.0547385620914,
+                11.971275252525174
+            ],
+            "text": " system variable determines the default completion behavior. See Section 5.1.8,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống xác định hành vi hoàn thành mặc định. Xem phần 5.1.8,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                497.81739267676767,
+                223.00447671568628,
+                11.971275252525288
+            ],
+            "text": "“Server System Variables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "“Các biến hệ thống máy chủ"
+        },
+        {
+            "bbox": [
+                336.12295751633985,
+                497.81739267676767,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                526.6002468434344,
+                33.51348039215688,
+                11.971275252525231
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                527.7520517676769,
+                90.44119321895423,
+                10.172374368686803
+            ],
+            "text": "AND CHAIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Và chuỗi"
+        },
+        {
+            "bbox": [
+                264.640948120915,
+                526.6002468434344,
+                620.0411911764706,
+                11.971275252525231
+            ],
+            "text": " clause causes a new transaction to begin as soon as the current one ends, and the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề khiến một giao dịch mới bắt đầu ngay khi giao dịch hiện tại kết thúc và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                542.1305498737374,
+                740.0432839052289,
+                11.971275252525231
+            ],
+            "text": "new transaction has the same isolation level as the just-terminated transaction. The new transaction",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giao dịch mới có cùng mức độ cô lập như giao dịch vừa kết thúc. Giao dịch mới"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                557.6608529040404,
+                257.84109477124184,
+                11.971275252525231
+            ],
+            "text": "also uses the same access mode (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cũng sử dụng cùng một chế độ truy cập ("
+        },
+        {
+            "bbox": [
+                398.52736928104576,
+                558.8126578282829,
+                100.4902128267974,
+                10.172374368686803
+            ],
+            "text": "READ WRITE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Đọc viết"
+        },
+        {
+            "bbox": [
+                499.01758210784317,
+                557.6608529040404,
+                24.20140563725488,
+                11.971275252525231
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                523.2189375,
+                558.8126578282829,
+                90.44117647058818,
+                10.172374368686803
+            ],
+            "text": "READ ONLY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Chỉ đọc"
+        },
+        {
+            "bbox": [
+                613.6601139705882,
+                557.6608529040404,
+                296.0106544117647,
+                11.971275252525231
+            ],
+            "text": ") as the just-terminated transaction. The",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ") như là giao dịch kết thúc. Các"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                574.3429608585859,
+                70.34313725490196,
+                10.172374368686803
+            ],
+            "text": "RELEASE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GIẢI PHÓNG"
+        },
+        {
+            "bbox": [
+                211.02941176470588,
+                573.1911559343434,
+                693.4996082516341,
+                11.971275252525231
+            ],
+            "text": " clause causes the server to disconnect the current client session after terminating the current",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề khiến máy chủ ngắt kết nối phiên khách hiện tại sau khi chấm dứt hiện tại"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                588.7214589646464,
+                190.84763071895424,
+                11.971275252525231
+            ],
+            "text": "transaction. Including the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "giao dịch. Bao gồm cả "
+        },
+        {
+            "bbox": [
+                331.53390522875816,
+                589.8732638888889,
+                20.0980392156863,
+                10.172374368686803
+            ],
+            "text": "NO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "KHÔNG"
+        },
+        {
+            "bbox": [
+                351.63194444444446,
+                588.7214589646464,
+                161.95668259803927,
+                11.971275252525231
+            ],
+            "text": " keyword suppresses ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Từ khóa triệt tiêu "
+        },
+        {
+            "bbox": [
+                513.5886270424837,
+                589.8732638888889,
+                50.24509803921569,
+                10.172374368686803
+            ],
+            "text": "CHAIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "XÍCH"
+        },
+        {
+            "bbox": [
+                563.8337250816994,
+                588.7214589646464,
+                24.201422385620845,
+                11.971275252525231
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                588.0351474673203,
+                589.8732638888889,
+                70.34313725490199,
+                10.172374368686803
+            ],
+            "text": "RELEASE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GIẢI PHÓNG"
+        },
+        {
+            "bbox": [
+                658.3782847222222,
+                588.7214589646464,
+                255.06086601307186,
+                11.971275252525231
+            ],
+            "text": " completion, which can be useful if",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoàn thành, có thể hữu ích nếu"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                604.2517619949494,
+                27.936274509803923,
+                11.971275252525231
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                168.62254901960785,
+                605.4035669191919,
+                150.73527736928105,
+                10.172374368686803
+            ],
+            "text": "completion_type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hoàn thành_Type"
+        },
+        {
+            "bbox": [
+                319.3578263888889,
+                604.2517619949494,
+                546.4154411764705,
+                11.971275252525231
+            ],
+            "text": " system variable is set to cause chaining or release completion by default.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống được đặt để gây ra chuỗi hoặc phát hành hoàn thành theo mặc định."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                633.0345773358586,
+                803.234835375817,
+                11.971275252525288
+            ],
+            "text": "Beginning a transaction causes any pending transaction to be committed. See Section 13.3.3, “Statements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu một giao dịch gây ra bất kỳ giao dịch đang chờ xử lý. Xem phần 13.3.3, Báo cáo của người Viking"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                648.5648803661617,
+                248.3112577614379,
+                11.971275252525231
+            ],
+            "text": "That Cause an Implicit Commit”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Điều đó gây ra một cam kết ngầm ”"
+        },
+        {
+            "bbox": [
+                375.2136437908497,
+                648.5648803661617,
+                163.81576797385617,
+                11.971275252525231
+            ],
+            "text": ", for more information.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", để biết thêm thông tin."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                677.3476957070707,
+                459.8599023692811,
+                11.971275252525231
+            ],
+            "text": "Beginning a transaction also causes table locks acquired with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu một giao dịch cũng gây ra khóa bảng có được "
+        },
+        {
+            "bbox": [
+                600.546176879085,
+                678.4995006313131,
+                110.53921568627447,
+                10.17237436868686
+            ],
+            "text": "LOCK TABLES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bảng khóa"
+        },
+        {
+            "bbox": [
+                711.0853925653595,
+                677.3476957070707,
+                193.66135620915043,
+                11.971275252525231
+            ],
+            "text": " to be released, as though",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được phát hành, như thể"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                692.8779987373737,
+                136.86764705882354,
+                11.971275252525288
+            ],
+            "text": "you had executed ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn đã thực hiện "
+        },
+        {
+            "bbox": [
+                277.55392156862746,
+                694.0298036616161,
+                130.63725490196077,
+                10.17237436868686
+            ],
+            "text": "UNLOCK TABLES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Mở khóa bàn"
+        },
+        {
+            "bbox": [
+                408.19117647058823,
+                692.8779987373737,
+                517.608285130719,
+                11.971275252525288
+            ],
+            "text": ". Beginning a transaction does not release a global read lock acquired",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Bắt đầu một giao dịch không phát hành một khóa đọc toàn cầu có được"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                708.4083017676768,
+                34.43464052287584,
+                11.971275252525231
+            ],
+            "text": "with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "với "
+        },
+        {
+            "bbox": [
+                175.12091503267976,
+                709.5601066919191,
+                271.3235294117647,
+                10.17237436868686
+            ],
+            "text": "FLUSH TABLES WITH READ LOCK",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bàn xả có khóa đọc"
+        },
+        {
+            "bbox": [
+                446.44444444444446,
+                708.4083017676768,
+                4.65604575163394,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                737.1911559343434,
+                785.6658161764706,
+                11.971275252525231
+            ],
+            "text": "For best results, transactions should be performed using only tables managed by a single transaction-safe",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để có kết quả tốt nhất, nên thực hiện các giao dịch chỉ bằng cách sử dụng các bảng được quản lý bởi một giao dịch an toàn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                752.7214201388889,
+                453.32803962418296,
+                11.971275252525288
+            ],
+            "text": "storage engine. Otherwise, the following problems can occur:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "động cơ lưu trữ. Nếu không, các vấn đề sau đây có thể xảy ra:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                781.1936423611112,
+                601.3668300653594,
+                11.97127525252526
+            ],
+            "text": "•If you use tables from more than one transaction-safe storage engine (such as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Nếu bạn sử dụng các bảng từ nhiều hơn một công cụ lưu trữ an toàn giao dịch (chẳng hạn như "
+        },
+        {
+            "bbox": [
+                742.0531045751634,
+                782.3454861111111,
+                60.2941176470589,
+                10.172335542929318
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                802.3472222222223,
+                781.1936423611112,
+                70.76184640522865,
+                11.97127525252526
+            ],
+            "text": "), and the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "), và"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                796.7239453914142,
+                236.43668300653596,
+                11.97127525252526
+            ],
+            "text": "transaction isolation level is not ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mức cách cô lập không "
+        },
+        {
+            "bbox": [
+                393.87132352941177,
+                797.8757891414141,
+                120.5882017973857,
+                10.172335542929318
+            ],
+            "text": "SERIALIZABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Có thể nối tiếp"
+        },
+        {
+            "bbox": [
+                514.4595755718955,
+                796.7239453914142,
+                368.61478758169926,
+                11.97127525252526
+            ],
+            "text": ", it is possible that when one transaction commits,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", có thể là khi một giao dịch cam kết,"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                812.2542484217172,
+                707.5347389705883,
+                11.97127525252526
+            ],
+            "text": "another ongoing transaction that uses the same tables sees only some of the changes made by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một giao dịch đang diễn ra khác sử dụng cùng một bảng chỉ thấy một số thay đổi được thực hiện bởi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                827.7845514520202,
+                699.093545751634,
+                11.97127525252526
+            ],
+            "text": "the first transaction. That is, the atomicity of transactions is not guaranteed with mixed engines",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "giao dịch đầu tiên. Nghĩa là, tính nguyên tử của các giao dịch không được đảm bảo với các động cơ hỗn hợp"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                843.3148544823232,
+                660.0028762254902,
+                11.97127525252526
+            ],
+            "text": "and inconsistencies can result. (If mixed-engine transactions are infrequent, you can use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và sự không nhất quán có thể dẫn đến. (Nếu các giao dịch động cơ hỗn hợp không thường xuyên, bạn có thể sử dụng "
+        },
+        {
+            "bbox": [
+                817.4375167483661,
+                844.4666982323232,
+                30.14705882352939,
+                10.172335542929318
+            ],
+            "text": "SET",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BỘ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                859.9970012626263,
+                271.32352941176475,
+                10.17233554292929
+            ],
+            "text": "TRANSACTION ISOLATION LEVEL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Mức cách ly giao dịch"
+        },
+        {
+            "bbox": [
+                428.75816993464053,
+                858.8451575126263,
+                202.01879084967317,
+                11.971275252525231
+            ],
+            "text": " to set the isolation level to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để đặt mức độ cô lập thành "
+        },
+        {
+            "bbox": [
+                630.7769607843137,
+                859.9970012626263,
+                120.58823529411768,
+                10.17233554292929
+            ],
+            "text": "SERIALIZABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Có thể nối tiếp"
+        },
+        {
+            "bbox": [
+                751.3651960784314,
+                858.8451575126263,
+                153.59919771241834,
+                11.971275252525231
+            ],
+            "text": " on a per-transaction",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trên một giao dịch"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                874.3754605429293,
+                152.64460784313727,
+                11.971275252525231
+            ],
+            "text": "basis as necessary.)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cơ sở khi cần thiết.)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                902.8476827651515,
+                784.7948676470589,
+                11.971275252525245
+            ],
+            "text": "•If you use tables that are not transaction-safe within a transaction, changes to those tables are stored at",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Nếu bạn sử dụng các bảng không an toàn giao dịch trong giao dịch, các thay đổi đối với các bảng đó sẽ được lưu trữ tại"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                918.3779857954546,
+                380.74063807189543,
+                11.971275252525245
+            ],
+            "text": "once, regardless of the status of autocommit mode.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "một lần, bất kể trạng thái của chế độ AutoCommit."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "2722",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2722"
+        }
+    ]
+}

@@ -1,0 +1,1976 @@
+{
+    "metadata": {
+        "page_hash": "ae0546e463b745991a5f206eb380d93b45c0220e1626af0538f2c16b3e285177",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4891,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                271.29004942810457,
+                48.370422979798036,
+                452.2728925653595,
+                11.971275252525288
+            ],
+            "text": "The INFORMATION_SCHEMA INNODB_FT_CONFIG Table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng thông tin_schema innodb_ft_config"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                751.1977459150328,
+                11.971275252525174
+            ],
+            "text": "a short lifetime, this table has limited utility for monitoring or debugging. For information about running",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một cuộc đời ngắn, bảng này có tiện ích hạn chế để giám sát hoặc gỡ lỗi. Để biết thông tin về chạy"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                111.64347885101006,
+                140.68627450980392,
+                10.172335542929432
+            ],
+            "text": "OPTIMIZE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa bảng"
+        },
+        {
+            "bbox": [
+                281.37254901960785,
+                110.49163510101016,
+                111.71160130718954,
+                11.971275252525288
+            ],
+            "text": " on tables with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " trên bảng với "
+        },
+        {
+            "bbox": [
+                393.0841503267974,
+                111.64347885101006,
+                80.39217361111116,
+                10.172335542929432
+            ],
+            "text": "FULLTEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "FULLTEXT"
+        },
+        {
+            "bbox": [
+                473.47632393790855,
+                110.49163510101016,
+                468.0331049836602,
+                11.971275252525288
+            ],
+            "text": " indexes, see Section 12.10.6, “Fine-Tuning MySQL Full-Text",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các chỉ mục, xem Phần 12.10.6, Tinh chỉnh Fining Full-Text"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                126.02193813131316,
+                72.4199513888889,
+                11.971275252525288
+            ],
+            "text": "Search”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tìm kiếm\""
+        },
+        {
+            "bbox": [
+                199.32230392156865,
+                126.02193813131316,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                155.18399053030305,
+                490.57638888888897,
+                11.971275252525288
+            ],
+            "text": "This table is empty initially. Before querying it, set the value of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng này ban đầu trống rỗng. Trước khi truy vấn nó, hãy đặt giá trị của "
+        },
+        {
+            "bbox": [
+                631.2626633986929,
+                156.33575662878786,
+                190.93137254901956,
+                10.172413194444516
+            ],
+            "text": "innodb_ft_aux_table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_ft_aux_table"
+        },
+        {
+            "bbox": [
+                822.1940359477125,
+                155.18399053030305,
+                57.69810416666667,
+                11.971275252525288
+            ],
+            "text": " system",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hệ thống"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                170.71429356060605,
+                601.4170751633987,
+                11.971275252525288
+            ],
+            "text": "variable to the name (including the database name) of the table that contains the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "biến thành tên (bao gồm tên cơ sở dữ liệu) của bảng chứa "
+        },
+        {
+            "bbox": [
+                742.1033496732026,
+                171.86605965909087,
+                80.39215686274508,
+                10.172413194444516
+            ],
+            "text": "FULLTEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "FULLTEXT"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                186.24459659090905,
+                147.0674019607843,
+                11.971275252525288
+            ],
+            "text": "index (for example, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chỉ mục (ví dụ, "
+        },
+        {
+            "bbox": [
+                287.75367647058823,
+                187.39636268939398,
+                130.63725490196083,
+                10.172413194444403
+            ],
+            "text": "test/articles",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bài kiểm tra/bài viết"
+        },
+        {
+            "bbox": [
+                418.39093137254906,
+                186.24459659090905,
+                448.68865849673205,
+                11.971275252525288
+            ],
+            "text": "). The output appears similar to the example provided for the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Đầu ra xuất hiện tương tự như ví dụ được cung cấp cho"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                202.92666571969698,
+                170.83333333333331,
+                10.172413194444403
+            ],
+            "text": "INNODB_FT_DELETED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb_ft_deleted"
+        },
+        {
+            "bbox": [
+                311.51960784313724,
+                201.77489962121217,
+                45.622565767973924,
+                11.971275252525174
+            ],
+            "text": " table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                230.93687436868686,
+                772.4011270424837,
+                11.971275252525288
+            ],
+            "text": "For related usage information and examples, see Section 15.15.4, “InnoDB INFORMATION_SCHEMA",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thông tin và ví dụ về cách sử dụng liên quan, xem Phần 15.15.4, InnoDB Information_Schema"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                246.46717739898986,
+                203.66014746732026,
+                11.971275252525288
+            ],
+            "text": "FULLTEXT Index Tables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng chỉ mục FullText"
+        },
+        {
+            "bbox": [
+                330.5625,
+                246.46717739898986,
+                4.6560290032679745,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                275.62922979797986,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                276.7810735479799,
+                231.12746772875815,
+                10.172335542929318
+            ],
+            "text": "INNODB_FT_BEING_DELETED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb_ft_being_deleted"
+        },
+        {
+            "bbox": [
+                405.3271891339869,
+                275.62922979797986,
+                189.90972222222223,
+                11.971275252525288
+            ],
+            "text": " table has these columns:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng có các cột sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                304.10145202020215,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                305.25329577020204,
+                60.29411764705884,
+                10.172335542929318
+            ],
+            "text": "DOC_ID",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Doc_id"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                333.2635044191919,
+                742.8737577614379,
+                11.971275252525288
+            ],
+            "text": "The document ID of the row that is in the process of being deleted. This value might reflect the value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ID tài liệu của hàng trong quá trình bị xóa. Giá trị này có thể phản ánh giá trị"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                348.79380744949503,
+                746.658905228758,
+                11.971275252525174
+            ],
+            "text": "of an ID column that you defined for the underlying table, or it can be a sequence value generated by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "của một cột ID mà bạn đã xác định cho bảng bên dưới hoặc nó có thể là một giá trị trình tự được tạo bởi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                365.4759154040404,
+                60.29411764705884,
+                10.172374368686974
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                217.72875816993465,
+                364.32411047979804,
+                715.858727124183,
+                11.971275252525288
+            ],
+            "text": " when the table contains no suitable column. This value is used when you perform text searches,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Khi bảng không chứa cột phù hợp. Giá trị này được sử dụng khi bạn thực hiện tìm kiếm văn bản,"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                379.85441351010104,
+                138.6932189542484,
+                11.971275252525288
+            ],
+            "text": "to skip rows in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bỏ qua các hàng trong "
+        },
+        {
+            "bbox": [
+                296.1278594771242,
+                381.0062184343435,
+                211.02941176470586,
+                10.17237436868686
+            ],
+            "text": "INNODB_FT_INDEX_TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb_ft_index_table"
+        },
+        {
+            "bbox": [
+                507.1572712418301,
+                379.85441351010104,
+                417.9554571078432,
+                11.971275252525288
+            ],
+            "text": " table before data for deleted rows is physically removed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng trước khi dữ liệu cho các hàng đã xóa được loại bỏ vật lý"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                395.38471654040404,
+                66.0890355392157,
+                11.971275252525288
+            ],
+            "text": "from the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "từ "
+        },
+        {
+            "bbox": [
+                223.5236760620915,
+                396.5365214646465,
+                80.39215686274508,
+                10.17237436868686
+            ],
+            "text": "FULLTEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "FULLTEXT"
+        },
+        {
+            "bbox": [
+                303.91586642156864,
+                395.38471654040404,
+                94.9632185457516,
+                11.971275252525288
+            ],
+            "text": " index by an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chỉ mục bởi một "
+        },
+        {
+            "bbox": [
+                398.87908496732024,
+                396.5365214646465,
+                140.68627450980404,
+                10.17237436868686
+            ],
+            "text": "OPTIMIZE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa bảng"
+        },
+        {
+            "bbox": [
+                539.5653594771243,
+                395.38471654040404,
+                363.00411846405234,
+                11.971275252525288
+            ],
+            "text": " statement. For more information, see Optimizing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố. Để biết thêm thông tin, hãy xem tối ưu hóa"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                410.91501957070716,
+                193.61112785947714,
+                11.971275252525174
+            ],
+            "text": "InnoDB Full-Text Indexes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ số toàn văn bản in của Innodb."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                440.43292297979804,
+                55.83235126633987,
+                14.365543244949436
+            ],
+            "text": "Notes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                471.6553030303031,
+                79.11929779411767,
+                11.971275252525174
+            ],
+            "text": "•Use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Sử dụng "
+        },
+        {
+            "bbox": [
+                219.80553880718955,
+                472.80712089646465,
+                255.88158619281043,
+                10.17236142676768
+            ],
+            "text": "INFORMATION_SCHEMA COLUMNS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thông tin_schema cột"
+        },
+        {
+            "bbox": [
+                475.687125,
+                471.6553030303031,
+                93.10416666666669,
+                11.971275252525174
+            ],
+            "text": " table or the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng hoặc "
+        },
+        {
+            "bbox": [
+                568.7912414215687,
+                472.80712089646465,
+                120.58823529411757,
+                10.17236142676768
+            ],
+            "text": "SHOW COLUMNS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị cột"
+        },
+        {
+            "bbox": [
+                689.3794767156862,
+                471.6553030303031,
+                211.3141004901962,
+                11.971275252525174
+            ],
+            "text": " statement to view additional",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tuyên bố để xem bổ sung"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                487.1856060606061,
+                617.2275326797385,
+                11.971275252525174
+            ],
+            "text": "information about the columns of this table, including data types and default values.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin về các cột của bảng này, bao gồm các loại dữ liệu và giá trị mặc định."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                515.6578282828283,
+                161.05228758169937,
+                11.971275252525288
+            ],
+            "text": "•You must have the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Bạn phải có "
+        },
+        {
+            "bbox": [
+                301.7385620915033,
+                516.8096461489899,
+                70.34313725490193,
+                10.17236142676768
+            ],
+            "text": "PROCESS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "QUÁ TRÌNH"
+        },
+        {
+            "bbox": [
+                372.08169934640523,
+                515.6578282828283,
+                208.5171568627452,
+                11.971275252525288
+            ],
+            "text": " privilege to query this table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đặc quyền để truy vấn bảng này."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                544.1300505050506,
+                223.38970588235293,
+                11.971275252525288
+            ],
+            "text": "•For more information about ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Để biết thêm thông tin về "
+        },
+        {
+            "bbox": [
+                364.07598039215685,
+                545.2818683712121,
+                145.34232026143798,
+                10.17236142676768
+            ],
+            "text": "InnoDB FULLTEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb FullText"
+        },
+        {
+            "bbox": [
+                509.4183006535948,
+                544.1300505050506,
+                371.2442977941177,
+                11.971275252525288
+            ],
+            "text": " search, see Section 15.6.2.4, “InnoDB Full-Text",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tìm kiếm, xem Phần 15.6.2.4, Văn bản đầy đủ của InnoDB"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                559.6603535353536,
+                78.01388888888891,
+                11.971275252525231
+            ],
+            "text": "Indexes”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ mục ”"
+        },
+        {
+            "bbox": [
+                221.66464093137256,
+                559.6603535353536,
+                392.46442728758166,
+                11.971275252525231
+            ],
+            "text": ", and Section 12.10, “Full-Text Search Functions”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", và phần 12.10, các chức năng tìm kiếm toàn văn bản"
+        },
+        {
+            "bbox": [
+                586.561274509804,
+                559.6603535353536,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                589.5341985479798,
+                78.22157197712419,
+                16.759798295454573
+            ],
+            "text": "26.4.15",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "26.4.15"
+        },
+        {
+            "bbox": [
+                145.034152001634,
+                589.5341985479798,
+                640.9432340277777,
+                16.759798295454573
+            ],
+            "text": "The INFORMATION_SCHEMA INNODB_FT_CONFIG Table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Bảng thông tin_schema innodb_ft_config"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                624.1965277777778,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                625.3483327020202,
+                160.78433047385622,
+                10.17237436868686
+            ],
+            "text": "INNODB_FT_CONFIG",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb_ft_config"
+        },
+        {
+            "bbox": [
+                334.984051879085,
+                624.1965277777778,
+                262.54738562091507,
+                11.971275252525288
+            ],
+            "text": " table provides metadata about the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng cung cấp siêu dữ liệu về "
+        },
+        {
+            "bbox": [
+                597.5314375,
+                625.3483327020202,
+                80.39215686274508,
+                10.17237436868686
+            ],
+            "text": "FULLTEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "FULLTEXT"
+        },
+        {
+            "bbox": [
+                677.9235943627451,
+                624.1965277777778,
+                247.62460825163396,
+                11.971275252525288
+            ],
+            "text": " index and associated processing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chỉ mục và xử lý liên quan"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                639.7268308080809,
+                47.48161764705881,
+                11.971275252525231
+            ],
+            "text": "for an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cho một "
+        },
+        {
+            "bbox": [
+                188.16789215686273,
+                640.8786357323233,
+                60.29413439542486,
+                10.172374368686803
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                248.4620265522876,
+                639.7268308080809,
+                45.62253227124185,
+                11.971275252525231
+            ],
+            "text": " table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                668.8888832070708,
+                490.57638888888897,
+                11.971275252525231
+            ],
+            "text": "This table is empty initially. Before querying it, set the value of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng này ban đầu trống rỗng. Trước khi truy vấn nó, hãy đặt giá trị của "
+        },
+        {
+            "bbox": [
+                631.2626633986929,
+                670.0406881313131,
+                190.93137254901956,
+                10.172374368686917
+            ],
+            "text": "innodb_ft_aux_table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_ft_aux_table"
+        },
+        {
+            "bbox": [
+                822.1940359477125,
+                668.8888832070708,
+                57.69810416666667,
+                11.971275252525231
+            ],
+            "text": " system",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hệ thống"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                684.4191862373738,
+                601.4170751633987,
+                11.971275252525231
+            ],
+            "text": "variable to the name (including the database name) of the table that contains the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "biến thành tên (bao gồm tên cơ sở dữ liệu) của bảng chứa "
+        },
+        {
+            "bbox": [
+                742.1033496732026,
+                685.5709911616161,
+                80.39215686274508,
+                10.17237436868686
+            ],
+            "text": "FULLTEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "FULLTEXT"
+        },
+        {
+            "bbox": [
+                822.4955065359477,
+                684.4191862373738,
+                74.4632185457516,
+                11.971275252525231
+            ],
+            "text": " index (for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chỉ mục (cho"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                699.9494892676768,
+                72.60416666666666,
+                11.971275252525288
+            ],
+            "text": "example, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ví dụ, "
+        },
+        {
+            "bbox": [
+                213.29044117647058,
+                701.1012941919192,
+                130.63727165032682,
+                10.17237436868686
+            ],
+            "text": "test/articles",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bài kiểm tra/bài viết"
+        },
+        {
+            "bbox": [
+                343.9277128267974,
+                699.9494892676768,
+                10.233251633986924,
+                11.971275252525288
+            ],
+            "text": ").",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                729.1115028409091,
+                772.4011270424837,
+                11.971275252525231
+            ],
+            "text": "For related usage information and examples, see Section 15.15.4, “InnoDB INFORMATION_SCHEMA",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết thông tin và ví dụ về cách sử dụng liên quan, xem Phần 15.15.4, InnoDB Information_Schema"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                744.6418058712121,
+                203.66014746732026,
+                11.971275252525288
+            ],
+            "text": "FULLTEXT Index Tables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng chỉ mục FullText"
+        },
+        {
+            "bbox": [
+                330.5625,
+                744.6418058712121,
+                4.6560290032679745,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                773.803858270202,
+                33.51348039215688,
+                11.971275252525231
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                774.955702020202,
+                160.78433047385622,
+                10.17233554292929
+            ],
+            "text": "INNODB_FT_CONFIG",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb_ft_config"
+        },
+        {
+            "bbox": [
+                334.984051879085,
+                773.803858270202,
+                189.90972222222229,
+                11.971275252525231
+            ],
+            "text": " table has these columns:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng có các cột sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                802.2760804924243,
+                19.361107761437893,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                803.4279242424243,
+                30.14705882352942,
+                10.17233554292929
+            ],
+            "text": "KEY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHÌA KHÓA"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                831.4380552398991,
+                370.5240678104575,
+                11.971275252525231
+            ],
+            "text": "The name designating an item of metadata for an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên chỉ định một mục siêu dữ liệu cho một "
+        },
+        {
+            "bbox": [
+                527.9587585784313,
+                832.589898989899,
+                60.2941176470589,
+                10.17233554292929
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                588.2528762254902,
+                831.4380552398991,
+                140.5857843137254,
+                11.971275252525231
+            ],
+            "text": " table containing a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng chứa a "
+        },
+        {
+            "bbox": [
+                728.8386605392157,
+                832.589898989899,
+                80.39215686274508,
+                10.17233554292929
+            ],
+            "text": "FULLTEXT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "FULLTEXT"
+        },
+        {
+            "bbox": [
+                809.2308174019607,
+                831.4380552398991,
+                49.34066952614387,
+                11.971275252525231
+            ],
+            "text": " index.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chỉ mục."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                860.6001076388889,
+                695.4256535947712,
+                11.971275252525231
+            ],
+            "text": "The values for this column might change, depending on the needs for performance tuning and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các giá trị cho cột này có thể thay đổi, tùy thuộc vào nhu cầu điều chỉnh hiệu suất và"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                876.130410669192,
+                107.07228717320262,
+                11.971275252525231
+            ],
+            "text": "debugging for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gỡ lỗi cho "
+        },
+        {
+            "bbox": [
+                264.50692769607844,
+                877.282254419192,
+                60.29411764705884,
+                10.17233554292929
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                324.8010453431373,
+                876.130410669192,
+                477.52941176470586,
+                11.971275252525231
+            ],
+            "text": " full-text processing. The key names and their meanings include:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Xử lý toàn văn. Các tên chính và ý nghĩa của chúng bao gồm:"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                904.6026303030303,
+                19.361111111111114,
+                11.971275252525245
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                905.75448052399,
+                251.22549019607843,
+                10.172329071969685
+            ],
+            "text": "optimize_checkpoint_limit",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa_checkpoint_limit"
+        },
+        {
+            "bbox": [
+                425.40849673202615,
+                904.6026303030303,
+                298.8243129084967,
+                11.971275252525245
+            ],
+            "text": ": The number of seconds after which an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Số giây sau đó "
+        },
+        {
+            "bbox": [
+                724.2328598856209,
+                905.75448052399,
+                140.686324754902,
+                10.172329071969685
+            ],
+            "text": "OPTIMIZE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa bảng"
+        },
+        {
+            "bbox": [
+                864.9191846405229,
+                904.6026303030303,
+                28.85740114379098,
+                11.971275252525245
+            ],
+            "text": " run",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chạy"
+        },
+        {
+            "bbox": [
+                174.18300653594773,
+                920.1329333333333,
+                44.68462377450982,
+                11.971275252525245
+            ],
+            "text": "stops.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "dừng lại."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "4862",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4862"
+        }
+    ]
+}

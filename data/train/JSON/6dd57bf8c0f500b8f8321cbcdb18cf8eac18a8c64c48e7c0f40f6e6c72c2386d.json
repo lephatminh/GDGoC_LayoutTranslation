@@ -1,0 +1,1776 @@
+{
+    "metadata": {
+        "page_hash": "6dd57bf8c0f500b8f8321cbcdb18cf8eac18a8c64c48e7c0f40f6e6c72c2386d",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4086,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                408.91133946078435,
+                48.370422979798036,
+                237.3243296568628,
+                11.971275252525288
+            ],
+            "text": "NDB Cluster Configuration Files",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp cấu hình cụm NDB"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                792.1809473039216,
+                11.971275252525174
+            ],
+            "text": "Therefore, obtaining an optimum configuration is likely to be an iterative process, the outcome of which can",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Do đó, việc có được cấu hình tối ưu có thể là một quá trình lặp lại, kết quả của nó có thể"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                110.49163510101016,
+                781.8806687091503,
+                11.971275252525288
+            ],
+            "text": "vary widely with the specifics of each NDB Cluster deployment. Changes in configuration are also likely to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thay đổi rộng rãi với các chi tiết cụ thể của mỗi lần triển khai cụm NDB. Những thay đổi trong cấu hình cũng có khả năng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                126.02193813131316,
+                786.6205735294117,
+                11.971275252525288
+            ],
+            "text": "be indicated when changes are made in the platform on which the cluster is run, or in applications that use",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được chỉ định khi các thay đổi được thực hiện trong nền tảng mà cụm được chạy hoặc trong các ứng dụng sử dụng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                141.55224116161617,
+                781.0098206699347,
+                11.971275252525288
+            ],
+            "text": "the NDB Cluster ’s data. For these reasons, it is not possible to offer a single configuration that is ideal for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Dữ liệu của cụm NDB. Vì những lý do này, không thể cung cấp một cấu hình duy nhất lý tưởng cho"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                157.08254419191928,
+                691.62379125817,
+                11.971275252525174
+            ],
+            "text": "all usage scenarios. However, in this section, we provide a recommended base configuration.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tất cả các kịch bản sử dụng. Tuy nhiên, trong phần này, chúng tôi cung cấp một cấu hình cơ sở được đề xuất."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                183.9732897727273,
+                180.54738562091504,
+                11.971275252525288
+            ],
+            "text": "Starting config.ini file. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu tệp config.ini. "
+        },
+        {
+            "bbox": [
+                368.1290849673203,
+                183.9732897727273,
+                107.97674918300652,
+                11.971275252525288
+            ],
+            "text": " The following ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Sau đây "
+        },
+        {
+            "bbox": [
+                476.1058341503268,
+                185.1250558712121,
+                100.49019607843138,
+                10.172413194444516
+            ],
+            "text": "config.ini",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Cấu hình.ini"
+        },
+        {
+            "bbox": [
+                576.5959799836602,
+                183.9732897727273,
+                379.7859142156864,
+                11.971275252525288
+            ],
+            "text": " file is a recommended starting point for configuring",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tệp là một điểm bắt đầu được đề xuất để định cấu hình"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                199.5035928030303,
+                254.1062091503268,
+                11.971275252525288
+            ],
+            "text": "a cluster running NDB Cluster 8.0:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một cụm chạy cụm NDB 8.0:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                225.7808784722223,
+                8.039215686274503,
+                8.137839962121234
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                225.7808784722223,
+                112.54901960784318,
+                8.137839962121234
+            ],
+            "text": "TCP PARAMETERS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tham số TCP"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                250.62929861111115,
+                104.50978717320262,
+                8.137917613636432
+            ],
+            "text": "[tcp default]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[mặc định TCP]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                263.05359280303037,
+                152.74509803921566,
+                8.137827020202053
+            ],
+            "text": "SendBufferMemory=2M",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "SendBufferMemory = 2m"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                275.4777964015152,
+                176.86272834967318,
+                8.137917613636432
+            ],
+            "text": "ReceiveBufferMemory=2M",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nhận bbuffermemory = 2m"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                300.32630713383844,
+                8.039215686274503,
+                8.13782702020194
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                300.32630713383844,
+                522.5490363562092,
+                8.13782702020194
+            ],
+            "text": "Increasing the sizes of these 2 buffers beyond the default values",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tăng kích thước của 2 bộ đệm này ngoài các giá trị mặc định"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                312.7505107323233,
+                8.039215686274503,
+                8.137917613636432
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                312.7505107323233,
+                377.84315400326807,
+                8.137917613636432
+            ],
+            "text": "helps prevent bottlenecks due to slow disk I/O.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Giúp ngăn chặn tắc nghẽn do I/O đĩa chậm."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                337.59900852272733,
+                8.039215686274503,
+                8.137917613636432
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                337.59900852272733,
+                209.01959109477124,
+                8.137917613636432
+            ],
+            "text": "MANAGEMENT NODE PARAMETERS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thông số nút quản lý"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                362.44751925505057,
+                144.70586560457517,
+                8.137865845959595
+            ],
+            "text": "[ndb_mgmd default]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[NDB_MGMD mặc định]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                374.8717228535354,
+                64.31370874183006,
+                8.137917613636432
+            ],
+            "text": "DataDir=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Datadir ="
+        },
+        {
+            "bbox": [
+                235.1470420751634,
+                374.8717228535354,
+                321.56862745098033,
+                8.137917613636432
+            ],
+            "text": "path/to/management/server/data/directory",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "đường dẫn/đến/quản lý/máy chủ/dữ liệu/thư mục"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                399.72022064393946,
+                8.039215686274503,
+                8.137917613636318
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                399.72022064393946,
+                546.6666666666667,
+                8.137917613636318
+            ],
+            "text": "It is possible to use a different data directory for each management",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Có thể sử dụng một thư mục dữ liệu khác nhau cho mỗi quản lý"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                412.144476010101,
+                8.039215686274503,
+                8.137878787878776
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                412.144476010101,
+                490.3921401143791,
+                8.137878787878776
+            ],
+            "text": "server, but for ease of administration it is preferable to be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "máy chủ, nhưng để dễ quản trị, tốt hơn là"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                424.56869255050515,
+                8.039215686274503,
+                8.137904671717138
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                424.56869255050515,
+                88.43135580065362,
+                8.137904671717138
+            ],
+            "text": "consistent.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "nhất quán."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                449.4171903409091,
+                80.39215686274508,
+                8.137904671717251
+            ],
+            "text": "[ndb_mgmd]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[NDB_MGMD]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                461.8414327651516,
+                72.35295792483657,
+                8.137917613636318
+            ],
+            "text": "HostName=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tên máy chủ ="
+        },
+        {
+            "bbox": [
+                243.18627450980392,
+                461.8414327651516,
+                225.0980057189543,
+                8.137917613636318
+            ],
+            "text": "management-server-A-hostname",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "Quản lý-server-a-hostname"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                474.26568813131314,
+                8.039215686274503,
+                8.137917613636318
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91178145424837,
+                474.26568813131314,
+                56.274509803921546,
+                8.137917613636318
+            ],
+            "text": "NodeId=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "NododeId ="
+        },
+        {
+            "bbox": [
+                243.18627450980392,
+                474.26568813131314,
+                209.0196078431373,
+                8.137917613636318
+            ],
+            "text": "management-server-A-nodeid",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "Quản lý-server-a-nodeid"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                499.11414709595965,
+                80.39215686274508,
+                8.137917613636318
+            ],
+            "text": "[ndb_mgmd]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[NDB_MGMD]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                511.5384024621212,
+                72.35295792483657,
+                8.137904671717195
+            ],
+            "text": "HostName=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tên máy chủ ="
+        },
+        {
+            "bbox": [
+                243.18627450980392,
+                511.5384024621212,
+                225.0980057189543,
+                8.137904671717195
+            ],
+            "text": "management-server-B-hostname",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "Quản lý-server-b-hostname"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                523.9626448863637,
+                8.039215686274503,
+                8.137917613636375
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91178145424837,
+                523.9626448863637,
+                56.274509803921546,
+                8.137917613636375
+            ],
+            "text": "NodeId=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "NododeId ="
+        },
+        {
+            "bbox": [
+                243.18627450980392,
+                523.9626448863637,
+                209.0196078431373,
+                8.137917613636375
+            ],
+            "text": "management-server-B-nodeid",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 8
+            },
+            "text_vi": "Quản lý-máy chủ-B-Nodeid"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                548.8111167929294,
+                8.039215686274503,
+                8.137904671717195
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                548.8111167929294,
+                530.5882185457517,
+                8.137904671717195
+            ],
+            "text": "Using 2 management servers helps guarantee that there is always an",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Sử dụng 2 máy chủ quản lý giúp đảm bảo rằng luôn có"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                561.2353592171717,
+                8.039215686274503,
+                8.137917613636432
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                561.2353592171717,
+                466.27450980392166,
+                8.137917613636432
+            ],
+            "text": "arbitrator in the event of network partitioning, and so is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Trọng tài viên trong trường hợp phân vùng mạng, và cũng vậy"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                573.6596145833333,
+                8.039215686274503,
+                8.137904671717195
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                573.6596145833333,
+                522.5490363562092,
+                8.137904671717195
+            ],
+            "text": "recommended for high availability. Each management server must be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "được đề xuất cho sự sẵn có cao. Mỗi máy chủ quản lý phải"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                586.0838570075757,
+                8.039215686274503,
+                8.137917613636375
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                586.0838570075757,
+                554.7058656045751,
+                8.137917613636375
+            ],
+            "text": "identified by a HostName. You may for the sake of convenience specify",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "được xác định bởi một tên máy chủ. Bạn có thể vì lợi ích của sự thuận tiện chỉ định"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                598.5081123737374,
+                8.039215686274503,
+                8.137917613636375
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                598.5081123737374,
+                490.3921401143791,
+                8.137917613636375
+            ],
+            "text": "a NodeId for any management server, although one is allocated",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "một nododeid cho bất kỳ máy chủ quản lý nào, mặc dù một người được phân bổ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                610.9323289141414,
+                8.039215686274503,
+                8.137904671717195
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                610.9323289141414,
+                522.5490363562092,
+                8.137904671717195
+            ],
+            "text": "for it automatically; if you do so, it must be in the range 1-255",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "cho nó tự động; Nếu bạn làm như vậy, nó phải nằm trong phạm vi 1-255"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                623.3565713383839,
+                8.039215686274503,
+                8.137917613636432
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                623.3565713383839,
+                514.5097871732027,
+                8.137917613636432
+            ],
+            "text": "inclusive and must be unique among all IDs specified for cluster",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bao gồm và phải là duy nhất trong số tất cả các ID được chỉ định cho cụm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                635.7808267045455,
+                8.039215686274503,
+                8.137904671717195
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                635.7808267045455,
+                48.23527736928105,
+                8.137904671717195
+            ],
+            "text": "nodes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "nút."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                660.6293244949495,
+                8.039215686274503,
+                8.137917613636318
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                660.6293244949495,
+                160.78433047385622,
+                8.137917613636318
+            ],
+            "text": "DATA NODE PARAMETERS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tham số nút dữ liệu"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                685.4777834595959,
+                112.54901960784312,
+                8.137917613636432
+            ],
+            "text": "[ndbd default]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[Mặc định NDBD]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                697.9020388257576,
+                112.54901960784312,
+                8.137904671717195
+            ],
+            "text": "NoOfReplicas=2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Noofreplicas = 2"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                722.7505366161616,
+                8.039215686274503,
+                8.137917613636375
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                722.7505366161616,
+                619.0196245915033,
+                8.137917613636375
+            ],
+            "text": "Using two fragment replicas is recommended to guarantee availability of data;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Sử dụng hai bản sao đoạn được khuyến nghị để đảm bảo tính khả dụng của dữ liệu;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                735.1747531565657,
+                8.039215686274503,
+                8.137904671717138
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                735.1747531565657,
+                610.9803754084968,
+                8.137904671717138
+            ],
+            "text": "using only one fragment replica does not provide any redundancy, which means",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Chỉ sử dụng một bản sao đoạn không cung cấp bất kỳ dự phòng nào, có nghĩa là"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                747.5989955808082,
+                8.039215686274503,
+                8.137917613636375
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                747.5989955808082,
+                538.6274677287582,
+                8.137917613636375
+            ],
+            "text": "that the failure of a single data node causes the entire cluster to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "rằng sự thất bại của một nút dữ liệu duy nhất khiến toàn bộ cụm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                760.0232897727274,
+                8.039215686274503,
+                8.137827020201996
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                760.0232897727274,
+                562.7451147875818,
+                8.137827020201996
+            ],
+            "text": "shut down. As of NDB 8.0.19, it is also possible (but not required) to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tắt. Kể từ NDB 8.0.19, cũng có thể (nhưng không bắt buộc)"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                772.4474933712121,
+                8.039215686274503,
+                8.137839962121234
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                772.4474933712121,
+                570.7842969771242,
+                8.137839962121234
+            ],
+            "text": "use more than two fragment replicas, although two fragment replicas are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "sử dụng nhiều hơn hai bản sao đoạn, mặc dù hai bản sao đoạn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                784.8717875631313,
+                8.039215686274503,
+                8.137839962121205
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                784.8717875631313,
+                321.5686441993464,
+                8.137839962121205
+            ],
+            "text": "sufficient to provide high availability.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "đủ để cung cấp tính sẵn sàng cao."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                809.7202853535354,
+                184.90197753267975,
+                8.137839962121205
+            ],
+            "text": "LockPagesInMainMemory=1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "LockPagesInmainMemory = 1"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                834.5687054924242,
+                8.039215686274503,
+                8.137839962121205
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                834.5687054924242,
+                546.6666666666667,
+                8.137839962121205
+            ],
+            "text": "On Linux and Solaris systems, setting this parameter locks data node",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Trên các hệ thống Linux và Solaris, đặt tham số này khóa nút dữ liệu"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                846.9929996843434,
+                8.039215686274503,
+                8.137839962121205
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                846.9929996843434,
+                546.6666666666667,
+                8.137839962121205
+            ],
+            "text": "processes into memory. Doing so prevents them from swapping to disk,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "quá trình vào bộ nhớ. Làm như vậy ngăn cản họ hoán đổi sang đĩa,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                859.4172162247474,
+                8.039215686274503,
+                8.137827020202025
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                859.4172162247474,
+                377.84315400326807,
+                8.137827020202025
+            ],
+            "text": "which can severely degrade cluster performance.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mà có thể làm suy giảm nghiêm trọng hiệu suất cụm."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                884.2657140151515,
+                128.62745098039218,
+                8.137827020201996
+            ],
+            "text": "DataMemory=3456M",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "DataMemory = 3456m"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                909.1142130997475,
+                8.039215686274503,
+                8.137832196969697
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                909.1142130997475,
+                401.9608010620916,
+                8.137832196969697
+            ],
+            "text": "The value provided for DataMemory assumes 4 GB RAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Giá trị được cung cấp cho Datamemory giả định RAM 4 GB"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                921.5384244633839,
+                8.039215686274503,
+                8.137832196969697
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                186.91176470588235,
+                921.5384244633839,
+                546.6666666666667,
+                8.137832196969697
+            ],
+            "text": "per data node. However, for best results, you should first calculate",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mỗi nút dữ liệu. Tuy nhiên, để có kết quả tốt nhất, trước tiên bạn nên tính toán"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "4057",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4057"
+        }
+    ]
+}

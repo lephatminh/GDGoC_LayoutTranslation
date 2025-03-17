@@ -1,0 +1,696 @@
+{
+    "metadata": {
+        "page_hash": "08095f61f21169d7d013abb7f1b011c7063ed602df2a0d30c9489839f8b9661b",
+        "original_filename": "perl-all-en-5.8.5.pdf",
+        "page_no": 1065,
+        "num_pages": 1714,
+        "original_width": 595.276,
+        "original_height": 841.89001,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                97.61913133571655,
+                237.80207909819467,
+                170.95910422224318,
+                22.64150693509248
+            ],
+            "text": "Chapter 70",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 20.66300010681152
+            },
+            "text_vi": "Chương 70"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                299.8717703634469,
+                149.38175186804102,
+                27.160314267180752
+            ],
+            "text": "perlguts",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 24.78700065612793
+            },
+            "text_vi": "Perlguts"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                380.12413521809106,
+                191.55492742022187,
+                10.916994370796601
+            ],
+            "text": "Introduction to the Perl API",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Giới thiệu về API Perl"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                422.2684008924159,
+                43.22891646059979,
+                15.719588476884269
+            ],
+            "text": "70.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 14.3459997177124
+            },
+            "text_vi": "70.1"
+        },
+        {
+            "bbox": [
+                165.55028847962964,
+                422.2684008924159,
+                171.55704786519195,
+                15.719588476884269
+            ],
+            "text": "DESCRIPTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 14.3459997177124
+            },
+            "text_vi": "SỰ MIÊU TẢ"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                457.87366362739,
+                829.7621695230448,
+                10.916909145887189
+            ],
+            "text": "This document attempts to describe how to use the Perl API, as well as to provide some info on the basic workings of the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Tài liệu này cố gắng mô tả cách sử dụng API Perl, cũng như để cung cấp một số thông tin về các hoạt động cơ bản của"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                472.4300660130175,
+                791.7465843155109,
+                10.91692132087428
+            ],
+            "text": "Perl core. It is far from complete and probably contains many errors. Please refer any questions or comments to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Core Perl. Nó là xa hoàn chỉnh và có thể chứa nhiều lỗi. Vui lòng giới thiệu bất kỳ câu hỏi hoặc nhận xét nào cho"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                486.98525089993643,
+                92.79244539507725,
+                10.916909145887189
+            ],
+            "text": "author below.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Tác giả dưới đây."
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                529.1294678743129,
+                43.22891646059979,
+                15.719588476884326
+            ],
+            "text": "70.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 14.3459997177124
+            },
+            "text_vi": "70.2"
+        },
+        {
+            "bbox": [
+                165.55028847962964,
+                529.1294678743129,
+                99.27828977650702,
+                15.719588476884326
+            ],
+            "text": "Variables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 14.3459997177124
+            },
+            "text_vi": "Biến"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                565.5047376675725,
+                51.463004723859186,
+                13.099665180728323
+            ],
+            "text": "70.2.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 11.95499992370605
+            },
+            "text_vi": "70.2.1"
+        },
+        {
+            "bbox": [
+                169.66733863787553,
+                565.5047376675725,
+                88.04289325455753,
+                13.099665180728323
+            ],
+            "text": "Datatypes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 11.95499992370605
+            },
+            "text_vi": "Kiểu dữ liệu"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                594.7558015921818,
+                434.506837122612,
+                10.916921320874224
+            ],
+            "text": "Perl has three typedefs that handle Perl’s three main data types:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Perl có ba typedefs xử lý ba loại dữ liệu chính của Perl:"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                626.3775546522995,
+                18.012956678918698,
+                10.225528154206302
+            ],
+            "text": "SV",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Sv"
+        },
+        {
+            "bbox": [
+                169.66870581881346,
+                626.3775546522995,
+                108.07773490784109,
+                10.225528154206302
+            ],
+            "text": "Scalar Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Giá trị vô hướng"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                640.9327395392185,
+                18.012956678918698,
+                10.225528154206245
+            ],
+            "text": "AV",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "AV"
+        },
+        {
+            "bbox": [
+                169.66870581881346,
+                640.9327395392185,
+                99.07124968082036,
+                10.225528154206245
+            ],
+            "text": "Array Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Giá trị mảng"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                655.4879122511502,
+                18.012956678918698,
+                10.225540329193393
+            ],
+            "text": "HV",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "HV"
+        },
+        {
+            "bbox": [
+                169.66870581881346,
+                655.4879122511502,
+                90.06478167270308,
+                10.225540329193393
+            ],
+            "text": "Hash Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Giá trị băm"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                686.9398607663726,
+                510.86454682365826,
+                10.916921320874167
+            ],
+            "text": "Each typedef has specific routines that manipulate the various data types.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Mỗi typedef có các thói quen cụ thể thao tác các loại dữ liệu khác nhau."
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                724.8557534255574,
+                51.463004723859186,
+                13.099677355715414
+            ],
+            "text": "70.2.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 11.95499992370605
+            },
+            "text_vi": "70.2.2"
+        },
+        {
+            "bbox": [
+                169.66733863787553,
+                724.8557534255574,
+                156.0975788121813,
+                13.099677355715414
+            ],
+            "text": "What is an \"IV\"?",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 11.95499992370605
+            },
+            "text_vi": "\"IV\" là gì?"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                754.1068173501667,
+                782.6886317859279,
+                10.916945670848406
+            ],
+            "text": "Perl uses a special typedef IV which is a simple signed integer type that is guaranteed to be large enough to hold a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Perl sử dụng một typedef IV đặc biệt, một loại số nguyên có chữ ký đơn giản được đảm bảo là đủ lớn để giữ một"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                768.6620144120727,
+                637.5042958644393,
+                10.91695784583547
+            ],
+            "text": "pointer (as well as an integer). Additionally, there is the UV, which is simply an unsigned IV.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Con trỏ (cũng như một số nguyên). Ngoài ra, có UV, đơn giản là IV không dấu."
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                788.0689438279474,
+                792.8787788773611,
+                10.916957845835498
+            ],
+            "text": "Perl also uses two special typedefs, I32 and I16, which will always be at least 32-bits and 16-bits long, respectively.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Perl cũng sử dụng hai typedef đặc biệt, I32 và I16, sẽ luôn luôn dài ít nhất 32 bit và 16 bit, tương ứng."
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                802.6241408898533,
+                829.7628066224743,
+                10.91695784583544
+            ],
+            "text": "(Again, there are U32 and U16, as well.) They will usually be exactly 32 and 16 bits long, but on Crays they will both be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "(Một lần nữa, cũng có U32 và U16.) Chúng thường sẽ dài chính xác 32 và 16 bit, nhưng trên CRAYS, cả hai sẽ"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                817.1805554504679,
+                17.155188391603218,
+                10.916945670848378
+            ],
+            "text": "64",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "64"
+        },
+        {
+            "bbox": [
+                119.06312328230938,
+                817.1805554504679,
+                29.078051357689574,
+                10.916945670848378
+            ],
+            "text": "bits.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "bit."
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                855.0964481096527,
+                51.463004723859186,
+                13.099689530702477
+            ],
+            "text": "70.2.3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 11.95499992370605
+            },
+            "text_vi": "70.2.3"
+        },
+        {
+            "bbox": [
+                169.66733863787553,
+                855.0964481096527,
+                160.87336223029322,
+                13.099689530702477
+            ],
+            "text": "Working with SVs",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 11.95499992370605
+            },
+            "text_vi": "Làm việc với SVS"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                884.3475242092492,
+                832.5930261340959,
+                10.916945670848378
+            ],
+            "text": "An SV can be created and loaded with one command. There are five types of values that can be loaded: an integer value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Một SV có thể được tạo và tải với một lệnh. Có năm loại giá trị có thể được tải: giá trị số nguyên"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                898.9027212711551,
+                633.8673535049288,
+                10.916942018352245
+            ],
+            "text": "(IV), an unsigned integer value (UV), a double (NV), a string (PV), and another scalar (SV).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                918.3096531220272,
+                158.90859235883863,
+                10.916943235850965
+            ],
+            "text": "The seven routines are:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Bảy thói quen là:"
+        },
+        {
+            "bbox": [
+                495.3447892238222,
+                989.2289991658174,
+                34.31036989564507,
+                10.916948105845798
+            ],
+            "text": "1065",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "1065"
+        }
+    ]
+}

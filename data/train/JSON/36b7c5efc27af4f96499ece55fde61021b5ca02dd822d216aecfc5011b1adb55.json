@@ -1,0 +1,1016 @@
+{
+    "metadata": {
+        "page_hash": "36b7c5efc27af4f96499ece55fde61021b5ca02dd822d216aecfc5011b1adb55",
+        "original_filename": "tips1352.pdf",
+        "page_no": 19,
+        "num_pages": 21,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "redbooks",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                120.58823529411765,
+                965.1966856060606,
+                446.26089910130713,
+                13.161934406565663
+            ],
+            "text": "Setting Up IBM Data Server Manager as a Highly Available Service",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Setting Up IBM Data Server Manager as a Highly Available Service"
+        },
+        {
+            "bbox": [
+                887.8897193627452,
+                965.1966856060606,
+                16.702877450980395,
+                13.161934406565663
+            ],
+            "text": "20",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "20"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                100.77611047979804,
+                145.18823529411762,
+                28.731073547979804
+            ],
+            "text": "Notices",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNHJ+Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Thông báo"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                144.80841508838387,
+                757.048318627451,
+                13.161905934343508
+            ],
+            "text": "This information was developed for products and services offered in the US. This material might be available from ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "This information was developed for products and services offered in the US. This material might be available from "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                157.931935290404,
+                731.6420020424837,
+                13.161905934343508
+            ],
+            "text": "IBM in other languages. However, you may be required to own a copy of the product or product version in that ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "IBM in other languages. However, you may be required to own a copy of the product or product version in that "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                171.13231755050504,
+                203.99158088235296,
+                13.161905934343395
+            ],
+            "text": "language in order to access it. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "language in order to access it. "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                190.93344097222234,
+                783.6759260620915,
+                13.161905934343395
+            ],
+            "text": "IBM may not offer the products, services, or features discussed in this document in other countries. Consult your local ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "IBM may not offer the products, services, or features discussed in this document in other countries. Tham khảo ý kiến ​​địa phương của bạn "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                204.1338102904042,
+                773.422861111111,
+                13.161918876262575
+            ],
+            "text": "IBM representative for information on the products and services currently available in your area. Any reference to an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Đại diện IBM cho thông tin về các sản phẩm và dịch vụ hiện có sẵn trong khu vực của bạn. Bất kỳ tài liệu tham khảo nào cho một "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                217.33419255050512,
+                779.1552741013072,
+                13.161905934343508
+            ],
+            "text": "IBM product, program, or service is not intended to state or imply that only that IBM product, program, or service may ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Sản phẩm, chương trình hoặc dịch vụ của IBM không nhằm mục đích tuyên bố hoặc ngụ ý rằng chỉ có sản phẩm, chương trình hoặc dịch vụ IBM mới có thể "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                230.53457481060616,
+                773.0957487745098,
+                13.161905934343395
+            ],
+            "text": "be used. Any functionally equivalent product, program, or service that does not infringe any IBM intellectual property ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "được sử dụng. Bất kỳ sản phẩm, chương trình hoặc dịch vụ tương đương về chức năng nào không vi phạm bất kỳ tài sản trí tuệ nào của IBM "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                243.7349441287879,
+                777.9117079248365,
+                13.161918876262689
+            ],
+            "text": "right may be used instead. However, it is the user's responsibility to evaluate and verify the operation of any non-IBM ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "đúng có thể được sử dụng thay thế. Tuy nhiên, trách nhiệm của người dùng là đánh giá và xác minh hoạt động của bất kỳ IBM nào "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                256.93532638888894,
+                191.93878676470584,
+                13.161905934343395
+            ],
+            "text": "product, program, or service.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "sản phẩm, chương trình hoặc dịch vụ."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                276.736449810606,
+                733.6708991013072,
+                13.161905934343508
+            ],
+            "text": "IBM may have patents or pending patent applications covering subject matter described in this document. The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "IBM có thể có bằng sáng chế hoặc đang chờ xử lý các ứng dụng bằng sáng chế bao gồm các vấn đề được mô tả trong tài liệu này. Các "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                289.93683207070706,
+                784.27883374183,
+                13.161905934343508
+            ],
+            "text": "furnishing of this document does not grant you any license to these patents. You can send license inquiries, in writing, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Nội thất tài liệu này không cấp cho bạn bất kỳ giấy phép nào cho các bằng sáng chế này. Bạn có thể gửi yêu cầu giấy phép, bằng văn bản, "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                303.1372013888889,
+                20.825591584967327,
+                13.161918876262575
+            ],
+            "text": "to: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "ĐẾN: "
+        },
+        {
+            "bbox": [
+                119.5107693627451,
+                322.9408484848485,
+                708.340847875817,
+                13.161918876262689
+            ],
+            "text": "IBM Director of Licensing, IBM Corporation, North Castle Drive, MD-NC119, Armonk, NY 10504-1785, US",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Giám đốc cấp phép của IBM, Tập đoàn IBM, North Castle Drive, MD-NC119, Armonk, NY 10504-1785, Hoa Kỳ"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                342.7421272095961,
+                756.3399129901961,
+                13.161918876262575
+            ],
+            "text": "INTERNATIONAL BUSINESS MACHINES CORPORATION PROVIDES THIS PUBLICATION “AS IS” WITHOUT ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Tập đoàn máy kinh doanh quốc tế cung cấp ấn phẩm này \"As as is\" mà không có "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                355.94250946969703,
+                776.5717716503268,
+                13.16194476010105
+            ],
+            "text": "WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Bảo hành dưới bất kỳ hình thức nào, thể hiện hoặc ngụ ý, bao gồm, nhưng không giới hạn "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                369.14289172979807,
+                762.2532585784314,
+                13.161944760100937
+            ],
+            "text": "WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Bảo hành không vi phạm, thương mại hoặc thể lực cho một mục đích cụ thể. "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                382.3432610479798,
+                748.6539035947712,
+                13.161957702020231
+            ],
+            "text": "Some jurisdictions do not allow disclaimer of express or implied warranties in certain transactions, therefore, this ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Một số khu vực pháp lý không cho phép từ chối trách nhiệm bảo hành rõ ràng hoặc ngụ ý trong một số giao dịch nhất định "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                395.54364330808085,
+                212.51718586601308,
+                13.161957702020231
+            ],
+            "text": "statement may not apply to you.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Tuyên bố có thể không áp dụng cho bạn."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                415.34476672979804,
+                764.9483888888888,
+                13.16194476010105
+            ],
+            "text": "This information could include technical inaccuracies or typographical errors. Changes are periodically made to the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Thông tin này có thể bao gồm sự không chính xác về kỹ thuật hoặc lỗi đánh máy. Những thay đổi được thực hiện định kỳ cho "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                428.5451489898991,
+                692.9783656045751,
+                13.161944760100937
+            ],
+            "text": "information herein; these changes will be incorporated in new editions of the publication. IBM may make ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "thông tin ở đây; Những thay đổi này sẽ được kết hợp trong các phiên bản mới của ấn phẩm. IBM có thể thực hiện "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                441.7455183080808,
+                785.3685494281046,
+                13.161957702020231
+            ],
+            "text": "improvements and/or changes in the product(s) and/or the program(s) described in this publication at any time without ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "cải tiến và/hoặc thay đổi trong (các) sản phẩm và/hoặc (các) chương trình được mô tả trong ấn phẩm này bất cứ lúc nào mà không "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                454.94590056818186,
+                44.38250502450978,
+                13.16194476010105
+            ],
+            "text": "notice.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "để ý."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                474.74702398989905,
+                769.7403476307189,
+                13.161944760100937
+            ],
+            "text": "Any references in this information to non-IBM websites are provided for convenience only and do not in any manner ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Bất kỳ tài liệu tham khảo nào trong thông tin này cho các trang web không phải là IBM chỉ được cung cấp để thuận tiện và không theo bất kỳ cách nào "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                487.9474062500001,
+                779.7913100490197,
+                13.161944760100937
+            ],
+            "text": "serve as an endorsement of those websites. The materials at those websites are not part of the materials for this IBM ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Phục vụ như một sự chứng thực của các trang web đó. Các tài liệu tại các trang web đó không phải là một phần của các tài liệu cho IBM này "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                501.14777556818194,
+                355.5182687908497,
+                13.161957702020118
+            ],
+            "text": "product and use of those websites is at your own risk.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Sản phẩm và việc sử dụng các trang web đó có nguy cơ của riêng bạn."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                520.948898989899,
+                771.6681850490197,
+                13.161944760100994
+            ],
+            "text": "IBM may use or distribute any of the information you provide in any way it believes appropriate without incurring any ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "IBM có thể sử dụng hoặc phân phối bất kỳ thông tin nào bạn cung cấp theo bất kỳ cách nào mà nó tin là phù hợp mà không phát sinh bất kỳ "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                534.1492812500001,
+                113.518766748366,
+                13.161944760100994
+            ],
+            "text": "obligation to you.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "nghĩa vụ đối với bạn."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                553.9504046717173,
+                749.6895388071895,
+                13.161944760100994
+            ],
+            "text": "The performance data and client examples cited are presented for illustrative purposes only. Actual performance ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Dữ liệu hiệu suất và các ví dụ khách hàng được trích dẫn chỉ được trình bày cho mục đích minh họa. Hiệu suất thực tế "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                567.150773989899,
+                528.1237969771241,
+                13.161957702020231
+            ],
+            "text": "results may vary depending on specific configurations and operating conditions.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Kết quả có thể thay đổi tùy thuộc vào cấu hình cụ thể và điều kiện hoạt động."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                586.9518974116162,
+                720.4409125816993,
+                13.161944760100994
+            ],
+            "text": "Information concerning non-IBM products was obtained from the suppliers of those products, their published ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Thông tin liên quan đến các sản phẩm không phải IBM được lấy từ các nhà cung cấp các sản phẩm đó, được xuất bản "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                600.1522796717172,
+                733.4176805555555,
+                13.161944760100994
+            ],
+            "text": "announcements or other publicly available sources. IBM has not tested those products and cannot confirm the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "thông báo hoặc các nguồn có sẵn công khai khác. IBM chưa thử nghiệm các sản phẩm đó và không thể xác nhận "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                613.3526489898991,
+                780.9791544117646,
+                13.161957702020231
+            ],
+            "text": "accuracy of performance, compatibility or any other claims related to non-IBM products. Questions on the capabilities ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Độ chính xác của hiệu suất, khả năng tương thích hoặc bất kỳ khiếu nại nào khác liên quan đến các sản phẩm không phải IBM. Câu hỏi về khả năng "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                626.55303125,
+                507.4398664215686,
+                13.161944760100994
+            ],
+            "text": "of non-IBM products should be addressed to the suppliers of those products.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "của các sản phẩm không phải IBM nên được gửi đến các nhà cung cấp của các sản phẩm đó."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                646.3541546717172,
+                787.5028774509803,
+                13.161944760100994
+            ],
+            "text": "Statements regarding IBM's future direction or intent are subject to change or withdrawal without notice, and represent ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Các tuyên bố về hướng hoặc ý định trong tương lai của IBM có thể thay đổi hoặc rút tiền mà không cần thông báo và đại diện "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                659.5545369318182,
+                171.8985294117647,
+                13.161944760100994
+            ],
+            "text": "goals and objectives only.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Mục tiêu và mục tiêu chỉ."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                679.3556474116162,
+                737.9516809640522,
+                13.161957702020175
+            ],
+            "text": "This information contains examples of data and reports used in daily business operations. To illustrate them as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Thông tin này chứa các ví dụ về dữ liệu và báo cáo được sử dụng trong các hoạt động kinh doanh hàng ngày. Để minh họa chúng như "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                692.5560296717172,
+                782.4248063725489,
+                13.16193181818187
+            ],
+            "text": "completely as possible, the examples include the names of individuals, companies, brands, and products. All of these ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Hoàn toàn càng tốt, các ví dụ bao gồm tên của các cá nhân, công ty, thương hiệu và sản phẩm. Tất cả những điều này "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                705.7564119318182,
+                674.3596090686274,
+                13.161931818181813
+            ],
+            "text": "names are fictitious and any similarity to actual people or business enterprises is entirely coincidental.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Tên là hư cấu và bất kỳ sự tương đồng nào với người thực tế hoặc doanh nghiệp kinh doanh là hoàn toàn trùng hợp."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                725.5575482954546,
+                162.26053145424837,
+                13.161931818181813
+            ],
+            "text": "COPYRIGHT LICENSE:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "COPYRIGHT LICENSE:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                745.3586846590908,
+                774.4824129901962,
+                13.16193181818187
+            ],
+            "text": "This information contains sample application programs in source language, which illustrate programming techniques ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Thông tin này chứa các chương trình ứng dụng mẫu bằng ngôn ngữ nguồn, minh họa các kỹ thuật lập trình "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                758.559066919192,
+                751.2526470588236,
+                13.161931818181813
+            ],
+            "text": "on various operating platforms. You may copy, modify, and distribute these sample programs in any form without ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Trên các nền tảng hoạt động khác nhau. Bạn có thể sao chép, sửa đổi và phân phối các chương trình mẫu này dưới mọi hình thức mà không "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                771.7594491792929,
+                770.6990073529411,
+                13.161931818181841
+            ],
+            "text": "payment to IBM, for the purposes of developing, using, marketing or distributing application programs conforming to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Thanh toán cho IBM, cho các mục đích phát triển, sử dụng, tiếp thị hoặc phân phối các chương trình ứng dụng phù hợp với "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                784.9598184974748,
+                760.4504477124184,
+                13.161931818181841
+            ],
+            "text": "the application programming interface for the operating platform for which the sample programs are written. These ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "giao diện lập trình ứng dụng cho"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                798.1602007575758,
+                772.4882185457516,
+                13.161931818181785
+            ],
+            "text": "examples have not been thoroughly tested under all conditions. IBM, therefore, cannot guarantee or imply reliability, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Nền tảng hoạt động mà các chương trình mẫu được viết. Những cái này "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                811.3605830176768,
+                786.242864379085,
+                13.161931818181813
+            ],
+            "text": "serviceability, or function of these programs. The sample programs are provided “AS IS”, without warranty of any kind. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "Ví dụ chưa được kiểm tra kỹ lưỡng trong tất cả các điều kiện. Do đó, IBM không thể đảm bảo hoặc ngụ ý độ tin cậy, "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                824.5609652777778,
+                579.7174399509804,
+                13.161918876262632
+            ],
+            "text": "IBM shall not be liable for any damages arising out of your use of the sample programs.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "khả năng phục vụ, hoặc chức năng của các chương trình này. Các chương trình mẫu được cung cấp với AS AS IS, mà không cần bảo hành dưới bất kỳ hình thức nào. "
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                857.6404977904041,
+                560.8891278594771,
+                13.161931818181813
+            ],
+            "text": "© Copyright International Business Machines Corporation 2017. All rights reserved.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/KBGNGH+MicrosoftSansSerif",
+                "size": 1
+            },
+            "text_vi": "IBM sẽ không chịu trách nhiệm cho bất kỳ thiệt hại nào phát sinh từ việc bạn sử dụng các chương trình mẫu."
+        }
+    ]
+}

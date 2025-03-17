@@ -1,0 +1,556 @@
+{
+    "metadata": {
+        "page_hash": "3fa3d9c7a3cab6c8251d951b701ae5f649b013f866769622eb1cb9408d6e935d",
+        "original_filename": "cm-oreilly-kubernetes-patterns-ebook-f19824-201910-en.pdf",
+        "page_no": 34,
+        "num_pages": 266,
+        "original_width": 504,
+        "original_height": 661.5,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                758.2610367063492,
+                117.51336016628875,
+                120.30721924603176,
+                31.223204459561657
+            ],
+            "text": "CHAPTER 2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 16.81999969482422
+            },
+            "text_vi": "Chương 2"
+        },
+        {
+            "bbox": [
+                520.046460813492,
+                151.5185680272108,
+                358.52179513888893,
+                46.816173847316804
+            ],
+            "text": "Predictable Demands",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 25.21999931335449
+            },
+            "text_vi": "Nhu cầu dự đoán"
+        },
+        {
+            "bbox": [
+                146.41934032738095,
+                373.2255102040816,
+                732.1428347718254,
+                21.94800037792902
+            ],
+            "text": "The foundation of successful application deployment, management, and coexistence",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Nền tảng của việc triển khai, quản lý và cùng tồn tại ứng dụng thành công"
+        },
+        {
+            "bbox": [
+                146.43459126984126,
+                392.74933522297806,
+                732.1429791666666,
+                21.94804686318969
+            ],
+            "text": "on a shared cloud environment is dependent on identifying and declaring the appli‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Trên môi trường đám mây được chia sẻ phụ thuộc vào việc xác định và tuyên bố ứng dụng‐"
+        },
+        {
+            "bbox": [
+                146.42858769841268,
+                412.2731602418745,
+                552.3736429563493,
+                21.94800037792902
+            ],
+            "text": "cation resource requirements and runtime dependencies. This ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Yêu cầu tài nguyên cation và phụ thuộc thời gian chạy. Cái này "
+        },
+        {
+            "bbox": [
+                698.802169642857,
+                412.06168329554043,
+                179.7692589285715,
+                22.159477324263094
+            ],
+            "text": "Predictable Demands",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Nhu cầu dự đoán"
+        },
+        {
+            "bbox": [
+                146.42250481150793,
+                431.796969765684,
+                732.1430259424603,
+                21.948046863189802
+            ],
+            "text": "pattern is about how you should declare application requirements, whether they are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Mẫu là về cách bạn nên khai báo các yêu cầu ứng dụng, cho dù chúng là"
+        },
+        {
+            "bbox": [
+                146.43784930555557,
+                451.32079478458047,
+                731.4442871031745,
+                21.948000377928906
+            ],
+            "text": "hard runtime dependencies or resource requirements. Declaring your requirements is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "phụ thuộc khó chạy hoặc yêu cầu tài nguyên. Tuyên bố yêu cầu của bạn là"
+        },
+        {
+            "bbox": [
+                146.43792862103172,
+                470.8446662887377,
+                725.3157043154763,
+                21.94800037792902
+            ],
+            "text": "essential for Kubernetes to find the right place for your application within the cluster.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Cần thiết cho Kubernetes để tìm đúng vị trí cho ứng dụng của bạn trong cụm."
+        },
+        {
+            "bbox": [
+                146.440084375,
+                506.1087569916856,
+                107.58497415674603,
+                35.1214119425548
+            ],
+            "text": "Problem",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 18.92000007629395
+            },
+            "text_vi": "Vấn đề"
+        },
+        {
+            "bbox": [
+                146.42141879960317,
+                548.3207052154195,
+                732.1429323908729,
+                21.948000377928963
+            ],
+            "text": "Kubernetes can manage applications written in different programming languages as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Kubernetes có thể quản lý các ứng dụng được viết bằng các ngôn ngữ lập trình khác nhau như"
+        },
+        {
+            "bbox": [
+                146.43674905753966,
+                567.8445302343159,
+                732.1428754464284,
+                21.948000377928963
+            ],
+            "text": "long as the application can be run in a container. However, different languages have",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "miễn là ứng dụng có thể được chạy trong một container. Tuy nhiên, các ngôn ngữ khác nhau có"
+        },
+        {
+            "bbox": [
+                146.43064990079367,
+                587.3683397581256,
+                732.1428937499999,
+                21.948000377928963
+            ],
+            "text": "different resource requirements. Typically, a compiled language runs faster and often",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "các yêu cầu tài nguyên khác nhau. Thông thường, một ngôn ngữ được biên dịch chạy nhanh hơn và thường"
+        },
+        {
+            "bbox": [
+                146.42464632936506,
+                606.8921647770219,
+                732.1428774801587,
+                21.948000377928963
+            ],
+            "text": "requires less memory compared to just-in-time runtimes or interpreted languages.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Yêu cầu ít bộ nhớ hơn so với thời gian chạy trong thời gian hoặc ngôn ngữ được giải thích."
+        },
+        {
+            "bbox": [
+                146.4185634424603,
+                626.4159897959184,
+                732.1428795138888,
+                21.948000377928963
+            ],
+            "text": "Considering that many modern programming languages in the same category have",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Xem xét rằng nhiều ngôn ngữ lập trình hiện đại trong cùng một danh mục có"
+        },
+        {
+            "bbox": [
+                146.4338306547619,
+                645.9398458049886,
+                732.142804265873,
+                21.948000377928963
+            ],
+            "text": "similar resource requirements, from a resource consumption point of view, more",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các yêu cầu tài nguyên tương tự, từ quan điểm tiêu thụ tài nguyên, hơn thế nữa"
+        },
+        {
+            "bbox": [
+                146.42776403769838,
+                665.4636708238852,
+                732.1429120535715,
+                21.948000377928963
+            ],
+            "text": "important aspects are the domain, the business logic of an application, and the actual",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các khía cạnh quan trọng là miền, logic kinh doanh của một ứng dụng và thực tế"
+        },
+        {
+            "bbox": [
+                146.42176046626983,
+                684.9874958427815,
+                201.5192484623016,
+                21.948000377928963
+            ],
+            "text": "implementation details.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Chi tiết thực hiện."
+        },
+        {
+            "bbox": [
+                146.42176046626983,
+                713.8083575207861,
+                732.1427127480158,
+                21.948000377928963
+            ],
+            "text": "It is difficult to predict the amount of resources a container may need to function",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Rất khó để dự đoán lượng tài nguyên mà một container có thể cần phải hoạt động"
+        },
+        {
+            "bbox": [
+                146.43702767857144,
+                733.3321825396825,
+                732.1429018849207,
+                21.948000377928963
+            ],
+            "text": "optimally, and it is the developer who knows the resource expectations of a service",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "tối ưu, và đó là nhà phát triển biết những kỳ vọng tài nguyên của một dịch vụ"
+        },
+        {
+            "bbox": [
+                146.431038343254,
+                752.8559920634921,
+                732.1428713789683,
+                21.948000377928935
+            ],
+            "text": "implementation (discovered through testing). Some services have a fixed CPU and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "thực hiện (được phát hiện thông qua thử nghiệm). Một số dịch vụ có CPU cố định và"
+        },
+        {
+            "bbox": [
+                146.42503273809524,
+                772.3798170823885,
+                732.1429791666665,
+                21.948000377928935
+            ],
+            "text": "memory consumption profile, and some are spiky. Some services need persistent",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Hồ sơ tiêu thụ bộ nhớ, và một số là Spiky. Một số dịch vụ cần dai dẳng"
+        },
+        {
+            "bbox": [
+                146.41902916666663,
+                791.903642101285,
+                732.1429628968253,
+                21.948000377928963
+            ],
+            "text": "storage to store data; some legacy services require a fixed port number on the host",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Lưu trữ để lưu trữ dữ liệu; Một số dịch vụ di sản yêu cầu một số cổng cố định trên máy chủ"
+        },
+        {
+            "bbox": [
+                146.43438993055554,
+                811.4274981103553,
+                732.1428754464284,
+                21.948000377928963
+            ],
+            "text": "system to work correctly. Defining all these application characteristics and passing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "hệ thống để làm việc chính xác. Xác định tất cả các đặc điểm ứng dụng này và vượt qua"
+        },
+        {
+            "bbox": [
+                146.42838432539682,
+                830.9513231292517,
+                732.1428001984127,
+                21.948000377928963
+            ],
+            "text": "them to the managing platform is a fundamental prerequisite for cloud-native",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "chúng cho nền tảng quản lý là điều kiện tiên quyết cơ bản cho đám mây bản địa"
+        },
+        {
+            "bbox": [
+                146.42247430555554,
+                850.4751326530612,
+                107.98801676587303,
+                21.948006575963717
+            ],
+            "text": "applications.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "ứng dụng."
+        },
+        {
+            "bbox": [
+                863.6447237103174,
+                945.5380580498866,
+                14.935714285714312,
+                16.70680427059714
+            ],
+            "text": "15",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "15"
+        }
+    ]
+}

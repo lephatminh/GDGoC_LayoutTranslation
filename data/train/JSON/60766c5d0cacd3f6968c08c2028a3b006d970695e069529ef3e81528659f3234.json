@@ -1,0 +1,656 @@
+{
+    "metadata": {
+        "page_hash": "60766c5d0cacd3f6968c08c2028a3b006d970695e069529ef3e81528659f3234",
+        "original_filename": "cm-oreilly-kubernetes-patterns-ebook-f19824-201910-en.pdf",
+        "page_no": 98,
+        "num_pages": 266,
+        "original_width": 504,
+        "original_height": 661.5,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                744.3044618055554,
+                117.51336016628875,
+                134.2637941468255,
+                31.223204459561657
+            ],
+            "text": "CHAPTER 10",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 16.81999969482422
+            },
+            "text_vi": "Chương 10"
+        },
+        {
+            "bbox": [
+                587.9041046626984,
+                151.5185680272108,
+                290.6642123015873,
+                46.816173847316804
+            ],
+            "text": "Singleton Service",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 25.21999931335449
+            },
+            "text_vi": "Dịch vụ singleton"
+        },
+        {
+            "bbox": [
+                146.41938506944442,
+                373.2255102040816,
+                38.501554365079386,
+                21.94800037792902
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                185.3907534722222,
+                373.0140022675737,
+                140.38227132936507,
+                22.15950831443695
+            ],
+            "text": "Singleton Service",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Dịch vụ singleton"
+        },
+        {
+            "bbox": [
+                326.2428368055555,
+                373.2255102040816,
+                552.3272291666666,
+                21.94800037792902
+            ],
+            "text": " pattern ensures only one instance of an application is active at a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " Mẫu chỉ đảm bảo một trường hợp của một ứng dụng đang hoạt động tại một"
+        },
+        {
+            "bbox": [
+                146.4211706845238,
+                392.74933522297806,
+                732.1428144345238,
+                21.94804686318969
+            ],
+            "text": "time and yet is highly available. This pattern can be implemented from within the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Thời gian và vẫn có sẵn rất nhiều. Mẫu này có thể được thực hiện từ bên trong"
+        },
+        {
+            "bbox": [
+                146.43650094246033,
+                412.2731602418745,
+                381.15052286706344,
+                21.94800037792902
+            ],
+            "text": "application, or delegated fully to Kubernetes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ứng dụng, hoặc được ủy quyền đầy đủ cho Kubernetes."
+        },
+        {
+            "bbox": [
+                146.42227093253967,
+                447.5372509448224,
+                107.58497212301589,
+                35.1214119425548
+            ],
+            "text": "Problem",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 18.92000007629395
+            },
+            "text_vi": "Vấn đề"
+        },
+        {
+            "bbox": [
+                146.42497172619048,
+                489.74924565381707,
+                732.1385049603174,
+                21.948000377928906
+            ],
+            "text": "One of the main capabilities provided by Kubernetes is the ability to easily and trans‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Một trong những khả năng chính được cung cấp bởi Kubernetes là khả năng dễ dàng và chuyển đổi"
+        },
+        {
+            "bbox": [
+                146.4360189484127,
+                509.2731171579743,
+                732.1427310515874,
+                21.948000377928963
+            ],
+            "text": "parently scale applications. Pods can scale imperatively with a single command such",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "các ứng dụng quy mô ngang ngược. Pods có thể chia tỷ lệ một cách bất khả xâm phạm với một lệnh như vậy"
+        },
+        {
+            "bbox": [
+                146.42993606150793,
+                529.7162037037037,
+                22.058848065476184,
+                21.948000377928963
+            ],
+            "text": "as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "BẰNG "
+        },
+        {
+            "bbox": [
+                168.95538487103173,
+                532.978306878307,
+                131.86196086309522,
+                15.456318216175362
+            ],
+            "text": "kubectl scale",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "Kubectl quy mô"
+        },
+        {
+            "bbox": [
+                301.2871170634921,
+                529.7162037037037,
+                577.2840674603174,
+                21.948000377928963
+            ],
+            "text": ", or declaratively through a controller definition such as ReplicaSet,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": ", hoặc khai báo thông qua định nghĩa bộ điều khiển như bản sao,"
+        },
+        {
+            "bbox": [
+                146.42227093253967,
+                549.2399667422524,
+                690.245917063492,
+                21.948000377928963
+            ],
+            "text": "or even dynamically based on the application load as we describe in Chapter 24, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "hoặc thậm chí động dựa trên tải ứng dụng như chúng tôi mô tả trong Chương 24, "
+        },
+        {
+            "bbox": [
+                836.6682490079364,
+                549.0284588057445,
+                41.89691567460318,
+                22.159508314436835
+            ],
+            "text": "Elas‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Elas‐"
+        },
+        {
+            "bbox": [
+                146.4375401785714,
+                568.552268329554,
+                67.2869791666667,
+                22.15952380952382
+            ],
+            "text": "tic Scale",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "TIC quy mô"
+        },
+        {
+            "bbox": [
+                213.93804067460317,
+                568.7637917611489,
+                664.634689484127,
+                21.948000377928963
+            ],
+            "text": ". By running multiple instances of the same service (not a Kubernetes Service,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": ". Bằng cách chạy nhiều phiên bản của cùng một dịch vụ (không phải là dịch vụ Kubernetes,"
+        },
+        {
+            "bbox": [
+                146.42366810515873,
+                588.2876167800453,
+                732.1428591765872,
+                21.948000377928963
+            ],
+            "text": "but a component of a distributed application represented by a Pod), the system usu‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Nhưng một thành phần của một ứng dụng phân tán được đại diện bởi một pod), hệ thống usu‐"
+        },
+        {
+            "bbox": [
+                146.4389210813492,
+                607.8114263038549,
+                732.1428795138888,
+                21.948000377928963
+            ],
+            "text": "ally increases throughput and availability. The availability increases because if one",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ally tăng thông lượng và tính khả dụng. Tính khả dụng tăng vì nếu một"
+        },
+        {
+            "bbox": [
+                146.43283819444446,
+                627.3352513227513,
+                732.142881547619,
+                21.948000377928963
+            ],
+            "text": "instance of a service becomes unhealthy, the request dispatcher forwards future",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "ví dụ của một dịch vụ trở nên không lành mạnh, người điều phối yêu cầu chuyển tiếp tương lai"
+        },
+        {
+            "bbox": [
+                146.42684885912698,
+                646.8590608465609,
+                732.1429730654762,
+                21.948000377928906
+            ],
+            "text": "requests to other healthy instances. In Kubernetes, multiple instances are the replicas",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "yêu cầu đến các trường hợp lành mạnh khác. Trong Kubernetes, nhiều trường hợp là bản sao"
+        },
+        {
+            "bbox": [
+                146.4208452876984,
+                666.3829323507181,
+                647.0525614583333,
+                21.948000377928906
+            ],
+            "text": "of a Pod, and the Service resource is responsible for the request dispatching.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "của một nhóm và tài nguyên dịch vụ chịu trách nhiệm gửi yêu cầu."
+        },
+        {
+            "bbox": [
+                146.42092256944443,
+                695.2038095238095,
+                732.1430015376984,
+                21.948000377928963
+            ],
+            "text": "However, in some cases only one instance of a service is allowed to run at a time. For",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tuy nhiên, trong một số trường hợp, chỉ có một trường hợp của dịch vụ được phép chạy cùng một lúc. Vì"
+        },
+        {
+            "bbox": [
+                146.43628333333334,
+                714.7276190476191,
+                732.1427107142856,
+                21.948000377928963
+            ],
+            "text": "example, if there is a periodically executed task in a service and multiple instances of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ví dụ, nếu có một tác vụ được thực hiện định kỳ trong một dịch vụ và nhiều trường hợp"
+        },
+        {
+            "bbox": [
+                146.43020044642856,
+                734.2514440665154,
+                732.1427737599206,
+                21.948000377928963
+            ],
+            "text": "the same service, every instance will trigger the task at the scheduled intervals, lead‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Cùng một dịch vụ, mọi trường hợp sẽ kích hoạt tác vụ trong các khoảng thời gian theo lịch trình, chì‐"
+        },
+        {
+            "bbox": [
+                146.42400977182538,
+                753.775269085412,
+                732.1429445932539,
+                21.94800037792899
+            ],
+            "text": "ing to duplicates rather than having only one task fired as expected. Another example",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "ing để nhân đôi thay vì chỉ có một nhiệm vụ được sa thải như mong đợi. Một ví dụ khác"
+        },
+        {
+            "bbox": [
+                146.41809771825396,
+                773.2990786092215,
+                732.1429588293649,
+                21.948000377928935
+            ],
+            "text": "is a service that performs polling on specific resources (a filesystem or database) and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "là một dịch vụ thực hiện bỏ phiếu trên các tài nguyên cụ thể (hệ thống tập tin hoặc cơ sở dữ liệu) và"
+        },
+        {
+            "bbox": [
+                146.43336493055554,
+                792.822903628118,
+                732.1429039186509,
+                21.948000377928935
+            ],
+            "text": "we want to ensure only a single instance and maybe even a single thread performs the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Chúng tôi chỉ muốn đảm bảo một phiên bản duy nhất và thậm chí có thể một luồng duy nhất thực hiện"
+        },
+        {
+            "bbox": [
+                146.42728407738096,
+                812.3467596371883,
+                732.1430259424603,
+                21.948000377928935
+            ],
+            "text": "polling and processing. A third case occurs when we have to consume messages from",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "bỏ phiếu và xử lý. Trường hợp thứ ba xảy ra khi chúng ta phải tiêu thụ tin nhắn từ"
+        },
+        {
+            "bbox": [
+                146.42121746031745,
+                831.8705846560847,
+                732.1429506944444,
+                21.948000377928935
+            ],
+            "text": "a messages broker in order with a single-threaded consumer that is also a singleton",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "một nhà môi giới tin nhắn theo thứ tự với một người tiêu dùng đơn luồng cũng là một người độc thân"
+        },
+        {
+            "bbox": [
+                146.43648467261903,
+                851.3944096749811,
+                64.04114379960319,
+                21.947994179894152
+            ],
+            "text": "service.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "dịch vụ."
+        },
+        {
+            "bbox": [
+                863.640452876984,
+                945.5380580498866,
+                14.93569394841279,
+                16.70680427059714
+            ],
+            "text": "79",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "79"
+        }
+    ]
+}

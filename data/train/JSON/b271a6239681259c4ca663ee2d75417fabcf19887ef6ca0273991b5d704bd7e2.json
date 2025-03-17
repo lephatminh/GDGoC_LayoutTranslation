@@ -1,0 +1,676 @@
+{
+    "metadata": {
+        "page_hash": "b271a6239681259c4ca663ee2d75417fabcf19887ef6ca0273991b5d704bd7e2",
+        "original_filename": "cm-oreilly-kubernetes-patterns-ebook-f19824-201910-en.pdf",
+        "page_no": 82,
+        "num_pages": 266,
+        "original_width": 504,
+        "original_height": 661.5,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                758.2610367063492,
+                117.51336016628875,
+                120.30721924603176,
+                31.223204459561657
+            ],
+            "text": "CHAPTER 7",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 16.81999969482422
+            },
+            "text_vi": "Chương 7"
+        },
+        {
+            "bbox": [
+                716.6436165674603,
+                151.5185680272108,
+                161.92463938492062,
+                46.816173847316804
+            ],
+            "text": "Batch Job",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 25.21999931335449
+            },
+            "text_vi": "Công việc hàng loạt"
+        },
+        {
+            "bbox": [
+                146.41934032738095,
+                373.2255102040816,
+                38.50155233134922,
+                21.94800037792902
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                185.3052595238095,
+                373.0140022675737,
+                78.8395996031746,
+                22.15950831443695
+            ],
+            "text": "Batch Job",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Công việc hàng loạt"
+        },
+        {
+            "bbox": [
+                264.52921378968256,
+                373.2255102040816,
+                614.046058531746,
+                21.94800037792902
+            ],
+            "text": " pattern is suited for managing isolated atomic units of work. It is based",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " Mô hình phù hợp để quản lý các đơn vị công việc nguyên tử bị cô lập. Nó dựa trên"
+        },
+        {
+            "bbox": [
+                146.426336359127,
+                392.74933522297806,
+                732.1428551091269,
+                21.94804686318969
+            ],
+            "text": "on Job abstraction, which runs short-lived Pods reliably until completion on a dis‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "về sự trừu tượng hóa công việc, chạy các nhóm tồn tại trong thời gian ngắn đáng tin cậy cho đến khi hoàn thành trên một dis‐"
+        },
+        {
+            "bbox": [
+                146.4202392361111,
+                412.2731602418745,
+                189.6463480654762,
+                21.94800037792902
+            ],
+            "text": "tributed environment.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Môi trường mới."
+        },
+        {
+            "bbox": [
+                146.4461347222222,
+                447.5372509448224,
+                107.5850046626984,
+                35.1214119425548
+            ],
+            "text": "Problem",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 18.92000007629395
+            },
+            "text_vi": "Vấn đề"
+        },
+        {
+            "bbox": [
+                146.4274691468254,
+                489.74924565381707,
+                732.1429018849205,
+                21.948000377928906
+            ],
+            "text": "The main primitive in Kubernetes for managing and running containers is the Pod.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Nguyên thủy chính trong Kubernetes để quản lý và chạy các container là POD."
+        },
+        {
+            "bbox": [
+                146.42138829365078,
+                509.2731171579743,
+                593.3255452380953,
+                21.948000377928963
+            ],
+            "text": "There are different ways of creating Pods with varying characteristics:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Có nhiều cách khác nhau để tạo vỏ với các đặc điểm khác nhau:"
+        },
+        {
+            "bbox": [
+                146.42135575396824,
+                539.4319795918368,
+                75.52968343253968,
+                22.15952380952382
+            ],
+            "text": "Bare Pod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "POD trần"
+        },
+        {
+            "bbox": [
+                183.04375158730159,
+                559.1673125472411,
+                695.5243213293651,
+                21.948000377928963
+            ],
+            "text": "It is possible to create a Pod manually to run containers. However, when the node",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Có thể tạo một pod bằng tay để chạy các container. Tuy nhiên, khi nút"
+        },
+        {
+            "bbox": [
+                183.04154905753967,
+                578.6911375661375,
+                695.5357773313492,
+                21.948000377928963
+            ],
+            "text": "such a Pod is running on fails, the Pod is not restarted. Running Pods this way is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Một pod như vậy đang chạy trên thất bại, nhóm không được khởi động lại. Chạy nhóm theo cách này là"
+        },
+        {
+            "bbox": [
+                183.02936904761904,
+                598.2149470899471,
+                695.5357346230159,
+                21.948000377928963
+            ],
+            "text": "discouraged except for development or testing purposes. This mechanism is also",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "không nản lòng ngoại trừ mục đích phát triển hoặc thử nghiệm. Cơ chế này cũng là"
+        },
+        {
+            "bbox": [
+                183.03853913690475,
+                617.7387721088435,
+                234.6609395337301,
+                21.948000377928963
+            ],
+            "text": "known under the names of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "được biết dưới tên của "
+        },
+        {
+            "bbox": [
+                417.69941765873017,
+                617.5272641723355,
+                98.44270833333331,
+                22.15950831443695
+            ],
+            "text": "unmanaged",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "không được quản lý"
+        },
+        {
+            "bbox": [
+                516.1421259920635,
+                617.7387721088435,
+                28.50779216269848,
+                21.948000377928963
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                544.649918154762,
+                617.5272641723355,
+                94.89789632936504,
+                22.15950831443695
+            ],
+            "text": "naked Pods",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Pods trần trụi"
+        },
+        {
+            "bbox": [
+                639.5478754960317,
+                617.7387721088435,
+                4.868770337301612,
+                21.948000377928963
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                146.43743035714286,
+                647.897634542706,
+                85.67292480158727,
+                22.159523809523762
+            ],
+            "text": "ReplicaSet",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Bản sao"
+        },
+        {
+            "bbox": [
+                183.0384760912698,
+                667.6330139833711,
+                695.5356776785715,
+                21.948000377928906
+            ],
+            "text": "This controller is used for creating and managing the lifecycle of Pods expected",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Bộ điều khiển này được sử dụng để tạo và quản lý vòng đời của các nhóm dự kiến"
+        },
+        {
+            "bbox": [
+                183.02631235119048,
+                687.1568390022676,
+                695.5357407242063,
+                21.948000377928906
+            ],
+            "text": "to run continuously (e.g., to run a web server container). It maintains a stable set",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Để chạy liên tục (ví dụ: để chạy một thùng chứa máy chủ web). Nó duy trì một bộ ổn định"
+        },
+        {
+            "bbox": [
+                183.03562073412698,
+                706.680664021164,
+                695.5357468253968,
+                21.948000377928906
+            ],
+            "text": "of replica Pods running at any given time and guarantees the availability of a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "các nhóm bản sao chạy tại bất kỳ thời điểm nào và đảm bảo sự sẵn có của một"
+        },
+        {
+            "bbox": [
+                183.04474404761905,
+                726.2044735449736,
+                299.40679117063496,
+                21.948000377928963
+            ],
+            "text": "specified number of identical Pods.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Số lượng được chỉ định của các vỏ giống hệt nhau."
+        },
+        {
+            "bbox": [
+                146.42239702380954,
+                756.363335978836,
+                97.03330486111108,
+                22.159523809523847
+            ],
+            "text": "DaemonSet",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Daemonset"
+        },
+        {
+            "bbox": [
+                183.04477658730158,
+                776.0986689342403,
+                695.5169714285714,
+                21.948000377928935
+            ],
+            "text": "A controller for running a single Pod on every node. Typically used for managing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Một bộ điều khiển để chạy một nhóm duy nhất trên mỗi nút. Thường được sử dụng để quản lý"
+        },
+        {
+            "bbox": [
+                183.03512450396823,
+                795.6224939531369,
+                695.5357549603175,
+                21.948000377928935
+            ],
+            "text": "platform capabilities such as monitoring, log aggregation, storage containers, and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các khả năng nền tảng như giám sát, tập hợp nhật ký, các thùng chứa lưu trữ và"
+        },
+        {
+            "bbox": [
+                183.04434136904763,
+                815.1463189720332,
+                190.5645385912698,
+                21.948000377928935
+            ],
+            "text": "others. See Chapter 9, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "người khác. Xem Chương 9, "
+        },
+        {
+            "bbox": [
+                373.60892063492065,
+                814.9347955404385,
+                135.87652182539676,
+                22.15952380952379
+            ],
+            "text": "Daemon Service",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Dịch vụ daemon"
+        },
+        {
+            "bbox": [
+                509.4854424603174,
+                815.1463189720332,
+                355.67495932539686,
+                21.948000377928935
+            ],
+            "text": " for a detailed discussion on DaemonSets.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " Đối với một cuộc thảo luận chi tiết về Daemonsets."
+        },
+        {
+            "bbox": [
+                146.42196180555555,
+                843.9672271352986,
+                732.1430198412697,
+                21.948000377928935
+            ],
+            "text": "A common aspect of these Pods is the fact that they represent long-running processes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Một khía cạnh phổ biến của những nhóm này là thực tế là chúng đại diện cho các quy trình dài"
+        },
+        {
+            "bbox": [
+                146.437214781746,
+                863.4910056689342,
+                732.1430198412698,
+                21.948045313681035
+            ],
+            "text": "that are not meant to stop after some time. However, in some cases there is a need to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Điều đó không có nghĩa là dừng lại sau một thời gian. Tuy nhiên, trong một số trường hợp cần có"
+        },
+        {
+            "bbox": [
+                863.6443576388889,
+                945.5380580498866,
+                14.935693948412563,
+                16.70680427059714
+            ],
+            "text": "63",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "63"
+        }
+    ]
+}

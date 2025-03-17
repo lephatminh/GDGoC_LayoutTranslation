@@ -1,0 +1,1176 @@
+{
+    "metadata": {
+        "page_hash": "a92c4abe25eb603bca80e3844fd32e481c2b6d97c39141a66e8b62440c8a941d",
+        "original_filename": "sg248452.pdf",
+        "page_no": 130,
+        "num_pages": 648,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "redbooks",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                533.8039215686275,
+                977.8111768308081,
+                333.6480682189542,
+                10.774146433080809
+            ],
+            "text": "Chapter 4. Cloud-native concepts and technology ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Chương 4. Các khái niệm và công nghệ bản địa đám mây "
+        },
+        {
+            "bbox": [
+                888.5343472222223,
+                976.9191149305556,
+                28.034704656862573,
+                11.923388857323232
+            ],
+            "text": "109",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "109"
+        },
+        {
+            "bbox": [
+                253.23593055555554,
+                92.54640877525264,
+                650.5617720588236,
+                11.923416035353398
+            ],
+            "text": "NodePort can either be assigned randomly by K8s at service creation time, or assigned ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Nodeport có thể được chỉ định ngẫu nhiên bởi K8S tại thời điểm tạo dịch vụ hoặc được chỉ định "
+        },
+        {
+            "bbox": [
+                253.23593055555554,
+                108.07647885101028,
+                223.3953333333333,
+                11.923403093434217
+            ],
+            "text": "manually or programmatically.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "theo cách thủ công hoặc lập trình."
+        },
+        {
+            "bbox": [
+                229.11801552287582,
+                136.57405429292942,
+                687.2974873366013,
+                11.923416035353398
+            ],
+            "text": "Services can then be further exposed by using an Ingress. Ingress is not a Service type, but it ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các dịch vụ sau đó có thể được tiếp tục tiếp tục bằng cách sử dụng một sự xâm nhập. Ingress không phải là một loại dịch vụ, nhưng nó "
+        },
+        {
+            "bbox": [
+                229.11801552287582,
+                152.10412436868694,
+                672.6122185457516,
+                11.923403093434331
+            ],
+            "text": "acts as the entry point for a cluster. It consolidates routing rules into a single resource as it ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Hoạt động như điểm nhập cảnh cho một cụm. Nó hợp nhất các quy tắc định tuyến thành một tài nguyên duy nhất "
+        },
+        {
+            "bbox": [
+                229.11801552287582,
+                167.63419444444457,
+                681.8127659313726,
+                11.923403093434217
+            ],
+            "text": "can expose multiple services under the same IP address. An ingress controller is required if ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "có thể phơi bày nhiều dịch vụ theo cùng một địa chỉ IP. Một bộ điều khiển xâm nhập là bắt buộc nếu "
+        },
+        {
+            "bbox": [
+                229.11803227124184,
+                183.1642515782828,
+                315.2596184640523,
+                11.923416035353625
+            ],
+            "text": "you choose to expose services as Ingress.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Bạn chọn để phơi bày các dịch vụ như xâm nhập."
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                216.60107165404054,
+                200.8879579248365,
+                14.365582070706978
+            ],
+            "text": "Labels and Selectors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Nhãn và bộ chọn"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                236.2012458964648,
+                49.27679125816988,
+                11.923403093434217
+            ],
+            "text": "Labels",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 1
+            },
+            "text_vi": "Nhãn"
+        },
+        {
+            "bbox": [
+                283.0802291666667,
+                236.2012458964648,
+                626.2320404411764,
+                11.923403093434217
+            ],
+            "text": "are key/value pairs that are attached to specify identifying attributes of those objects ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "là các cặp khóa/giá trị được gắn để chỉ định các thuộc tính xác định của các đối tượng đó "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                251.73130303030302,
+                657.988533496732,
+                11.923416035353625
+            ],
+            "text": "that are meaningful and relevant to users, but do not directly imply semantics to the core ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "có ý nghĩa và phù hợp với người dùng, nhưng không ngụ ý trực tiếp ngữ nghĩa "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                267.26137310606055,
+                651.3041098856208,
+                11.923403093434445
+            ],
+            "text": "system. Labels can be used to organize and to select subsets of objects. Labels can be ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "hệ thống. Nhãn có thể được sử dụng để tổ chức và chọn tập hợp con của các đối tượng. Nhãn có thể được "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                282.7914431818182,
+                685.8898374183007,
+                11.923403093434445
+            ],
+            "text": "attached to objects at creation time and subsequently added and modified at any time. Each ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "gắn liền với các đối tượng tại thời điểm sáng tạo và sau đó được thêm và sửa đổi bất cứ lúc nào. Mỗi "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                298.32150031565664,
+                647.7193231209151,
+                11.923416035353512
+            ],
+            "text": "object can have a set of key/value labels defined. Each Key must be unique for a given ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Đối tượng có thể có một tập hợp các nhãn khóa/giá trị được xác định. Mỗi khóa phải là duy nhất cho một "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                313.85157039141416,
+                92.15289297385621,
+                11.923403093434445
+            ],
+            "text": "object. Via a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "sự vật. Thông qua a"
+        },
+        {
+            "bbox": [
+                325.8896388888889,
+                313.85157039141416,
+                98.66360253267976,
+                11.923403093434445
+            ],
+            "text": "label selector",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 1
+            },
+            "text_vi": "bộ chọn nhãn"
+        },
+        {
+            "bbox": [
+                424.4698848039216,
+                313.85157039141416,
+                482.8689583333332,
+                11.923403093434445
+            ],
+            "text": ", the client/user can identify a set of objects. The label selector is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": ", Máy khách/người dùng có thể xác định một tập hợp các đối tượng. Bộ chọn nhãn là "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                329.3816404671718,
+                253.16989174836598,
+                11.923403093434331
+            ],
+            "text": "the core grouping primitive in K8s.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Nhóm lõi nguyên thủy trong K8S."
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                362.89657796717177,
+                294.57893709150324,
+                14.36554324494955
+            ],
+            "text": "Volume and Persistent Volume",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Khối lượng và khối lượng liên tục"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                382.41913952020207,
+                683.4192859477124,
+                11.923364267676789
+            ],
+            "text": "On-disk files in a container are ephemeral (anything they store to their “local file system” ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các tệp trên đĩa trong một thùng chứa là phù du (bất cứ thứ gì chúng lưu trữ vào hệ thống tệp cục bộ của họ "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                397.9492095959596,
+                640.2012663398693,
+                11.923364267676789
+            ],
+            "text": "cannot be guaranteed to survive a restart). This condition presents some problems for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "không thể được đảm bảo để tồn tại để khởi động lại). Điều kiện này trình bày một số vấn đề cho "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                413.4792667297979,
+                331.3953962418301,
+                11.923364267676789
+            ],
+            "text": "non-trivial applications that run in containers:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các ứng dụng không tầm thường chạy trong các thùng chứa:"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                435.7250928030304,
+                8.340686274509778,
+                11.356249368686804
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23556209150328,
+                435.53175347222225,
+                465.33358660130716,
+                11.92337720959597
+            ],
+            "text": "When a container crashes, K8s restarts it, but the files are lost.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khi một container gặp sự cố, K8S sẽ khởi động lại nó, nhưng các tệp bị mất."
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                457.7002127525253,
+                8.340686274509778,
+                11.356249368686804
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23556209150328,
+                457.50687342171716,
+                645.7225494281046,
+                11.923364267676789
+            ],
+            "text": "When you run containers together in a pod, it is often necessary to share files between ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khi bạn chạy các container cùng nhau trong một nhóm, thường cần phải chia sẻ các tệp giữa "
+        },
+        {
+            "bbox": [
+                253.23556209150328,
+                473.0369434974748,
+                127.41066544117646,
+                11.923364267676789
+            ],
+            "text": "those containers.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "những container đó."
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                501.5344801136364,
+                642.9703071895426,
+                11.923364267676789
+            ],
+            "text": "A K8s Volume abstraction solves both problems. A volume is a piece of storage that is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Một bản tóm tắt khối lượng K8S giải quyết cả hai vấn đề. Một tập là một phần lưu trữ "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                517.0645501893939,
+                680.2664897875818,
+                11.923364267676789
+            ],
+            "text": "managed outside of the K8s clusters, and is accessible to the containers in a pod. How that ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "được quản lý bên ngoài các cụm K8S và có thể truy cập vào các container trong một nhóm. Làm thế nào đó "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                532.5946073232324,
+                679.2124648692811,
+                11.92337720959597
+            ],
+            "text": "storage comes to be, the medium that backs it, and the contents of it are determined by the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Lưu trữ xuất hiện, phương tiện ủng hộ nó và nội dung của nó được xác định bởi "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                548.1246773989899,
+                209.4563717320261,
+                11.923364267676732
+            ],
+            "text": "particular volume type used.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Loại âm lượng cụ thể được sử dụng."
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                576.5448860479798,
+                482.7890518790849,
+                11.923364267676789
+            ],
+            "text": "In this publication, the types of volumes discussed are as follows:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Trong ấn phẩm này, các loại tập được thảo luận như sau:"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                598.7906991792929,
+                8.340686274509778,
+                11.356249368686917
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23556209150328,
+                598.597372790404,
+                627.8418598856208,
+                11.923364267676789
+            ],
+            "text": "NFS (Network File System): An NFS volume allows an existing Network File System ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "NFS (Hệ thống tệp mạng): Khối lượng NFS cho phép hệ thống tệp mạng hiện có "
+        },
+        {
+            "bbox": [
+                253.23559558823527,
+                614.1274428661616,
+                236.47011274509802,
+                11.923364267676789
+            ],
+            "text": "share to be mounted into a pod.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Chia sẻ để được gắn vào một pod."
+        },
+        {
+            "bbox": [
+                229.11768055555555,
+                636.2958892045455,
+                8.340669526143813,
+                11.356249368686917
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23559558823527,
+                636.1025498737374,
+                659.7417189542483,
+                11.923377209595913
+            ],
+            "text": "RBD (Rados Block Device): An RBD volume allows a dynamically generated Ceph block ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "RBD (Thiết bị khối Rados): Khối lượng RBD cho phép khối Ceph được tạo động "
+        },
+        {
+            "bbox": [
+                253.23559558823527,
+                651.6326199494949,
+                58.62335089869285,
+                11.923364267676789
+            ],
+            "text": "device (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "thiết bị ("
+        },
+        {
+            "bbox": [
+                311.82057598039216,
+                651.8259592803031,
+                284.58419893790847,
+                11.356249368686917
+            ],
+            "text": "https://docs.ceph.com/docs/master/",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "https://docs.ceph.com/docs/master/"
+        },
+        {
+            "bbox": [
+                596.4081413398693,
+                651.6326199494949,
+                204.7121290849674,
+                11.923364267676789
+            ],
+            "text": ") to be mounted into a pod. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": ") được gắn vào một pod. "
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                680.1301565656565,
+                312.46530433006535,
+                11.92337720959597
+            ],
+            "text": "For a full list of K8s volume types refer to: ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Để biết danh sách đầy đủ các loại âm lượng K8S, hãy tham khảo: "
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                695.853553030303,
+                435.21695955882353,
+                11.356210542929318
+            ],
+            "text": "https://kubernetes.io/docs/concepts/storage/volumes/",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "https://kubernetes.io/docs/concepts/storage/volumes/"
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                724.1577503156566,
+                656.1566642156864,
+                11.92337720959597
+            ],
+            "text": "Additionally, volumes have different access modes, often dependent on the volume type:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Ngoài ra, khối lượng có các chế độ truy cập khác nhau, thường phụ thuộc vào loại âm lượng:"
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                746.326235479798,
+                8.340669526143813,
+                11.356210542929261
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.2339375,
+                746.1328832070708,
+                312.39703799019605,
+                11.92339015151515
+            ],
+            "text": "ReadWriteOnce – the volume can be mo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "ReadWriteOnce - Khối lượng có thể là MO"
+        },
+        {
+            "bbox": [
+                555.60885375817,
+                746.1328832070708,
+                269.87787745098046,
+                11.92339015151515
+            ],
+            "text": "unted as read-write by a single node",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "chưa được đọc dưới dạng đọc bằng một nút"
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                761.8562796717172,
+                8.340669526143813,
+                11.356210542929318
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.2339375,
+                761.66292739899,
+                543.2205898692811,
+                11.923390151515122
+            ],
+            "text": "ReadOnlyMany – the volume can be mounted read-only by many nodes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "ReadOnlyMany-Khối lượng có thể được gắn chỉ đọc bởi nhiều nút"
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                777.3863238636363,
+                8.340669526143813,
+                11.356210542929318
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.2339375,
+                777.1929715909091,
+                573.9562030228758,
+                11.92339015151515
+            ],
+            "text": "ReadWriteMany – the volume can be mounted as read/write by many nodes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "ReadWritemany - Khối lượng có thể được gắn như đọc/ghi bởi nhiều nút"
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                805.6905082070707,
+                682.3363198529413,
+                11.923390151515179
+            ],
+            "text": "When the volume becomes a resource available to and manageable by the K8s cluster, it is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Khi âm lượng trở thành tài nguyên có sẵn và có thể quản lý được bởi cụm K8S, nó là "
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                821.2205653409092,
+                240.91566503267973,
+                11.923377209595941
+            ],
+            "text": "called a Persistent Volume (PV).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "được gọi là khối lượng liên tục (PV)."
+        },
+        {
+            "bbox": [
+                229.11602246732025,
+                849.6407610479798,
+                702.1841049836601,
+                11.923390151515122
+            ],
+            "text": "The consistence and persistence of the data on the storage layer is not K8s’ responsibility: it ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Sự nhất quán và sự tồn tại của dữ liệu trên lớp lưu trữ không phải là trách nhiệm của K8S: Nó "
+        },
+        {
+            "bbox": [
+                229.114414624183,
+                865.1708181818182,
+                666.3653292483659,
+                11.92339015151515
+            ],
+            "text": "is typically delegated to either the storage technology, or to the containerized applications.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "thường được giao cho công nghệ lưu trữ hoặc cho các ứng dụng được chứa."
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                898.6920441603536,
+                235.6233488562091,
+                14.36552900883838
+            ],
+            "text": "Persistent Volume Claim",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Yêu cầu khối lượng liên tục"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                918.2922119318182,
+                627.2196413398693,
+                11.92339662247474
+            ],
+            "text": "A Persistent Volume Claim (PVC) is a request for storage by a consumer, typically a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Yêu cầu khối lượng liên tục (PVC) là yêu cầu lưu trữ của người tiêu dùng, thường là "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                933.8222677714647,
+                650.796868872549,
+                11.92339662247474
+            ],
+            "text": "Deployment (described in “Deployment” on page 110) or a StatefulSet (described in ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Triển khai (được mô tả trong triển khai ”trên trang 110) hoặc một trạng thái (được mô tả trong"
+        }
+    ]
+}

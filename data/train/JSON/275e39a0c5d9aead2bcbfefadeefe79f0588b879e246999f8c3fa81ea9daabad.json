@@ -1,0 +1,1436 @@
+{
+    "metadata": {
+        "page_hash": "275e39a0c5d9aead2bcbfefadeefe79f0588b879e246999f8c3fa81ea9daabad",
+        "original_filename": "MongoDB-manual.pdf",
+        "page_no": 49,
+        "num_pages": 946,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                120.58823529411765,
+                46.997324179292946,
+                318.9477091503268,
+                12.106971275252477
+            ],
+            "text": "MongoDB Documentation, Release 3.0.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tài liệu MongoDB, Phát hành 3.0.4"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                102.89085890151523,
+                342.39337826797384,
+                8.958474116161597
+            ],
+            "text": "sudo zypper install mongodb-enterprise",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Sudo Zypper Cài đặt MongoDB-Enterprise"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                130.781160669192,
+                783.8287381535947,
+                11.526785037878767
+            ],
+            "text": "To install a specific release of MongoDB, specify each component package individually and append the version number",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để cài đặt bản phát hành cụ thể của MongoDB, chỉ định từng gói thành phần riêng lẻ và nối số phiên bản"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                146.25325094696973,
+                334.38193137254905,
+                11.52678503787888
+            ],
+            "text": "to the package name, as in the following example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "đến tên gói, như trong ví dụ sau:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                171.15166571969712,
+                684.7868570261438,
+                8.958474116161597
+            ],
+            "text": "sudo zypper install mongodb-enterprise-3.0.4 mongodb-enterprise-server-3.0.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "sudo zypper cài đặt MongoDB-enterprise-3.0.4 MongoDB-enterprise-server-3.0.4"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                199.04204513888885,
+                429.2902990196078,
+                11.52678503787888
+            ],
+            "text": "You can specify any available version of MongoDB. However",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể chỉ định bất kỳ phiên bản có sẵn của MongoDB. Tuy nhiên"
+        },
+        {
+            "bbox": [
+                556.040743872549,
+                199.72539141414143,
+                60.068617647058886,
+                9.953759469696934
+            ],
+            "text": "zypper",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Zypper"
+        },
+        {
+            "bbox": [
+                622.2755069444445,
+                199.04204513888885,
+                282.13902124183016,
+                11.52678503787888
+            ],
+            "text": "will upgrade the packages when a newer",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sẽ nâng cấp các gói khi mới hơn"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                214.51412247474752,
+                762.22075,
+                11.526797979797948
+            ],
+            "text": "version becomes available. To prevent unintended upgrades, pin the packages by running the following command:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Phiên bản trở nên có sẵn. Để ngăn chặn nâng cấp ngoài ý muốn, hãy ghim các gói bằng cách chạy lệnh sau:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                239.41128188131324,
+                684.7868570261438,
+                8.958474116161597
+            ],
+            "text": "sudo zypper addlock mongodb-enterprise-3.0.4 mongodb-enterprise-server-3.0.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "sudo zypper addlock MongoDB-enterprise-3.0.4 MongoDB-enterprise-server-3.0.4"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                267.3015836489899,
+                783.8286376633987,
+                11.52678503787888
+            ],
+            "text": "Previous versions of MongoDB packages use a different repository location. Refer to the version of the documentation",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các phiên bản trước của các gói MongoDB sử dụng một vị trí kho lưu trữ khác. Tham khảo phiên bản của tài liệu"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                282.77366098484845,
+                267.1384309640523,
+                11.526797979798062
+            ],
+            "text": "appropriate for your MongoDB version.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thích hợp cho phiên bản MongoDB của bạn."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                323.09409374999996,
+                182.7149758986928,
+                10.896371212121267
+            ],
+            "text": "Run MongoDB Enterprise",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Chạy Doanh nghiệp MongoDB"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                358.8294763257576,
+                328.3918615196078,
+                11.526797979798062
+            ],
+            "text": "The MongoDB instance stores its data files in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Phiên bản MongoDB lưu trữ các tệp dữ liệu của nó trong"
+        },
+        {
+            "bbox": [
+                456.5687982026144,
+                359.51283554292934,
+                140.1601245915033,
+                9.95379829545459
+            ],
+            "text": "/var/lib/mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/var/lib/Mongo"
+        },
+        {
+            "bbox": [
+                604.3161838235295,
+                358.8294763257576,
+                132.31781944444435,
+                11.526797979798062
+            ],
+            "text": "and its log files in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "và các tệp nhật ký của nó trong"
+        },
+        {
+            "bbox": [
+                744.2286838235294,
+                359.51283554292934,
+                160.182980392157,
+                9.95379829545459
+            ],
+            "text": "/var/log/mongodb",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/var/log/MongoDB"
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                374.3015277777779,
+                211.19128639705883,
+                11.526797979797834
+            ],
+            "text": "by default, and runs using the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "theo mặc định và chạy bằng cách sử dụng"
+        },
+        {
+            "bbox": [
+                338.610039624183,
+                374.98488699494953,
+                60.06861764705883,
+                9.953798295454476
+            ],
+            "text": "mongod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongod"
+        },
+        {
+            "bbox": [
+                405.5046883169935,
+                374.3015277777779,
+                90.686925245098,
+                11.526797979797834
+            ],
+            "text": "user account.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tài khoản người dùng."
+        },
+        {
+            "bbox": [
+                509.32328717320263,
+                374.3015277777779,
+                395.08469240196087,
+                11.526797979797834
+            ],
+            "text": "You can specify alternate log and data file directories in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể chỉ định các thư mục tệp và nhật ký thay thế trong"
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                390.45823263888894,
+                160.18298206699347,
+                9.95379829545459
+            ],
+            "text": "/etc/mongod.conf",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/etc/mongod.conf"
+        },
+        {
+            "bbox": [
+                280.7712156862745,
+                389.7748734217172,
+                33.43821323529414,
+                11.526797979798062
+            ],
+            "text": ". See",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ". Nhìn thấy"
+        },
+        {
+            "bbox": [
+                318.38132965686276,
+                390.45823263888894,
+                140.16009109477125,
+                9.95379829545459
+            ],
+            "text": "systemLog.path",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "SystemLog.path"
+        },
+        {
+            "bbox": [
+                462.71374019607845,
+                389.7748734217172,
+                24.09416584967323,
+                11.526797979798062
+            ],
+            "text": "and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Và"
+        },
+        {
+            "bbox": [
+                490.9782826797386,
+                390.45823263888894,
+                140.1601413398693,
+                9.95379829545459
+            ],
+            "text": "storage.dbPath",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "lưu trữ.dbpath"
+        },
+        {
+            "bbox": [
+                635.3106932189543,
+                389.7748734217172,
+                177.50281740196078,
+                11.526797979798062
+            ],
+            "text": "for additional information.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để biết thêm thông tin."
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                412.9823358585859,
+                447.094014746732,
+                11.526797979797948
+            ],
+            "text": "If you change the user that runs the MongoDB process, you",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nếu bạn thay đổi người dùng chạy quy trình MongoDB, bạn"
+        },
+        {
+            "bbox": [
+                576.6411670751634,
+                412.8275893308081,
+                35.223538807189584,
+                11.591287563131345
+            ],
+            "text": "must",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "phải"
+        },
+        {
+            "bbox": [
+                620.8199901960785,
+                412.9823358585859,
+                283.590652369281,
+                11.526797979797948
+            ],
+            "text": "modify the access control rights to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sửa đổi quyền kiểm soát truy cập cho"
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                429.13904071969705,
+                140.16010951797386,
+                9.953798295454476
+            ],
+            "text": "/var/lib/mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/var/lib/Mongo"
+        },
+        {
+            "bbox": [
+                264.9205788398693,
+                428.4556815025253,
+                24.094182598039254,
+                11.526797979797948
+            ],
+            "text": "and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Và"
+        },
+        {
+            "bbox": [
+                293.1867961601307,
+                429.13904071969705,
+                160.18301388888892,
+                9.953798295454476
+            ],
+            "text": "/var/log/mongodb",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/var/log/MongoDB"
+        },
+        {
+            "bbox": [
+                457.54186151960783,
+                428.4556815025253,
+                361.2462267156863,
+                11.526797979797948
+            ],
+            "text": "directories to give this user access to these directories.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các thư mục để cung cấp cho người dùng này quyền truy cập vào các thư mục này."
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                469.54683143939394,
+                172.4803693218954,
+                11.591287563131345
+            ],
+            "text": "Step 1: Start MongoDB.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bước 1: Bắt đầu MongoDB."
+        },
+        {
+            "bbox": [
+                309.74923856209153,
+                469.7015779671717,
+                111.69424999999995,
+                11.52678503787888
+            ],
+            "text": "You can start the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể bắt đầu"
+        },
+        {
+            "bbox": [
+                425.6144346405229,
+                470.3849242424243,
+                60.06860089869281,
+                9.95381123737377
+            ],
+            "text": "mongod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongod"
+        },
+        {
+            "bbox": [
+                489.85443382352946,
+                469.7015779671717,
+                290.1815531045752,
+                11.52678503787888
+            ],
+            "text": "process by issuing the following command:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "xử lý bằng cách ban hành lệnh sau:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                494.59873737373744,
+                225.25880678104576,
+                8.958474116161597
+            ],
+            "text": "sudo service mongod start",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "SUDO Service Mongod bắt đầu"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                540.3714583333333,
+                384.0720555555556,
+                11.591287563131289
+            ],
+            "text": "Step 2: Verify that MongoDB has started successfully",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bước 2: Xác minh rằng MongoDB đã bắt đầu thành công"
+        },
+        {
+            "bbox": [
+                521.3431372549019,
+                540.5261919191919,
+                154.34287540849687,
+                11.526797979798005
+            ],
+            "text": "You can verify that the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể xác minh rằng"
+        },
+        {
+            "bbox": [
+                680.5045343137255,
+                541.2095511363636,
+                60.068617647058886,
+                9.953798295454533
+            ],
+            "text": "mongod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongod"
+        },
+        {
+            "bbox": [
+                745.392762254902,
+                540.5261919191919,
+                159.01501633986925,
+                11.526797979798005
+            ],
+            "text": "process has started suc-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "quá trình đã bắt đầu thành công-"
+        },
+        {
+            "bbox": [
+                120.5882872140523,
+                555.9995505050506,
+                338.7703030637255,
+                11.526785037878767
+            ],
+            "text": "cessfully by checking the contents of the log file at",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "một cách cẩn thận bằng cách kiểm tra nội dung của tệp nhật ký tại"
+        },
+        {
+            "bbox": [
+                463.52779452614385,
+                556.682896780303,
+                270.3087459150326,
+                9.95381123737377
+            ],
+            "text": "/var/log/mongodb/mongod.log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/var/log/mongodb/mongod.log"
+        },
+        {
+            "bbox": [
+                738.0084076797385,
+                555.9995505050506,
+                114.44749714052296,
+                11.526785037878767
+            ],
+            "text": "for a line reading",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "để đọc một dòng"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                580.8967487373737,
+                486.5591425653595,
+                8.958474116161597
+            ],
+            "text": "[initandlisten] waiting for connections on port <port>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "[initandlisten] Đang chờ kết nối trên cổng <port>"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                608.7870375631314,
+                40.763230024509824,
+                11.526797979797891
+            ],
+            "text": "where",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Ở đâu"
+        },
+        {
+            "bbox": [
+                165.52242982026144,
+                609.4703967803031,
+                60.06863104575163,
+                9.953798295454476
+            ],
+            "text": "<port>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "<port>"
+        },
+        {
+            "bbox": [
+                229.7624591503268,
+                608.7870375631314,
+                159.4320841503268,
+                11.526797979797891
+            ],
+            "text": "is the port configured in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cổng được cấu hình trong"
+        },
+        {
+            "bbox": [
+                393.365522875817,
+                609.4703967803031,
+                160.1829971405228,
+                9.953798295454476
+            ],
+            "text": "/etc/mongod.conf",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/etc/mongod.conf"
+        },
+        {
+            "bbox": [
+                553.5502618464053,
+                608.7870375631314,
+                4.171448529411691,
+                11.526797979797891
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                561.8926062091504,
+                609.4703967803031,
+                50.05714787581701,
+                9.953798295454476
+            ],
+            "text": "27017",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "27017"
+        },
+        {
+            "bbox": [
+                616.1204489379085,
+                608.7870375631314,
+                71.19792361111115,
+                11.526797979797891
+            ],
+            "text": "by default.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Theo mặc định."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                631.9958071338385,
+                759.2840580065358,
+                11.52678503787871
+            ],
+            "text": "You can optionally ensure that MongoDB will start following a system reboot by issuing the following command:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể tùy ý đảm bảo rằng MongoDB sẽ bắt đầu sau khi khởi động lại hệ thống bằng cách phát hành lệnh sau:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                656.8930053661617,
+                216.2484538398693,
+                8.958474116161597
+            ],
+            "text": "sudo chkconfig mongod on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "sudo chkconfig Mongod trên"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                702.6670205176767,
+                168.79279616013073,
+                11.591274621212165
+            ],
+            "text": "Step 3: Stop MongoDB.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bước 3: Dừng MongoDB."
+        },
+        {
+            "bbox": [
+                306.06299019607843,
+                702.8217411616162,
+                187.21385498366016,
+                11.526797979798005
+            ],
+            "text": "As needed, you can stop the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Khi cần, bạn có thể dừng"
+        },
+        {
+            "bbox": [
+                497.446551879085,
+                703.5051003787878,
+                60.068617647058716,
+                9.95379829545459
+            ],
+            "text": "mongod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongod"
+        },
+        {
+            "bbox": [
+                561.6865678104575,
+                702.8217411616162,
+                290.1815363562092,
+                11.526797979798005
+            ],
+            "text": "process by issuing the following command:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "xử lý bằng cách ban hành lệnh sau:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                727.7189264520202,
+                216.2484538398693,
+                8.958474116161653
+            ],
+            "text": "sudo service mongod stop",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "SUDO Service Mongod dừng"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                773.4916603535354,
+                189.14941339869281,
+                11.591274621212136
+            ],
+            "text": "Step 4: Restart MongoDB.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bước 4: Khởi động lại MongoDB."
+        },
+        {
+            "bbox": [
+                326.418954248366,
+                773.6463939393939,
+                124.65904289215689,
+                11.526785037878795
+            ],
+            "text": "You can restart the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể khởi động lại"
+        },
+        {
+            "bbox": [
+                455.24904370915027,
+                774.3297402146466,
+                60.068600898692864,
+                9.953798295454504
+            ],
+            "text": "mongod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongod"
+        },
+        {
+            "bbox": [
+                519.4890428921569,
+                773.6463939393939,
+                290.1815531045751,
+                11.526785037878795
+            ],
+            "text": "process by issuing the following command:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "xử lý bằng cách ban hành lệnh sau:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                798.5448863636364,
+                243.27952941176474,
+                8.958474116161625
+            ],
+            "text": "sudo service mongod restart",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "SUDO Service Mongod khởi động lại"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                826.4351881313131,
+                783.8287381535947,
+                11.526785037878795
+            ],
+            "text": "You can follow the state of the process for errors or important messages by watching the output in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể tuân theo trạng thái của quy trình về các lỗi hoặc tin nhắn quan trọng bằng cách xem đầu ra trong"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                842.5905988005051,
+                270.3087794117647,
+                9.953811237373742
+            ],
+            "text": "/var/log/mongodb/mongod.log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/var/log/mongodb/mongod.log"
+        },
+        {
+            "bbox": [
+                395.06881495098037,
+                841.9072525252525,
+                25.495803104575202,
+                11.526785037878795
+            ],
+            "text": "file.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tài liệu."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                961.18987260101,
+                18.55453492647061,
+                12.10701139520203
+            ],
+            "text": "46",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "46"
+        },
+        {
+            "bbox": [
+                680.811464869281,
+                961.18987260101,
+                223.60540808823532,
+                12.10701139520203
+            ],
+            "text": "Chapter 2. Install MongoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Chương 2. Cài đặt MongoDB"
+        }
+    ]
+}

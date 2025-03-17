@@ -1,0 +1,1576 @@
+{
+    "metadata": {
+        "page_hash": "2270360b3c5b79c8dcaa04830b94d11ffc1db6b747b2af89c985121721e8c200",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3801,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                335.4697712418301,
+                48.370422979798036,
+                323.9134154411765,
+                11.971275252525288
+            ],
+            "text": "Securing Distributed Recovery Connections",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đảm bảo kết nối phục hồi phân tán"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                96.11317582070706,
+                261.2745098039216,
+                10.172335542929318
+            ],
+            "text": "group_replication_recovery",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Recovery"
+        },
+        {
+            "bbox": [
+                401.9607843137255,
+                94.96133207070716,
+                527.8415535130719,
+                11.971275252525174
+            ],
+            "text": " channel could then be inadvertently started with the stored credentials,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Kênh sau đó có thể vô tình bắt đầu với thông tin đăng nhập được lưu trữ,"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                792.1306519607845,
+                11.971275252525288
+            ],
+            "text": "on either the original member or members that were cloned from it. An automatic start of Group Replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trên các thành viên ban đầu hoặc thành viên đã được nhân bản từ nó. Bắt đầu tự động sao chép nhóm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                126.02193813131316,
+                749.3721237745099,
+                11.971275252525288
+            ],
+            "text": "on server boot (including after a remote cloning operation) would use the stored user credentials, and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trên khởi động máy chủ (bao gồm sau khi hoạt động nhân bản từ xa) sẽ sử dụng thông tin đăng nhập người dùng được lưu trữ và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                141.55224116161617,
+                700.9861278594772,
+                11.971275252525288
+            ],
+            "text": "they would also be used if an operator did not specify the distributed recovery credentials on a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chúng cũng sẽ được sử dụng nếu một nhà điều hành không chỉ định thông tin phục hồi phân tán trên "
+        },
+        {
+            "bbox": [
+                841.672402369281,
+                142.70408491161618,
+                50.2451482843137,
+                10.172335542929318
+            ],
+            "text": "START",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BẮT ĐẦU"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                158.23438794191918,
+                170.83333333333331,
+                10.172335542929318
+            ],
+            "text": "GROUP_REPLICATION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication"
+        },
+        {
+            "bbox": [
+                311.51960784313724,
+                157.08254419191928,
+                82.83740155228764,
+                11.971275252525174
+            ],
+            "text": " command.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " yêu cầu."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                184.57376893939397,
+                72.63430702614379,
+                14.365504419192007
+            ],
+            "text": "18.6.3.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "18.6.3.2"
+        },
+        {
+            "bbox": [
+                138.515689624183,
+                184.57376893939397,
+                623.1999799019608,
+                14.365504419192007
+            ],
+            "text": "Secure Socket Layer (SSL) Connections for Distributed Recovery",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Kết nối Lớp ổ cắm an toàn (SSL) để phục hồi phân tán"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                214.45922285353538,
+                734.4829101307189,
+                11.971275252525288
+            ],
+            "text": "Whether the distributed recovery connection is made using the standard SQL client connection or a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho dù kết nối khôi phục phân tán được thực hiện bằng kết nối máy khách SQL tiêu chuẩn hay"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                229.98952588383838,
+                742.8570931372549,
+                11.971275252525288
+            ],
+            "text": "distributed recovery endpoint, to configure the connection securely, you can use Group Replication’s",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Điểm cuối Phục hồi phân tán, để định cấu hình kết nối một cách an toàn, bạn có thể sử dụng sao chép nhóm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                245.5198289141415,
+                746.608710375817,
+                11.971275252525174
+            ],
+            "text": "dedicated distributed recovery SSL options. These options correspond to the server SSL options that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn SSL phục hồi phân tán chuyên dụng. Các tùy chọn này tương ứng với các tùy chọn SSL máy chủ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                261.0501319444445,
+                714.920734885621,
+                11.971275252525288
+            ],
+            "text": "are used for group communication connections, but they are only applied for distributed recovery",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được sử dụng cho các kết nối giao tiếp nhóm, nhưng chúng chỉ được áp dụng để phục hồi phân tán"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                276.5804349747475,
+                764.3116495098038,
+                11.971275252525288
+            ],
+            "text": "connections. By default, distributed recovery connections do not use SSL, even if you activated SSL for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "kết nối. Theo mặc định, các kết nối khôi phục phân tán không sử dụng SSL, ngay cả khi bạn đã kích hoạt SSL cho"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                292.1107380050505,
+                755.887271650327,
+                11.971275252525288
+            ],
+            "text": "group communication connections, and the server SSL options are not applied for distributed recovery",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các kết nối giao tiếp nhóm và các tùy chọn SSL máy chủ không được áp dụng để phục hồi phân tán"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                307.6410410353536,
+                469.18874223856216,
+                11.971275252525174
+            ],
+            "text": "connections. You must configure these connections separately.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "kết nối. Bạn phải định cấu hình các kết nối này một cách riêng biệt."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                334.7764277146465,
+                740.9645110294118,
+                11.971275252525174
+            ],
+            "text": "If a remote cloning operation is used as part of distributed recovery, Group Replication automatically",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu hoạt động nhân bản từ xa được sử dụng như một phần của phục hồi phân tán, sao chép nhóm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                350.3067307449495,
+                777.3083982843139,
+                11.971275252525288
+            ],
+            "text": "configures the clone plugin’s SSL options to match your settings for the distributed recovery SSL options.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định cấu hình các tùy chọn SSL Plugin Plugin để phù hợp với cài đặt của bạn cho các tùy chọn SSL phục hồi phân tán."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                365.8370337752526,
+                751.2311756535948,
+                11.971275252525174
+            ],
+            "text": "(For details of how the clone plugin uses SSL, see Configuring an Encrypted Connection for Cloning.)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "(Để biết chi tiết về cách plugin Clone sử dụng SSL, hãy xem cấu hình kết nối được mã hóa để nhân bản.)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                392.9723298611111,
+                386.3010453431372,
+                11.971275252525288
+            ],
+            "text": "The distributed recovery SSL options are as follows:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các tùy chọn SSL phục hồi phân tán như sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                420.1076647727274,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                421.25946969696975,
+                341.66666666666674,
+                10.17237436868686
+            ],
+            "text": "group_replication_recovery_use_ssl",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Recovery_USE_SSL"
+        },
+        {
+            "bbox": [
+                499.1013071895425,
+                420.1076647727274,
+                57.73161764705884,
+                11.971275252525174
+            ],
+            "text": ": Set to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Đặt thành "
+        },
+        {
+            "bbox": [
+                556.8329248366014,
+                421.25946969696975,
+                20.0980392156863,
+                10.17237436868686
+            ],
+            "text": "ON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÊN"
+        },
+        {
+            "bbox": [
+                576.9309640522877,
+                420.1076647727274,
+                295.0895110294117,
+                11.971275252525174
+            ],
+            "text": " to make Group Replication use SSL for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để tạo sao chép nhóm, sử dụng SSL cho"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                435.6379678030304,
+                759.5886940359477,
+                11.971275252525174
+            ],
+            "text": "distributed recovery connections, including remote cloning operations and state transfer from a donor’s",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các kết nối phục hồi phân tán, bao gồm các hoạt động nhân bản từ xa và chuyển nhà nước từ một nhà tài trợ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                451.1682708333334,
+                761.5146891339868,
+                11.971275252525288
+            ],
+            "text": "binary log. You can just set this option and none of the other distributed recovery SSL options, in which",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhật ký nhị phân. Bạn chỉ có thể đặt tùy chọn này và không có tùy chọn SSL phục hồi phân tán nào khác, trong đó"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                466.6985738636364,
+                728.9223353758169,
+                11.971275252525288
+            ],
+            "text": "case the server automatically generates certificates to use for the connection, and uses the default",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trường hợp máy chủ tự động tạo chứng chỉ để sử dụng cho kết nối và sử dụng mặc định"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                482.2288768939394,
+                765.232876633987,
+                11.971275252525288
+            ],
+            "text": "cipher suites. If you want to configure the certificates and cipher suites for the connection, use the other",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bộ mật mã. Nếu bạn muốn định cấu hình các chứng chỉ và bộ mật mã cho kết nối, hãy sử dụng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                497.7591799242425,
+                318.3696895424837,
+                11.971275252525174
+            ],
+            "text": "distributed recovery SSL options to do this.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các tùy chọn SSL phục hồi phân tán để làm điều này."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                524.894476010101,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                526.0462809343435,
+                331.61764705882354,
+                10.172374368686917
+            ],
+            "text": "group_replication_recovery_ssl_ca",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Recovery_SSL_CA"
+        },
+        {
+            "bbox": [
+                489.0522875816994,
+                524.894476010101,
+                434.72058823529403,
+                11.971275252525288
+            ],
+            "text": ": The path name of the Certificate Authority (CA) file to use",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Tên đường dẫn của tệp cơ quan chứng chỉ (CA) để sử dụng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                540.424779040404,
+                751.2145110294118,
+                11.971275252525231
+            ],
+            "text": "for distributed recovery connections. Group Replication automatically configures the clone SSL option",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cho các kết nối phục hồi phân tán. Sao chép nhóm tự động định cấu hình tùy chọn SSL nhân bản"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                557.1068869949495,
+                120.58823529411765,
+                10.172374368686917
+            ],
+            "text": "clone_ssl_ca",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Clone_SSL_CA"
+        },
+        {
+            "bbox": [
+                278.02287581699346,
+                555.955082070707,
+                104.25857843137254,
+                11.971275252525288
+            ],
+            "text": " to match this.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để phù hợp với điều này."
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                584.2422219065656,
+                371.813725490196,
+                10.17237436868686
+            ],
+            "text": "group_replication_recovery_ssl_capath",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Recovery_SSL_CAPATH"
+        },
+        {
+            "bbox": [
+                529.2483660130719,
+                583.0904169823233,
+                378.8982508169935,
+                11.971275252525231
+            ],
+            "text": ": The path name of a directory that contains trusted",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Tên đường dẫn của một thư mục có chứa đáng tin cậy"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                598.6207200126263,
+                331.3496732026143,
+                11.971275252525288
+            ],
+            "text": "SSL certificate authority (CA) certificate files.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tệp chứng chỉ chứng chỉ SSL (CA)."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                625.7560549242423,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                626.9078598484848,
+                351.71568627450984,
+                10.17237436868686
+            ],
+            "text": "group_replication_recovery_ssl_cert",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Recovery_SSL_CERT"
+        },
+        {
+            "bbox": [
+                509.1503267973856,
+                625.7560549242423,
+                386.3345253267974,
+                11.971275252525288
+            ],
+            "text": ": The path name of the SSL public key certificate file",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Tên đường dẫn của tệp chứng chỉ khóa công khai SSL"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                641.2863579545455,
+                751.2145110294118,
+                11.971275252525231
+            ],
+            "text": "to use for distributed recovery connections. Group Replication automatically configures the clone SSL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "để sử dụng cho các kết nối phục hồi phân tán. Sao chép nhóm tự động định cấu hình SSL nhân bản"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                656.8166609848485,
+                50.27859477124184,
+                11.971275252525288
+            ],
+            "text": "option ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "lựa chọn "
+        },
+        {
+            "bbox": [
+                207.71323529411765,
+                657.9684659090909,
+                140.68625776143793,
+                10.17237436868686
+            ],
+            "text": "clone_ssl_cert",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "clone_ssl_cert"
+        },
+        {
+            "bbox": [
+                348.3995098039216,
+                656.8166609848485,
+                104.25861192810453,
+                11.971275252525288
+            ],
+            "text": " to match this.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để phù hợp với điều này."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                683.9519570707071,
+                19.361107761437893,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                685.1037619949495,
+                341.66666666666674,
+                10.172374368686917
+            ],
+            "text": "group_replication_recovery_ssl_key",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Recovery_SSL_KEY"
+        },
+        {
+            "bbox": [
+                499.1013071895425,
+                683.9519570707071,
+                391.00738643790845,
+                11.971275252525231
+            ],
+            "text": ": The path name of the SSL private key file to use for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Tên đường dẫn của tệp khóa riêng của SSL để sử dụng cho"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                699.4822601010101,
+                727.0130049019608,
+                11.971275252525231
+            ],
+            "text": "distributed recovery connections. Group Replication automatically configures the clone SSL option",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kết nối phục hồi phân tán. Sao chép nhóm tự động định cấu hình tùy chọn SSL nhân bản"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                716.1643680555555,
+                140.68627450980395,
+                10.172374368686917
+            ],
+            "text": "clone_ssl_cert",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "clone_ssl_cert"
+        },
+        {
+            "bbox": [
+                298.12091503267976,
+                715.0125631313132,
+                104.25857843137254,
+                11.971275252525231
+            ],
+            "text": " to match this.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để phù hợp với điều này."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                742.1478980429292,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                743.2997029671717,
+                492.4019607843137,
+                10.17237436868686
+            ],
+            "text": "group_replication_recovery_ssl_verify_server_cert",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Recovery_SSL_VERIFY_SERVER_CERT"
+        },
+        {
+            "bbox": [
+                649.8366013071895,
+                742.1478980429292,
+                237.3577928921569,
+                11.971275252525288
+            ],
+            "text": ": Makes the distributed recovery",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Làm cho sự phục hồi phân tán"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                757.6782010732323,
+                735.3871879084968,
+                11.971275252525231
+            ],
+            "text": "connection check the server’s Common Name value in the donor sent certificate. Setting this option",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kết nối Kiểm tra giá trị tên phổ biến của máy chủ trong chứng chỉ được gửi của nhà tài trợ. Đặt tùy chọn này"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                773.2085041035353,
+                18.624183006535958,
+                11.971275252525231
+            ],
+            "text": "to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ĐẾN "
+        },
+        {
+            "bbox": [
+                176.05882352941177,
+                774.3603478535354,
+                20.09803921568627,
+                10.17233554292929
+            ],
+            "text": "ON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÊN"
+        },
+        {
+            "bbox": [
+                196.15686274509804,
+                773.2085041035353,
+                471.9689207516341,
+                11.971275252525231
+            ],
+            "text": " is the equivalent for distributed recovery connections of setting ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tương đương với các kết nối khôi phục phân tán của cài đặt "
+        },
+        {
+            "bbox": [
+                668.1258337418301,
+                774.3603478535354,
+                150.73529411764707,
+                10.17233554292929
+            ],
+            "text": "VERIFY_IDENTITY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Verify_identity"
+        },
+        {
+            "bbox": [
+                818.8611278594772,
+                773.2085041035353,
+                52.13773039215698,
+                11.971275252525231
+            ],
+            "text": " for the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cho"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                789.8906508838384,
+                261.27450980392155,
+                10.17233554292929
+            ],
+            "text": "group_replication_ssl_mode",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_SSL_Mode"
+        },
+        {
+            "bbox": [
+                418.7091503267974,
+                788.7388071338385,
+                337.9150494281047,
+                11.971275252525231
+            ],
+            "text": " option for group communication connections.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tùy chọn cho kết nối giao tiếp nhóm."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                815.874103219697,
+                19.361107761437893,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                817.025946969697,
+                341.66666666666674,
+                10.17233554292929
+            ],
+            "text": "group_replication_recovery_ssl_crl",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Recovery_SSL_CRL"
+        },
+        {
+            "bbox": [
+                499.1013071895425,
+                815.874103219697,
+                419.84802246732016,
+                11.97127525252526
+            ],
+            "text": ": The path name of a file containing certificate revocation",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Tên đường dẫn của một tệp chứa thu hồi chứng chỉ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                831.40440625,
+                33.4967320261438,
+                11.971275252525231
+            ],
+            "text": "lists.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "danh sách."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                858.5397799873738,
+                19.361107761437893,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                859.6916237373738,
+                381.8627450980392,
+                10.17233554292929
+            ],
+            "text": "group_replication_recovery_ssl_crlpath",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Recovery_SSL_CRLPath"
+        },
+        {
+            "bbox": [
+                539.2973856209151,
+                858.5397799873738,
+                380.74063807189543,
+                11.97127525252526
+            ],
+            "text": ": The path name of a directory containing certificate",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Tên đường dẫn của một thư mục chứa chứng chỉ"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                874.0700830176768,
+                115.41299019607843,
+                11.97127525252526
+            ],
+            "text": "revocation lists.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Danh sách thu hồi."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                901.2053765151516,
+                19.361107761437893,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                902.3572267361111,
+                371.813725490196,
+                10.172329071969699
+            ],
+            "text": "group_replication_recovery_ssl_cipher",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Recovery_SSL_COPHER"
+        },
+        {
+            "bbox": [
+                529.2483660130719,
+                901.2053765151516,
+                403.9706049836602,
+                11.97127525252526
+            ],
+            "text": ": A list of permissible ciphers for connection encryption",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Danh sách các mật mã cho phép để mã hóa kết nối"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                916.7356795454546,
+                712.123774509804,
+                11.97127525252526
+            ],
+            "text": "for the distributed recovery connection. Specify a list of one or more cipher names, separated by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với kết nối phục hồi phân tán. Chỉ định danh sách một hoặc nhiều tên mật mã, được phân tách bởi"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3772",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3772"
+        }
+    ]
+}

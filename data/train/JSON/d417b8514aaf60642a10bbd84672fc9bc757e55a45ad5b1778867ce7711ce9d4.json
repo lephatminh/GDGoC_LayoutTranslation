@@ -1,0 +1,896 @@
+{
+    "metadata": {
+        "page_hash": "d417b8514aaf60642a10bbd84672fc9bc757e55a45ad5b1778867ce7711ce9d4",
+        "original_filename": "user-handbook.pdf",
+        "page_no": 56,
+        "num_pages": 206,
+        "original_width": 595.28003,
+        "original_height": 841.89001,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                83.06343159201896,
+                43.83002656130816,
+                769.9380196745387,
+                36.42753701282186
+            ],
+            "text": "Customizing the execution environment",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/72e37f+NotoSerif-Bold",
+                "size": 22
+            },
+            "text_vi": "Tùy chỉnh môi trường thực thi"
+        },
+        {
+            "bbox": [
+                83.06343159201896,
+                94.31966148404581,
+                858.8731574785063,
+                17.385845034555132
+            ],
+            "text": "Pipeline is designed to easily use Docker images as the execution environment for a single Stage or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/068126+NotoSerif",
+                "size": 10.5
+            },
+            "text_vi": "Đường ống được thiết kế để dễ dàng sử dụng hình ảnh docker làm môi trường thực hiện cho một giai đoạn hoặc"
+        },
+        {
+            "bbox": [
+                83.06343159201896,
+                113.53175458157534,
+                858.8722104452252,
+                17.385832859567927
+            ],
+            "text": "the entire Pipeline. Meaning that a user can define the tools required for their Pipeline, without",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/068126+NotoSerif",
+                "size": 10.5
+            },
+            "text_vi": "toàn bộ đường ống. Meaning that a user can define the tools required for their Pipeline, without"
+        },
+        {
+            "bbox": [
+                83.06343159201896,
+                132.7439085540401,
+                858.8731574785063,
+                17.385845034555132
+            ],
+            "text": "having to manually configure agents. Practically any tool which can be packaged in a Docker",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/068126+NotoSerif",
+                "size": 10.5
+            },
+            "text_vi": "having to manually configure agents. Practically any tool which can be packaged in a Docker"
+        },
+        {
+            "bbox": [
+                83.06343159201896,
+                151.95600165156964,
+                562.3875832858025,
+                17.385845034555018
+            ],
+            "text": "container. can be used with ease by making only minor edits to a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/068126+NotoSerif",
+                "size": 10.5
+            },
+            "text_vi": "container. có thể được sử dụng một cách dễ dàng bằng cách chỉ thực hiện các chỉnh sửa nhỏ cho một "
+        },
+        {
+            "bbox": [
+                645.4510665341821,
+                154.61497013131202,
+                99.43849451828578,
+                12.783736440820803
+            ],
+            "text": "Jenkinsfile",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 10.5
+            },
+            "text_vi": "Jenkinsfile"
+        },
+        {
+            "bbox": [
+                744.8895610524679,
+                151.95600165156964,
+                4.519931569013011,
+                17.385845034555018
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/068126+NotoSerif",
+                "size": 10.5
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                201.13688633744448,
+                160.9956715665399,
+                13.392485795145717
+            ],
+            "text": "// Declarative //",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "// khai báo //"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                219.0828051279525,
+                94.70334188768267,
+                13.392485795145603
+            ],
+            "text": "pipeline {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "đường ống {"
+        },
+        {
+            "bbox": [
+                145.40978697034402,
+                237.0287239184605,
+                60.76798494315355,
+                13.392485795145603
+            ],
+            "text": "agent {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "đại lý {"
+        },
+        {
+            "bbox": [
+                185.15823048859878,
+                254.97464270896864,
+                295.65915851401894,
+                13.392485795145603
+            ],
+            "text": "docker { image 'node:7-alpine' }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "Docker {Image 'Node: 7-alpine'}"
+        },
+        {
+            "bbox": [
+                141.46381955732664,
+                272.92056149947655,
+                7.891946879185582,
+                13.392485795145603
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                145.713328355732,
+                290.8664802899847,
+                69.93477636903089,
+                13.392485795145603
+            ],
+            "text": "stages {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "giai đoạn {"
+        },
+        {
+            "bbox": [
+                183.68573148674244,
+                308.81247213041524,
+                136.13603416193888,
+                13.392485795145603
+            ],
+            "text": "stage('Test') {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "giai đoạn ('test') {"
+        },
+        {
+            "bbox": [
+                218.96270398991882,
+                326.75840309591035,
+                62.977730413701266,
+                13.392485795145603
+            ],
+            "text": "steps {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "Các bước {"
+        },
+        {
+            "bbox": [
+                258.52765378337983,
+                344.7043218864185,
+                174.93810560048524,
+                13.392485795145603
+            ],
+            "text": "sh 'node --version'",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "Sh 'Node --Version'"
+        },
+        {
+            "bbox": [
+                216.32454476929115,
+                362.6502406769264,
+                8.79389276673706,
+                13.392485795145603
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                178.71380676082816,
+                380.5961594674344,
+                8.523299530138786,
+                13.392485795145717
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                141.46381955732664,
+                398.54215130786497,
+                7.891946879185582,
+                13.392485795145603
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                416.4880700983731,
+                9.47033797690139,
+                13.392485795145603
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                434.4339888888811,
+                113.64400751021329,
+                13.392485795145603
+            ],
+            "text": "// Script //",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "// Kịch bản //"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                452.3799442043504,
+                56.822002033227946,
+                13.392485795145603
+            ],
+            "text": "node {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "nút {"
+        },
+        {
+            "bbox": [
+                148.592027142251,
+                470.3258629948584,
+                531.1023508969382,
+                13.392485795145603
+            ],
+            "text": "/* Requires the Docker Pipeline plugin to be installed */",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "/ * Yêu cầu plugin Docker Pipeline được cài đặt *//"
+        },
+        {
+            "bbox": [
+                148.2545544153396,
+                488.27178178536644,
+                351.50350020980875,
+                13.392485795145603
+            ],
+            "text": "docker.image('node:7-alpine').inside {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "Docker.image ('Node: 7-alpine'). Bên trong {"
+        },
+        {
+            "bbox": [
+                183.68573148674244,
+                506.21773710083573,
+                136.13603416193888,
+                13.392485795145603
+            ],
+            "text": "stage('Test') {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "giai đoạn ('test') {"
+        },
+        {
+            "bbox": [
+                221.2711062220582,
+                524.1636558913438,
+                174.31332191674565,
+                13.39248579514566
+            ],
+            "text": "sh 'node --version'",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "Sh 'Node --Version'"
+        },
+        {
+            "bbox": [
+                178.71380676082816,
+                542.1095746818519,
+                8.523299530138786,
+                13.392485795145603
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                141.46381955732664,
+                560.0555299973212,
+                7.891946879185582,
+                13.392485795145603
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                578.0014487878292,
+                9.47033797690139,
+                13.392485795145603
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                83.06343159201896,
+                621.9835896377961,
+                858.8740011990658,
+                17.38588155951635
+            ],
+            "text": "When the Pipeline executes, Jenkins will automatically start the specified container and execute the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/068126+NotoSerif",
+                "size": 10.5
+            },
+            "text_vi": "Khi đường ống thực thi, Jenkins sẽ tự động khởi động container được chỉ định và thực thi"
+        },
+        {
+            "bbox": [
+                83.06343159201896,
+                641.1957192602868,
+                196.97861433382872,
+                17.385881559516292
+            ],
+            "text": "defined steps within it:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/068126+NotoSerif",
+                "size": 10.5
+            },
+            "text_vi": "Các bước được xác định trong nó:"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                690.3765674212002,
+                151.52533875527456,
+                13.392485795145603
+            ],
+            "text": "[Pipeline] stage",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "[Đường ống] Giai đoạn"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                708.3224862117083,
+                179.9363371890705,
+                13.392485795145603
+            ],
+            "text": "[Pipeline] { (Test)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "[Đường ống] {(kiểm tra)"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                726.2684171772034,
+                123.11434032147862,
+                13.392485795145603
+            ],
+            "text": "[Pipeline] sh",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "[Đường ống] Sh"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                744.2143603176856,
+                321.9913293580502,
+                13.39248579514566
+            ],
+            "text": "[guided-tour] Running shell script",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "[guided-tour] Running shell script"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                762.1602791081937,
+                151.52533875527456,
+                13.392485795145603
+            ],
+            "text": "+ node --version",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "+ node --version"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                780.106222248676,
+                56.822002033227946,
+                13.392485795145603
+            ],
+            "text": "v7.4.0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "v7.4.0"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                798.052141039184,
+                113.64400751021329,
+                13.392485795145603
+            ],
+            "text": "[Pipeline] }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "[Pipeline] }"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                815.9980720046791,
+                179.9363371890705,
+                13.392485795145603
+            ],
+            "text": "[Pipeline] // stage",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "[Đường ống] // Giai đoạn"
+        },
+        {
+            "bbox": [
+                102.00409721454959,
+                833.9440151451613,
+                113.64400751021329,
+                13.392485795145632
+            ],
+            "text": "[Pipeline] }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/e7aef3+mplus1mn-regular",
+                "size": 11
+            },
+            "text_vi": "[Đường ống]}"
+        },
+        {
+            "bbox": [
+                83.06343159201896,
+                882.857025765159,
+                434.1613777132755,
+                29.80436351774742
+            ],
+            "text": "Caching data for containers",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/72e37f+NotoSerif-Bold",
+                "size": 18
+            },
+            "text_vi": "Bộ nhớ đệm dữ liệu cho các thùng chứa"
+        },
+        {
+            "bbox": [
+                83.06343159201896,
+                926.7235115427965,
+                858.873260791228,
+                17.3858803420176
+            ],
+            "text": "Many build tools will download external dependencies and cache them locally for future re-use.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/068126+NotoSerif",
+                "size": 10.5
+            },
+            "text_vi": "Nhiều công cụ xây dựng sẽ tải xuống các phụ thuộc bên ngoài và lưu trữ chúng tại địa phương để sử dụng lại trong tương lai."
+        },
+        {
+            "bbox": [
+                83.06343159201896,
+                945.9356314252975,
+                858.8741045117874,
+                17.3858791245189
+            ],
+            "text": "Since containers are initially created with \"clean\" file systems, this can result in slower Pipelines, as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/068126+NotoSerif",
+                "size": 10.5
+            },
+            "text_vi": "Since containers are initially created with \"clean\" file systems, this can result in slower Pipelines, as"
+        },
+        {
+            "bbox": [
+                84.78531028497629,
+                995.7800309924096,
+                17.32554340853666,
+                14.902185411369832
+            ],
+            "text": "50",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/068126+NotoSerif",
+                "size": 9
+            },
+            "text_vi": "50"
+        }
+    ]
+}

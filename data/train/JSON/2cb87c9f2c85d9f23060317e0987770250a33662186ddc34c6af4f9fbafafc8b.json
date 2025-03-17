@@ -1,0 +1,896 @@
+{
+    "metadata": {
+        "page_hash": "2cb87c9f2c85d9f23060317e0987770250a33662186ddc34c6af4f9fbafafc8b",
+        "original_filename": "cm-oreilly-kubernetes-patterns-ebook-f19824-201910-en.pdf",
+        "page_no": 168,
+        "num_pages": 266,
+        "original_width": 504,
+        "original_height": 661.5,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                146.42857142857142,
+                81.03777059712763,
+                732.1429791666667,
+                21.94800037792902
+            ],
+            "text": "and production ending up side by side in the same Docker image, which requires an",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "và sản xuất kết thúc cạnh nhau trong cùng một hình ảnh docker, đòi hỏi"
+        },
+        {
+            "bbox": [
+                146.42248854166667,
+                100.56154913076341,
+                732.1427981646825,
+                21.94800037792902
+            ],
+            "text": "image rebuild for every change in either environment. All that shows us that environ‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Hình ảnh xây dựng lại cho mọi thay đổi trong một trong hai môi trường. Tất cả những điều đó cho chúng ta thấy rằng môi trường"
+        },
+        {
+            "bbox": [
+                146.4376642361111,
+                120.08540513983371,
+                540.6234558035715,
+                21.948000377928906
+            ],
+            "text": "ment variables are suitable for small sets of configurations only.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các biến tinh thần chỉ phù hợp cho các bộ cấu hình nhỏ."
+        },
+        {
+            "bbox": [
+                146.43761746031745,
+                148.90623582766443,
+                114.06916279761904,
+                21.94800037792902
+            ],
+            "text": "The patters ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các patters "
+        },
+        {
+            "bbox": [
+                260.50675992063486,
+                148.69475888133036,
+                203.1931731150794,
+                22.159477324263094
+            ],
+            "text": "Configuration Resource",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Tài nguyên cấu hình"
+        },
+        {
+            "bbox": [
+                463.69993303571425,
+                148.90623582766443,
+                16.066610615079355,
+                21.94800037792902
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                479.7665436507936,
+                148.69475888133036,
+                220.51140228174603,
+                22.159477324263094
+            ],
+            "text": "Immutable Configuration",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Cấu hình bất biến"
+        },
+        {
+            "bbox": [
+                700.2779459325396,
+                148.90623582766443,
+                59.59472023809519,
+                21.94800037792902
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                759.8726661706348,
+                148.69475888133036,
+                118.70783283730157,
+                22.159477324263094
+            ],
+            "text": "Configuration",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Cấu hình"
+        },
+        {
+            "bbox": [
+                146.4315345734127,
+                168.21853741496602,
+                76.0849019345238,
+                22.159570294784544
+            ],
+            "text": "Template",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Bản mẫu"
+        },
+        {
+            "bbox": [
+                222.51645684523808,
+                168.42999886621317,
+                656.0580223214286,
+                21.948108843537398
+            ],
+            "text": " described in the following chapters are good alternatives when more com‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " Được mô tả trong các chương sau là những lựa chọn thay thế tốt khi nhiều com‐"
+        },
+        {
+            "bbox": [
+                146.42554523809525,
+                187.95387037037028,
+                294.0254964285714,
+                21.94800037792902
+            ],
+            "text": "plex configuration needs come up.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Nhu cầu cấu hình Plex đi lên."
+        },
+        {
+            "bbox": [
+                146.42551473214286,
+                216.77470105820112,
+                732.1429445932538,
+                21.94804686318969
+            ],
+            "text": "Environment variables are universally applicable, and because of that, we can set",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các biến môi trường được áp dụng toàn cầu và do đó, chúng ta có thể đặt"
+        },
+        {
+            "bbox": [
+                146.41946438492062,
+                236.2985570672713,
+                732.1430361111111,
+                21.948000377928906
+            ],
+            "text": "them at various levels. This option leads to fragmentation of the configuration defini‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "họ ở các cấp độ khác nhau. Tùy chọn này dẫn đến sự phân mảnh của cấu hình xác định"
+        },
+        {
+            "bbox": [
+                146.4347315972222,
+                255.82233560090697,
+                732.1429608630951,
+                21.948046863189802
+            ],
+            "text": "tions and makes it hard to track for a given environment variable where it comes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "tions và làm cho nó khó theo dõi một biến môi trường nhất định khi nó đến"
+        },
+        {
+            "bbox": [
+                146.4287259920635,
+                275.3461606198034,
+                732.142946626984,
+                21.947984882842093
+            ],
+            "text": "from. When there is no central place where all environments variables are defined, it",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "từ. Khi không có vị trí trung tâm nơi tất cả các biến môi trường được xác định, nó"
+        },
+        {
+            "bbox": [
+                146.422659375,
+                294.86997014361305,
+                318.90311889880945,
+                21.948000377928906
+            ],
+            "text": "is hard to debug configuration issues.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "là khó để gỡ lỗi các vấn đề cấu hình."
+        },
+        {
+            "bbox": [
+                146.42267564484126,
+                323.69084731670443,
+                654.801968204365,
+                21.94804686318969
+            ],
+            "text": "Another disadvantage of environment variables is that they can be set only ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Một nhược điểm khác của các biến môi trường là chúng chỉ có thể được đặt "
+        },
+        {
+            "bbox": [
+                801.2245828373016,
+                323.4793238851096,
+                50.18225099206347,
+                22.159570294784544
+            ],
+            "text": "before",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "trước"
+        },
+        {
+            "bbox": [
+                851.406833829365,
+                323.69084731670443,
+                27.158757936507982,
+                21.94804686318969
+            ],
+            "text": " an",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " MỘT"
+        },
+        {
+            "bbox": [
+                146.43800590277777,
+                343.21465684051395,
+                732.1429812003969,
+                21.948000377928906
+            ],
+            "text": "application starts, and we cannot change them later. On the one hand, it’s a drawback",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ứng dụng bắt đầu và chúng tôi không thể thay đổi chúng sau này. Một mặt, nó là một nhược điểm"
+        },
+        {
+            "bbox": [
+                146.43198402777776,
+                362.7384818594105,
+                732.1428612103175,
+                21.94804686318969
+            ],
+            "text": "that you can’t change configuration “hot” during runtime to tune the application.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Rằng bạn có thể thay đổi cấu hình, hot hot trong thời gian chạy để điều chỉnh ứng dụng."
+        },
+        {
+            "bbox": [
+                146.4260740079365,
+                382.26230687830696,
+                479.4189954365078,
+                21.94804686318969
+            ],
+            "text": "However, many see this as an advantage, as it promotes ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tuy nhiên, nhiều người coi đây là một lợi thế, vì nó thúc đẩy "
+        },
+        {
+            "bbox": [
+                625.8449474206349,
+                382.05082993197277,
+                108.30831299603176,
+                22.159523809523876
+            ],
+            "text": "immutability",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "bất biến"
+        },
+        {
+            "bbox": [
+                734.1531790674603,
+                382.26230687830696,
+                144.41700892857136,
+                21.94804686318969
+            ],
+            "text": " even to the con‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " Ngay cả với con lừa"
+        },
+        {
+            "bbox": [
+                146.42123169642858,
+                401.78616288737715,
+                732.1429364583332,
+                21.948000377928906
+            ],
+            "text": "figuration. Immutability here means you throw away the running application con‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "hình. Tính bất biến ở đây có nghĩa là bạn vứt bỏ ứng dụng đang chạy Con‐"
+        },
+        {
+            "bbox": [
+                146.43656195436506,
+                421.3099414210128,
+                732.1426964781746,
+                21.948046863189802
+            ],
+            "text": "tainer and start a new copy with a modified configuration, very likely with a smooth",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tainer và bắt đầu một bản sao mới với cấu hình đã sửa đổi, rất có thể với một"
+        },
+        {
+            "bbox": [
+                146.4304790674603,
+                440.8337974300831,
+                732.1430645833333,
+                21.94800037792902
+            ],
+            "text": "Deployment strategy like rolling updates. That way, you are always in a defined and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Chiến lược triển khai như cập nhật cuộn. Bằng cách đó, bạn luôn ở trong một xác định và"
+        },
+        {
+            "bbox": [
+                146.42448973214283,
+                460.35762244897955,
+                271.73176473214284,
+                21.948046863189802
+            ],
+            "text": "well-known configuration state.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Trạng thái cấu hình nổi tiếng."
+        },
+        {
+            "bbox": [
+                146.42452227182537,
+                489.17849962207106,
+                732.1430015376984,
+                21.948000377928906
+            ],
+            "text": "Environment variables are simple to use, but are applicable mainly for simple use",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các biến môi trường rất đơn giản để sử dụng, nhưng được áp dụng chủ yếu để sử dụng đơn giản"
+        },
+        {
+            "bbox": [
+                146.4185634424603,
+                508.70235563114136,
+                732.1429405257936,
+                21.948000377928906
+            ],
+            "text": "cases and have limitations for complex configuration requirements. The next patterns",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Các trường hợp và có những hạn chế cho các yêu cầu cấu hình phức tạp. Các mẫu tiếp theo"
+        },
+        {
+            "bbox": [
+                146.43392420634922,
+                528.2261806500378,
+                350.63541259920635,
+                21.948000377928906
+            ],
+            "text": "show how to overcome those limitations.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Chỉ ra cách khắc phục những hạn chế đó."
+        },
+        {
+            "bbox": [
+                146.41772554563494,
+                563.4902713529857,
+                224.78948179563486,
+                35.12142743764173
+            ],
+            "text": "More Information",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 18.92000007629395
+            },
+            "text_vi": "Thêm thông tin"
+        },
+        {
+            "bbox": [
+                164.0352038690476,
+                611.9001768707483,
+                11.499300099206351,
+                21.947984882842036
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                180.3684914186508,
+                611.9001768707483,
+                271.93718368055556,
+                21.947984882842036
+            ],
+            "text": "EnvVar Configuration Example",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ví dụ cấu hình envvar"
+        },
+        {
+            "bbox": [
+                164.0305181547619,
+                637.6220056689342,
+                11.518663244047616,
+                21.948015873015834
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                180.39128546626984,
+                637.6220056689342,
+                204.1362646329365,
+                21.948015873015834
+            ],
+            "text": "The Twelve-Factor App",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ứng dụng mười hai yếu tố"
+        },
+        {
+            "bbox": [
+                164.03055069444443,
+                663.3438499622071,
+                11.723429365079369,
+                21.948031368102818
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                180.68216582341267,
+                663.3438499622071,
+                156.2255722718254,
+                21.948031368102818
+            ],
+            "text": "Immutable Server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Máy chủ bất biến"
+        },
+        {
+            "bbox": [
+                164.0305181547619,
+                689.0657097505668,
+                11.517979910714303,
+                21.94801587301589
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                180.3903072420635,
+                689.0657097505668,
+                508.0070548611111,
+                21.94801587301589
+            ],
+            "text": "Spring Boot Profiles for Using Sets of Configuration Values",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Cấu hình khởi động mùa xuân để sử dụng các bộ giá trị cấu hình"
+        },
+        {
+            "bbox": [
+                708.7875406746032,
+                945.5380580498866,
+                109.82142857142856,
+                16.70680427059714
+            ],
+            "text": "More Information ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "Thêm thông tin "
+        },
+        {
+            "bbox": [
+                834.0205763888888,
+                945.5380580498866,
+                6.735754960317536,
+                16.70680427059714
+            ],
+            "text": "| ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "| "
+        },
+        {
+            "bbox": [
+                856.1679384920634,
+                945.5380580498866,
+                22.403551091269833,
+                16.70680427059714
+            ],
+            "text": "149",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "149"
+        }
+    ]
+}

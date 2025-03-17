@@ -1,0 +1,1896 @@
+{
+    "metadata": {
+        "page_hash": "d9f080e80dc42464bf1a1ddccadd9cb2dc7c39d411a63ece1d393ea90361f830",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4836,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                335.86335784313724,
+                48.370422979798036,
+                383.4203431372549,
+                11.971275252525288
+            ],
+            "text": "The INFORMATION_SCHEMA PARTITIONS Table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng phân vùng thông tin_schema"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                94.96133207070716,
+                29.778594771241842,
+                11.971275252525174
+            ],
+            "text": "For ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vì "
+        },
+        {
+            "bbox": [
+                217.36029411764707,
+                96.11317582070706,
+                30.14705882352942,
+                10.172335542929318
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                247.5073529411765,
+                94.96133207070716,
+                398.44361070261436,
+                11.971275252525174
+            ],
+            "text": " tables, you can also obtain this information using the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng, bạn cũng có thể có được thông tin này bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                645.9509636437908,
+                96.11317582070706,
+                80.39215686274508,
+                10.172335542929318
+            ],
+            "text": "ndb_desc",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ndb_desc"
+        },
+        {
+            "bbox": [
+                726.3431205065359,
+                94.96133207070716,
+                47.46486928104582,
+                11.971275252525174
+            ],
+            "text": " utility.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tính thiết thực."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                122.31274526515153,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                123.46460195707084,
+                120.58823529411768,
+                10.172322601010023
+            ],
+            "text": "INDEX_LENGTH",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Index_length"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                149.6642490530304,
+                498.04616013071893,
+                11.971275252525174
+            ],
+            "text": "The length of the index file for this partition or subpartition, in bytes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Độ dài của tệp chỉ mục cho phân vùng hoặc phân vùng này, trong byte."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                177.01566224747478,
+                121.00694444444446,
+                11.971275252525288
+            ],
+            "text": "For partitions of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho các phân vùng của "
+        },
+        {
+            "bbox": [
+                308.5886437908497,
+                178.1675059974749,
+                30.14705882352939,
+                10.172335542929204
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                338.7357026143791,
+                177.01566224747478,
+                482.1854407679739,
+                11.971275252525288
+            ],
+            "text": " tables, whether the tables use implicit or explicit partitioning, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các bảng, cho dù các bảng sử dụng phân vùng ngầm hoặc rõ ràng, "
+        },
+        {
+            "bbox": [
+                820.921143382353,
+                178.1675059974749,
+                120.5882855392158,
+                10.172335542929204
+            ],
+            "text": "INDEX_LENGTH",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Index_length"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                192.54596527777778,
+                624.6135620915032,
+                11.971275252525288
+            ],
+            "text": "column value is always 0. However, you can obtain equivalent information using the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị cột luôn là 0. Tuy nhiên, bạn có thể có được thông tin tương đương bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                812.1952614379085,
+                193.6978090277779,
+                80.3921568627452,
+                10.172335542929204
+            ],
+            "text": "ndb_desc",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ndb_desc"
+        },
+        {
+            "bbox": [
+                892.5874183006537,
+                192.54596527777778,
+                47.46491952614372,
+                11.971275252525288
+            ],
+            "text": " utility.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tính thiết thực."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                219.89745612373747,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                221.04931281565655,
+                90.44117647058823,
+                10.17232260101025
+            ],
+            "text": "DATA_FREE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Data_free"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                247.24886931818185,
+                548.3414865196079,
+                11.971275252525288
+            ],
+            "text": "The number of bytes allocated to the partition or subpartition but not used.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng byte được phân bổ cho phân vùng hoặc phân vùng nhưng không được sử dụng."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                274.6003731060607,
+                29.778594771241842,
+                11.971275252525288
+            ],
+            "text": "For ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vì "
+        },
+        {
+            "bbox": [
+                217.36029411764707,
+                275.75213920454553,
+                30.14705882352942,
+                10.172413194444516
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                247.5073529411765,
+                274.6003731060607,
+                398.44361070261436,
+                11.971275252525288
+            ],
+            "text": " tables, you can also obtain this information using the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng, bạn cũng có thể có được thông tin này bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                645.9509636437908,
+                275.75213920454553,
+                80.39215686274508,
+                10.172413194444516
+            ],
+            "text": "ndb_desc",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ndb_desc"
+        },
+        {
+            "bbox": [
+                726.3431205065359,
+                274.6003731060607,
+                47.46486928104582,
+                11.971275252525288
+            ],
+            "text": " utility.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tính thiết thực."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                301.9517863005051,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                303.1036300505051,
+                110.53921568627453,
+                10.172335542929318
+            ],
+            "text": "CREATE_TIME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Create_time"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                329.30327714646467,
+                400.2859477124183,
+                11.971275252525174
+            ],
+            "text": "The time that the partition or subpartition was created.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thời gian mà phân vùng hoặc phân chia được tạo ra."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                356.65469034090916,
+                19.361111111111114,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                357.80654703282835,
+                110.53921568627453,
+                10.172322601010023
+            ],
+            "text": "UPDATE_TIME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Update_time"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                384.0061941287879,
+                438.438725490196,
+                11.971275252525288
+            ],
+            "text": "The time that the partition or subpartition was last modified.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thời gian mà phân vùng hoặc phân chia được sửa đổi lần cuối."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                411.3576073232324,
+                19.361111111111114,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                412.5094510732324,
+                100.49019607843138,
+                10.172335542929204
+            ],
+            "text": "CHECK_TIME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Check_time"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                438.70905934343443,
+                638.5984644607843,
+                11.971275252525174
+            ],
+            "text": "The last time that the table to which this partition or subpartition belongs was checked.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lần cuối cùng mà bảng mà phân vùng hoặc phân vùng này đã được kiểm tra."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                466.06051136363646,
+                112.63276143790853,
+                11.971275252525174
+            ],
+            "text": "For partitioned ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho phân vùng "
+        },
+        {
+            "bbox": [
+                300.21446078431376,
+                467.212329229798,
+                60.29411764705878,
+                10.17236142676768
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                360.50857843137254,
+                466.06051136363646,
+                203.86111111111114,
+                11.971275252525174
+            ],
+            "text": " tables, the value is always ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng, giá trị luôn luôn "
+        },
+        {
+            "bbox": [
+                564.3696895424837,
+                467.212329229798,
+                40.1960784313726,
+                10.17236142676768
+            ],
+            "text": "NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "VÔ GIÁ TRỊ"
+        },
+        {
+            "bbox": [
+                604.5657679738563,
+                466.06051136363646,
+                4.656045751633883,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                493.41197632575756,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                494.56378125000003,
+                80.39215686274508,
+                10.17237436868686
+            ],
+            "text": "CHECKSUM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Kiểm tra"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                520.7634283459597,
+                288.5575645424837,
+                11.971275252525231
+            ],
+            "text": "The checksum value, if any; otherwise ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị tổng kiểm tra, nếu có; nếu không thì "
+        },
+        {
+            "bbox": [
+                476.13926388888893,
+                521.9152332702021,
+                40.19607843137254,
+                10.17237436868686
+            ],
+            "text": "NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "VÔ GIÁ TRỊ"
+        },
+        {
+            "bbox": [
+                516.3353423202615,
+                520.7634283459597,
+                4.656095996732006,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                548.1148803661616,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                549.2666982323233,
+                170.83333333333331,
+                10.17236142676768
+            ],
+            "text": "PARTITION_COMMENT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phân vùng_comment"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                575.4663453282828,
+                552.9808174019607,
+                11.971275252525231
+            ],
+            "text": "The text of the comment, if the partition has one. If not, this value is empty.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Văn bản của bình luận, nếu phân vùng có một. Nếu không, giá trị này trống rỗng."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                602.8177973484849,
+                767.9796421568627,
+                11.971275252525231
+            ],
+            "text": "The maximum length for a partition comment is defined as 1024 characters, and the display width of the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Độ dài tối đa cho nhận xét phân vùng được xác định là 1024 ký tự và chiều rộng hiển thị của"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                619.4999053030303,
+                170.83333333333331,
+                10.172374368686803
+            ],
+            "text": "PARTITION_COMMENT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phân vùng_comment"
+        },
+        {
+            "bbox": [
+                358.41503267973854,
+                618.3481003787879,
+                378.8312908496733,
+                11.971275252525231
+            ],
+            "text": " column is also 1024, characters to match this limit.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cột cũng là 1024, các ký tự để phù hợp với giới hạn này."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                645.6995523989899,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                646.8513573232324,
+                90.44117647058823,
+                10.172374368686917
+            ],
+            "text": "NODEGROUP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Nodegroup"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                673.0509655934343,
+                710.2479742647059,
+                11.971275252525231
+            ],
+            "text": "This is the nodegroup to which the partition belongs. This is relevant only to NDB Cluster tables;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đây là nhóm nodegroup mà phân vùng thuộc về. Điều này chỉ liên quan đến các bảng cụm NDB;"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                688.5812686237373,
+                226.186683006536,
+                11.971275252525288
+            ],
+            "text": "otherwise, the value is always ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu không, giá trị luôn luôn "
+        },
+        {
+            "bbox": [
+                413.7683823529412,
+                689.733086489899,
+                10.04901960784315,
+                10.17236142676768
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                423.81740196078437,
+                688.5812686237373,
+                4.65604575163394,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                715.9327335858586,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                717.0845385101011,
+                150.73529411764707,
+                10.17237436868686
+            ],
+            "text": "TABLESPACE_NAME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TableSpace_Name"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                743.2841856060606,
+                589.2745098039215,
+                11.971275252525231
+            ],
+            "text": "The name of the tablespace to which the partition belongs. The value is always ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên của không gian bảng mà phân vùng thuộc về. Giá trị luôn luôn "
+        },
+        {
+            "bbox": [
+                776.8562091503268,
+                744.4359905303031,
+                70.34313725490199,
+                10.17237436868686
+            ],
+            "text": "DEFAULT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MẶC ĐỊNH"
+        },
+        {
+            "bbox": [
+                847.1993464052288,
+                743.2841856060606,
+                85.65111029411764,
+                11.971275252525231
+            ],
+            "text": ", unless the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", trừ khi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                758.8144886363636,
+                108.93138929738564,
+                11.97127525252526
+            ],
+            "text": "table uses the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng sử dụng "
+        },
+        {
+            "bbox": [
+                296.51308864379087,
+                759.9663323863637,
+                30.14705882352939,
+                10.17233554292929
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                326.6601139705882,
+                758.8144886363636,
+                185.2704415849674,
+                11.97127525252526
+            ],
+            "text": " storage engine (see the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " động cơ lưu trữ (xem "
+        },
+        {
+            "bbox": [
+                511.9305555555556,
+                758.8144886363636,
+                43.74673202614366,
+                11.97127525252526
+            ],
+            "text": "Notes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                555.6772875816993,
+                758.8144886363636,
+                196.44160171568637,
+                11.97127525252526
+            ],
+            "text": " at the end of this section).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " ở cuối phần này)."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                786.5218304924242,
+                55.832351266339884,
+                14.365582070707092
+            ],
+            "text": "Notes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                816.6234921085859,
+                19.361111111111114,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                817.7753358585859,
+                100.49019607843138,
+                10.172335542929261
+            ],
+            "text": "PARTITIONS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phân vùng"
+        },
+        {
+            "bbox": [
+                288.0718954248366,
+                816.6234921085859,
+                133.1327446895425,
+                11.97127525252526
+            ],
+            "text": " is a nonstandard ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là một người không đạt tiêu chuẩn "
+        },
+        {
+            "bbox": [
+                421.20467361111116,
+                817.7753358585859,
+                180.88231944444442,
+                10.172335542929261
+            ],
+            "text": "INFORMATION_SCHEMA",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thông tin_schema"
+        },
+        {
+            "bbox": [
+                602.0869930555556,
+                816.6234921085859,
+                45.62253227124188,
+                11.97127525252526
+            ],
+            "text": " table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                843.9749053030303,
+                345.40151879084965,
+                11.97127525252526
+            ],
+            "text": "•A table using any storage engine other than ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Một bảng sử dụng bất kỳ công cụ lưu trữ nào khác ngoài "
+        },
+        {
+            "bbox": [
+                516.234852124183,
+                845.1267490530303,
+                30.14705882352939,
+                10.172335542929318
+            ],
+            "text": "NDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ndb"
+        },
+        {
+            "bbox": [
+                546.3819611928104,
+                843.9749053030303,
+                321.1666331699348,
+                11.97127525252526
+            ],
+            "text": " and which is not partitioned has one row in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " và không được phân vùng có một hàng trong"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                859.5052083333334,
+                27.93625776143793,
+                11.97127525252526
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                215.51795710784316,
+                860.6570520833334,
+                100.49019607843135,
+                10.17233554292929
+            ],
+            "text": "PARTITIONS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phân vùng"
+        },
+        {
+            "bbox": [
+                316.0081531862745,
+                859.5052083333334,
+                253.21856250000008,
+                11.97127525252526
+            ],
+            "text": " table. However, the values of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn. Tuy nhiên, các giá trị của "
+        },
+        {
+            "bbox": [
+                569.2267156862746,
+                860.6570520833334,
+                140.68627450980387,
+                10.17233554292929
+            ],
+            "text": "PARTITION_NAME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phân vùng_name"
+        },
+        {
+            "bbox": [
+                709.9129901960785,
+                859.5052083333334,
+                9.312074754901914,
+                11.97127525252526
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                719.2250649509804,
+                860.6570520833334,
+                170.83333333333337,
+                10.17233554292929
+            ],
+            "text": "SUBPARTITION_NAME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Subpartition_name"
+        },
+        {
+            "bbox": [
+                890.0583982843137,
+                859.5052083333334,
+                4.655995506535987,
+                11.97127525252526
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                876.1873551136364,
+                261.2745098039216,
+                10.17233554292929
+            ],
+            "text": "PARTITION_ORDINAL_POSITION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phân vùng_ordinal_poseition"
+        },
+        {
+            "bbox": [
+                448.85620915032683,
+                875.0355113636364,
+                9.312091503267936,
+                11.97127525252526
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                458.16830065359477,
+                876.1873551136364,
+                291.42156862745105,
+                10.17233554292929
+            ],
+            "text": "SUBPARTITION_ORDINAL_POSITION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Subpartition_ordinal_poseition"
+        },
+        {
+            "bbox": [
+                749.5898692810458,
+                875.0355113636364,
+                9.31209150326788,
+                11.97127525252526
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                758.9019607843137,
+                876.1873551136364,
+                160.78431372549028,
+                10.17233554292929
+            ],
+            "text": "PARTITION_METHOD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phân vùng_method"
+        },
+        {
+            "bbox": [
+                919.686274509804,
+                875.0355113636364,
+                4.656079248366041,
+                11.97127525252526
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                891.7176581439394,
+                190.9313725490196,
+                10.172335542929275
+            ],
+            "text": "SUBPARTITION_METHOD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Subpartition_method"
+        },
+        {
+            "bbox": [
+                378.51307189542484,
+                890.5658143939394,
+                9.312091503267993,
+                11.971275252525245
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                387.82516339869284,
+                891.7176581439394,
+                200.9803921568627,
+                10.172335542929275
+            ],
+            "text": "PARTITION_EXPRESSION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phân vùng_expression"
+        },
+        {
+            "bbox": [
+                588.8055555555555,
+                890.5658143939394,
+                9.312091503267993,
+                11.971275252525245
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                598.1176470588235,
+                891.7176581439394,
+                231.12745098039215,
+                10.172335542929275
+            ],
+            "text": "SUBPARTITION_EXPRESSION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Subpartition_Expression"
+        },
+        {
+            "bbox": [
+                829.2450980392157,
+                890.5658143939394,
+                37.24834926470601,
+                11.971275252525245
+            ],
+            "text": ", and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "4807",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4807"
+        }
+    ]
+}

@@ -1,0 +1,1756 @@
+{
+    "metadata": {
+        "page_hash": "960ad0ca6185ef29090b0605660c1a0123615005855ebecf0c5654adfa56f813",
+        "original_filename": "MongoDB-manual.pdf",
+        "page_no": 474,
+        "num_pages": 946,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                585.4659481209151,
+                46.997324179292946,
+                318.94755841503263,
+                12.106971275252477
+            ],
+            "text": "MongoDB Documentation, Release 3.0.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tài liệu MongoDB, Phát hành 3.0.4"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                97.69759027777775,
+                53.41638439542484,
+                10.896358270202086
+            ],
+            "text": "Literals",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Nghĩa đen"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                133.43297285353538,
+                644.9701290849673,
+                11.526785037878767
+            ],
+            "text": "Literals can be of any type. However, MongoDB parses string literals that start with a dollar sign",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nghĩa đen có thể là bất kỳ loại. Tuy nhiên, MongoDB phân tích các chuỗi chữ bắt đầu bằng một dấu hiệu đô la"
+        },
+        {
+            "bbox": [
+                769.6594362745099,
+                134.11631912878784,
+                10.011453022875799,
+                9.953772411616342
+            ],
+            "text": "$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "$"
+        },
+        {
+            "bbox": [
+                783.7782920751633,
+                133.43297285353538,
+                120.63786070261438,
+                11.526785037878767
+            ],
+            "text": "as a path to a field",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "như một con đường đến một lĩnh vực"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                148.90506313131323,
+                211.07444812091504,
+                11.526785037878767
+            ],
+            "text": "and numeric/boolean literals in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "và chữ số/boolean trong"
+        },
+        {
+            "bbox": [
+                337.1513071895425,
+                149.021100378788,
+                123.17401552287578,
+                11.114222537878732
+            ],
+            "text": "expression objects",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "đối tượng biểu thức"
+        },
+        {
+            "bbox": [
+                465.7988562091503,
+                148.90506313131323,
+                438.61791625816994,
+                11.526785037878767
+            ],
+            "text": "(page 471) as projection flags. To avoid parsing literals, use the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(trang 471) làm cờ chiếu. Để tránh phân tích chữ cái, hãy sử dụng"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                165.06049968434354,
+                80.09149019607844,
+                9.953759469696934
+            ],
+            "text": "$literal",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "$ nghĩa đen"
+        },
+        {
+            "bbox": [
+                204.85093954248367,
+                164.37714046717167,
+                75.28599877450978,
+                11.526797979798062
+            ],
+            "text": "expression.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sự biểu lộ."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                204.6975732323233,
+                140.21609763071896,
+                10.896358270201972
+            ],
+            "text": "Expression Objects",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Đối tượng biểu thức"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                240.43295580808092,
+                295.13709313725485,
+                11.526797979797834
+            ],
+            "text": "Expression objects have the following form:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các đối tượng biểu thức có biểu mẫu sau:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                265.3300375631313,
+                288.33124387254907,
+                8.958474116161597
+            ],
+            "text": "{ <field1>: <expression1>, ... }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "{<Gield1>: <sproy1>, ...}"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                293.2203393308082,
+                686.3507357026143,
+                11.526785037878653
+            ],
+            "text": "If the expressions are numeric or boolean literals, MongoDB treats the literals as projection flags (e.g.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nếu các biểu thức là chữ số hoặc chữ boolean, MongoDB coi các chữ viết là cờ chiếu (ví dụ:"
+        },
+        {
+            "bbox": [
+                813.533472630719,
+                293.90368560606066,
+                10.011453022875912,
+                9.953759469696934
+            ],
+            "text": "1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "1"
+        },
+        {
+            "bbox": [
+                828.1916760620916,
+                293.2203393308082,
+                13.899234477124196,
+                11.526785037878653
+            ],
+            "text": "or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "hoặc"
+        },
+        {
+            "bbox": [
+                846.7388165849673,
+                293.90368560606066,
+                40.0457618464053,
+                9.953759469696934
+            ],
+            "text": "true",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "ĐÚNG VẬY"
+        },
+        {
+            "bbox": [
+                891.4301397058823,
+                293.2203393308082,
+                12.981524509804103,
+                11.526785037878653
+            ],
+            "text": "to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "ĐẾN"
+        },
+        {
+            "bbox": [
+                120.5882872140523,
+                308.69241666666665,
+                228.4442438316994,
+                11.526797979798062
+            ],
+            "text": "include the field), valid only in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "bao gồm trường), chỉ có giá trị trong"
+        },
+        {
+            "bbox": [
+                352.9517826797386,
+                309.3757758838385,
+                80.09150694444446,
+                9.953759469696934
+            ],
+            "text": "$project",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "$ Dự án"
+        },
+        {
+            "bbox": [
+                436.95989501633983,
+                308.69241666666665,
+                467.4506470588236,
+                11.526797979798062
+            ],
+            "text": "stage. To avoid treating numeric or boolean literals as projection flags,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sân khấu. Để tránh coi chữ số hoặc boolean là cờ chiếu,"
+        },
+        {
+            "bbox": [
+                120.5882872140523,
+                324.16577525252524,
+                46.803447834967315,
+                11.52678503787888
+            ],
+            "text": "use the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Sử dụng"
+        },
+        {
+            "bbox": [
+                171.56362908496735,
+                324.8491215277778,
+                80.09149019607841,
+                9.953759469696934
+            ],
+            "text": "$literal",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "$ nghĩa đen"
+        },
+        {
+            "bbox": [
+                255.82633333333334,
+                324.16577525252524,
+                338.03624060457514,
+                11.52678503787888
+            ],
+            "text": "expression to wrap the numeric or boolean literals.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Biểu thức để bọc các chữ số hoặc boolean."
+        },
+        {
+            "bbox": [
+                120.5882989379085,
+                364.4848620580809,
+                156.90027050653595,
+                10.896397095959514
+            ],
+            "text": "Operator Expressions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Biểu thức vận hành"
+        },
+        {
+            "bbox": [
+                120.5882989379085,
+                400.22024463383843,
+                455.97088488562093,
+                11.526785037878767
+            ],
+            "text": "Operator expressions are similar to functions that take arguments.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Biểu thức toán tử tương tự như các chức năng có đối số."
+        },
+        {
+            "bbox": [
+                588.4227214052287,
+                400.22024463383843,
+                315.9943525326797,
+                11.526785037878767
+            ],
+            "text": "In general, these expressions take an array of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nói chung, những biểu thức này có một mảng"
+        },
+        {
+            "bbox": [
+                120.5882989379085,
+                415.69228314393945,
+                267.02164795751634,
+                11.526797979797948
+            ],
+            "text": "arguments and have the following form:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đối số và có hình thức sau:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                440.5907885101011,
+                432.4970081699347,
+                8.958474116161597
+            ],
+            "text": "{ <operator>: [ <argument1>, <argument2> ... ] }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "ác"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                468.4811291035354,
+                645.3872471405228,
+                11.526785037878767
+            ],
+            "text": "If operator accepts a single argument, you can omit the outer array designating the argument list:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nếu toán tử chấp nhận một đối số duy nhất, bạn có thể bỏ qua mảng bên ngoài chỉ định danh sách đối số:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                493.37958270202023,
+                234.26912622549023,
+                8.958474116161597
+            ],
+            "text": "{ <operator>: <argument> }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "ác"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                521.2686161616161,
+                625.6979517973856,
+                11.526797979798005
+            ],
+            "text": "To avoid parsing ambiguity if the argument is a literal array, you must wrap the literal array in a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để tránh phân tích sự mơ hồ nếu đối số là một mảng theo nghĩa đen, bạn phải quấn mảng theo nghĩa đen trong một"
+        },
+        {
+            "bbox": [
+                749.7506703431372,
+                521.9519753787879,
+                80.0915069444444,
+                9.953798295454533
+            ],
+            "text": "$literal",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "$ nghĩa đen"
+        },
+        {
+            "bbox": [
+                833.2982193627452,
+                521.2686161616161,
+                71.11456699346411,
+                11.526797979798005
+            ],
+            "text": "expression",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sự biểu lộ"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                536.7419618055555,
+                373.9604808006536,
+                11.526797979797948
+            ],
+            "text": "or keep the outer array that designates the argument list.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "hoặc giữ cho mảng bên ngoài chỉ định danh sách đối số."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                577.8331117424243,
+                146.66755147058822,
+                11.591287563131289
+            ],
+            "text": "Boolean Expressions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Biểu cảm boolean"
+        },
+        {
+            "bbox": [
+                283.94005678104577,
+                577.9878582702021,
+                620.4754930555555,
+                11.526785037878767
+            ],
+            "text": "Boolean expressions evaluate their argument expressions as booleans and return a boolean as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Biểu thức boolean đánh giá các biểu thức đối số của họ là booleans và trả lại một boolean là"
+        },
+        {
+            "bbox": [
+                120.58822189542485,
+                593.4599097222222,
+                65.80849705882352,
+                11.526785037878824
+            ],
+            "text": "the result.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "kết quả."
+        },
+        {
+            "bbox": [
+                120.58822189542485,
+                616.6686663510102,
+                122.48992516339865,
+                11.526785037878767
+            ],
+            "text": "In addition to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Ngoài"
+        },
+        {
+            "bbox": [
+                249.92243382352942,
+                617.3520126262626,
+                50.05719812091505,
+                9.95381123737377
+            ],
+            "text": "false",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "SAI"
+        },
+        {
+            "bbox": [
+                306.82165767973856,
+                616.6686663510102,
+                329.4763517156863,
+                11.526785037878767
+            ],
+            "text": "boolean value, Boolean expression evaluates as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "giá trị boolean, biểu thức boolean đánh giá là"
+        },
+        {
+            "bbox": [
+                643.1422626633987,
+                617.3520126262626,
+                50.05716462418309,
+                9.95381123737377
+            ],
+            "text": "false",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "SAI"
+        },
+        {
+            "bbox": [
+                700.0414697712419,
+                616.6686663510102,
+                96.34333415032677,
+                11.526785037878767
+            ],
+            "text": "the following:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Sau đây:"
+        },
+        {
+            "bbox": [
+                806.8977197712418,
+                617.3520126262626,
+                40.0457618464053,
+                9.95381123737377
+            ],
+            "text": "null",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "vô giá trị"
+        },
+        {
+            "bbox": [
+                846.9447544934641,
+                616.6686663510102,
+                4.171448529411805,
+                11.526785037878767
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                858.6250649509803,
+                617.3520126262626,
+                10.011402777777903,
+                9.95381123737377
+            ],
+            "text": "0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "0"
+        },
+        {
+            "bbox": [
+                868.6372716503267,
+                616.6686663510102,
+                35.77419158496741,
+                11.526785037878767
+            ],
+            "text": ", and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", Và"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                632.8240640782828,
+                90.10290972222222,
+                9.953798295454533
+            ],
+            "text": "undefined",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "không xác định"
+        },
+        {
+            "bbox": [
+                215.07581699346406,
+                632.1407178030304,
+                403.91155024509806,
+                11.526785037878767
+            ],
+            "text": "values. The Boolean expression evaluates all other values as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "giá trị. Biểu thức Boolean đánh giá tất cả các giá trị khác là"
+        },
+        {
+            "bbox": [
+                623.369191993464,
+                632.8240640782828,
+                40.0457618464053,
+                9.953798295454533
+            ],
+            "text": "true",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "ĐÚNG VẬY"
+        },
+        {
+            "bbox": [
+                663.414551879085,
+                632.1407178030304,
+                240.99210457516335,
+                11.526785037878767
+            ],
+            "text": ", including non-zero numeric values",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", bao gồm các giá trị số khác không"
+        },
+        {
+            "bbox": [
+                120.5882872140523,
+                647.6127563131313,
+                73.20027283496732,
+                11.526797979797948
+            ],
+            "text": "and arrays.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "và mảng."
+        },
+        {
+            "bbox": [
+                131.26699178921567,
+                670.337860479798,
+                44.500828880718984,
+                11.92652209595957
+            ],
+            "text": "Name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBKJJL+NimbusSanL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tên"
+        },
+        {
+            "bbox": [
+                198.24538398692812,
+                670.337860479798,
+                83.69560457516343,
+                11.92652209595957
+            ],
+            "text": "Description",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/TBKJJL+NimbusSanL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Sự miêu tả"
+        },
+        {
+            "bbox": [
+                131.26699178921567,
+                687.4467670454546,
+                40.045746772875844,
+                9.953798295454533
+            ],
+            "text": "$and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "$ và"
+        },
+        {
+            "bbox": [
+                198.24538398692812,
+                686.7634078282829,
+                51.90928267973854,
+                11.526797979798005
+            ],
+            "text": "Returns",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trả lại"
+        },
+        {
+            "bbox": [
+                254.32561274509806,
+                687.4467670454546,
+                40.0457283496732,
+                9.953798295454533
+            ],
+            "text": "true",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "ĐÚNG VẬY"
+        },
+        {
+            "bbox": [
+                298.5429738562092,
+                686.7634078282829,
+                69.97993218954247,
+                11.526797979798005
+            ],
+            "text": "only when",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Chỉ khi"
+        },
+        {
+            "bbox": [
+                372.6946895424837,
+                686.8794450757575,
+                17.620135212418347,
+                11.11419665404037
+            ],
+            "text": "all",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tất cả"
+        },
+        {
+            "bbox": [
+                394.5027369281046,
+                686.7634078282829,
+                173.63175081699342,
+                11.526797979798005
+            ],
+            "text": "its expressions evaluate to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "biểu thức của nó đánh giá"
+        },
+        {
+            "bbox": [
+                572.3033905228758,
+                687.4467670454546,
+                40.0457618464053,
+                9.953798295454533
+            ],
+            "text": "true",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "ĐÚNG VẬY"
+        },
+        {
+            "bbox": [
+                612.3487336601307,
+                686.7634078282829,
+                231.21419076797383,
+                11.526797979798005
+            ],
+            "text": ". Accepts any number of argument",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ". Chấp nhận bất kỳ số lượng đối số nào"
+        },
+        {
+            "bbox": [
+                198.24538398692812,
+                702.2354722222223,
+                81.77676102941177,
+                11.526797979797948
+            ],
+            "text": "expressions.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "biểu cảm."
+        },
+        {
+            "bbox": [
+                131.26699178921567,
+                718.3921770833333,
+                30.034307148692847,
+                9.953798295454533
+            ],
+            "text": "$or",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "$ hoặc"
+        },
+        {
+            "bbox": [
+                198.24538398692812,
+                717.7088308080808,
+                51.90928267973854,
+                11.526785037878767
+            ],
+            "text": "Returns",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trả lại"
+        },
+        {
+            "bbox": [
+                254.32561274509806,
+                718.3921770833333,
+                40.0457283496732,
+                9.953798295454533
+            ],
+            "text": "true",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "ĐÚNG VẬY"
+        },
+        {
+            "bbox": [
+                298.5429738562092,
+                717.7088308080808,
+                36.141282271241835,
+                11.526785037878767
+            ],
+            "text": "when",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "khi"
+        },
+        {
+            "bbox": [
+                338.8562741013072,
+                717.8248680555555,
+                24.094182598039197,
+                11.114196654040427
+            ],
+            "text": "any",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "bất kì"
+        },
+        {
+            "bbox": [
+                367.12083333333334,
+                717.7088308080808,
+                198.1931458333334,
+                11.526785037878767
+            ],
+            "text": "of its expressions evaluates to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trong số các biểu thức của nó đánh giá"
+        },
+        {
+            "bbox": [
+                569.4846237745098,
+                718.3921770833333,
+                40.04574509803922,
+                9.953798295454533
+            ],
+            "text": "true",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "ĐÚNG VẬY"
+        },
+        {
+            "bbox": [
+                609.5299669117647,
+                717.7088308080808,
+                231.21419076797383,
+                11.526785037878767
+            ],
+            "text": ". Accepts any number of argument",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ". Chấp nhận bất kỳ số lượng đối số nào"
+        },
+        {
+            "bbox": [
+                198.2453672385621,
+                733.1808952020202,
+                81.77676102941177,
+                11.526785037878767
+            ],
+            "text": "expressions.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "biểu cảm."
+        },
+        {
+            "bbox": [
+                131.26699178921567,
+                749.3363058712121,
+                40.045746772875844,
+                9.953811237373714
+            ],
+            "text": "$not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "$ không"
+        },
+        {
+            "bbox": [
+                198.24538398692812,
+                748.6529595959596,
+                668.9309109477124,
+                11.526785037878824
+            ],
+            "text": "Returns the boolean value that is the opposite of its argument expression. Accepts a single argument",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trả về giá trị boolean ngược lại với biểu thức đối số của nó. Chấp nhận một đối số duy nhất"
+        },
+        {
+            "bbox": [
+                198.24538398692812,
+                764.125023989899,
+                75.28599877450984,
+                11.526797979798005
+            ],
+            "text": "expression.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sự biểu lộ."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                805.0751328914141,
+                112.34497426470588,
+                11.591274621212108
+            ],
+            "text": "Set Expressions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đặt biểu thức"
+        },
+        {
+            "bbox": [
+                249.61932189542483,
+                805.2298535353535,
+                654.7979697712418,
+                11.526797979797976
+            ],
+            "text": "Set expressions performs set operation on arrays, treating arrays as sets. Set expressions ignores",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đặt các biểu thức thực hiện thiết lập hoạt động trên các mảng, xử lý các mảng dưới dạng tập hợp. Đặt biểu thức bỏ qua"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                820.7019179292929,
+                465.6986674836601,
+                11.526797979798005
+            ],
+            "text": "the duplicate entries in each input array and the order of the elements.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các mục trùng lặp trong mỗi mảng đầu vào và thứ tự của các yếu tố."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                843.9106616161616,
+                783.8285371732026,
+                11.526797979798005
+            ],
+            "text": "If the set operation returns a set, the operation filters out duplicates in the result to output an array that contains only",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nếu thao tác tập hợp trả về một tập"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                859.382726010101,
+                501.48960743464056,
+                11.526810921717185
+            ],
+            "text": "unique entries. The order of the elements in the output array is unspecified.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "mục độc đáo. Thứ tự của các phần tử trong mảng đầu ra không được xác định."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                882.5914696969697,
+                434.1293206699346,
+                11.526810921717157
+            ],
+            "text": "If a set contains a nested array element, the set expression does",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nếu một tập hợp chứa một phần tử mảng lồng nhau, biểu thức tập hợp sẽ"
+        },
+        {
+            "bbox": [
+                560.0921401143792,
+                882.7075069444445,
+                21.324354575163284,
+                11.114222537878788
+            ],
+            "text": "not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "không"
+        },
+        {
+            "bbox": [
+                587.0988803104576,
+                882.5914696969697,
+                317.3124824346405,
+                11.526810921717157
+            ],
+            "text": "descend into the nested array but evaluates the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "xuống mảng lồng nhưng đánh giá"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                898.0635405618686,
+                117.48416013071895,
+                11.526801862373745
+            ],
+            "text": "array at top-level.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mảng ở cấp cao nhất."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                961.18987260101,
+                28.528228758169945,
+                12.10701139520203
+            ],
+            "text": "7.4.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "7.4."
+        },
+        {
+            "bbox": [
+                153.8711794526144,
+                961.18987260101,
+                188.1700309232026,
+                12.10701139520203
+            ],
+            "text": "Aggregation Reference",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tài liệu tham khảo tổng hợp"
+        },
+        {
+            "bbox": [
+                876.585191993464,
+                961.18987260101,
+                27.831781454248357,
+                12.10701139520203
+            ],
+            "text": "471",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "471"
+        }
+    ]
+}

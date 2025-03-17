@@ -1,0 +1,956 @@
+{
+    "metadata": {
+        "page_hash": "6b6904594506a57d60709b7073c2de1c2a5fc1fd31ab9d3a2cae3baf2e5c5197",
+        "original_filename": "sg248457.pdf",
+        "page_no": 46,
+        "num_pages": 272,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "redbooks",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                556.5147058823529,
+                977.8111768308081,
+                320.38349632352947,
+                10.774146433080809
+            ],
+            "text": "Chapter 2. z/OS Container Extensions planning ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Chương 2. Kế hoạch mở rộng container Z/OS "
+        },
+        {
+            "bbox": [
+                897.8798684640523,
+                976.9191149305556,
+                18.689803104575162,
+                11.923388857323232
+            ],
+            "text": "31",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "31"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                92.35864741161629,
+                475.64222263071895,
+                14.365582070706978
+            ],
+            "text": "Characteristics for a zCX instance zFS file system",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Đặc điểm cho hệ thống tệp ZFS cá thể ZCX"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                111.95882165404055,
+                673.7153664215687,
+                11.923403093434217
+            ],
+            "text": "You also must allocate one zFS file system for each of your zCX instances. This is used to ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Bạn cũng phải phân bổ một hệ thống tệp ZFS cho từng phiên bản ZCX của bạn. Điều này được sử dụng để "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                127.48887878787878,
+                627.8869297385621,
+                11.923416035353625
+            ],
+            "text": "store the zCX appliance image and configuration data. In a sysplex environment, we ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Lưu trữ dữ liệu hình ảnh và cấu hình thiết bị ZCX. Trong một môi trường sysplex, chúng tôi "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                143.0189488636364,
+                450.49061519607835,
+                11.923403093434331
+            ],
+            "text": "recommend that you mount it under a mount point within the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Đề nghị bạn gắn nó dưới một điểm gắn kết trong "
+        },
+        {
+            "bbox": [
+                679.4145841503267,
+                143.21231407828282,
+                58.58498039215692,
+                11.356262310606098
+            ],
+            "text": "/global",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "/toàn cầu"
+        },
+        {
+            "bbox": [
+                737.9995645424837,
+                143.0189488636364,
+                166.47679861111124,
+                11.923403093434331
+            ],
+            "text": " directory. In this way, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " Thư mục. Theo cách này, "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                158.54901893939393,
+                687.4563288398692,
+                11.923403093434445
+            ],
+            "text": "you provide access to that file system from all participating systems. The required size for the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Bạn cung cấp quyền truy cập vào hệ thống tệp đó từ tất cả các hệ thống tham gia. Kích thước yêu cầu cho "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                174.0790760732324,
+                198.0796254084967,
+                11.923416035353512
+            ],
+            "text": "file system is also >= 4GB.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Hệ thống tệp cũng> = 4GB."
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                207.5935476641415,
+                399.69977165032685,
+                14.365582070706978
+            ],
+            "text": "Planning for data set naming conventions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 1
+            },
+            "text_vi": "Lập kế hoạch cho các quy ước đặt tên tập dữ liệu"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                227.11607039141415,
+                635.4935518790849,
+                11.923403093434445
+            ],
+            "text": "Naming conventions for the VSAM data sets are allocated during the execution of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các quy ước đặt tên cho các bộ dữ liệu VSAM được phân bổ trong quá trình thực hiện "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                242.8395056818182,
+                108.72915277777773,
+                11.356249368686917
+            ],
+            "text": "provision.xml",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Cung cấp.xml"
+        },
+        {
+            "bbox": [
+                337.94857965686276,
+                242.64614046717168,
+                576.0312418300655,
+                11.923403093434445
+            ],
+            "text": " workflow, and these conventions require planning by you. Keep the following ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " Quy trình làm việc, và những quy ước này yêu cầu lập kế hoạch của bạn. Giữ những điều sau đây "
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                258.17619760101013,
+                160.9802193627451,
+                11.923403093434445
+            ],
+            "text": "requirements in mind:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Yêu cầu trong tâm trí:"
+        },
+        {
+            "bbox": [
+                229.11763031045754,
+                280.4220236742425,
+                8.340669526143756,
+                11.356249368686804
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23554534313726,
+                280.2286455176768,
+                663.30304125817,
+                11.923416035353512
+            ],
+            "text": "The high-level qualifier (HLQ) of those data sets can contain up to 28 characters including ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Vòng loại cấp cao (HLQ) của các bộ dữ liệu đó có thể chứa tối đa 28 ký tự bao gồm cả "
+        },
+        {
+            "bbox": [
+                253.23551184640525,
+                295.7587155934343,
+                255.04989583333338,
+                11.923403093434445
+            ],
+            "text": "the periods between the qualifiers.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các giai đoạn giữa các vòng loại."
+        },
+        {
+            "bbox": [
+                229.1175968137255,
+                317.92720075757586,
+                8.340686274509778,
+                11.356249368686804
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23551184640525,
+                317.73383554292934,
+                33.54454861111111,
+                11.923403093434331
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                286.6983619281046,
+                317.92720075757586,
+                117.16994403594771,
+                11.356249368686804
+            ],
+            "text": "provision.xml ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Cung cấp.xml "
+        },
+        {
+            "bbox": [
+                403.8699975490196,
+                317.73383554292934,
+                494.9759836601308,
+                11.923403093434331
+            ],
+            "text": "workflow allocates those data sets by using that HLQ in the format ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Quy trình công việc phân bổ các bộ dữ liệu đó bằng cách sử dụng HLQ đó ở định dạng "
+        },
+        {
+            "bbox": [
+                253.23551184640525,
+                333.4572708333334,
+                217.55841053921563,
+                11.356249368686804
+            ],
+            "text": "HLQ.zcxinstancename.suffix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Hlq.zcxinstancename.suffix"
+        },
+        {
+            "bbox": [
+                470.7973390522876,
+                333.2638926767678,
+                4.637438316993439,
+                11.923416035353398
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                254.64344648692813,
+                355.2390126262627,
+                19.283666666666676,
+                11.923403093434331
+            ],
+            "text": "–",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "-"
+        },
+        {
+            "bbox": [
+                277.353460375817,
+                355.4323907828283,
+                125.51063031045754,
+                11.356249368686917
+            ],
+            "text": "zcxinstancename",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "zcxinstancename"
+        },
+        {
+            "bbox": [
+                402.8657655228758,
+                355.2390126262627,
+                509.09390155228766,
+                11.923403093434331
+            ],
+            "text": " is the jobname that you choose in the workflow, which you later use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " là tên công việc mà bạn chọn trong quy trình làm việc mà sau này bạn sử dụng "
+        },
+        {
+            "bbox": [
+                277.353443627451,
+                370.76912152777777,
+                187.0666200980392,
+                11.923364267676789
+            ],
+            "text": "to start the zCX instance.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Để bắt đầu thể hiện ZCX."
+        },
+        {
+            "bbox": [
+                254.6434297385621,
+                392.8216082702021,
+                19.283666666666676,
+                11.923364267676789
+            ],
+            "text": "–",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "-"
+        },
+        {
+            "bbox": [
+                277.353443627451,
+                393.01493465909095,
+                50.14418913398697,
+                11.356249368686917
+            ],
+            "text": "suffix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Hậu tố"
+        },
+        {
+            "bbox": [
+                327.597737745098,
+                392.8216082702021,
+                588.9157095588236,
+                11.923364267676789
+            ],
+            "text": " is generated by the provisioning workflow and points to the function of the data ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": " được tạo ra bởi quy trình công việc cung cấp và trỏ đến chức năng của dữ liệu "
+        },
+        {
+            "bbox": [
+                277.35180228758173,
+                408.3516783459596,
+                578.5533782679738,
+                11.923364267676789
+            ],
+            "text": "set. The following data sets are provisioned (data set names are from our test ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "bộ. Các tập dữ liệu sau được cung cấp (tên tập dữ liệu là từ bài kiểm tra của chúng tôi "
+        },
+        {
+            "bbox": [
+                277.35180228758173,
+                423.88173547979807,
+                102.26853758169932,
+                11.923377209595856
+            ],
+            "text": "environment):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "môi trường):"
+        },
+        {
+            "bbox": [
+                277.35180228758173,
+                446.05018181818184,
+                175.75492442810457,
+                11.356262310606098
+            ],
+            "text": "ZCX.REDB.ZCXRJ01.CONF",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Zcx.redb.zcxrj01.conf"
+        },
+        {
+            "bbox": [
+                277.35180228758173,
+                461.58025189393936,
+                184.09557720588236,
+                11.356249368686917
+            ],
+            "text": "ZCX.REDB.ZCXRJ01.DATA1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Zcx.redb.zcxrj01.data1"
+        },
+        {
+            "bbox": [
+                277.35180228758173,
+                477.110321969697,
+                184.09557720588236,
+                11.356249368686917
+            ],
+            "text": "ZCX.REDB.ZCXRJ01.DLOG1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Zcx.redb.zcxrj01.dlog1"
+        },
+        {
+            "bbox": [
+                277.35180228758173,
+                492.6403920454545,
+                175.75492442810457,
+                11.356249368686917
+            ],
+            "text": "ZCX.REDB.ZCXRJ01.ROOT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Zcx.redb.zcxrj01.root"
+        },
+        {
+            "bbox": [
+                277.35180228758173,
+                508.170449179293,
+                184.09557720588236,
+                11.35624936868686
+            ],
+            "text": "ZCX.REDB.ZCXRJ01.SWAP1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Zcx.redb.zcxrj01.swap1"
+        },
+        {
+            "bbox": [
+                277.35180228758173,
+                523.7005192550505,
+                167.31414991830064,
+                11.35624936868686
+            ],
+            "text": "ZCX.REDB.ZCXRJ01.ZFS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMasterGothic-Roman",
+                "size": 1
+            },
+            "text_vi": "Zcx.redb.zcxrj01.zfs"
+        },
+        {
+            "bbox": [
+                229.1159387254902,
+                545.6756392045455,
+                8.340686274509807,
+                11.356249368686804
+            ],
+            "text": "GLYPH<SM590000>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/BookMaster",
+                "size": 1
+            },
+            "text_vi": "Glyph <M590000>"
+        },
+        {
+            "bbox": [
+                253.23385375816994,
+                545.4822998737375,
+                663.4450841503267,
+                11.92337720959597
+            ],
+            "text": "If you plan to run different zCX instances (like production, development, or test) in a single ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Nếu bạn có kế hoạch chạy các trường hợp ZCX khác nhau (như sản xuất, phát triển hoặc thử nghiệm) trong một "
+        },
+        {
+            "bbox": [
+                253.23385375816994,
+                561.012369949495,
+                663.1627401960783,
+                11.923364267676732
+            ],
+            "text": "z/OS system, you might want to distinguish the data sets by putting PROD, DEV, or TEST ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "hệ thống z/os, bạn có thể muốn phân biệt các tập dữ liệu bằng cách đặt prod, dev hoặc kiểm tra "
+        },
+        {
+            "bbox": [
+                253.23385375816994,
+                576.5424400252525,
+                297.70739787581704,
+                11.923364267676732
+            ],
+            "text": "into the HLQ part of the data set names.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "vào phần HLQ của tên tập dữ liệu."
+        },
+        {
+            "bbox": [
+                229.1159387254902,
+                605.0399766414141,
+                649.5359178921569,
+                11.923364267676789
+            ],
+            "text": "Figure 2-7 and Figure 2-8 on page 32, show you the structure of the data sets and their ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "Hình 2-7 và Hình 2-8 trên trang 32, hiển thị cho bạn cấu trúc của các tập dữ liệu và "
+        },
+        {
+            "bbox": [
+                229.1159387254902,
+                620.5700467171716,
+                153.43861437908498,
+                11.923364267676789
+            ],
+            "text": "naming conventions.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 1
+            },
+            "text_vi": "đặt tên quy ước."
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                912.8945049873737,
+                68.59822549019609,
+                10.774143844696965
+            ],
+            "text": "Figure 2-7",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 1
+            },
+            "text_vi": "Hình 2-7"
+        },
+        {
+            "bbox": [
+                310.27038071895424,
+                912.8945049873737,
+                316.2713872549019,
+                10.774143844696965
+            ],
+            "text": "zCX instance data set and zFS structure, part 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 1
+            },
+            "text_vi": "Cấu trúc dữ liệu cá thể ZCX và cấu trúc ZFS, Phần 1"
+        }
+    ]
+}

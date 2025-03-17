@@ -1,0 +1,1956 @@
+{
+    "metadata": {
+        "page_hash": "15a6cfb537fe80f8c3e84b64c3b7b236dbea7b9714bfa1ebc66667fc79aa88bb",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 5110,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                363.7577614379085,
+                48.370422979798036,
+                327.6315359477124,
+                11.971275252525288
+            ],
+            "text": "Performance Schema Miscellaneous Tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biểu đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                187.1127450980392,
+                11.971275252525174
+            ],
+            "text": "as well as the size of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cũng như kích thước của "
+        },
+        {
+            "bbox": [
+                357.94607843137254,
+                96.11317582070706,
+                100.49019607843144,
+                10.172335542929318
+            ],
+            "text": "host_cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "host_cache"
+        },
+        {
+            "bbox": [
+                458.436274509804,
+                94.96133207070716,
+                494.34477124183,
+                11.971275252525174
+            ],
+            "text": " table. For operational and configuration information about the host",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn. Để biết thông tin hoạt động và cấu hình về máy chủ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                110.49163510101016,
+                510.7246732026143,
+                11.971275252525288
+            ],
+            "text": "cache, see Section 5.1.12.3, “DNS Lookups and the Host Cache”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bộ đệm, xem Phần 5.1.12.3, Tra cứu DNS và bộ nhớ cache của máy chủ"
+        },
+        {
+            "bbox": [
+                653.9902128267973,
+                110.49163510101016,
+                4.65604575163411,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                138.96385732323233,
+                97.76021241830065,
+                11.971275252525288
+            ],
+            "text": "Because the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bởi vì "
+        },
+        {
+            "bbox": [
+                268.593545751634,
+                140.11570107323234,
+                100.49019607843138,
+                10.172335542929318
+            ],
+            "text": "host_cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "host_cache"
+        },
+        {
+            "bbox": [
+                369.0837418300654,
+                138.96385732323233,
+                535.328022875817,
+                11.971275252525288
+            ],
+            "text": " table exposes the contents of the host cache, it can be examined using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng hiển thị nội dung của bộ đệm máy chủ, nó có thể được kiểm tra bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                904.4117647058824,
+                140.11570107323234,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "SELECT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "LỰA CHỌN"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                154.49416035353545,
+                567.8533329248365,
+                11.971275252525174
+            ],
+            "text": "statements. This may help you diagnose the causes of connection problems.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tuyên bố. Điều này có thể giúp bạn chẩn đoán nguyên nhân của các vấn đề kết nối."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                182.96638257575762,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                184.11822632575752,
+                100.49021282679735,
+                10.172335542929432
+            ],
+            "text": "host_cache",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "host_cache"
+        },
+        {
+            "bbox": [
+                304.8369930555555,
+                182.96638257575762,
+                189.90972222222229,
+                11.971275252525288
+            ],
+            "text": " table has these columns:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng có các cột sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                211.4386047979798,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                212.5904485479798,
+                20.09803921568627,
+                10.172335542929318
+            ],
+            "text": "IP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "IP"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                239.91082702020208,
+                589.2912749183007,
+                11.971275252525288
+            ],
+            "text": "The IP address of the client that connected to the server, expressed as a string.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Địa chỉ IP của máy khách được kết nối với máy chủ, được biểu thị dưới dạng chuỗi."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                268.38304924242425,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                269.53489299242426,
+                40.19607843137254,
+                10.172335542929318
+            ],
+            "text": "HOST",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHỦ NHÀ"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                296.85527146464653,
+                369.5526793300654,
+                11.971275252525174
+            ],
+            "text": "The resolved DNS host name for that client IP, or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên máy chủ DNS đã được giải quyết cho IP máy khách đó hoặc "
+        },
+        {
+            "bbox": [
+                557.1343786764706,
+                298.00711521464643,
+                40.196078431372484,
+                10.172335542929318
+            ],
+            "text": "NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "VÔ GIÁ TRỊ"
+        },
+        {
+            "bbox": [
+                597.3304571078431,
+                296.85527146464653,
+                180.59761397058833,
+                11.971275252525174
+            ],
+            "text": " if the name is unknown.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Nếu tên không rõ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                325.3274936868687,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                326.4793374368687,
+                140.68627450980392,
+                10.172335542929318
+            ],
+            "text": "HOST_VALIDATED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Host_validated"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                353.799715909091,
+                718.5886270424836,
+                11.971275252525174
+            ],
+            "text": "Whether the IP-to-host name-to-IP DNS resolution was performed successfully for the client IP. If",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Liệu độ phân giải DNS tên-IP-IP của IP-to-host có được thực hiện thành công cho IP máy khách hay không. Nếu như"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                370.481862689394,
+                140.68627450980392,
+                10.172335542929318
+            ],
+            "text": "HOST_VALIDATED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Host_validated"
+        },
+        {
+            "bbox": [
+                328.26797385620915,
+                369.330018939394,
+                21.404411764705912,
+                11.971275252525288
+            ],
+            "text": " is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là "
+        },
+        {
+            "bbox": [
+                349.67238562091507,
+                370.481862689394,
+                30.14705882352939,
+                10.172335542929318
+            ],
+            "text": "YES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ĐÚNG"
+        },
+        {
+            "bbox": [
+                379.81944444444446,
+                369.330018939394,
+                37.248366013071916,
+                11.971275252525288
+            ],
+            "text": ", the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", The "
+        },
+        {
+            "bbox": [
+                417.0678104575164,
+                370.481862689394,
+                40.19611192810453,
+                10.172335542929318
+            ],
+            "text": "HOST",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHỦ NHÀ"
+        },
+        {
+            "bbox": [
+                457.2639223856209,
+                369.330018939394,
+                482.23568586601317,
+                11.971275252525288
+            ],
+            "text": " column is used as the host name corresponding to the IP so that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cột được sử dụng làm tên máy chủ tương ứng với IP để"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                384.860321969697,
+                342.5543300653594,
+                11.971275252525288
+            ],
+            "text": "additional calls to DNS can be avoided. While ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các cuộc gọi bổ sung đến DNS có thể tránh được. Trong khi "
+        },
+        {
+            "bbox": [
+                530.1360294117646,
+                386.012165719697,
+                140.68627450980398,
+                10.172335542929318
+            ],
+            "text": "HOST_VALIDATED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Host_validated"
+        },
+        {
+            "bbox": [
+                670.8223039215686,
+                384.860321969697,
+                21.40441176470597,
+                11.971275252525288
+            ],
+            "text": " is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là "
+        },
+        {
+            "bbox": [
+                692.2267156862746,
+                386.012165719697,
+                20.098039215686185,
+                10.172335542929318
+            ],
+            "text": "NO",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "KHÔNG"
+        },
+        {
+            "bbox": [
+                712.3247549019608,
+                384.860321969697,
+                217.81248325163403,
+                11.971275252525288
+            ],
+            "text": ", DNS resolution is attempted",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Độ phân giải DNS được cố gắng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                400.390625,
+                763.3067810457517,
+                11.971275252525288
+            ],
+            "text": "for each connection attempt, until it eventually completes with either a valid result or a permanent error.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với mỗi lần thử kết nối, cho đến khi cuối cùng nó hoàn thành với kết quả hợp lệ hoặc lỗi vĩnh viễn."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                415.9209280303031,
+                763.2732508169934,
+                11.971275252525174
+            ],
+            "text": "This information enables the server to avoid caching bad or missing host names during temporary DNS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thông tin này cho phép máy chủ tránh bộ nhớ đệm xấu hoặc thiếu tên máy chủ trong thời gian DNS tạm thời"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                431.4512310606061,
+                393.7373366013071,
+                11.971275252525174
+            ],
+            "text": "failures, which would negatively affect clients forever.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thất bại, sẽ ảnh hưởng tiêu cực đến khách hàng mãi mãi."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                459.9234532828283,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                461.07525820707076,
+                180.88235294117646,
+                10.17237436868686
+            ],
+            "text": "SUM_CONNECT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sum_connect_errors"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                488.3956755050506,
+                474.38070220588236,
+                11.971275252525174
+            ],
+            "text": "The number of connection errors that are deemed “blocking”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng lỗi kết nối được coi là chặn \""
+        },
+        {
+            "bbox": [
+                634.3946078431372,
+                488.3956755050506,
+                167.56743545751635,
+                11.971275252525174
+            ],
+            "text": " (assessed against the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Đánh giá chống lại"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                505.07778345959593,
+                180.88235294117646,
+                10.172374368686917
+            ],
+            "text": "max_connect_errors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MAX_CONNECT_ERRORS"
+        },
+        {
+            "bbox": [
+                368.4640522875817,
+                503.9259785353536,
+                559.4457201797386,
+                11.971275252525231
+            ],
+            "text": " system variable). Only protocol handshake errors are counted, and only for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống). Chỉ tính các lỗi bắt tay giao thức được tính và chỉ cho"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                519.4562815656566,
+                216.90807148692807,
+                11.971275252525288
+            ],
+            "text": "hosts that passed validation (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "máy chủ đã vượt qua xác thực ("
+        },
+        {
+            "bbox": [
+                404.4897708333333,
+                520.608086489899,
+                200.9804256535948,
+                10.172374368686917
+            ],
+            "text": "HOST_VALIDATED = YES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Host_validated = Có"
+        },
+        {
+            "bbox": [
+                605.4701964869281,
+                519.4562815656566,
+                10.23323488562096,
+                11.971275252525288
+            ],
+            "text": ").",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ")."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                547.9285037878788,
+                44.68462377450982,
+                11.971275252525231
+            ],
+            "text": "Once ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một lần "
+        },
+        {
+            "bbox": [
+                232.26632312091505,
+                549.0803087121212,
+                180.88235294117646,
+                10.17237436868686
+            ],
+            "text": "SUM_CONNECT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sum_connect_errors"
+        },
+        {
+            "bbox": [
+                413.1486760620915,
+                547.9285037878788,
+                279.29576838235295,
+                11.971275252525231
+            ],
+            "text": " for a given host reaches the value of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đối với một máy chủ nhất định đạt được giá trị của "
+        },
+        {
+            "bbox": [
+                692.4444444444445,
+                549.0803087121212,
+                180.88235294117658,
+                10.17237436868686
+            ],
+            "text": "max_connect_errors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MAX_CONNECT_ERRORS"
+        },
+        {
+            "bbox": [
+                873.326797385621,
+                547.9285037878788,
+                4.655995506535874,
+                11.971275252525231
+            ],
+            "text": ",",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                563.4588068181819,
+                365.85130718954247,
+                11.971275252525231
+            ],
+            "text": "new connections from that host are blocked. The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các kết nối mới từ máy chủ đó bị chặn. Các "
+        },
+        {
+            "bbox": [
+                553.4330065359477,
+                564.6106117424242,
+                180.88235294117646,
+                10.172374368686917
+            ],
+            "text": "SUM_CONNECT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sum_connect_errors"
+        },
+        {
+            "bbox": [
+                734.3153594771242,
+                563.4588068181819,
+                134.9918970588235,
+                11.971275252525231
+            ],
+            "text": " value can exceed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giá trị có thể vượt quá"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                578.9891098484849,
+                27.93625776143793,
+                11.971275252525231
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                215.51795710784316,
+                580.1409147727272,
+                180.8823529411765,
+                10.17237436868686
+            ],
+            "text": "max_connect_errors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MAX_CONNECT_ERRORS"
+        },
+        {
+            "bbox": [
+                396.40031004901965,
+                578.9891098484849,
+                495.23245138888893,
+                11.971275252525231
+            ],
+            "text": " value because multiple connection attempts from a host can occur",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giá trị vì nhiều lần thử kết nối từ máy chủ có thể xảy ra"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                594.519412878788,
+                736.3251801470587,
+                11.971275252525231
+            ],
+            "text": "simultaneously while the host is not blocked. Any or all of them can fail, independently incrementing",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đồng thời trong khi máy chủ không bị chặn. Bất kỳ hoặc tất cả chúng đều có thể thất bại, tăng độc lập"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                611.2015208333333,
+                180.88235294117646,
+                10.17237436868686
+            ],
+            "text": "SUM_CONNECT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sum_connect_errors"
+        },
+        {
+            "bbox": [
+                368.4640522875817,
+                610.049715909091,
+                225.29905310457514,
+                11.971275252525231
+            ],
+            "text": ", possibly beyond the value of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", có thể vượt quá giá trị của "
+        },
+        {
+            "bbox": [
+                593.7630551470588,
+                611.2015208333333,
+                180.88235294117646,
+                10.17237436868686
+            ],
+            "text": "max_connect_errors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MAX_CONNECT_ERRORS"
+        },
+        {
+            "bbox": [
+                774.6454080882353,
+                610.049715909091,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                638.5219381313132,
+                103.35414991830066,
+                11.971275252525231
+            ],
+            "text": "Suppose that ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giả sử điều đó "
+        },
+        {
+            "bbox": [
+                290.9358492647059,
+                639.6737430555556,
+                180.88235294117646,
+                10.17237436868686
+            ],
+            "text": "max_connect_errors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MAX_CONNECT_ERRORS"
+        },
+        {
+            "bbox": [
+                471.81825245098037,
+                638.5219381313132,
+                86.58901879084976,
+                11.971275252525231
+            ],
+            "text": " is 200 and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là 200 và "
+        },
+        {
+            "bbox": [
+                558.4072712418301,
+                639.6737430555556,
+                180.88235294117646,
+                10.17237436868686
+            ],
+            "text": "SUM_CONNECT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sum_connect_errors"
+        },
+        {
+            "bbox": [
+                739.2896241830066,
+                638.5219381313132,
+                135.91299019607834,
+                11.971275252525231
+            ],
+            "text": " for a given host is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đối với một máy chủ nhất định là"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                654.0522411616162,
+                685.1756200980392,
+                11.971275252525288
+            ],
+            "text": "199. If 10 clients attempt to connect from that host simultaneously, none of them are blocked",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "199. Nếu 10 khách hàng cố gắng kết nối từ máy chủ đó cùng một lúc, không ai trong số họ bị chặn"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                669.5825441919192,
+                67.96486928104576,
+                11.971275252525231
+            ],
+            "text": "because ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bởi vì "
+        },
+        {
+            "bbox": [
+                255.546568627451,
+                670.7343491161616,
+                180.88238643790845,
+                10.17237436868686
+            ],
+            "text": "SUM_CONNECT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sum_connect_errors"
+        },
+        {
+            "bbox": [
+                436.42895506535945,
+                669.5825441919192,
+                494.31129125816994,
+                11.971275252525231
+            ],
+            "text": " has not reached 200. If blocking errors occur for five of the clients,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chưa đạt 200. Nếu xảy ra lỗi cho năm khách hàng,"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                686.2646521464646,
+                180.88235294117646,
+                10.172374368686917
+            ],
+            "text": "SUM_CONNECT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sum_connect_errors"
+        },
+        {
+            "bbox": [
+                368.4640522875817,
+                685.1128472222222,
+                373.28758169934645,
+                11.971275252525288
+            ],
+            "text": " is increased by one for each client, for a resulting ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được tăng thêm một cho mỗi khách hàng, cho kết quả "
+        },
+        {
+            "bbox": [
+                741.7516339869281,
+                686.2646521464646,
+                180.88235294117646,
+                10.172374368686917
+            ],
+            "text": "SUM_CONNECT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sum_connect_errors"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                700.6431502525253,
+                633.0714701797385,
+                11.971275252525231
+            ],
+            "text": "value of 204. The other five clients succeed and are not blocked because the value of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị 204. Năm khách hàng khác thành công và không bị chặn vì giá trị của"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                717.3252582070708,
+                180.88235294117646,
+                10.17237436868686
+            ],
+            "text": "SUM_CONNECT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sum_connect_errors"
+        },
+        {
+            "bbox": [
+                368.4640522875817,
+                716.1734532828283,
+                582.7928419117648,
+                11.971275252525288
+            ],
+            "text": " when their connection attempts began had not reached 200. New connections",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Khi các nỗ lực kết nối của họ bắt đầu đã không đạt được 200. Các kết nối mới"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                731.7037563131314,
+                218.78390522875816,
+                11.971275252525231
+            ],
+            "text": "from the host that begin after ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "từ máy chủ bắt đầu sau khi "
+        },
+        {
+            "bbox": [
+                406.3656045751634,
+                732.8555612373738,
+                180.88235294117646,
+                10.17237436868686
+            ],
+            "text": "SUM_CONNECT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sum_connect_errors"
+        },
+        {
+            "bbox": [
+                587.2479575163399,
+                731.7037563131314,
+                192.70669934640523,
+                11.971275252525231
+            ],
+            "text": " reaches 200 are blocked.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đạt 200 bị chặn."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                760.1759785353536,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                761.3278222853535,
+                251.22549019607845,
+                10.172335542929318
+            ],
+            "text": "COUNT_HOST_BLOCKED_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Count_host_blocked_errors"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                788.6482007575758,
+                411.47383946078423,
+                11.971275252525231
+            ],
+            "text": "The number of connections that were blocked because ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng kết nối đã bị chặn bởi vì "
+        },
+        {
+            "bbox": [
+                599.0555388071895,
+                789.8000445075758,
+                180.88235294117658,
+                10.17233554292929
+            ],
+            "text": "SUM_CONNECT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Sum_connect_errors"
+        },
+        {
+            "bbox": [
+                779.937891748366,
+                788.6482007575758,
+                168.5220588235294,
+                11.971275252525231
+            ],
+            "text": " exceeded the value of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " vượt quá giá trị của"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                804.1785037878788,
+                27.93625776143793,
+                11.971275252525231
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                215.51795710784316,
+                805.3303475378788,
+                180.8823529411765,
+                10.17233554292929
+            ],
+            "text": "max_connect_errors",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MAX_CONNECT_ERRORS"
+        },
+        {
+            "bbox": [
+                396.40031004901965,
+                804.1785037878788,
+                125.64622508169924,
+                11.971275252525231
+            ],
+            "text": " system variable.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                832.650726010101,
+                19.361111111111114,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                833.802569760101,
+                311.5196078431373,
+                10.172335542929318
+            ],
+            "text": "COUNT_NAMEINFO_TRANSIENT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Count_NameInfo_Transient_errors"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                861.1229482323232,
+                523.1184640522875,
+                11.97127525252526
+            ],
+            "text": "The number of transient errors during IP-to-host name DNS resolution.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng lỗi thoáng qua trong độ phân giải DNS tên IP-to-host."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                889.5951704545455,
+                19.361111111111114,
+                11.971275252525245
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                890.7470142045455,
+                311.5196078431373,
+                10.172335542929275
+            ],
+            "text": "COUNT_NAMEINFO_PERMANENT_ERRORS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Count_NameInfo_Permanent_errors"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                918.0673926767677,
+                538.9456866830066,
+                11.97127525252526
+            ],
+            "text": "The number of permanent errors during IP-to-host name DNS resolution.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Số lượng lỗi vĩnh viễn trong độ phân giải DNS tên IP-to-host."
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "5081",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "5081"
+        }
+    ]
+}

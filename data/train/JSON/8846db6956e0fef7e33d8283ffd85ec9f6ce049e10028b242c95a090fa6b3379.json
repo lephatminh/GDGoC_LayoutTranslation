@@ -1,0 +1,1636 @@
+{
+    "metadata": {
+        "page_hash": "8846db6956e0fef7e33d8283ffd85ec9f6ce049e10028b242c95a090fa6b3379",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1110,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                411.22263071895424,
+                48.370422979798036,
+                232.70179738562098,
+                11.971275252525288
+            ],
+            "text": "MySQL Enterprise Thread Pool",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL Enterprise Streon Pool"
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                95.13866224747483,
+                381.89453349673204,
+                13.168389835858534
+            ],
+            "text": "Thread Pool Installation as of MySQL 8.0.14",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Cài đặt nhóm chủ đề kể từ MySQL 8.0.14"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                125.84855523989904,
+                768.9509803921569,
+                11.971275252525288
+            ],
+            "text": "In MySQL 8.0.14 and higher, the thread pool monitoring tables are Performance Schema tables that are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong MySQL 8.0,14 trở lên, các bảng giám sát nhóm chủ đề là các bảng Lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                141.37885827020216,
+                445.03758169934645,
+                11.971275252525174
+            ],
+            "text": "loaded and unloaded along with the thread pool plugin. The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Được tải và dỡ hàng cùng với plugin nhóm chủ đề. Các "
+        },
+        {
+            "bbox": [
+                615.8709150326798,
+                142.53062436868697,
+                180.88235294117646,
+                10.172413194444403
+            ],
+            "text": "INFORMATION_SCHEMA",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thông tin_schema"
+        },
+        {
+            "bbox": [
+                796.7532679738563,
+                141.37885827020216,
+                162.91133946078435,
+                11.971275252525174
+            ],
+            "text": " versions of the tables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " phiên bản của các bảng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                156.90916130050516,
+                779.1506683006536,
+                11.971275252525174
+            ],
+            "text": "are deprecated but still available; they are installed per the instructions in Thread Pool Installation Prior to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được không dùng nữa nhưng vẫn có sẵn; Chúng được cài đặt theo các hướng dẫn trong cài đặt nhóm chủ đề trước khi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                172.43938667929297,
+                111.71160130718951,
+                11.971275252525174
+            ],
+            "text": "MySQL 8.0.14.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL 8.0,0,14."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                201.77355366161623,
+                583.6973206699347,
+                11.971275252525174
+            ],
+            "text": "To enable thread pool capability, load the plugin by starting the server with the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để bật khả năng nhóm luồng, hãy tải plugin bằng cách khởi động máy chủ với "
+        },
+        {
+            "bbox": [
+                754.5306540032681,
+                202.92541035353543,
+                170.83333333333326,
+                10.172322601010023
+            ],
+            "text": "--plugin-load-add",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--Plugin-load-Add"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                217.30385669191924,
+                347.2439060457516,
+                11.971275252525174
+            ],
+            "text": "option. To do this, put these lines in the server ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "lựa chọn. Để làm điều này, hãy đặt các dòng này vào máy chủ "
+        },
+        {
+            "bbox": [
+                518.077239379085,
+                218.45571338383843,
+                60.29411764705878,
+                10.172322601010023
+            ],
+            "text": "my.cnf",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "my.cnf"
+        },
+        {
+            "bbox": [
+                578.3713067810457,
+                217.30385669191924,
+                134.9918300653594,
+                11.971275252525174
+            ],
+            "text": " file, adjusting the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tệp, điều chỉnh "
+        },
+        {
+            "bbox": [
+                713.3631368464052,
+                218.45571338383843,
+                30.147058823529505,
+                10.172322601010023
+            ],
+            "text": ".so",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": ".Vì thế"
+        },
+        {
+            "bbox": [
+                743.5101956699347,
+                217.30385669191924,
+                192.67316911764703,
+                11.971275252525174
+            ],
+            "text": " suffix for your platform as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Hậu tố cho nền tảng của bạn là"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                232.83415972222224,
+                80.97836642156861,
+                11.971275252525288
+            ],
+            "text": "necessary:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cần thiết:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                261.0657010732324,
+                64.31370874183006,
+                8.137904671717251
+            ],
+            "text": "[mysqld]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[MySQLD]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                273.4899046717171,
+                241.17647058823528,
+                8.137917613636432
+            ],
+            "text": "plugin-load-add=thread_pool.so",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "plugin-load-add = thread_pool.so"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                300.6485868055555,
+                302.5257352941177,
+                11.971275252525288
+            ],
+            "text": "To verify plugin installation, examine the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để xác minh cài đặt plugin, hãy kiểm tra "
+        },
+        {
+            "bbox": [
+                473.359068627451,
+                301.80035290404044,
+                261.2745098039216,
+                10.172413194444403
+            ],
+            "text": "INFORMATION_SCHEMA.PLUGINS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thông tin_schema.plugins"
+        },
+        {
+            "bbox": [
+                734.6335784313726,
+                300.6485868055555,
+                124.75857843137248,
+                11.971275252525288
+            ],
+            "text": " table or use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng hoặc sử dụng "
+        },
+        {
+            "bbox": [
+                859.3921568627451,
+                301.80035290404044,
+                40.1960784313726,
+                10.172413194444403
+            ],
+            "text": "SHOW",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÌNH DIỄN"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                317.33065593434344,
+                70.34313725490196,
+                10.172413194444403
+            ],
+            "text": "PLUGINS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Plugin"
+        },
+        {
+            "bbox": [
+                241.1764705882353,
+                316.1788898358586,
+                531.1744113562092,
+                11.971275252525174
+            ],
+            "text": " statement (see Section 5.6.2, “Obtaining Server Plugin Information”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tuyên bố (xem Phần 5.6.2, Thông tin plugin máy chủ có được thông tin trực tuyến"
+        },
+        {
+            "bbox": [
+                744.7830882352941,
+                316.1788898358586,
+                112.61599632352932,
+                11.971275252525174
+            ],
+            "text": "). For example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Ví dụ:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                344.4103535353536,
+                56.27452655228757,
+                8.137827020202053
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                344.4103535353536,
+                265.2941008986928,
+                8.137827020202053
+            ],
+            "text": "SELECT PLUGIN_NAME, PLUGIN_STATUS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn Plugin_Name, Plugin_Status"
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                356.8345571338384,
+                249.21565277777782,
+                8.137917613636318
+            ],
+            "text": "FROM INFORMATION_SCHEMA.PLUGINS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Từ thông tin_schema.plugins"
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                369.25885132575763,
+                265.2941008986928,
+                8.137865845959595
+            ],
+            "text": "WHERE PLUGIN_NAME LIKE ’thread%’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Trong đó plugin_name giống như chủ đề%,%,;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                381.68305492424247,
+                329.60782638888884,
+                8.137917613636318
+            ],
+            "text": "+-----------------------+---------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+---------------------------+---------------+"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                394.1073491161617,
+                104.50978717320262,
+                8.13782702020194
+            ],
+            "text": "| PLUGIN_NAME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Plugin_name"
+        },
+        {
+            "bbox": [
+                363.77450980392155,
+                394.1073491161617,
+                136.66664991830066,
+                8.13782702020194
+            ],
+            "text": "| PLUGIN_STATUS |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Plugin_status |"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                406.5315656565657,
+                329.60782638888884,
+                8.137865845959595
+            ],
+            "text": "+-----------------------+---------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+---------------------------+---------------+"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                418.95584690656574,
+                104.50978717320262,
+                8.137878787878776
+            ],
+            "text": "| thread_pool",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| Thread_Pool"
+        },
+        {
+            "bbox": [
+                363.77450980392155,
+                418.95584690656574,
+                64.31370874183011,
+                8.137878787878776
+            ],
+            "text": "| ACTIVE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| TÍCH CỰC"
+        },
+        {
+            "bbox": [
+                492.40196078431376,
+                418.95584690656574,
+                8.039198937908452,
+                8.137878787878776
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                431.3800246212121,
+                329.60782638888884,
+                8.137904671717251
+            ],
+            "text": "+-----------------------+---------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+---------------------------+---------------+"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                458.5386549873738,
+                623.6756535947712,
+                11.971275252525174
+            ],
+            "text": "To verify that the Performance Schema monitoring tables are available, examine the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để xác minh rằng các bảng giám sát lược đồ hiệu suất có sẵn, hãy kiểm tra"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                475.2207758838384,
+                251.22549019607843,
+                10.17236142676768
+            ],
+            "text": "INFORMATION_SCHEMA.TABLES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thông tin_schema.tables"
+        },
+        {
+            "bbox": [
+                422.05882352941177,
+                474.0689580176768,
+                124.75856168300646,
+                11.971275252525288
+            ],
+            "text": " table or use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng hoặc sử dụng "
+        },
+        {
+            "bbox": [
+                546.8173852124182,
+                475.2207758838384,
+                110.53921568627459,
+                10.17236142676768
+            ],
+            "text": "SHOW TABLES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Hiển thị bảng"
+        },
+        {
+            "bbox": [
+                657.3566008986928,
+                474.0689580176768,
+                185.23694485294118,
+                11.971275252525288
+            ],
+            "text": " statement. For example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố. Ví dụ:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                502.3004605429293,
+                56.27452655228757,
+                8.137904671717251
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                502.3004605429293,
+                136.66664991830064,
+                8.137904671717251
+            ],
+            "text": "SELECT TABLE_NAME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Chọn Table_Name"
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                514.7247029671718,
+                241.17647058823533,
+                8.137917613636375
+            ],
+            "text": "FROM INFORMATION_SCHEMA.TABLES",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Từ thông tin_schema.tables"
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                527.1489583333334,
+                329.6078096405229,
+                8.137917613636375
+            ],
+            "text": "WHERE TABLE_SCHEMA = ’performance_schema’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "WHERE tabl"
+        },
+        {
+            "bbox": [
+                227.1078598856209,
+                539.5731748737373,
+                209.01957434640522,
+                8.137904671717195
+            ],
+            "text": "AND TABLE_NAME LIKE ’tp%’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Và TABLE_NAME giống như TP TP%,;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                551.9974172979798,
+                200.98039215686273,
+                8.137917613636318
+            ],
+            "text": "+-----------------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+-----------------------+"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                564.4216726641414,
+                96.47060498366014,
+                8.137904671717195
+            ],
+            "text": "| TABLE_NAME",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| TABLE_NAME"
+        },
+        {
+            "bbox": [
+                363.77450980392155,
+                564.4216726641414,
+                8.039215686274531,
+                8.137904671717195
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                576.8459150883839,
+                200.98039215686273,
+                8.137917613636375
+            ],
+            "text": "+-----------------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+-----------------------+"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                589.2701704545455,
+                200.98039215686273,
+                8.137917613636375
+            ],
+            "text": "| tp_thread_group_state |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| tp_thread_group_state |"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                601.6943869949495,
+                200.98039215686273,
+                8.137904671717195
+            ],
+            "text": "| tp_thread_group_stats |",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| tp_thread_group_stats |"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                614.118629419192,
+                136.66668341503268,
+                8.137917613636318
+            ],
+            "text": "| tp_thread_state",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "| TP_Thread_State"
+        },
+        {
+            "bbox": [
+                363.77450980392155,
+                614.118629419192,
+                8.039215686274531,
+                8.137917613636318
+            ],
+            "text": "|",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "|"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                626.5428847853536,
+                200.98039215686273,
+                8.137904671717195
+            ],
+            "text": "+-----------------------+",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "+-----------------------+"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                653.7015151515152,
+                479.42197712418294,
+                11.971275252525288
+            ],
+            "text": "If the server loads the thread pool plugin successfully, it sets the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu máy chủ tải plugin nhóm luồng thành công, nó sẽ đặt "
+        },
+        {
+            "bbox": [
+                650.2553104575163,
+                654.8533330176767,
+                150.73529411764707,
+                10.17236142676768
+            ],
+            "text": "thread_handling",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thread_Handling"
+        },
+        {
+            "bbox": [
+                800.9906045751634,
+                653.7015151515152,
+                139.6143623366014,
+                11.971275252525288
+            ],
+            "text": " system variable to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                670.3836360479797,
+                180.8823529411765,
+                10.17236142676768
+            ],
+            "text": "loaded-dynamically",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "tải-phân tích"
+        },
+        {
+            "bbox": [
+                351.71568627450984,
+                669.2318181818182,
+                4.65604575163394,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                698.5659981060605,
+                592.9424019607842,
+                11.971275252525288
+            ],
+            "text": "If the plugin fails to initialize, check the server error log for diagnostic messages.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu plugin không khởi tạo, hãy kiểm tra nhật ký lỗi máy chủ để biết tin nhắn chẩn đoán."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                728.0774305555556,
+                404.40772058823535,
+                13.16842866161619
+            ],
+            "text": "Thread Pool Installation Prior to MySQL 8.0.14",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Cài đặt nhóm chủ đề trước MySQL 8.0.14"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                758.7873106060606,
+                779.1841985294117,
+                11.97127525252526
+            ],
+            "text": "Prior to MySQL 8.0.14, the thread pool monitoring tables are plugins separate from the thread pool plugin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trước MySQL 8.0.14, các bảng giám sát nhóm chủ đề là các plugin tách biệt với plugin nhóm chủ đề"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                774.3176136363636,
+                235.53227124183005,
+                11.97127525252526
+            ],
+            "text": "and can be installed separately.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và có thể được cài đặt riêng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                803.651793560606,
+                674.9423852124182,
+                11.971275252525231
+            ],
+            "text": "To enable thread pool capability, load the plugins to be used by starting the server with the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để bật khả năng nhóm luồng, hãy tải các plugin được sử dụng bằng cách khởi động máy chủ với "
+        },
+        {
+            "bbox": [
+                845.7757185457516,
+                804.8036373106061,
+                90.4411764705884,
+                10.172335542929261
+            ],
+            "text": "--plugin-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--plugin-"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                820.3339403409091,
+                80.39215686274508,
+                10.172335542929261
+            ],
+            "text": "load-add",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tải trọng"
+        },
+        {
+            "bbox": [
+                251.22549019607843,
+                819.1820965909092,
+                690.7026478758171,
+                11.971275252525231
+            ],
+            "text": " option. For example, if you name only the plugin library file, the server loads all plugins that it",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " lựa chọn. Ví dụ: nếu bạn chỉ đặt tên tệp thư viện plugin, máy chủ sẽ tải tất cả các plugin mà nó"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                834.7123996212122,
+                374.25902042483654,
+                11.97127525252526
+            ],
+            "text": "contains (that is, the thread pool plugin and all the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "chứa (nghĩa là plugin nhóm luồng và tất cả các "
+        },
+        {
+            "bbox": [
+                545.0923035130719,
+                835.8642433712122,
+                180.88235294117646,
+                10.172335542929261
+            ],
+            "text": "INFORMATION_SCHEMA",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thông tin_schema"
+        },
+        {
+            "bbox": [
+                725.9746564542484,
+                834.7123996212122,
+                215.98691135620925,
+                11.97127525252526
+            ],
+            "text": " tables). To do this, put these",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng). Để làm điều này, hãy đặt những thứ này"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                850.2427026515152,
+                135.89624183006535,
+                11.97127525252526
+            ],
+            "text": "lines in the server ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các dòng trong máy chủ "
+        },
+        {
+            "bbox": [
+                306.7295751633987,
+                851.3945464015152,
+                60.29411764705878,
+                10.172335542929261
+            ],
+            "text": "my.cnf",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "my.cnf"
+        },
+        {
+            "bbox": [
+                367.0236928104575,
+                850.2427026515152,
+                134.9918133169935,
+                11.97127525252526
+            ],
+            "text": " file, adjusting the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tệp, điều chỉnh "
+        },
+        {
+            "bbox": [
+                502.015506127451,
+                851.3945464015152,
+                30.14705882352939,
+                10.172335542929261
+            ],
+            "text": ".so",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": ".Vì thế"
+        },
+        {
+            "bbox": [
+                532.1625649509804,
+                850.2427026515152,
+                278.30756454248365,
+                11.97127525252526
+            ],
+            "text": " suffix for your platform as necessary:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Hậu tố cho nền tảng của bạn khi cần thiết:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                878.474231060606,
+                64.31370874183006,
+                8.137839962121205
+            ],
+            "text": "[mysqld]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[MySQLD]"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                890.89844760101,
+                241.17647058823528,
+                8.137830902777779
+            ],
+            "text": "plugin-load-add=thread_pool.so",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "plugin-load-add = thread_pool.so"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                918.0570443181819,
+                591.1168300653594,
+                11.971275252525245
+            ],
+            "text": "That is equivalent to loading all thread pool plugins by naming them individually:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Điều đó tương đương với việc tải tất cả các plugin nhóm luồng bằng cách đặt tên riêng cho chúng:"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "1081",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1081"
+        }
+    ]
+}

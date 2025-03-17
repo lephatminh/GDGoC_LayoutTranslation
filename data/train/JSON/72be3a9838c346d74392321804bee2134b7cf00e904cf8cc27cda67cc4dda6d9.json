@@ -1,0 +1,1036 @@
+{
+    "metadata": {
+        "page_hash": "72be3a9838c346d74392321804bee2134b7cf00e904cf8cc27cda67cc4dda6d9",
+        "original_filename": "cm-oreilly-kubernetes-patterns-ebook-f19824-201910-en.pdf",
+        "page_no": 210,
+        "num_pages": 266,
+        "original_width": 504,
+        "original_height": 661.5,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                183.0296171626984,
+                87.36348488284193,
+                695.5357305555555,
+                21.94800037792902
+            ],
+            "text": "Naming rule for creating the plural form, used for specifying a list of those",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Đặt tên quy tắc để tạo hình thức số nhiều, được sử dụng để chỉ định danh sách"
+        },
+        {
+            "bbox": [
+                183.03880148809523,
+                106.88724792139067,
+                59.663545734126984,
+                21.94800037792902
+            ],
+            "text": "objects",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Đối tượng"
+        },
+        {
+            "bbox": [
+                183.03880148809523,
+                143.5833945578231,
+                695.5357386904761,
+                21.948000377928906
+            ],
+            "text": "Scope—whether the resource can be created cluster-wide or is specific to a name‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Phạm vi cho dù tài nguyên có thể được tạo ra toàn cụm hay là cụ thể cho một tên‐"
+        },
+        {
+            "bbox": [
+                183.0266214781746,
+                163.10715759637185,
+                46.509377033730146,
+                21.948093348450584
+            ],
+            "text": "space",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "không gian"
+        },
+        {
+            "bbox": [
+                183.0266214781746,
+                199.8033042328043,
+                167.9718770337301,
+                21.948000377928906
+            ],
+            "text": "Version of the CRD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Phiên bản của CRD"
+        },
+        {
+            "bbox": [
+                183.0266214781746,
+                236.49934240362813,
+                453.71196086309516,
+                21.948000377928906
+            ],
+            "text": "OpenAPI V3 schema for validation (not shown here)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Lược đồ OpenAPI V3 để xác thực (không được hiển thị ở đây)"
+        },
+        {
+            "bbox": [
+                146.42560828373016,
+                271.51825434618297,
+                732.1427086805555,
+                21.948000377928906
+            ],
+            "text": "An OpenAPI V3 schema can also be specified to allow Kubernetes to validate a cus‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Lược đồ OpenAPI V3 cũng có thể được chỉ định để cho phép Kubernetes xác nhận CUS‐"
+        },
+        {
+            "bbox": [
+                146.41946438492062,
+                291.0420638699925,
+                732.14289375,
+                21.948000377928906
+            ],
+            "text": "tom resource. For simple use cases, this schema can be omitted, but for production-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "tài nguyên tom. Đối với các trường hợp sử dụng đơn giản, lược đồ này có thể được bỏ qua, nhưng để sản xuất-"
+        },
+        {
+            "bbox": [
+                146.4347315972222,
+                310.56588888888894,
+                732.142777827381,
+                21.94804686318969
+            ],
+            "text": "grade CRDs, the schema should be provided so that configuration errors can be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "CRDS CRDS, Lược đồ nên được cung cấp để các lỗi cấu hình có thể"
+        },
+        {
+            "bbox": [
+                146.42864871031745,
+                330.0897139077854,
+                121.56927490079366,
+                21.948000377928906
+            ],
+            "text": "detected early.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "được phát hiện sớm."
+        },
+        {
+            "bbox": [
+                146.42864871031745,
+                358.91057558578984,
+                732.14302390873,
+                21.948046863189802
+            ],
+            "text": "Additionally, Kubernetes allows us to specify two possible subresources for our CRD",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ngoài ra, Kubernetes cho phép chúng tôi chỉ định hai nguồn phụ có thể xảy ra cho CRD của chúng tôi"
+        },
+        {
+            "bbox": [
+                146.42262886904763,
+                379.3536621315193,
+                146.29742023809524,
+                21.948000377928906
+            ],
+            "text": "via the spec field ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "thông qua trường thông số kỹ thuật "
+        },
+        {
+            "bbox": [
+                292.72004910714287,
+                382.61571882086173,
+                121.71872966269837,
+                15.456411186696869
+            ],
+            "text": "subresources",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "Subresource"
+        },
+        {
+            "bbox": [
+                414.43877876984124,
+                379.3536621315193,
+                4.868729662698399,
+                21.948000377928906
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                146.42259836309523,
+                409.5125245653817,
+                39.27031453373013,
+                22.159523809523876
+            ],
+            "text": "scale",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "tỉ lệ"
+        },
+        {
+            "bbox": [
+                183.04500843253967,
+                429.24785752078606,
+                695.5357346230157,
+                21.94800037792902
+            ],
+            "text": "With this property, a CRD can specify how it manages its replica count. This field",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Với tài sản này, CRD có thể chỉ định cách quản lý số lượng bản sao của nó. Lĩnh vực này"
+        },
+        {
+            "bbox": [
+                183.03282842261905,
+                448.7716825396825,
+                695.5357529265873,
+                21.948046863189802
+            ],
+            "text": "can be used to declare the JSON path, where the number of desired replicas of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "có thể được sử dụng để khai báo đường dẫn JSON, trong đó số lượng bản sao mong muốn của"
+        },
+        {
+            "bbox": [
+                183.04195173611112,
+                468.29549206349213,
+                695.5358017361111,
+                21.948000377928906
+            ],
+            "text": "this custom resource is specified: the path to the property that holds the actual",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "tài nguyên tùy chỉnh này được chỉ định: đường dẫn đến thuộc tính giữ thực tế"
+        },
+        {
+            "bbox": [
+                183.02977172619046,
+                487.8193170823886,
+                695.535698015873,
+                21.948000377928906
+            ],
+            "text": "number of running replicas and an optional path to a label selector that can be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Số lượng bản sao chạy và đường dẫn tùy chọn đến bộ chọn nhãn có thể"
+        },
+        {
+            "bbox": [
+                183.03898859126983,
+                507.343142101285,
+                695.5356125992063,
+                21.948000377928906
+            ],
+            "text": "used to find copies of custom resource instances. This label selector is usually",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Được sử dụng để tìm bản sao của các trường hợp tài nguyên tùy chỉnh. Bộ chọn nhãn này thường là"
+        },
+        {
+            "bbox": [
+                183.0268085813492,
+                526.8669516250944,
+                695.5356919146825,
+                21.948000377928963
+            ],
+            "text": "optional, but is required if you want to use this custom resource with the Hori‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tùy chọn, nhưng được yêu cầu nếu bạn muốn sử dụng tài nguyên tùy chỉnh này với Hori‐"
+        },
+        {
+            "bbox": [
+                183.0359786706349,
+                546.390776643991,
+                396.35466716269843,
+                21.948000377928906
+            ],
+            "text": "zontalPodAutoscaler explained in Chapter 24, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Zontalpodautoscaler giải thích trong Chương 24, "
+        },
+        {
+            "bbox": [
+                579.3906458333333,
+                546.179253212396,
+                101.8380818452381,
+                22.159523809523876
+            ],
+            "text": "Elastic Scale",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Quy mô đàn hồi"
+        },
+        {
+            "bbox": [
+                681.2287276785714,
+                546.390776643991,
+                4.868770337301498,
+                21.948000377928906
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                146.43499598214285,
+                576.5496390778533,
+                48.34583943452378,
+                22.15950831443689
+            ],
+            "text": "status",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "trạng thái"
+        },
+        {
+            "bbox": [
+                183.03605595238093,
+                596.2850185185185,
+                695.5357997023809,
+                21.948000377928906
+            ],
+            "text": "When we set this property, a new API call is available that only allows you to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Khi chúng tôi đặt thuộc tính này, một cuộc gọi API mới có sẵn chỉ cho phép bạn"
+        },
+        {
+            "bbox": [
+                183.045179265873,
+                615.808843537415,
+                695.5356248015873,
+                21.948000377928906
+            ],
+            "text": "change the status. This API call can be secured individually and allows for status",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Thay đổi trạng thái. Cuộc gọi API này có thể được bảo mật riêng lẻ và cho phép trạng thái"
+        },
+        {
+            "bbox": [
+                183.03295248015874,
+                635.3326530612245,
+                695.5358729166666,
+                21.948000377928906
+            ],
+            "text": "updates from outside the controller. On the other hand, when we update a cus‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Cập nhật từ bên ngoài bộ điều khiển. Mặt khác, khi chúng tôi cập nhật một cus‐"
+        },
+        {
+            "bbox": [
+                183.04212256944444,
+                655.775739606954,
+                263.1548575892857,
+                21.948000377928963
+            ],
+            "text": "tom resource as a whole, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "tài nguyên tom nói chung, "
+        },
+        {
+            "bbox": [
+                446.19704117063486,
+                659.037858276644,
+                60.85937500000006,
+                15.456302721088434
+            ],
+            "text": "status",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 9.975000381469727
+            },
+            "text_vi": "trạng thái"
+        },
+        {
+            "bbox": [
+                507.0563754960317,
+                655.775739606954,
+                371.5213169642857,
+                21.948000377928963
+            ],
+            "text": " section is ignored as for standard Kuber‐",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": " Phần bị bỏ qua như đối với Kuber - tiêu chuẩn"
+        },
+        {
+            "bbox": [
+                183.02989578373015,
+                675.2995181405895,
+                134.8301900297619,
+                21.948000377928963
+            ],
+            "text": "netes resources.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Tài nguyên Netes."
+        },
+        {
+            "bbox": [
+                146.42885004960317,
+                704.1203798185941,
+                697.3844014384921,
+                21.948000377928963
+            ],
+            "text": "Example 23-2 shows a potential subresource path as is also used for a regular Pod.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-Regular",
+                "size": 10.5
+            },
+            "text_vi": "Ví dụ 23-2 cho thấy một đường dẫn subresource tiềm năng như cũng được sử dụng cho một pod thông thường."
+        },
+        {
+            "bbox": [
+                146.4289130952381,
+                747.0239667422525,
+                585.2963785714285,
+                22.15950831443689
+            ],
+            "text": "Example 23-2. Subresource definition for a CustomResourceDefinition",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MinionPro-It",
+                "size": 10.5
+            },
+            "text_vi": "Ví dụ 23-2. Định nghĩa subresource cho một tùy chỉnh"
+        },
+        {
+            "bbox": [
+                146.43201656746032,
+                785.3935517762661,
+                34.57341269841268,
+                13.170823885109598
+            ],
+            "text": "kind",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "loại"
+        },
+        {
+            "bbox": [
+                181.005429265873,
+                785.3935517762661,
+                224.72717440476188,
+                13.170823885109598
+            ],
+            "text": ": CustomResourceDefinition",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": CustomResourCedefinition"
+        },
+        {
+            "bbox": [
+                146.43203080357142,
+                801.1985559334845,
+                8.643353174603163,
+                13.170823885109598
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Italic",
+                "size": 8.5
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                163.71873715277775,
+                801.1985559334845,
+                25.930059523809547,
+                13.170823885109598
+            ],
+            "text": "...",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Italic",
+                "size": 8.5
+            },
+            "text_vi": "..."
+        },
+        {
+            "bbox": [
+                146.43203080357142,
+                817.0035600907029,
+                34.57341269841268,
+                13.170823885109598
+            ],
+            "text": "spec",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "thông số kỹ thuật"
+        },
+        {
+            "bbox": [
+                181.0054435019841,
+                817.0035600907029,
+                8.643353174603192,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                163.71873715277775,
+                832.8085797430083,
+                103.72025639880957,
+                13.170823885109598
+            ],
+            "text": "subresources",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "Subresource"
+        },
+        {
+            "bbox": [
+                267.4389935515873,
+                832.8085797430083,
+                8.643353174603135,
+                13.170823885109598
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                181.0054435019841,
+                848.6135839002268,
+                51.860117013888896,
+                13.170823885109598
+            ],
+            "text": "status",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "trạng thái"
+        },
+        {
+            "bbox": [
+                232.865560515873,
+                848.6135839002268,
+                34.57343303571432,
+                13.170823885109598
+            ],
+            "text": ": {}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": {}"
+        },
+        {
+            "bbox": [
+                181.0054435019841,
+                864.4185880574453,
+                43.21676383928573,
+                13.170778949357526
+            ],
+            "text": "scale",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "tỉ lệ"
+        },
+        {
+            "bbox": [
+                224.22220734126984,
+                864.4185880574453,
+                8.643353174603163,
+                13.170778949357526
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                198.29214985119046,
+                880.4984781557067,
+                138.29366909722222,
+                13.170823885109598
+            ],
+            "text": "specReplicasPath",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Bold",
+                "size": 8.5
+            },
+            "text_vi": "spenreplicaspath"
+        },
+        {
+            "bbox": [
+                336.5858189484127,
+                880.4984781557067,
+                146.93700396825398,
+                13.170823885109598
+            ],
+            "text": ": .spec.replicas ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+UbuntuMono-Regular",
+                "size": 8.5
+            },
+            "text_vi": ": .Spec.Replicas "
+        },
+        {
+            "bbox": [
+                765.1598764880952,
+                945.5380626984127,
+                53.446428571428555,
+                16.706799622071053
+            ],
+            "text": "Solution ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "Giải pháp "
+        },
+        {
+            "bbox": [
+                834.0179122023809,
+                945.5380626984127,
+                6.735734623015901,
+                16.706799622071053
+            ],
+            "text": "| ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "| "
+        },
+        {
+            "bbox": [
+                856.1652743055555,
+                945.5380626984127,
+                22.403551091269833,
+                16.706799622071053
+            ],
+            "text": "191",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/CPDGGC+MyriadPro-SemiboldCond",
+                "size": 9
+            },
+            "text_vi": "191"
+        }
+    ]
+}

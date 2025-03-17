@@ -1,0 +1,1376 @@
+{
+    "metadata": {
+        "page_hash": "73f141576190a20772f2f4030436cb5f3adfb672455af91d2bfc66daa7a8f179",
+        "original_filename": "perl-all-en-5.8.5.pdf",
+        "page_no": 119,
+        "num_pages": 1714,
+        "original_width": 595.276,
+        "original_height": 841.89001,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                97.61913133571655,
+                71.7520201956072,
+                23.10470353247905,
+                10.832049485894345
+            ],
+            "text": "9.6.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PUMMVX+NimbusRomNo9L-Regu-Slant_167",
+                "size": 9.963000297546387
+            },
+            "text_vi": "9.6."
+        },
+        {
+            "bbox": [
+                136.1269447281597,
+                71.7520201956072,
+                320.8934899105625,
+                10.832049485894345
+            ],
+            "text": "ALTERNATE OBJECT REPRESENTATIONS",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PUMMVX+NimbusRomNo9L-Regu-Slant_167",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Đại diện đối tượng thay thế"
+        },
+        {
+            "bbox": [
+                737.3534646113735,
+                71.7520201956072,
+                190.0281634065543,
+                10.832049485894345
+            ],
+            "text": "CHAPTER 9. PERLTOOT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PUMMVX+NimbusRomNo9L-Regu-Slant_167",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Chương 9. Perltoot"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                108.41058976338252,
+                41.17039138147685,
+                13.09970170568954
+            ],
+            "text": "9.6.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 11.95499992370605
+            },
+            "text_vi": "9.6.1"
+        },
+        {
+            "bbox": [
+                159.3747252954932,
+                108.41058976338252,
+                157.78556169743115,
+                13.09970170568954
+            ],
+            "text": "Arrays as Objects",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Bold",
+                "size": 11.95499992370605
+            },
+            "text_vi": "Mảng dưới dạng đối tượng"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                137.66161716303066,
+                799.4665075108018,
+                10.916994370796601
+            ],
+            "text": "If the user of your class honors the contract and sticks to the advertised interface, then you can change its underlying",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Nếu người dùng lớp của bạn tôn vinh hợp đồng và gắn bó với giao diện được quảng cáo, thì bạn có thể thay đổi cơ bản của nó"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                152.21683857491075,
+                821.5622866115885,
+                10.916982195809624
+            ],
+            "text": "interface if you feel like it. Here’s another implementation that conforms to the same interface specification. This time",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "giao diện nếu bạn cảm thấy thích nó. Ở đây, một triển khai khác phù hợp với cùng một đặc tả giao diện. Lần này"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                166.77204781180387,
+                538.0727044681794,
+                10.916994370796715
+            ],
+            "text": "we’ll use an array reference instead of a hash reference to represent the object.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Chúng tôi sẽ sử dụng tham chiếu mảng thay vì tham chiếu băm để thể hiện đối tượng."
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                198.39387392184403,
+                135.0971613167674,
+                10.225540329193336
+            ],
+            "text": "package Person;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "người đóng gói;"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                212.94909533372413,
+                99.0712548464914,
+                10.225528154206359
+            ],
+            "text": "use strict;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "sử dụng nghiêm ngặt;"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                244.4859765588618,
+                333.22247965649547,
+                10.22554032919345
+            ],
+            "text": "my($NAME, $AGE, $PEERS) = ( 0 .. 2 );",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "của tôi ($ name, $ tuổi, $ peers) = (0 .. 2);"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                276.02279690906414,
+                396.26780737002673,
+                10.225528154206359
+            ],
+            "text": "############################################",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "################## sau"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                290.57801832094424,
+                396.26780737002673,
+                10.225528154206359
+            ],
+            "text": "## the object constructor (array version) ##",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "## Trình xây dựng đối tượng (phiên bản mảng) ##"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                305.13322755783736,
+                396.26780737002673,
+                10.22554032919345
+            ],
+            "text": "############################################",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "################## sau"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                319.68844896971746,
+                81.05830161135341,
+                10.225528154206359
+            ],
+            "text": "sub new {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "sub new {"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                334.24367038159767,
+                126.09068125541768,
+                10.225528154206359
+            ],
+            "text": "my $self = [];",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ của tôi tự = [];"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                348.8000727672253,
+                126.09066403651417,
+                10.225528154206131
+            ],
+            "text": "$self->[$NAME]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ self-> [$ name]"
+        },
+        {
+            "bbox": [
+                322.77826420013577,
+                348.8000727672253,
+                72.05183015945539,
+                10.225528154206131
+            ],
+            "text": "= undef;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "= Undef;"
+        },
+        {
+            "bbox": [
+                412.82589756684297,
+                348.8000727672253,
+                7.975606693365762,
+                10.225528154206131
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                435.99314015683484,
+                348.8000727672253,
+                165.96870611279468,
+                10.225528154206131
+            ],
+            "text": "this is unnecessary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Điều này là không cần thiết"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                363.3552941791054,
+                117.0842132473004,
+                10.225528154206359
+            ],
+            "text": "$self->[$AGE]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ self-> [$ tuổi]"
+        },
+        {
+            "bbox": [
+                322.7782986379428,
+                363.3552941791054,
+                72.05181294055188,
+                10.225528154206359
+            ],
+            "text": "= undef;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "= Undef;"
+        },
+        {
+            "bbox": [
+                412.8259147857464,
+                363.3552941791054,
+                7.345102103898057,
+                10.225528154206359
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                434.1616342671299,
+                363.3552941791054,
+                86.74193105383051,
+                10.225528154206359
+            ],
+            "text": "as is this",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Như thế này"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                377.9105034159985,
+                135.0971664824384,
+                10.225540329193336
+            ],
+            "text": "$self->[$PEERS]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ self-> [$ peers]"
+        },
+        {
+            "bbox": [
+                322.7782986379428,
+                377.9105034159985,
+                45.032391697296646,
+                10.225540329193336
+            ],
+            "text": "= [];",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "= [];"
+        },
+        {
+            "bbox": [
+                412.8259147857464,
+                377.9105034159985,
+                7.578073868256126,
+                10.225540329193336
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                434.83840605030275,
+                377.9105034159985,
+                194.14289590038914,
+                10.225540329193336
+            ],
+            "text": "but this isn’t, really",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Nhưng đây không phải là"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                392.4657248278786,
+                117.0842132473004,
+                10.225540329193336
+            ],
+            "text": "bless($self);",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "phước lành ($ tự);"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                407.02090971479754,
+                117.0842132473004,
+                10.225528154206245
+            ],
+            "text": "return $self;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "trả lại $ tự;"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                421.57731210042505,
+                9.006478339459363,
+                10.22554032919345
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                453.11286625197033,
+                90.06476961947064,
+                10.225528154206359
+            ],
+            "text": "sub name {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Tên phụ {"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                467.6680389639022,
+                153.11011971757642,
+                10.225540329193336
+            ],
+            "text": "my $self = shift;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ self = thay đổi của tôi;"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                482.2244535245168,
+                306.20297748439384,
+                10.225528154206359
+            ],
+            "text": "if (@_) { $self->[$NAME] = shift }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "if (@_) {$ self-> [$ name] = shift}"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                496.7796262364486,
+                198.1424769770661,
+                10.225540329193336
+            ],
+            "text": "return $self->[$NAME];",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "trả về $ self-> [$ name];"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                511.33481112336756,
+                9.006478339459363,
+                10.225540329193336
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                542.8717410484536,
+                81.05830161135341,
+                10.225528154206245
+            ],
+            "text": "sub age {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Tuổi phụ {"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                557.4269137603853,
+                153.11011971757642,
+                10.225540329193393
+            ],
+            "text": "my $self = shift;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ self = thay đổi của tôi;"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                571.9820986473043,
+                297.19652669518007,
+                10.225528154206302
+            ],
+            "text": "if (@_) { $self->[$AGE] = shift }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "if (@_) {$ self-> [$ Age] = Shift}"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                586.5372835342232,
+                189.1360261878524,
+                10.225528154206245
+            ],
+            "text": "return $self->[$AGE];",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "trả lại $ tự-> [$ tuổi];"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                601.0936859198507,
+                9.006478339459363,
+                10.225528154206245
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                632.6294226962024,
+                99.0712548464914,
+                10.225528154206245
+            ],
+            "text": "sub peers {",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Sub Peers {"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                647.1858250818299,
+                153.11011971757642,
+                10.225540329193336
+            ],
+            "text": "my $self = shift;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "$ self = thay đổi của tôi;"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                661.7410099687488,
+                333.22238150874557,
+                10.225528154206245
+            ],
+            "text": "if (@_) { @{ $self->[$PEERS] } = @_ }",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "if (@_) { @{$ self-> [$ peers]} = @_}"
+        },
+        {
+            "bbox": [
+                169.66817892036636,
+                676.2961948556676,
+                252.16422109240085,
+                10.225528154206302
+            ],
+            "text": "return @{ $self->[$PEERS] };",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "return @{$ self-> [$ peers]};"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                690.8513675675995,
+                9.006478339459363,
+                10.225540329193336
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                133.64279418286642,
+                722.3882731427113,
+                18.012956678918698,
+                10.225540329193393
+            ],
+            "text": "1;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "1;"
+        },
+        {
+            "bbox": [
+                169.66870581881346,
+                722.3882731427113,
+                7.699740918498321,
+                10.225540329193393
+            ],
+            "text": "#",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "#"
+        },
+        {
+            "bbox": [
+                192.0346133558215,
+                722.3882731427113,
+                265.82420969432667,
+                10.225540329193393
+            ],
+            "text": "so the require or use succeeds",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/ATKAZA+t1xtt",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Vì vậy, yêu cầu hoặc sử dụng thành công"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                753.8402338329208,
+                805.3163544725472,
+                10.91694567084835
+            ],
+            "text": "You might guess that the array access would be a lot faster than the hash access, but they’re actually comparable. The",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Bạn có thể đoán rằng truy cập mảng sẽ nhanh hơn rất nhiều so với truy cập băm, nhưng chúng thực sự có thể so sánh được. Các"
+        },
+        {
+            "bbox": [
+                97.61913133571655,
+                768.3954308948267,
+                62.87379988442335,
+                10.916945670848378
+            ],
+            "text": "array is a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Mảng là một"
+        },
+        {
+            "bbox": [
+                164.7797511574463,
+                768.3954308948267,
+                31.462628427821727,
+                10.916945670848378
+            ],
+            "text": "little",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Italic",
+                "size": 9.963000297546387
+            },
+            "text_vi": "nhỏ bé"
+        },
+        {
+            "bbox": [
+                200.5296454921751,
+                768.3954308948267,
+                724.3439631364275,
+                10.916945670848378
+            ],
+            "text": "bit faster, but not more than ten or fifteen percent, even when you replace the variables above like $AGE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "nhanh hơn một chút, nhưng không quá mười hoặc mười lăm phần trăm, ngay cả khi bạn thay thế các biến trên như $ tuổi"
+        },
+        {
+            "bbox": [
+                97.619143388949,
+                782.9506279567328,
+                272.9220173499352,
+                10.916945670848378
+            ],
+            "text": "with literal numbers, like 1. A bigger di",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "với các số theo nghĩa đen, như 1. Một di lớn hơn"
+        },
+        {
+            "bbox": [
+                370.5490986533978,
+                782.9506279567328,
+                10.29309891546103,
+                10.916945670848378
+            ],
+            "text": "ff",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XNFASA+rtxr",
+                "size": 9.963000297546387
+            },
+            "text_vi": "ff"
+        },
+        {
+            "bbox": [
+                380.84083727548233,
+                782.9506279567328,
+                499.6278881560822,
+                10.916945670848378
+            ],
+            "text": "erence between the two approaches can be found in memory use. A hash",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Sự erence giữa hai phương pháp có thể được tìm thấy trong sử dụng bộ nhớ. A băm"
+        },
+        {
+            "bbox": [
+                97.619143388949,
+                797.5058250186387,
+                819.1432769001269,
+                10.916957845835498
+            ],
+            "text": "representation takes up more memory than an array representation because you have to allocate memory for the keys as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Biểu diễn chiếm nhiều bộ nhớ hơn một biểu diễn mảng vì bạn phải phân bổ bộ nhớ cho các phím"
+        },
+        {
+            "bbox": [
+                97.619143388949,
+                812.0622274042662,
+                804.8360555439831,
+                10.916957845835498
+            ],
+            "text": "well as for the values. However, it really isn’t that bad, especially since as of version 5.004, memory is only allocated",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "cũng như cho các giá trị. Tuy nhiên, nó thực sự không tệ, đặc biệt là kể từ phiên bản 5.004, bộ nhớ chỉ được phân bổ"
+        },
+        {
+            "bbox": [
+                97.619143388949,
+                826.6174366411593,
+                829.7624846289789,
+                10.916945670848378
+            ],
+            "text": "once for a given hash key, no matter how many hashes have that key. It’s expected that sometime in the future, even these",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Một lần đối với một khóa băm đã cho, bất kể có bao nhiêu băm có chìa khóa đó. Nó dự kiến ​​rằng đôi khi trong tương lai, ngay cả những điều này"
+        },
+        {
+            "bbox": [
+                97.619143388949,
+                841.1726337030653,
+                13.346738865669039,
+                10.916945670848378
+            ],
+            "text": "di",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "DI"
+        },
+        {
+            "bbox": [
+                110.96551549197348,
+                841.1726337030653,
+                10.293112690583868,
+                10.916945670848378
+            ],
+            "text": "ff",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XNFASA+rtxr",
+                "size": 9.963000297546387
+            },
+            "text_vi": "ff"
+        },
+        {
+            "bbox": [
+                121.25724894838696,
+                841.1726337030653,
+                285.20514454639533,
+                10.916945670848378
+            ],
+            "text": "erences will fade into obscurity as more e",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Sự căng thẳng sẽ mờ dần khi bị che khuất khi nhiều hơn E"
+        },
+        {
+            "bbox": [
+                406.45221712281364,
+                841.1726337030653,
+                14.187343349975492,
+                10.916945670848378
+            ],
+            "text": "ffi",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XNFASA+rtxr",
+                "size": 9.963000297546387
+            },
+            "text_vi": "ffi"
+        },
+        {
+            "bbox": [
+                420.6388717166491,
+                841.1726337030653,
+                305.89428559189355,
+                10.916945670848378
+            ],
+            "text": "cient underlying representations are devised.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Các đại diện cơ bản được đưa ra."
+        },
+        {
+            "bbox": [
+                97.619143388949,
+                860.57956311894,
+                829.7623640966542,
+                10.91695784583547
+            ],
+            "text": "Still, the tiny edge in speed (and somewhat larger one in memory) is enough to make some programmers choose an array",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Tuy nhiên, tốc độ nhỏ (và phần nào lớn hơn trong bộ nhớ) là đủ để làm cho một số lập trình viên chọn một mảng"
+        },
+        {
+            "bbox": [
+                97.619143388949,
+                875.1347723558331,
+                829.7624846289789,
+                10.916945670848378
+            ],
+            "text": "representation for simple classes. There’s still a little problem with scalability, though, because later in life when you feel",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Đại diện cho các lớp đơn giản. Tuy nhiên, vẫn còn một chút vấn đề với khả năng mở rộng, bởi vì sau này trong cuộc sống khi bạn cảm thấy"
+        },
+        {
+            "bbox": [
+                97.619143388949,
+                889.689969417739,
+                472.23108364859326,
+                10.916945670848392
+            ],
+            "text": "like creating subclasses, you’ll find that hashes just work out better.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "Giống như tạo các lớp con, bạn sẽ thấy rằng băm chỉ hoạt động tốt hơn."
+        },
+        {
+            "bbox": [
+                499.63401808572837,
+                948.4196587330927,
+                25.732755898104415,
+                10.916948105845805
+            ],
+            "text": "119",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Times-Roman",
+                "size": 9.963000297546387
+            },
+            "text_vi": "119"
+        }
+    ]
+}

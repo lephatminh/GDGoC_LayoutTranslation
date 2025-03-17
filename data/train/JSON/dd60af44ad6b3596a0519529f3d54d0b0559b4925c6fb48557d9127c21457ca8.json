@@ -1,0 +1,1576 @@
+{
+    "metadata": {
+        "page_hash": "dd60af44ad6b3596a0519529f3d54d0b0559b4925c6fb48557d9127c21457ca8",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1862,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                448.00202573529407,
+                48.370422979798036,
+                159.14300735294125,
+                11.971275252525288
+            ],
+            "text": "Using Symbolic Links",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng các liên kết tượng trưng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                94.96133207070716,
+                767.0751633986928,
+                11.971275252525174
+            ],
+            "text": "You can move databases or tables from the database directory to other locations and replace them with",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể chuyển cơ sở dữ liệu hoặc bảng từ thư mục cơ sở dữ liệu sang các vị trí khác và thay thế chúng bằng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                110.49163510101016,
+                765.1993464052288,
+                11.971275252525288
+            ],
+            "text": "symbolic links to the new locations. You might want to do this, for example, to move a database to a file",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "liên kết tượng trưng đến các vị trí mới. Bạn có thể muốn làm điều này, ví dụ, để di chuyển cơ sở dữ liệu sang một tệp"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                126.02193813131316,
+                763.3067810457517,
+                11.971275252525288
+            ],
+            "text": "system with more free space or increase the speed of your system by spreading your tables to different",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hệ thống có nhiều không gian trống hơn hoặc tăng tốc độ của hệ thống của bạn bằng cách trải các bảng của bạn sang các bảng khác"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                141.55224116161617,
+                42.80882352941177,
+                11.971275252525288
+            ],
+            "text": "disks.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đĩa."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                169.92611773989893,
+                29.778594771241842,
+                11.971275252525288
+            ],
+            "text": "For ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Vì "
+        },
+        {
+            "bbox": [
+                200.61192810457518,
+                171.07788383838385,
+                60.29411764705881,
+                10.172413194444403
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                260.906045751634,
+                169.92611773989893,
+                118.24346405228755,
+                11.971275252525288
+            ],
+            "text": " tables, use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng, sử dụng "
+        },
+        {
+            "bbox": [
+                379.14950980392155,
+                171.07788383838385,
+                140.68627450980398,
+                10.172413194444403
+            ],
+            "text": "DATA DIRECTORY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thư mục dữ liệu"
+        },
+        {
+            "bbox": [
+                519.8357843137255,
+                169.92611773989893,
+                104.27534354575164,
+                11.971275252525288
+            ],
+            "text": " clause of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mệnh đề của "
+        },
+        {
+            "bbox": [
+                624.1111278594772,
+                171.07788383838385,
+                120.58823529411768,
+                10.172413194444403
+            ],
+            "text": "CREATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo bảng"
+        },
+        {
+            "bbox": [
+                744.6993631535948,
+                169.92611773989893,
+                155.47511519607826,
+                11.971275252525288
+            ],
+            "text": " statement instead of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố thay vì"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                185.45642077020204,
+                594.4330232843137,
+                11.971275252525174
+            ],
+            "text": "symbolic links, as explained in Section 15.6.1.2, “Creating Tables Externally”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các liên kết tượng trưng, ​​như được giải thích trong Phần 15.6.1.2, Tạo các bảng bên ngoài"
+        },
+        {
+            "bbox": [
+                737.6985126633987,
+                185.45642077020204,
+                163.83258333333345,
+                11.971275252525174
+            ],
+            "text": ". This new feature is a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Tính năng mới này là một"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                200.98672380050505,
+                271.8091985294118,
+                11.971275252525288
+            ],
+            "text": "supported, cross-platform technique.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được hỗ trợ, kỹ thuật đa nền tảng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                229.36060037878792,
+                745.5870767973855,
+                11.971275252525288
+            ],
+            "text": "The recommended way to do this is to symlink entire database directories to a different disk. Symlink",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cách được đề xuất để làm điều này là để liên kết toàn bộ các thư mục cơ sở dữ liệu cho một đĩa khác. Symlink"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                246.04268244949503,
+                60.29411764705881,
+                10.172400252525222
+            ],
+            "text": "MyISAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Myisam"
+        },
+        {
+            "bbox": [
+                231.12745098039215,
+                244.89090340909092,
+                203.86111111111114,
+                11.971275252525288
+            ],
+            "text": " tables only as a last resort.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bàn chỉ là phương sách cuối cùng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                273.2647023358586,
+                500.8263888888888,
+                11.971275252525288
+            ],
+            "text": "To determine the location of your data directory, use this statement:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để xác định vị trí của thư mục dữ liệu của bạn, hãy sử dụng câu lệnh này:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                300.7274936868687,
+                241.17647058823528,
+                8.137917613636432
+            ],
+            "text": "SHOW VARIABLES LIKE ’datadir’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Hiển thị các biến như dữ liệu dữ liệu"
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                327.2817364267677,
+                72.6343204248366,
+                14.365504419192007
+            ],
+            "text": "8.12.2.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "8.12.2.1"
+        },
+        {
+            "bbox": [
+                168.6627450980392,
+                327.2817364267677,
+                426.64117647058833,
+                14.365504419192007
+            ],
+            "text": "Using Symbolic Links for Databases on Unix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Sử dụng các liên kết tượng trưng cho cơ sở dữ liệu trên UNIX"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                358.40577083333346,
+                373.27083333333337,
+                11.971275252525174
+            ],
+            "text": "On Unix, symlink a database using this procedure:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trên UNIX, SymLink Một cơ sở dữ liệu bằng quy trình này:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                386.7796085858587,
+                13.968137254901961,
+                11.971275252525174
+            ],
+            "text": "1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                386.7796085858587,
+                201.09764746732026,
+                11.971275252525174
+            ],
+            "text": "Create the database using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tạo cơ sở dữ liệu bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                398.72836642156864,
+                387.9314264520202,
+                150.73529411764713,
+                10.17236142676768
+            ],
+            "text": "CREATE DATABASE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo cơ sở dữ liệu"
+        },
+        {
+            "bbox": [
+                549.4636605392158,
+                386.7796085858587,
+                4.656045751633883,
+                11.971275252525174
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                414.2423611111111,
+                56.27452655228757,
+                8.137878787878776
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                253.90524550653595,
+                414.2423611111111,
+                176.86274509803928,
+                8.137878787878776
+            ],
+            "text": "CREATE DATABASE mydb1;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Tạo cơ sở dữ liệu MyDB1;"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                440.4407010732324,
+                47.464869281045736,
+                11.971275252525174
+            ],
+            "text": "Using ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng "
+        },
+        {
+            "bbox": [
+                245.09558823529412,
+                441.59251893939404,
+                150.7352941176471,
+                10.172361426767566
+            ],
+            "text": "CREATE DATABASE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo cơ sở dữ liệu"
+        },
+        {
+            "bbox": [
+                395.8308823529412,
+                440.4407010732324,
+                563.1972871732027,
+                11.971275252525174
+            ],
+            "text": " creates the database in the MySQL data directory and permits the server to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tạo cơ sở dữ liệu trong thư mục dữ liệu MySQL và cho phép máy chủ"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                455.9710041035354,
+                536.2324513888889,
+                11.971275252525288
+            ],
+            "text": "update the data dictionary with information about the database directory.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cập nhật từ điển dữ liệu với thông tin về thư mục cơ sở dữ liệu."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                484.3448547979798,
+                13.968137254901961,
+                11.971275252525288
+            ],
+            "text": "2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "2."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                484.3448547979798,
+                686.080082107843,
+                11.971275252525288
+            ],
+            "text": "Stop the server to ensure that no activity occurs in the new database while it is being moved.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Dừng máy chủ để đảm bảo rằng không có hoạt động nào xảy ra trong cơ sở dữ liệu mới trong khi nó đang được di chuyển."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                512.7187313762627,
+                13.968137254901961,
+                11.971275252525231
+            ],
+            "text": "3.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                512.7187313762627,
+                659.0649677287581,
+                11.971275252525231
+            ],
+            "text": "Move the database directory to some disk where you have free space. For example, use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Di chuyển thư mục cơ sở dữ liệu đến một số đĩa nơi bạn có dung lượng trống. Ví dụ, sử dụng "
+        },
+        {
+            "bbox": [
+                856.6956866830066,
+                513.8705363005051,
+                30.14705882352939,
+                10.17237436868686
+            ],
+            "text": "tar",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TAR"
+        },
+        {
+            "bbox": [
+                886.842745506536,
+                512.7187313762627,
+                24.20140563725488,
+                11.971275252525231
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                911.0440506535948,
+                513.8705363005051,
+                20.0980392156863,
+                10.17237436868686
+            ],
+            "text": "mv",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "MV"
+        },
+        {
+            "bbox": [
+                931.1420898692811,
+                512.7187313762627,
+                18.624283496732005,
+                11.971275252525231
+            ],
+            "text": ". If",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Nếu như"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                528.2490344065657,
+                754.0616495098038,
+                11.971275252525231
+            ],
+            "text": "you use a method that copies rather than moves the database directory, remove the original database",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn sử dụng một phương thức sao chép thay vì di chuyển thư mục cơ sở dữ liệu, hãy xóa cơ sở dữ liệu gốc"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                543.7793374368687,
+                182.43993423202613,
+                11.971275252525231
+            ],
+            "text": "directory after copying it.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thư mục sau khi sao chép nó."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                572.1532140151515,
+                13.968137254901961,
+                11.971275252525288
+            ],
+            "text": "4.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                572.1532140151515,
+                525.9657030228759,
+                11.971275252525288
+            ],
+            "text": "Create a soft link in the data directory to the moved database directory:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tạo một liên kết mềm trong thư mục dữ liệu đến thư mục cơ sở dữ liệu đã di chuyển:"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                599.6159277146464,
+                56.27452655228757,
+                8.137904671717138
+            ],
+            "text": "shell> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Vỏ> "
+        },
+        {
+            "bbox": [
+                253.90524550653595,
+                599.6159277146464,
+                48.23526062091503,
+                8.137904671717138
+            ],
+            "text": "ln -s ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "ln -s "
+        },
+        {
+            "bbox": [
+                302.140506127451,
+                599.6159277146464,
+                249.21571977124188,
+                8.137904671717138
+            ],
+            "text": "/path/to/mydb1 /path/to/datadir",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-BoldOblique",
+                "size": 8
+            },
+            "text_vi": "/path/to/mydb1/path/to/datadir"
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                625.8142676767677,
+                301.57107843137254,
+                11.971275252525288
+            ],
+            "text": "The command creates a symlink named ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lệnh tạo ra một liên kết symlink được đặt tên "
+        },
+        {
+            "bbox": [
+                499.2017973856209,
+                626.9660726010102,
+                50.24509803921569,
+                10.17237436868686
+            ],
+            "text": "mydb1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mydb1"
+        },
+        {
+            "bbox": [
+                549.4468954248366,
+                625.8142676767677,
+                156.39624183006538,
+                11.971275252525288
+            ],
+            "text": " in the data directory.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Trong thư mục dữ liệu."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                654.1881442550505,
+                13.968137254901961,
+                11.971275252525231
+            ],
+            "text": "5.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "5."
+        },
+        {
+            "bbox": [
+                197.63071895424838,
+                654.1881442550505,
+                137.75531045751632,
+                11.971275252525231
+            ],
+            "text": "Restart the server.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khởi động lại máy chủ."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                682.9179236111111,
+                72.6343204248366,
+                14.365530303030312
+            ],
+            "text": "8.12.2.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "8.12.2.2"
+        },
+        {
+            "bbox": [
+                168.6627450980392,
+                682.9179236111111,
+                473.5299019607843,
+                14.365530303030312
+            ],
+            "text": "Using Symbolic Links for MyISAM Tables on Unix",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Sử dụng các liên kết tượng trưng cho các bảng myisam trên unix"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                714.0419191919193,
+                37.214869281045765,
+                11.971275252525231
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                742.4157957702021,
+                413.29942810457527,
+                11.971275252525288
+            ],
+            "text": "Symbolic link support as described here, along with the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hỗ trợ liên kết tượng trưng như được mô tả ở đây, cùng với "
+        },
+        {
+            "bbox": [
+                725.154003267974,
+                743.5676006944445,
+                160.78426348039204,
+                10.17237436868686
+            ],
+            "text": "--symbolic-links",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--symbolic-links"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                757.9460599747475,
+                615.3852124183006,
+                11.971275252525231
+            ],
+            "text": "option that controls it, and is deprecated; expect these to be be removed in a future",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn kiểm soát nó, và không được chấp nhận; Hy vọng những điều này sẽ được loại bỏ trong một tương lai"
+        },
+        {
+            "bbox": [
+                311.8545751633987,
+                773.4763630050505,
+                468.2675318627451,
+                11.97127525252526
+            ],
+            "text": "version of MySQL. In addition, the option is disabled by default.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Phiên bản MySQL. Ngoài ra, tùy chọn bị tắt theo mặc định."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                801.8502395833334,
+                273.6515690359478,
+                11.971275252525231
+            ],
+            "text": "Symlinks are fully supported only for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Symlinks chỉ được hỗ trợ hoàn toàn cho "
+        },
+        {
+            "bbox": [
+                444.4849023692811,
+                803.0020833333333,
+                60.29411764705884,
+                10.172335542929261
+            ],
+            "text": "MyISAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Myisam"
+        },
+        {
+            "bbox": [
+                504.7790200163399,
+                801.8502395833334,
+                458.01753186274516,
+                11.971275252525231
+            ],
+            "text": " tables. For files used by tables for other storage engines, you",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bàn. Đối với các tệp được sử dụng bởi các bảng cho các công cụ lưu trữ khác, bạn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                817.3805426136364,
+                458.8717487745098,
+                11.97127525252526
+            ],
+            "text": "may get strange problems if you try to use symbolic links. For ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Có thể gặp sự cố lạ nếu bạn cố gắng sử dụng các liên kết tượng trưng. Vì "
+        },
+        {
+            "bbox": [
+                629.7050821078432,
+                818.5323863636364,
+                60.29411764705878,
+                10.172335542929261
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                689.999199754902,
+                817.3805426136364,
+                272.78058700980387,
+                11.97127525252526
+            ],
+            "text": " tables, use the alternative technique",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng, sử dụng kỹ thuật thay thế"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                832.9108456439394,
+                459.4914383169935,
+                11.97127525252526
+            ],
+            "text": "explained in Section 15.6.1.2, “Creating Tables Externally”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được giải thích trong phần 15.6.1.2, Tạo các bảng bên ngoài"
+        },
+        {
+            "bbox": [
+                602.7569611928105,
+                832.9108456439394,
+                63.30880678104563,
+                11.97127525252526
+            ],
+            "text": " instead.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " thay vì."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                861.2847222222222,
+                513.8566176470588,
+                11.97127525252526
+            ],
+            "text": "Do not symlink tables on systems that do not have a fully operational ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không liên kết các bảng trên các hệ thống không có hoạt động đầy đủ "
+        },
+        {
+            "bbox": [
+                684.6899509803922,
+                862.4365659722223,
+                100.49019607843138,
+                10.17233554292929
+            ],
+            "text": "realpath()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "RealPath ()"
+        },
+        {
+            "bbox": [
+                785.1801470588235,
+                861.2847222222222,
+                173.1278427287582,
+                11.97127525252526
+            ],
+            "text": " call. (Linux and Solaris",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " gọi. (Linux và Solaris"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                876.8150252525253,
+                60.51184640522874,
+                11.97127525252526
+            ],
+            "text": "support ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ủng hộ "
+        },
+        {
+            "bbox": [
+                231.34517973856208,
+                877.9668690025253,
+                100.49019607843138,
+                10.17233554292929
+            ],
+            "text": "realpath()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "RealPath ()"
+        },
+        {
+            "bbox": [
+                331.83537581699346,
+                876.8150252525253,
+                621.7830882352941,
+                11.97127525252526
+            ],
+            "text": "). To determine whether your system supports symbolic links, check the value of the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Để xác định xem hệ thống của bạn có hỗ trợ các liên kết tượng trưng hay không, hãy kiểm tra giá trị của"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                893.4971720328283,
+                120.58823529411765,
+                10.172335542929275
+            ],
+            "text": "have_symlink",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "have_symlink"
+        },
+        {
+            "bbox": [
+                291.421568627451,
+                892.3453282828283,
+                279.2454730392157,
+                11.971275252525245
+            ],
+            "text": " system variable using this statement:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống bằng cách sử dụng câu lệnh này:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                919.8081222222222,
+                281.37254901960785,
+                8.137832196969697
+            ],
+            "text": "SHOW VARIABLES LIKE ’have_symlink’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Hiển thị các biến như trên Have_symlink,;"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "1833",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1833"
+        }
+    ]
+}

@@ -1,0 +1,2636 @@
+{
+    "metadata": {
+        "page_hash": "85bc4444664089a0cba0ade45f6211098e035d86d97c91d6d53041d2bf4598e8",
+        "original_filename": "MongoDB-manual.pdf",
+        "page_no": 275,
+        "num_pages": 946,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                120.58823529411765,
+                46.997324179292946,
+                318.9477091503268,
+                12.106971275252477
+            ],
+            "text": "MongoDB Documentation, Release 3.0.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tài liệu MongoDB, Phát hành 3.0.4"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                97.17933112373737,
+                177.10231372549023,
+                11.591248737373803
+            ],
+            "text": "Execute a JavaScript file",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thực hiện một tệp javascript"
+        },
+        {
+            "bbox": [
+                314.3701797385621,
+                97.33406470959596,
+                120.45426511437904,
+                11.526797979797948
+            ],
+            "text": "You can specify a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể chỉ định một"
+        },
+        {
+            "bbox": [
+                439.7568051470588,
+                98.01742392676772,
+                30.03429207516342,
+                9.953759469697047
+            ],
+            "text": ".js",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ".js"
+        },
+        {
+            "bbox": [
+                474.72402696078433,
+                97.33406470959596,
+                64.55711274509798,
+                11.526797979797948
+            ],
+            "text": "file to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tập tin vào"
+        },
+        {
+            "bbox": [
+                544.2196633986929,
+                98.01742392676772,
+                50.057164624182974,
+                9.953759469697047
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                599.2095902777778,
+                97.33406470959596,
+                64.90748856209154,
+                11.526797979797948
+            ],
+            "text": "shell, and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "vỏ, và"
+        },
+        {
+            "bbox": [
+                669.0502933006536,
+                98.01742392676772,
+                50.05716462418309,
+                9.953759469697047
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                724.0418615196079,
+                97.33406470959596,
+                180.37276715686278,
+                11.526797979797948
+            ],
+            "text": "will execute the JavaScript",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Sẽ thực thi JavaScript"
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                112.80615498737382,
+                277.78397879901956,
+                11.526797979797834
+            ],
+            "text": "directly. Consider the following example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trực tiếp. Xem xét ví dụ sau:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                136.8763516414142,
+                342.39342851307185,
+                8.958474116161597
+            ],
+            "text": "mongo localhost:27017/test myjsfile.js",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Mongo Localhost: 27017/Kiểm tra myjsfile.js"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                164.76665340909096,
+                189.51643709150326,
+                11.526785037878767
+            ],
+            "text": "This operation executes the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hoạt động này thực hiện"
+        },
+        {
+            "bbox": [
+                316.6094362745098,
+                165.44999968434342,
+                110.12579901960788,
+                9.953759469696934
+            ],
+            "text": "myjsfile.js",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "myjsfile.js"
+        },
+        {
+            "bbox": [
+                433.2333333333334,
+                164.76665340909096,
+                70.46385947712412,
+                11.526785037878767
+            ],
+            "text": "script in a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "kịch bản trong a"
+        },
+        {
+            "bbox": [
+                510.193733251634,
+                165.44999968434342,
+                50.05714787581695,
+                9.953759469696934
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                566.7496156045752,
+                164.76665340909096,
+                174.29908946078433,
+                11.526785037878767
+            ],
+            "text": "shell that connects to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Shell kết nối với"
+        },
+        {
+            "bbox": [
+                747.5431854575164,
+                165.44999968434342,
+                40.045761846405185,
+                9.953759469696934
+            ],
+            "text": "test",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bài kiểm tra"
+        },
+        {
+            "bbox": [
+                794.0869113562092,
+                164.88269065656573,
+                60.2521629901961,
+                11.114222537878845
+            ],
+            "text": "database",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cơ sở dữ liệu"
+        },
+        {
+            "bbox": [
+                860.8374906045752,
+                164.76665340909096,
+                43.566402369281036,
+                11.526785037878767
+            ],
+            "text": "on the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trên"
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                180.92208996212116,
+                60.06861932189544,
+                9.953759469697047
+            ],
+            "text": "mongod",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongod"
+        },
+        {
+            "bbox": [
+                184.82821772875818,
+                180.2387436868687,
+                175.61728635620918,
+                11.526785037878767
+            ],
+            "text": "instance accessible via the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "ví dụ có thể truy cập thông qua"
+        },
+        {
+            "bbox": [
+                364.61522753267974,
+                180.92208996212116,
+                90.10290972222225,
+                9.953759469697047
+            ],
+            "text": "localhost",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Localhost"
+        },
+        {
+            "bbox": [
+                458.89010498366014,
+                180.2387436868687,
+                110.1090506535948,
+                11.526785037878767
+            ],
+            "text": "interface on port",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "giao diện trên cổng"
+        },
+        {
+            "bbox": [
+                573.1692308006536,
+                180.92208996212116,
+                50.057164624182974,
+                9.953759469697047
+            ],
+            "text": "27017",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "27017"
+        },
+        {
+            "bbox": [
+                623.2267471405229,
+                180.2387436868687,
+                4.171448529411691,
+                11.526785037878767
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                203.44619318181822,
+                707.5583558415033,
+                11.526797979797948
+            ],
+            "text": "Alternately, you can specify the mongodb connection parameters inside of the javascript file using the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thay phiên, bạn có thể chỉ định các tham số kết nối MongoDB bên trong tệp JavaScript bằng cách sử dụng"
+        },
+        {
+            "bbox": [
+                834.3315433006536,
+                204.12955239898997,
+                70.08002042483656,
+                9.95375946969682
+            ],
+            "text": "Mongo()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo ()"
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                218.9195517676768,
+                107.58954538398693,
+                11.52678503787888
+            ],
+            "text": "constructor. See",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "người xây dựng. Nhìn thấy"
+        },
+        {
+            "bbox": [
+                232.34835661764708,
+                219.03558901515157,
+                178.65404983660125,
+                11.11420959595955
+            ],
+            "text": "Opening New Connections",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mở các kết nối mới"
+        },
+        {
+            "bbox": [
+                415.1735367647059,
+                218.9195517676768,
+                221.03590727124185,
+                11.52678503787888
+            ],
+            "text": "(page 270) for more information.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(trang 270) Để biết thêm thông tin."
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                242.12700126262632,
+                120.43755191993465,
+                11.526797979797948
+            ],
+            "text": "You can execute a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể thực hiện một"
+        },
+        {
+            "bbox": [
+                245.19770302287583,
+                242.81036047979796,
+                30.034308823529443,
+                9.953759469697047
+            ],
+            "text": ".js",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ".js"
+        },
+        {
+            "bbox": [
+                279.40289093137255,
+                242.12700126262632,
+                129.3143852124183,
+                11.526797979797948
+            ],
+            "text": "file from within the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tập tin từ bên trong"
+        },
+        {
+            "bbox": [
+                412.88736805555556,
+                242.81036047979796,
+                50.057181372548996,
+                9.953759469697047
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                467.1169191176471,
+                242.12700126262632,
+                100.58159191176475,
+                11.526797979797948
+            ],
+            "text": "shell, using the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Shell, sử dụng"
+        },
+        {
+            "bbox": [
+                571.8696078431373,
+                242.81036047979796,
+                60.06860089869281,
+                9.953759469697047
+            ],
+            "text": "load()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trọng tải()"
+        },
+        {
+            "bbox": [
+                636.1096237745098,
+                242.12700126262632,
+                192.8537332516339,
+                11.526797979797948
+            ],
+            "text": "function, as in the following:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "chức năng, như sau:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                266.1971202651515,
+                171.19670588235297,
+                8.958474116161597
+            ],
+            "text": "load(\"myjstest.js\")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Tải (\"myjstest.js\")"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                294.08749968434347,
+                242.79396078431373,
+                11.526785037878767
+            ],
+            "text": "This function loads and executes the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hàm này tải và thực thi"
+        },
+        {
+            "bbox": [
+                367.55292442810463,
+                294.77084595959604,
+                110.12583251633976,
+                9.953772411616114
+            ],
+            "text": "myjstest.js",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "myjstest.js"
+        },
+        {
+            "bbox": [
+                481.8505069444445,
+                294.08749968434347,
+                25.4957696078431,
+                11.526785037878767
+            ],
+            "text": "file.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tài liệu."
+        },
+        {
+            "bbox": [
+                120.58826041666667,
+                317.2962174873737,
+                25.94630735294119,
+                11.526797979797948
+            ],
+            "text": "The",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các"
+        },
+        {
+            "bbox": [
+                152.6446329656863,
+                317.9795767045456,
+                60.06860927287579,
+                9.953759469696934
+            ],
+            "text": "load()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trọng tải()"
+        },
+        {
+            "bbox": [
+                218.82245996732027,
+                317.2962174873737,
+                298.1906217320262,
+                11.526797979797948
+            ],
+            "text": "method accepts relative and absolute paths.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Phương pháp chấp nhận các đường dẫn tương đối và tuyệt đối."
+        },
+        {
+            "bbox": [
+                527.9922888071895,
+                317.2962174873737,
+                265.3864178921568,
+                11.526797979797948
+            ],
+            "text": "If the current working directory of the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nếu thư mục làm việc hiện tại của"
+        },
+        {
+            "bbox": [
+                799.4866348039216,
+                317.9795767045456,
+                50.057164624182974,
+                9.953759469696934
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                855.6539718137255,
+                317.2962174873737,
+                48.75574959150322,
+                11.526797979797948
+            ],
+            "text": "shell is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "vỏ là"
+        },
+        {
+            "bbox": [
+                120.5882872140523,
+                333.45165404040404,
+                80.09148852124183,
+                9.953772411616228
+            ],
+            "text": "/data/db",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/dữ liệu/db"
+        },
+        {
+            "bbox": [
+                200.6806466503268,
+                332.76830776515146,
+                57.11526102941181,
+                11.52678503787888
+            ],
+            "text": ", and the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", và"
+        },
+        {
+            "bbox": [
+                262.0131462418301,
+                333.45165404040404,
+                110.12579901960783,
+                9.953772411616228
+            ],
+            "text": "myjstest.js",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "myjstest.js"
+        },
+        {
+            "bbox": [
+                376.36095710784315,
+                332.76830776515146,
+                88.15068668300654,
+                11.52678503787888
+            ],
+            "text": "resides in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cư trú trong"
+        },
+        {
+            "bbox": [
+                468.73487826797384,
+                333.45165404040404,
+                160.18298039215688,
+                9.953772411616228
+            ],
+            "text": "/data/db/scripts",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "/data/db/script"
+        },
+        {
+            "bbox": [
+                633.1401719771242,
+                332.76830776515146,
+                271.27650000000006,
+                11.52678503787888
+            ],
+            "text": "directory, then the following calls within",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "thư mục, sau đó các cuộc gọi sau trong"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                348.2403980429294,
+                20.389964910130715,
+                11.526785037878653
+            ],
+            "text": "the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "các"
+        },
+        {
+            "bbox": [
+                145.1497157271242,
+                348.9237443181819,
+                50.0571796977124,
+                9.953759469697047
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                199.3775735294118,
+                348.2403980429294,
+                174.6494485294117,
+                11.526785037878653
+            ],
+            "text": "shell would be equivalent:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Shell sẽ tương đương:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                372.31055587121216,
+                243.27952941176474,
+                8.958474116161597
+            ],
+            "text": "load(\"scripts/myjstest.js\")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Load (\"Scripts/myjstest.js\")"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                386.49361805555566,
+                324.37273937908503,
+                8.958474116161597
+            ],
+            "text": "load(\"/data/db/scripts/myjstest.js\")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Tải (\"/data/db/script/myjstest.js\")"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                421.9645454545455,
+                38.91111029411766,
+                11.591287563131345
+            ],
+            "text": "Note:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Ghi chú:"
+        },
+        {
+            "bbox": [
+                171.60543300653595,
+                422.11929198232326,
+                205.5848361928105,
+                11.526785037878767
+            ],
+            "text": "There is no search path for the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Không có đường dẫn tìm kiếm cho"
+        },
+        {
+            "bbox": [
+                381.8074754901961,
+                422.80263825757584,
+                60.06863439542485,
+                9.953798295454476
+            ],
+            "text": "load()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trọng tải()"
+        },
+        {
+            "bbox": [
+                446.4896817810458,
+                422.11929198232326,
+                457.9230040849672,
+                11.526785037878767
+            ],
+            "text": "function. If the desired script is not in the current working directory",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "chức năng. Nếu tập lệnh mong muốn không nằm trong thư mục làm việc hiện tại"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                434.6910593434344,
+                166.3733607026144,
+                11.526785037878767
+            ],
+            "text": "or the full specified path,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "hoặc đường dẫn đầy đủ được chỉ định,"
+        },
+        {
+            "bbox": [
+                291.1318218954248,
+                435.37440561868686,
+                50.05718137254905,
+                9.95379829545459
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                345.36133946078434,
+                434.6910593434344,
+                221.51978431372555,
+                11.526785037878767
+            ],
+            "text": "will not be able to access the file.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "sẽ không thể truy cập vào tệp."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                487.2283014520202,
+                188.53200163398694,
+                12.107023042929313
+            ],
+            "text": "Getting Started with the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bắt đầu với"
+        },
+        {
+            "bbox": [
+                313.7571895424837,
+                488.4918469065657,
+                50.05718137254905,
+                9.670137310606037
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JIEJSH+NimbusMonL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                368.45232843137256,
+                487.2283014520202,
+                39.878864379084916,
+                12.107023042929313
+            ],
+            "text": "Shell",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Vỏ bọc"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                519.3285965909091,
+                376.9640155228759,
+                11.526785037878767
+            ],
+            "text": "This document provides a basic introduction to using the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tài liệu này cung cấp một giới thiệu cơ bản về việc sử dụng"
+        },
+        {
+            "bbox": [
+                501.48960743464056,
+                520.0119428661617,
+                50.057164624182974,
+                9.953798295454533
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                555.4813149509804,
+                519.3285965909091,
+                64.87410906862749,
+                11.526785037878767
+            ],
+            "text": "shell. See",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "vỏ bọc. Nhìn thấy"
+        },
+        {
+            "bbox": [
+                624.2936515522875,
+                519.4446338383839,
+                116.0992879901961,
+                11.114222537878845
+            ],
+            "text": "Install MongoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Cài đặt MongoDB"
+        },
+        {
+            "bbox": [
+                744.32416625817,
+                519.3285965909091,
+                160.08289215686284,
+                11.526785037878767
+            ],
+            "text": "(page 5) for instructions",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(trang 5) cho các hướng dẫn"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                534.8019422348485,
+                271.61024468954247,
+                11.526797979797948
+            ],
+            "text": "on installing MongoDB for your system.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Khi cài đặt MongoDB cho hệ thống của bạn."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                574.4092364267676,
+                61.21033700980391,
+                10.896410037878809
+            ],
+            "text": "Start the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Bắt đầu"
+        },
+        {
+            "bbox": [
+                185.97218137254902,
+                575.5464816919192,
+                45.05176470588236,
+                8.703168876262623
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JIEJSH+NimbusMonL-Bold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                235.19897875816997,
+                574.4092364267676,
+                35.89124591503264,
+                10.896410037878809
+            ],
+            "text": "Shell",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Vỏ bọc"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                610.1446190025254,
+                74.66863725490197,
+                11.526797979797948
+            ],
+            "text": "To start the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để bắt đầu"
+        },
+        {
+            "bbox": [
+                199.42781862745096,
+                610.827978219697,
+                50.05718137254905,
+                9.953798295454533
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                253.65735294117647,
+                610.1446190025254,
+                167.7582495915033,
+                11.526797979797948
+            ],
+            "text": "shell and connect to your",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Shell và kết nối với của bạn"
+        },
+        {
+            "bbox": [
+                425.58601266339866,
+                610.827978219697,
+                70.08005392156872,
+                9.953798295454533
+            ],
+            "text": "MongoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "MongoDB"
+        },
+        {
+            "bbox": [
+                499.8365604575164,
+                610.1446190025254,
+                131.61701756535945,
+                11.526797979797948
+            ],
+            "text": "instance running on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "ví dụ chạy trên"
+        },
+        {
+            "bbox": [
+                635.625579248366,
+                609.9898854166668,
+                63.03868913398696,
+                11.591287563131345
+            ],
+            "text": "localhost",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Localhost"
+        },
+        {
+            "bbox": [
+                702.8350972222222,
+                610.1446190025254,
+                29.667218137254963,
+                11.526797979797948
+            ],
+            "text": "with",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "với"
+        },
+        {
+            "bbox": [
+                736.6735126633987,
+                609.9898854166668,
+                84.81354125816995,
+                11.591287563131345
+            ],
+            "text": "default port",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Cổng mặc định"
+        },
+        {
+            "bbox": [
+                821.4855800653595,
+                610.1446190025254,
+                4.6386107026144145,
+                11.526797979797948
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                141.4449805147059,
+                633.3520814393939,
+                13.100940359477107,
+                11.526797979798005
+            ],
+            "text": "1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "1."
+        },
+        {
+            "bbox": [
+                158.91289987745097,
+                633.3520814393939,
+                75.68848043300653,
+                11.526797979798005
+            ],
+            "text": "Go to your",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đi đến của bạn"
+        },
+        {
+            "bbox": [
+                238.77308006535947,
+                634.0354406565657,
+                260.2973598856209,
+                9.953798295454533
+            ],
+            "text": "<mongodb installation dir>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "<Cài đặt MongoDB DIR>"
+        },
+        {
+            "bbox": [
+                499.07114338235294,
+                633.3520814393939,
+                4.638627450980437,
+                11.526797979798005
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                162.30338717320262,
+                657.4223169191919,
+                261.30023864379086,
+                8.958474116161597
+            ],
+            "text": "cd <mongodb installation dir>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "CD <MongoDB Cài đặt Dir>"
+        },
+        {
+            "bbox": [
+                141.4449805147059,
+                685.3126186868687,
+                13.210677328431359,
+                11.526785037878824
+            ],
+            "text": "2.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "2."
+        },
+        {
+            "bbox": [
+                159.0592085784314,
+                685.3126186868687,
+                36.1972452614379,
+                11.526785037878824
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                199.42781862745096,
+                685.9959649621212,
+                110.12579901960783,
+                9.95379829545459
+            ],
+            "text": "./bin/mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "./bin/mongo"
+        },
+        {
+            "bbox": [
+                313.72702573529415,
+                685.3126186868687,
+                45.88573284313719,
+                11.526785037878824
+            ],
+            "text": "to start",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "để bắt đầu"
+        },
+        {
+            "bbox": [
+                363.7828672385621,
+                685.9959649621212,
+                50.057181372548996,
+                9.95379829545459
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                413.8403835784314,
+                685.3126186868687,
+                4.638627450980437,
+                11.526785037878824
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                162.30338717320262,
+                709.3828153409091,
+                99.11388570261437,
+                8.958474116161597
+            ],
+            "text": "./bin/mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "./bin/mongo"
+        },
+        {
+            "bbox": [
+                162.30338717320262,
+                737.2731300505051,
+                144.51507156862743,
+                11.526797979798005
+            ],
+            "text": "If you have added the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nếu bạn đã thêm"
+        },
+        {
+            "bbox": [
+                311.1209799836601,
+                737.9564892676767,
+                300.3431217320262,
+                9.95379829545459
+            ],
+            "text": "<mongodb installation dir>/bin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "<Cài đặt MongoDB DIR>/BIN"
+        },
+        {
+            "bbox": [
+                615.76875,
+                737.2731300505051,
+                37.67635375816997,
+                11.526797979798005
+            ],
+            "text": "to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "đến"
+        },
+        {
+            "bbox": [
+                657.7485294117647,
+                737.9564892676767,
+                40.0457618464053,
+                9.95379829545459
+            ],
+            "text": "PATH",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "CON ĐƯỜNG"
+        },
+        {
+            "bbox": [
+                702.0998607026144,
+                737.2731300505051,
+                202.3143492647058,
+                11.526797979798005
+            ],
+            "text": "environment variable, you can",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "biến môi trường, bạn có thể"
+        },
+        {
+            "bbox": [
+                162.303360375817,
+                752.7451944444445,
+                57.015135947712395,
+                11.526797979798005
+            ],
+            "text": "just type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Chỉ cần gõ"
+        },
+        {
+            "bbox": [
+                223.488487745098,
+                753.4285536616162,
+                50.05718137254908,
+                9.953798295454533
+            ],
+            "text": "mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mongo"
+        },
+        {
+            "bbox": [
+                277.7180220588235,
+                752.7451944444445,
+                65.34128799019612,
+                11.526797979798005
+            ],
+            "text": "instead of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thay vì"
+        },
+        {
+            "bbox": [
+                347.23044035947714,
+                753.4285536616162,
+                110.1257822712418,
+                9.953798295454533
+            ],
+            "text": "./bin/mongo",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "./bin/mongo"
+        },
+        {
+            "bbox": [
+                457.35597140522873,
+                752.7451944444445,
+                4.171448529411748,
+                11.526797979798005
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                141.44495539215688,
+                775.9539381313132,
+                12.630709885620888,
+                11.526797979797948
+            ],
+            "text": "3.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "3."
+        },
+        {
+            "bbox": [
+                158.285897998366,
+                775.9539381313132,
+                290.92726907679736,
+                11.526797979797948
+            ],
+            "text": "To display the database you are using, type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để hiển thị cơ sở dữ liệu bạn đang sử dụng, hãy nhập"
+        },
+        {
+            "bbox": [
+                453.3832924836601,
+                776.6372973484849,
+                20.022855800653645,
+                9.953798295454504
+            ],
+            "text": "db",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "DB"
+        },
+        {
+            "bbox": [
+                473.40763888888887,
+                775.9539381313132,
+                4.6386107026144145,
+                11.526797979797948
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                162.30338717320262,
+                800.0241347853536,
+                18.02070923202615,
+                8.958474116161625
+            ],
+            "text": "db",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "DB"
+        },
+        {
+            "bbox": [
+                162.30338717320262,
+                826.3070631313132,
+                188.9491732843137,
+                11.526785037878767
+            ],
+            "text": "The operation should return",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hoạt động sẽ trở lại"
+        },
+        {
+            "bbox": [
+                356.45882352941175,
+                826.9904094065657,
+                40.0457618464053,
+                9.953798295454533
+            ],
+            "text": "test",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bài kiểm tra"
+        },
+        {
+            "bbox": [
+                396.50416666666666,
+                826.3070631313132,
+                422.59939379084966,
+                11.526785037878767
+            ],
+            "text": ", which is the default database. To switch databases, issue the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ", đó là cơ sở dữ liệu mặc định. Để chuyển cơ sở dữ liệu, hãy phát hành"
+        },
+        {
+            "bbox": [
+                824.3194370915032,
+                826.9904094065657,
+                80.0914064542485,
+                9.953798295454533
+            ],
+            "text": "use <db>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Sử dụng <db>"
+        },
+        {
+            "bbox": [
+                162.30341229575166,
+                841.7791275252525,
+                238.72262896241827,
+                11.526797979798005
+            ],
+            "text": "helper, as in the following example:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Người trợ giúp, như trong ví dụ sau:"
+        },
+        {
+            "bbox": [
+                162.30338717320262,
+                865.8493241792929,
+                126.14492777777775,
+                8.958487058080806
+            ],
+            "text": "use <database>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Sử dụng <cơ sở dữ liệu>"
+        },
+        {
+            "bbox": [
+                162.30338717320262,
+                892.1322525252525,
+                315.8608211601307,
+                11.526797979797962
+            ],
+            "text": "To list the available databases, use the helper",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để liệt kê các cơ sở dữ liệu có sẵn, hãy sử dụng người trợ giúp"
+        },
+        {
+            "bbox": [
+                484.6357099673203,
+                892.8155988005051,
+                80.0915069444444,
+                9.953794412878779
+            ],
+            "text": "show dbs",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hiển thị DBS"
+        },
+        {
+            "bbox": [
+                564.7280375816994,
+                892.1322525252525,
+                4.171448529411805,
+                11.526797979797962
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                580.9966131535948,
+                892.1322525252525,
+                57.44892197712409,
+                11.526797979797962
+            ],
+            "text": "See also",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Xem thêm"
+        },
+        {
+            "bbox": [
+                644.9276049836601,
+                892.2482897727273,
+                259.4795539215687,
+                11.114208301767675
+            ],
+            "text": "How can I access different databases",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Làm cách nào để truy cập cơ sở dữ liệu khác nhau"
+        },
+        {
+            "bbox": [
+                162.303360375817,
+                907.7203541666667,
+                86.88258080065361,
+                11.114210890151512
+            ],
+            "text": "temporarily?",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tạm thời?"
+        },
+        {
+            "bbox": [
+                254.2468786764706,
+                907.604315625,
+                650.1594763071895,
+                11.526801862373745
+            ],
+            "text": "(page 756) to access a different database from the current database without switching your current",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(trang 756) Để truy cập cơ sở dữ liệu khác với cơ sở dữ liệu hiện tại mà không cần chuyển đổi hiện tại của bạn"
+        },
+        {
+            "bbox": [
+                162.303360375817,
+                923.0763826073232,
+                140.61060204248363,
+                11.52680186237373
+            ],
+            "text": "database context (i.e.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bối cảnh cơ sở dữ liệu (nghĩa là"
+        },
+        {
+            "bbox": [
+                308.08446772875817,
+                923.7597353535353,
+                30.034308823529443,
+                9.953790530303024
+            ],
+            "text": "db.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "DB."
+        },
+        {
+            "bbox": [
+                338.1193125,
+                923.0763826073232,
+                9.727785947712448,
+                11.52680186237373
+            ],
+            "text": ".)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ".)"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                961.18987260101,
+                27.83178982843137,
+                12.10701139520203
+            ],
+            "text": "272",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "272"
+        },
+        {
+            "bbox": [
+                694.7106993464052,
+                961.18987260101,
+                209.70617361111113,
+                12.10701139520203
+            ],
+            "text": "Chapter 5. Administration",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Chương 5. Quản trị"
+        }
+    ]
+}

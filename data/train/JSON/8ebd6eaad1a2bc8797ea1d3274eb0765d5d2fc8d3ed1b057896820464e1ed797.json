@@ -1,0 +1,1076 @@
+{
+    "metadata": {
+        "page_hash": "8ebd6eaad1a2bc8797ea1d3274eb0765d5d2fc8d3ed1b057896820464e1ed797",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3717,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                383.3952038398693,
+                48.370422979798036,
+                228.0625,
+                11.971275252525288
+            ],
+            "text": "Group Replication Background",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bối cảnh sao chép nhóm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                755.8705065359477,
+                11.971275252525174
+            ],
+            "text": "There is a built-in group membership service that keeps the view of the group consistent and available",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Có một dịch vụ thành viên nhóm tích hợp giữ cho cái nhìn của nhóm nhất quán và có sẵn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                753.107076388889,
+                11.971275252525288
+            ],
+            "text": "for all servers at any given point in time. Servers can leave and join the group and the view is updated",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cho tất cả các máy chủ tại bất kỳ thời điểm nhất định. Máy chủ có thể rời khỏi và tham gia nhóm và chế độ xem được cập nhật"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                126.02193813131316,
+                753.0735461601307,
+                11.971275252525288
+            ],
+            "text": "accordingly. Sometimes servers can leave the group unexpectedly, in which case the failure detection",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "theo đó. Đôi khi các máy chủ có thể rời khỏi nhóm một cách bất ngờ, trong trường hợp đó phát hiện thất bại"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                141.55224116161617,
+                700.9693627450981,
+                11.971275252525288
+            ],
+            "text": "mechanism detects this and notifies the group that the view has changed. This is all automatic.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cơ chế phát hiện điều này và thông báo cho nhóm rằng quan điểm đã thay đổi. Đây là tất cả tự động."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                170.23149526515158,
+                783.7899991830066,
+                11.971275252525288
+            ],
+            "text": "Group Replication guarantees that the database service is continuously available. However, it is important",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhân rộng nhóm đảm bảo rằng dịch vụ cơ sở dữ liệu liên tục có sẵn. Tuy nhiên, nó rất quan trọng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                185.7617982954547,
+                776.437449754902,
+                11.971275252525174
+            ],
+            "text": "to understand that if one of the group members becomes unavailable, the clients connected to that group",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để hiểu rằng nếu một trong các thành viên trong nhóm không có sẵn, các khách hàng đã kết nối với nhóm đó"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                201.2921013257577,
+                740.060049019608,
+                11.971275252525288
+            ],
+            "text": "member must be redirected, or failed over, to a different server in the group, using a connector, load",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thành viên phải được chuyển hướng hoặc không thành công, đến một máy chủ khác trong nhóm, sử dụng trình kết nối, tải"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                216.8224043560607,
+                761.4644942810457,
+                11.971275252525288
+            ],
+            "text": "balancer, router, or some form of middleware. Group Replication does not have an inbuilt method to do",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Balancer, bộ định tuyến hoặc một số hình thức của phần mềm trung gian. Sao chép nhóm không có phương pháp sẵn có để làm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                232.3527073863637,
+                312.7589701797385,
+                11.971275252525288
+            ],
+            "text": "this. For example, see MySQL Router 8.0.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cái này. Ví dụ: xem Bộ định tuyến MySQL 8.0."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                261.0320520833334,
+                782.8521911764706,
+                11.971275252525288
+            ],
+            "text": "Group Replication is provided as a plugin to MySQL Server. You can follow the instructions in this chapter",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao chép nhóm được cung cấp dưới dạng plugin cho máy chủ MySQL. Bạn có thể làm theo các hướng dẫn trong chương này"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                276.5623551136364,
+                777.3922071078432,
+                11.971275252525288
+            ],
+            "text": "to configure the plugin on each of the server instances that you want in the group, start up the group, and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để định cấu hình plugin trên mỗi phiên bản máy chủ mà bạn muốn trong nhóm, hãy khởi động nhóm và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                292.0926581439395,
+                770.7598206699347,
+                11.971275252525174
+            ],
+            "text": "monitor and administer the group. An alternative way to deploy a group of MySQL server instances is by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giám sát và quản lý nhóm. Một cách khác để triển khai một nhóm các phiên bản máy chủ MySQL là"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                307.6229611742425,
+                162.89462459150326,
+                11.971275252525288
+            ],
+            "text": "using InnoDB Cluster.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng cụm innodb."
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                336.3022152777778,
+                25.122549019607845,
+                11.971275252525174
+            ],
+            "text": "Tip",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Mẹo"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                364.9815470328283,
+                619.0195910947713,
+                11.971275252525288
+            ],
+            "text": "To deploy multiple instances of MySQL, you can use InnoDB Cluster which enables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để triển khai nhiều trường hợp của MySQL, bạn có thể sử dụng cụm innodb cho phép"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                380.5118500631314,
+                566.8651960784315,
+                11.971275252525174
+            ],
+            "text": "you to easily administer a group of MySQL server instances in MySQL Shell.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn dễ dàng quản lý một nhóm các phiên bản MYSQL Server trong MySQL Shell."
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                396.0421530934344,
+                597.548169117647,
+                11.971275252525288
+            ],
+            "text": "InnoDB Cluster wraps MySQL Group Replication in a programmatic environment",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cụm Innodb kết thúc bản sao nhóm MySQL trong môi trường lập trình"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                411.5724561237374,
+                564.1351621732026,
+                11.971275252525288
+            ],
+            "text": "that enables you easily deploy a cluster of MySQL instances to achieve high",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Điều đó cho phép bạn dễ dàng triển khai một cụm các phiên bản MySQL để đạt được cao"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                427.1027591540404,
+                605.9391172385622,
+                11.971275252525288
+            ],
+            "text": "availability. In addition, InnoDB Cluster interfaces seamlessly with MySQL Router,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có sẵn. Ngoài ra, giao diện cụm Innodb một cách liền mạch với bộ định tuyến MySQL,"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                442.63306218434354,
+                602.2712250816994,
+                11.971275252525174
+            ],
+            "text": "which enables your applications to connect to the cluster without writing your own",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cho phép các ứng dụng của bạn kết nối với cụm mà không cần viết của riêng bạn"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                458.16336521464655,
+                620.8451964869281,
+                11.971275252525174
+            ],
+            "text": "failover process. For similar use cases that do not require high availability, however,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "quá trình chuyển đổi dự phòng. Tuy nhiên, đối với các trường hợp sử dụng tương tự không yêu cầu tính sẵn sàng cao"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                473.69366824494955,
+                596.6939857026144,
+                11.971275252525288
+            ],
+            "text": "you can use InnoDB ReplicaSet. Installation instructions for MySQL Shell can be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể sử dụng bản sao Innodb. Hướng dẫn cài đặt cho Shell MySQL có thể"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                489.22397127525255,
+                84.72996691176473,
+                11.971275252525288
+            ],
+            "text": "found here.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tìm thấy ở đây."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                517.9032771464647,
+                268.07434640522877,
+                11.971275252525288
+            ],
+            "text": "The chapter is structured as follows:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chương này được cấu trúc như sau:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                546.3754993686869,
+                385.9493464052288,
+                11.971275252525231
+            ],
+            "text": "•Section 18.1, “Group Replication Background”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Mục 18.1, nền nhân rộng nhóm của nhóm ”"
+        },
+        {
+            "bbox": [
+                499.06782720588234,
+                546.3754993686869,
+                376.10135743464053,
+                11.971275252525231
+            ],
+            "text": " provides an introduction to groups and how Group",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cung cấp giới thiệu về các nhóm và cách nhóm"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                561.90580239899,
+                135.87949346405227,
+                11.971275252525231
+            ],
+            "text": "Replication works.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tác phẩm nhân rộng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                590.3780246212121,
+                270.5363562091503,
+                11.971275252525288
+            ],
+            "text": "•Section 18.2, “Getting Started”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Mục 18.2, Bắt đầu \""
+        },
+        {
+            "bbox": [
+                383.65483700980394,
+                590.3780246212121,
+                529.6503100490195,
+                11.971275252525288
+            ],
+            "text": " explains how to configure multiple MySQL Server instances to create a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giải thích cách định cấu hình nhiều phiên bản máy chủ MySQL để tạo"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                605.9083276515153,
+                47.48161764705884,
+                11.971275252525231
+            ],
+            "text": "group.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "nhóm."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                634.3805498737374,
+                379.41745016339877,
+                11.971275252525231
+            ],
+            "text": "•Section 18.3, “Requirements and Limitations”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Mục 18.3, Yêu cầu và giới hạn của người Viking"
+        },
+        {
+            "bbox": [
+                492.53593096405234,
+                634.3805498737374,
+                371.4284963235293,
+                11.971275252525231
+            ],
+            "text": " explains architecture and setup requirements and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " giải thích các yêu cầu kiến ​​trúc và thiết lập và"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                649.9108529040404,
+                241.9971572712419,
+                11.971275252525288
+            ],
+            "text": "limitations for Group Replication.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hạn chế cho sự sao chép nhóm."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                678.3830751262626,
+                374.7614546568628,
+                11.971275252525231
+            ],
+            "text": "•Section 18.4, “Monitoring Group Replication”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Mục 18.4, nhân rộng nhóm giám sát của người Viking"
+        },
+        {
+            "bbox": [
+                487.8798852124183,
+                678.3830751262626,
+                246.686699754902,
+                11.971275252525231
+            ],
+            "text": " explains how to monitor a group.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giải thích cách giám sát một nhóm."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                706.8552973484848,
+                378.4963067810457,
+                11.971275252525288
+            ],
+            "text": "•Section 18.5, “Group Replication Operations”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Mục 18.5, Hoạt động sao chép nhóm nhóm ”"
+        },
+        {
+            "bbox": [
+                491.6147875816993,
+                706.8552973484848,
+                260.6380551470589,
+                11.971275252525288
+            ],
+            "text": " explains how to work with a group.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giải thích cách làm việc với một nhóm."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                735.3275195707071,
+                357.07518014705886,
+                11.971275252525231
+            ],
+            "text": "•Section 18.6, “Group Replication Security”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Mục 18.6, Bảo mật nhân rộng nhóm của nhóm"
+        },
+        {
+            "bbox": [
+                470.19361070261436,
+                735.3275195707071,
+                241.1095106209151,
+                11.971275252525231
+            ],
+            "text": " explains how to secure a group.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giải thích làm thế nào để đảm bảo một nhóm."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                763.7997029671717,
+                392.44772916666676,
+                11.971275252525231
+            ],
+            "text": "•Section 18.7, “Group Replication Performance”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Phần 18.7, Hiệu suất sao chép nhóm nhóm trực tuyến"
+        },
+        {
+            "bbox": [
+                505.5661597222222,
+                763.7997029671717,
+                377.9603423202616,
+                11.971275252525231
+            ],
+            "text": " explains how to fine tune performance for a group.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giải thích cách tinh chỉnh hiệu suất điều chỉnh cho một nhóm."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                792.271925189394,
+                373.8403112745098,
+                11.97127525252526
+            ],
+            "text": "•Section 18.8, “Upgrading Group Replication”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Mục 18.8, Tái cấp bản sao chép nhóm"
+        },
+        {
+            "bbox": [
+                486.9587418300654,
+                792.271925189394,
+                252.29740236928103,
+                11.97127525252526
+            ],
+            "text": " explains how to upgrade a group.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giải thích cách nâng cấp một nhóm."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                820.7441474116162,
+                426.8823529411765,
+                11.97127525252526
+            ],
+            "text": "•Section 18.9, “Group Replication System Variables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Phần 18.9, các biến hệ thống sao chép nhóm nhóm"
+        },
+        {
+            "bbox": [
+                540.0008337418301,
+                820.7441474116162,
+                366.73897058823525,
+                11.97127525252526
+            ],
+            "text": " is a reference for the system variables specific to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là một tham chiếu cho các biến hệ thống cụ thể cho"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                836.2744504419193,
+                138.6932189542484,
+                11.97127525252526
+            ],
+            "text": "Group Replication.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao chép nhóm."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                864.7466726641414,
+                377.57516339869284,
+                11.97127525252526
+            ],
+            "text": "•Section 18.10, “Frequently Asked Questions”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Mục 18.10, Câu hỏi thường gặp"
+        },
+        {
+            "bbox": [
+                490.6936441993464,
+                864.7466726641414,
+                392.8329583333334,
+                11.97127525252526
+            ],
+            "text": " provides answers to some technical questions about",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cung cấp câu trả lời cho một số câu hỏi kỹ thuật về"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                880.2769756944444,
+                322.1045919117647,
+                11.97127525252526
+            ],
+            "text": "deploying and operating Group Replication.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "triển khai và nhân rộng nhóm điều hành."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                910.0240339015152,
+                52.147715767973864,
+                19.15402487373737
+            ],
+            "text": "18.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "18.1"
+        },
+        {
+            "bbox": [
+                119.89150326797386,
+                910.0240339015152,
+                396.0653594771242,
+                19.15402487373737
+            ],
+            "text": "Group Replication Background",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "Bối cảnh sao chép nhóm"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3688",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3688"
+        }
+    ]
+}

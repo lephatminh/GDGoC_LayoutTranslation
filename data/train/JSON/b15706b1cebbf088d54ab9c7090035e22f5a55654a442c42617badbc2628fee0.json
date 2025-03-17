@@ -1,0 +1,1036 @@
+{
+    "metadata": {
+        "page_hash": "b15706b1cebbf088d54ab9c7090035e22f5a55654a442c42617badbc2628fee0",
+        "original_filename": "python_howto-clinic.pdf",
+        "page_no": 1,
+        "num_pages": 24,
+        "original_width": 595.28003,
+        "original_height": 841.89001,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                133.23896809540207,
+                92.87558626571649,
+                62.59637388642116,
+                12.129440459805437
+            ],
+            "text": "Abstract",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WWJZGH+FreeSerifBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tóm tắt"
+        },
+        {
+            "bbox": [
+                133.23896809540207,
+                121.98594386456728,
+                758.5155327233135,
+                12.129440459805437
+            ],
+            "text": "Argument Clinic is a preprocessor for CPython C files. Its purpose is to automate all the boilerplate involved with",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Lệnh đối số là một tiền xử lý cho các tệp CPython C. Mục đích của nó là tự động hóa tất cả các nồi hơi liên quan đến"
+        },
+        {
+            "bbox": [
+                133.23896809540207,
+                136.542358425182,
+                758.4981934048753,
+                12.12950133474078
+            ],
+            "text": "writing argument parsing code for “builtins”. This document shows you how to convert your first C function to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Viết mã phân tích đối số cho các bản tích hợp. Tài liệu này chỉ cho bạn cách chuyển đổi chức năng C đầu tiên của bạn thành"
+        },
+        {
+            "bbox": [
+                133.23896809540207,
+                151.09756766207488,
+                660.9070680986895,
+                12.12944045980555
+            ],
+            "text": "work with Argument Clinic, and then introduces some advanced topics on Argument Clinic usage.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Làm việc với Clinic Clinic, và sau đó giới thiệu một số chủ đề nâng cao về việc sử dụng phòng khám đối số."
+        },
+        {
+            "bbox": [
+                133.23896809540207,
+                172.9297666805668,
+                469.790035330095,
+                12.129440459805437
+            ],
+            "text": "Currently Argument Clinic is considered internal-only for CPython.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hiện tại phòng khám đối số được coi là chỉ trong CPYThon."
+        },
+        {
+            "bbox": [
+                614.9684414073155,
+                172.9297666805668,
+                276.78585278595676,
+                12.129440459805437
+            ],
+            "text": "Its use is not supported for files outside",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Việc sử dụng nó không được hỗ trợ cho các tệp bên ngoài"
+        },
+        {
+            "bbox": [
+                133.23896809540207,
+                187.48618124118127,
+                758.5153260978702,
+                12.129428284818346
+            ],
+            "text": "CPython, and no guarantees are made regarding backwards compatibility for future versions. In other words:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Cpython và không có sự đảm bảo nào được thực hiện liên quan đến khả năng tương thích ngược cho các phiên bản trong tương lai. Nói cách khác:"
+        },
+        {
+            "bbox": [
+                133.23896809540207,
+                202.0413904780744,
+                758.5153260978702,
+                12.129440459805437
+            ],
+            "text": "if you maintain an external C extension for CPython, you’re welcome to experiment with Argument Clinic in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nếu bạn duy trì tiện ích mở rộng C bên ngoài cho CPython, bạn sẽ chào đón thử nghiệm với phòng khám đối số trong"
+        },
+        {
+            "bbox": [
+                133.23896809540207,
+                216.5966118899545,
+                649.4308843604244,
+                12.129428284818346
+            ],
+            "text": "your own code. But the version of Argument Clinic that ships with the next version of CPython",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mã của riêng bạn. Nhưng phiên bản của phòng khám đối số được vận chuyển với phiên bản tiếp theo của cpython"
+        },
+        {
+            "bbox": [
+                787.3841496917005,
+                216.5966118899545,
+                36.21289966673328,
+                12.129428284818346
+            ],
+            "text": "could",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QOYEDV+FreeSerifItalic",
+                "size": 9.962599754333496
+            },
+            "text_vi": "có thể"
+        },
+        {
+            "bbox": [
+                828.8297870499703,
+                216.5966118899545,
+                62.93943583157011,
+                12.129428284818346
+            ],
+            "text": "be totally",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "được hoàn toàn"
+        },
+        {
+            "bbox": [
+                133.2390335267924,
+                231.15176025191226,
+                253.62769497743773,
+                12.12950133474078
+            ],
+            "text": "incompatible and break all your code.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "không tương thích và phá vỡ tất cả mã của bạn."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                289.1425629934723,
+                13.621813333801896,
+                17.466540848964314
+            ],
+            "text": "1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JYMOVF+FreeSansBold",
+                "size": 14.34619998931885
+            },
+            "text_vi": "1"
+        },
+        {
+            "bbox": [
+                150.5146648376563,
+                289.1425629934723,
+                352.9397984340244,
+                17.466540848964314
+            ],
+            "text": "The Goals Of Argument Clinic",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JYMOVF+FreeSansBold",
+                "size": 14.34619998931885
+            },
+            "text_vi": "Các mục tiêu của phòng khám đối số"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                329.29193268370057,
+                777.042219104847,
+                12.129428284818346
+            ],
+            "text": "Argument Clinic’s primary goal is to take over responsibility for all argument parsing code inside CPython. This",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Mục tiêu chính của Clinic Clinic là đảm nhận trách nhiệm cho tất cả các mã phân tích đối số bên trong CPython. Cái này"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                343.84706887067114,
+                777.0421157921255,
+                12.129513509727872
+            ],
+            "text": "means that, when you convert a function to work with Argument Clinic, that function should no longer do any of its",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "có nghĩa là, khi bạn chuyển đổi một chức năng để làm việc với phòng khám đối số, chức năng đó không còn nên làm bất kỳ điều gì"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                358.40229028255123,
+                777.0421157921255,
+                12.129440459805437
+            ],
+            "text": "own argument parsing—the code generated by Argument Clinic should be a “black box” to you, where CPython calls",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đối số riêng của riêng bạn phân tích mã hóa được tạo ra bởi phòng khám đối số phải là một hộp đen của bạn, với bạn, nơi Cpython gọi"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                372.95751169443145,
+                538.2149410421176,
+                12.129428284818346
+            ],
+            "text": "in at the top, and your code gets called at the bottom, with$_{PyObject *args}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "ở trên cùng và mã của bạn được gọi ở phía dưới, với $ _ {PyObject *args} $"
+        },
+        {
+            "bbox": [
+                650.2399383362482,
+                372.95751169443145,
+                262.28766862883003,
+                12.129428284818346
+            ],
+            "text": "(and maybe$_{PyObject *kwargs}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(và có thể $ _ {PyObject *kwargs} $"
+        },
+        {
+            "bbox": [
+                895.304618651494,
+                372.95751169443145,
+                5.712332563886093,
+                12.129428284818346
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                387.51391408005907,
+                406.5590113950236,
+                12.129440459805323
+            ],
+            "text": "magically converted into the C variables and types you need.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "chuyển đổi một cách kỳ diệu thành các biến C và các loại bạn cần."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                409.34607657358947,
+                777.0423224175687,
+                12.12946480977962
+            ],
+            "text": "In order for Argument Clinic to accomplish its primary goal, it must be easy to use. Currently, working with CPython’s",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để phòng khám lập luận để hoàn thành mục tiêu chính của nó, nó phải dễ sử dụng. Hiện tại, làm việc với CPython từ"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                423.9012492855212,
+                777.0423224175687,
+                12.129476984766711
+            ],
+            "text": "argument parsing library is a chore, requiring maintaining redundant information in a surprising number of places.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thư viện phân tích tranh luận là một việc vặt, yêu cầu duy trì thông tin dự phòng ở một số lượng đáng ngạc nhiên."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                438.4576638461359,
+                445.5851853454583,
+                12.12946480977962
+            ],
+            "text": "When you use Argument Clinic, you don’t have to repeat yourself.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Khi bạn sử dụng phòng khám đối số, bạn không cần phải lặp lại chính mình."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                460.2898628646276,
+                777.0418919478955,
+                12.129464809779734
+            ],
+            "text": "Obviously, no one would want to use Argument Clinic unless it’s solving their problem—and without creating new",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Rõ ràng, không ai muốn sử dụng phòng khám đối số trừ khi nó giải quyết vấn đề của họ và không tạo ra mới"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                474.8462652502551,
+                777.0421157921255,
+                12.129464809779734
+            ],
+            "text": "problems of its own. So it’s paramount that Argument Clinic generate correct code. It’d be nice if the code was",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "vấn đề của riêng nó. Vì vậy, nó tối quan trọng rằng phòng khám lập luận tạo ra mã chính xác. Nó rất tốt nếu mã là"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                489.40145013717404,
+                729.438850821184,
+                12.129464809779734
+            ],
+            "text": "faster, too, but at the very least it should not introduce a major speed regression. (Eventually Argument Clinic",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Cũng nhanh hơn, nhưng ít nhất nó không nên giới thiệu hồi quy tốc độ chính. (Cuối cùng là đối số phòng khám"
+        },
+        {
+            "bbox": [
+                857.2390463862863,
+                489.40145013717404,
+                43.77800814181535,
+                12.129464809779734
+            ],
+            "text": "should",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/QOYEDV+FreeSerifItalic",
+                "size": 9.962599754333496
+            },
+            "text_vi": "nên"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                503.9566228491059,
+                777.0421157921255,
+                12.129476984766654
+            ],
+            "text": "make a major speedup possible—we could rewrite its code generator to produce tailor-made argument parsing code,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tạo ra một tốc độ chính có thể xảy ra, chúng tôi có thể viết lại trình tạo mã của mình để tạo mã phân tích đối số phù hợp,"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                518.5118077360248,
+                777.042219104847,
+                12.12946480977962
+            ],
+            "text": "rather than calling the general-purpose CPython argument parsing library. That would make for the fastest argument",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Thay vì gọi thư viện phân tích đối số CPython có mục đích chung. Điều đó sẽ làm cho đối số nhanh nhất"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                533.0669804479567,
+                118.93138385643473,
+                12.129476984766711
+            ],
+            "text": "parsing possible!)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "phân tích cú pháp có thể!)"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                554.9004091401441,
+                777.042219104847,
+                12.12946480977962
+            ],
+            "text": "Additionally, Argument Clinic must be flexible enough to work with any approach to argument parsing. Python has",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Ngoài ra, phòng khám đối số phải đủ linh hoạt để làm việc với bất kỳ cách tiếp cận nào để phân tích đối số. Python có"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                569.455594027063,
+                715.6981383198761,
+                12.129464809779563
+            ],
+            "text": "some functions with some very strange parsing behaviors; Argument Clinic’s goal is to support all of them.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Một số chức năng với một số hành vi phân tích cú pháp rất lạ; Mục tiêu lập luận của phòng khám là để hỗ trợ tất cả chúng."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                591.2890105442634,
+                777.0421157921255,
+                12.129476984766711
+            ],
+            "text": "Finally, the original motivation for Argument Clinic was to provide introspection “signatures” for CPython builtins.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Cuối cùng, động lực ban đầu cho phòng khám đối số là cung cấp các chữ ký hướng nội của người Viking cho Cpython Buildins."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                605.8441954311822,
+                777.0423224175687,
+                12.12946480977962
+            ],
+            "text": "It used to be, the introspection query functions would throw an exception if you passed in a builtin. With Argument",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trước đây, các chức năng truy vấn hướng nội sẽ ném một ngoại lệ nếu bạn vượt qua trong một bản dựng. Với lập luận"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                620.3993681431141,
+                216.24826554319316,
+                12.129476984766654
+            ],
+            "text": "Clinic, that’s a thing of the past!",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Phòng khám, đó là một điều của quá khứ!"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                642.2327968353015,
+                777.0423224175687,
+                12.129464809779563
+            ],
+            "text": "One idea you should keep in mind, as you work with Argument Clinic: the more information you give it, the better",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Một ý tưởng bạn nên ghi nhớ, khi bạn làm việc với Clinic Clinic: bạn càng đưa ra nhiều thông tin, thì càng tốt"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                656.7879695472334,
+                777.0421157921255,
+                12.129476984766711
+            ],
+            "text": "job it’ll be able to do. Argument Clinic is admittedly relatively simple right now. But as it evolves it will get more",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "công việc nó sẽ có thể làm. Lập luận phòng khám được thừa nhận tương đối đơn giản ngay bây giờ. Nhưng khi nó phát triển, nó sẽ nhận được nhiều hơn"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                671.3431544341522,
+                744.483214899717,
+                12.129476984766711
+            ],
+            "text": "sophisticated, and it should be able to do many interesting and smart things with all the information you give it.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tinh vi, và nó sẽ có thể làm nhiều điều thú vị và thông minh với tất cả các thông tin bạn cung cấp."
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                715.2890259975884,
+                13.767949178473202,
+                17.466553023951406
+            ],
+            "text": "2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JYMOVF+FreeSansBold",
+                "size": 14.34619998931885
+            },
+            "text_vi": "2"
+        },
+        {
+            "bbox": [
+                151.51115047484456,
+                715.2890259975884,
+                321.8310809956114,
+                17.466553023951406
+            ],
+            "text": "Basic Concepts And Usage",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JYMOVF+FreeSansBold",
+                "size": 14.34619998931885
+            },
+            "text_vi": "Các khái niệm cơ bản và cách sử dụng"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                755.4371416641468,
+                623.145832726826,
+                12.129428284818346
+            ],
+            "text": "Argument Clinic ships with CPython; you’ll find it in$_{Tools/clinic/clinic.py}$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các tàu phòng khám đối số với Cpython; Bạn sẽ tìm thấy nó trong $ _ {Tools/Clinic/Clinic.py} $"
+        },
+        {
+            "bbox": [
+                708.3705285729137,
+                755.4371416641468,
+                192.66093807984794,
+                12.129428284818346
+            ],
+            "text": ". If you run that script, spec-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": ". Nếu bạn chạy tập lệnh đó, spec-"
+        },
+        {
+            "bbox": [
+                123.97521251468824,
+                769.9935440497744,
+                201.75275201991906,
+                12.129428284818346
+            ],
+            "text": "ifying a C file as an argument:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "ifying một tệp C làm đối số:"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                796.6203138578637,
+                17.229979141077536,
+                9.824849329189703
+            ],
+            "text": "$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/MVMBSX+FreeMonoBold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "$"
+        },
+        {
+            "bbox": [
+                142.502684072906,
+                796.6203138578637,
+                387.70553826574695,
+                9.824849329189703
+            ],
+            "text": "python3 Tools/clinic/clinic.py foo.c",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVGJDZ+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "Công cụ Python3/phòng khám/phòng khám.py foo.c"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                824.3329707641976,
+                551.0676462638936,
+                12.129428284818374
+            ],
+            "text": "Argument Clinic will scan over the file looking for lines that look exactly like this:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đối số Phòng khám sẽ quét qua tệp tìm kiếm các dòng trông giống hệt như thế này:"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                850.9609215460342,
+                170.9103386182802,
+                9.824849329189703
+            ],
+            "text": "/*[clinic input]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVGJDZ+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "/*[Đầu vào phòng khám]"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                878.6735784523681,
+                513.2763864932609,
+                12.129440459805437
+            ],
+            "text": "When it finds one, it reads everything up to a line that looks exactly like this:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/LNXYPA+FreeSerif",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Khi nó tìm thấy một, nó đọc mọi thứ lên đến một dòng trông giống hệt như thế này:"
+        },
+        {
+            "bbox": [
+                123.97526589292772,
+                905.3015377566958,
+                314.7096455595864,
+                9.824851764187102
+            ],
+            "text": "[clinic start generated code]*/",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVGJDZ+FreeMono",
+                "size": 8.966400146484375
+            },
+            "text_vi": "[Phòng khám bắt đầu mã tạo]*/"
+        },
+        {
+            "bbox": [
+                507.72689199736794,
+                964.0251176635295,
+                9.537864893603114,
+                12.129434372311891
+            ],
+            "text": "2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JYMOVF+FreeSansBold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "2"
+        }
+    ]
+}

@@ -1,0 +1,1196 @@
+{
+    "metadata": {
+        "page_hash": "758ed6250c760d9203a4a5bf560c4a85ffedfc42e07ff3d2faece3449e2cf96f",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3676,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                417.27716503267976,
+                48.370422979798036,
+                220.5927455065359,
+                11.971275252525288
+            ],
+            "text": "Semisynchronous Replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao chép hình thành"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                94.96133207070716,
+                727.9342320261438,
+                11.971275252525174
+            ],
+            "text": "semisynchronous replica acknowledges that it has received all events for the transaction, or until a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bản sao bán nguyệt thừa nhận rằng nó đã nhận được tất cả các sự kiện cho giao dịch hoặc cho đến khi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                110.49163510101016,
+                113.55392156862746,
+                11.971275252525288
+            ],
+            "text": "timeout occurs.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thời gian chờ xảy ra."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                138.96385732323233,
+                782.8856209150327,
+                11.971275252525288
+            ],
+            "text": "•The replica acknowledges receipt of a transaction’s events only after the events have been written to its",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Bản sao thừa nhận đã nhận được một sự kiện giao dịch chỉ sau khi các sự kiện đã được ghi vào"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                154.49416035353545,
+                212.2520592320261,
+                11.971275252525174
+            ],
+            "text": "relay log and flushed to disk.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhật ký chuyển tiếp và xả vào đĩa."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                182.96638257575762,
+                739.1221405228757,
+                11.971275252525288
+            ],
+            "text": "•If a timeout occurs without any replica having acknowledged the transaction, the source reverts to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Nếu thời gian chờ xảy ra mà không có bất kỳ bản sao nào thừa nhận giao dịch, nguồn sẽ trở lại"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                198.49668560606062,
+                767.0416331699346,
+                11.971275252525288
+            ],
+            "text": "asynchronous replication. When at least one semisynchronous replica catches up, the source returns to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sao chép không đồng bộ. Khi có ít nhất một bản sao bán phân phối bắt kịp, nguồn trở lại"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                214.02698863636374,
+                215.93666625816996,
+                11.971275252525174
+            ],
+            "text": "semisynchronous replication.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sao chép hình thành."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                242.4992108585859,
+                786.5870433006537,
+                11.971275252525288
+            ],
+            "text": "•Semisynchronous replication must be enabled on both the source and replica sides. If semisynchronous",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Sao chép bán nguyệt phải được bật ở cả hai bên nguồn và bản sao. Nếu bán nguyệt"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                258.0295138888889,
+                725.2042483660131,
+                11.971275252525288
+            ],
+            "text": "replication is disabled on the source, or enabled on the source but on no replicas, the source uses",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sao chép được vô hiệu hóa trên nguồn hoặc được bật trên nguồn nhưng không có bản sao, nguồn sử dụng"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                273.5598169191919,
+                189.89297385620915,
+                11.971275252525288
+            ],
+            "text": "asynchronous replication.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sao chép không đồng bộ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                304.62042297979804,
+                779.1004734477124,
+                11.971275252525288
+            ],
+            "text": "While the source is blocking (waiting for acknowledgment from a replica), it does not return to the session",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mặc dù nguồn đang chặn (chờ xác nhận từ bản sao), nhưng nó không quay lại phiên"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                320.15072601010104,
+                730.781387254902,
+                11.971275252525288
+            ],
+            "text": "that performed the transaction. When the block ends, the source returns to the session, which then",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đã thực hiện giao dịch. Khi khối kết thúc, nguồn trở lại phiên, sau đó"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                335.68102904040404,
+                739.1723353758169,
+                11.971275252525288
+            ],
+            "text": "can proceed to execute other statements. At this point, the transaction has committed on the source",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có thể tiến hành thực hiện các câu lệnh khác. Tại thời điểm này, giao dịch đã cam kết trên nguồn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                351.21133207070716,
+                741.9526143790849,
+                11.971275252525174
+            ],
+            "text": "side, and receipt of its events has been acknowledged by at least one replica. The number of replica",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bên và nhận các sự kiện của nó đã được thừa nhận bởi ít nhất một bản sao. Số lượng bản sao"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                366.74163510101016,
+                775.4158161764705,
+                11.971275252525174
+            ],
+            "text": "acknowledgments the source must receive per transaction before returning to the session is configurable",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lời cảm ơn Nguồn phải nhận cho mỗi giao dịch trước khi quay lại phiên có thể định cấu hình"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                382.27193813131316,
+                72.62091503267976,
+                11.971275252525288
+            ],
+            "text": "using the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng "
+        },
+        {
+            "bbox": [
+                243.4542483660131,
+                383.4237818813132,
+                412.00978717320265,
+                10.172335542929318
+            ],
+            "text": "rpl_semi_sync_master_wait_for_slave_count",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "rpl_semi_sync_master_wait_for_slave_count"
+        },
+        {
+            "bbox": [
+                655.4640355392157,
+                382.27193813131316,
+                280.1833647875816,
+                11.971275252525288
+            ],
+            "text": " system variable, for which the default",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống, trong đó mặc định"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                397.80224116161617,
+                75.40114379084969,
+                11.971275252525288
+            ],
+            "text": "value is 1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị là 1."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                428.8628472222223,
+                784.7112430555555,
+                11.971275252525174
+            ],
+            "text": "Blocking also occurs after rollbacks that are written to the binary log, which occurs when a transaction that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chặn cũng xảy ra sau khi các cuộc quay lại được ghi vào nhật ký nhị phân, xảy ra khi một giao dịch"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                444.3931502525253,
+                766.1204897875816,
+                11.971275252525288
+            ],
+            "text": "modifies nontransactional tables is rolled back. The rolled-back transaction is logged even though it has",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sửa đổi các bảng không chuyển hóa được cuộn trở lại. Giao dịch cuộn lại được ghi lại mặc dù nó có"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                459.9234532828283,
+                782.9358157679738,
+                11.971275252525288
+            ],
+            "text": "no effect for transactional tables because the modifications to the nontransactional tables cannot be rolled",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không có tác dụng đối với các bảng giao dịch vì các sửa đổi cho các bảng không chuyển hóa không thể được cuộn"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                475.4537563131313,
+                254.13972263071898,
+                11.971275252525288
+            ],
+            "text": "back and must be sent to replicas.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Quay lại và phải được gửi đến bản sao."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                506.5143623737374,
+                760.5767973856209,
+                11.971275252525231
+            ],
+            "text": "For statements that do not occur in transactional context (that is, when no transaction has been started",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các báo cáo không xảy ra trong bối cảnh giao dịch (nghĩa là khi không có giao dịch nào được bắt đầu"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                522.0446654040404,
+                34.43464052287581,
+                11.971275252525288
+            ],
+            "text": "with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "với "
+        },
+        {
+            "bbox": [
+                205.26797385620915,
+                523.1964703282829,
+                170.83333333333337,
+                10.172374368686917
+            ],
+            "text": "START TRANSACTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bắt đầu giao dịch"
+        },
+        {
+            "bbox": [
+                376.1013071895425,
+                522.0446654040404,
+                24.201372140522835,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                400.30267933006536,
+                523.1964703282829,
+                180.88238643790856,
+                10.172374368686917
+            ],
+            "text": "SET autocommit = 0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Đặt AutoCommit = 0"
+        },
+        {
+            "bbox": [
+                581.1850657679739,
+                522.0446654040404,
+                334.19686192810445,
+                11.971275252525288
+            ],
+            "text": "), autocommit is enabled and each statement",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "), AutoCommit được bật và mỗi câu lệnh"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                537.5749684343434,
+                782.7683823529412,
+                11.971275252525231
+            ],
+            "text": "commits implicitly. With semisynchronous replication, the source blocks for each such statement, just as it",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cam kết ngầm. Với sự sao chép bán nguyệt, các khối nguồn cho mỗi câu như vậy, giống như nó"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                553.1052714646464,
+                274.5727124183006,
+                11.971275252525288
+            ],
+            "text": "does for explicit transaction commits.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "làm cho giao dịch rõ ràng cam kết."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                584.1658775252525,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                204.34681372549022,
+                585.3176824494949,
+                311.51962459150326,
+                10.172374368686917
+            ],
+            "text": "rpl_semi_sync_master_wait_point",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "rpl_semi_sync_master_wait_point"
+        },
+        {
+            "bbox": [
+                515.8664383169935,
+                584.1658775252525,
+                333.2421883169935,
+                11.971275252525288
+            ],
+            "text": " system variable controls the point at which a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống kiểm soát điểm mà tại đó một"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                599.6961805555557,
+                784.6777128267973,
+                11.971275252525231
+            ],
+            "text": "semisynchronous source server waits for replica acknowledgment of transaction receipt before returning a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Máy chủ nguồn Semisynchronous chờ nhận bản sao nhận biên lai giao dịch trước khi trả lại"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                615.2264835858587,
+                580.8835616830065,
+                11.971275252525231
+            ],
+            "text": "status to the client that committed the transaction. These values are permitted:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trạng thái cho khách hàng đã thực hiện giao dịch. Các giá trị này được cho phép:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                643.6987058080808,
+                19.361111111111114,
+                11.971275252525231
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                644.8505107323233,
+                100.49019607843138,
+                10.17237436868686
+            ],
+            "text": "AFTER_SYNC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "After_sync"
+        },
+        {
+            "bbox": [
+                288.0718954248366,
+                643.6987058080808,
+                632.0833668300654,
+                11.971275252525231
+            ],
+            "text": " (the default): The source writes each transaction to its binary log and the replica, and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (mặc định): Nguồn ghi từng giao dịch vào nhật ký nhị phân và bản sao và"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                659.2290088383838,
+                771.6809640522875,
+                11.971275252525288
+            ],
+            "text": "syncs the binary log to disk. The source waits for replica acknowledgment of transaction receipt after the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đồng bộ hóa nhật ký nhị phân vào đĩa. Nguồn chờ nhận bản sao nhận biên lai giao dịch sau khi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                674.7593118686868,
+                749.3721237745098,
+                11.971275252525231
+            ],
+            "text": "sync. Upon receiving acknowledgment, the source commits the transaction to the storage engine and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đồng bộ. Khi nhận được xác nhận, nguồn thực hiện giao dịch cho công cụ lưu trữ và"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                690.2896148989898,
+                392.84967320261444,
+                11.971275252525288
+            ],
+            "text": "returns a result to the client, which then can proceed.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trả về kết quả cho khách hàng, sau đó có thể tiến hành."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                718.7618371212121,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                719.9136420454546,
+                120.58823529411768,
+                10.17237436868686
+            ],
+            "text": "AFTER_COMMIT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "After_Commit"
+        },
+        {
+            "bbox": [
+                308.1699346405229,
+                718.7618371212121,
+                631.1286094771242,
+                11.971275252525288
+            ],
+            "text": ": The source writes each transaction to its binary log and the replica, syncs the binary",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Nguồn ghi từng giao dịch vào nhật ký nhị phân và bản sao, đồng bộ hóa nhị phân"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                734.2921401515152,
+                766.1204897875817,
+                11.971275252525231
+            ],
+            "text": "log, and commits the transaction to the storage engine. The source waits for replica acknowledgment of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhật ký và cam kết giao dịch với công cụ lưu trữ. Nguồn chờ xác nhận bản sao của"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                749.8224431818182,
+                763.3067810457517,
+                11.971275252525288
+            ],
+            "text": "transaction receipt after the commit. Upon receiving acknowledgment, the source returns a result to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biên nhận giao dịch sau khi cam kết. Khi nhận được xác nhận, nguồn trả về kết quả cho"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                765.3527462121212,
+                229.93830024509805,
+                11.971275252525231
+            ],
+            "text": "client, which then can proceed.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khách hàng, sau đó có thể tiến hành."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                796.4133522727273,
+                472.8566008986928,
+                11.97127525252526
+            ],
+            "text": "The replication characteristics of these settings differ as follows:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các đặc điểm sao chép của các cài đặt này khác nhau như sau:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                824.8855744949495,
+                54.90114379084966,
+                11.97127525252526
+            ],
+            "text": "•With ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•Với "
+        },
+        {
+            "bbox": [
+                225.734477124183,
+                826.0374182449495,
+                100.49019607843138,
+                10.172335542929318
+            ],
+            "text": "AFTER_SYNC",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "After_sync"
+        },
+        {
+            "bbox": [
+                326.2246732026144,
+                824.8855744949495,
+                628.3316993464052,
+                11.97127525252526
+            ],
+            "text": ", all clients see the committed transaction at the same time, which is after it has been",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", tất cả các khách hàng đều thấy giao dịch đã cam kết cùng một lúc, đó là sau khi nó được"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                840.4158775252525,
+                750.3267973856209,
+                11.97127525252526
+            ],
+            "text": "acknowledged by the replica and committed to the storage engine on the source. Thus, all clients see",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Được thừa nhận bởi bản sao và cam kết với công cụ lưu trữ trên nguồn. Vì vậy, tất cả các khách hàng thấy"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                855.9461805555555,
+                216.92483660130722,
+                11.97127525252526
+            ],
+            "text": "the same data on the source.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Dữ liệu tương tự về nguồn."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                887.0067866161617,
+                727.0633002450982,
+                11.971275252525245
+            ],
+            "text": "In the event of source failure, all transactions committed on the source have been replicated to the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong trường hợp lỗi nguồn, tất cả các giao dịch được thực hiện trên nguồn đã được sao chép thành"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                902.5370896464647,
+                743.7613709150328,
+                11.97127525252526
+            ],
+            "text": "replica (saved to its relay log). An unexpected exit of the source and failover to the replica is lossless",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bản sao (lưu vào nhật ký chuyển tiếp của nó). Một lối ra bất ngờ của nguồn và chuyển đổi dự phòng cho bản sao là không mất"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                918.0673926767677,
+                744.7998533496733,
+                11.97127525252526
+            ],
+            "text": "because the replica is up to date. As noted above, the source should not be reused after the failover.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bởi vì bản sao được cập nhật. Như đã lưu ý ở trên, nguồn không nên được sử dụng lại sau khi chuyển đổi dự phòng."
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "3647",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3647"
+        }
+    ]
+}

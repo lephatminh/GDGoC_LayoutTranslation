@@ -1,0 +1,1956 @@
+{
+    "metadata": {
+        "page_hash": "3d1be642eb161154c8248069a0aab7c5e785012a4e9a9526df6bda6f07e4db87",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 4515,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                349.42951756535945,
+                48.370422979798036,
+                295.99387254901967,
+                11.971275252525288
+            ],
+            "text": "Adding NDB Cluster Data Nodes Online",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thêm các nút dữ liệu cụm NDB trực tuyến"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                560.3500984477125,
+                11.971275252525174
+            ],
+            "text": "another startup script). This should be similar to what is shown here, where ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "một tập lệnh khởi động khác). Điều này tương tự như những gì được hiển thị ở đây, nơi "
+        },
+        {
+            "bbox": [
+                701.0363729575164,
+                96.11317582070706,
+                80.39215686274508,
+                10.172335542929318
+            ],
+            "text": "password",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "mật khẩu"
+        },
+        {
+            "bbox": [
+                781.4285298202615,
+                94.96133207070716,
+                109.8358010620916,
+                11.971275252525174
+            ],
+            "text": " is the MySQL ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là mysql "
+        },
+        {
+            "bbox": [
+                891.2643308823531,
+                96.11317582070706,
+                40.196078431372484,
+                10.172335542929318
+            ],
+            "text": "root",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Root"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                337.88151919934637,
+                11.971275252525288
+            ],
+            "text": "password for a given MySQL server instance:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mật khẩu cho một phiên bản máy chủ MySQL đã cho:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                138.38532765151524,
+                56.274509803921575,
+                8.137904671717138
+            ],
+            "text": "shell> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Vỏ> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                138.38532765151524,
+                160.78433047385622,
+                8.137904671717138
+            ],
+            "text": "mysqladmin -uroot -p",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "mysqladmin -Uroot -p"
+        },
+        {
+            "bbox": [
+                357.7451147875817,
+                138.38532765151524,
+                64.31370874183006,
+                8.137904671717138
+            ],
+            "text": "password",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-BoldOblique",
+                "size": 8
+            },
+            "text_vi": "mật khẩu"
+        },
+        {
+            "bbox": [
+                422.05882352941177,
+                138.38532765151524,
+                72.35295792483663,
+                8.137904671717138
+            ],
+            "text": " shutdown",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": " tắt máy"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                150.80962184343434,
+                385.88233619281044,
+                8.137827020202053
+            ],
+            "text": "081208 20:19:56 mysqld_safe mysqld from pid file",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "081208 20:19:56 MySQLD_SAFE MySQLD từ tệp PID"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                163.23382544191918,
+                305.49017933006536,
+                8.137917613636432
+            ],
+            "text": "/usr/local/mysql/var/tonfisk.pid ended",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "/usr/local/mysql/var/tonfisk.pid đã kết thúc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                175.6581196338384,
+                56.274509803921575,
+                8.137827020202053
+            ],
+            "text": "shell> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Vỏ> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                175.6581196338384,
+                482.3529579248366,
+                8.137827020202053
+            ],
+            "text": "mysqld_safe --ndbcluster --ndb-connectstring=198.51.100.10 &",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "MySQLD_SAFE--NDBCLUSTER--NDB-ConnectedTring = 198.51.100.10 &"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                188.08232323232323,
+                594.9019775326799,
+                8.137839962121234
+            ],
+            "text": "081208 20:20:06 mysqld_safe Logging to ’/usr/local/mysql/var/tonfisk.err’.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "081208 20:20:06 MySQLD_SAFE đăng nhập vào trên mạng /usr/local/mysql/var/tonfisk.err."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                200.50653977272736,
+                522.5490196078431,
+                8.137904671717138
+            ],
+            "text": "081208 20:20:06 mysqld_safe Starting mysqld daemon with databases",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "081208 20:20:06 MySQLD_SAFE Bắt đầu Daemon MySQLD với cơ sở dữ liệu"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                212.93083396464647,
+                200.98039215686276,
+                8.137827020202053
+            ],
+            "text": "from /usr/local/mysql/var",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "từ/usr/local/mysql/var"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                239.66753188131315,
+                789.4341985294118,
+                11.971275252525288
+            ],
+            "text": "Of course, the exact input and output depend on how and where MySQL is installed on the system, as well",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tất nhiên, đầu vào và đầu ra chính xác phụ thuộc vào cách thức và nơi MySQL được cài đặt trên hệ thống"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                255.19783491161616,
+                773.5902945261437,
+                11.971275252525288
+            ],
+            "text": "as which options you choose to start it (and whether or not some or all of these options are specified in a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Như những tùy chọn nào bạn chọn để khởi động nó (và liệu một số hoặc tất cả các tùy chọn này được chỉ định trong một"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                271.87999463383846,
+                60.29411764705884,
+                10.172322601010023
+            ],
+            "text": "my.cnf",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "my.cnf"
+        },
+        {
+            "bbox": [
+                200.98039215686276,
+                270.7281379419193,
+                36.29370915032678,
+                11.971275252525174
+            ],
+            "text": " file).",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tài liệu)."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                299.6403465909091,
+                428.1217320261438,
+                11.971275252525288
+            ],
+            "text": "Step 5: Perform an initial start of the new data nodes. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Bước 5: Thực hiện bắt đầu ban đầu của các nút dữ liệu mới. "
+        },
+        {
+            "bbox": [
+                585.5563725490197,
+                299.6403465909091,
+                334.1801805555556,
+                11.971275252525288
+            ],
+            "text": " From a system shell on each of the hosts for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Từ vỏ hệ thống trên mỗi máy chủ cho"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                315.1706496212122,
+                499.03429697712426,
+                11.971275252525174
+            ],
+            "text": "the new data nodes, start the data nodes as shown here, using the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các nút dữ liệu mới, bắt đầu các nút dữ liệu như được hiển thị ở đây, sử dụng "
+        },
+        {
+            "bbox": [
+                639.7205714869282,
+                316.3224933712122,
+                90.44117647058818,
+                10.172335542929204
+            ],
+            "text": "--initial",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--ban đầu"
+        },
+        {
+            "bbox": [
+                730.1617479575164,
+                315.1706496212122,
+                54.93462377450976,
+                11.971275252525174
+            ],
+            "text": " option:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " lựa chọn:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                343.06441982323236,
+                56.274509803921575,
+                8.137827020202053
+            ],
+            "text": "shell> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Vỏ> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                343.06441982323236,
+                249.21566952614378,
+                8.137827020202053
+            ],
+            "text": "ndbd -c 198.51.100.10 --initial",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "NDBD -C 198.51.100.10 - -Bantial"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                369.80111773989904,
+                37.214869281045765,
+                11.971275252525288
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                398.7133652146465,
+                606.0396074346405,
+                11.971275252525174
+            ],
+            "text": "Unlike the case with restarting the existing data nodes, you can start the new data",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không giống như trường hợp khởi động lại các nút dữ liệu hiện có, bạn có thể bắt đầu dữ liệu mới"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                414.2436682449495,
+                614.4305555555555,
+                11.971275252525288
+            ],
+            "text": "nodes concurrently; you do not need to wait for one to finish starting before starting",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các nút đồng thời; Bạn không cần phải đợi một người hoàn thành bắt đầu trước khi bắt đầu"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                429.7739712752525,
+                70.76184640522877,
+                11.971275252525288
+            ],
+            "text": "the other.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cái khác."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                458.6862187500001,
+                647.0396074346406,
+                11.971275252525174
+            ],
+            "text": "Wait until both of the new data nodes have started before proceeding with the next step",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Oblique",
+                "size": 10
+            },
+            "text_vi": "Chờ cho đến khi cả hai nút dữ liệu mới đã bắt đầu trước khi tiến hành bước tiếp theo"
+        },
+        {
+            "bbox": [
+                787.7258819444445,
+                458.6862187500001,
+                112.6494763071895,
+                11.971275252525174
+            ],
+            "text": ". Once the new",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Một khi mới"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                474.2165217803031,
+                573.5142806372548,
+                11.971275252525288
+            ],
+            "text": "data nodes have started, you can see in the output of the management client ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các nút dữ liệu đã bắt đầu, bạn có thể thấy trong đầu ra của máy khách quản lý "
+        },
+        {
+            "bbox": [
+                714.2005551470588,
+                475.36832670454544,
+                40.196078431372484,
+                10.172374368686974
+            ],
+            "text": "SHOW",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÌNH DIỄN"
+        },
+        {
+            "bbox": [
+                754.3966335784313,
+                474.2165217803031,
+                170.3644293300655,
+                11.971275252525288
+            ],
+            "text": " command that they do",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " ra lệnh rằng họ làm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                489.7468248106061,
+                499.9387254901961,
+                11.971275252525288
+            ],
+            "text": "not yet belong to any node group (as indicated with bold type here):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chưa thuộc về bất kỳ nhóm nút nào (như được chỉ ra với loại in đậm ở đây):"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                517.640504419192,
+                72.35294117647061,
+                8.137917613636432
+            ],
+            "text": "ndb_mgm> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "ndb_mgm> "
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                517.640504419192,
+                32.15684599673202,
+                8.137917613636432
+            ],
+            "text": "SHOW",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "TRÌNH DIỄN"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                530.0647597853535,
+                426.07841462418304,
+                8.137917613636375
+            ],
+            "text": "Connected to Management Server at: 198.51.100.10:1186",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Kết nối với máy chủ quản lý tại: 198,51.100.10:1186"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                542.4890151515152,
+                168.82352941176475,
+                8.137904671717138
+            ],
+            "text": "Cluster Configuration",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Cấu hình cụm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                554.91321875,
+                168.82352941176475,
+                8.137917613636318
+            ],
+            "text": "---------------------",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "---------------------"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                567.3374741161617,
+                88.43137254901964,
+                8.137904671717195
+            ],
+            "text": "[ndbd(NDB)]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[NDBD (NDB)]"
+        },
+        {
+            "bbox": [
+                269.3137254901961,
+                567.3374741161617,
+                8.039232434640553,
+                8.137904671717195
+            ],
+            "text": "2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "2"
+        },
+        {
+            "bbox": [
+                285.39217361111116,
+                567.3374741161617,
+                56.274493055555524,
+                8.137904671717195
+            ],
+            "text": "node(s)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "nút"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                579.761716540404,
+                32.15686274509804,
+                8.137917613636432
+            ],
+            "text": "id=1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "id = 1"
+        },
+        {
+            "bbox": [
+                205.00000000000003,
+                579.761716540404,
+                104.50980392156865,
+                8.137917613636432
+            ],
+            "text": "@198.51.100.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "@198,51.100.1"
+        },
+        {
+            "bbox": [
+                325.5882520424837,
+                579.761716540404,
+                289.4117647058824,
+                8.137917613636432
+            ],
+            "text": "(8.0.26-ndb-8.0.26, Nodegroup: 0, *)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "(8.0.26-NDB-8.0.26, Nodegroup: 0, *)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                592.1859719065658,
+                32.15686274509804,
+                8.137917613636318
+            ],
+            "text": "id=2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "id = 2"
+        },
+        {
+            "bbox": [
+                205.00000000000003,
+                592.1859719065658,
+                104.50978717320262,
+                8.137917613636318
+            ],
+            "text": "@198.51.100.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "@198,51.100.2"
+        },
+        {
+            "bbox": [
+                325.58821854575166,
+                592.1859719065658,
+                265.2941176470587,
+                8.137917613636318
+            ],
+            "text": "(8.0.26-ndb-8.0.26, Nodegroup: 0)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "(8.0.26-NDB-8.0.26, Nodegroup: 0)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                604.6102272727273,
+                32.15686274509804,
+                8.13790467171708
+            ],
+            "text": "id=3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "id = 3"
+        },
+        {
+            "bbox": [
+                205.00000000000003,
+                604.6102272727273,
+                104.50980392156865,
+                8.13790467171708
+            ],
+            "text": "@198.51.100.3",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "@198,51.100.3"
+        },
+        {
+            "bbox": [
+                325.58821854575166,
+                604.6102272727273,
+                160.78431372549016,
+                8.13790467171708
+            ],
+            "text": "(8.0.26-ndb-8.0.26, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "(8.0.26-NDB-8.0.26, "
+        },
+        {
+            "bbox": [
+                486.3725322712418,
+                604.6102272727273,
+                96.47060498366017,
+                8.13790467171708
+            ],
+            "text": "no nodegroup",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Không có nhóm nodegroup"
+        },
+        {
+            "bbox": [
+                582.843137254902,
+                604.6102272727273,
+                8.039198937908395,
+                8.13790467171708
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                617.0344308712122,
+                32.15686274509804,
+                8.137917613636318
+            ],
+            "text": "id=4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "id = 4"
+        },
+        {
+            "bbox": [
+                205.00000000000003,
+                617.0344308712122,
+                104.50980392156865,
+                8.137917613636318
+            ],
+            "text": "@198.51.100.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "@198,51.100.4"
+        },
+        {
+            "bbox": [
+                325.58821854575166,
+                617.0344308712122,
+                160.78431372549016,
+                8.137917613636318
+            ],
+            "text": "(8.0.26-ndb-8.0.26, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "(8.0.26-NDB-8.0.26, "
+        },
+        {
+            "bbox": [
+                486.3725322712418,
+                617.0344308712122,
+                96.47060498366017,
+                8.137917613636318
+            ],
+            "text": "no nodegroup",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Không có nhóm nodegroup"
+        },
+        {
+            "bbox": [
+                582.843137254902,
+                617.0344308712122,
+                8.039198937908395,
+                8.137917613636318
+            ],
+            "text": ")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": ")"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                641.8829286616162,
+                200.98039215686276,
+                8.137917613636375
+            ],
+            "text": "[ndb_mgmd(MGM)] 1 node(s)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[ndb_mgmd (mgm)] 1 nút"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                654.3071840277778,
+                40.19607843137254,
+                8.137917613636318
+            ],
+            "text": "id=10",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "id = 10"
+        },
+        {
+            "bbox": [
+                205.00000000000003,
+                654.3071840277778,
+                112.5490028594771,
+                8.137917613636318
+            ],
+            "text": "@198.51.100.10",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "@198,51.100.10"
+        },
+        {
+            "bbox": [
+                333.62745098039215,
+                654.3071840277778,
+                152.74508129084967,
+                8.137917613636318
+            ],
+            "text": "(8.0.26-ndb-8.0.26)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "(8.0.26-NDB-8.0.26)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                679.1556429924242,
+                104.50978717320262,
+                8.137917613636375
+            ],
+            "text": "[mysqld(API)]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[MySQLD (API)]"
+        },
+        {
+            "bbox": [
+                269.3137254901961,
+                679.1556429924242,
+                8.039232434640553,
+                8.137917613636375
+            ],
+            "text": "2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "2"
+        },
+        {
+            "bbox": [
+                285.39217361111116,
+                679.1556429924242,
+                56.274493055555524,
+                8.137917613636375
+            ],
+            "text": "node(s)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "nút"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                691.5798983585859,
+                40.19607843137254,
+                8.137904671717195
+            ],
+            "text": "id=20",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "id = 20"
+        },
+        {
+            "bbox": [
+                205.00000000000003,
+                691.5798983585859,
+                112.5490028594771,
+                8.137904671717195
+            ],
+            "text": "@198.51.100.20",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "@198,51.100.20"
+        },
+        {
+            "bbox": [
+                333.62745098039215,
+                691.5798983585859,
+                152.74508129084967,
+                8.137904671717195
+            ],
+            "text": "(8.0.26-ndb-8.0.26)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "(8.0.26-NDB-8.0.26)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                704.0041407828282,
+                40.19607843137254,
+                8.137917613636375
+            ],
+            "text": "id=21",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "id = 21"
+        },
+        {
+            "bbox": [
+                205.00000000000003,
+                704.0041407828282,
+                112.5490028594771,
+                8.137917613636375
+            ],
+            "text": "@198.51.100.21",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "@198,51.100.21"
+        },
+        {
+            "bbox": [
+                333.62745098039215,
+                704.0041407828282,
+                152.74508129084967,
+                8.137917613636375
+            ],
+            "text": "(8.0.26-ndb-8.0.26)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "(8.0.26-NDB-8.0.26)"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                730.7408904671718,
+                269.8999015522876,
+                11.971275252525231
+            ],
+            "text": "Step 6: Create a new node group. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Bước 6: Tạo một nhóm nút mới. "
+        },
+        {
+            "bbox": [
+                427.3345420751634,
+                730.7408904671718,
+                217.84601348039223,
+                11.971275252525231
+            ],
+            "text": " You can do this by issuing a ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bạn có thể làm điều này bằng cách phát hành một "
+        },
+        {
+            "bbox": [
+                645.1805555555557,
+                731.8927083333333,
+                160.78431372549016,
+                10.17236142676768
+            ],
+            "text": "CREATE NODEGROUP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo Nodegroup"
+        },
+        {
+            "bbox": [
+                805.9648692810458,
+                730.7408904671718,
+                123.80393831699337,
+                11.971275252525231
+            ],
+            "text": " command in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " lệnh trong"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                746.2711934974748,
+                775.3822859477125,
+                11.971236426767689
+            ],
+            "text": "cluster management client. This command takes as its argument a comma-separated list of the node IDs",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khách hàng quản lý cụm. Lệnh này lấy ra đối số của nó một danh sách được phân tách bằng dấu phẩy của ID nút"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                761.8014577020202,
+                531.6266507352941,
+                11.971275252525231
+            ],
+            "text": "of the data nodes to be included in the new node group, as shown here:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "của các nút dữ liệu được bao gồm trong nhóm nút mới, như được hiển thị ở đây:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                789.6952279040404,
+                72.35294117647061,
+                8.137827020202025
+            ],
+            "text": "ndb_mgm> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "ndb_mgm> "
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                789.6952279040404,
+                160.78431372549016,
+                8.137827020202025
+            ],
+            "text": "CREATE NODEGROUP 3,4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Tạo Nodegroup 3,4"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                802.1194444444444,
+                152.7450980392157,
+                8.137827020202025
+            ],
+            "text": "Nodegroup 1 created",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Nodegroup 1 được tạo"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                828.8561423611111,
+                80.97836642156864,
+                11.97127525252526
+            ],
+            "text": "By issuing ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bằng cách phát hành "
+        },
+        {
+            "bbox": [
+                221.66464093137256,
+                830.0079990530303,
+                40.19607843137254,
+                10.172322601010109
+            ],
+            "text": "SHOW",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÌNH DIỄN"
+        },
+        {
+            "bbox": [
+                261.8607193627451,
+                828.8561423611111,
+                633.1049501633988,
+                11.97127525252526
+            ],
+            "text": " again, you can verify that data nodes 3 and 4 have joined the new node group (again",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Một lần nữa, bạn có thể xác minh rằng các nút dữ liệu 3 và 4 đã tham gia nhóm nút mới (một lần nữa"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                844.3864453914141,
+                167.56740196078437,
+                11.97127525252526
+            ],
+            "text": "indicated in bold type):",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được chỉ định bằng loại in đậm):"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                872.2802155934344,
+                72.35294117647061,
+                8.137839962121234
+            ],
+            "text": "ndb_mgm> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "ndb_mgm> "
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                872.2802155934344,
+                32.15684599673202,
+                8.137839962121234
+            ],
+            "text": "SHOW",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "TRÌNH DIỄN"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                884.7044321338384,
+                426.07841462418304,
+                8.137827020202025
+            ],
+            "text": "Connected to Management Server at: 198.51.100.10:1186",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Kết nối với máy chủ quản lý tại: 198,51.100.10:1186"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                897.128719854798,
+                168.82352941176475,
+                8.137832196969711
+            ],
+            "text": "Cluster Configuration",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Cấu hình cụm"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                909.5529312184343,
+                168.82352941176475,
+                8.137830902777793
+            ],
+            "text": "---------------------",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "---------------------"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                921.9771412878788,
+                88.43137254901964,
+                8.137832196969697
+            ],
+            "text": "[ndbd(NDB)]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "[NDBD (NDB)]"
+        },
+        {
+            "bbox": [
+                269.3137254901961,
+                921.9771412878788,
+                8.039232434640553,
+                8.137832196969697
+            ],
+            "text": "2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "2"
+        },
+        {
+            "bbox": [
+                285.39217361111116,
+                921.9771412878788,
+                56.274493055555524,
+                8.137832196969697
+            ],
+            "text": "node(s)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "nút"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "4486",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "4486"
+        }
+    ]
+}

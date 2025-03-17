@@ -1,0 +1,1656 @@
+{
+    "metadata": {
+        "page_hash": "5ce031543ca000bf4fe0f0906e05518f168dd30b864550f8abe12c1b640e7a88",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3430,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                419.1278594771242,
+                48.370422979798036,
+                216.891339869281,
+                11.971275252525288
+            ],
+            "text": "The MyISAM Storage Engine",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Động cơ lưu trữ myisam"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                95.32501294191934,
+                514.5098206699347,
+                8.13782702020194
+            ],
+            "text": "-- Simple table definitions can be switched from one to another.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "- Định nghĩa bảng đơn giản có thể được chuyển từ cái này sang cái khác."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                107.74921654040418,
+                297.4509971405229,
+                8.137917613636205
+            ],
+            "text": "CREATE TABLE t2 (i INT) ENGINE = CSV;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo Bảng T2 (I int) động cơ = CSV;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                120.17351073232317,
+                321.56862745098044,
+                8.137827020202167
+            ],
+            "text": "CREATE TABLE t3 (i INT) ENGINE = MEMORY;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tạo Bảng T3 (I int) động cơ = bộ nhớ;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                147.44727241161615,
+                144.2871564542484,
+                11.971275252525288
+            ],
+            "text": "When you omit the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi bạn bỏ qua "
+        },
+        {
+            "bbox": [
+                315.12048978758173,
+                148.59912910353546,
+                60.29411764705878,
+                10.172322601010023
+            ],
+            "text": "ENGINE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ĐỘNG CƠ"
+        },
+        {
+            "bbox": [
+                375.4146074346405,
+                147.44727241161615,
+                480.4101307189543,
+                11.971275252525288
+            ],
+            "text": " option, the default storage engine is used. The default engine is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tùy chọn, công cụ lưu trữ mặc định được sử dụng. Động cơ mặc định là "
+        },
+        {
+            "bbox": [
+                855.8247381535948,
+                148.59912910353546,
+                60.2941176470589,
+                10.172322601010023
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                162.97757544191916,
+                466.42522834967315,
+                11.971275252525288
+            ],
+            "text": "in MySQL 8.0. You can specify the default engine by using the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trong MySQL 8.0. Bạn có thể chỉ định công cụ mặc định bằng cách sử dụng "
+        },
+        {
+            "bbox": [
+                637.2585616830065,
+                164.12943213383846,
+                241.17647058823536,
+                10.172322601010023
+            ],
+            "text": "--default-storage-engine",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Khóa học-DEFAULT-ENDE"
+        },
+        {
+            "bbox": [
+                878.4350322712419,
+                162.97757544191916,
+                51.1830065359477,
+                11.971275252525288
+            ],
+            "text": " server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " máy chủ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                178.50787847222227,
+                234.61111111111111,
+                11.971275252525174
+            ],
+            "text": "startup option, or by setting the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tùy chọn khởi động hoặc bằng cách đặt "
+        },
+        {
+            "bbox": [
+                405.44444444444446,
+                179.65973516414147,
+                221.078464869281,
+                10.172322601010023
+            ],
+            "text": "default-storage-engine",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Động cơ lưu trữ mặc định"
+        },
+        {
+            "bbox": [
+                626.5228590686274,
+                178.50787847222227,
+                100.55720629084976,
+                11.971275252525174
+            ],
+            "text": " option in the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tùy chọn trong "
+        },
+        {
+            "bbox": [
+                727.0800653594772,
+                179.65973516414147,
+                60.29411764705878,
+                10.172322601010023
+            ],
+            "text": "my.cnf",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "my.cnf"
+        },
+        {
+            "bbox": [
+                787.374183006536,
+                178.50787847222227,
+                131.2569276960785,
+                11.971275252525174
+            ],
+            "text": " configuration file.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tệp cấu hình."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                207.95722853535347,
+                566.0445261437909,
+                11.971275252525288
+            ],
+            "text": "You can set the default storage engine for the current session by setting the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể đặt công cụ lưu trữ mặc định cho phiên hiện tại bằng cách đặt "
+        },
+        {
+            "bbox": [
+                736.8778594771243,
+                209.1090722853536,
+                221.07838112745094,
+                10.172335542929204
+            ],
+            "text": "default_storage_engine",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Default_Storage_Engine"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                223.48753156565658,
+                63.292091911764686,
+                11.971275252525174
+            ],
+            "text": "variable:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biến:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                251.810934659091,
+                305.4901793300654,
+                8.137904671717138
+            ],
+            "text": "SET default_storage_engine=NDBCLUSTER;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đặt default_storage_engine = ndbcluster;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                279.0847739898991,
+                173.16135620915028,
+                11.971275252525288
+            ],
+            "text": "The storage engine for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Động cơ lưu trữ cho "
+        },
+        {
+            "bbox": [
+                343.9946895424836,
+                280.23655303030307,
+                90.44119321895431,
+                10.172400252525335
+            ],
+            "text": "TEMPORARY",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TẠM THỜI"
+        },
+        {
+            "bbox": [
+                434.43588276143794,
+                279.0847739898991,
+                148.94321895424844,
+                11.971275252525288
+            ],
+            "text": " tables created with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng được tạo với "
+        },
+        {
+            "bbox": [
+                583.3791017156864,
+                280.23655303030307,
+                221.07843137254895,
+                10.172400252525335
+            ],
+            "text": "CREATE TEMPORARY TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo bảng tạm thời"
+        },
+        {
+            "bbox": [
+                804.4575330882353,
+                279.0847739898991,
+                81.93297303921577,
+                11.971275252525288
+            ],
+            "text": " can be set",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " có thể được đặt"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                294.6150770202021,
+                465.4706049836601,
+                11.971275252525288
+            ],
+            "text": "separately from the engine for permanent tables by setting the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tách biệt với động cơ cho các bảng vĩnh viễn bằng cách đặt "
+        },
+        {
+            "bbox": [
+                636.3039383169935,
+                295.7668560606061,
+                261.27456004901956,
+                10.172400252525335
+            ],
+            "text": "default_tmp_storage_engine",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Default_tmp_storage_engine"
+        },
+        {
+            "bbox": [
+                897.578498366013,
+                294.6150770202021,
+                51.19967116013083,
+                11.971275252525288
+            ],
+            "text": ", either",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hoặc"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                310.1453800505051,
+                173.14460784313727,
+                11.971275252525288
+            ],
+            "text": "at startup or at runtime.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "khi khởi động hoặc lúc chạy."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                339.5946524621213,
+                464.5661764705882,
+                11.971275252525288
+            ],
+            "text": "To convert a table from one storage engine to another, use an ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để chuyển đổi bảng từ công cụ lưu trữ này sang công cụ lưu trữ khác, hãy sử dụng "
+        },
+        {
+            "bbox": [
+                635.3995098039215,
+                340.7464962121212,
+                110.53921568627459,
+                10.172335542929432
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                745.9387254901961,
+                339.5946524621213,
+                209.47183047385624,
+                11.971275252525288
+            ],
+            "text": " statement that indicates the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tuyên bố chỉ ra"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                355.1249554924243,
+                90.30718954248366,
+                11.971275252525288
+            ],
+            "text": "new engine:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Động cơ mới:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                383.4483585858586,
+                241.17647058823528,
+                8.137865845959595
+            ],
+            "text": "ALTER TABLE t ENGINE = InnoDB;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thay đổi bảng T động cơ = innodb;"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                410.72215909090914,
+                405.51143790849676,
+                11.971275252525288
+            ],
+            "text": "See Section 13.1.20, “CREATE TABLE Statement”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Xem phần 13.1.20, Tuyên bố bảng Tạo bảng"
+        },
+        {
+            "bbox": [
+                548.7769607843138,
+                410.72215909090914,
+                389.7009301470588,
+                11.971275252525288
+            ],
+            "text": ", and Section 13.1.9, “ALTER TABLE Statement”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và Mục 13.1.9, Tuyên bố bảng thay đổi"
+        },
+        {
+            "bbox": [
+                910.9101307189543,
+                410.72215909090914,
+                4.656095996732006,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                440.17150915404045,
+                752.1858492647059,
+                11.971275252525174
+            ],
+            "text": "If you try to use a storage engine that is not compiled in or that is compiled in but deactivated, MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu bạn cố gắng sử dụng một công cụ lưu trữ không được biên dịch hoặc được biên dịch trong nhưng vô hiệu hóa, MySQL"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                455.70181218434345,
+                783.857059640523,
+                11.971275252525288
+            ],
+            "text": "instead creates a table using the default storage engine. For example, in a replication setup, perhaps your",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thay vào đó tạo một bảng bằng công cụ lưu trữ mặc định. Ví dụ, trong một thiết lập sao chép, có lẽ"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                471.23211521464646,
+                146.12949346405227,
+                11.971275252525288
+            ],
+            "text": "source server uses ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Máy chủ nguồn sử dụng "
+        },
+        {
+            "bbox": [
+                316.9628267973856,
+                472.3839201388889,
+                60.29411764705884,
+                10.17237436868686
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                377.25694444444446,
+                471.23211521464646,
+                572.4758986928103,
+                11.971275252525288
+            ],
+            "text": " tables for maximum safety, but the replica servers use other storage engines",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng để an toàn tối đa, nhưng các máy chủ bản sao sử dụng các công cụ lưu trữ khác"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                486.76241824494946,
+                394.70870833333333,
+                11.971275252525288
+            ],
+            "text": "for speed at the expense of durability or concurrency.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cho tốc độ với chi phí độ bền hoặc đồng thời."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                516.2117553661617,
+                335.1348206699346,
+                11.971275252525231
+            ],
+            "text": "By default, a warning is generated whenever ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Theo mặc định, cảnh báo được tạo ra bất cứ khi nào "
+        },
+        {
+            "bbox": [
+                505.96815400326795,
+                517.3635732323232,
+                120.58823529411768,
+                10.172361426767736
+            ],
+            "text": "CREATE TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tạo bảng"
+        },
+        {
+            "bbox": [
+                626.5563892973856,
+                516.2117553661617,
+                24.20140563725488,
+                11.971275252525231
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                650.7577446895425,
+                517.3635732323232,
+                110.53921568627447,
+                10.172361426767736
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                761.296960375817,
+                516.2117553661617,
+                169.45995057189543,
+                11.971275252525231
+            ],
+            "text": " cannot use the default",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " không thể sử dụng mặc định"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                531.7420583964647,
+                758.7512757352941,
+                11.971275252525288
+            ],
+            "text": "storage engine. To prevent confusing, unintended behavior if the desired engine is unavailable, enable",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "động cơ lưu trữ. Để ngăn chặn hành vi khó hiểu, ngoài ý muốn nếu động cơ mong muốn không có sẵn, hãy bật"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                547.2723614267677,
+                27.936274509803923,
+                11.971275252525231
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                198.76960784313727,
+                548.4241792929292,
+                221.078414624183,
+                10.172361426767736
+            ],
+            "text": "NO_ENGINE_SUBSTITUTION",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "NO_Engine_Subst Huấn thuật"
+        },
+        {
+            "bbox": [
+                419.8480224673203,
+                547.2723614267677,
+                514.8112912581698,
+                11.971275252525231
+            ],
+            "text": " SQL mode. If the desired engine is unavailable, this setting produces",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Chế độ SQL. Nếu động cơ mong muốn không có sẵn, cài đặt này sẽ tạo ra"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                562.8026644570707,
+                766.9243778594772,
+                11.971275252525231
+            ],
+            "text": "an error instead of a warning, and the table is not created or altered. See Section 5.1.11, “Server SQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một lỗi thay vì cảnh báo và bảng không được tạo hoặc thay đổi. Xem Phần 5.1.11, Máy chủ SQL SQL"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                578.3329674873738,
+                69.62297426470587,
+                11.971275252525231
+            ],
+            "text": "Modes”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chế độ ”"
+        },
+        {
+            "bbox": [
+                226.67238562091504,
+                578.3329674873738,
+                4.656045751633997,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                607.782317550505,
+                764.3116495098038,
+                11.971275252525231
+            ],
+            "text": "MySQL may store a table’s index and data in one or more other files, depending on the storage engine.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL có thể lưu trữ chỉ mục và dữ liệu bảng trong một hoặc nhiều tệp khác, tùy thuộc vào công cụ lưu trữ."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                623.312620580808,
+                767.9963067810457,
+                11.971275252525288
+            ],
+            "text": "Table and column definitions are stored in the MySQL data dictionary. Individual storage engines create",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các định nghĩa bảng và cột được lưu trữ trong Từ điển dữ liệu MySQL. Công cụ lưu trữ cá nhân tạo ra"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                638.8429236111111,
+                770.8100155228757,
+                11.971275252525231
+            ],
+            "text": "any additional files required for the tables that they manage. If a table name contains special characters,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bất kỳ tập tin bổ sung cần thiết cho các bảng mà họ quản lý. Nếu một tên bảng chứa các ký tự đặc biệt,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                654.3732266414141,
+                771.7480245098038,
+                11.971275252525288
+            ],
+            "text": "the names for the table files contain encoded versions of those characters as described in Section 9.2.4,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên cho các tệp bảng chứa các phiên bản được mã hóa của các ký tự như được mô tả trong Phần 9.2.4,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                669.9035296717173,
+                306.796551879085,
+                11.971275252525231
+            ],
+            "text": "“Mapping of Identifiers to File Names”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "“Ánh xạ các định danh vào tên tệp”"
+        },
+        {
+            "bbox": [
+                450.06209150326805,
+                669.9035296717173,
+                4.65604575163394,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                700.4205492424243,
+                52.147715767973864,
+                19.154066287878777
+            ],
+            "text": "16.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "16.2"
+        },
+        {
+            "bbox": [
+                150.03856209150328,
+                700.4205492424243,
+                363.31893750000006,
+                19.154066287878777
+            ],
+            "text": "The MyISAM Storage Engine",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "Động cơ lưu trữ myisam"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                739.2721777146464,
+                60.29411764705881,
+                10.17237436868686
+            ],
+            "text": "MyISAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Myisam"
+        },
+        {
+            "bbox": [
+                231.12745098039215,
+                738.1203727904041,
+                353.7589869281046,
+                11.971275252525231
+            ],
+            "text": " is based on the older (and no longer available) ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " dựa trên cái cũ hơn (và không còn có sẵn) "
+        },
+        {
+            "bbox": [
+                584.8864379084968,
+                739.2721777146464,
+                40.1960784313726,
+                10.17237436868686
+            ],
+            "text": "ISAM",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ISAM"
+        },
+        {
+            "bbox": [
+                625.0825163398694,
+                738.1203727904041,
+                269.9836266339869,
+                11.971275252525231
+            ],
+            "text": " storage engine but has many useful",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " công cụ lưu trữ nhưng có nhiều hữu ích"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                753.6506758207071,
+                84.71323529411765,
+                11.971275252525288
+            ],
+            "text": "extensions.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "phần mở rộng."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                787.0123680555555,
+                352.7540849673203,
+                11.97127525252526
+            ],
+            "text": "Table 16.2 MyISAM Storage Engine Features",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Bảng 16.2 Các tính năng công cụ lưu trữ Myisam"
+        },
+        {
+            "bbox": [
+                174.6017156862745,
+                814.196882260101,
+                60.49509803921572,
+                11.97127525252526
+            ],
+            "text": "Feature",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Tính năng"
+        },
+        {
+            "bbox": [
+                571.5379901960785,
+                814.196882260101,
+                64.19652042483654,
+                11.97127525252526
+            ],
+            "text": "Support",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ủng hộ"
+        },
+        {
+            "bbox": [
+                174.6017156862745,
+                835.5510489267676,
+                115.41299019607843,
+                11.971275252525231
+            ],
+            "text": "B-tree indexes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Chỉ số B-Tree"
+        },
+        {
+            "bbox": [
+                571.5379901960785,
+                835.5510489267676,
+                28.857451388888876,
+                11.971275252525231
+            ],
+            "text": "Yes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đúng"
+        },
+        {
+            "bbox": [
+                174.6017156862745,
+                856.9052155934344,
+                241.04248366013073,
+                11.97127525252526
+            ],
+            "text": "Backup/point-in-time recovery",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Sao lưu/phục hồi thời gian trong thời gian"
+        },
+        {
+            "bbox": [
+                415.64419934640523,
+                856.9052155934344,
+                124.72509844771241,
+                11.97127525252526
+            ],
+            "text": " (Implemented in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (Thực hiện trong"
+        },
+        {
+            "bbox": [
+                174.6017156862745,
+                872.4355186237374,
+                336.07271241830074,
+                11.97127525252526
+            ],
+            "text": "the server, rather than in the storage engine.)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "máy chủ, thay vì trong công cụ lưu trữ.)"
+        },
+        {
+            "bbox": [
+                571.5379901960785,
+                856.9052155934344,
+                28.857451388888876,
+                11.97127525252526
+            ],
+            "text": "Yes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đúng"
+        },
+        {
+            "bbox": [
+                174.6017156862745,
+                893.789685290404,
+                201.95179738562095,
+                11.971272664141424
+            ],
+            "text": "Cluster database support",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Hỗ trợ cơ sở dữ liệu cụm"
+        },
+        {
+            "bbox": [
+                571.5379901960785,
+                893.789685290404,
+                21.404411764705856,
+                11.971272664141424
+            ],
+            "text": "No",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "KHÔNG"
+        },
+        {
+            "bbox": [
+                174.6017156862745,
+                915.1438493686869,
+                144.27042483660128,
+                11.97127525252526
+            ],
+            "text": "Clustered indexes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Chỉ mục phân cụm"
+        },
+        {
+            "bbox": [
+                571.5379901960785,
+                915.1438493686869,
+                21.404411764705856,
+                11.97127525252526
+            ],
+            "text": "No",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "KHÔNG"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "3401",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3401"
+        }
+    ]
+}

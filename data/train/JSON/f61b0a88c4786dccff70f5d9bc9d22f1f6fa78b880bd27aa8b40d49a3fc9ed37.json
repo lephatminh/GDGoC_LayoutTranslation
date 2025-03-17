@@ -1,0 +1,2516 @@
+{
+    "metadata": {
+        "page_hash": "f61b0a88c4786dccff70f5d9bc9d22f1f6fa78b880bd27aa8b40d49a3fc9ed37",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 371,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                407.1527945261438,
+                48.370422979798036,
+                180.54740236928103,
+                11.971275252525288
+            ],
+            "text": "Using MySQL Programs",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng các chương trình MySQL"
+        },
+        {
+            "bbox": [
+                144.4546568627451,
+                97.87326388888891,
+                172.18995098039218,
+                11.971275252525288
+            ],
+            "text": "Environment Variable",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Biến môi trường"
+        },
+        {
+            "bbox": [
+                541.3909313725491,
+                97.87326388888891,
+                67.93137254901956,
+                11.971275252525288
+            ],
+            "text": "Meaning",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Nghĩa"
+        },
+        {
+            "bbox": [
+                144.4546568627451,
+                120.37927430555555,
+                110.5392156862745,
+                10.172335542929318
+            ],
+            "text": "MYSQL_DEBUG",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Mysql_debug"
+        },
+        {
+            "bbox": [
+                541.3909313725491,
+                119.22743055555566,
+                277.4366662581699,
+                11.971275252525174
+            ],
+            "text": "Debug trace options when debugging",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Gỡ lỗi các tùy chọn dấu vết khi gỡ lỗi"
+        },
+        {
+            "bbox": [
+                144.4546568627451,
+                141.73344097222218,
+                60.29411764705881,
+                10.172335542929432
+            ],
+            "text": "TMPDIR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TMPDIR"
+        },
+        {
+            "bbox": [
+                541.3909313725491,
+                140.58159722222229,
+                373.25406821895433,
+                11.971275252525288
+            ],
+            "text": "The directory where temporary tables and files are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thư mục nơi các bảng và tệp tạm thời"
+        },
+        {
+            "bbox": [
+                541.3909313725491,
+                156.1119002525253,
+                55.855817401960735,
+                11.971275252525288
+            ],
+            "text": "created",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tạo"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                188.2260173611112,
+                723.99841625817,
+                11.971275252525174
+            ],
+            "text": "For a full list of environment variables used by MySQL programs, see Section 4.9, “Environment",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để biết danh sách đầy đủ các biến môi trường được sử dụng bởi các chương trình MySQL, xem Phần 4.9, Môi trường"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                203.7563203914142,
+                89.16831740196082,
+                11.971275252525288
+            ],
+            "text": "Variables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Biến"
+        },
+        {
+            "bbox": [
+                216.07068668300653,
+                203.7563203914142,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                234.0261363636364,
+                37.248362663398694,
+                19.15402746212112
+            ],
+            "text": "4.2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "4.2"
+        },
+        {
+            "bbox": [
+                104.9921568627451,
+                234.0261363636364,
+                306.74967320261436,
+                19.15402746212112
+            ],
+            "text": "Using MySQL Programs",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 16
+            },
+            "text_vi": "Sử dụng các chương trình MySQL"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                272.1905877525253,
+                52.147715767973864,
+                16.75972064393943
+            ],
+            "text": "4.2.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "4.2.1"
+        },
+        {
+            "bbox": [
+                118.96029411764707,
+                272.1905877525253,
+                299.68522916666666,
+                16.75972064393943
+            ],
+            "text": "Invoking MySQL Programs",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Gọi các chương trình MySQL"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                306.89299810606065,
+                770.6760955882353,
+                11.971275252525288
+            ],
+            "text": "To invoke a MySQL program from the command line (that is, from your shell or command prompt), enter",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để gọi một chương trình MySQL từ dòng lệnh (nghĩa là từ dấu nhắc của shell hoặc lệnh của bạn), nhập"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                322.42330113636376,
+                766.1372549019609,
+                11.971275252525174
+            ],
+            "text": "the program name followed by any options or other arguments needed to instruct the program what you",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tên chương trình theo sau là bất kỳ tùy chọn hoặc các đối số nào khác cần thiết để hướng dẫn chương trình những gì bạn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                337.95360416666676,
+                597.5816825980392,
+                11.971275252525174
+            ],
+            "text": "want it to do. The following commands show some sample program invocations. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "muốn nó làm. Các lệnh sau đây hiển thị một số lời mời chương trình mẫu. "
+        },
+        {
+            "bbox": [
+                738.2679571078431,
+                339.10546085858584,
+                60.29411764705878,
+                10.172322601010137
+            ],
+            "text": "shell>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Vỏ>"
+        },
+        {
+            "bbox": [
+                798.5620747549019,
+                337.95360416666676,
+                83.77525980392159,
+                11.971275252525174
+            ],
+            "text": " represents",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đại diện"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                353.48390719696977,
+                754.9325980392157,
+                11.97131407828283
+            ],
+            "text": "the prompt for your command interpreter; it is not part of what you type. The particular prompt you see",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "lời nhắc cho trình thông dịch lệnh của bạn; Nó không phải là một phần của những gì bạn gõ. Lời nhắc cụ thể mà bạn thấy"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                369.0142490530303,
+                444.93709150326805,
+                11.971275252525288
+            ],
+            "text": "depends on your command interpreter. Typical prompts are ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "phụ thuộc vào thông dịch lệnh của bạn. Lời nhắc điển hình là "
+        },
+        {
+            "bbox": [
+                585.623366013072,
+                370.16606691919196,
+                10.049019607843093,
+                10.17236142676768
+            ],
+            "text": "$",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "$"
+        },
+        {
+            "bbox": [
+                595.6723856209151,
+                369.0142490530303,
+                28.857451388888876,
+                11.971275252525288
+            ],
+            "text": " for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " vì "
+        },
+        {
+            "bbox": [
+                624.5298370098039,
+                370.16606691919196,
+                20.0980392156863,
+                10.17236142676768
+            ],
+            "text": "sh",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "sh"
+        },
+        {
+            "bbox": [
+                644.6278762254902,
+                369.0142490530303,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                653.9399677287582,
+                370.16606691919196,
+                30.14705882352939,
+                10.17236142676768
+            ],
+            "text": "ksh",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Ksh"
+        },
+        {
+            "bbox": [
+                684.0870265522876,
+                369.0142490530303,
+                28.857451388888876,
+                11.971275252525288
+            ],
+            "text": ", or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hoặc "
+        },
+        {
+            "bbox": [
+                712.9444276960784,
+                370.16606691919196,
+                40.1960784313726,
+                10.17236142676768
+            ],
+            "text": "bash",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "bash"
+        },
+        {
+            "bbox": [
+                753.140506127451,
+                369.0142490530303,
+                9.312091503267993,
+                11.971275252525288
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                762.452597630719,
+                370.16606691919196,
+                10.049019607843093,
+                10.17236142676768
+            ],
+            "text": "%",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phần trăm"
+        },
+        {
+            "bbox": [
+                772.5016172385621,
+                369.0142490530303,
+                28.85745138888899,
+                11.971275252525288
+            ],
+            "text": " for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " vì "
+        },
+        {
+            "bbox": [
+                801.359068627451,
+                370.16606691919196,
+                30.14705882352939,
+                10.17236142676768
+            ],
+            "text": "csh",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CSH"
+        },
+        {
+            "bbox": [
+                831.5061274509804,
+                369.0142490530303,
+                24.20140563725488,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                855.7075330882353,
+                370.16606691919196,
+                40.196128676470494,
+                10.17236142676768
+            ],
+            "text": "tcsh",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TCSH"
+        },
+        {
+            "bbox": [
+                895.9036617647058,
+                369.0142490530303,
+                37.24834926470601,
+                11.971275252525288
+            ],
+            "text": ", and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                385.69636994949497,
+                40.19607843137254,
+                10.17236142676768
+            ],
+            "text": "C:\\>",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "C: \\>"
+        },
+        {
+            "bbox": [
+                180.88235294117646,
+                384.54455208333343,
+                129.3811274509804,
+                11.971275252525174
+            ],
+            "text": " for the Windows ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cho các cửa sổ "
+        },
+        {
+            "bbox": [
+                310.26348039215685,
+                385.69636994949497,
+                110.53921568627453,
+                10.17236142676768
+            ],
+            "text": "command.com",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Command.com"
+        },
+        {
+            "bbox": [
+                420.8026960784314,
+                384.54455208333343,
+                24.201405637254936,
+                11.971275252525174
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                445.0041017156863,
+                385.69636994949497,
+                70.34313725490193,
+                10.17236142676768
+            ],
+            "text": "cmd.exe",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CMD.exe"
+        },
+        {
+            "bbox": [
+                515.3472389705883,
+                384.54455208333343,
+                172.18995098039215,
+                11.971275252525174
+            ],
+            "text": " command interpreters.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Chỉ huy thông dịch viên."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                412.66993087121216,
+                56.274509803921575,
+                8.137865845959595
+            ],
+            "text": "shell> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Vỏ> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                412.66993087121216,
+                176.8627450980392,
+                8.137865845959595
+            ],
+            "text": "mysql --user=root test",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "mysql --User = kiểm tra gốc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                425.094134469697,
+                56.274509803921575,
+                8.137917613636432
+            ],
+            "text": "shell> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Vỏ> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                425.094134469697,
+                289.41174795751635,
+                8.137917613636432
+            ],
+            "text": "mysqladmin extended-status variables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Mysqladmin các biến số tình trạng mở rộng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                437.51838983585867,
+                56.274509803921575,
+                8.137904671717138
+            ],
+            "text": "shell> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Vỏ> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                437.51838983585867,
+                128.62743423202616,
+                8.137904671717138
+            ],
+            "text": "mysqlshow --help",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "mysqlshow - -Help"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                449.94263226010105,
+                56.274509803921575,
+                8.137917613636432
+            ],
+            "text": "shell> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Vỏ> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                449.94263226010105,
+                217.05884027777776,
+                8.137917613636432
+            ],
+            "text": "mysqldump -u root personnel",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "mysqldump -u nhân viên gốc"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                476.9692809343435,
+                381.67852982026153,
+                11.971275252525174
+            ],
+            "text": "Arguments that begin with a single or double dash (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các đối số bắt đầu bằng một dấu gạch ngang đơn hoặc đôi ("
+        },
+        {
+            "bbox": [
+                522.3648043300655,
+                478.12108585858584,
+                10.049019607843093,
+                10.17237436868686
+            ],
+            "text": "-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-"
+        },
+        {
+            "bbox": [
+                532.4138239379085,
+                476.9692809343435,
+                9.312091503267993,
+                11.971275252525174
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                541.7259154411765,
+                478.12108585858584,
+                20.0980392156863,
+                10.17237436868686
+            ],
+            "text": "--",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-"
+        },
+        {
+            "bbox": [
+                561.8239546568628,
+                476.9692809343435,
+                319.25735294117646,
+                11.971275252525174
+            ],
+            "text": ") specify program options. Options typically",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ") Chỉ định tùy chọn chương trình. Tùy chọn thông thường"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                492.4995839646465,
+                783.8402945261437,
+                11.971275252525288
+            ],
+            "text": "indicate the type of connection a program should make to the server or affect its operational mode. Option",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho biết loại kết nối mà một chương trình sẽ thực hiện với máy chủ hoặc ảnh hưởng đến chế độ hoạt động của nó. Lựa chọn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                508.0298869949495,
+                519.0485608660131,
+                11.971275252525288
+            ],
+            "text": "syntax is described in Section 4.2.2, “Specifying Program Options”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cú pháp được mô tả trong Phần 4.2.2, Tùy chọn chương trình chỉ định"
+        },
+        {
+            "bbox": [
+                632.1670919117647,
+                508.0298869949495,
+                4.656045751633997,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                537.2320334595961,
+                754.0114546568627,
+                11.971275252525231
+            ],
+            "text": "Nonoption arguments (arguments with no leading dash) provide additional information to the program.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các đối số không tham gia (đối số không có dấu gạch ngang hàng đầu) cung cấp thêm thông tin cho chương trình."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                552.7623364898991,
+                130.31903594771245,
+                11.971275252525231
+            ],
+            "text": "For example, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ, "
+        },
+        {
+            "bbox": [
+                271.0053104575164,
+                553.9141414141415,
+                50.24509803921569,
+                10.17237436868686
+            ],
+            "text": "mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql"
+        },
+        {
+            "bbox": [
+                321.25040849673206,
+                552.7623364898991,
+                566.0110461601307,
+                11.971275252525231
+            ],
+            "text": " program interprets the first nonoption argument as a database name, so the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chương trình giải thích đối số không tham gia đầu tiên là tên cơ sở dữ liệu, vì vậy"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                568.2926395202021,
+                78.18135580065362,
+                11.971275252525231
+            ],
+            "text": "command ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "yêu cầu "
+        },
+        {
+            "bbox": [
+                218.86763031045754,
+                569.4444444444445,
+                221.07843137254898,
+                10.172374368686917
+            ],
+            "text": "mysql --user=root test",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql --User = kiểm tra gốc"
+        },
+        {
+            "bbox": [
+                439.9460616830065,
+                568.2926395202021,
+                257.891306372549,
+                11.971275252525231
+            ],
+            "text": " indicates that you want to use the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " chỉ ra rằng bạn muốn sử dụng "
+        },
+        {
+            "bbox": [
+                697.8374183006537,
+                569.4444444444445,
+                40.196078431372484,
+                10.172374368686917
+            ],
+            "text": "test",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bài kiểm tra"
+        },
+        {
+            "bbox": [
+                738.0334967320262,
+                568.2926395202021,
+                78.21490277777787,
+                11.971275252525231
+            ],
+            "text": " database.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cơ sở dữ liệu."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                597.4947730429294,
+                773.5400159313726,
+                11.971275252525231
+            ],
+            "text": "Later sections that describe individual programs indicate which options a program supports and describe",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các phần sau mô tả các chương trình riêng lẻ cho biết tùy chọn nào một chương trình hỗ trợ và mô tả"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                613.0250760732324,
+                385.4301470588235,
+                11.971275252525231
+            ],
+            "text": "the meaning of any additional nonoption arguments.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ý nghĩa của bất kỳ đối số không tham gia bổ sung."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                642.2272225378788,
+                712.140539624183,
+                11.971275252525231
+            ],
+            "text": "Some options are common to a number of programs. The most frequently used of these are the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một số tùy chọn là phổ biến cho một số chương trình. Được sử dụng thường xuyên nhất trong số này là "
+        },
+        {
+            "bbox": [
+                852.826814133987,
+                643.3790274621213,
+                60.29411764705878,
+                10.172374368686803
+            ],
+            "text": "--host",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--chủ nhà"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                657.7575255681818,
+                25.122549019607845,
+                11.971275252525288
+            ],
+            "text": "(or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "(hoặc "
+        },
+        {
+            "bbox": [
+                165.80882352941177,
+                658.9093304924243,
+                20.09803921568627,
+                10.17237436868686
+            ],
+            "text": "-h",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-H"
+        },
+        {
+            "bbox": [
+                185.90686274509804,
+                657.7575255681818,
+                14.889297385620921,
+                11.971275252525288
+            ],
+            "text": "), ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ") "
+        },
+        {
+            "bbox": [
+                200.79616013071896,
+                658.9093304924243,
+                60.29411764705881,
+                10.17237436868686
+            ],
+            "text": "--user",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-người dùng"
+        },
+        {
+            "bbox": [
+                261.09027777777777,
+                657.7575255681818,
+                29.778594771241842,
+                11.971275252525288
+            ],
+            "text": " (or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (hoặc "
+        },
+        {
+            "bbox": [
+                290.8688725490196,
+                658.9093304924243,
+                20.098039215686242,
+                10.17237436868686
+            ],
+            "text": "-u",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-U"
+        },
+        {
+            "bbox": [
+                310.96691176470586,
+                657.7575255681818,
+                47.4816176470589,
+                11.971275252525288
+            ],
+            "text": "), and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "), Và "
+        },
+        {
+            "bbox": [
+                358.44852941176475,
+                658.9093304924243,
+                100.49022957516337,
+                10.17237436868686
+            ],
+            "text": "--password",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "--mật khẩu"
+        },
+        {
+            "bbox": [
+                458.9387589869281,
+                657.7575255681818,
+                29.778544526143776,
+                11.971275252525288
+            ],
+            "text": " (or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (hoặc "
+        },
+        {
+            "bbox": [
+                488.7173035130719,
+                658.9093304924243,
+                20.098039215686242,
+                10.17237436868686
+            ],
+            "text": "-p",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-P"
+        },
+        {
+            "bbox": [
+                508.81534272875814,
+                657.7575255681818,
+                375.1466335784315,
+                11.971275252525288
+            ],
+            "text": ") options that specify connection parameters. They",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ") Tùy chọn chỉ định tham số kết nối. Họ"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                673.2878285984848,
+                763.3235461601307,
+                11.971275252525231
+            ],
+            "text": "indicate the host where the MySQL server is running, and the user name and password of your MySQL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cho biết máy chủ nơi máy chủ MySQL đang chạy và tên người dùng và mật khẩu của MySQL của bạn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                688.8181316287878,
+                779.1506683006537,
+                11.971275252525288
+            ],
+            "text": "account. All MySQL client programs understand these options; they enable you to specify which server to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tài khoản. Tất cả các chương trình khách hàng MySQL hiểu các tùy chọn này; chúng cho phép bạn chỉ định máy chủ nào"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                704.3484346590909,
+                587.4657030228759,
+                11.971275252525288
+            ],
+            "text": "connect to and the account to use on that server. Other connection options are ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kết nối và tài khoản để sử dụng trên máy chủ đó. Các tùy chọn kết nối khác là "
+        },
+        {
+            "bbox": [
+                728.1519775326798,
+                705.5002395833334,
+                60.2941176470589,
+                10.17237436868686
+            ],
+            "text": "--port",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Thể thao"
+        },
+        {
+            "bbox": [
+                788.4460951797387,
+                704.3484346590909,
+                29.77859477124173,
+                11.971275252525288
+            ],
+            "text": " (or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (hoặc "
+        },
+        {
+            "bbox": [
+                818.2246899509804,
+                705.5002395833334,
+                20.0980392156863,
+                10.17237436868686
+            ],
+            "text": "-P",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-P"
+        },
+        {
+            "bbox": [
+                838.3227291666667,
+                704.3484346590909,
+                80.9783496732025,
+                11.971275252525288
+            ],
+            "text": ") to specify",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ") để chỉ định"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                719.878737689394,
+                200.14297385620915,
+                11.971275252525231
+            ],
+            "text": "a TCP/IP port number and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "số cổng TCP/IP và "
+        },
+        {
+            "bbox": [
+                340.8292483660131,
+                721.0305426136364,
+                80.39215686274508,
+                10.17237436868686
+            ],
+            "text": "--socket",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-ổ cắm"
+        },
+        {
+            "bbox": [
+                421.22140522875816,
+                719.878737689394,
+                29.778594771241785,
+                11.971275252525231
+            ],
+            "text": " (or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (hoặc "
+        },
+        {
+            "bbox": [
+                450.99999999999994,
+                721.0305426136364,
+                20.0980392156863,
+                10.17237436868686
+            ],
+            "text": "-S",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-S"
+        },
+        {
+            "bbox": [
+                471.09803921568624,
+                719.878737689394,
+                461.68545751634,
+                11.971275252525231
+            ],
+            "text": ") to specify a Unix socket file on Unix (or named-pipe name on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ") để chỉ định tệp ổ cắm UNIX trên UNIX (hoặc tên-PIPE trên"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                735.409040719697,
+                805.9648190359478,
+                11.971275252525288
+            ],
+            "text": "Windows). For more information on options that specify connection options, see Section 4.2.4, “Connecting",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cửa sổ). Để biết thêm thông tin về các tùy chọn chỉ định các tùy chọn kết nối, xem Phần 4.2.4, Kết nối"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                750.9393825757577,
+                367.4758986928105,
+                11.971275252525231
+            ],
+            "text": "to the MySQL Server Using Command Options”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đến máy chủ MySQL bằng cách sử dụng các tùy chọn lệnh ”"
+        },
+        {
+            "bbox": [
+                494.37825122549015,
+                750.9393825757577,
+                4.656045751634053,
+                11.971275252525231
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                780.1414772727273,
+                606.9440526960784,
+                11.971275252525231
+            ],
+            "text": "You may find it necessary to invoke MySQL programs using the path name to the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể thấy cần phải gọi các chương trình MySQL bằng cách sử dụng tên đường dẫn đến "
+        },
+        {
+            "bbox": [
+                747.6303272058824,
+                781.2933339646465,
+                30.14705882352939,
+                10.172322601010052
+            ],
+            "text": "bin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "thùng"
+        },
+        {
+            "bbox": [
+                777.7773860294118,
+                780.1414772727273,
+                134.0204583333333,
+                11.971275252525231
+            ],
+            "text": " directory in which",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " thư mục trong đó"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                795.6717803030303,
+                602.8574513888889,
+                11.971275252525231
+            ],
+            "text": "they are installed. This is likely to be the case if you get a “program not found”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chúng được cài đặt. Đây có thể là trường hợp nếu bạn nhận được một chương trình \"không tìm thấy\""
+        },
+        {
+            "bbox": [
+                715.9758819444444,
+                795.6717803030303,
+                209.43830024509816,
+                11.971275252525231
+            ],
+            "text": " error whenever you attempt",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Lỗi bất cứ khi nào bạn thử"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                811.2020833333333,
+                435.64173161764705,
+                11.971275252525231
+            ],
+            "text": "to run a MySQL program from any directory other than the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "để chạy chương trình MySQL từ bất kỳ thư mục nào khác ngoài "
+        },
+        {
+            "bbox": [
+                576.328006127451,
+                812.3539400252525,
+                30.14705882352939,
+                10.172322601010052
+            ],
+            "text": "bin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "thùng"
+        },
+        {
+            "bbox": [
+                606.4750649509804,
+                811.2020833333333,
+                303.44687867647065,
+                11.971275252525231
+            ],
+            "text": " directory. To make it more convenient to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Thư mục. Để làm cho nó thuận tiện hơn"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                826.7323863636364,
+                350.9955232843138,
+                11.971275252525231
+            ],
+            "text": "use MySQL, you can add the path name of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng MySQL, bạn có thể thêm tên đường dẫn của "
+        },
+        {
+            "bbox": [
+                491.6817977941177,
+                827.8842430555555,
+                30.14705882352945,
+                10.17232260101008
+            ],
+            "text": "bin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "thùng"
+        },
+        {
+            "bbox": [
+                521.8288566176471,
+                826.7323863636364,
+                129.38112745098033,
+                11.971275252525231
+            ],
+            "text": " directory to your ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Thư mục đến của bạn "
+        },
+        {
+            "bbox": [
+                651.2099840686275,
+                827.8842430555555,
+                40.1960784313726,
+                10.17232260101008
+            ],
+            "text": "PATH",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CON ĐƯỜNG"
+        },
+        {
+            "bbox": [
+                691.4060625000001,
+                826.7323863636364,
+                218.75037499999996,
+                11.971275252525231
+            ],
+            "text": " environment variable setting.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cài đặt biến môi trường."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                842.2626893939394,
+                740.9979407679739,
+                11.97127525252526
+            ],
+            "text": "That enables you to run a program by typing only its name, not its entire path name. For example, if ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Điều đó cho phép bạn chạy một chương trình bằng cách gõ tên của nó, không phải toàn bộ tên đường dẫn của nó. Ví dụ, nếu "
+        },
+        {
+            "bbox": [
+                881.6842152777778,
+                843.4145460858585,
+                50.24509803921569,
+                10.17232260101008
+            ],
+            "text": "mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                857.7929924242424,
+                100.52369281045753,
+                11.971275252525288
+            ],
+            "text": "is installed in ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được cài đặt trong "
+        },
+        {
+            "bbox": [
+                241.20995057189543,
+                858.9448491161617,
+                200.98039215686276,
+                10.172322601010109
+            ],
+            "text": "/usr/local/mysql/bin",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "/usr/local/mysql/bin"
+        },
+        {
+            "bbox": [
+                442.1903929738562,
+                857.7929924242424,
+                320.2287246732027,
+                11.971275252525288
+            ],
+            "text": ", you can run the program by invoking it as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", bạn có thể chạy chương trình bằng cách gọi nó là "
+        },
+        {
+            "bbox": [
+                762.4191176470589,
+                858.9448491161617,
+                50.24509803921569,
+                10.172322601010109
+            ],
+            "text": "mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "mysql"
+        },
+        {
+            "bbox": [
+                812.6642156862746,
+                857.7929924242424,
+                94.96330228758166,
+                11.971275252525288
+            ],
+            "text": ", and it is not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", và nó không"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                873.3232954545455,
+                188.0338884803922,
+                11.97127525252526
+            ],
+            "text": "necessary to invoke it as ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cần thiết để gọi nó là "
+        },
+        {
+            "bbox": [
+                328.72017973856214,
+                874.4751521464647,
+                261.2745433006536,
+                10.172322601010109
+            ],
+            "text": "/usr/local/mysql/bin/mysql",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "/usr/local/mysql/bin/mysql"
+        },
+        {
+            "bbox": [
+                589.9946727941177,
+                873.3232954545455,
+                4.656045751633883,
+                11.97127525252526
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                902.5254781565657,
+                652.5330714869281,
+                11.971275252525245
+            ],
+            "text": "Consult the documentation for your command interpreter for instructions on setting your ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tham khảo tài liệu cho trình thông dịch lệnh của bạn để được hướng dẫn về việc thiết lập "
+        },
+        {
+            "bbox": [
+                793.219345996732,
+                903.6773270833334,
+                40.196078431372484,
+                10.172330366161617
+            ],
+            "text": "PATH",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CON ĐƯỜNG"
+        },
+        {
+            "bbox": [
+                833.4154244281045,
+                902.5254781565657,
+                67.94812091503275,
+                11.971275252525245
+            ],
+            "text": " variable.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " biến."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                918.0557811868687,
+                712.9779579248366,
+                11.971275252525245
+            ],
+            "text": "The syntax for setting environment variables is interpreter-specific. (Some information is given in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cú pháp để thiết lập các biến môi trường là dành riêng cho thông dịch viên. (Một số thông tin được đưa ra trong"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                27.936274509803923,
+                11.971275252525253
+            ],
+            "text": "342",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "342"
+        }
+    ]
+}

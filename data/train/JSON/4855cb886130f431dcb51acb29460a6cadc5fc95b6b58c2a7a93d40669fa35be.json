@@ -1,0 +1,1456 @@
+{
+    "metadata": {
+        "page_hash": "4855cb886130f431dcb51acb29460a6cadc5fc95b6b58c2a7a93d40669fa35be",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 1757,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                435.52447630718956,
+                48.370422979798036,
+                123.80393831699342,
+                11.971275252525288
+            ],
+            "text": "Invisible Indexes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ số vô hình"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                94.96133207070716,
+                775.4158161764706,
+                11.971275252525174
+            ],
+            "text": "re-adding an index can be expensive for a large table, whereas making it invisible and visible are fast, in-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhập lại một chỉ mục có thể tốn kém cho một bảng lớn, trong khi làm cho nó vô hình và có thể nhìn thấy nhanh chóng, trong-"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                110.49163510101016,
+                127.5387904411765,
+                11.971275252525288
+            ],
+            "text": "place operations.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Địa điểm hoạt động."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                138.72443181818198,
+                783.8067642973856,
+                11.971275252525174
+            ],
+            "text": "If an index made invisible actually is needed or used by the optimizer, there are several ways to notice the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu một chỉ mục được thực hiện vô hình là cần thiết hoặc được sử dụng bởi trình tối ưu hóa, có một số cách để nhận thấy"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                154.254734848485,
+                329.5743464052287,
+                11.971275252525288
+            ],
+            "text": "effect of its absence on queries for the table:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ảnh hưởng của sự vắng mặt của nó đối với các truy vấn cho bảng:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                182.48753156565658,
+                598.5363562091504,
+                11.971275252525288
+            ],
+            "text": "•Errors occur for queries that include index hints that refer to the invisible index.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Lỗi xảy ra đối với các truy vấn bao gồm các gợi ý chỉ mục đề cập đến chỉ mục vô hình."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                210.72034122474759,
+                601.3333500816993,
+                11.971275252525174
+            ],
+            "text": "•Performance Schema data shows an increase in workload for affected queries.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Dữ liệu lược đồ hiệu suất cho thấy sự gia tăng khối lượng công việc cho các truy vấn bị ảnh hưởng."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                238.95313794191918,
+                186.17483660130716,
+                11.971275252525288
+            ],
+            "text": "•Queries have different ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Truy vấn có khác nhau "
+        },
+        {
+            "bbox": [
+                326.8611111111111,
+                240.1049816919193,
+                70.34313725490199,
+                10.172335542929204
+            ],
+            "text": "EXPLAIN",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GIẢI THÍCH"
+        },
+        {
+            "bbox": [
+                397.2042483660131,
+                238.95313794191918,
+                125.67975531045761,
+                11.971275252525288
+            ],
+            "text": " execution plans.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " kế hoạch thực hiện."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                267.185934659091,
+                561.3382352941178,
+                11.971275252525174
+            ],
+            "text": "•Queries appear in the slow query log that did not appear there previously.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "• Truy vấn xuất hiện trong nhật ký truy vấn chậm không xuất hiện ở đó trước đây."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                308.1212380050505,
+                33.51348039215688,
+                11.971275252525288
+            ],
+            "text": "The ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các "
+        },
+        {
+            "bbox": [
+                174.1997549019608,
+                309.2730041035354,
+                211.0294285130719,
+                10.172413194444403
+            ],
+            "text": "use_invisible_indexes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "use_invisible_indexes"
+        },
+        {
+            "bbox": [
+                385.22914991830066,
+                308.1212380050505,
+                82.8709150326797,
+                11.971275252525288
+            ],
+            "text": " flag of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cờ của "
+        },
+        {
+            "bbox": [
+                468.10006495098037,
+                309.2730041035354,
+                160.78431372549016,
+                10.172413194444403
+            ],
+            "text": "optimizer_switch",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa_Switch"
+        },
+        {
+            "bbox": [
+                628.8843786764705,
+                308.1212380050505,
+                276.44852941176475,
+                11.971275252525288
+            ],
+            "text": " system variable controls whether the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Biến hệ thống kiểm soát xem có"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                323.6515410353536,
+                612.5044767156862,
+                11.971275252525174
+            ],
+            "text": "optimizer uses invisible indexes for query execution plan construction. If the flag is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tối ưu sử dụng các chỉ mục vô hình để xây dựng kế hoạch thực thi truy vấn. Nếu cờ là "
+        },
+        {
+            "bbox": [
+                753.1907512254902,
+                324.8033071338384,
+                30.14705882352939,
+                10.172413194444403
+            ],
+            "text": "off",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "tắt"
+        },
+        {
+            "bbox": [
+                783.3378100490196,
+                323.6515410353536,
+                98.68138929738564,
+                11.971275252525174
+            ],
+            "text": " (the default),",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " (mặc định),"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                339.1818440656566,
+                761.4477291666667,
+                11.971275252525288
+            ],
+            "text": "the optimizer ignores invisible indexes (the same behavior as prior to the introduction of this flag). If the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trình tối ưu hóa bỏ qua các chỉ mục vô hình (hành vi tương tự như trước khi giới thiệu cờ này). Nếu"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                354.7121470959596,
+                48.4027777777778,
+                11.971275252525288
+            ],
+            "text": "flag is ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cờ là "
+        },
+        {
+            "bbox": [
+                189.08905228758172,
+                355.8639131944444,
+                20.09803921568627,
+                10.172413194444516
+            ],
+            "text": "on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TRÊN"
+        },
+        {
+            "bbox": [
+                209.187091503268,
+                354.7121470959596,
+                698.138872140523,
+                11.971275252525288
+            ],
+            "text": ", invisible indexes remain invisible but the optimizer takes them into account for execution plan",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Các chỉ mục vô hình vẫn vô hình nhưng trình tối ưu hóa đưa chúng vào kế hoạch thực thi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                370.2424501262626,
+                94.94648692810458,
+                11.971275252525288
+            ],
+            "text": "construction.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sự thi công."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                398.4752468434343,
+                75.40114379084969,
+                11.971275252525288
+            ],
+            "text": "Using the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sử dụng "
+        },
+        {
+            "bbox": [
+                216.0874015522876,
+                399.6270517676768,
+                70.34313725490199,
+                10.17237436868686
+            ],
+            "text": "SET_VAR",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Set_var"
+        },
+        {
+            "bbox": [
+                286.4305555555556,
+                398.4752468434343,
+                274.63970588235287,
+                11.971275252525288
+            ],
+            "text": " optimizer hint to update the value of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tối ưu hóa gợi ý để cập nhật giá trị của "
+        },
+        {
+            "bbox": [
+                561.0702614379085,
+                399.6270517676768,
+                160.78431372549028,
+                10.17237436868686
+            ],
+            "text": "optimizer_switch",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Tối ưu hóa_Switch"
+        },
+        {
+            "bbox": [
+                721.8545751633987,
+                398.4752468434343,
+                210.37620874183006,
+                11.971275252525288
+            ],
+            "text": " temporarily, you can enable",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tạm thời, bạn có thể bật"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                414.00554987373744,
+                471.95222263071895,
+                11.971236426767632
+            ],
+            "text": "invisible indexes for the duration of a single query only, like this:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các chỉ mục vô hình trong suốt thời gian của một truy vấn duy nhất, như thế này:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                441.35565593434353,
+                56.274509803921575,
+                8.137917613636318
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                441.35565593434353,
+                610.9803754084967,
+                8.137917613636318
+            ],
+            "text": "EXPLAIN SELECT /*+ SET_VAR(optimizer_switch = ’use_invisible_indexes=on’) */",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Giải thích Chọn / *+ set_var (Optimizer_switch = xông use_invisible_indexes = on,) * /"
+        },
+        {
+            "bbox": [
+                180.88235294117646,
+                453.7799113005051,
+                16.078431372549034,
+                8.137917613636318
+            ],
+            "text": "> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "> "
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                453.7799113005051,
+                225.0980559640523,
+                8.137917613636318
+            ],
+            "text": "i, j FROM t1 WHERE j >= 50\\G",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "i, j từ t1 trong đó j> = 50 \\ g"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                466.20416666666677,
+                498.4313892973856,
+                8.137904671717138
+            ],
+            "text": "*************************** 1. row ***************************",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "****** / TÌM HIỂU 1. Hàng ****** / TÌM HIỂU"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                478.6283702651515,
+                40.19607843137251,
+                8.137917613636432
+            ],
+            "text": "id: 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "ID: 1"
+        },
+        {
+            "bbox": [
+                156.76470253267973,
+                491.05262563131316,
+                152.74510138888894,
+                8.137904671717138
+            ],
+            "text": "select_type: SIMPLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "select_type: đơn giản"
+        },
+        {
+            "bbox": [
+                205.00000000000003,
+                503.47686805555566,
+                72.3529579248366,
+                8.137917613636318
+            ],
+            "text": "table: t1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bảng: T1"
+        },
+        {
+            "bbox": [
+                164.80392491830065,
+                515.9011234217172,
+                128.62744763071896,
+                8.137917613636375
+            ],
+            "text": "partitions: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Phân vùng: NULL"
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                528.3253787878789,
+                88.43137254901961,
+                8.137904671717195
+            ],
+            "text": "type: range",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Loại: phạm vi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                540.7495823863637,
+                160.78431372549022,
+                8.137917613636318
+            ],
+            "text": "possible_keys: j_idx",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Có thể_keys: J_IDX"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                553.1738377525253,
+                80.39215686274511,
+                8.137904671717195
+            ],
+            "text": "key: j_idx",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Khóa: J_IDX"
+        },
+        {
+            "bbox": [
+                188.921568627451,
+                565.5980801767678,
+                80.39215686274508,
+                8.137917613636375
+            ],
+            "text": "key_len: 5",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "key_len: 5"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                578.0223355429293,
+                72.35294117647058,
+                8.137917613636318
+            ],
+            "text": "ref: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tham khảo: NULL"
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                590.4465909090909,
+                56.274509803921546,
+                8.137904671717195
+            ],
+            "text": "rows: 2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Hàng: 2"
+        },
+        {
+            "bbox": [
+                180.88235294117646,
+                602.8707945075757,
+                128.6274509803922,
+                8.137917613636318
+            ],
+            "text": "filtered: 100.00",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đã lọc: 100.00"
+        },
+        {
+            "bbox": [
+                204.999983251634,
+                615.2950498737374,
+                225.0980392156862,
+                8.137904671717195
+            ],
+            "text": "Extra: Using index condition",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thêm: Sử dụng điều kiện chỉ mục"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                640.1435476641415,
+                56.274509803921575,
+                8.137917613636318
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                196.9607843137255,
+                640.1435476641415,
+                345.68627450980387,
+                8.137917613636318
+            ],
+            "text": "EXPLAIN SELECT i, j FROM t1 WHERE j >= 50\\G",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Giải thích Chọn i, j từ t1 trong đó j> = 50 \\ g"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                652.5678030303031,
+                498.4313892973856,
+                8.137904671717195
+            ],
+            "text": "*************************** 1. row ***************************",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "****** / TÌM HIỂU 1. Hàng ****** / TÌM HIỂU"
+        },
+        {
+            "bbox": [
+                229.11764705882356,
+                664.992006628788,
+                40.19607843137251,
+                8.137917613636318
+            ],
+            "text": "id: 1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "ID: 1"
+        },
+        {
+            "bbox": [
+                156.76470253267973,
+                677.4162619949495,
+                152.74510138888894,
+                8.137904671717195
+            ],
+            "text": "select_type: SIMPLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "select_type: đơn giản"
+        },
+        {
+            "bbox": [
+                205.00000000000003,
+                689.840504419192,
+                72.3529579248366,
+                8.137917613636318
+            ],
+            "text": "table: t1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Bảng: T1"
+        },
+        {
+            "bbox": [
+                164.80392491830065,
+                702.2647597853536,
+                128.62744763071896,
+                8.137917613636318
+            ],
+            "text": "partitions: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Phân vùng: NULL"
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                714.6890151515152,
+                72.35292442810459,
+                8.137904671717138
+            ],
+            "text": "type: ALL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Loại: Tất cả"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                727.11321875,
+                152.7450980392157,
+                8.137917613636432
+            ],
+            "text": "possible_keys: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Có thể_keys: NULL"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                739.5374741161615,
+                72.35294117647058,
+                8.137904671717195
+            ],
+            "text": "key: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "KEY: NULL"
+        },
+        {
+            "bbox": [
+                188.921568627451,
+                751.961716540404,
+                104.50980392156862,
+                8.13787878787872
+            ],
+            "text": "key_len: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "key_len: null"
+        },
+        {
+            "bbox": [
+                221.07843137254903,
+                764.3859719065657,
+                72.35294117647058,
+                8.137827020201996
+            ],
+            "text": "ref: NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Tham khảo: NULL"
+        },
+        {
+            "bbox": [
+                213.03921568627453,
+                776.8102660984848,
+                56.274509803921546,
+                8.137827020202025
+            ],
+            "text": "rows: 5",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Hàng: 5"
+        },
+        {
+            "bbox": [
+                180.88235294117646,
+                789.2344696969697,
+                120.58823529411768,
+                8.137839962121205
+            ],
+            "text": "filtered: 33.33",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đã lọc: 33,33"
+        },
+        {
+            "bbox": [
+                205.00000000000003,
+                801.6587638888889,
+                144.7058823529412,
+                8.137827020201996
+            ],
+            "text": "Extra: Using where",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Thêm: Sử dụng ở đâu"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                827.7159851641414,
+                750.3435625,
+                11.971275252525231
+            ],
+            "text": "Index visibility does not affect index maintenance. For example, an index continues to be updated per",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khả năng hiển thị chỉ mục không ảnh hưởng đến bảo trì chỉ số. Ví dụ: một chỉ mục tiếp tục được cập nhật cho mỗi"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                843.2462881944444,
+                759.6388888888889,
+                11.971275252525231
+            ],
+            "text": "changes to table rows, and a unique index prevents insertion of duplicates into a column, regardless of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các thay đổi đối với các hàng bảng và một chỉ mục duy nhất ngăn chặn việc chèn các bản sao vào một cột, bất kể"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                858.7765912247474,
+                288.54084967320256,
+                11.97127525252526
+            ],
+            "text": "whether the index is visible or invisible.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cho dù chỉ số có thể nhìn thấy hay vô hình."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                887.0093879419192,
+                694.3370265522876,
+                11.971280429292946
+            ],
+            "text": "A table with no explicit primary key may still have an effective implicit primary key if it has any ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một bảng không có khóa chính rõ ràng vẫn có thể có khóa chính tiềm năng hiệu quả nếu nó có bất kỳ "
+        },
+        {
+            "bbox": [
+                835.0233010620916,
+                888.1612446338384,
+                60.29411764705878,
+                10.172327777777767
+            ],
+            "text": "UNIQUE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ĐỘC NHẤT"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                902.53969614899,
+                85.65114379084966,
+                11.97127525252526
+            ],
+            "text": "indexes on ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ mục trên "
+        },
+        {
+            "bbox": [
+                226.33741830065358,
+                903.6915463699495,
+                80.39215686274511,
+                10.172329071969713
+            ],
+            "text": "NOT NULL",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Không phải null"
+        },
+        {
+            "bbox": [
+                306.7295751633987,
+                902.53969614899,
+                618.0984477124184,
+                11.97127525252526
+            ],
+            "text": " columns. In this case, the first such index places the same constraint on table rows",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cột. Trong trường hợp này, chỉ mục đầu tiên như vậy đặt cùng một ràng buộc trên các hàng bảng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                918.069999179293,
+                778.2128602941177,
+                11.97127525252526
+            ],
+            "text": "as an explicit primary key and that index cannot be made invisible. Consider the following table definition:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Là một khóa chính rõ ràng và chỉ số đó không thể được thực hiện vô hình. Xem xét định nghĩa bảng sau:"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "1728",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1728"
+        }
+    ]
+}

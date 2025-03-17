@@ -1,0 +1,1496 @@
+{
+    "metadata": {
+        "page_hash": "3d06ffbdcdfc14de11cf926418827fc03c30208425e6cd2a49a69882d77afaac",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3186,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                424.7218137254902,
+                48.370422979798036,
+                205.703431372549,
+                11.971275252525288
+            ],
+            "text": "InnoDB Table Compression",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nén bàn innodb"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                108.53479103535358,
+                128.45996732026143,
+                11.971275252525288
+            ],
+            "text": "In a compressed ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trong một nén "
+        },
+        {
+            "bbox": [
+                299.29330065359477,
+                109.68663478535348,
+                60.29411764705884,
+                10.172335542929432
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                359.5874183006536,
+                108.53479103535358,
+                549.2291666666667,
+                11.971275252525288
+            ],
+            "text": " table, every compressed page (whether 1K, 2K, 4K or 8K) corresponds to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " bảng, mỗi trang nén (cho dù 1k, 2k, 4k hay 8k) tương ứng với"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                124.06509406565658,
+                422.61155310457514,
+                11.971275252525288
+            ],
+            "text": "an uncompressed page of 16K bytes (or a smaller size if ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "một trang không nén 16k byte (hoặc kích thước nhỏ hơn nếu "
+        },
+        {
+            "bbox": [
+                593.4448361928105,
+                125.21693781565659,
+                160.78431372549016,
+                10.172335542929318
+            ],
+            "text": "innodb_page_size",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_page_size"
+        },
+        {
+            "bbox": [
+                754.2291499183007,
+                124.06509406565658,
+                162.8945743464052,
+                11.971275252525288
+            ],
+            "text": " is set). To access the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được đặt). Để truy cập"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                139.59539709595958,
+                757.7797365196077,
+                11.971275252525288
+            ],
+            "text": "data in a page, MySQL reads the compressed page from disk if it is not already in the buffer pool, then",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Dữ liệu trong một trang, MySQL đọc trang nén từ đĩa nếu nó chưa có trong nhóm bộ đệm, sau đó"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                155.1257001262627,
+                530.5715036764706,
+                11.971275252525174
+            ],
+            "text": "uncompresses the page to its original form. This section describes how ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khai thác trang đến dạng ban đầu của nó. Phần này mô tả cách "
+        },
+        {
+            "bbox": [
+                701.4048370098039,
+                156.2775438762626,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                761.6989546568627,
+                155.1257001262627,
+                185.2704583333334,
+                11.971275252525174
+            ],
+            "text": " manages the buffer pool",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " quản lý nhóm đệm"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                170.6560031565657,
+                326.74387254901956,
+                11.971275252525288
+            ],
+            "text": "with respect to pages of compressed tables.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Đối với các trang của các bảng nén."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                199.75982986111114,
+                748.4845106209151,
+                11.971275252525288
+            ],
+            "text": "To minimize I/O and to reduce the need to uncompress a page, at times the buffer pool contains both",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để giảm thiểu I/O và để giảm nhu cầu giải nén một trang, đôi khi nhóm bộ đệm chứa cả hai"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                215.29013289141415,
+                776.3872549019607,
+                11.971275252525288
+            ],
+            "text": "the compressed and uncompressed form of a database page. To make room for other required database",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hình thức nén và không nén của trang cơ sở dữ liệu. Để nhường chỗ cho cơ sở dữ liệu cần thiết khác"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                230.82043592171715,
+                781.9644775326797,
+                11.971275252525288
+            ],
+            "text": "pages, MySQL can evict from the buffer pool an uncompressed page, while leaving the compressed page",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các trang, mysql có thể đuổi ra khỏi nhóm bộ đệm một trang không nén, trong khi để lại trang nén"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                246.35073895202027,
+                754.9661282679739,
+                11.971275252525174
+            ],
+            "text": "in memory. Or, if a page has not been accessed in a while, the compressed form of the page might be",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trong bộ nhớ. Hoặc, nếu một trang chưa được truy cập trong một thời gian, dạng nén của trang có thể"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                261.88104198232327,
+                781.076780637255,
+                11.971275252525174
+            ],
+            "text": "written to disk, to free space for other data. Thus, at any given time, the buffer pool might contain both the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Viết vào đĩa, để giải phóng không gian cho dữ liệu khác. Do đó, tại bất kỳ thời điểm nào, nhóm bộ đệm có thể chứa cả"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                277.41134501262627,
+                767.9963067810457,
+                11.971275252525288
+            ],
+            "text": "compressed and uncompressed forms of the page, or only the compressed form of the page, or neither.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các hình thức nén và không nén của trang, hoặc chỉ hình thức nén của trang, hoặc không."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                306.5151070075758,
+                747.4628937908496,
+                11.971275252525174
+            ],
+            "text": "MySQL keeps track of which pages to keep in memory and which to evict using a least-recently-used",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "MySQL theo dõi các trang nào cần giữ trong bộ nhớ và cần được đuổi bằng cách sử dụng một"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                322.0454100378788,
+                768.8672553104575,
+                11.971275252525174
+            ],
+            "text": "(LRU) list, so that hot (frequently accessed) data tends to stay in memory. When compressed tables are",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "(LRU) Danh sách, do đó dữ liệu nóng (thường xuyên được truy cập) có xu hướng ở trong bộ nhớ. Khi các bảng nén là"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                337.5757130681818,
+                750.2932671568626,
+                11.971275252525288
+            ],
+            "text": "accessed, MySQL uses an adaptive LRU algorithm to achieve an appropriate balance of compressed",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Truy cập, MySQL sử dụng thuật toán LRU thích ứng để đạt được sự cân bằng thích hợp của nén"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                353.1060160984848,
+                729.7597536764706,
+                11.971275252525402
+            ],
+            "text": "and uncompressed pages in memory. This adaptive algorithm is sensitive to whether the system is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "và các trang không nén trong bộ nhớ. Thuật toán thích ứng này nhạy cảm với việc liệu hệ thống có phải là"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                368.63631912878793,
+                771.7144942810459,
+                11.971275252525288
+            ],
+            "text": "running in an I/O-bound or CPU-bound manner. The goal is to avoid spending too much processing time",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chạy theo cách liên kết I/O hoặc liên kết CPU. Mục tiêu là tránh dành quá nhiều thời gian xử lý"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                384.16662215909093,
+                754.0281192810457,
+                11.971275252525288
+            ],
+            "text": "uncompressing pages when the CPU is busy, and to avoid doing excess I/O when the CPU has spare",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "giải quyết các trang khi CPU bận và để tránh làm quá mức I/O khi CPU có phụ tùng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                399.69692518939405,
+                762.3521074346405,
+                11.971275252525174
+            ],
+            "text": "cycles that can be used for uncompressing compressed pages (that may already be in memory). When",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các chu kỳ có thể được sử dụng cho các trang nén không nén (có thể đã có trong bộ nhớ). Khi"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                415.2272670454546,
+                777.3251633986928,
+                11.971275252525288
+            ],
+            "text": "the system is I/O-bound, the algorithm prefers to evict the uncompressed copy of a page rather than both",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hệ thống là I/O-giới hạn, thuật toán thích đuổi bản sao không nén của một trang thay vì cả hai"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                430.7575700757576,
+                767.8958165849674,
+                11.971275252525288
+            ],
+            "text": "copies, to make more room for other disk pages to become memory resident. When the system is CPU-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bản sao, để tạo thêm chỗ cho các trang đĩa khác để trở thành cư dân bộ nhớ. Khi hệ thống là CPU-"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                446.2878731060606,
+                775.4325812908497,
+                11.971275252525288
+            ],
+            "text": "bound, MySQL prefers to evict both the compressed and uncompressed page, so that more memory can",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ràng buộc, MySQL thích đuổi cả trang nén và không nén, để có nhiều bộ nhớ hơn có thể"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                461.8181761363637,
+                150.45057189542487,
+                11.971275252525174
+            ],
+            "text": "be used for “hot”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được sử dụng cho \"nóng\""
+        },
+        {
+            "bbox": [
+                293.71609477124184,
+                461.8181761363637,
+                647.8937238562092,
+                11.971275252525174
+            ],
+            "text": " pages and reducing the need to uncompress data in memory only in compressed form.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các trang và giảm nhu cầu giải nén dữ liệu trong bộ nhớ chỉ ở dạng nén."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                491.09922948232327,
+                396.15415931372553,
+                13.16842866161619
+            ],
+            "text": "Compression and the InnoDB Redo Log Files",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 11
+            },
+            "text_vi": "Nén và các tệp nhật ký làm lại Innodb"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                521.5787692550505,
+                754.0448843954248,
+                11.971275252525288
+            ],
+            "text": "Before a compressed page is written to a data file, MySQL writes a copy of the page to the redo log (if",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Trước khi một trang nén được ghi vào tệp dữ liệu, MySQL ghi một bản sao của trang vào nhật ký làm lại (nếu"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                537.1090722853536,
+                765.1993464052288,
+                11.971275252525231
+            ],
+            "text": "it has been recompressed since the last time it was written to the database). This is done to ensure that",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nó đã được tái hiện kể từ lần cuối cùng nó được ghi vào cơ sở dữ liệu). Điều này được thực hiện để đảm bảo rằng"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                552.6393753156566,
+                547.3701147875818,
+                11.971275252525288
+            ],
+            "text": "redo logs are usable for crash recovery, even in the unlikely case that the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhật ký làm lại có thể sử dụng để phục hồi sự cố, ngay cả trong trường hợp không thể xảy ra "
+        },
+        {
+            "bbox": [
+                718.2034481209151,
+                553.7911931818182,
+                40.196078431372484,
+                10.172361426767736
+            ],
+            "text": "zlib",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "zlib"
+        },
+        {
+            "bbox": [
+                758.3995265522876,
+                552.6393753156566,
+                175.0036597222221,
+                11.971275252525288
+            ],
+            "text": " library is upgraded and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Thư viện được nâng cấp và"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                568.1696783459597,
+                758.6506850490196,
+                11.971275252525231
+            ],
+            "text": "that change introduces a compatibility problem with the compressed data. Therefore, some increase in",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thay đổi đó giới thiệu một vấn đề tương thích với dữ liệu được nén. Do đó, một số sự gia tăng trong"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                583.6999813762627,
+                769.8721070261438,
+                11.971275252525288
+            ],
+            "text": "the size of log files, or a need for more frequent checkpoints, can be expected when using compression.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kích thước của các tệp nhật ký hoặc cần có các điểm kiểm tra thường xuyên hơn, có thể được mong đợi khi sử dụng nén."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                599.2302844065657,
+                736.3587103758169,
+                11.971275252525231
+            ],
+            "text": "The amount of increase in the log file size or checkpoint frequency depends on the number of times",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Lượng tăng kích thước tệp nhật ký hoặc tần số điểm kiểm tra phụ thuộc vào số lần"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                614.7605874368687,
+                664.625391748366,
+                11.971275252525288
+            ],
+            "text": "compressed pages are modified in a way that requires reorganization and recompression.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các trang nén được sửa đổi theo cách yêu cầu tổ chức lại và tái tạo."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                643.8643882575758,
+                445.89176511437904,
+                11.971275252525231
+            ],
+            "text": "To create a compressed table in a file-per-table tablespace, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Để tạo một bảng nén trong một không gian bảng cho mỗi bảng, "
+        },
+        {
+            "bbox": [
+                616.7250984477124,
+                645.0162061237374,
+                211.02941176470586,
+                10.17236142676768
+            ],
+            "text": "innodb_file_per_table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_file_per_table"
+        },
+        {
+            "bbox": [
+                827.7545102124183,
+                643.8643882575758,
+                133.13279493464051,
+                11.971275252525231
+            ],
+            "text": " must be enabled.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Phải được bật."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                659.3946912878788,
+                236.48692810457513,
+                11.971275252525231
+            ],
+            "text": "There is no dependence on the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không có sự phụ thuộc vào "
+        },
+        {
+            "bbox": [
+                407.32026143790847,
+                660.5465091540405,
+                211.02942851307193,
+                10.172361426767623
+            ],
+            "text": "innodb_file_per_table",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_file_per_table"
+        },
+        {
+            "bbox": [
+                618.3496899509804,
+                659.3946912878788,
+                345.3680890522876,
+                11.971275252525231
+            ],
+            "text": " setting when creating a compressed table in a",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cài đặt khi tạo bảng nén trong một"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                674.9249943181818,
+                675.4615845588235,
+                11.971275252525288
+            ],
+            "text": "general tablespace. For more information, see Section 15.6.3.3, “General Tablespaces”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không gian bảng chung. Để biết thêm thông tin, xem phần 15.6.3.3, không gian bảng chung"
+        },
+        {
+            "bbox": [
+                818.7271241830065,
+                674.9249943181818,
+                4.65604575163411,
+                11.971275252525288
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                90.44117647058823,
+                704.38464614899,
+                72.6343070261438,
+                14.365543244949492
+            ],
+            "text": "15.9.1.6",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "15.9.1.6"
+        },
+        {
+            "bbox": [
+                168.66272834967322,
+                704.38464614899,
+                328.32156862745103,
+                14.365543244949492
+            ],
+            "text": "Compression for OLTP Workloads",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Nén cho khối lượng công việc OLTP"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                736.2386047979799,
+                127.52205882352936,
+                11.971275252525231
+            ],
+            "text": "Traditionally, the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Theo truyền thống, "
+        },
+        {
+            "bbox": [
+                298.3553921568627,
+                737.3904097222222,
+                60.29411764705884,
+                10.17237436868686
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                358.64950980392155,
+                736.2386047979799,
+                580.7663733660132,
+                11.971275252525231
+            ],
+            "text": " compression feature was recommended primarily for read-only or read-mostly",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Tính năng nén được khuyến nghị chủ yếu cho chỉ đọc hoặc đọc nhiều nhất"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                751.7689466540404,
+                760.5265020424837,
+                11.971275252525288
+            ],
+            "text": "workloads, such as in a data warehouse configuration. The rise of SSD storage devices, which are fast",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khối lượng công việc, chẳng hạn như trong cấu hình kho dữ liệu. Sự gia tăng của các thiết bị lưu trữ SSD, nhanh"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                767.2992496843435,
+                545.4440526960784,
+                11.971275252525231
+            ],
+            "text": "but relatively small and expensive, makes compression attractive also for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhưng tương đối nhỏ và tốn kém, làm cho nén cũng hấp dẫn "
+        },
+        {
+            "bbox": [
+                716.2773860294118,
+                768.4510934343434,
+                40.196078431372484,
+                10.172335542929318
+            ],
+            "text": "OLTP",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "OLTP"
+        },
+        {
+            "bbox": [
+                756.4734644607843,
+                767.2992496843435,
+                172.18990073529415,
+                11.971275252525231
+            ],
+            "text": " workloads: high-traffic,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " khối lượng công việc: lưu lượng truy cập cao,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                782.8295527146465,
+                779.1340036764706,
+                11.97127525252526
+            ],
+            "text": "interactive websites can reduce their storage requirements and their I/O operations per second (IOPS) by",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các trang web tương tác có thể giảm các yêu cầu lưu trữ của họ và các hoạt động I/O của chúng mỗi giây (IOP) bằng cách"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                798.3598557449495,
+                439.3933991013072,
+                11.97127525252526
+            ],
+            "text": "using compressed tables with applications that do frequent ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sử dụng các bảng nén với các ứng dụng thường xuyên "
+        },
+        {
+            "bbox": [
+                610.2267324346406,
+                799.5116994949494,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "INSERT",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CHÈN"
+        },
+        {
+            "bbox": [
+                670.5208500816993,
+                798.3598557449495,
+                9.312074754902028,
+                11.97127525252526
+            ],
+            "text": ", ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Thì "
+        },
+        {
+            "bbox": [
+                679.8329248366014,
+                799.5116994949494,
+                60.29411764705878,
+                10.172335542929318
+            ],
+            "text": "UPDATE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "CẬP NHẬT"
+        },
+        {
+            "bbox": [
+                740.1270424836601,
+                798.3598557449495,
+                41.90439501633978,
+                11.97127525252526
+            ],
+            "text": ", and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", Và "
+        },
+        {
+            "bbox": [
+                782.0314374999999,
+                799.5116994949494,
+                60.2941176470589,
+                10.172335542929318
+            ],
+            "text": "DELETE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "XÓA BỎ"
+        },
+        {
+            "bbox": [
+                842.3255551470588,
+                798.3598557449495,
+                87.51021241830063,
+                11.97127525252526
+            ],
+            "text": " operations.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoạt động."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                827.4636047979798,
+                763.2900159313726,
+                11.97127525252526
+            ],
+            "text": "These configuration options let you adjust the way compression works for a particular MySQL instance,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các tùy chọn cấu hình này cho phép bạn điều chỉnh cách nén hoạt động cho một phiên bản MySQL cụ thể,"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                842.9939078282828,
+                584.5514538398693,
+                11.97127525252526
+            ],
+            "text": "with an emphasis on performance and scalability for write-intensive operations:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Với sự nhấn mạnh vào hiệu suất và khả năng mở rộng cho các hoạt động chuyên sâu viết:"
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                871.4661300505051,
+                19.361111111111114,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                872.6179867424243,
+                241.1764705882353,
+                10.172322601010109
+            ],
+            "text": "innodb_compression_level",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "innodb_compression_level"
+        },
+        {
+            "bbox": [
+                428.75816993464053,
+                871.4661300505051,
+                533.4186924019609,
+                11.97127525252526
+            ],
+            "text": " lets you turn the degree of compression up or down. A higher value lets",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Cho phép bạn chuyển cấp độ"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                886.9964330808081,
+                755.9039362745099,
+                11.971280429292918
+            ],
+            "text": "you fit more data onto a storage device, at the expense of more CPU overhead during compression. A",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "nén lên hoặc xuống. Giá trị cao hơn cho phép"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                902.5267412878788,
+                760.5265020424837,
+                11.971275252525245
+            ],
+            "text": "lower value lets you reduce CPU overhead when storage space is not critical, or you expect the data is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn phù hợp với nhiều dữ liệu hơn vào một thiết bị lưu trữ, với chi phí chi phí CPU nhiều hơn trong quá trình nén. MỘT"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                918.0570443181819,
+                209.42158537581702,
+                11.971275252525245
+            ],
+            "text": "not especially compressible.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị thấp hơn cho phép bạn giảm chi phí CPU khi không gian lưu trữ không quan trọng hoặc bạn mong đợi dữ liệu là"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "3157",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Không đặc biệt có thể nén."
+        }
+    ]
+}

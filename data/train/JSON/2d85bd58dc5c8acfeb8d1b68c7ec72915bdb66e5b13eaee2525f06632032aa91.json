@@ -1,0 +1,2276 @@
+{
+    "metadata": {
+        "page_hash": "2d85bd58dc5c8acfeb8d1b68c7ec72915bdb66e5b13eaee2525f06632032aa91",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3363,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                187.47283496732027,
+                48.370422979798036,
+                619.90727124183,
+                11.971275252525288
+            ],
+            "text": "Monitoring ALTER TABLE Progress for InnoDB Tables Using Performance Schema",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giám sát tiến trình thay đổi bảng cho các bảng Innodb bằng cách sử dụng lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                95.6731246843434,
+                78.22157197712419,
+                16.75979829545463
+            ],
+            "text": "15.16.1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "15.16.1"
+        },
+        {
+            "bbox": [
+                145.034152001634,
+                95.6731246843434,
+                678.7409296977124,
+                16.75979829545463
+            ],
+            "text": "Monitoring ALTER TABLE Progress for InnoDB Tables Using",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Giám sát tiến trình bảng thay đổi cho các bảng innodb bằng cách sử dụng"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                117.41553598484847,
+                239.77630718954248,
+                16.75979829545463
+            ],
+            "text": "Performance Schema",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 14
+            },
+            "text_vi": "Lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                151.0192550505052,
+                126.60089869281046,
+                11.971275252525174
+            ],
+            "text": "You can monitor ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bạn có thể theo dõi "
+        },
+        {
+            "bbox": [
+                267.2871732026144,
+                152.17111174242427,
+                110.53921568627453,
+                10.172322601010137
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                377.8263888888889,
+                151.0192550505052,
+                98.66462418300654,
+                11.971275252525174
+            ],
+            "text": " progress for ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tiến trình cho "
+        },
+        {
+            "bbox": [
+                476.49101307189545,
+                152.17111174242427,
+                60.29411764705884,
+                10.172322601010137
+            ],
+            "text": "InnoDB",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Innodb"
+        },
+        {
+            "bbox": [
+                536.7851307189543,
+                151.0192550505052,
+                265.2941008986928,
+                11.971275252525174
+            ],
+            "text": " tables using Performance Schema.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Bảng sử dụng lược đồ hiệu suất."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                179.12267140151516,
+                476.6585134803922,
+                11.971275252525288
+            ],
+            "text": "There are seven stage events that represent different phases of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Có bảy sự kiện giai đoạn đại diện cho các giai đoạn khác nhau của "
+        },
+        {
+            "bbox": [
+                617.3447879901961,
+                180.2744375000001,
+                110.53921568627447,
+                10.172413194444403
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                727.8840036764706,
+                179.12267140151516,
+                195.50369321895425,
+                11.971275252525288
+            ],
+            "text": ". Each stage event reports",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ". Mỗi sự kiện giai đoạn báo cáo"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                194.65297443181828,
+                129.41460743464052,
+                11.971275252525174
+            ],
+            "text": "a running total of ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tổng số hoạt động "
+        },
+        {
+            "bbox": [
+                270.10088194444444,
+                195.8047405303031,
+                140.68627450980392,
+                10.172413194444403
+            ],
+            "text": "WORK_COMPLETED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Work_completed"
+        },
+        {
+            "bbox": [
+                410.7871732026144,
+                194.65297443181828,
+                37.24838276143794,
+                11.971275252525174
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                448.0355559640523,
+                195.8047405303031,
+                140.68627450980392,
+                10.172413194444403
+            ],
+            "text": "WORK_ESTIMATED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Work_estimated"
+        },
+        {
+            "bbox": [
+                588.7218304738562,
+                194.65297443181828,
+                110.7737095588235,
+                11.971275252525174
+            ],
+            "text": " for the overall ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " cho tổng thể "
+        },
+        {
+            "bbox": [
+                699.4954897875817,
+                195.8047405303031,
+                110.53921568627447,
+                10.172413194444403
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                810.0347054738562,
+                194.65297443181828,
+                96.82225367647061,
+                11.971275252525174
+            ],
+            "text": " operation as",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Hoạt động như"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                210.18327746212128,
+                311.85459191176477,
+                11.971275252525288
+            ],
+            "text": "it progresses through its different phases. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nó tiến triển thông qua các giai đoạn khác nhau của nó. "
+        },
+        {
+            "bbox": [
+                452.5408664215687,
+                211.3350435606061,
+                140.68627450980387,
+                10.172413194444516
+            ],
+            "text": "WORK_ESTIMATED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Work_estimated"
+        },
+        {
+            "bbox": [
+                593.2271409313726,
+                210.18327746212128,
+                293.2304256535948,
+                11.971275252525288
+            ],
+            "text": " is calculated using a formula that takes",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được tính toán bằng cách sử dụng một công thức"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                225.71358049242428,
+                235.53227124183007,
+                11.971275252525288
+            ],
+            "text": "into account all of the work that ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tính đến tất cả các công việc "
+        },
+        {
+            "bbox": [
+                376.218545751634,
+                226.8653465909091,
+                110.53921568627453,
+                10.172413194444516
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                486.7577614379085,
+                225.71358049242428,
+                282.0424836601307,
+                11.971275252525288
+            ],
+            "text": " performs, and may be revised during ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " biểu diễn và có thể được sửa đổi trong "
+        },
+        {
+            "bbox": [
+                768.8002450980392,
+                226.8653465909091,
+                110.5392659313726,
+                10.172413194444516
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                241.2438835227273,
+                90.29044117647058,
+                11.971275252525288
+            ],
+            "text": "processing. ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "xử lý. "
+        },
+        {
+            "bbox": [
+                230.9767156862745,
+                242.39564962121221,
+                140.68627450980395,
+                10.172413194444403
+            ],
+            "text": "WORK_COMPLETED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Work_completed"
+        },
+        {
+            "bbox": [
+                371.66299019607845,
+                241.2438835227273,
+                37.24838276143794,
+                11.971275252525288
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                408.91133946078435,
+                242.39564962121221,
+                140.68627450980387,
+                10.172413194444403
+            ],
+            "text": "WORK_ESTIMATED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Work_estimated"
+        },
+        {
+            "bbox": [
+                549.5976139705882,
+                241.2438835227273,
+                367.7270739379086,
+                11.971275252525288
+            ],
+            "text": " values are an abstract representation of all of the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Giá trị là một đại diện trừu tượng của tất cả các"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                256.7741865530304,
+                143.3325163398693,
+                11.971275252525174
+            ],
+            "text": "work performed by ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "công việc được thực hiện bởi "
+        },
+        {
+            "bbox": [
+                284.0187908496732,
+                257.9259526515152,
+                110.53921568627453,
+                10.172413194444403
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                394.55800653594775,
+                256.7741865530304,
+                4.656045751633997,
+                11.971275252525174
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                284.8775252525253,
+                173.14460784313724,
+                11.971275252525288
+            ],
+            "text": "In order of occurrence, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Theo thứ tự xảy ra, "
+        },
+        {
+            "bbox": [
+                313.83088235294116,
+                286.0293690025253,
+                110.53921568627453,
+                10.172335542929318
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                424.3700980392157,
+                284.8775252525253,
+                161.99021282679735,
+                11.971275252525288
+            ],
+            "text": " stage events include:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các sự kiện giai đoạn bao gồm:"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                312.9809286616162,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                314.1327077020202,
+                522.5490196078431,
+                10.172400252525335
+            ],
+            "text": "stage/innodb/alter table (read PK and internal sort)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bảng/bảng innodb/thay đổi (đọc PK và sắp xếp nội bộ)"
+        },
+        {
+            "bbox": [
+                679.9836601307189,
+                312.9809286616162,
+                151.7234477124183,
+                11.971275252525288
+            ],
+            "text": ": This stage is active",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Giai đoạn này đang hoạt động"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                328.5112316919192,
+                44.68464052287584,
+                11.971275252525288
+            ],
+            "text": "when ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "khi "
+        },
+        {
+            "bbox": [
+                202.11928104575165,
+                329.6630107323232,
+                110.53919893790848,
+                10.172400252525335
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                312.65847998366013,
+                328.5112316919192,
+                369.51921609477125,
+                11.971275252525288
+            ],
+            "text": " is in the reading-primary-key phase. It starts with ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " là trong giai đoạn đọc chính. Nó bắt đầu với "
+        },
+        {
+            "bbox": [
+                682.1776960784314,
+                329.6630107323232,
+                160.78431372549016,
+                10.172400252525335
+            ],
+            "text": "WORK_COMPLETED=0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Work_completed = 0"
+        },
+        {
+            "bbox": [
+                842.9620098039215,
+                328.5112316919192,
+                32.59235375817002,
+                11.971275252525288
+            ],
+            "text": " and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                345.1933137626263,
+                140.68627450980395,
+                10.172400252525222
+            ],
+            "text": "WORK_ESTIMATED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Work_estimated"
+        },
+        {
+            "bbox": [
+                298.12091503267976,
+                344.0415347222222,
+                561.3382855392158,
+                11.971275252525288
+            ],
+            "text": " set to the estimated number of pages in the primary key. When the stage is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Đặt thành số trang ước tính trong khóa chính. Khi sân khấu là"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                359.5718377525253,
+                86.57230392156865,
+                11.971275252525174
+            ],
+            "text": "completed, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "hoàn thành, "
+        },
+        {
+            "bbox": [
+                244.00694444444446,
+                360.7236167929293,
+                140.68627450980392,
+                10.172400252525222
+            ],
+            "text": "WORK_ESTIMATED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Work_estimated"
+        },
+        {
+            "bbox": [
+                384.6932189542484,
+                359.5718377525253,
+                449.6433823529413,
+                11.971275252525174
+            ],
+            "text": " is updated to the actual number of pages in the primary key.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được cập nhật lên số lượng trang thực tế trong khóa chính."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                387.6751764520202,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                388.8270202020202,
+                371.813725490196,
+                10.172335542929318
+            ],
+            "text": "stage/innodb/alter table (merge sort)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "giai đoạn/bảng innodb/thay đổi (sắp xếp hợp nhất)"
+        },
+        {
+            "bbox": [
+                529.2483660130719,
+                387.6751764520202,
+                385.43014705882354,
+                11.971275252525288
+            ],
+            "text": ": This stage is repeated for each index added by the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Giai đoạn này được lặp lại cho mỗi chỉ mục được thêm vào"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                404.3573232323232,
+                110.5392156862745,
+                10.172335542929318
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                267.9738562091503,
+                403.2054794823232,
+                79.13602941176475,
+                11.971275252525288
+            ],
+            "text": " operation.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoạt động."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                431.3088828914142,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                432.46070075757575,
+                331.61764705882354,
+                10.172361426767793
+            ],
+            "text": "stage/innodb/alter table (insert)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Giai đoạn/Innodb/ALTER BẢNG (Chèn)"
+        },
+        {
+            "bbox": [
+                489.0522875816994,
+                431.3088828914142,
+                390.08624305555554,
+                11.971275252525288
+            ],
+            "text": ": This stage is repeated for each index added by the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Giai đoạn này được lặp lại cho mỗi chỉ mục được thêm vào "
+        },
+        {
+            "bbox": [
+                879.1385306372549,
+                432.46070075757575,
+                50.24509803921569,
+                10.172361426767793
+            ],
+            "text": "ALTER",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                447.99100378787875,
+                50.24509803921569,
+                10.172361426767793
+            ],
+            "text": "TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BÀN"
+        },
+        {
+            "bbox": [
+                207.6797385620915,
+                446.8391859217172,
+                79.13602941176472,
+                11.971275252525288
+            ],
+            "text": " operation.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoạt động."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                474.94256344696976,
+                19.361107761437893,
+                11.971275252525174
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                476.0943813131314,
+                422.0588235294117,
+                10.172361426767566
+            ],
+            "text": "stage/innodb/alter table (log apply index)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "BẢNG/BẢNG INNODB/ALTER (Chỉ mục áp dụng nhật ký)"
+        },
+        {
+            "bbox": [
+                579.4934640522875,
+                474.94256344696976,
+                350.94522794117654,
+                11.971275252525174
+            ],
+            "text": ": This stage includes the application of DML log",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Giai đoạn này bao gồm việc áp dụng nhật ký DML"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                490.47286647727276,
+                122.8827614379085,
+                11.971275252525288
+            ],
+            "text": "generated while ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "tạo ra trong khi "
+        },
+        {
+            "bbox": [
+                280.3174019607843,
+                491.6246843434344,
+                110.53921568627453,
+                10.17236142676768
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                390.85661764705884,
+                490.47286647727276,
+                99.60253267973854,
+                11.971275252525288
+            ],
+            "text": " was running.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đã chạy."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                518.5762440025253,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                519.7280489267678,
+                321.56862745098044,
+                10.172374368686917
+            ],
+            "text": "stage/innodb/alter table (flush)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Giai đoạn/Innodb/ALTER BẢNG (Flush)"
+        },
+        {
+            "bbox": [
+                479.0032679738562,
+                518.5762440025253,
+                198.3006368464052,
+                11.971275252525288
+            ],
+            "text": ": Before this stage begins, ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Trước khi giai đoạn này bắt đầu, "
+        },
+        {
+            "bbox": [
+                677.3039048202614,
+                519.7280489267678,
+                140.68627450980398,
+                10.172374368686917
+            ],
+            "text": "WORK_ESTIMATED",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Work_estimated"
+        },
+        {
+            "bbox": [
+                817.9901793300654,
+                518.5762440025253,
+                116.3676638071895,
+                11.971275252525288
+            ],
+            "text": " is updated with",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được cập nhật với"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                534.1065470328283,
+                461.75246772875823,
+                11.971275252525231
+            ],
+            "text": "a more accurate estimate, based on the length of the flush list.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Một ước tính chính xác hơn, dựa trên độ dài của danh sách Flush."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                562.2099116161617,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                563.3617294823232,
+                422.0588235294117,
+                10.172361426767736
+            ],
+            "text": "stage/innodb/alter table (log apply table)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "giai đoạn/innoDB/alter bảng (bảng áp dụng nhật ký)"
+        },
+        {
+            "bbox": [
+                579.4934640522875,
+                562.2099116161617,
+                283.93509926470597,
+                11.971275252525288
+            ],
+            "text": ": This stage includes the application of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Giai đoạn này bao gồm việc áp dụng"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                577.7402146464647,
+                273.6682839052288,
+                11.971275252525231
+            ],
+            "text": "concurrent DML log generated while ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nhật ký DML đồng thời được tạo trong khi "
+        },
+        {
+            "bbox": [
+                431.1029244281046,
+                578.8920325126262,
+                110.53921568627453,
+                10.172361426767736
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                541.6421401143791,
+                577.7402146464647,
+                390.0862095588234,
+                11.971275252525231
+            ],
+            "text": " was running. The duration of this phase depends on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đã chạy. Thời lượng của giai đoạn này phụ thuộc vào"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                593.2705176767677,
+                683.3165682189542,
+                11.971275252525288
+            ],
+            "text": "the extent of table changes. This phase is instant if no concurrent DML was run on the table.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Mức độ thay đổi bảng. Giai đoạn này là ngay lập tức nếu không có DML đồng thời được chạy trên bàn."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                621.3738952020202,
+                19.361107761437893,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                622.5257001262626,
+                301.47058823529414,
+                10.172374368686917
+            ],
+            "text": "stage/innodb/alter table (end)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Giai đoạn/Innodb/ALTER BẢNG (kết thúc)"
+        },
+        {
+            "bbox": [
+                458.9052287581699,
+                621.3738952020202,
+                435.6752450980393,
+                11.971275252525288
+            ],
+            "text": ": Includes any remaining work that appeared after the flush",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ": Bao gồm bất kỳ công việc còn lại xuất hiện sau khi tuôn ra"
+        },
+        {
+            "bbox": [
+                157.4346405228758,
+                636.9041982323233,
+                513.8733827614379,
+                11.971275252525231
+            ],
+            "text": "phase, such as reapplying DML that was executed on the table while ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "giai đoạn, chẳng hạn như áp dụng lại DML đã được thực hiện trên bàn trong khi "
+        },
+        {
+            "bbox": [
+                671.3080232843138,
+                638.0560031565657,
+                110.53921568627447,
+                10.17237436868686
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                781.8472389705883,
+                636.9041982323233,
+                99.60258292483661,
+                11.971275252525231
+            ],
+            "text": " was running.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " đã chạy."
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                665.0075757575758,
+                37.214869281045765,
+                11.971275252525231
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                694.2627582070706,
+                175.48934558823538,
+                10.17236142676768
+            ],
+            "text": "InnoDB ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Bảng thay đổi innodb"
+        },
+        {
+            "bbox": [
+                457.1968619281046,
+                693.1109403409091,
+                417.08460906862734,
+                11.971275252525288
+            ],
+            "text": " stage events do not currently account for the addition of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " các sự kiện giai đoạn hiện không tính đến việc bổ sung"
+        },
+        {
+            "bbox": [
+                281.70751633986924,
+                708.6412433712121,
+                115.42973856209159,
+                11.971275252525231
+            ],
+            "text": "spatial indexes.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chỉ số không gian."
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                737.1005495580807,
+                609.7543950163399,
+                14.365543244949492
+            ],
+            "text": "ALTER TABLE Monitoring Example Using Performance Schema",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 12
+            },
+            "text_vi": "Ví dụ theo dõi bảng thay đổi bằng cách sử dụng lược đồ hiệu suất"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                767.9540849116162,
+                414.25408496732024,
+                11.971275252525231
+            ],
+            "text": "The following example demonstrates how to enable the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Ví dụ sau đây trình bày cách bật "
+        },
+        {
+            "bbox": [
+                554.9403594771242,
+                769.1059286616162,
+                251.22549019607845,
+                10.172335542929261
+            ],
+            "text": "stage/innodb/alter table%",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Giai đoạn/Innodb/ALTER BẢNG%"
+        },
+        {
+            "bbox": [
+                806.1658496732026,
+                767.9540849116162,
+                91.24511478758177,
+                11.971275252525231
+            ],
+            "text": " stage event",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " sự kiện sân khấu"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                783.4843879419192,
+                386.3010453431372,
+                11.971275252525231
+            ],
+            "text": "instruments and related consumer tables to monitor ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "công cụ và bảng tiêu dùng liên quan để giám sát "
+        },
+        {
+            "bbox": [
+                526.9873198529411,
+                784.6362316919192,
+                110.53921568627459,
+                10.172335542929261
+            ],
+            "text": "ALTER TABLE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Thay đổi bảng"
+        },
+        {
+            "bbox": [
+                637.5265355392157,
+                783.4843879419192,
+                238.2957516339868,
+                11.971275252525231
+            ],
+            "text": " progress. For information about",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " tiến triển. Để biết thông tin về"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                799.0146909722223,
+                801.3088235294119,
+                11.971275252525231
+            ],
+            "text": "Performance Schema stage event instruments and related consumers, see Section 27.12.5, “Performance",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Các công cụ sự kiện giai đoạn biểu đồ và người tiêu dùng liên quan, xem Phần 27.12.5, Hiệu suất của Hồi giáo"
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                814.5449940025253,
+                231.6131368464052,
+                11.97127525252526
+            ],
+            "text": "Schema Stage Event Tables”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bảng sự kiện giai đoạn lược đồ ”"
+        },
+        {
+            "bbox": [
+                358.515522875817,
+                814.5449940025253,
+                4.656045751633997,
+                11.97127525252526
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                140.68627450980392,
+                842.6484103535354,
+                13.968130555555547,
+                11.971275252525231
+            ],
+            "text": "1.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "1."
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                842.6484103535354,
+                84.72998366013073,
+                11.971275252525231
+            ],
+            "text": "Enable the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bật "
+        },
+        {
+            "bbox": [
+                252.2136437908497,
+                843.8002541035354,
+                190.93137254901956,
+                10.17233554292929
+            ],
+            "text": "stage/innodb/alter%",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "giai đoạn/innodb/thay đổi%"
+        },
+        {
+            "bbox": [
+                443.14501633986924,
+                842.6484103535354,
+                95.86763031045757,
+                11.971275252525231
+            ],
+            "text": " instruments:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Dụng cụ:"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                869.8950069444445,
+                56.27452655228757,
+                8.137827020202025
+            ],
+            "text": "mysql> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "mysql> "
+        },
+        {
+            "bbox": [
+                223.75818668300653,
+                869.8950069444445,
+                345.6862577614379,
+                8.137827020202025
+            ],
+            "text": "UPDATE performance_schema.setup_instruments",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Cập nhật hiệu suất_schema.setup_instrument"
+        },
+        {
+            "bbox": [
+                223.75818668300653,
+                882.3192105429293,
+                152.74506454248368,
+                8.137827020202025
+            ],
+            "text": "SET ENABLED = ’YES’",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Đặt ENABLE =, Có Có"
+        },
+        {
+            "bbox": [
+                223.75818668300653,
+                894.7435047348486,
+                305.4901793300653,
+                8.137828314393929
+            ],
+            "text": "WHERE NAME LIKE ’stage/innodb/alter%’;",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "Trong đó tên như giai đoạn/innodb/thay đổi%,;"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                907.1677122159091,
+                289.41174795751635,
+                8.137832196969697
+            ],
+            "text": "Query OK, 7 rows affected (0.00 sec)",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Truy vấn ok, 7 hàng bị ảnh hưởng (0,00 giây)"
+        },
+        {
+            "bbox": [
+                167.48366013071896,
+                919.5920025252525,
+                120.58823529411765,
+                8.137830902777779
+            ],
+            "text": "Rows matched: 7",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Hàng phù hợp: 7"
+        },
+        {
+            "bbox": [
+                304.15034354575164,
+                919.5920025252525,
+                80.39215686274508,
+                8.137830902777779
+            ],
+            "text": "Changed: 7",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Đã thay đổi: 7"
+        },
+        {
+            "bbox": [
+                400.6209150326797,
+                919.5920025252525,
+                88.43137254901967,
+                8.137830902777779
+            ],
+            "text": "Warnings: 0",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Cảnh báo: 0"
+        },
+        {
+            "bbox": [
+                60.294117647058826,
+                964.6583160037878,
+                37.248362663398694,
+                11.971275252525253
+            ],
+            "text": "3334",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3334"
+        }
+    ]
+}

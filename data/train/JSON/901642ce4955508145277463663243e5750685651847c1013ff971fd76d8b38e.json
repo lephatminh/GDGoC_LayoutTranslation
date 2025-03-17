@@ -1,0 +1,1616 @@
+{
+    "metadata": {
+        "page_hash": "901642ce4955508145277463663243e5750685651847c1013ff971fd76d8b38e",
+        "original_filename": "refman-8.0-en.pdf",
+        "page_no": 3542,
+        "num_pages": 6228,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                326.96160130718954,
+                48.370422979798036,
+                401.2238562091503,
+                11.971275252525288
+            ],
+            "text": "Replication and Binary Logging Options and Variables",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn sao chép và ghi nhật ký nhị phân và các biến"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                94.96133207070716,
+                726.0751968954249,
+                11.971275252525174
+            ],
+            "text": "as literal colons. For example, to configure a channel specific replication filter on a channel named",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "như những đại phân tử theo nghĩa đen. Ví dụ: để định cấu hình bộ lọc sao chép cụ thể kênh trên kênh có tên"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                111.64347885101006,
+                90.44117647058823,
+                10.172335542929432
+            ],
+            "text": "channel_1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "Channel_1"
+        },
+        {
+            "bbox": [
+                278.02287581699346,
+                110.49163510101016,
+                40.966486519607884,
+                11.971275252525288
+            ],
+            "text": ", use:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", sử dụng:"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                140.1040145202021,
+                56.27452655228757,
+                8.137917613636318
+            ],
+            "text": "shell> ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 8
+            },
+            "text_vi": "Vỏ> "
+        },
+        {
+            "bbox": [
+                243.8562258986928,
+                140.1040145202021,
+                241.1764705882353,
+                8.137917613636318
+            ],
+            "text": "mysqld --replicate-rewrite-db=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "MySQLD-Replicate-reprite-db ="
+        },
+        {
+            "bbox": [
+                485.0326964869281,
+                140.1040145202021,
+                72.35295792483669,
+                8.137917613636318
+            ],
+            "text": "channel_1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-BoldOblique",
+                "size": 8
+            },
+            "text_vi": "Channel_1"
+        },
+        {
+            "bbox": [
+                557.3856041666667,
+                140.1040145202021,
+                8.039198937908509,
+                8.137917613636318
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                565.4248533496732,
+                140.1040145202021,
+                64.31370874183006,
+                8.137917613636318
+            ],
+            "text": "db_name1",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-BoldOblique",
+                "size": 8
+            },
+            "text_vi": "db_name1"
+        },
+        {
+            "bbox": [
+                629.7385620915032,
+                140.1040145202021,
+                16.078448120915027,
+                8.137917613636318
+            ],
+            "text": "->",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Bold",
+                "size": 8
+            },
+            "text_vi": "->"
+        },
+        {
+            "bbox": [
+                645.8170102124183,
+                140.1040145202021,
+                64.31370874183017,
+                8.137917613636318
+            ],
+            "text": "db_name2",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-BoldOblique",
+                "size": 8
+            },
+            "text_vi": "db_name2"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                168.98912279040417,
+                725.2210134803921,
+                11.971275252525174
+            ],
+            "text": "If you use a colon but do not specify a channel name, the option configures the replication filter for",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Nếu bạn sử dụng dấu hai chấm nhưng không chỉ định tên kênh, tùy chọn định cấu hình bộ lọc sao chép cho"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                184.51942582070717,
+                687.5873848039216,
+                11.971275252525174
+            ],
+            "text": "the default replication channel. See Section 17.2.5.4, “Replication Channel Based Filters”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "kênh sao chép mặc định. Xem phần 17.2.5.4, Bộ lọc dựa trên kênh sao chép của Nhật Bản"
+        },
+        {
+            "bbox": [
+                847.6012904411765,
+                184.51942582070717,
+                67.01017892156858,
+                11.971275252525174
+            ],
+            "text": " for more",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Để biết thêm"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                200.04972885101017,
+                87.49348080065363,
+                11.971275252525288
+            ],
+            "text": "information.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "thông tin."
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                231.11033491161618,
+                37.214869281045765,
+                11.971275252525288
+            ],
+            "text": "Note",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica-Bold",
+                "size": 10
+            },
+            "text_vi": "Ghi chú"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                262.1709409722223,
+                558.5244930555555,
+                11.971275252525288
+            ],
+            "text": "Global replication filters cannot be used on a MySQL server instance that is",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bộ lọc sao chép toàn cầu không thể được sử dụng trên phiên bản máy chủ MySQL"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                277.7012440025253,
+                595.7394125816995,
+                11.971275252525288
+            ],
+            "text": "configured for Group Replication, because filtering transactions on some servers",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "được cấu hình để sao chép nhóm, vì việc lọc các giao dịch trên một số máy chủ"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                293.2315470328283,
+                599.5412246732028,
+                11.971275252525288
+            ],
+            "text": "would make the group unable to reach agreement on a consistent state. Channel",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "sẽ làm cho nhóm không thể đạt được thỏa thuận về một trạng thái nhất quán. Kênh"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                308.7618500631314,
+                542.7140355392157,
+                11.971275252525174
+            ],
+            "text": "specific replication filters can be used on replication channels that are not",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bộ lọc sao chép cụ thể có thể được sử dụng trên các kênh sao chép không"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                324.2921530934344,
+                572.4423852124185,
+                11.971275252525288
+            ],
+            "text": "directly involved with Group Replication, such as where a group member also",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "liên quan trực tiếp đến việc sao chép nhóm, chẳng hạn như nơi một thành viên nhóm cũng"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                339.8224561237374,
+                580.9338235294117,
+                11.971275252525288
+            ],
+            "text": "acts as a replica to a source that is outside the group. They cannot be used on",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Hoạt động như một bản sao cho một nguồn nằm ngoài nhóm. Chúng không thể được sử dụng trên"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                355.3527591540404,
+                27.93627450980398,
+                11.971275252525288
+            ],
+            "text": "the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "các "
+        },
+        {
+            "bbox": [
+                356.53921568627453,
+                356.5046158459596,
+                251.2254901960784,
+                10.172322601010137
+            ],
+            "text": "group_replication_applier",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Applier"
+        },
+        {
+            "bbox": [
+                607.7647058823529,
+                355.3527591540404,
+                24.20142238562096,
+                11.971275252525288
+            ],
+            "text": " or ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " hoặc "
+        },
+        {
+            "bbox": [
+                631.9660780228759,
+                356.5046158459596,
+                261.27445955882354,
+                10.172322601010137
+            ],
+            "text": "group_replication_recovery",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Group_Replication_Recovery"
+        },
+        {
+            "bbox": [
+                328.60294117647055,
+                370.88306218434354,
+                71.68300653594775,
+                11.971275252525174
+            ],
+            "text": "channels.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "kênh."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                399.3552844065657,
+                19.361111111111114,
+                11.971275252525288
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                400.5071410984849,
+                261.2745098039216,
+                10.172322601010137
+            ],
+            "text": "--replicate-same-server-id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Replicate-same-server-id"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                443.6813576388889,
+                172.1732026143791,
+                11.971275252525288
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                444.8332143308081,
+                371.813725490196,
+                10.172322601010137
+            ],
+            "text": "--replicate-same-server-id[={OFF|ON}]",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Replicate-same-server-id [= {off | on}]"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                465.03552430555567,
+                37.23161764705881,
+                11.971275252525174
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                465.03552430555567,
+                61.44975490196077,
+                11.971275252525174
+            ],
+            "text": "Boolean",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Boolean"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                486.3896909722223,
+                100.54044117647058,
+                11.971275252525288
+            ],
+            "text": "Default Value",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Giá trị mặc định"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                487.5415476641415,
+                30.14705882352939,
+                10.172322601010137
+            ],
+            "text": "OFF",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "TẮT"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                520.3622288510102,
+                374.2087250816993,
+                11.971275252525231
+            ],
+            "text": "This option is for use on replicas. The default is 0 (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn này là để sử dụng trên các bản sao. Mặc định là 0 ("
+        },
+        {
+            "bbox": [
+                561.7904244281045,
+                521.5140467171717,
+                50.24509803921569,
+                10.172361426767736
+            ],
+            "text": "FALSE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "SAI"
+        },
+        {
+            "bbox": [
+                612.0355224673202,
+                520.3622288510102,
+                199.20508210784317,
+                11.971275252525231
+            ],
+            "text": "). With this option set to 1 (",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "). Với tùy chọn này được đặt thành 1 ("
+        },
+        {
+            "bbox": [
+                811.2406045751634,
+                521.5140467171717,
+                40.1960784313726,
+                10.172361426767736
+            ],
+            "text": "TRUE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "ĐÚNG VẬY"
+        },
+        {
+            "bbox": [
+                851.436683006536,
+                520.3622288510102,
+                38.16957638888891,
+                11.971275252525231
+            ],
+            "text": "), the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "), The"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                535.8925318813132,
+                726.0416666666667,
+                11.971275252525288
+            ],
+            "text": "replica does not skip events that have its own server ID. This setting is normally useful only in rare",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Bản sao không bỏ qua các sự kiện có ID máy chủ riêng. Cài đặt này thường chỉ hữu ích trong hiếm"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                551.4228349116163,
+                108.91462418300654,
+                11.971275252525231
+            ],
+            "text": "configurations.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "cấu hình."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                582.4834409722223,
+                503.64009763071897,
+                11.971275252525231
+            ],
+            "text": "When binary logging is enabled on a replica, the combination of the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Khi ghi nhật ký nhị phân được bật trên bản sao, sự kết hợp của "
+        },
+        {
+            "bbox": [
+                691.2217969771242,
+                583.6352588383838,
+                261.27445955882354,
+                10.172361426767736
+            ],
+            "text": "--replicate-same-server-id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Replicate-same-server-id"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                598.0137440025253,
+                32.5923035130719,
+                11.971275252525231
+            ],
+            "text": "and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Và "
+        },
+        {
+            "bbox": [
+                220.17400285947713,
+                599.1655618686868,
+                190.9313725490196,
+                10.172361426767736
+            ],
+            "text": "--log-slave-updates",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-LOG-SLAVE-DODATE"
+        },
+        {
+            "bbox": [
+                411.1054089052288,
+                598.0137440025253,
+                533.4019440359477,
+                11.971275252525231
+            ],
+            "text": " options on the replica can cause infinite loops in replication if the server",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Các tùy chọn trên bản sao có thể gây ra các vòng lặp vô hạn trong bản sao nếu máy chủ"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                613.5440470328283,
+                766.1204897875817,
+                11.971275252525231
+            ],
+            "text": "is part of a circular replication topology. (In MySQL 8.0, binary logging is enabled by default, and replica",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "là một phần của cấu trúc liên kết sao chép tròn. (Trong MySQL 8.0, ghi nhật ký nhị phân được bật theo mặc định và bản sao"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                629.0743500631313,
+                743.8284313725491,
+                11.971275252525231
+            ],
+            "text": "update logging is the default when binary logging is enabled.) However, the use of global transaction",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Cập nhật ghi nhật ký là mặc định khi đăng nhập nhị phân được bật.) Tuy nhiên, việc sử dụng giao dịch toàn cầu"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                644.6046530934343,
+                741.9023190359477,
+                11.971275252525288
+            ],
+            "text": "identifiers (GTIDs) prevents this situation by skipping the execution of transactions that have already",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định danh (GTID) ngăn chặn tình huống này bằng cách bỏ qua việc thực hiện các giao dịch đã"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                660.1349561237374,
+                119.18137254901961,
+                11.971275252525231
+            ],
+            "text": "been applied. If ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "đã được áp dụng. Nếu như "
+        },
+        {
+            "bbox": [
+                306.76307189542484,
+                661.286773989899,
+                120.58823529411762,
+                10.172361426767736
+            ],
+            "text": "gtid_mode=ON",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "gtid_mode = trên"
+        },
+        {
+            "bbox": [
+                427.35130718954247,
+                660.1349561237374,
+                511.9807671568627,
+                11.971275252525231
+            ],
+            "text": " is set on the replica, you can start the server with this combination of",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " được đặt trên bản sao, bạn có thể khởi động máy chủ với sự kết hợp của"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                675.6652591540404,
+                754.0448843954248,
+                11.971275252525288
+            ],
+            "text": "options, but you cannot change to any other GTID mode while the server is running. If any other GTID",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tùy chọn, nhưng bạn không thể thay đổi thành bất kỳ chế độ GTID nào khác trong khi máy chủ đang chạy. Nếu có bất kỳ GTID nào khác"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                691.1955621843435,
+                517.5747549019608,
+                11.971275252525231
+            ],
+            "text": "mode is set, the server does not start with this combination of options.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Chế độ được đặt, máy chủ không bắt đầu với sự kết hợp của các tùy chọn này."
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                722.2561682449495,
+                740.1103276143792,
+                11.971275252525288
+            ],
+            "text": "By default, the replication I/O thread does not write binary log events to the relay log if they have the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Theo mặc định, luồng I/O sao chép không ghi các sự kiện nhật ký nhị phân vào nhật ký rơle nếu chúng có"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                737.7864712752526,
+                584.5514538398693,
+                11.971275252525231
+            ],
+            "text": "replica’s server ID (this optimization helps save disk usage). If you want to use ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "ID máy chủ bản sao (Tối ưu hóa này giúp lưu sử dụng đĩa). Nếu bạn muốn sử dụng "
+        },
+        {
+            "bbox": [
+                771.6139538398693,
+                738.9382891414141,
+                170.83328308823536,
+                10.17236142676768
+            ],
+            "text": "--replicate-same-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Tái tạo-Same-"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                754.4685921717172,
+                90.44117647058823,
+                10.172361426767623
+            ],
+            "text": "server-id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Máy chủ-ID"
+        },
+        {
+            "bbox": [
+                278.02287581699346,
+                753.3167743055556,
+                678.6270424836603,
+                11.971275252525231
+            ],
+            "text": ", be sure to start the replica with this option before you make the replica read its own events",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": ", hãy chắc chắn bắt đầu bản sao với tùy chọn này trước khi bạn thực hiện bản sao đọc các sự kiện của riêng mình"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                768.8470773358586,
+                385.43014705882354,
+                11.971275252525231
+            ],
+            "text": "that you want the replication SQL thread to execute.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "rằng bạn muốn chủ đề SQL sao chép để thực thi."
+        },
+        {
+            "bbox": [
+                170.83333333333334,
+                797.3192995580808,
+                19.361111111111114,
+                11.97127525252526
+            ],
+            "text": "•",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "•"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                798.47115625,
+                261.2745098039216,
+                10.17232260101008
+            ],
+            "text": "--replicate-wild-do-table=",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-Replicate-wild-do-Table ="
+        },
+        {
+            "bbox": [
+                448.85620915032683,
+                798.47115625,
+                160.78431372549022,
+                10.17232260101008
+            ],
+            "text": "db_name.tbl_name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier-Oblique",
+                "size": 10
+            },
+            "text_vi": "db_name.tbl_name"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                841.645372790404,
+                172.1732026143791,
+                11.971275252525231
+            ],
+            "text": "Command-Line Format",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Định dạng dòng lệnh"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                842.7972035984849,
+                301.47058823529403,
+                10.17234848484847
+            ],
+            "text": "--replicate-wild-do-table=name",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "-replicate-wild-do-table = name"
+        },
+        {
+            "bbox": [
+                191.35008169934642,
+                862.9995394570707,
+                37.23161764705881,
+                11.97127525252526
+            ],
+            "text": "Type",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Kiểu"
+        },
+        {
+            "bbox": [
+                579.9121732026144,
+                862.9995394570707,
+                43.74673202614372,
+                11.97127525252526
+            ],
+            "text": "String",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Sợi dây"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                896.9720799242424,
+                719.5433006535948,
+                11.97127525252526
+            ],
+            "text": "Creates a replication filter by telling the replication SQL thread to restrict replication to statements",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Tạo bộ lọc sao chép bằng cách cho chủ đề SQL sao chép để hạn chế sao chép các câu lệnh"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                912.5023829545455,
+                717.8014035947713,
+                11.971275252525245
+            ],
+            "text": "where any of the updated tables match the specified database and table name patterns. Patterns",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "trong đó bất kỳ bảng được cập nhật nào khớp với cơ sở dữ liệu được chỉ định và các mẫu tên bảng. Mô hình"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                928.0326859848485,
+                118.24348080065357,
+                11.971275252525245
+            ],
+            "text": "can contain the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "có thể chứa "
+        },
+        {
+            "bbox": [
+                305.8251801470588,
+                929.1845362058081,
+                10.04901960784315,
+                10.172329071969685
+            ],
+            "text": "%",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "Phần trăm"
+        },
+        {
+            "bbox": [
+                315.87419975490195,
+                928.0326859848485,
+                37.248366013071916,
+                11.971275252525245
+            ],
+            "text": " and ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " Và "
+        },
+        {
+            "bbox": [
+                353.12254901960785,
+                929.1845362058081,
+                10.04901960784315,
+                10.172329071969685
+            ],
+            "text": "_",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "_"
+        },
+        {
+            "bbox": [
+                363.171568627451,
+                928.0326859848485,
+                463.5612745098039,
+                11.971275252525245
+            ],
+            "text": " wildcard characters, which have the same meaning as for the ",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " ký tự ký tự đại diện, có cùng ý nghĩa như đối với "
+        },
+        {
+            "bbox": [
+                826.7328431372549,
+                929.1845362058081,
+                40.1960784313726,
+                10.172329071969685
+            ],
+            "text": "LIKE",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Courier",
+                "size": 10
+            },
+            "text_vi": "GIỐNG"
+        },
+        {
+            "bbox": [
+                866.9289215686275,
+                928.0326859848485,
+                62.37089828431374,
+                11.971275252525245
+            ],
+            "text": " pattern-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": " mẫu-"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                943.5629890151515,
+                709.3435959967321,
+                11.97127525252526
+            ],
+            "text": "matching operator. To specify more than one table, use this option multiple times, once for each",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "Toán tử phù hợp. Để chỉ định nhiều hơn một bảng, hãy sử dụng tùy chọn này nhiều lần, một lần cho mỗi"
+        },
+        {
+            "bbox": [
+                187.58169934640523,
+                959.0932920454545,
+                765.9195261437908,
+                11.971275252525253
+            ],
+            "text": "table. This works for cross-database updates. See Section 17.2.5, “How Servers Evaluate Replication",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "bàn. Điều này hoạt động để cập nhật cơ sở dữ liệu chéo. Xem Phần 17.2.5, Cách máy chủ đánh giá sự sao chép"
+        },
+        {
+            "bbox": [
+                927.4575330882352,
+                964.6583160037878,
+                37.24834926470601,
+                11.971275252525253
+            ],
+            "text": "3513",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/Helvetica",
+                "size": 10
+            },
+            "text_vi": "3513"
+        }
+    ]
+}

@@ -1,0 +1,1676 @@
+{
+    "metadata": {
+        "page_hash": "735abc921d96d8fa559af67235f45529c4b4f939a0766cef40df5892da360bda",
+        "original_filename": "MongoDB-manual.pdf",
+        "page_no": 736,
+        "num_pages": 946,
+        "original_width": 612,
+        "original_height": 792,
+        "coco_width": 1025,
+        "coco_height": 1025,
+        "collection": "manuals",
+        "doc_category": "manuals"
+    },
+    "cells": [
+        {
+            "bbox": [
+                585.4659481209151,
+                46.997324179292946,
+                318.94755841503263,
+                12.106971275252477
+            ],
+            "text": "MongoDB Documentation, Release 3.0.4",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tài liệu MongoDB, Phát hành 3.0.4"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                97.17933112373737,
+                281.6550939542484,
+                11.591248737373803
+            ],
+            "text": "Unique Constraints on Arbitrary Fields",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Những ràng buộc duy nhất trên các trường tùy ý"
+        },
+        {
+            "bbox": [
+                418.92019648692815,
+                97.33406470959596,
+                485.48778308823535,
+                11.526797979797948
+            ],
+            "text": "If you cannot use a unique field as the shard key or if you need to enforce",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nếu bạn không thể sử dụng một trường duy nhất làm phím Shard hoặc nếu bạn cần thực thi"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                112.80615498737382,
+                373.3263876633987,
+                11.526797979797834
+            ],
+            "text": "uniqueness over multiple fields, you must create another",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tính độc đáo trên nhiều trường, bạn phải tạo một trường khác"
+        },
+        {
+            "bbox": [
+                497.7145424836602,
+                112.92219223484858,
+                65.80848366013066,
+                11.114222537878732
+            ],
+            "text": "collection",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "bộ sưu tập"
+        },
+        {
+            "bbox": [
+                567.3274342320262,
+                112.80615498737382,
+                337.0852516339868,
+                11.526797979797834
+            ],
+            "text": "to act as a “proxy collection”. This collection must",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để hoạt động như một bộ sưu tập proxy của người Viking. Bộ sưu tập này phải"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                128.27824526515167,
+                379.6002753267974,
+                11.526785037878653
+            ],
+            "text": "contain both a reference to the original document (i.e. its",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "chứa cả một tham chiếu đến tài liệu gốc (nghĩa là nó"
+        },
+        {
+            "bbox": [
+                504.3569444444444,
+                128.96159154040413,
+                80.09152369281054,
+                9.953759469696934
+            ],
+            "text": "ObjectId",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Objectid"
+        },
+        {
+            "bbox": [
+                584.4492720588236,
+                128.27824526515167,
+                138.90865318627448,
+                11.526785037878653
+            ],
+            "text": ") and the unique key.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ") và khóa duy nhất."
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                151.4869630681818,
+                542.6864191584967,
+                11.526797979798062
+            ],
+            "text": "If you must shard this “proxy” collection, then shard on the unique key using the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nếu bạn phải chia tách bộ sưu tập proxy proxy này, thì shard trên khóa duy nhất bằng cách sử dụng"
+        },
+        {
+            "bbox": [
+                667.7405543300654,
+                151.60300031565657,
+                111.3438741830065,
+                11.114222537878845
+            ],
+            "text": "above procedure",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Quy trình trên"
+        },
+        {
+            "bbox": [
+                783.5504975490196,
+                151.4869630681818,
+                120.85471854575167,
+                11.526797979798062
+            ],
+            "text": "(page 732); other-",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "(trang 732); khác-"
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                166.95905334595955,
+                468.5018599264705,
+                11.52678503787888
+            ],
+            "text": "wise, you can simply create multiple unique indexes on the collection.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "khôn ngoan, bạn chỉ có thể tạo nhiều chỉ mục độc đáo trên bộ sưu tập."
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                208.0502032828283,
+                53.444372589869275,
+                11.591248737373803
+            ],
+            "text": "Process",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Quá trình"
+        },
+        {
+            "bbox": [
+                190.71357679738563,
+                208.2049368686869,
+                334.1817883986928,
+                11.526797979797948
+            ],
+            "text": "Consider the following for the “proxy collection:”",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hãy xem xét những điều sau đây cho Bộ sưu tập proxy của người Viking:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                233.10336458333347,
+                9.01034791666666,
+                8.958474116161597
+            ],
+            "text": "{",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "{"
+        },
+        {
+            "bbox": [
+                138.60948047385622,
+                247.28638794191932,
+                207.2380975490196,
+                8.958474116161597
+            ],
+            "text": "\"_id\" : ObjectId(\"...\")",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "\"_id\": ObjectID (\"...\")"
+        },
+        {
+            "bbox": [
+                138.60948047385622,
+                261.4681559343435,
+                144.16562696078435,
+                8.958474116161597
+            ],
+            "text": "\"email\" \": \"...\"",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "\"Email\" \":\" ... \""
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                275.6511922348485,
+                9.01034791666666,
+                8.958461174242416
+            ],
+            "text": "}",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "}"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                303.03159532828283,
+                25.946307352941176,
+                11.52678503787888
+            ],
+            "text": "The",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Các"
+        },
+        {
+            "bbox": [
+                150.50081866830064,
+                303.7149416035354,
+                30.034307148692847,
+                9.953772411616114
+            ],
+            "text": "_id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "_nhận dạng"
+        },
+        {
+            "bbox": [
+                184.50167483660132,
+                303.03159532828283,
+                94.14089052287582,
+                11.52678503787888
+            ],
+            "text": "field holds the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trường giữ"
+        },
+        {
+            "bbox": [
+                282.61527777777775,
+                303.7149416035354,
+                80.09149019607844,
+                9.953772411616114
+            ],
+            "text": "ObjectId",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Objectid"
+        },
+        {
+            "bbox": [
+                366.671993872549,
+                303.03159532828283,
+                38.26036928104577,
+                11.52678503787888
+            ],
+            "text": "of the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "của"
+        },
+        {
+            "bbox": [
+                408.89462459150326,
+                303.1476325757576,
+                64.87410906862743,
+                11.114222537878732
+            ],
+            "text": "document",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "tài liệu"
+        },
+        {
+            "bbox": [
+                478.0335710784314,
+                303.03159532828283,
+                118.06815890522881,
+                11.52678503787888
+            ],
+            "text": "it reflects, and the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "nó phản ánh, và"
+        },
+        {
+            "bbox": [
+                600.060507761438,
+                303.7149416035354,
+                50.057164624182974,
+                9.953772411616114
+            ],
+            "text": "email",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "e-mail"
+        },
+        {
+            "bbox": [
+                654.0840539215686,
+                303.03159532828283,
+                250.33598447712427,
+                11.52678503787888
+            ],
+            "text": "field is the field on which you want to",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trường là trường mà bạn muốn"
+        },
+        {
+            "bbox": [
+                120.5882872140523,
+                318.50368560606057,
+                126.04398035130718,
+                11.52678503787888
+            ],
+            "text": "ensure uniqueness.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Đảm bảo tính độc đáo."
+        },
+        {
+            "bbox": [
+                120.5882872140523,
+                341.71240340909094,
+                411.653547753268,
+                11.526785037878767
+            ],
+            "text": "To shard this collection, use the following operation using the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để thu thập bộ sưu tập này, hãy sử dụng thao tác sau bằng cách sử dụng"
+        },
+        {
+            "bbox": [
+                536.4100175653595,
+                342.3957496843435,
+                50.057164624182974,
+                9.953772411616114
+            ],
+            "text": "email",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "e-mail"
+        },
+        {
+            "bbox": [
+                590.639551879085,
+                341.71240340909094,
+                72.29929616013067,
+                11.526785037878767
+            ],
+            "text": "field as the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "trường như"
+        },
+        {
+            "bbox": [
+                667.1092246732027,
+                341.8284406565657,
+                63.122095996732014,
+                11.114222537878732
+            ],
+            "text": "shard key",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Khóa Shard"
+        },
+        {
+            "bbox": [
+                730.2321245915033,
+                341.71240340909094,
+                4.63862745098038,
+                11.526785037878767
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                366.60964046717174,
+                468.53840318627454,
+                8.958474116161597
+            ],
+            "text": "db.runCommand( { shardCollection : \"records.proxy\" ,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "db.runcommand ({shardcollection: \"records.proxy\","
+        },
+        {
+            "bbox": [
+                273.7637663398693,
+                380.7926638257576,
+                189.21742851307192,
+                8.958474116161597
+            ],
+            "text": "key : { email : 1 } ,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "khóa: {email: 1},"
+        },
+        {
+            "bbox": [
+                273.7637663398693,
+                394.9757001262627,
+                72.08280678104575,
+                8.958474116161597
+            ],
+            "text": "unique :",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "độc nhất :"
+        },
+        {
+            "bbox": [
+                354.8560049019608,
+                394.98730902777777,
+                36.04141176470591,
+                8.70316887626268
+            ],
+            "text": "true",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JIEJSH+NimbusMonL-Bold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "ĐÚNG VẬY"
+        },
+        {
+            "bbox": [
+                399.90743464052287,
+                394.9757001262627,
+                36.04142851307188,
+                8.958474116161597
+            ],
+            "text": "} );",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "});"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                422.86602777777784,
+                729.1329125816994,
+                11.526797979797948
+            ],
+            "text": "If you do not need to shard the proxy collection, use the following command to create a unique index on the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nếu bạn không cần phải thu thập bộ sưu tập proxy, hãy sử dụng lệnh sau để tạo một chỉ mục duy nhất trên"
+        },
+        {
+            "bbox": [
+                854.3542483660132,
+                423.5493869949496,
+                50.05721486928098,
+                9.953798295454476
+            ],
+            "text": "email",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "e-mail"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                438.33807922979804,
+                34.30586066176471,
+                11.526797979797948
+            ],
+            "text": "field:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "cánh đồng:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                463.2365845959596,
+                441.50737785947706,
+                8.958474116161597
+            ],
+            "text": "db.proxy.createIndex( { \"email\" : 1 }, { unique :",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "db.proxy.CreateIndex ({\"email\": 1}, {độc đáo:"
+        },
+        {
+            "bbox": [
+                571.1042075163399,
+                463.24819349747474,
+                36.041395016339834,
+                8.70316887626268
+            ],
+            "text": "true",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JIEJSH+NimbusMonL-Bold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "ĐÚNG VẬY"
+        },
+        {
+            "bbox": [
+                616.15560375817,
+                463.2365845959596,
+                27.031125816993494,
+                8.958474116161597
+            ],
+            "text": "} )",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "})"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                491.1256180555556,
+                591.80945874183,
+                11.526785037878767
+            ],
+            "text": "You may create multiple unique indexes on this collection if you do not plan to shard the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn có thể tạo nhiều chỉ mục duy nhất trên bộ sưu tập này nếu bạn không có kế hoạch để ngăn chặn"
+        },
+        {
+            "bbox": [
+                716.5654579248367,
+                491.80896433080807,
+                50.057164624182974,
+                9.95379829545459
+            ],
+            "text": "proxy",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "proxy"
+        },
+        {
+            "bbox": [
+                770.794992238562,
+                491.1256180555556,
+                69.97993218954252,
+                11.526785037878767
+            ],
+            "text": "collection.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "bộ sưu tập."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                514.3343746843434,
+                371.307506127451,
+                11.526785037878767
+            ],
+            "text": "To insert documents, use the following procedure in the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Để chèn tài liệu, hãy sử dụng quy trình sau trong"
+        },
+        {
+            "bbox": [
+                496.06484517973854,
+                514.4504119318183,
+                106.4716237745098,
+                11.114222537878788
+            ],
+            "text": "JavaScript shell",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/WVUCXQ+NimbusRomNo9L-ReguItal",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Vỏ javascript"
+        },
+        {
+            "bbox": [
+                602.552631127451,
+                514.3343746843434,
+                4.638610702614301,
+                11.526785037878767
+            ],
+            "text": ":",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": ":"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                539.2328412247475,
+                288.33126062091503,
+                8.958461174242473
+            ],
+            "text": "db = db.getSiblingDB('records');",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "db = db.getSiBlingDB ('bản ghi');"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                567.6105486111112,
+                27.03105714869281,
+                8.703168876262623
+            ],
+            "text": "var",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JIEJSH+NimbusMonL-Bold",
+                "size": 8.966400146484375
+            },
+            "text_vi": "var"
+        },
+        {
+            "bbox": [
+                156.62903909313727,
+                567.5989397095959,
+                216.2484588643791,
+                8.958461174242416
+            ],
+            "text": "primary_id = ObjectId();",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "chính_id = objectId ();"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                595.963731060606,
+                153.17600000000002,
+                8.958474116161597
+            ],
+            "text": "db.proxy.insert({",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "db.proxy.insert ({"
+        },
+        {
+            "bbox": [
+                147.61842320261437,
+                610.1467932449495,
+                162.18635294117652,
+                8.958474116161597
+            ],
+            "text": "\"_id\" : primary_id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "\"_id\": chính_ID"
+        },
+        {
+            "bbox": [
+                147.61842320261437,
+                624.3298295454546,
+                279.3209244281046,
+                8.958461174242416
+            ],
+            "text": "\"email\" : \"example@example.net\"",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "\"Email\": \"example@example.net\""
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                638.5128529040404,
+                18.02070923202615,
+                8.958474116161597
+            ],
+            "text": "})",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "})"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                666.8789513888889,
+                432.4969579248366,
+                8.958474116161597
+            ],
+            "text": "// if: the above operation returns successfully,",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XTRDIM+NimbusMonL-ReguObli",
+                "size": 8.966400146484375
+            },
+            "text_vi": "// Nếu: Hoạt động trên trả về thành công,"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                681.0620265151515,
+                153.17600000000002,
+                8.958461174242416
+            ],
+            "text": "// then continue:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XTRDIM+NimbusMonL-ReguObli",
+                "size": 8.966400146484375
+            },
+            "text_vi": "// Sau đó tiếp tục:"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                709.4281120580808,
+                207.23813439542485,
+                8.958474116161597
+            ],
+            "text": "db.information.insert({",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "db.information.insert ({"
+        },
+        {
+            "bbox": [
+                147.61842320261437,
+                723.611161300505,
+                162.18635294117652,
+                8.958474116161597
+            ],
+            "text": "\"_id\" : primary_id",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "\"_id\": chính_ID"
+        },
+        {
+            "bbox": [
+                147.61842320261437,
+                737.7929163510101,
+                270.3105714869281,
+                8.958461174242359
+            ],
+            "text": "\"email\": \"example@example.net\"",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "\"Email\": \"example@example.net\""
+        },
+        {
+            "bbox": [
+                147.61842320261437,
+                751.9759655934344,
+                252.2898823529412,
+                8.958461174242416
+            ],
+            "text": "// additional information...",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XTRDIM+NimbusMonL-ReguObli",
+                "size": 8.966400146484375
+            },
+            "text_vi": "// Thông tin bổ sung ..."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                766.1590148358586,
+                18.02070923202615,
+                8.958461174242473
+            ],
+            "text": "})",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 8.966400146484375
+            },
+            "text_vi": "})"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                793.539417929293,
+                239.32343137254904,
+                11.526785037878795
+            ],
+            "text": "You must insert a document into the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Bạn phải chèn một tài liệu vào"
+        },
+        {
+            "bbox": [
+                363.8029820261438,
+                794.2227642045455,
+                50.05718137254905,
+                9.953798295454561
+            ],
+            "text": "proxy",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "proxy"
+        },
+        {
+            "bbox": [
+                417.74946895424836,
+                793.539417929293,
+                302.6290894607844,
+                11.526785037878795
+            ],
+            "text": "collection first. If this operation succeeds, the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "bộ sưu tập đầu tiên. Nếu hoạt động này thành công,"
+        },
+        {
+            "bbox": [
+                724.2629734477125,
+                794.2227642045455,
+                50.057164624182974,
+                9.953798295454561
+            ],
+            "text": "email",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "e-mail"
+        },
+        {
+            "bbox": [
+                778.209443627451,
+                793.539417929293,
+                126.19414787581707,
+                11.526785037878795
+            ],
+            "text": "field is unique, and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Trường là duy nhất, và"
+        },
+        {
+            "bbox": [
+                120.588183374183,
+                809.0114823232324,
+                396.2526581290849,
+                11.526785037878767
+            ],
+            "text": "you may continue by inserting the actual document into the",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "bạn có thể tiếp tục bằng cách chèn tài liệu thực tế vào"
+        },
+        {
+            "bbox": [
+                521.0097777777778,
+                809.6948285984848,
+                110.12578227124186,
+                9.953811237373742
+            ],
+            "text": "information",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "thông tin"
+        },
+        {
+            "bbox": [
+                635.3073100490196,
+                809.0114823232324,
+                69.97993218954252,
+                11.526785037878767
+            ],
+            "text": "collection.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "bộ sưu tập."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                839.8008904671717,
+                24.09418929738561,
+                11.591274621212108
+            ],
+            "text": "See",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Nhìn thấy"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                860.2627765151515,
+                179.35486846405226,
+                11.526810921717157
+            ],
+            "text": "The full documentation of:",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Tài liệu đầy đủ của:"
+        },
+        {
+            "bbox": [
+                305.11501593137257,
+                860.9461357323232,
+                130.14868831699346,
+                9.953785353535352
+            ],
+            "text": "createIndex()",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "createdIndex ()"
+        },
+        {
+            "bbox": [
+                439.43525326797385,
+                860.2627765151515,
+                24.094182598039197,
+                11.526810921717157
+            ],
+            "text": "and",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Và"
+        },
+        {
+            "bbox": [
+                467.7014873366013,
+                860.9461357323232,
+                150.17154411764704,
+                9.953785353535352
+            ],
+            "text": "shardCollection",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/SXLUXZ+NimbusMonL-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Shardcollection"
+        },
+        {
+            "bbox": [
+                617.8723615196078,
+                860.2627765151515,
+                4.171448529411805,
+                11.526810921717157
+            ],
+            "text": ".",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/XAQBVC+NimbusRomNo9L-Regu",
+                "size": 9.962599754333496
+            },
+            "text_vi": "."
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                913.9257352272728,
+                107.53949959150324,
+                11.591268150252517
+            ],
+            "text": "Considerations",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/JJGXHR+NimbusRomNo9L-Medi",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Cân nhắc"
+        },
+        {
+            "bbox": [
+                120.58823529411765,
+                961.18987260101,
+                37.698684354575164,
+                12.10701139520203
+            ],
+            "text": "10.3.",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "10.3."
+        },
+        {
+            "bbox": [
+                162.99926335784312,
+                961.18987260101,
+                207.22413778594773,
+                12.10701139520203
+            ],
+            "text": "Sharded Cluster Tutorials",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "Hướng dẫn cụm Sharded"
+        },
+        {
+            "bbox": [
+                876.585191993464,
+                961.18987260101,
+                27.831781454248357,
+                12.10701139520203
+            ],
+            "text": "733",
+            "font": {
+                "color": [
+                    0,
+                    0,
+                    0,
+                    255
+                ],
+                "name": "/PVIALL+NimbusSanL-Bold",
+                "size": 9.962599754333496
+            },
+            "text_vi": "733"
+        }
+    ]
+}
