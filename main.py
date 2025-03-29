@@ -5,6 +5,88 @@ import os
 from pathlib import Path
 from PyPDF2 import PdfReader, PdfWriter, Transformation
 import copy
+from deep_translator import GoogleTranslator
+import time
+
+def batch_translate_text(texts, source='en', target='vi', batch_size=25, delay=0.5):
+    """
+    Translate a batch of texts with rate limiting.
+    
+    Args:
+        texts: List of texts to translate
+        source: Source language code
+        target: Target language code
+        batch_size: Number of texts to translate in one batch
+        delay: Delay between batches in seconds
+        
+    Returns:
+        List of translated texts
+    """
+    translator = GoogleTranslator(source=source, target=target)
+    results = []
+    
+    for i in range(0, len(texts), batch_size):
+        batch = texts[i:min(i + batch_size, len(texts))]
+        
+        # Process each text in the current batch
+        batch_results = []
+        for text in batch:
+            try:
+                # Skip translation for very short or empty texts
+                if not text:
+                    continue
+                    
+                translated = translator.translate(text)
+                batch_results.append(translated)
+                
+            except Exception as e:
+                print(f"Translation error: {str(e)[:100]}...")
+                # Return original text on error
+                batch_results.append(text)
+                
+                # Handle rate limiting - increase delay and reduce batch size
+                if "429" in str(e) or "too many requests" in str(e).lower():
+                    print(f"Rate limit hit. Increasing delay to {delay*2}s and reducing batch size.")
+                    delay *= 2
+                    batch_size = max(1, batch_size // 2)
+                    time.sleep(5)  # Additional pause after hitting rate limit
+        
+        results.extend(batch_results)
+        
+        # Add delay between batches
+        if i + batch_size < len(texts):
+            time.sleep(delay)
+            
+    return results
+
+def translate_cells(cells, source='en', target='vi'):
+    """
+    Translate text in cells from source language to target language.
+    
+    Args:
+        cells: List of cell dictionaries with text
+        source: Source language code
+        target: Target language code
+        
+    Returns:
+        List of cell dictionaries with translated text
+    """
+    # Extract all texts for batch translation
+    texts = [cell["text"] for cell in cells if cell.get("text")]
+    
+    print(f"Translating {len(texts)} text segments from {source} to {target}...")
+    
+    # Perform batch translation
+    translated_texts = batch_translate_text(texts, source, target)
+    
+    # Map translated texts back to cells
+    text_index = 0
+    for cell in cells:
+        if cell.get("text"):
+            cell["text_vi"] = translated_texts[text_index]
+            text_index += 1
+    
+    return cells
 
 def int_to_rgb(color_int):
     """Convert integer color to RGB tuple."""
@@ -27,30 +109,43 @@ def extract_pdf_info(pdf_path, output_json_path=None):
     
     # Extract text cells
     cells = []
-    for page_num, page in enumerate(doc, start=1):
-        blocks = page.get_text("dict")["blocks"]
-        for block in blocks:
-            for line in block.get("lines", []):
-                for span in line.get("spans", []):
-                    cell = {
-                        "bbox": [
-                            span["bbox"][0], 
-                            span["bbox"][1],
-                            span["bbox"][2] - span["bbox"][0],  # width
-                            span["bbox"][3] - span["bbox"][1]   # height
-                        ],
-                        "text": span["text"].strip(),
-                        "font": {
-                            "color": int_to_rgb(span["color"]),
-                            "name": span["font"],
-                            "size": 1  # Normalized size
-                        },
-                        "text_vi": span["text"].strip()  # Placeholder for Vietnamese translation
-                    }
+    try:
+        for page_num, page in enumerate(doc, start=1):
+            blocks = page.get_text("dict")["blocks"]
+            for block in blocks:
+                for line in block.get("lines", []):
+                    for span in line.get("spans", []):
+                        cell = {
+                            "bbox": [
+                                span["bbox"][0], 
+                                span["bbox"][1],
+                                span["bbox"][2] - span["bbox"][0],  # width
+                                span["bbox"][3] - span["bbox"][1]   # height
+                            ],
+                            "text": span["text"].strip(),
+                            "font": {
+                                "color": int_to_rgb(span["color"]),
+                                "name": span["font"],
+                                "size": 1  # Normalized size
+                            },
+                            "text_vi": span["text"].strip()  # Placeholder for Vietnamese translation
+                        }
 
-                    if (cell["text"]): 
-                        cells.append(cell)
+                        if (cell["text"]): 
+                            cells.append(cell)
+    finally:
+        doc.close()
 
+        # Translate text if requested
+    if cells:
+        try:
+            print(f"Translating {len(cells)} cells...")
+            cells = translate_cells(cells, source='en', target='vi')
+            print(f"Translation complete for {len(cells)} cells")
+        except Exception as e:
+            print(f"Translation error: {e}")
+            # Continue with untranslated text
+    
     output["cells"] = cells
 
     if output_json_path:
@@ -133,15 +228,16 @@ def scale_pdf_properly(input_path, output_path, target_width=1025, target_height
 
 def process_all_pdfs():
     pdf_dir = Path("data/test/PDF")
+    scaled_dir = Path("data/test/PDF_scaled")
     output_csv = Path("submission.csv")
+
+    os.makedirs(pdf_dir, exist_ok=True)
+    os.makedirs(scaled_dir, exist_ok=True)
 
     pdf_files = list(pdf_dir.glob("*.pdf"))
     total_files = len(pdf_files)
 
     # Scale all PDFs to COCO standard size
-    scaled_dir = Path("data/test/PDF_scaled")
-    os.makedirs(scaled_dir, exist_ok=True)
-
     scaled_pdf_files = list(scaled_dir.glob("*.pdf"))
     total_scaled_files = len(scaled_pdf_files)
 
@@ -163,8 +259,8 @@ def process_all_pdfs():
     results = {}
     # During first iteration, i will be 1
     for idx, scaled_pdf_file in enumerate(scaled_pdf_paths, 1):
-        print(f"Processing {idx + 1}/{total_files}: {scaled_pdf_file.name}")
-        file_id = scaled_pdf_file.stem  # Use filename without extension as ID
+        print(f"Processing {idx}/{total_files}: {scaled_pdf_file.name}")
+        file_id = scaled_pdf_file.stem.replace(".coco_standard", "")  # Use filename without extension as ID and remove suffix
         cells = extract_pdf_info(scaled_pdf_file)
         # Remove the "cells" key from the dictionary
         cells = cells.get("cells", [])
@@ -177,7 +273,6 @@ def process_all_pdfs():
 
         for file_id, cells in results.items():
             # remove suffix "with_coco_standard"
-            file_id = file_id.replace(".coco_standard", "")
             solution = json.dumps(cells)
             writer.writerow([file_id, solution])
 
