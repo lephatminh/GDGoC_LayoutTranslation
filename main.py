@@ -7,8 +7,11 @@ from PyPDF2 import PdfReader, PdfWriter, Transformation
 import copy
 from deep_translator import GoogleTranslator
 import time
+from langdetect import detect, DetectorFactory
 
-def batch_translate_text(texts, source='en', target='vi', batch_size=25, delay=0.5):
+DetectorFactory.seed = 0  # For reproducibility
+
+def batch_translate_text(texts_with_langs, target='vi', batch_size=25, delay=0):
     """
     Translate a batch of texts with rate limiting.
     
@@ -22,44 +25,64 @@ def batch_translate_text(texts, source='en', target='vi', batch_size=25, delay=0
     Returns:
         List of translated texts
     """
-    translator = GoogleTranslator(source=source, target=target)
-    results = []
-    
-    for i in range(0, len(texts), batch_size):
-        batch = texts[i:min(i + batch_size, len(texts))]
-        
-        # Process each text in the current batch
-        batch_results = []
-        for text in batch:
-            try:
-                # Skip translation for very short or empty texts
-                if not text:
-                    continue
+    results = [""] * len(texts_with_langs)
+
+    # Group text by detected source language
+    lang_groups = {}
+    for text, lang, orig_idx in texts_with_langs:
+        if not lang in lang_groups:
+            lang_groups[lang] = []
+        lang_groups[lang].append((text, orig_idx))
+
+    for source_lang, texts_with_indices in lang_groups.items():
+        if source_lang == target:
+            for text, orig_idx in texts_with_indices:
+                results[orig_idx] = text
+            continue
+
+        texts = [t[0] for t in texts_with_indices]
+        indices = [t[1] for t in texts_with_indices]
+
+        # Create translator for this language
+        translator = GoogleTranslator(source=source_lang, target=target)
+
+        translated_batch = []
+
+        for i in range(0, len(texts), batch_size):
+            batch = texts[i:min(i + batch_size, len(texts))]
+            
+            # Process each text in the current batch
+            batch_results = []
+            for text in batch:
+                try:    
+                    translated = translator.translate(text)
+                    batch_results.append(translated)
                     
-                translated = translator.translate(text)
-                batch_results.append(translated)
-                
-            except Exception as e:
-                print(f"Translation error: {str(e)[:100]}...")
-                # Return original text on error
-                batch_results.append(text)
-                
-                # Handle rate limiting - increase delay and reduce batch size
-                if "429" in str(e) or "too many requests" in str(e).lower():
-                    print(f"Rate limit hit. Increasing delay to {delay*2}s and reducing batch size.")
-                    delay *= 2
-                    batch_size = max(1, batch_size // 2)
-                    time.sleep(5)  # Additional pause after hitting rate limit
-        
-        results.extend(batch_results)
-        
-        # Add delay between batches
-        if i + batch_size < len(texts):
-            time.sleep(delay)
+                except Exception as e:
+                    print(f"Translation error: {str(e)[:100]}...")
+                    # Return original text on error
+                    batch_results.append(text)
+                    
+                    # Handle rate limiting - increase delay and reduce batch size
+                    if "429" in str(e) or "too many requests" in str(e).lower():
+                        print(f"Rate limit hit. Increasing delay to {delay*2}s and reducing batch size.")
+                        delay *= 2
+                        batch_size = max(1, batch_size // 2)
+                        time.sleep(5)  # Additional pause after hitting rate limit
+            
+            translated_batch.extend(batch_results)
+            
+            # Add delay between batches
+            if i + batch_size < len(texts):
+                time.sleep(delay)
+
+        # Put translated texts back in their original positions
+        for translated_text, orig_idx in zip(translated_batch, indices):
+            results[orig_idx] = translated_text
             
     return results
 
-def translate_cells(cells, source='en', target='vi'):
+def translate_cells(cells, target='vi'):
     """
     Translate text in cells from source language to target language.
     
@@ -71,13 +94,31 @@ def translate_cells(cells, source='en', target='vi'):
     Returns:
         List of cell dictionaries with translated text
     """
-    # Extract all texts for batch translation
-    texts = [cell["text"] for cell in cells if cell.get("text")]
+    # Extract all texts and detect languages
+    texts_with_langs = []
+    for i, cell in enumerate(cells):
+        if cell.get("text"):
+            try:
+                # Detect language for each text
+                lang = detect(cell["text"])
+                # Store original language in cell
+                texts_with_langs.append((cell["text"], lang, i))
+            except Exception as e:
+                print(f"Language detection error: {str(e)[:100]}... Using 'en' as fallback.")
+                texts_with_langs.append((cell["text"], "en", i))
     
-    print(f"Translating {len(texts)} text segments from {source} to {target}...")
+    print(f"Translating {len(texts_with_langs)} text segments to {target}...")
+
+    lang_counts = {}
+    for _, lang, _ in texts_with_langs:
+        lang_counts[lang] = lang_counts.get(lang, 0) + 1
+    
+    print("Detected languages:")
+    for lang, count in lang_counts.items():
+        print(f"  - {lang}: {count} segments")
     
     # Perform batch translation
-    translated_texts = batch_translate_text(texts, source, target)
+    translated_texts = batch_translate_text(texts_with_langs, target)
     
     # Map translated texts back to cells
     text_index = 0
@@ -140,7 +181,7 @@ def extract_pdf_info(pdf_path, output_json_path=None):
     if cells:
         try:
             print(f"Translating {len(cells)} cells...")
-            cells = translate_cells(cells, source='en', target='vi')
+            cells = translate_cells(cells, target='vi')
             print(f"Translation complete for {len(cells)} cells")
         except Exception as e:
             print(f"Translation error: {e}")
@@ -237,46 +278,76 @@ def process_all_pdfs():
     pdf_files = list(pdf_dir.glob("*.pdf"))
     total_files = len(pdf_files)
 
-    # Scale all PDFs to COCO standard size
-    scaled_pdf_files = list(scaled_dir.glob("*.pdf"))
-    total_scaled_files = len(scaled_pdf_files)
-
+    # Scale all PDFs to COCO standard size if needed
     scaled_pdf_paths = []
-    # Check if all PDFs have already been scaled
-    if total_scaled_files == total_files:
-        print("All PDFs have already been scaled.")
-        for pdf_file in pdf_files:  
-            output_pdf_path = scaled_dir / f"{pdf_file.stem}.coco_standard.pdf"
-            scaled_pdf_paths.append(output_pdf_path)
-    
-    else:
-        for i, pdf_file in enumerate(pdf_files, 1):
+    for i, pdf_file in enumerate(pdf_files, 1):
+        output_pdf_path = scaled_dir / f"{pdf_file.stem}.coco_standard.pdf"
+        scaled_pdf_paths.append(output_pdf_path)
+        
+        if not output_pdf_path.exists():
             print(f"[{i}/{total_files}] Scaling: {pdf_file.name}")
-            output_pdf_path = scaled_dir / f"{pdf_file.stem}.coco_standard.pdf"
             scale_pdf_properly(pdf_file, output_pdf_path)
-            scaled_pdf_paths.append(output_pdf_path)
+        else:
+            print(f"[{i}/{total_files}] Already scaled: {pdf_file.name}")
 
-    results = {}
-    # During first iteration, i will be 1
+    # Create CSV file with header if it doesn't exist
+    csv_exists = output_csv.exists()
+    if not csv_exists:
+        with open(output_csv, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["id", "solution"])
+    
+    # Keep track of already processed files
+    processed_ids = set()
+    if csv_exists:
+        with open(output_csv, "r", newline="", encoding="utf-8") as f:
+            reader = csv.reader(f)
+            # Check if the file has any rows before trying to skip the header
+            try:
+                next(reader)  # Skip header
+                for row in reader:
+                    if row:
+                        processed_ids.add(row[0])
+                print(f"Found {len(processed_ids)} already processed files in submission.csv")
+            except StopIteration:
+                # File exists but is empty or only contains header
+                print("Existing submission.csv appears to be empty. Starting fresh.")
+                # Reset the file with just a header
+                with open(output_csv, "w", newline="", encoding="utf-8") as f_reset:
+                    writer = csv.writer(f_reset)
+                    writer.writerow(["id", "solution"])
+        print(f"Found {len(processed_ids)} already processed files in submission.csv")
+
+    # Process each PDF and append to CSV immediately
     for idx, scaled_pdf_file in enumerate(scaled_pdf_paths, 1):
-        print(f"Processing {idx}/{total_files}: {scaled_pdf_file.name}")
-        file_id = scaled_pdf_file.stem.replace(".coco_standard", "")  # Use filename without extension as ID and remove suffix
-        cells = extract_pdf_info(scaled_pdf_file)
-        # Remove the "cells" key from the dictionary
-        cells = cells.get("cells", [])
-        results[file_id] = cells
+        # Extract file ID from filename
+        file_id = scaled_pdf_file.stem.replace(".coco_standard", "")
+        
+        # Skip if already processed
+        if file_id in processed_ids:
+            print(f"[{idx}/{total_files}] Skipping already processed: {file_id}")
+            continue
+            
+        print(f"[{idx}/{total_files}] Processing: {scaled_pdf_file.name}")
+        
+        try:
+            # Process PDF and extract cells
+            output = extract_pdf_info(scaled_pdf_file)
+            cells = output.get("cells", [])
+            
+            # Append result to CSV immediately
+            with open(output_csv, "a", newline="", encoding="utf-8") as f:
+                writer = csv.writer(f)
+                writer.writerow([file_id, json.dumps(cells, ensure_ascii=False)])
+                
+            processed_ids.add(file_id)
+            print(f"Saved result for {file_id} to {output_csv}")
+            
+        except Exception as e:
+            print(f"Error processing {file_id}: {str(e)}")
+            continue
 
-    # No extra newlines are inserted between rows in the CSV file
-    with open(output_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow(["id", "solution"])
-
-        for file_id, cells in results.items():
-            # remove suffix "with_coco_standard"
-            solution = json.dumps(cells)
-            writer.writerow([file_id, solution])
-
-    print(f"Complete! Processed {len(results)} PDF files.")
+    print(f"Processing complete! {len(processed_ids)} files processed.")
 
 if __name__ == "__main__":
     process_all_pdfs()
