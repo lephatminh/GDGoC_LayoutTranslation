@@ -56,6 +56,6 @@ def extract_pdf_info(pdf_path, output_json_path=None):
     return output
 
 # Example usage
-pdf_file = "sample_input.pdf"
+pdf_file = "sample_input_coco_standard.pdf"
 output_json = "my_output.json"
 result = extract_pdf_info(pdf_file, output_json)
