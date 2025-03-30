@@ -8,7 +8,26 @@ import copy
 from deep_translator import GoogleTranslator
 import time
 from langdetect import detect, DetectorFactory
+import sys
 
+# Find the maximum CSV field size limit using binary search
+def find_max_csv_field_size():
+    max_int = 2147483647  # 2^31-1 (max signed 32-bit integer)
+    min_int = 1024
+    
+    while min_int < max_int:
+        try:
+            mid = (min_int + max_int + 1) // 2
+            csv.field_size_limit(mid)
+            min_int = mid
+        except OverflowError:
+            max_int = mid - 1
+    
+    return min_int
+
+# Safely set maximum CSV field size limit
+max_csv_field_size = find_max_csv_field_size()
+csv.field_size_limit(max_csv_field_size)
 DetectorFactory.seed = 0  # For reproducibility
 
 def batch_translate_text(texts_with_langs, target='vi', batch_size=25, delay=0):
@@ -167,7 +186,7 @@ def extract_pdf_info(pdf_path, output_json_path=None):
                             "font": {
                                 "color": int_to_rgb(span["color"]),
                                 "name": span["font"],
-                                "size": 1  # Normalized size
+                                "size": int(span["size"]),  # Normalized size
                             },
                             "text_vi": span["text"].strip()  # Placeholder for Vietnamese translation
                         }
