@@ -163,6 +163,31 @@ def int_to_rgb(color_int):
 
     return [r, g, b, a]
 
+def normalize_spaced_text(text):
+    """
+    Normalize text with excessive spacing between characters,
+    commonly found in headers like "F I N A N C I A L  S T A T E M E N T S" or ""
+    """
+    # Check if text has consistent spacing pattern (every character followed by space)
+    if len(text) > 3 and all(text[i] == ' ' for i in range(1, len(text), 2)):
+        # Join characters by removing spaces
+        return ''.join(text[i] for i in range(0, len(text), 2))
+    
+    # Check if text has spaces between all characters
+    if len(text) > 3 and ' ' in text:
+        # Count spaces vs non-spaces
+        spaces = text.count(' ')
+        non_spaces = len(text) - spaces
+        
+        # If the ratio of spaces to characters is high (e.g., spaces >= characters)
+        if spaces >= non_spaces - 1:
+            text_split = text.split(' ')
+            text_split = [' ' if char == '' else char for char in text_split]
+            return ''.join(text_split)
+    
+    # Return original if no patterns match
+    return text
+
 def extract_pdf_info(pdf_path, output_json_path=None):
     doc = fitz.open(pdf_path)
     output = {}
@@ -175,6 +200,14 @@ def extract_pdf_info(pdf_path, output_json_path=None):
             for block in blocks:
                 for line in block.get("lines", []):
                     for span in line.get("spans", []):
+                        span["text"] = span["text"].strip()
+                        # Skip empty spans
+                        if not span["text"]:
+                            continue
+
+                        # Normalize text with excessive spacing
+                        normalized_text = normalize_spaced_text(span["text"])
+
                         cell = {
                             "bbox": [
                                 span["bbox"][0], 
@@ -182,17 +215,16 @@ def extract_pdf_info(pdf_path, output_json_path=None):
                                 span["bbox"][2] - span["bbox"][0],  # width
                                 span["bbox"][3] - span["bbox"][1]   # height
                             ],
-                            "text": span["text"].strip(),
+                            "text": normalized_text,
                             "font": {
                                 "color": int_to_rgb(span["color"]),
                                 "name": span["font"],
                                 "size": int(span["size"]),  # Normalized size
                             },
-                            "text_vi": span["text"].strip()  # Placeholder for Vietnamese translation
+                            "text_vi": normalized_text  # Placeholder for Vietnamese translation
                         }
 
-                        if (cell["text"]): 
-                            cells.append(cell)
+                        cells.append(cell)
     finally:
         doc.close()
 
