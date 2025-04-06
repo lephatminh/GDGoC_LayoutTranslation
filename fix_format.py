@@ -25,26 +25,25 @@ csv.field_size_limit(max_csv_field_size)
 def transform_bboxes_in_json(json_obj):
     """Recursively transform all bbox arrays to x,y,width,height format in a JSON object"""
     if isinstance(json_obj, dict):
-        # Process this dictionary
-        if 'bbox' in json_obj and isinstance(json_obj['bbox'], list) and len(json_obj['bbox']) >= 4:
-            # Extract bbox values
-            bbox = json_obj['bbox']
-            # Add individual coordinates
-            json_obj['x'] = bbox[0]
-            json_obj['y'] = bbox[1]
-            json_obj['width'] = bbox[2]
-            json_obj['height'] = bbox[3]
-            # Remove the original bbox
-            del json_obj['bbox']
+        # Create new ordered dictionary
+        new_dict = {}
         
-        # Process all values in this dictionary
+        # Process all keys in order
         for key, value in json_obj.items():
-            json_obj[key] = transform_bboxes_in_json(value)
+            if key == 'bbox' and isinstance(value, list) and len(value) >= 4:
+                # Insert x,y,width,height where bbox was
+                new_dict['x'] = value[0]
+                new_dict['y'] = value[1]
+                new_dict['width'] = value[2]
+                new_dict['height'] = value[3]
+            else:
+                # Process value recursively and add to new dict
+                new_dict[key] = transform_bboxes_in_json(value)
+        
+        return new_dict
             
     elif isinstance(json_obj, list):
-        # Process all items in this list
-        for i, item in enumerate(json_obj):
-            json_obj[i] = transform_bboxes_in_json(item)
+        return [transform_bboxes_in_json(item) for item in json_obj]
     
     return json_obj
 
@@ -65,7 +64,7 @@ def convert_bbox_format(input_file, output_file):
         
         # Ensure output has same structure as input (just id and solution)
         with open(output_file, 'w', newline='', encoding='utf-8') as outfile:
-            writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+            writer = csv.DictWriter(outfile, fieldnames=fieldnames, quoting=csv.QUOTE_MINIMAL)
             writer.writeheader()
             
             rows_processed = 0
