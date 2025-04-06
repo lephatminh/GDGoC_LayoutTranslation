@@ -101,6 +101,19 @@ def batch_translate_text(texts_with_langs, target='vi', batch_size=25, delay=0):
             
     return results
 
+def map_language_code_for_deep_translator(lang_code):
+    mapping = {
+        "zh-cn": "zh-CN",
+        "zh-tw": "zh-TW",
+        'zh': 'zh-CN',     # Default Chinese to Simplified
+        'jw': 'jv',        # Javanese
+        'iw': 'he',        # Hebrew
+        'in': 'id',        # Indonesian
+        'ceb': 'tl',       # Adjust Cebuano to use Tagalog
+    }
+
+    return mapping.get(lang_code, lang_code)
+
 def translate_cells(cells, target='vi'):
     """
     Translate text in cells from source language to target language.
@@ -120,8 +133,10 @@ def translate_cells(cells, target='vi'):
             try:
                 # Detect language for each text
                 lang = detect(cell["text"])
+                # Map language code for deep_translator
+                mapped_lang = map_language_code_for_deep_translator(lang)
                 # Store original language in cell
-                texts_with_langs.append((cell["text"], lang, i))
+                texts_with_langs.append((cell["text"], mapped_lang, i))
             except Exception as e:
                 print(f"Language detection error: {str(e)[:100]}... Using 'en' as fallback.")
                 texts_with_langs.append((cell["text"], "en", i))
@@ -388,7 +403,7 @@ def process_all_pdfs():
             
             # Append result to CSV immediately
             with open(output_csv, "a", newline="", encoding="utf-8") as f:
-                writer = csv.writer(f)
+                writer = csv.writer(f, quoting=csv.QUOTE_ALL)
                 writer.writerow([file_id, json.dumps(cells, ensure_ascii=False)])
                 
             processed_ids.add(file_id)
