@@ -94,7 +94,16 @@ def apply_ocr_to_pdf(input_path, output_path=None, languages=None):
 
     try:
         languages = [
-            "chi_sim", "chi_tra", "vie", "eng"
+            "chi_sim",  # Simplified Chinese
+            "chi_tra",  # Traditional Chinese
+            "vie",      # Vietnamese
+            "eng",      # English
+            "jpn",      # Japanese
+            "kor",      # Korean
+            "fra",      # French
+            "deu",      # German
+            "spa",      # Spanish
+            "rus"       # Russian
         ]
 
         # Run OCR with multiple language support
@@ -242,7 +251,7 @@ def process_missing_files(missing_ids, pdf_dir, existing_solutions, output_file)
             logging.info(f"Processing {processed}/{total_missing}: {file_id}")
             
             # Find PDF file in directory
-            pdf_file = pdf_dir_path / f"{file_id}.pdf"
+            pdf_file = pdf_dir_path / f"{file_id}.coco_standard.pdf"
             if not pdf_file.exists():
                 logging.warning(f"PDF file not found: {pdf_file}")
                 continue
@@ -419,7 +428,7 @@ def main():
     sample_file = "sample_submission.csv"
     current_submission = "submission.csv"
     new_submission = "submission_fill.csv"
-    pdf_dir = "data/test/PDF"  # Directory with original PDF files
+    pdf_dir = "data/test/PDF_scaled"  # Directory with original PDF files
     
     # Ensure necessary directories exist
     os.makedirs(pdf_dir, exist_ok=True)

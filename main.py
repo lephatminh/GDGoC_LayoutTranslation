@@ -104,7 +104,9 @@ def batch_translate_text(texts_with_langs, target='vi', batch_size=25, delay=0):
 def map_language_code_for_deep_translator(lang_code):
     mapping = {
         "zh-cn": "zh-CN",
+        "zh-hans": "zh-CN",
         "zh-tw": "zh-TW",
+        'zh-hant': 'zh-TW',
         'zh': 'zh-CN',     # Default Chinese to Simplified
         'jw': 'jv',        # Javanese
         'iw': 'he',        # Hebrew
