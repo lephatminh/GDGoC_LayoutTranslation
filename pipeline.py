@@ -115,9 +115,10 @@ def apply_ocr_to_pdf(input_path, output_dir):
             deskew=True,
             clean=False,
             optimize=0,
-            output_type='pdfa',
+            output_type='pdf',  # Changed from 'pdfa' to 'pdf' to retain original color space
             skip_text=True,
-            progress_bar=True
+            progress_bar=True,
+            color_conversion_strategy='UseDeviceIndependentColor',
         )
         logging.info(f"OCR completed: {output_path}")
         return output_path
