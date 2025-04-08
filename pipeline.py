@@ -232,16 +232,6 @@ def translate_cells(cells, target='vi'):
     texts_with_langs = []
     for i, cell in enumerate(cells):
         if cell.get("text"):
-            # Special character handling
-            if len(cell["text"].strip()) <= 1:
-                cell["text_vi"] = cell["text"]  # Preserve original
-                continue
-                
-            # Punctuation handling
-            if all(char in string.punctuation for char in cell["text"]):
-                cell["text_vi"] = cell["text"]  # Keep original punctuation
-                continue
-                
             try:
                 # Detect language for each text
                 lang = detect(cell["text"])
@@ -355,7 +345,12 @@ def extract_pdf_info(pdf_path):
         except Exception as e:
             logging.error(f"Translation error: {str(e)}")
             # Continue with untranslated text
-        
+
+    # Final null check before returning
+    for cell in cells:
+        if cell.get("text_vi") is None:
+            cell["text_vi"] = cell.get("text", "")  # Use original or empty string
+
     return {"cells": cells}
 
 
