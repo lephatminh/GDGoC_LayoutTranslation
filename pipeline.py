@@ -10,6 +10,7 @@ from deep_translator import GoogleTranslator
 from langdetect import detect, DetectorFactory
 from PyPDF2 import PdfReader, PdfWriter, Transformation
 import copy
+import string
 
 
 # Add after the other initialization code
@@ -231,6 +232,16 @@ def translate_cells(cells, target='vi'):
     texts_with_langs = []
     for i, cell in enumerate(cells):
         if cell.get("text"):
+            # Special character handling
+            if len(cell["text"].strip()) <= 1:
+                cell["text_vi"] = cell["text"]  # Preserve original
+                continue
+                
+            # Punctuation handling
+            if all(char in string.punctuation for char in cell["text"]):
+                cell["text_vi"] = cell["text"]  # Keep original punctuation
+                continue
+                
             try:
                 # Detect language for each text
                 lang = detect(cell["text"])
