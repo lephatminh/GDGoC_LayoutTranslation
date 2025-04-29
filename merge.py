@@ -1,24 +1,10 @@
 import csv
 import os
+from core.csv_utils import find_max_csv_field_size
 
-# Find the maximum CSV field size limit using binary search
-def find_max_csv_field_size():
-    max_int = 2147483647  # 2^31-1 (max signed 32-bit integer)
-    min_int = 1024
-    
-    while min_int < max_int:
-        try:
-            mid = (min_int + max_int + 1) // 2
-            csv.field_size_limit(mid)
-            min_int = mid
-        except OverflowError:
-            max_int = mid - 1
-    
-    return min_int
 
-# Safely set maximum CSV field size limit
-max_csv_field_size = find_max_csv_field_size()
-csv.field_size_limit(max_csv_field_size)
+csv.field_size_limit(find_max_csv_field_size())
+
 
 def merge_submission_files(part_files, output_file, sample_file):
     """
@@ -116,10 +102,10 @@ def merge_submission_files(part_files, output_file, sample_file):
 if __name__ == "__main__":
     # List all submission part files in order
     part_files = [
-        "submission_part_1.csv", 
-        "submission_part_2.csv", 
-        "submission_part_3.csv", 
-        "submission_part_4.csv"
+        "submission_ocr_official_part_1.csv", 
+        "submission_ocr_official_part_2.csv", 
+        "submission_ocr_official_part_3.csv", 
+        "submission_ocr_official_part_4.csv"
     ]
     
     # Sample submission file with valid IDs

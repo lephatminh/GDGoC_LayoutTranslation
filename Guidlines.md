@@ -7,7 +7,7 @@
 - Link: https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-5.3.3.20231005.exe
 
 
-3. Tải các gói data vào [để ở đâu thư mục nào thì tự điền]\Tesseract-OCR\tessdatact-OCR\tessdata
+3. Tải các gói data để vào mục tessdata (VD: D:\APCS\Tesseract-OCR\tessdata)
 - rus.traineddata: https://github.com/tesseract-ocr/tessdata/raw/main/rus.traineddata
 - spa.traineddata: https://github.com/tesseract-ocr/tessdata/raw/main/spa.traineddata
 - deu.traineddata: https://github.com/tesseract-ocr/tessdata/raw/main/deu.traineddata

@@ -1,19 +1,16 @@
 import csv
 import json
 import fitz  # PyMuPDF
-import ocrmypdf
 import os
 from pathlib import Path
-import tempfile
-from concurrent.futures import ThreadPoolExecutor
-import time
 import logging
-from deep_translator import GoogleTranslator
-from langdetect import detect, DetectorFactory
 
-# Add after the other initialization code
-DetectorFactory.seed = 0  # For reproducibility
-
+from core.csv_utils import find_max_csv_field_size
+from core.preprocess_text import normalize_spaced_text, clean_text
+from core.scale_pdf import scale_pdf
+from core.extract_font_color import int_to_rgb
+from core.ocr_img2text import apply_ocr_to_pdf
+from core.translate_text import translate_cells
 
 # Configure logging
 logging.basicConfig(
@@ -25,106 +22,11 @@ logging.basicConfig(
     ]
 )
 
-def int_to_rgb(color_int):
-    """Convert integer color to RGB tuple."""
-    if color_int < 0:
-        color_int = color_int & 0xFFFFFFFF
-
-    a = (color_int >> 24) & 0xFF
-    r = (color_int >> 16) & 0xFF
-    g = (color_int >> 8) & 0xFF
-    b = color_int & 0xFF
-
-    if (a == 0):
-        a = 255
-
-    return [r, g, b, a]
-
-def normalize_spaced_text(text):
-    """
-    Normalize text with excessive spacing between characters,
-    commonly found in headers like "F I N A N C I A L  S T A T E M E N T S" or ""
-    """
-    # Check if text has consistent spacing pattern (every character followed by space)
-    if len(text) > 3 and all(text[i] == ' ' for i in range(1, len(text), 2)):
-        # Join characters by removing spaces
-        return ''.join(text[i] for i in range(0, len(text), 2))
-    
-    # Check if text has spaces between all characters
-    if len(text) > 3 and ' ' in text:
-        # Count spaces vs non-spaces
-        spaces = text.count(' ')
-        non_spaces = len(text) - spaces
-        
-        # If the ratio of spaces to characters is high (e.g., spaces >= characters)
-        if spaces >= non_spaces - 1:
-            text_split = text.split(' ')
-            text_split = [' ' if char == '' else char for char in text_split]
-            return ''.join(text_split)
-    
-    # Return original if no patterns match
-    return text
-
-def find_max_csv_field_size():
-    """Find the maximum CSV field size limit using binary search"""
-    import csv
-    max_int = 2147483647  # 2^31-1
-    min_int = 1024
-    
-    while min_int < max_int:
-        try:
-            mid = (min_int + max_int + 1) // 2
-            csv.field_size_limit(mid)
-            min_int = mid
-        except OverflowError:
-            max_int = mid - 1
-    
-    return min_int
-
 # Safely set maximum CSV field size limit
 csv.field_size_limit(find_max_csv_field_size())
 
-def apply_ocr_to_pdf(input_path, output_path=None, languages=None):
-    """Apply OCR to a PDF file using OCRmyPDF"""
-    if output_path is None:
-        # Create OCR file in data/test/PDF_ocr directory
-        output_dir = Path("data/test/PDF_ocr")
-        output_dir.mkdir(parents=True, exist_ok=True)
-        output_path = output_dir / input_path.name
 
-    try:
-        languages = [
-            "chi_sim",  # Simplified Chinese
-            "chi_tra",  # Traditional Chinese
-            "vie",      # Vietnamese
-            "eng",      # English
-            "jpn",      # Japanese
-            "kor",      # Korean
-            "fra",      # French
-            "deu",      # German
-            "spa",      # Spanish
-            "rus"       # Russian
-        ]
-
-        # Run OCR with multiple language support
-        ocrmypdf.ocr(
-            input_path,
-            output_path,
-            language=languages,
-            deskew=True,
-            clean=False,
-            optimize=0,
-            output_type='pdfa',
-            skip_text=True,
-            progress_bar=True
-        )
-        logging.info(f"OCR completed: {output_path}")
-        return output_path
-    except Exception as e:
-        logging.error(f"OCR error: {str(e)}")
-        return None
-
-def extract_text_from_pdf(pdf_path):
+def extract_pdf_info(pdf_path):
     """Extract text and formatting information from a PDF file"""
     doc = fitz.open(pdf_path)
     cells = []
@@ -210,6 +112,7 @@ def get_missing_file_ids(sample_file, submission_file):
     
     return missing_ids, existing_solutions, expected_ids
 
+
 def process_missing_files(missing_ids, pdf_dir, existing_solutions, output_file):
     """Process files with missing solutions, apply OCR, and extract text"""
     pdf_dir_path = Path(pdf_dir)
@@ -264,7 +167,7 @@ def process_missing_files(missing_ids, pdf_dir, existing_solutions, output_file)
                     continue
                     
                 # Extract text and translate it
-                result = extract_text_from_pdf(ocr_path)
+                result = extract_pdf_info(ocr_path)
                 cells = result.get("cells", [])
                 
                 if not cells:
@@ -290,138 +193,6 @@ def process_missing_files(missing_ids, pdf_dir, existing_solutions, output_file)
     
     return success, total_missing
 
-def batch_translate_text(texts_with_langs, target='vi', batch_size=25, delay=0):
-    """
-    Translate a batch of texts with rate limiting.
-    
-    Args:
-        texts: List of texts to translate
-        source: Source language code
-        target: Target language code
-        batch_size: Number of texts to translate in one batch
-        delay: Delay between batches in seconds
-        
-    Returns:
-        List of translated texts
-    """
-    results = [""] * len(texts_with_langs)
-
-    # Group text by detected source language
-    lang_groups = {}
-    for text, lang, orig_idx in texts_with_langs:
-        if not lang in lang_groups:
-            lang_groups[lang] = []
-        lang_groups[lang].append((text, orig_idx))
-
-    for source_lang, texts_with_indices in lang_groups.items():
-        if source_lang == target:
-            for text, orig_idx in texts_with_indices:
-                results[orig_idx] = text
-            continue
-
-        texts = [t[0] for t in texts_with_indices]
-        indices = [t[1] for t in texts_with_indices]
-
-        # Create translator for this language
-        translator = GoogleTranslator(source=source_lang, target=target)
-
-        translated_batch = []
-
-        for i in range(0, len(texts), batch_size):
-            batch = texts[i:min(i + batch_size, len(texts))]
-            
-            # Process each text in the current batch
-            batch_results = []
-            for text in batch:
-                try:    
-                    translated = translator.translate(text)
-                    batch_results.append(translated)
-                    
-                except Exception as e:
-                    logging.warning(f"Translation error: {str(e)[:100]}...")
-                    # Return original text on error
-                    batch_results.append(text)
-                    
-                    # Handle rate limiting - increase delay and reduce batch size
-                    if "429" in str(e) or "too many requests" in str(e).lower():
-                        logging.info(f"Rate limit hit. Increasing delay to {delay*2}s and reducing batch size.")
-                        delay *= 2
-                        batch_size = max(1, batch_size // 2)
-                        time.sleep(5)  # Additional pause after hitting rate limit
-            
-            translated_batch.extend(batch_results)
-            
-            # Add delay between batches
-            if i + batch_size < len(texts):
-                time.sleep(delay)
-
-        # Put translated texts back in their original positions
-        for translated_text, orig_idx in zip(translated_batch, indices):
-            results[orig_idx] = translated_text
-            
-    return results
-
-def map_language_code_for_deep_translator(lang_code):
-    mapping = {
-        "zh-cn": "zh-CN",
-        "zh-tw": "zh-TW",
-        'zh': 'zh-CN',     # Default Chinese to Simplified
-        'jw': 'jv',        # Javanese
-        'iw': 'he',        # Hebrew
-        'in': 'id',        # Indonesian
-        'ceb': 'tl',       # Adjust Cebuano to use Tagalog
-    }
-
-    return mapping.get(lang_code, lang_code)
-
-def translate_cells(cells, target='vi'):
-    """
-    Translate text in cells from source language to target language.
-    
-    Args:
-        cells: List of cell dictionaries with text
-        source: Source language code
-        target: Target language code
-        
-    Returns:
-        List of cell dictionaries with translated text
-    """
-    # Extract all texts and detect languages
-    texts_with_langs = []
-    for i, cell in enumerate(cells):
-        if cell.get("text"):
-            try:
-                # Detect language for each text
-                lang = detect(cell["text"])
-                # Map language code for deep_translator
-                mapped_lang = map_language_code_for_deep_translator(lang)
-                # Store original language in cell
-                texts_with_langs.append((cell["text"], mapped_lang, i))
-            except Exception as e:
-                logging.warning(f"Language detection error: {str(e)[:100]}... Using 'en' as fallback.")
-                texts_with_langs.append((cell["text"], "en", i))
-    
-    logging.info(f"Translating {len(texts_with_langs)} text segments to {target}...")
-
-    lang_counts = {}
-    for _, lang, _ in texts_with_langs:
-        lang_counts[lang] = lang_counts.get(lang, 0) + 1
-    
-    logging.info("Detected languages:")
-    for lang, count in lang_counts.items():
-        logging.info(f"  - {lang}: {count} segments")
-    
-    # Perform batch translation
-    translated_texts = batch_translate_text(texts_with_langs, target)
-    
-    # Map translated texts back to cells
-    text_index = 0
-    for cell in cells:
-        if cell.get("text"):
-            cell["text_vi"] = translated_texts[text_index]
-            text_index += 1
-    
-    return cells
 
 def main():
     # File paths
