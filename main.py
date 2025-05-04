@@ -53,7 +53,7 @@ def extract_pdf_info(pdf_path):
                             "height": span["bbox"][3] - span["bbox"][1],    # height
                             "text": normalized_text,
                             "text_vi": normalized_text,  # Will be translated later
-                            "page": page,
+                            "page": page_num,
                         }
                         cells.append(cell)
     except Exception as e:
