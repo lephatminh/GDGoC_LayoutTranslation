@@ -22,6 +22,7 @@ logging.basicConfig(
     ]
 )
 
+
 # Safely set maximum CSV field size limit
 csv.field_size_limit(find_max_csv_field_size())
 
@@ -51,12 +52,8 @@ def extract_pdf_info(pdf_path):
                             "width": span["bbox"][2] - span["bbox"][0],     # width
                             "height": span["bbox"][3] - span["bbox"][1],    # height
                             "text": normalized_text,
-                            "font": {
-                                "color": int_to_rgb(span["color"]),
-                                "name": span["font"],
-                                "size": int(span["size"]),
-                            },
-                            "text_vi": normalized_text  # Will be translated later
+                            "text_vi": normalized_text,  # Will be translated later
+                            "page": page,
                         }
                         cells.append(cell)
     except Exception as e:

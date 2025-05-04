@@ -54,20 +54,20 @@ def draw_boxes_on_pdf(pdf_path, boxes, output_path):
         page = doc[page_num - 1]
         
         # Get box coordinates
-        x = box.get("X", 0)
-        y = box.get("Y", 0)
-        width = box.get("Width", 0)
-        height = box.get("Height", 0)
+        x = box.get("x", 0)
+        y = box.get("y", 0)
+        width = box.get("width", 0)
+        height = box.get("height", 0)
         
         # IMPORTANT: Convert from PDFPig coordinates to PyMuPDF coordinates
         # Get page height for coordinate conversion
-        page_height = page.rect.height
+        # page_height = page.rect.height
         
         # Flip the Y coordinate and adjust for height
-        y_converted = page_height - y - height
+        # y_converted = page_height - y - height
         
         # Get block type for coloring
-        block_type = box.get("BlockType", "unknown")
+        block_type = box.get("blockType", "unknown")
         if block_type not in color_map:
             # Generate a random color for this block type
             color_map[block_type] = (
@@ -80,7 +80,7 @@ def draw_boxes_on_pdf(pdf_path, boxes, output_path):
         color = color_map[block_type]
         
         # Draw rectangle using the converted coordinates
-        rect = fitz.Rect(x, y_converted, x + width, y_converted + height)
+        rect = fitz.Rect(x, y, x + width, y + height)
         page.draw_rect(rect, color=color, width=0.5)
     
     # Add a legend for the colors

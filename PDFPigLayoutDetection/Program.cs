@@ -193,14 +193,14 @@ namespace PDFPigLayoutDetection
                                     // Create cell information
                                     var cell = new CellInfo
                                     {
-                                        X = x,
-                                        Y = y,
-                                        Width = width,
-                                        Height = height,
-                                        Text = blockText.Trim(),
-                                        BlockType = "paragraph",
-                                        Page = pageNum + 1,
-                                        BlockIndex = blockIdx
+                                        x = x,
+                                        y = (float)(page.Height - y - height),
+                                        width = width,
+                                        height = height,
+                                        text = blockText.Trim(),
+                                        blockType = "paragraph",
+                                        page = pageNum + 1,
+                                        blockIndex = blockIdx
                                     };
 
                                     cells.Add(cell);
@@ -235,14 +235,14 @@ namespace PDFPigLayoutDetection
     class CellInfo
     {
         // Basic positioning and text properties
-        public float X { get; set; }
-        public float Y { get; set; }
-        public float Width { get; set; }
-        public float Height { get; set; }
-        public string Text { get; set; }
-        public string BlockType { get; set; }
-        public int Page { get; set; }
-        public int BlockIndex { get; set; }
+        public float x { get; set; }
+        public float y { get; set; }
+        public float width { get; set; }
+        public float height { get; set; }
+        public string text { get; set; }
+        public string blockType { get; set; }
+        public int page { get; set; }
+        public int blockIndex { get; set; }
 
         // Font information (optional)
         // public FontInfo Font { get; set; }
