@@ -124,7 +124,7 @@ def find_pdf_file(file_id, search_dirs):
     return None
 
 def main():
-    csv_path = Path("submission_ocr_official.csv")  # Default
+    csv_path = Path("submission_ocr_no_math.csv")  # Default
     
     # Possible PDF directories to search
     search_dirs = [
