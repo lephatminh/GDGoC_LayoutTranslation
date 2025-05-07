@@ -14,8 +14,8 @@ from tenacity import (
 )
 import google.api_core.exceptions
 import json
-from typing import Dict, List, Any
-from google import genai
+from typing import Dict, List, Any, Optional, Tuple
+import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 from csv_utils import *
@@ -38,7 +38,7 @@ class GeminiModel(Enum):
     GEMINI_PRO = "gemini-pro"
     GEMINI_1_5_FLASH = "gemini-1.5-flash-latest"
     GEMINI_1_5_PRO = "gemini-1.5-pro-latest"
-    GEMINI_2_FLASH = "gemini-2.0-flash-exp"
+    GEMINI_2_FLASH = "gemini-2.0-flash"
     GEMINI_2_FLASH_LITE = "gemini-2.0-flash-lite"
     GEMINI_1_5_PRO_002 = "gemini-1.5-pro-002"\
     
@@ -62,10 +62,81 @@ class ModelConfig:
         elif model == GeminiModel.GEMINI_1_5_PRO_002:
             return cls(model, 6, 1_500, 1_000_000)
         elif model == GeminiModel.GEMINI_2_FLASH_LITE:
-            return cls(model, 30, 1_500, 1_000_000)
+            return cls(model, 4000, 400000, 4_000_000)
         else:
             raise ValueError(f"Unsupported model: {model}")
+
+class ApiKeyManager:
+    def __init__(self):
+        self.models = []
+        self.rate_limiters = []
+        self.lock = threading.RLock()
+        self.available_keys = []  # Track which keys are currently available
+        self.worker_counts = []   # Track how many workers are using each key
+        self.wait_condition = threading.Condition(self.lock)  # For waiting on API availability
+
+    def add_model(self, model, rate_limiter):
+        """Add a model with its own rate limiter"""
+        with self.lock:
+            self.models.append(model)
+            self.rate_limiters.append(rate_limiter)
+            self.available_keys.append(True)
+            self.worker_counts.append(0)
+
+    def get_next_available_model(self, max_wait_time=30):
+        """
+        Get the next available model and its associated rate limiter.
+        Will wait up to max_wait_time seconds if no model is available.
         
+        Args:
+            max_wait_time: Maximum time to wait in seconds for an available API
+            
+        Returns:
+            tuple: (model, rate_limiter, index) or (None, None, -1) if wait timed out
+        """
+        start_time = time.time()
+        with self.lock:
+            while (time.time() - start_time) < max_wait_time:
+                # First try to find a completely unused API
+                for i, available in enumerate(self.available_keys):
+                    if available and self.worker_counts[i] == 0:
+                        self.worker_counts[i] += 1
+                        return self.models[i], self.rate_limiters[i], i
+                
+                # If no unused API, find the one with fewest workers (load balancing)
+                min_workers = float('inf')
+                min_index = -1
+                
+                for i, available in enumerate(self.available_keys):
+                    if available and self.worker_counts[i] < min_workers:
+                        min_workers = self.worker_counts[i]
+                        min_index = i
+                
+                if min_index >= 0:
+                    self.worker_counts[min_index] += 1
+                    return self.models[min_index], self.rate_limiters[min_index], min_index
+                
+                # If we get here, no API is available, wait for notification
+                logger.info("No API available, waiting...")
+                self.wait_condition.wait(timeout=1.0)  # Wait with timeout to recheck periodically
+            
+            # If we get here, we timed out waiting for an API
+            logger.warning(f"Timed out after {max_wait_time}s waiting for API availability")
+            return None, None, -1
+
+    def mark_busy(self, index, busy=True):
+        """Mark a model as busy or available"""
+        with self.lock:
+            if 0 <= index < len(self.available_keys):
+                self.available_keys[index] = not busy
+                
+                if not busy:  # Model becoming available
+                    self.worker_counts[index] = max(0, self.worker_counts[index] - 1)  # Decrement worker count
+                    self.wait_condition.notify_all()  # Notify waiting threads
+                    
+    def size(self):
+        """Return the number of models"""
+        return len(self.models)     
 
 CURRENT_CONFIG = ModelConfig.get_config(GeminiModel.GEMINI_2_FLASH_LITE)
 MODEL = CURRENT_CONFIG.model.value
@@ -177,20 +248,23 @@ def setup_gemini(api_key):
 def setup_multiple_models():
     """Setup multiple models with different configurations"""
     default_api_str = "GEMINI_API_KEY"
-    models = []
-    for i in range(1,14):
+    api_manager = ApiKeyManager()
+    
+    for i in range(1, 8):
         api_key = os.getenv(f"{default_api_str}_{i}")
         if not api_key:
             logger.warning(f"API key {default_api_str}_{i} not found, skipping.")
             continue
         try:
             model = setup_gemini(api_key)
+            rate_limiter = GeminiRateLimiter()  # Create individual rate limiter for each API
+            api_manager.add_model(model, rate_limiter)
             logger.info(f"Model {i} setup successfully.")
         except Exception as e:
             logger.error(f"Failed to setup model {i}: {str(e)}")
             continue
-        models.append(model)
-    return models
+    
+    return api_manager
 
 def translate_with_gemini(model, text, rate_limiter, context):
     """Translate text using Gemini model with comprehensive rate limiting"""
@@ -199,89 +273,130 @@ def translate_with_gemini(model, text, rate_limiter, context):
     try:
         # Estimate tokens (roughly 4 chars per token for Vietnamese/English)
         estimated_tokens = len(text) // 4 * 2  # Input + output tokens
-        
         # Wait if we're approaching rate limits
         rate_limiter.wait_if_needed(estimated_tokens)
+        
+        prompt = f"""TRANSLATION TASK
 
-        prompt = f"""Translate this {source_lang} text to formal {target_lang}.
-        Instructions:
-        - Provide exactly ONE translation
-        - Keep the original meaning and cultural context
-        - Use formal, elegant English
-        - Do not provide multiple versions or alternatives
-        - Do not include explanatory text
-        - Preserve the translation order according to the context given below.
-        - Do not add any additional content in the context or drop any content from the source
-        
-        Context: {context}
-        Source {source_lang} text:
-        {text}
-        Translate to {target_lang}:
-        """
-        
+            SOURCE LANGUAGE: {source_lang}
+            TARGET LANGUAGE: {target_lang}
+
+            INSTRUCTIONS:
+            1. ONLY translate the TEXT inside the <TEXT_TO_TRANSLATE> tags
+            2. DO NOT translate anything in the <CONTEXT> tags
+            3. Use the <CONTEXT> only to understand the meaning and maintain consistency
+            4. Provide exactly ONE formal translation
+            5. Preserve all formatting and structure of the original text
+            6. Do not add explanations or alternatives
+
+            <CONTEXT>
+            {context}
+            </CONTEXT>
+
+            <TEXT_TO_TRANSLATE>
+            {text}
+            </TEXT_TO_TRANSLATE>
+
+            Your translation in {target_lang}:"""
+
         generation_config = {
-            "temperature": 0.3,
+            "temperature": 0.2,  # Lowered for more deterministic output
             "top_p": 0.85,
             "top_k": 40,
             "max_output_tokens": 1024,
             "stop_sequences": ["\n\n"]
         }
-
         safety_settings = {
             "HARM_CATEGORY_HARASSMENT": "BLOCK_NONE",
             "HARM_CATEGORY_HATE_SPEECH": "BLOCK_NONE",
             "HARM_CATEGORY_SEXUALLY_EXPLICIT": "BLOCK_NONE",
             "HARM_CATEGORY_DANGEROUS_CONTENT": "BLOCK_NONE"
         }
-
+        
         response = model.generate_content(
             prompt,
-            generation_config=generation_config,
+            generation_config=generation_config,  
             safety_settings=safety_settings
         )
-
+        
         if response and response.text:
             return response.text.strip()
         return None
-    
     except Exception as e:
         logger.error(f"Translation error: {str(e)}")
         raise
+    
 def translate_box(args):
     """
-    Translate a single text box using the specified model.
-    This function is designed to be used with ThreadPoolExecutor.
+    Translate a single text box using the API manager.
     """
-    box, model, rate_limiter, pdfpig_boxes = args
+    box, api_manager, pdfpig_boxes = args
     source_text = box["text"]
+    x_coord = box["x"]
+    y_coord = box["y"]
+    width = box["width"]
+    height = box["height"]
+    
+    original_box = {
+        "x": x_coord,
+        "y": y_coord,
+        "width": width,
+        "height": height,
+        "text": source_text
+    }
     
     if not source_text or len(source_text.strip()) == 0:
-        return {**box, "translated_text": ""}
+        return {**original_box, "text_vi": ""}
     
-    try:
-        # Get context for this box
-        context = get_contexts(box, pdfpig_boxes)
-        context = " ".join(context) if context else "Document translation"
-        
-        # Translate the text
-        translated_text = translate_with_gemini(model, source_text, rate_limiter, context)
-        return {**box, "translated_text": translated_text or ""}
-    except Exception as e:
-        logger.error(f"Translation error for box ID {box.get('id', 'unknown')}: {str(e)}")
-        return {**box, "translated_text": ""}
+    max_retries = 3
+    retry_count = 0
     
-def translate_document(pymuboxes: List[Dict[str, Any]], models, rate_limiter) -> List[Dict[str, Any]]:
+    while retry_count < max_retries:
+        try:
+            # Get context for this box
+            context = get_contexts(box, pdfpig_boxes)
+            context = " ".join(context) if context else "No context available"
+            
+            # Get an available model with a timeout
+            model, rate_limiter, model_index = api_manager.get_next_available_model(max_wait_time=60)
+            if model is None:
+                # No model available even after waiting, retry
+                retry_count += 1
+                if retry_count < max_retries:
+                    logger.warning(f"No API available, retrying ({retry_count}/{max_retries})...")
+                    time.sleep(5)  # Wait a bit before retrying
+                    continue
+                else:
+                    return {**original_box, "text_vi": "[TRANSLATION UNAVAILABLE - NO API]"}
+            
+            try:
+                # No need to mark busy, already handled by get_next_available_model
+                
+                # Translate the text
+                translated_text = translate_with_gemini(model, source_text, rate_limiter, context)
+                return {**original_box, "text_vi": translated_text or ""}
+            finally:
+                # Release the model when done
+                api_manager.mark_busy(model_index, busy=False)
+                
+            # If we got here, translation was successful
+            break
+                
+        except Exception as e:
+            logger.error(f"Translation error for box: {str(e)}")
+            retry_count += 1
+            time.sleep(2)  # Brief wait before retry
+    
+    # If we exhausted all retries
+    return {**original_box, "text_vi": ""}
+    
+def translate_document(pymuboxes: List[Dict[str, Any]], api_manager) -> List[Dict[str, Any]]:
     """
-    Translate document text boxes in parallel using multiple API keys.
-    Uses ThreadPoolExecutor to process multiple boxes concurrently.
+    Translate document text boxes in parallel using multiple API keys with individual rate limiters.
     
     Args:
         pymuboxes: List of text boxes to translate
-        models: List of initialized Gemini models
-        rate_limiter: Rate limiter instance to manage API quotas
-        
-    Returns:
-        List of dictionaries containing original boxes with added translations
+        api_manager: API manager instance with models and rate limiters
     """
     if not pymuboxes:
         logger.warning("No boxes to translate")
@@ -291,28 +406,17 @@ def translate_document(pymuboxes: List[Dict[str, Any]], models, rate_limiter) ->
     pdfpig_boxes = load_csv_data_pdfpig(csv_path)
     pdfpig_boxes = pdfpig_boxes["cfb267ee38361a88917d5c2cc80dc4524cede67df47b54ec7df07952e6f57eb2"]
     
-    # Create a thread lock for the rate limiter to prevent race conditions
-    rate_limiter_lock = threading.RLock()
-    
-    # Modify rate limiter to be thread-safe
-    original_wait_if_needed = rate_limiter.wait_if_needed
-    def thread_safe_wait_if_needed(estimated_tokens=1000):
-        with rate_limiter_lock:
-            return original_wait_if_needed(estimated_tokens)
-    rate_limiter.wait_if_needed = thread_safe_wait_if_needed
-    
-
-    tasks = []
-    model_count = len(models)
-    for i, box in enumerate(pymuboxes):
-        # Round-robin distribution of models
-        model_index = i % model_count
-        tasks.append((box, models[model_index], rate_limiter, pdfpig_boxes))
+    # Create tasks with API manager
+    tasks = [(box, api_manager, pdfpig_boxes) for box in pymuboxes]
     
     results = []
-    max_workers = min(6, model_count)  # Set maximum number of concurrent threads
     
-    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+    # Use 8 workers as specified by the user, regardless of API count
+    num_workers = 8
+    
+    logger.info(f"Starting translation with {num_workers} workers and {api_manager.size()} APIs")
+    
+    with concurrent.futures.ThreadPoolExecutor(max_workers=num_workers) as executor:
         futures = list(tqdm(
             executor.map(translate_box, tasks), 
             total=len(tasks),
@@ -325,18 +429,19 @@ def translate_document(pymuboxes: List[Dict[str, Any]], models, rate_limiter) ->
         
     
 def main():
-    rate_limiter = GeminiRateLimiter()
-    models = setup_multiple_models()
+    # Create API manager and setup models
+    api_manager = setup_multiple_models()
+    
     # Load PyMuPDF boxes
     pymuboxes = load_csv_data_pymupdf(current_dir.parent / "submission_ocr_official.csv")
     doc_id = "cfb267ee38361a88917d5c2cc80dc4524cede67df47b54ec7df07952e6f57eb2"
     pymuboxes = pymuboxes[doc_id]
     
-    # Translate document
-    translated_boxes = translate_document(pymuboxes, models, rate_limiter)
+    # Translate document using API manager
+    translated_boxes = translate_document(pymuboxes, api_manager)
+    
     # Save results to CSV
     output_path = current_dir.parent / "translated_boxes.csv"
-
     with open(output_path, "w", newline="", encoding="utf-8") as csvfile:
         fieldnames = translated_boxes[0].keys()
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -344,6 +449,7 @@ def main():
         for box in translated_boxes:
             writer.writerow(box)
     logger.info(f"Translation completed. Results saved to {output_path}")
+
 
 if __name__ == "__main__":
     main()
