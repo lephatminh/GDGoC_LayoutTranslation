@@ -37,9 +37,7 @@ const UploadPage: React.FC = () => {
 
 	const handleUpload = async () => {
 		if (!file) return;
-
 		setIsUploading(true);
-
 		const formData = new FormData();
 		formData.append("file", file);
 
@@ -53,16 +51,12 @@ const UploadPage: React.FC = () => {
 				throw new Error("Upload failed");
 			}
 
-			const translatedBlob = await response.blob();
-			const originalUrl = URL.createObjectURL(file);
-			const translatedUrl = URL.createObjectURL(translatedBlob);
+			const { original, translated } = await response.json();
 
-			navigate("/viewer", {
-				state: {
-					originalUrl,
-					translatedUrl,
-				},
-			});
+			sessionStorage.setItem("originalUrl", `http://localhost:8000${original}`);
+			sessionStorage.setItem("translatedUrl", `http://localhost:8000${translated}`);
+
+			navigate("/viewer");
 		} catch (error) {
 			alert("Upload failed. Check backend connection.");
 			console.error(error);
@@ -87,7 +81,6 @@ const UploadPage: React.FC = () => {
 				<p className="text-muted mb-4">
 					Drag and drop a PDF here, or click this box to select a PDF to upload.
 				</p>
-
 				{file && (
 					<div className="d-flex justify-content-between align-items-start">
 						<div style={{ maxWidth: "90%", wordBreak: "break-word" }}>
@@ -108,7 +101,6 @@ const UploadPage: React.FC = () => {
 						</button>
 					</div>
 				)}
-
 				<div className="mt-4 d-flex gap-3">
 					<button
 						className="btn btn-primary"
@@ -131,7 +123,6 @@ const UploadPage: React.FC = () => {
 						{isUploading ? "Uploading..." : "Upload"}
 					</button>
 				</div>
-
 				<input
 					type="file"
 					accept="application/pdf"
