@@ -211,5 +211,5 @@ def main():
     save_filtered_boxes(filtered_data, output_csv)
     print("Done!")
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

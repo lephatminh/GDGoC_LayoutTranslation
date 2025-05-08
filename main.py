@@ -5,11 +5,14 @@ import os
 from pathlib import Path
 import logging
 
-from core.csv_utils import find_max_csv_field_size
+from core.csv_utils import find_max_csv_field_size, load_csv_data_pymupdf, load_csv_data_pdfpig
 from core.preprocess_text import normalize_spaced_text, clean_text
 from core.extract_font_color import int_to_rgb
+from core.extract_math_boxes import load_math_boxes 
 from core.ocr_img2text import apply_ocr_to_pdf
-from core.translate_text import translate_cells
+from core.translate_text import setup_multiple_models, translate_document
+from core.remove_math_boxes import filter_text_boxes
+from core.visualize_result import visualize_translation
 
 
 # Configure logging
@@ -60,16 +63,6 @@ def extract_pdf_info(pdf_path):
         logging.error(f"Error extracting text from {pdf_path}: {str(e)}")
     finally:
         doc.close()
-    
-    # Add translation step
-    if cells:
-        try:
-            logging.info(f"Translating {len(cells)} cells to Vietnamese...")
-            cells = translate_cells(cells, target='vi')
-            logging.info(f"Translation complete for {len(cells)} cells")
-        except Exception as e:
-            logging.error(f"Translation error: {str(e)}")
-            # Continue with untranslated text
 
     # Final null check before returning
     for cell in cells:
@@ -77,28 +70,6 @@ def extract_pdf_info(pdf_path):
             cell["text_vi"] = cell.get("text", "")  # Use original or empty string
 
     return {"cells": cells}
-
-
-def get_file_ids(file_path):
-    """Get expected file IDs from sample submission file"""
-    if not file_path.exists():
-        logging.warning(f"Sample submission file not found: {file_path}")
-        return set()  # Return empty set if file doesn't exist
-        
-    expected_ids = set()
-    try:
-        with open(file_path, 'r', newline='', encoding='utf-8') as f:
-            reader = csv.reader(f)
-            next(reader)  # Skip header
-            for row in reader:
-                if row and row[0]:  # Check if row exists and has an ID
-                    expected_ids.add(row[0])
-        
-        logging.info(f"Found {len(expected_ids)} expected file IDs")
-        return expected_ids
-    except Exception as e:
-        logging.error(f"Error reading sample submission: {e}")
-        return set()
 
 
 def process_all_pdfs(pdf_dir, ocr_dir, output_csv):
@@ -175,18 +146,95 @@ def process_all_pdfs(pdf_dir, ocr_dir, output_csv):
 
 
 def main():
+    current_dir = Path(__file__).parent
     # File paths
-    pdf_dir = Path("data/test/PDF")  # Directory with original PDF files
+    pdf_dir = Path("data/test/testing")  # Directory with original PDF files
     ocr_dir = Path("data/test/PDF_ocr")
     output_csv = Path("submission_ocr_official.csv")
+    pdfpig_csv = Path("submission_pdfpig.csv")  # PDF Pig output for context extraction
+    math_notation_dir = Path("YOLO_Math_detection")  # Directory with math notation detection results
+    visualization_dir = Path("visualized_translations")
+    font_file_path = Path("Roboto.ttf")  # Path to font file for visualization
 
     # Ensure necessary directories exist
     os.makedirs(pdf_dir, exist_ok=True)
     os.makedirs(ocr_dir, exist_ok= True)
+    os.makedirs(visualization_dir, exist_ok=True)
 
-    # Get all valid file ids from sample_file
+    # Create API manager and setup models
+    api_manager = setup_multiple_models()
+
     process_all_pdfs(pdf_dir, ocr_dir, output_csv)
+    pdf_boxes = load_csv_data_pymupdf(current_dir / "submission_ocr_official.csv")
 
+    # Load paragraph context data from PDFPig if available
+    context_boxes = {}
+    if pdfpig_csv.exists():
+        print("Loading PDFPig data for context extraction...")
+        context_boxes = load_csv_data_pdfpig(pdfpig_csv)
+        print(f"Loaded context data for {len(context_boxes)} files")
+    else:
+        # execute PDFPigLayoutDetection/Program.cs then load paragraph context data 
+        pass
+
+     # Load existing translations if the file exists
+    translated_json_path = current_dir / "translated.json"
+    if translated_json_path.exists():
+        with open(translated_json_path, "r", encoding="utf-8") as f:
+            all_translations = json.load(f)
+        print(f"Loaded {len(all_translations)} translated files from translated.json")
+    else:
+        all_translations = {}
+
+    # Loop through all files
+    # all_translations = {}
+    for file_id, boxes in pdf_boxes.items():
+        print(f"Processing file: {file_id}")
+
+        # Detect Math Equation boxes for each file
+        math_boxes = [] 
+        try:
+            math_boxes = load_math_boxes(math_notation_dir, file_id)
+        except Exception as e:
+            print(f"  Error detecting math boxes: {e}")
+        
+        # Remove boxes in pymupddf overlapped with Math Equation boxes from source_text
+        filtered_boxes = boxes.copy()
+        if math_boxes:
+            try:
+                filtered_boxes = filter_text_boxes(boxes, math_boxes)
+                print(f"  Kept {len(filtered_boxes)} of {len(boxes)} text boxes after math filtering")
+            except Exception as e:
+                print(f"  Error filtering math boxes: {e}")
+            
+        # Translate text into text_vi
+        if file_id in all_translations:
+            print(f"  Already translated {file_id}, skipping translation")
+            translated_boxes = all_translations[file_id]
+        else:
+            translated_boxes = translate_document(filtered_boxes, api_manager, context_boxes[file_id])
+        
+        # text_vi insertion into original pdf
+        # math equation image insertion into original pdf 
+        all_translations[file_id] = translated_boxes
+
+        # try:
+        #     # Find the original PDF
+        #     pdf_path = ocr_dir / f"{file_id}.ocr.pdf"
+            
+        #     if pdf_path:
+        #         output_pdf = visualization_dir / f"{file_id}_translated.pdf"
+        #         visualize_translation(pdf_path, translated_boxes, math_boxes, output_pdf, font_file_path)
+        #         print(f"  Created visualization at {output_pdf}")
+        #     else:
+        #         print(f"  Could not find PDF for {file_id}, skipping visualization")
+        # except Exception as e:
+        #     print(f"  Error creating visualization: {e}")
+
+    with open("translated.json", "w", encoding="utf-8") as outfile:
+        json.dump(all_translations, outfile, indent=4, ensure_ascii=False)
+        print(f"Saved all translations to translated.json")
+    # Visualize the translations
 
 if __name__ == "__main__":
     main()

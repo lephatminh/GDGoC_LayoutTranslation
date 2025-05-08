@@ -18,10 +18,10 @@ from typing import Dict, List, Any, Optional, Tuple
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
-from csv_utils import *
+# from csv_utils import *
 import csv
 from pathlib import Path
-from detect_context import *
+from core.extract_contexts import *
 load_dotenv()
 import threading
 import concurrent.futures
@@ -390,7 +390,7 @@ def translate_box(args):
     # If we exhausted all retries
     return {**original_box, "text_vi": ""}
     
-def translate_document(pymuboxes: List[Dict[str, Any]], api_manager) -> List[Dict[str, Any]]:
+def translate_document(pymuboxes: List[Dict[str, Any]], api_manager, pdfpig_boxes) -> List[Dict[str, Any]]:
     """
     Translate document text boxes in parallel using multiple API keys with individual rate limiters.
     
@@ -401,10 +401,6 @@ def translate_document(pymuboxes: List[Dict[str, Any]], api_manager) -> List[Dic
     if not pymuboxes:
         logger.warning("No boxes to translate")
         return []
-
-    csv_path = current_dir.parent / "submission_pdfpig.csv"
-    pdfpig_boxes = load_csv_data_pdfpig(csv_path)
-    pdfpig_boxes = pdfpig_boxes["cfb267ee38361a88917d5c2cc80dc4524cede67df47b54ec7df07952e6f57eb2"]
     
     # Create tasks with API manager
     tasks = [(box, api_manager, pdfpig_boxes) for box in pymuboxes]
@@ -428,28 +424,32 @@ def translate_document(pymuboxes: List[Dict[str, Any]], api_manager) -> List[Dic
     return results
         
     
-def main():
-    # Create API manager and setup models
-    api_manager = setup_multiple_models()
+# def main():
+#     # Create API manager and setup models
+#     api_manager = setup_multiple_models()
     
-    # Load PyMuPDF boxes
-    pymuboxes = load_csv_data_pymupdf(current_dir.parent / "submission_ocr_official.csv")
-    doc_id = "cfb267ee38361a88917d5c2cc80dc4524cede67df47b54ec7df07952e6f57eb2"
-    pymuboxes = pymuboxes[doc_id]
+#     # Load PyMuPDF boxes
+#     pymuboxes = load_csv_data_pymupdf(current_dir.parent / "submission_ocr_official.csv")
+#     doc_id = "cfb267ee38361a88917d5c2cc80dc4524cede67df47b54ec7df07952e6f57eb2"
+#     pymuboxes = pymuboxes[doc_id]
     
-    # Translate document using API manager
-    translated_boxes = translate_document(pymuboxes, api_manager)
+#     csv_path = current_dir.parent / "submission_pdfpig.csv"
+#     pdfpig_boxes = load_csv_data_pdfpig(csv_path)
+#     pdfpig_boxes = pdfpig_boxes["cfb267ee38361a88917d5c2cc80dc4524cede67df47b54ec7df07952e6f57eb2"]
+
+#     # Translate document using API manager
+#     translated_boxes = translate_document(pymuboxes, api_manager, pdfpig_boxes)
     
-    # Save results to CSV
-    output_path = current_dir.parent / "translated_boxes.csv"
-    with open(output_path, "w", newline="", encoding="utf-8") as csvfile:
-        fieldnames = translated_boxes[0].keys()
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
-        for box in translated_boxes:
-            writer.writerow(box)
-    logger.info(f"Translation completed. Results saved to {output_path}")
+#     # Save results to CSV
+#     output_path = current_dir.parent / "translated_boxes.csv"
+#     with open(output_path, "w", newline="", encoding="utf-8") as csvfile:
+#         fieldnames = translated_boxes[0].keys()
+#         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+#         writer.writeheader()
+#         for box in translated_boxes:
+#             writer.writerow(box)
+#     logger.info(f"Translation completed. Results saved to {output_path}")
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

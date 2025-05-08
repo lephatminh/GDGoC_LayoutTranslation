@@ -1,5 +1,6 @@
 import csv
 import json
+import logging
 
 
 def find_max_csv_field_size():
@@ -88,3 +89,25 @@ def load_csv_data_pdfpig(csv_path):
                     print(f"Error parsing JSON for {file_id}: {e}")
     
     return results
+
+
+def get_file_ids(file_path):
+    """Get expected file IDs from sample submission file"""
+    if not file_path.exists():
+        logging.warning(f"Sample submission file not found: {file_path}")
+        return set()  # Return empty set if file doesn't exist
+        
+    expected_ids = set()
+    try:
+        with open(file_path, 'r', newline='', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            next(reader)  # Skip header
+            for row in reader:
+                if row and row[0]:  # Check if row exists and has an ID
+                    expected_ids.add(row[0])
+        
+        logging.info(f"Found {len(expected_ids)} expected file IDs")
+        return expected_ids
+    except Exception as e:
+        logging.error(f"Error reading sample submission: {e}")
+        return set()

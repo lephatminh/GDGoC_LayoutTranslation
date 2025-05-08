@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 from typing import List, Dict, Any, Tuple, Optional
 import random
-from core.detect_context import get_contexts, get_all_contexts
+from core.extract_contexts import get_contexts, get_all_contexts
 import fitz  # PyMuPDF
 import pandas as pd
 

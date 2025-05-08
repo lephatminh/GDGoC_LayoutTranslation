@@ -20,7 +20,7 @@ namespace PDFPigLayoutDetection
         {
             // File paths. Update the path to go up one directory level
             string pdfDir = Path.Combine("..", "data", "test", "testing");
-            string outputCsv = "submission_pdfpig.csv";
+            string outputCsv = Path.Combine("..", "submission_pdfpig.csv");
 
             // Ensure directories exist
             Directory.CreateDirectory(pdfDir);
