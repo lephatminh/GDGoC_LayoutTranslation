@@ -7,12 +7,11 @@ import logging
 
 from core.csv_utils import find_max_csv_field_size, load_csv_data_pymupdf, load_csv_data_pdfpig
 from core.preprocess_text import normalize_spaced_text, clean_text
-from core.extract_font_color import int_to_rgb
 from core.extract_math_boxes import load_math_boxes 
 from core.ocr_img2text import apply_ocr_to_pdf
 from core.translate_text import setup_multiple_models, translate_document
-from core.remove_math_boxes import filter_text_boxes
-from core.visualize_result import visualize_translation
+from core.filter_math_related_boxes import filter_text_boxes
+from core.visualize_result import visualize_translation_and_math
 
 
 # Configure logging
@@ -151,10 +150,11 @@ def main():
     pdf_dir = Path("data/test/testing")  # Directory with original PDF files
     ocr_dir = Path("data/test/PDF_ocr")
     output_csv = Path("submission_ocr_official.csv")
-    pdfpig_csv = Path("submission_pdfpig.csv")  # PDF Pig output for context extraction
+    pdfpig_csv = Path("submission_pdfpig.csv")  # PDFPig output for context extraction
     math_notation_dir = Path("YOLO_Math_detection")  # Directory with math notation detection results
     visualization_dir = Path("visualized_translations")
     font_file_path = Path("Roboto.ttf")  # Path to font file for visualization
+    translated_json_path = current_dir / "translated.json"
 
     # Ensure necessary directories exist
     os.makedirs(pdf_dir, exist_ok=True)
@@ -164,7 +164,10 @@ def main():
     # Create API manager and setup models
     api_manager = setup_multiple_models()
 
+    # Process all PDFs and generate CSV
     process_all_pdfs(pdf_dir, ocr_dir, output_csv)
+
+    # Load PyMuPDF boxes
     pdf_boxes = load_csv_data_pymupdf(current_dir / "submission_ocr_official.csv")
 
     # Load paragraph context data from PDFPig if available
@@ -177,8 +180,7 @@ def main():
         # execute PDFPigLayoutDetection/Program.cs then load paragraph context data 
         pass
 
-     # Load existing translations if the file exists
-    translated_json_path = current_dir / "translated.json"
+    # Load existing translations if the file exists
     if translated_json_path.exists():
         with open(translated_json_path, "r", encoding="utf-8") as f:
             all_translations = json.load(f)
@@ -218,18 +220,19 @@ def main():
         # math equation image insertion into original pdf 
         all_translations[file_id] = translated_boxes
 
-        # try:
-        #     # Find the original PDF
-        #     pdf_path = ocr_dir / f"{file_id}.ocr.pdf"
+        try:
+            # Find the original PDF
+            pdf_path = ocr_dir / f"{file_id}.ocr.pdf"
             
-        #     if pdf_path:
-        #         output_pdf = visualization_dir / f"{file_id}_translated.pdf"
-        #         visualize_translation(pdf_path, translated_boxes, math_boxes, output_pdf, font_file_path)
-        #         print(f"  Created visualization at {output_pdf}")
-        #     else:
-        #         print(f"  Could not find PDF for {file_id}, skipping visualization")
-        # except Exception as e:
-        #     print(f"  Error creating visualization: {e}")
+            if pdf_path:
+                output_pdf = visualization_dir / f"{file_id}_translated.pdf"
+                visualize_translation_and_math(pdf_path, translated_boxes, math_boxes, output_pdf,
+                                      font_file_path, math_notation_dir / file_id)
+                print(f"  Created visualization at {output_pdf}")
+            else:
+                print(f"  Could not find PDF for {file_id}, skipping visualization")
+        except Exception as e:
+            print(f"  Error creating visualization: {e}")
 
     with open("translated.json", "w", encoding="utf-8") as outfile:
         json.dump(all_translations, outfile, indent=4, ensure_ascii=False)
