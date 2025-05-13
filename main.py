@@ -1,10 +1,9 @@
 import csv
 import json
 import fitz  # PyMuPDF
-import os
+from typing import List, Dict 
 from pathlib import Path
 import logging
-
 from core.csv_utils import find_max_csv_field_size, load_csv_data_pymupdf, load_csv_data_pdfpig
 from core.preprocess_text import normalize_spaced_text, clean_text
 from core.extract_math_boxes import load_math_boxes 
@@ -63,181 +62,120 @@ def extract_pdf_info(pdf_path):
     finally:
         doc.close()
 
-    # Final null check before returning
-    for cell in cells:
-        if cell.get("text_vi") is None:
-            cell["text_vi"] = cell.get("text", "")  # Use original or empty string
-
     return {"cells": cells}
 
 
-def process_all_pdfs(pdf_dir, ocr_dir, output_csv):
-    # Get all pdf files from pdf_dir
-    pdf_files = list(pdf_dir.glob("*.pdf"))
-    total_files = len(pdf_files)
-
-    # Create CSV file with header if it doesn't exist
-    csv_exists = output_csv.exists()
-    if not csv_exists:
-        with open(output_csv, "w", newline="", encoding="utf-8") as f:
-            writer = csv.writer(f)
-            writer.writerow(["id", "solution"])
+def process_single_pdf(
+    file_id: str,
+    pdf_path: Path,
+    ocr_dir: Path,
+    translation_cache: Dict[str, List],
+    context_boxes: Dict[str, List],
+    api_manager,
+    math_dir: Path,
+    viz_dir: Path,
+    font_path: Path,
+) -> List[Dict]:
+    # OCR pdf for no selectable texts
+    ocr_pdf = apply_ocr_to_pdf(pdf_path, ocr_dir)
+    if not ocr_pdf:
+        logging.error(f"OCR failed for {file_id}")
+        return []
     
-    # Keep track of already processed files
-    processed_ids = set()
-    if csv_exists:
-        with open(output_csv, "r", newline="", encoding="utf-8") as f:
-            reader = csv.reader(f)
-            # Check if the file has any rows before trying to skip the header
-            try:
-                next(reader)  # Skip header
-                for row in reader:
-                    if row:
-                        processed_ids.add(row[0])
-                print(f"Found {len(processed_ids)} already processed files in submission.csv")
-            except StopIteration:
-                # File exists but is empty or only contains header
-                print("Existing submission.csv appears to be empty. Starting fresh.")
-                # Reset the file with just a header
-                with open(output_csv, "w", newline="", encoding="utf-8") as f_reset:
-                    writer = csv.writer(f_reset)
-                    writer.writerow(["id", "solution"])
-        print(f"Found {len(processed_ids)} already processed files in submission.csv")
+    # Extract pdf vital info
+    cells = extract_pdf_info(ocr_pdf)
 
-    # Process each PDF and append to CSV immediately
-    for idx, pdf_file in enumerate(pdf_files, 1):
-        # Extract file ID from filename
-        file_id = pdf_file.stem
-        
-        # Skip if already processed
-        if file_id in processed_ids:
-            print(f"[{idx}/{total_files}] Skipping already processed: {file_id}")
-            continue
-            
-        print(f"[{idx}/{total_files}] Processing: {pdf_file.name}")
-        
-        try:
-            # Apply OCR to the PDF
-            ocr_pdf_file = apply_ocr_to_pdf(pdf_file, ocr_dir)
-            if not ocr_pdf_file:
-                logging.error(f"OCR failed for {file_id}")
-                continue
+    # Remove math overlaps
+    math_boxes = load_math_boxes(math_dir, file_id) or []
+    if math_boxes:
+        cells = filter_text_boxes(cells, math_boxes)
+        logging.info(f"{file_id}: {len(cells)} cells after math filtering")
 
-            # Process PDF and extract cells
-            output = extract_pdf_info(ocr_pdf_file)
-            cells = output.get("cells", [])
-            
-            # Append result to CSV immediately
-            with open(output_csv, "a", newline="", encoding="utf-8") as f:
-                writer = csv.writer(f, quoting=csv.QUOTE_MINIMAL)
-                json_str = json.dumps(cells, ensure_ascii=False)
-                json_str = clean_text(json_str)
-                writer.writerow([file_id, json_str])
-                
-            processed_ids.add(file_id)
-            print(f"Saved result for {file_id} to {output_csv}")
-            
-        except Exception as e:
-            print(f"Error processing {file_id}: {str(e)}")
-            continue
+    # Translate
+    if file_id in translation_cache:
+        translated = translation_cache[file_id]
+        logging.info(f"{file_id}: using cached translation")
+    else:
+        translated = translate_document(cells, api_manager, context_boxes.get(file_id, []))
+        translation_cache[file_id] = translated
 
-    print(f"Processing complete! {len(processed_ids)} files processed.")
+    # Visualize
+    output_pdf = viz_dir / f"{file_id}_translated.pdf"
+    visualize_translation_and_math(
+        ocr_pdf, translated, math_boxes, output_pdf, font_path, math_dir / file_id
+    )
+    logging.info(f"{file_id}: visualization saved to {output_pdf}")
+
+    return translated
 
 
 def main():
-    current_dir = Path(__file__).parent
-    # File paths
-    pdf_dir = Path("data/test/testing")  # Directory with original PDF files
-    ocr_dir = Path("data/test/PDF_ocr")
-    output_csv = Path("submission_ocr_official.csv")
-    pdfpig_csv = Path("submission_pdfpig.csv")  # PDFPig output for context extraction
-    math_notation_dir = Path("YOLO_Math_detection")  # Directory with math notation detection results
-    visualization_dir = Path("visualized_translations")
-    font_file_path = Path("Roboto.ttf")  # Path to font file for visualization
-    translated_json_path = current_dir / "translated.json"
+    root = Path(__file__).parent
+    pdf_dir = root / "data" / "test" / "PDF"
+    ocr_dir = root / "data" / "test" / "PDF_ocr"
+    viz_dir = root / "visualized_translations"
+    output_csv = root / "submission_ocr_official.csv"
+    pdfpig_csv = root / "submission_pdfpig.csv"
+    math_dir = root / "YOLO_Math_detection"
+    font_path = root / "Roboto.ttf"
+    translated_json = root / "translated.json"
 
     # Ensure necessary directories exist
-    os.makedirs(pdf_dir, exist_ok=True)
-    os.makedirs(ocr_dir, exist_ok= True)
-    os.makedirs(visualization_dir, exist_ok=True)
+    for d in (pdf_dir, ocr_dir, viz_dir):
+        d.mkdir(parents=True, exist_ok=True)
+
 
     # Create API manager and setup models
     api_manager = setup_multiple_models()
 
-    # Process all PDFs and generate CSV
-    process_all_pdfs(pdf_dir, ocr_dir, output_csv)
+    # Load contexts and caches
+    context_boxes = load_csv_data_pdfpig(pdfpig_csv) if pdfpig_csv.exists() else {}
+    translation_cache = {}
+    if translated_json.exists():
+        translation_cache = json.loads(translated_json.read_text(encoding="utf-8"))
+        logging.info(f"Loaded {len(translation_cache)} cached translations")
 
-    # Load PyMuPDF boxes
-    pdf_boxes = load_csv_data_pymupdf(current_dir / "submission_ocr_official.csv")
+    # Load processed files
+    processed = set()
+    if output_csv.exists():
+        reader = csv.reader(output_csv.open("r", encoding="utf-8"))
+        next(reader, None)
+        processed = {row[0] for row in reader if row}
 
-    # Load paragraph context data from PDFPig if available
-    context_boxes = {}
-    if pdfpig_csv.exists():
-        print("Loading PDFPig data for context extraction...")
-        context_boxes = load_csv_data_pdfpig(pdfpig_csv)
-        print(f"Loaded context data for {len(context_boxes)} files")
-    else:
-        # execute PDFPigLayoutDetection/Program.cs then load paragraph context data 
-        pass
+    writer = csv.writer(output_csv.open("a", newline="", encoding="utf-8"))
+    if not processed:
+        writer.writerow(["id", "solution"])
 
-    # Load existing translations if the file exists
-    if translated_json_path.exists():
-        with open(translated_json_path, "r", encoding="utf-8") as f:
-            all_translations = json.load(f)
-        print(f"Loaded {len(all_translations)} translated files from translated.json")
-    else:
-        all_translations = {}
+    # Main loop
+    pdf_files = sorted(pdf_dir.glob("*.pdf"))
+    for idx, pdf_path in enumerate(pdf_files, start = 1):
+        file_id = pdf_path.stem
+        if file_id in processed:
+            logging.info(f"[{idx}/{len(pdf_files)}] Skipping {file_id}")
+            continue
 
-    # Loop through all files
-    # all_translations = {}
-    for file_id, boxes in pdf_boxes.items():
-        print(f"Processing file: {file_id}")
+        logging.info(f"[{idx}/{len(pdf_files)}] Processing {file_id}")
 
-        # Detect Math Equation boxes for each file
-        math_boxes = [] 
-        try:
-            math_boxes = load_math_boxes(math_notation_dir, file_id)
-        except Exception as e:
-            print(f"  Error detecting math boxes: {e}")
-        
-        # Remove boxes in pymupddf overlapped with Math Equation boxes from source_text
-        filtered_boxes = boxes.copy()
-        if math_boxes:
-            try:
-                filtered_boxes = filter_text_boxes(boxes, math_boxes)
-                print(f"  Kept {len(filtered_boxes)} of {len(boxes)} text boxes after math filtering")
-            except Exception as e:
-                print(f"  Error filtering math boxes: {e}")
-            
-        # Translate text into text_vi
-        if file_id in all_translations:
-            print(f"  Already translated {file_id}, skipping translation")
-            translated_boxes = all_translations[file_id]
-        else:
-            translated_boxes = translate_document(filtered_boxes, api_manager, context_boxes[file_id])
-        
-        # text_vi insertion into original pdf
-        # math equation image insertion into original pdf 
-        all_translations[file_id] = translated_boxes
+        translated_cells = process_single_pdf(
+            file_id,
+            pdf_path,
+            ocr_dir,
+            translation_cache,
+            context_boxes,
+            api_manager,
+            math_dir,
+            viz_dir,
+            font_path
+        )
 
-        try:
-            # Find the original PDF
-            pdf_path = ocr_dir / f"{file_id}.ocr.pdf"
-            
-            if pdf_path:
-                output_pdf = visualization_dir / f"{file_id}_translated.pdf"
-                visualize_translation_and_math(pdf_path, translated_boxes, math_boxes, output_pdf,
-                                      font_file_path, math_notation_dir / file_id)
-                print(f"  Created visualization at {output_pdf}")
-            else:
-                print(f"  Could not find PDF for {file_id}, skipping visualization")
-        except Exception as e:
-            print(f"  Error creating visualization: {e}")
+        # append to CSV
+        writer.writerow([file_id, json.dumps(translated_cells, ensure_ascii=False)])
+        processed.add(file_id)    
 
-    with open("translated.json", "w", encoding="utf-8") as outfile:
-        json.dump(all_translations, outfile, indent=4, ensure_ascii=False)
-        print(f"Saved all translations to translated.json")
-    # Visualize the translations
+    # Save cache
+    translated_json.write_text(json.dumps(translation_cache, ensure_ascii=False, indent=2), encoding="utf-8")
+    logging.info("All done.")
+
 
 if __name__ == "__main__":
     main()
