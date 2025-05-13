@@ -124,15 +124,15 @@ def find_pdf_file(file_id, search_dirs):
     return None
 
 def main():
-    csv_path = Path("submission_ocr_no_math.csv")  # Default
+    csv_path = Path("../submission_ocr_no_math.csv")  # Default
     
     # Possible PDF directories to search
     search_dirs = [
-        Path("data/test/PDF"),
+        Path("../data/test/PDF"),
     ]
     
     # Create output directory
-    output_dir = Path("visualized_pymupdf_bb")
+    output_dir = Path("../visualized_pymupdf_bb")
     output_dir.mkdir(exist_ok=True)
     
     # Load CSV data
