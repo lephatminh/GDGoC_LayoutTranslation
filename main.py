@@ -23,6 +23,7 @@ logging.basicConfig(
     ]
 )
 
+logger = logging.getLogger("pipeline")  # single entry point for your pipeline
 
 # Safely set maximum CSV field size limit
 csv.field_size_limit(find_max_csv_field_size())
@@ -58,11 +59,11 @@ def extract_pdf_info(pdf_path):
                         }
                         cells.append(cell)
     except Exception as e:
-        logging.error(f"Error extracting text from {pdf_path}: {str(e)}")
+        logger.error(f"Error extracting text from {pdf_path}: {str(e)}")
     finally:
         doc.close()
 
-    return {"cells": cells}
+    return { "cells": cells }
 
 
 def process_single_pdf(
@@ -79,22 +80,23 @@ def process_single_pdf(
     # OCR pdf for no selectable texts
     ocr_pdf = apply_ocr_to_pdf(pdf_path, ocr_dir)
     if not ocr_pdf:
-        logging.error(f"OCR failed for {file_id}")
+        logger.error(f"OCR failed for {file_id}")
         return []
     
     # Extract pdf vital info
-    cells = extract_pdf_info(ocr_pdf)
+    info = extract_pdf_info(ocr_pdf)
+    cells = info.get("cells", [])
 
     # Remove math overlaps
     math_boxes = load_math_boxes(math_dir, file_id) or []
     if math_boxes:
         cells = filter_text_boxes(cells, math_boxes)
-        logging.info(f"{file_id}: {len(cells)} cells after math filtering")
+        logger.info(f"{file_id}: {len(cells)} cells after math filtering")
 
     # Translate
     if file_id in translation_cache:
         translated = translation_cache[file_id]
-        logging.info(f"{file_id}: using cached translation")
+        logger.info(f"{file_id}: using cached translation")
     else:
         translated = translate_document(cells, api_manager, context_boxes.get(file_id, []))
         translation_cache[file_id] = translated
@@ -104,20 +106,20 @@ def process_single_pdf(
     visualize_translation_and_math(
         ocr_pdf, translated, math_boxes, output_pdf, font_path, math_dir / file_id
     )
-    logging.info(f"{file_id}: visualization saved to {output_pdf}")
+    logger.info(f"{file_id}: visualization saved to {output_pdf}")
 
     return translated
 
 
 def main():
     root = Path(__file__).parent
-    pdf_dir = root / "data" / "test" / "PDF"
+    pdf_dir = root / "data" / "test" / "testing"
     ocr_dir = root / "data" / "test" / "PDF_ocr"
     viz_dir = root / "visualized_translations"
     output_csv = root / "submission_ocr_official.csv"
     pdfpig_csv = root / "submission_pdfpig.csv"
     math_dir = root / "YOLO_Math_detection"
-    font_path = root / "Roboto.ttf"
+    font_path = root / "font" / "Roboto.ttf"
     translated_json = root / "translated.json"
 
     # Ensure necessary directories exist
@@ -133,7 +135,7 @@ def main():
     translation_cache = {}
     if translated_json.exists():
         translation_cache = json.loads(translated_json.read_text(encoding="utf-8"))
-        logging.info(f"Loaded {len(translation_cache)} cached translations")
+        logger.info(f"Loaded {len(translation_cache)} cached translations")
 
     # Load processed files
     processed = set()
@@ -143,7 +145,7 @@ def main():
         processed = {row[0] for row in reader if row}
 
     writer = csv.writer(output_csv.open("a", newline="", encoding="utf-8"))
-    if not processed:
+    if not output_csv.exists():
         writer.writerow(["id", "solution"])
 
     # Main loop
@@ -151,10 +153,10 @@ def main():
     for idx, pdf_path in enumerate(pdf_files, start = 1):
         file_id = pdf_path.stem
         if file_id in processed:
-            logging.info(f"[{idx}/{len(pdf_files)}] Skipping {file_id}")
+            logger.info(f"[{idx}/{len(pdf_files)}] Skipping {file_id}")
             continue
 
-        logging.info(f"[{idx}/{len(pdf_files)}] Processing {file_id}")
+        logger.info(f"[{idx}/{len(pdf_files)}] Processing {file_id}")
 
         translated_cells = process_single_pdf(
             file_id,
@@ -174,7 +176,7 @@ def main():
 
     # Save cache
     translated_json.write_text(json.dumps(translation_cache, ensure_ascii=False, indent=2), encoding="utf-8")
-    logging.info("All done.")
+    logger.info("All done.")
 
 
 if __name__ == "__main__":
