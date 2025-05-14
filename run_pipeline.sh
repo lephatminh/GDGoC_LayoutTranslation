@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "1) Running PDFPigLayoutDetection…"
+echo "1) Running PDFPigLayoutDetection..."
 pushd PDFPigLayoutDetection
 if ! dotnet run; then
   echo "[ERROR] PDFPigLayoutDetection failed" >&2
@@ -9,7 +9,7 @@ if ! dotnet run; then
 fi
 popd
 
-echo "2) Running Python translation & visualization…"
+echo "2) Running Python translation & visualization..."
 if ! python main.py; then
   echo "[ERROR] Python pipeline failed" >&2
   exit 2

@@ -1,84 +1,284 @@
-#!/usr/bin/env python3
-import os, glob, argparse, ast
-from pathlib import Path
-import fitz
+import os, glob, gc, shutil, yaml
+from IPython.display import clear_output
+from tqdm.notebook import tqdm
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 import cv2
 import torch
 from ultralytics import YOLO
 from pdf2image import convert_from_path
+import fitz  # PyMuPDF
+import os
+from pathlib import Path
+from typing import List, Tuple
 
-def pdf_to_jpg_with_sizes(pdf_path: Path, output_folder: Path, dpi=300):
-    output_folder.mkdir(exist_ok=True)
-    images = convert_from_path(str(pdf_path), dpi=dpi)
-    doc = fitz.open(str(pdf_path))
-    jpg_size = images[0].size
-    pdf_size = (doc[0].rect.width, doc[0].rect.height)
-    with open(output_folder/"size.txt","w") as f:
-        f.write(f"{jpg_size}\n{pdf_size}\n")
-    for i, (img, page) in enumerate(zip(images, doc)):
-        img.save(output_folder/f"{i+1}.jpg","JPEG")
-    doc.close()
+IMAGE_SIZE = (2048, 1447)
+FONT = cv2.FONT_HERSHEY_SIMPLEX
+FONT_SCALE = 0.75
+FONT_THICKNESS = 2
+BORDER_THICKNESS = 2
+
+RANDOM_STATE = 42
+INPUT_SIZE = 1024
+N_EPOCHS = 15
+PATIENCE = 5
+BATCH_SIZE = 4
+CACHE_DATA = True
+DEVICES = 1
+
+def pdf_to_jpg_with_sizes(pdf_path, output_folder, dpi=300):
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    pdf_name = os.path.basename(pdf_path).replace('.pdf','')
+
+    # Convert PDF to images
+    images = convert_from_path(pdf_path, dpi=dpi)
+
+    # Get PDF page sizes using PyMuPDF
+    pdf_doc = fitz.open(pdf_path)
+
+    # Use first page for size.txt (assuming all pages same size)
+    first_image = images[0]
+    first_page = pdf_doc[0]
+
+    # Get sizes
+    jpg_size = first_image.size  # (width, height) in pixels
+    pdf_size = (first_page.rect.width, first_page.rect.height)  # (width, height) in points
+
+    # Write to size.txt
+    size_txt_path = os.path.join(output_folder, 'size.txt')
+    with open(size_txt_path, 'w') as f:
+        f.write(f"{jpg_size}\n")
+        f.write(f"{pdf_size}\n")
+    print(f"Saved size.txt at {size_txt_path}")
+
+    # Save JPGs and print sizes
+    for i, (image, page) in enumerate(zip(images, pdf_doc)):
+        jpg_path = os.path.join(output_folder, f'{pdf_name}.jpg')
+        image.save(jpg_path, 'JPEG')
+
+        print(f'Page {i+1}: PDF size = {pdf_size[0]} x {pdf_size[1]} pt, JPG size = {jpg_size[0]} x {jpg_size[1]} px')
+        print(f'Saved: {jpg_path}')
 
 def scale_box_to_pdf(jpg_box, jpg_size, pdf_size):
-    jw,jh = jpg_size; pw,ph = pdf_size
-    sx,sy = pw/jw, ph/jh
-    return [c* (sx if i%2==0 else sy) for i,c in enumerate(jpg_box)]
+    x1, y1, x2, y2 = jpg_box
+    jpg_width, jpg_height = jpg_size
+    pdf_width, pdf_height = pdf_size
 
-def generate_pdf_coordinates(image_folder: Path):
-    size = image_folder/"size.txt"; idx = image_folder/"index.txt"
-    jpg_size, pdf_size = ast.literal_eval(size.read_text().splitlines()[0]), ast.literal_eval(size.read_text().splitlines()[1])
-    lines = idx.read_text().splitlines()
-    out = []
-    for L in lines:
-        parts = L.split()
-        if len(parts)==5:
-            bid, *box = parts; b = scale_box_to_pdf(list(map(float,box)), jpg_size, pdf_size)
-            out.append(f"{bid} {b[0]:.4f} {b[1]:.4f} {b[2]:.4f} {b[3]:.4f}")
-    (image_folder/"pdf_coor.txt").write_text("\n".join(out))
+    scale_x = pdf_width / jpg_width
+    scale_y = pdf_height / jpg_height
 
-def crop_and_normalize_all(root_folder: Path):
-    images_folder = root_folder/"images"; 
-    images_folder.mkdir(exist_ok=True)
-    for jpg in root_folder.glob("*.jpg"):
-        txt = root_folder/(jpg.stem+".txt")
-        if not txt.exists(): continue
-        img = cv2.imread(str(jpg)); h,w = img.shape[:2]
-        lines = txt.read_text().splitlines()
-        norm = []
-        for i,L in enumerate(lines):
-            parts = L.split()
-            if len(parts)==5:
-                _,x1,y1,x2,y2 = parts; x1,y1,x2,y2 = map(float,(x1,y1,x2,y2))
-                y1,y2 = max(0,y1-5), min(h,y2+5)
-                x1,x2 = max(0,x1), min(w,x2)
-                crop = img[int(y1):int(y2),int(x1):int(x2)]
-                (images_folder/f"{i+1}.jpg").write_bytes(cv2.imencode('.jpg',crop)[1].tobytes())
-                norm.append(f"{i+1} {x1:.4f} {y1:.4f} {x2:.4f} {y2:.4f}")
-        (root_folder/"index.txt").write_text("\n".join(norm))
-        generate_pdf_coordinates(root_folder)
+    scaled_x1 = x1 * scale_x
+    scaled_y1 = y1 * scale_y
+    scaled_x2 = x2 * scale_x
+    scaled_y2 = y2 * scale_y
 
-def main():
-    p = argparse.ArgumentParser()
-    p.add_argument("--pdf-dir",  required=True, type=Path)
-    p.add_argument("--out-dir",  required=True, type=Path)
-    p.add_argument("--weights",  default="best.pt")
-    p.add_argument("--conf",     type=float, default=0.65)
-    p.add_argument("--iou",      type=float, default=0.75)
-    args = p.parse_args()
-    model = YOLO(str(args.weights))
-    for pdf in sorted(args.pdf_dir.glob("*.pdf")):
-        fid    = pdf.stem
-        folder = args.out_dir/fid
-        pdf_to_jpg_with_sizes(pdf, folder)
-        preds = model.predict(source=str(folder), conf=args.conf, iou=args.iou, stream=True)
-        for batch in preds:
-            # write raw .txt
-            txt = args.out_dir/fid/"index.txt"
-            with open(txt,"w") as f:
-                for *box, in batch.boxes.xyxy.cpu().numpy():
-                    f.write(" ".join(map(str,box))+"\n")
-        crop_and_normalize_all(folder)
-        print(f"[detect] done {fid}")
+    return [scaled_x1, scaled_y1, scaled_x2, scaled_y2]
 
-# if __name__=="__main__":
-#     main()
+def generate_pdf_coordinates(image_folder):
+    """
+    Generate pdf_coor.txt with PDF-scaled coordinates from index.txt and size.txt.
+
+    Args:
+        image_folder (str): Folder containing index.txt, size.txt, and images.
+    """
+    import ast
+
+    # Load size.txt
+    size_path = os.path.join(image_folder, 'size.txt')
+    with open(size_path, 'r') as f:
+        jpg_size = ast.literal_eval(f.readline().strip())
+        pdf_size = ast.literal_eval(f.readline().strip())
+
+    # Load index.txt
+    index_path = os.path.join(image_folder, 'index.txt')
+    with open(index_path, 'r') as f:
+        lines = f.readlines()
+
+    pdf_coordinates = []
+
+    for line in lines:
+        parts = line.strip().split()
+        if len(parts) != 5:
+            continue  # skip bad lines
+
+        box_id, x1, y1, x2, y2 = parts
+        x1, y1, x2, y2 = map(float, [x1, y1, x2, y2])
+
+        # Convert coordinates to PDF space
+        scaled_box = scale_box_to_pdf([x1, y1, x2, y2], jpg_size, pdf_size)
+
+        # Format line for output
+        pdf_line = f"{box_id} {scaled_box[0]:.4f} {scaled_box[1]:.4f} {scaled_box[2]:.4f} {scaled_box[3]:.4f}"
+        pdf_coordinates.append(pdf_line)
+
+    # Save to pdf_coor.txt
+    pdf_coor_path = os.path.join(image_folder, 'pdf_coor.txt')
+    with open(pdf_coor_path, 'w') as f:
+        for line in pdf_coordinates:
+            f.write(line + '\n')
+
+    print(f"PDF coordinates saved at: {pdf_coor_path}")
+
+def crop_and_normalize_all(output_path):
+    """
+    Process all .jpg and .txt pairs in root folder, crop boxes, rename txt files,
+    and save normalized data with float coordinates.
+
+    Args:
+        output_path (str): Root folder containing .jpg and .txt files.
+    """
+    # Create images folder
+    images_folder = os.path.join(output_path, 'images')
+    os.makedirs(images_folder, exist_ok=True)
+
+    # Find all jpg files
+    jpg_files = glob.glob(os.path.join(output_path, '*.jpg'))
+
+    for jpg_path in jpg_files:
+        base_name = os.path.splitext(os.path.basename(jpg_path))[0]
+        txt_path = os.path.join(output_path, f'{base_name}.txt')
+
+        if not os.path.exists(txt_path):
+            print(f'Skipping {base_name}: no matching txt file.')
+            continue
+
+        # Load image
+        image = cv2.imread(jpg_path)
+        h_img, w_img = image.shape[:2]
+
+        # Read txt file
+        with open(txt_path, 'r') as f:
+            lines = f.readlines()
+
+        normalized_lines = []
+
+        for i, line in enumerate(lines):
+            parts = line.strip().split()
+            if len(parts) != 5:
+                continue  # skip bad lines
+
+            box_id = i + 1
+            x1, y1, x2, y2 = map(float, parts[1:])
+
+            # Apply ±5 adjustment
+            y1_adj = y1 - 5
+            y2_adj = y2 + 5
+
+            # Clamp coordinates within image boundaries
+            x1_clamped = max(0.0, x1)
+            y1_clamped = max(0.0, y1_adj)
+            x2_clamped = min(float(w_img), x2)
+            y2_clamped = min(float(h_img), y2_adj)
+
+            # Crop image using int for pixel slicing
+            crop = image[int(y1_clamped):int(y2_clamped), int(x1_clamped):int(x2_clamped)]
+
+            # Save as images/id.jpg (only id, no prefix)
+            crop_filename = f'{box_id}.jpg'
+            crop_path = os.path.join(images_folder, crop_filename)
+            cv2.imwrite(crop_path, crop)
+            print(f'Saved: {crop_path}')
+
+            # Save normalized line with float precision (4 decimal places)
+            normalized_line = f"{box_id} {x1_clamped:.4f} {y1_clamped:.4f} {x2_clamped:.4f} {y2_clamped:.4f}"
+            normalized_lines.append(normalized_line)
+
+        # # Rename original txt → conf.txt (no prefix)
+        # conf_txt_path = os.path.join(root_folder, 'conf.txt')
+        # os.rename(txt_path, conf_txt_path)
+        # print(f'Renamed {txt_path} → {conf_txt_path}')
+
+        # Save normalized txt as index.txt (no prefix)
+        index_txt_path = os.path.join(output_path, 'index.txt')
+        with open(index_txt_path, 'w') as f:
+            for line in normalized_lines:
+                f.write(line + '\n')
+
+        generate_pdf_coordinates(output_path)
+
+        print(f'Index txt saved at: {index_txt_path}')
+
+def process_all(name_root, output_path, best_model):
+    pdf_to_jpg_with_sizes(name_root, output_path)
+    
+    PREDICTIONS_ROOT = output_path + '/predictions'
+    
+    with torch.no_grad():
+        predictions = best_model.predict(
+                source= output_path,
+                conf=0.65,
+                iou=0.75,
+                stream=True
+            )
+
+    test_images = []
+
+    for prediction in predictions:
+        if len(prediction.boxes.xyxy):
+            name = prediction.path.split("/")[-1].split(".")[0]
+            boxes = prediction.boxes.xyxy.cpu().numpy()
+            scores = prediction.boxes.conf.cpu().numpy()
+            
+            test_images += [name]
+            label_path = os.path.join(PREDICTIONS_ROOT, name + ".txt")
+            
+            with open(label_path, "w+") as f:
+                for score, box in zip(scores, boxes):
+                    text = f"{score:0.4f} {' '.join(box.astype(str))}"
+                    f.write(text)
+                    f.write("\n")
+
+    clear_output()
+
+    crop_and_normalize_all(output_path)
+
+# best_weights = "best.pt"
+# best_model = YOLO(best_weights)
+
+# name_root = './Test/Math_notation.pdf'
+# output_path = './Test_out/Math_notation_4'
+
+# process_all(name_root, output_path, best_model)
+
+def detect_math_images_for_file(
+    pdf_path: Path,
+    out_root: Path,
+    weights: str = "best.pt",
+    conf: float = 0.65,
+    iou: float = 0.75
+) -> Path:
+    """
+    1) Splits PDF → pages → folder/size.txt + 1.jpg,2.jpg…
+    2) Runs YOLO → raw index.txt (jpg coords)
+    3) crop_and_normalize_all → images/, normalized index.txt, pdf_coor.txt
+    """
+    file_id = pdf_path.stem
+    folder  = out_root / file_id
+
+    # (1) PDF → JPG pages + size.txt
+    pdf_to_jpg_with_sizes(pdf_path, folder)
+
+    # (2) YOLO → index.txt
+    model = YOLO(weights)
+    preds = model.predict(source=str(folder), conf=conf, iou=iou, stream=True)
+    lines = []
+    for batch in preds:
+        for box in batch.boxes.xyxy.cpu().numpy():
+            lines.append(" ".join(map(str, box.tolist())))
+    (folder/"index.txt").write_text("\n".join(lines))
+
+    # (3) crops/, normalizes, writes pdf_coor.txt
+    crop_and_normalize_all(folder)
+
+    return folder
+
+# best_weights = "best.pt"
+# best_model = YOLO(best_weights)
+
+# name_root = './Test/Math_notation.pdf'
+# output_path = './Test_out/Math_notation_4'
+
+# process_all(name_root, output_path, best_model)

@@ -11,6 +11,8 @@ from core.ocr_img2text import apply_ocr_to_pdf
 from core.translate_text import setup_multiple_models, translate_document
 from core.filter_math_related_boxes import filter_text_boxes
 from core.visualize_result import visualize_translation_and_math
+from core.detect_math_images import detect_math_images_for_file, process_all
+from ultralytics import YOLO
 
 
 # Configure logging
@@ -87,6 +89,18 @@ def process_single_pdf(
     info = extract_pdf_info(ocr_pdf)
     cells = info.get("cells", [])
 
+    # Detect math images
+    # math_folder = detect_math_images_for_file(pdf_path=pdf_path, out_root=math_dir, weights=math_dir / "best.pt")
+    # logger.info(f"math_folder: {math_folder}")
+    # (1) Prepare per-file math folder
+    math_folder = math_dir / file_id
+    math_folder.mkdir(parents=True, exist_ok=True)
+
+    # (2) Load YOLO once per file and run full pipeline
+    model = YOLO(str(math_dir / "best.pt"))
+    process_all(str(pdf_path), str(math_folder), model)
+    logger.info(f"math_folder: {math_folder}")
+
     # Remove math overlaps
     math_boxes = load_math_boxes(math_dir, file_id) or []
     if math_boxes:
@@ -125,7 +139,6 @@ def main():
     # Ensure necessary directories exist
     for d in (pdf_dir, ocr_dir, viz_dir):
         d.mkdir(parents=True, exist_ok=True)
-
 
     # Create API manager and setup models
     api_manager = setup_multiple_models()
