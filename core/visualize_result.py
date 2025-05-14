@@ -120,7 +120,7 @@ def insert_math_images(doc: fitz.Document,
            └── …
     """
     for mb in math_boxes:
-        page = doc[mb["page"]-1]
+        page = doc[mb.get("page", 1) -1]
         x,y,w,h = mb["x"], mb["y"], mb["width"], mb["height"]
         idx = mb.get("index")   # however you numbered your crops
         # build the image path:

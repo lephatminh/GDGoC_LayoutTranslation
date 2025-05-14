@@ -2,7 +2,6 @@ import fitz
 import os
 import json
 
-
 def convert_point_to_box(coor):
     '''
     Convert two points (x1, y1) as top-left and (x2, y2) as bottom-right to a box (x, y, width, height).
@@ -36,7 +35,6 @@ def convert_point_to_box(coor):
     
     return [x, y, width, height]
 
-
 def check_overlap(cell, math_box):
     '''
     Checking the overlap of the math box and cell in cell list
@@ -65,7 +63,6 @@ def check_overlap(cell, math_box):
     
     # If neither condition is true, the boxes overlap
     return True
-
 
 def overlap_ratio(cell, math_box):
     '''
@@ -114,7 +111,6 @@ def overlap_ratio(cell, math_box):
     # Return the ratio and overlap coordinates
     return [ratio, x_left, y_top, overlap_width, overlap_height]
 
-
 def get_box_overlap(cells, math_box):
     '''
     Get all overlap (interact cell) from list of cells and a given math box
@@ -146,7 +142,6 @@ def get_box_overlap(cells, math_box):
                 not_overlap_list.append([cell, overlap_box])
 
     return not_overlap_list, overlap_list
-
 
 def box_increasement(cell, math_box):
     '''
@@ -198,7 +193,6 @@ def box_increasement(cell, math_box):
 
     return increasement_box
 
-
 def box_increasement_from_list(overlap_list, math_box):
     '''
     Perform the increasement for a given box with respect to give overlap list
@@ -216,7 +210,6 @@ def box_increasement_from_list(overlap_list, math_box):
         math_box = box_increasement(cell, math_box)
 
     return math_box
-
 
 def box_overlap_list(cells, math_box):
     '''
@@ -246,7 +239,6 @@ def box_overlap_list(cells, math_box):
     math_box = box_increasement_from_list(overlap_list, math_box)
 
     return math_box, not_overlap_list, overlap_list
-
 
 def cut_cells_box(pdf ,cut_cells, no_cutted_cell_id):
     '''
@@ -307,8 +299,7 @@ def cut_cells_box(pdf ,cut_cells, no_cutted_cell_id):
 
     return cutted_cell_list
 
-
-def load_math_boxes(root_folder):
+def load_math_boxes(file_path):
     '''
     Load the .txt file which is called 'pdf_coor.txt' in the given folder.
 
@@ -330,7 +321,6 @@ def load_math_boxes(root_folder):
     List of dicts with format: 
     {'id': id, 'x': x_left, 'y': y_left, 'width': width, 'height': height}
     '''
-    file_path = os.path.join(root_folder, 'pdf_coor.txt')
     boxes = []
 
     with open(file_path, 'r') as f:
@@ -352,7 +342,6 @@ def load_math_boxes(root_folder):
                 continue  # Skip lines with invalid values
 
     return boxes
-
 
 def insert_cell_id(cells):
     '''
@@ -380,7 +369,6 @@ def insert_cell_id(cells):
         cnt = cnt + 1
 
     return cells
-
 
 def reconstruct_text_cell(cells, math_box_list):
     '''
@@ -462,8 +450,7 @@ def reconstruct_text_cell(cells, math_box_list):
 
     return merged_boxes, overlap_id_list, cut_cell_list, remain_cell_list_id
 
-
-def reconstruct_text_cell_from_file(pdf_name, output_path):
+def reconstruct_text_cell_from_file(pdf_path,cell_files_path,box_cell_path ,output_path):
 
     def load_layout_cells(file_name):
         # Open the JSON file and load the data
@@ -471,21 +458,23 @@ def reconstruct_text_cell_from_file(pdf_name, output_path):
             data = json.load(json_file)
         return data
 
-    math_box_list = load_math_boxes(pdf_name)
+    pdf_name = os.path.basename(pdf_path).replace('.pdf','')
 
-    cells = load_layout_cells(pdf_name + '/' + pdf_name + '.json')
+    math_box_list = load_math_boxes(box_cell_path)
+
+    cells = load_layout_cells(cell_files_path)
 
     cells = insert_cell_id(cells)
 
     merged_boxes, overlap_id_list, cut_cell_list, remain_cell_list_id = reconstruct_text_cell(cells, math_box_list)
 
-    cutted_cells = cut_cells_box(pdf_name + '.pdf', cut_cell_list, remain_cell_list_id)
+    cutted_cells = cut_cells_box(pdf_path, cut_cell_list, remain_cell_list_id)
 
     remain_cell = [cell for cell in cells if cell['id'] in remain_cell_list_id]
 
     all_cells = cutted_cells + remain_cell
 
-    def export_math_boxes_and_text_cells(cells_text, math_box, folder_name):
+    def export_math_boxes_and_text_cells(cells_text, math_box, output_path):
         """
         Creates a new folder and writes two files:
         - 'reconstruct_translated_pdf.json' with the full list of dicts
@@ -494,24 +483,30 @@ def reconstruct_text_cell_from_file(pdf_name, output_path):
         Args:
             cells_text (list of dict): List of box dictionaries
             math_box (list of dict): List of dictionaries
-            folder_name (str): Name of the new folder to create
+            output_path (str): Name of the new folder to create
         """
-        # folder_name = folder_name + '_processed'
 
-        os.makedirs(folder_name, exist_ok=True)  # Create folder if it doesn't exist
+        os.makedirs(output_path, exist_ok=True)  # Create folder if it doesn't exist
 
         # Write JSON file
-        json_path = os.path.join(folder_name, pdf_name + '.json')
+        json_path = os.path.join(output_path, pdf_name + '.json')
         with open(json_path, 'w') as json_file:
             json.dump(cells_text, json_file, indent=4)
 
         # Write txt file
-        txt_path = os.path.join(folder_name, 'pdf_coor.txt')
+        txt_path = os.path.join(output_path, 'pdf_coor.txt')
         with open(txt_path, 'w') as txt_file:
             for item in math_box:
                 line = f"{item['id']} {item['x']} {item['y']} {item['width']} {item['height']}"
                 txt_file.write(line + '\n')
 
-        print(f"Files saved in: {folder_name}")
+        print(f"Files saved in: {output_path}")
     
     export_math_boxes_and_text_cells(all_cells, merged_boxes, output_path)
+
+# pdf_path = './Test/Math_notation.pdf'
+# cell_file_path = './Math_notation/Math_notation.json'
+# box_cell_path = './Math_notation/pdf_coor.txt'
+# output_path = './Math_notation_processed_5'
+
+# reconstruct_text_cell_from_file(pdf_path, cell_file_path, box_cell_path, output_path)

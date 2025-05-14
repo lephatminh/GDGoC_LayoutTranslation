@@ -201,7 +201,7 @@ def crop_and_normalize_all(output_path):
 
         print(f'Index txt saved at: {index_txt_path}')
 
-def process_all(name_root, output_path, best_model):
+def detect_math_box_images(name_root, output_path, best_model):
     pdf_to_jpg_with_sizes(name_root, output_path)
     
     PREDICTIONS_ROOT = output_path + '/predictions'
@@ -234,46 +234,6 @@ def process_all(name_root, output_path, best_model):
     clear_output()
 
     crop_and_normalize_all(output_path)
-
-# best_weights = "best.pt"
-# best_model = YOLO(best_weights)
-
-# name_root = './Test/Math_notation.pdf'
-# output_path = './Test_out/Math_notation_4'
-
-# process_all(name_root, output_path, best_model)
-
-def detect_math_images_for_file(
-    pdf_path: Path,
-    out_root: Path,
-    weights: str = "best.pt",
-    conf: float = 0.65,
-    iou: float = 0.75
-) -> Path:
-    """
-    1) Splits PDF → pages → folder/size.txt + 1.jpg,2.jpg…
-    2) Runs YOLO → raw index.txt (jpg coords)
-    3) crop_and_normalize_all → images/, normalized index.txt, pdf_coor.txt
-    """
-    file_id = pdf_path.stem
-    folder  = out_root / file_id
-
-    # (1) PDF → JPG pages + size.txt
-    pdf_to_jpg_with_sizes(pdf_path, folder)
-
-    # (2) YOLO → index.txt
-    model = YOLO(weights)
-    preds = model.predict(source=str(folder), conf=conf, iou=iou, stream=True)
-    lines = []
-    for batch in preds:
-        for box in batch.boxes.xyxy.cpu().numpy():
-            lines.append(" ".join(map(str, box.tolist())))
-    (folder/"index.txt").write_text("\n".join(lines))
-
-    # (3) crops/, normalizes, writes pdf_coor.txt
-    crop_and_normalize_all(folder)
-
-    return folder
 
 # best_weights = "best.pt"
 # best_model = YOLO(best_weights)

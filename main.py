@@ -6,12 +6,18 @@ from pathlib import Path
 import logging
 from core.csv_utils import find_max_csv_field_size, load_csv_data_pymupdf, load_csv_data_pdfpig
 from core.preprocess_text import normalize_spaced_text, clean_text
-from core.extract_math_boxes import load_math_boxes 
+# from core.extract_math_boxes import load_math_boxes 
 from core.ocr_img2text import apply_ocr_to_pdf
 from core.translate_text import setup_multiple_models, translate_document
 from core.filter_math_related_boxes import filter_text_boxes
 from core.visualize_result import visualize_translation_and_math
-from core.detect_math_images import detect_math_images_for_file, process_all
+from core.detect_math_images import detect_math_box_images
+from core.reconstruct_text_math_boxes import (
+    insert_cell_id,
+    load_math_boxes as load_reconstruct_math_boxes,
+    reconstruct_text_cell,
+    cut_cells_box,
+)
 from ultralytics import YOLO
 
 
@@ -98,14 +104,31 @@ def process_single_pdf(
 
     # (2) Load YOLO once per file and run full pipeline
     model = YOLO(str(math_dir / "best.pt"))
-    process_all(str(pdf_path), str(math_folder), model)
+    detect_math_box_images(str(pdf_path), str(math_folder), model)
     logger.info(f"math_folder: {math_folder}")
 
-    # Remove math overlaps
-    math_boxes = load_math_boxes(math_dir, file_id) or []
-    if math_boxes:
-        cells = filter_text_boxes(cells, math_boxes)
-        logger.info(f"{file_id}: {len(cells)} cells after math filtering")
+    # --- reconstruct math vs text cells around detected regions ---
+    # 1) assign unique IDs to each extracted text‐cell
+    cells = insert_cell_id(cells)
+
+    # 2) load the scaled PDF coords you just generated
+    pdf_coor = math_folder / "pdf_coor.txt"
+    math_list = load_reconstruct_math_boxes(str(pdf_coor)) or []
+
+    # 3) split into merged math boxes vs cells to cut vs cells to keep
+    merged_boxes, overlap_ids, cut_list, remain_ids = \
+        reconstruct_text_cell(cells, math_list)
+
+    # 4) re-OCR the cut cells
+    reocr_cells = cut_cells_box(str(ocr_pdf), cut_list, remain_ids)
+
+    # 5) collect the untouched cells
+    remain_cells = [c for c in cells if c['id'] in remain_ids]
+
+    # 6) final text‐cells + math_boxes for viz
+    cells = reocr_cells + remain_cells
+    math_boxes = merged_boxes
+    logger.info(f"{file_id}: reconstructed → {len(cells)} text cells, {len(math_boxes)} math boxes")
 
     # Translate
     if file_id in translation_cache:
