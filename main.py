@@ -96,8 +96,6 @@ def process_single_pdf(
     cells = info.get("cells", [])
 
     # Detect math images
-    # math_folder = detect_math_images_for_file(pdf_path=pdf_path, out_root=math_dir, weights=math_dir / "best.pt")
-    # logger.info(f"math_folder: {math_folder}")
     # (1) Prepare per-file math folder
     math_folder = math_dir / file_id
     math_folder.mkdir(parents=True, exist_ok=True)
@@ -111,24 +109,24 @@ def process_single_pdf(
     # 1) assign unique IDs to each extracted text‐cell
     cells = insert_cell_id(cells)
 
-    # 2) load the scaled PDF coords you just generated
+    # 2) load the scaled PDF coords you just generated (if any)
     pdf_coor = math_folder / "pdf_coor.txt"
-    math_list = load_reconstruct_math_boxes(str(pdf_coor)) or []
-
-    # 3) split into merged math boxes vs cells to cut vs cells to keep
-    merged_boxes, overlap_ids, cut_list, remain_ids = \
-        reconstruct_text_cell(cells, math_list)
-
-    # 4) re-OCR the cut cells
-    reocr_cells = cut_cells_box(str(ocr_pdf), cut_list, remain_ids)
-
-    # 5) collect the untouched cells
-    remain_cells = [c for c in cells if c['id'] in remain_ids]
-
-    # 6) final text‐cells + math_boxes for viz
-    cells = reocr_cells + remain_cells
-    math_boxes = merged_boxes
-    logger.info(f"{file_id}: reconstructed → {len(cells)} text cells, {len(math_boxes)} math boxes")
+    if pdf_coor.exists() and pdf_coor.stat().st_size > 0:
+        math_list = load_reconstruct_math_boxes(str(pdf_coor)) or []
+        # 3) split into merged math boxes vs cells to cut vs cells to keep
+        merged_boxes, overlap_ids, cut_list, remain_ids = reconstruct_text_cell(cells, math_list)
+        # 4) re-OCR the cut cells
+        reocr_cells = cut_cells_box(str(ocr_pdf), cut_list, remain_ids)
+        # 5) collect the untouched cells
+        remain_cells = [c for c in cells if c["id"] in remain_ids]
+        # 6) final text-cells + math_boxes for viz
+        cells = reocr_cells + remain_cells
+        math_boxes = merged_boxes
+        logger.info(f"{file_id}: reconstructed → {len(cells)} text cells, {len(math_boxes)} math boxes")
+    else:
+        # no math found → skip reconstruct, keep all cells
+        math_boxes = []
+        logger.info(f"{file_id}: no math coords at {pdf_coor}, skipping reconstruct (keeping {len(cells)} cells)")
 
     # Translate
     if file_id in translation_cache:
@@ -152,15 +150,15 @@ def main():
     root = Path(__file__).parent
     pdf_dir = root / "input"
     output_dir = root / "output"
-    viz_dir = root / "visualized_translations" # Directory for visualized 
+    # viz_dir = root / "visualized_translations" # Directory for visualized 
     output_csv = output_dir / "submission_ocr_official.csv"
     pdfpig_csv = output_dir / "submission_contexts.csv"
-    math_dir = root / "YOLO_Math_detection"
+    # math_dir = root / "YOLO_Math_detection"
     font_path = root / "font" / "Roboto.ttf"
     translated_json = output_dir / "translated.json"
 
     # Ensure necessary directories exist
-    for d in (pdf_dir, output_dir, viz_dir):
+    for d in (pdf_dir, output_dir):
         d.mkdir(parents=True, exist_ok=True)
 
     # Create API manager and setup models
