@@ -84,6 +84,7 @@ def process_single_pdf(
     math_dir: Path,
     viz_dir: Path,
     font_path: Path,
+    yolo_weights: Path,
 ) -> List[Dict]:
     # OCR pdf for no selectable texts
     ocr_pdf = apply_ocr_to_pdf(pdf_path, ocr_dir)
@@ -95,17 +96,17 @@ def process_single_pdf(
     info = extract_pdf_info(ocr_pdf)
     cells = info.get("cells", [])
 
-    # Detect math images
+    # --- Detect math images ---
     # (1) Prepare per-file math folder
     math_folder = math_dir / file_id
     math_folder.mkdir(parents=True, exist_ok=True)
 
     # (2) Load YOLO once per file and run full pipeline
-    model = YOLO(str(math_dir / "best.pt"))
+    model = YOLO(str(yolo_weights))
     detect_math_box_images(str(pdf_path), str(math_folder), model)
     logger.info(f"math_folder: {math_folder}")
 
-    # --- reconstruct math vs text cells around detected regions ---
+    # --- Reconstruct math vs text cells around detected regions ---
     # 1) assign unique IDs to each extracted text‐cell
     cells = insert_cell_id(cells)
 
@@ -150,12 +151,11 @@ def main():
     root = Path(__file__).parent
     pdf_dir = root / "input"
     output_dir = root / "output"
-    # viz_dir = root / "visualized_translations" # Directory for visualized 
     output_csv = output_dir / "submission_ocr_official.csv"
-    pdfpig_csv = output_dir / "submission_contexts.csv"
-    # math_dir = root / "YOLO_Math_detection"
+    context_csv = output_dir / "submission_contexts.csv"
     font_path = root / "font" / "Roboto.ttf"
-    translated_json = output_dir / "translated.json"
+    cached_file = output_dir / "translation_cache.json"
+    yolo_weights = root / "config" / "best.pt"
 
     # Ensure necessary directories exist
     for d in (pdf_dir, output_dir):
@@ -165,10 +165,10 @@ def main():
     api_manager = setup_multiple_models()
 
     # Load contexts and caches
-    context_boxes = load_csv_data_pdfpig(pdfpig_csv) if pdfpig_csv.exists() else {}
+    context_boxes = load_csv_data_pdfpig(context_csv) if context_csv.exists() else {}
     translation_cache = {}
-    if translated_json.exists():
-        translation_cache = json.loads(translated_json.read_text(encoding="utf-8"))
+    if cached_file.exists():
+        translation_cache = json.loads(cached_file.read_text(encoding="utf-8"))
         logger.info(f"Loaded {len(translation_cache)} cached translations")
 
     # Load processed files
@@ -201,7 +201,8 @@ def main():
             api_manager,
             output_dir,
             output_dir / file_id,
-            font_path
+            font_path,
+            yolo_weights,
         )
 
         # append to CSV
@@ -209,7 +210,7 @@ def main():
         processed.add(file_id)    
 
     # Save cache
-    translated_json.write_text(json.dumps(translation_cache, ensure_ascii=False, indent=2), encoding="utf-8")
+    cached_file.write_text(json.dumps(translation_cache, ensure_ascii=False, indent=2), encoding="utf-8")
     logger.info("All done.")
 
 
