@@ -42,7 +42,7 @@ const UploadPage: React.FC = () => {
     formData.append("file", file);
 
     try {
-      const backendUrl = "https://backend-app-98fp.onrender.com";
+      const backendUrl = "http://localhost:8000/";
       console.log("📡 Uploading to backend:", `${backendUrl}/upload-pdf/`);
 
       const response = await fetch(`${backendUrl}/upload-pdf/`, {

@@ -33,12 +33,17 @@ app.add_middleware(
 )
 
 # ✅ Folder setup
-BASE_DIR = Path(__file__).resolve().parent
-UPLOAD_ROOT = BASE_DIR / UPLOAD_FOLDER
-ORIGINAL_DIR = UPLOAD_ROOT / "originals"
-TRANSLATED_DIR = UPLOAD_ROOT / "translateds"
+BASE_DIR = Path(__file__).resolve().parent.parent
+ORIGINAL_DIR = BASE_DIR / "input"
+TRANSLATED_DIR = BASE_DIR / "output"
+ORIGINAL_DIR.mkdir(parents=True, exist_ok=True)
+TRANSLATED_DIR.mkdir(parents=True, exist_ok=True)
+
 for path in [ORIGINAL_DIR, TRANSLATED_DIR]:
 	path.mkdir(parents=True, exist_ok=True)
+
+app.mount("/files/input",  StaticFiles(directory=ORIGINAL_DIR),   name="input")
+app.mount("/files/output", StaticFiles(directory=TRANSLATED_DIR), name="output")
 
 # ✅ Pydantic V2 response model
 class UploadResponse(BaseModel):
@@ -65,8 +70,8 @@ async def upload_pdf(file: UploadFile = File(...)):
 	logger.info(f"Stored: {original_filename}, Translated: {translated_filename}")
 
 	return UploadResponse(
-		original=f"/files/originals/{original_filename}",
-		translated=f"/files/translateds/{translated_filename}"
+		original=f"/files/input/{file.filename}",
+		translated=f"/files/output/{file.filename}/{file.filename}_translated.pdf"
 	)
 
 # ✅ Static file routes
