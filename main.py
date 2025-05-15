@@ -7,7 +7,7 @@ import logging
 from core.csv_utils import find_max_csv_field_size, load_csv_data_pymupdf, load_csv_data_pdfpig
 from core.preprocess_text import normalize_spaced_text, clean_text
 # from core.extract_math_boxes import load_math_boxes 
-from core.ocr_img2text import apply_ocr_to_pdf
+from core.ocr_img_to_text import apply_ocr_to_pdf
 from core.translate_text import setup_multiple_models, translate_document
 from core.filter_math_related_boxes import filter_text_boxes
 from core.visualize_result import visualize_translation_and_math
@@ -84,6 +84,7 @@ def process_single_pdf(
     math_dir: Path,
     viz_dir: Path,
     font_path: Path,
+    yolo_weights: Path,
 ) -> List[Dict]:
     # OCR pdf for no selectable texts
     ocr_pdf = apply_ocr_to_pdf(pdf_path, ocr_dir)
@@ -95,40 +96,38 @@ def process_single_pdf(
     info = extract_pdf_info(ocr_pdf)
     cells = info.get("cells", [])
 
-    # Detect math images
-    # math_folder = detect_math_images_for_file(pdf_path=pdf_path, out_root=math_dir, weights=math_dir / "best.pt")
-    # logger.info(f"math_folder: {math_folder}")
+    # --- Detect math images ---
     # (1) Prepare per-file math folder
     math_folder = math_dir / file_id
     math_folder.mkdir(parents=True, exist_ok=True)
 
     # (2) Load YOLO once per file and run full pipeline
-    model = YOLO(str(math_dir / "best.pt"))
+    model = YOLO(str(yolo_weights))
     detect_math_box_images(str(pdf_path), str(math_folder), model)
     logger.info(f"math_folder: {math_folder}")
 
-    # --- reconstruct math vs text cells around detected regions ---
+    # --- Reconstruct math vs text cells around detected regions ---
     # 1) assign unique IDs to each extracted text‐cell
     cells = insert_cell_id(cells)
 
-    # 2) load the scaled PDF coords you just generated
+    # 2) load the scaled PDF coords you just generated (if any)
     pdf_coor = math_folder / "pdf_coor.txt"
-    math_list = load_reconstruct_math_boxes(str(pdf_coor)) or []
-
-    # 3) split into merged math boxes vs cells to cut vs cells to keep
-    merged_boxes, overlap_ids, cut_list, remain_ids = \
-        reconstruct_text_cell(cells, math_list)
-
-    # 4) re-OCR the cut cells
-    reocr_cells = cut_cells_box(str(ocr_pdf), cut_list, remain_ids)
-
-    # 5) collect the untouched cells
-    remain_cells = [c for c in cells if c['id'] in remain_ids]
-
-    # 6) final text‐cells + math_boxes for viz
-    cells = reocr_cells + remain_cells
-    math_boxes = merged_boxes
-    logger.info(f"{file_id}: reconstructed → {len(cells)} text cells, {len(math_boxes)} math boxes")
+    if pdf_coor.exists() and pdf_coor.stat().st_size > 0:
+        math_list = load_reconstruct_math_boxes(str(pdf_coor)) or []
+        # 3) split into merged math boxes vs cells to cut vs cells to keep
+        merged_boxes, overlap_ids, cut_list, remain_ids = reconstruct_text_cell(cells, math_list)
+        # 4) re-OCR the cut cells
+        reocr_cells = cut_cells_box(str(ocr_pdf), cut_list, remain_ids)
+        # 5) collect the untouched cells
+        remain_cells = [c for c in cells if c["id"] in remain_ids]
+        # 6) final text-cells + math_boxes for viz
+        cells = reocr_cells + remain_cells
+        math_boxes = merged_boxes
+        logger.info(f"{file_id}: reconstructed → {len(cells)} text cells, {len(math_boxes)} math boxes")
+    else:
+        # no math found → skip reconstruct, keep all cells
+        math_boxes = []
+        logger.info(f"{file_id}: no math coords at {pdf_coor}, skipping reconstruct (keeping {len(cells)} cells)")
 
     # Translate
     if file_id in translation_cache:
@@ -150,27 +149,26 @@ def process_single_pdf(
 
 def main():
     root = Path(__file__).parent
-    pdf_dir = root / "data" / "test" / "testing"
-    ocr_dir = root / "data" / "test" / "PDF_ocr"
-    viz_dir = root / "visualized_translations"
-    output_csv = root / "submission_ocr_official.csv"
-    pdfpig_csv = root / "submission_pdfpig.csv"
-    math_dir = root / "YOLO_Math_detection"
+    pdf_dir = root / "input"
+    output_dir = root / "output"
+    output_csv = output_dir / "submission_ocr_official.csv"
+    context_csv = output_dir / "submission_contexts.csv"
     font_path = root / "font" / "Roboto.ttf"
-    translated_json = root / "translated.json"
+    cached_file = output_dir / "translation_cache.json"
+    yolo_weights = root / "config" / "best.pt"
 
     # Ensure necessary directories exist
-    for d in (pdf_dir, ocr_dir, viz_dir):
+    for d in (pdf_dir, output_dir):
         d.mkdir(parents=True, exist_ok=True)
 
     # Create API manager and setup models
     api_manager = setup_multiple_models()
 
     # Load contexts and caches
-    context_boxes = load_csv_data_pdfpig(pdfpig_csv) if pdfpig_csv.exists() else {}
+    context_boxes = load_csv_data_pdfpig(context_csv) if context_csv.exists() else {}
     translation_cache = {}
-    if translated_json.exists():
-        translation_cache = json.loads(translated_json.read_text(encoding="utf-8"))
+    if cached_file.exists():
+        translation_cache = json.loads(cached_file.read_text(encoding="utf-8"))
         logger.info(f"Loaded {len(translation_cache)} cached translations")
 
     # Load processed files
@@ -181,7 +179,7 @@ def main():
         processed = {row[0] for row in reader if row}
 
     writer = csv.writer(output_csv.open("a", newline="", encoding="utf-8"))
-    if not output_csv.exists():
+    if not output_csv.exists() or output_csv.stat().st_size == 0:
         writer.writerow(["id", "solution"])
 
     # Main loop
@@ -197,13 +195,14 @@ def main():
         translated_cells = process_single_pdf(
             file_id,
             pdf_path,
-            ocr_dir,
+            output_dir / file_id,
             translation_cache,
             context_boxes,
             api_manager,
-            math_dir,
-            viz_dir,
-            font_path
+            output_dir,
+            output_dir / file_id,
+            font_path,
+            yolo_weights,
         )
 
         # append to CSV
@@ -211,7 +210,7 @@ def main():
         processed.add(file_id)    
 
     # Save cache
-    translated_json.write_text(json.dumps(translation_cache, ensure_ascii=False, indent=2), encoding="utf-8")
+    cached_file.write_text(json.dumps(translation_cache, ensure_ascii=False, indent=2), encoding="utf-8")
     logger.info("All done.")
 
 
