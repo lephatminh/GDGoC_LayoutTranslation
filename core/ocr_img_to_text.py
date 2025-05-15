@@ -4,6 +4,7 @@ import logging
 def apply_ocr_to_pdf(input_path, output_dir):
     """Apply OCR to a PDF file using OCRmyPDF"""
     # Create OCR file in data/test/PDF_ocr directory
+    output_dir.mkdir(parents=True, exist_ok=True)
     output_path = output_dir / f"{input_path.stem}.ocr.pdf"
 
     try:

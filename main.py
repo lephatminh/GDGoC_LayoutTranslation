@@ -7,7 +7,7 @@ import logging
 from core.csv_utils import find_max_csv_field_size, load_csv_data_pymupdf, load_csv_data_pdfpig
 from core.preprocess_text import normalize_spaced_text, clean_text
 # from core.extract_math_boxes import load_math_boxes 
-from core.ocr_img2text import apply_ocr_to_pdf
+from core.ocr_img_to_text import apply_ocr_to_pdf
 from core.translate_text import setup_multiple_models, translate_document
 from core.filter_math_related_boxes import filter_text_boxes
 from core.visualize_result import visualize_translation_and_math
@@ -150,17 +150,17 @@ def process_single_pdf(
 
 def main():
     root = Path(__file__).parent
-    pdf_dir = root / "data" / "test" / "testing"
-    ocr_dir = root / "data" / "test" / "PDF_ocr"
-    viz_dir = root / "visualized_translations"
-    output_csv = root / "submission_ocr_official.csv"
-    pdfpig_csv = root / "submission_pdfpig.csv"
+    pdf_dir = root / "input"
+    output_dir = root / "output"
+    viz_dir = root / "visualized_translations" # Directory for visualized 
+    output_csv = output_dir / "submission_ocr_official.csv"
+    pdfpig_csv = output_dir / "submission_contexts.csv"
     math_dir = root / "YOLO_Math_detection"
     font_path = root / "font" / "Roboto.ttf"
-    translated_json = root / "translated.json"
+    translated_json = output_dir / "translated.json"
 
     # Ensure necessary directories exist
-    for d in (pdf_dir, ocr_dir, viz_dir):
+    for d in (pdf_dir, output_dir, viz_dir):
         d.mkdir(parents=True, exist_ok=True)
 
     # Create API manager and setup models
@@ -181,7 +181,7 @@ def main():
         processed = {row[0] for row in reader if row}
 
     writer = csv.writer(output_csv.open("a", newline="", encoding="utf-8"))
-    if not output_csv.exists():
+    if not output_csv.exists() or output_csv.stat().st_size == 0:
         writer.writerow(["id", "solution"])
 
     # Main loop
@@ -197,12 +197,12 @@ def main():
         translated_cells = process_single_pdf(
             file_id,
             pdf_path,
-            ocr_dir,
+            output_dir / file_id,
             translation_cache,
             context_boxes,
             api_manager,
-            math_dir,
-            viz_dir,
+            output_dir,
+            output_dir / file_id,
             font_path
         )
 

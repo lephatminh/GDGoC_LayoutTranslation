@@ -262,7 +262,7 @@ def cut_cells_box(pdf ,cut_cells, no_cutted_cell_id):
     page = doc[0]  # first page (0-based index)
 
     def get_new_cell(page, cut_cell):
-    # Step 1: Get the text from one region
+        # Step 1: Get the text from one region
         x1, y1, w, h = cut_cell[1]
         x2 = x1 + w
         y2 = y1 + h
