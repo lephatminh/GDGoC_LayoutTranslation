@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./translate-pdf-app_BACKEND
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./translate-pdf-app_BACKEND/.env
+    read_only: true
+    volumes:
+      - server_data:/app/storage:rw # Persistent volume for storing uploaded/translated PDFs
+    tmpfs:
+      - /tmp:rw,exec,size=256m # Temporary files
+      - /var/run:rw,noexec,nosuid # Runtime files (e.g., PID sockets)
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8000/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true # Prevent privilege escalation
+
+  frontend:
+    build:
+      context: ./translate-pdf-app
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  server_data:
