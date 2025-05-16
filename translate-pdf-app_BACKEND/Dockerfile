@@ -21,4 +21,5 @@ RUN chmod -R 777 /app/storage
 USER 1001
 
 # Start the app
+
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--http", "httptools", "--limit-concurrency", "100", "--backlog", "2048"]

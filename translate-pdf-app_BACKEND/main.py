@@ -1,4 +1,3 @@
-# ✅ Imports
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import ORJSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -9,71 +8,78 @@ from uuid import uuid4
 import shutil, logging, os
 from dotenv import load_dotenv
 
-# ✅ Load environment variables
+# Load env vars
 load_dotenv()
-FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
+FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:5174")
 FRONTEND_HOST = os.getenv("FRONTEND_HOST", "https://fe-08u9.onrender.com")
-UPLOAD_FOLDER = Path(os.getenv("UPLOAD_FOLDER", "storage"))
 
-# ✅ Logging
+print(f"Loaded FRONTEND_ORIGIN: {FRONTEND_ORIGIN}")
+print(f"Loaded FRONTEND_HOST: {FRONTEND_HOST}")
+
+# Setup paths
+BASE_DIR = Path(__file__).resolve().parent.parent
+INPUT_DIR = BASE_DIR / "storage" / "input"
+OUTPUT_DIR = BASE_DIR / "storage" / "output"
+INPUT_DIR.mkdir(parents=True, exist_ok=True)
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+# Logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-logger.info(f"FRONTEND_ORIGIN loaded: {FRONTEND_ORIGIN}")
-logger.info(f"FRONTEND_HOST loaded: {FRONTEND_HOST}")
-# ✅ FastAPI App (using ORJSON)
+
+# FastAPI app
 app = FastAPI(default_response_class=ORJSONResponse)
 
-# ✅ CORS config
+# CORS
 app.add_middleware(
 	CORSMiddleware,
-	allow_origins=[FRONTEND_ORIGIN,FRONTEND_HOST],
+	allow_origins=[
+		FRONTEND_ORIGIN,
+		FRONTEND_HOST,
+	],
 	allow_credentials=True,
 	allow_methods=["*"],
 	allow_headers=["*"],
 )
 
-# ✅ Folder setup
-BASE_DIR = Path(__file__).resolve().parent.parent
-ORIGINAL_DIR = BASE_DIR / "input"
-TRANSLATED_DIR = BASE_DIR / "output"
-ORIGINAL_DIR.mkdir(parents=True, exist_ok=True)
-TRANSLATED_DIR.mkdir(parents=True, exist_ok=True)
 
-for path in [ORIGINAL_DIR, TRANSLATED_DIR]:
-	path.mkdir(parents=True, exist_ok=True)
+# Mount base directories (not subfolder)
+app.mount("/files/input", StaticFiles(directory=INPUT_DIR), name="input")
+app.mount("/files/output", StaticFiles(directory=OUTPUT_DIR), name="output")
 
-app.mount("/files/input",  StaticFiles(directory=ORIGINAL_DIR),   name="input")
-app.mount("/files/output", StaticFiles(directory=TRANSLATED_DIR), name="output")
-
-# ✅ Pydantic V2 response model
+# Response model
 class UploadResponse(BaseModel):
 	original: str
 	translated: str
 
-# ✅ Route using Pydantic model
 @app.post("/upload-pdf/", response_model=UploadResponse)
 async def upload_pdf(file: UploadFile = File(...)):
 	if not file.filename.endswith(".pdf") or file.content_type != "application/pdf":
 		logger.warning(f"Blocked non-PDF upload: {file.filename}")
 		raise HTTPException(status_code=400, detail="Only PDF files are allowed.")
 
-	uid = uuid4().hex
-	original_filename = f"{uid}_{file.filename}"
-	translated_filename = f"translated_{uid}_{file.filename}"
-	original_path = ORIGINAL_DIR / original_filename
-	translated_path = TRANSLATED_DIR / translated_filename
+	# Extract base filename without .pdf
+	filename_stem = Path(file.filename).stem
+	input_folder = INPUT_DIR / filename_stem
+	output_folder = OUTPUT_DIR / filename_stem
+	input_folder.mkdir(parents=True, exist_ok=True)
+	output_folder.mkdir(parents=True, exist_ok=True)
 
+	# Create full file paths
+	original_path = input_folder / file.filename
+	translated_path = output_folder / f"{filename_stem}_translated.pdf"
+
+	# Save original
 	with original_path.open("wb") as buffer:
 		shutil.copyfileobj(file.file, buffer)
 
+	# 🧠 Placeholder logic for translation
 	shutil.copy(original_path, translated_path)
-	logger.info(f"Stored: {original_filename}, Translated: {translated_filename}")
+
+	logger.info(f"Stored original: {original_path}")
+	logger.info(f"Stored translated: {translated_path}")
 
 	return UploadResponse(
-		original=f"/files/input/{file.filename}",
-		translated=f"/files/output/{file.filename}/{file.filename}_translated.pdf"
+		original=f"/files/input/{filename_stem}/{file.filename}",
+		translated=f"/files/output/{filename_stem}/{filename_stem}_translated.pdf"
 	)
-
-# ✅ Static file routes
-app.mount("/files/originals", StaticFiles(directory=ORIGINAL_DIR), name="originals")
-app.mount("/files/translateds", StaticFiles(directory=TRANSLATED_DIR), name="translateds")
