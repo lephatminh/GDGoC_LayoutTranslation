@@ -1,25 +1,35 @@
-# ─── Stage 1: Base image with Python ───────────────────────
-FROM python:3.11-slim AS backend
+# ─── Stage 1: Build PDFPigLayoutDetection (.NET 6 SDK) ──────
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS pdfpig-build
+WORKDIR /src/PDFPigLayoutDetection
+COPY PDFPigLayoutDetection/*.csproj ./
+RUN dotnet restore
+COPY PDFPigLayoutDetection/. ./
+RUN dotnet publish -c Release -o /app/pdfpig
 
-# ─── Set working directory ──────────────────────────────────
+# ─── Stage 2: Install Python deps & copy pipeline ────────────
+FROM python:3.11-slim AS py-build
+WORKDIR /app
+COPY translate-pdf-app_BACKEND/requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+COPY translate-pdf-app_BACKEND/main.py \
+     translate-pdf-app_BACKEND/run_pipeline.sh \
+     translate-pdf-app_BACKEND/config/ \
+     translate-pdf-app_BACKEND/core/ ./
+RUN chmod +x run_pipeline.sh
+
+# ─── Final image: .NET Runtime + Python ────────────────────
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS final
 WORKDIR /app
 
-# ─── Install dependencies ───────────────────────────────────
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# bring in the published PDFPig detector
+COPY --from=pdfpig-build /app/pdfpig ./PDFPigLayoutDetection
 
-# ─── Copy source code ───────────────────────────────────────
-COPY . .
+# bring in the Python pipeline
+COPY --from=py-build /app ./
 
-# Create folders
-RUN mkdir -p /app/storage/originals /app/storage/translateds
+# mount input/output so your FastAPI can read/write
+VOLUME ["/app/input","/app/output"]
+EXPOSE 8000
 
-# 🔥 Fix permission issue
-RUN chmod -R 777 /app/storage
-
-# Switch to non-root
-USER 1001
-
-# Start the app
-
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--http", "httptools", "--limit-concurrency", "100", "--backlog", "2048"]
+# start your FastAPI backend
+ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
