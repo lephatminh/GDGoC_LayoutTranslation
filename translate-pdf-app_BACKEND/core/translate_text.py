@@ -268,7 +268,7 @@ def setup_multiple_models():
 
 def translate_with_gemini(model, text, rate_limiter, context):
     """Translate text using Gemini model with comprehensive rate limiting"""
-    source_lang = "English"
+    # source_lang = "English"
     target_lang = "Vietnamese"
     try:
         # Estimate tokens (roughly 4 chars per token for Vietnamese/English)
@@ -278,16 +278,16 @@ def translate_with_gemini(model, text, rate_limiter, context):
         
         prompt = f"""TRANSLATION TASK
 
-            SOURCE LANGUAGE: {source_lang}
             TARGET LANGUAGE: {target_lang}
 
             INSTRUCTIONS:
-            1. ONLY translate the TEXT inside the <TEXT_TO_TRANSLATE> tags, do not include <TEXT_TO_TRANSLATE> tag
+            1. ONLY translate the TEXT inside the <TEXT_TO_TRANSLATE> tags, DO NOT include <TEXT_TO_TRANSLATE> tag
             2. DO NOT translate anything in the <CONTEXT> tags
             3. Use the <CONTEXT> only to understand the meaning and maintain consistency
             4. Provide exactly ONE formal translation
             5. Preserve all formatting and structure of the original text
             6. Do not add explanations or alternatives
+            7. If you CANNOT TRANSLATE or there is NO TEXT, only return the origintal text without <TEXT_TO_TRANSLATE> tag
 
             <CONTEXT>
             {context}
