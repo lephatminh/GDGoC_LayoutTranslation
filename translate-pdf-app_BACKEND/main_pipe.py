@@ -171,6 +171,10 @@ def main():
     # 3) setup translation API
     api_manager = setup_multiple_models()
     translation_cache: Dict[str, List] = {}
+    cached_file = out_root / "translation_cache.json"
+    if cached_file.exists():
+        translation_cache = json.loads(cached_file.read_text(encoding="utf-8"))
+        logger.info(f"Loaded {len(translation_cache)} cached translations")
 
     # 4) loop & process
     for pdf_path in pdf_paths:
@@ -197,6 +201,7 @@ def main():
         #     writer.writerow([file_id, json.dumps(translated, ensure_ascii=False)])
 
     # 5) done
+    cached_file.write_text(json.dumps(translation_cache, ensure_ascii=False, indent=2), encoding="utf-8")
     logger.info("Pipeline completed.")
 
 
