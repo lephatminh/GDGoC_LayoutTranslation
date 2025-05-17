@@ -26,7 +26,7 @@ if errorlevel 1 (
 )
 popd
 
-echo 2) Running Python translation & visualization...
+echo 2) Running Python translation and visualization...
 pushd "%~dp0%"
 python main_pipe.py --input "%inputPath%" --output "%~2"
 if errorlevel 1 (

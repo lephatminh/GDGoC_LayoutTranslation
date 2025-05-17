@@ -22,33 +22,52 @@ def insert_translated_text(doc: fitz.Document,
     for box in translated_boxes:
         page_idx = box.get("page", 1) - 1
         page = doc[page_idx]
-        x, y, w, h = box["x"], box["y"], box["width"], box["height"]
+        x, y, w, h = map(float, [box["x"], box["y"], box["width"], box["height"]])
         translated_text = box.get("text_vi", "")
 
         # cover the original text area
         rect = fitz.Rect(x, y, x + w, y + h)
         page.draw_rect(rect, color=(1, 1, 1), fill=(1, 1, 1))
-        # page.draw_rect(rect, color=(1, 0, 0), width = 0.5)
+        # page.draw_rect(rect, color=(1, 0, 0), width = 0.5, fill = (1, 1, 1))
 
-        # determine font size
+        # starting font size (fallback to 12 if missing)
         font_size = box.get("font", {}).get("size", 12)
-        text_width = meas_font.text_length(translated_text, fontsize=font_size)
-        while text_width > w and font_size > 1:
-            font_size -= 1
-            text_width = meas_font.text_length(translated_text, fontsize=font_size)
+        min_size  = 4            # don’t shrink below this
+        text      = translated_text
 
-        text_height = font_size
-        # insert the translated text
-        page.insert_text((x, y + (h - text_height) / 2 + text_height),
-                         translated_text,
-                         fontname='Roboto',
-                         fontsize=font_size,
-                         fontfile=str(font_path),
-                         color=(0, 0, 0),
-                         fill_opacity=1,
-                         stroke_opacity=1,
-                         border_width=1,
-                        )
+        # pre‐compute font metrics constants
+        asc_units = meas_font.ascender   # units above baseline
+        desc_units= meas_font.descender  # units below baseline (negative)
+
+        stroke = 1      # pts of border_width
+        # shrink until it fits horizontally AND vertically
+        while font_size > min_size:
+            # 1) measure width at this size
+            text_width = meas_font.text_length(text, fontsize=font_size)
+            # 2) compute actual line‐height in points
+            line_height = (asc_units - desc_units) / 1000 * font_size
+
+            # add both sides of the stroke before comparing
+            if text_width + 2*stroke <= w and line_height <= h:
+                break
+            font_size -= 1
+
+        # now center‐vertically
+        x0, y0 = x, y
+        baseline_y = y0 + (h - line_height) / 2 + line_height
+
+        # insert the text
+        page.insert_text(
+            (x0, baseline_y),
+            text,
+            fontname="Roboto",
+            fontsize=font_size,
+            fontfile=str(font_path),
+            color=(0,0,0),
+            fill_opacity=1,
+            stroke_opacity=1,
+            border_width=1,
+        )
 
 def insert_math_images(doc: fitz.Document,
                        math_boxes: list[dict],
