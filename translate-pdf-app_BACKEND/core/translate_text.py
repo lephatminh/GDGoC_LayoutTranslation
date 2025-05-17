@@ -282,7 +282,7 @@ def translate_with_gemini(model, text, rate_limiter, context):
             TARGET LANGUAGE: {target_lang}
 
             INSTRUCTIONS:
-            1. ONLY translate the TEXT inside the <TEXT_TO_TRANSLATE> tags
+            1. ONLY translate the TEXT inside the <TEXT_TO_TRANSLATE> tags, do not include <TEXT_TO_TRANSLATE> tag
             2. DO NOT translate anything in the <CONTEXT> tags
             3. Use the <CONTEXT> only to understand the meaning and maintain consistency
             4. Provide exactly ONE formal translation

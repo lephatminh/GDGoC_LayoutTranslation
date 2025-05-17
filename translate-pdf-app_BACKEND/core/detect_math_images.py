@@ -204,8 +204,6 @@ def crop_and_normalize_all(output_path):
 def detect_math_box_images(name_root, output_path, best_model):
     pdf_to_jpg_with_sizes(name_root, output_path)
     
-    PREDICTIONS_ROOT = output_path + '/predictions'
-    
     with torch.no_grad():
         predictions = best_model.predict(
                 source= output_path,
@@ -223,7 +221,7 @@ def detect_math_box_images(name_root, output_path, best_model):
             scores = prediction.boxes.conf.cpu().numpy()
             
             test_images += [name]
-            label_path = os.path.join(PREDICTIONS_ROOT, name + ".txt")
+            label_path = os.path.join(output_path, name + ".txt")
             
             with open(label_path, "w+") as f:
                 for score, box in zip(scores, boxes):

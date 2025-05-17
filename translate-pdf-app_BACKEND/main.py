@@ -70,12 +70,19 @@ async def upload_pdf(file: UploadFile = File(...)):
 
 	# NOTE: apply run_pipeline.sh here to get translated PDF 
 	# shutil.copy(original_path, translated_path)
-	subprocess.run(
-            ["bash", "run_pipeline.sh", str(original_path), str(translated_path)],
-			cwd=str(BASE_DIR),
-            check=True
-        )
+	if os.name == "nt":
+		# Windows
+		runner = ["cmd", "/c", "run_pipeline.bat", str(original_path), str(translated_path)]
 
+	else:
+		# Unix-like (Linux, macOS)
+		runner = ["bash", "run_pipeline.sh", str(original_path), str(translated_path)]
+
+	subprocess.run(
+		runner,
+		cwd=str(BASE_DIR),
+		check=True
+	)
 
 	logger.info(f"Stored original: {original_path}")
 	logger.info(f"Stored translated: {translated_path}")

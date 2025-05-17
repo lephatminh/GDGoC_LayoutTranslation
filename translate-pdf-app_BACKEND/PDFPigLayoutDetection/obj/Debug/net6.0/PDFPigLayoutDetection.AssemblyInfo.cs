@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PDFPigLayoutDetection")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f88a555ce09682d7ada271d4616a9ce4b5e618d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f3435a053689d2c899d1edf7a485cc4ec01e637")]
 [assembly: System.Reflection.AssemblyProductAttribute("PDFPigLayoutDetection")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PDFPigLayoutDetection")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
