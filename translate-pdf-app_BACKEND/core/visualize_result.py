@@ -53,12 +53,11 @@ def insert_translated_text(doc: fitz.Document,
             font_size -= 1
 
         # now center‐vertically
-        x0, y0 = x, y
-        baseline_y = y0 + (h - line_height) / 2 + line_height
+        baseline_y = y + (h - line_height) / 2 + line_height
 
         # insert the text
         page.insert_text(
-            (x0, baseline_y),
+            (x, baseline_y),
             text,
             fontname="Roboto",
             fontsize=font_size,

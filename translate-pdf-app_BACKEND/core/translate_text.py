@@ -268,7 +268,7 @@ def setup_multiple_models():
 
 def translate_with_gemini(model, text, rate_limiter, context):
     """Translate text using Gemini model with comprehensive rate limiting"""
-    # source_lang = "English"
+    source_lang = "English"
     target_lang = "Vietnamese"
     try:
         # Estimate tokens (roughly 4 chars per token for Vietnamese/English)
@@ -276,28 +276,78 @@ def translate_with_gemini(model, text, rate_limiter, context):
         # Wait if we're approaching rate limits
         rate_limiter.wait_if_needed(estimated_tokens)
         
+        # prompt = f"""TRANSLATION TASK
+
+        #     SOURCE LANGUAGE: {source_lang}
+        #     TARGET LANGUAGE: {target_lang}
+
+        #     INSTRUCTIONS:
+        #     1. ONLY translate the texts between the <TEXT_TO_TRANSLATE> tags, DO NOT include <TEXT_TO_TRANSLATE> tag
+        #     2. DO NOT translate anything in the <CONTEXT> tags
+        #     3. Use the <CONTEXT> only to understand the meaning and maintain consistency
+        #     4. Provide exactly ONE formal translation
+        #     5. Preserve all formatting and structure of the original text
+        #     6. Do not add explanations or alternatives
+        #     7. If there is NO TEXT, only return the origintal text without <TEXT_TO_TRANSLATE> tag
+
+        #     <CONTEXT>
+        #     {context}
+        #     </CONTEXT>
+
+        #     <TEXT_TO_TRANSLATE>
+        #     {text}
+        #     </TEXT_TO_TRANSLATE>
+
+        #     Your translation in {target_lang}:"""
+
+
+        # prompt = f"""TRANSLATION TASK
+
+        # SOURCE LANGUAGE: {source_lang}
+        # TARGET LANGUAGE: {target_lang}
+
+        # INSTRUCTIONS:
+        # 1. Translate ONLY the text between <TEXT_TO_TRANSLATE> tags
+        # 2. Provide ONE formal translation in {target_lang}
+        # 3. Preserve all formatting (paragraphs, bullet points, etc.)
+        # 4. Maintain the exact structure of the original text
+        # 5. Use the <CONTEXT> information to understand meaning and maintain consistency
+        # 6. Do not add explanations, alternatives, or comments
+
+        # <CONTEXT>
+        # {context}
+        # </CONTEXT>
+
+        # <TEXT_TO_TRANSLATE>
+        # {text}
+        # </TEXT_TO_TRANSLATE>
+
+        # Translation:"""
+
         prompt = f"""TRANSLATION TASK
 
-            TARGET LANGUAGE: {target_lang}
+        SOURCE LANGUAGE: {source_lang}
+        TARGET LANGUAGE: {target_lang}
 
-            INSTRUCTIONS:
-            1. ONLY translate the TEXT inside the <TEXT_TO_TRANSLATE> tags, DO NOT include <TEXT_TO_TRANSLATE> tag
-            2. DO NOT translate anything in the <CONTEXT> tags
-            3. Use the <CONTEXT> only to understand the meaning and maintain consistency
-            4. Provide exactly ONE formal translation
-            5. Preserve all formatting and structure of the original text
-            6. Do not add explanations or alternatives
-            7. If you CANNOT TRANSLATE or there is NO TEXT, only return the origintal text without <TEXT_TO_TRANSLATE> tag
+        INSTRUCTIONS:
+        1.  Carefully review the <CONTEXT> provided below to understand the subject matter, specific terminology, and desired tone.
+        2.  Translate ONLY the text enclosed within the <TEXT_TO_TRANSLATE>...</TEXT_TO_TRANSLATE> tags to {target_lang}.
+        3.  Provide ONE single, accurate, and formal translation in {target_lang}.
+        4.  Preserve ALL original formatting. This includes paragraphs, line breaks, bullet points, numbering, bolding, italics, and any HTML tags present *within* the source text to be translated.
+        5.  Maintain the exact hierarchical structure and layout of the original text within <TEXT_TO_TRANSLATE>.
+        6.  Use the <CONTEXT> information to ensure semantic accuracy and consistency with any established terminology or style.
+        7.  Output ONLY the translated text. Do NOT include any preambles, apologies, explanations, alternative translations, or any text other than the direct translation itself.
+        8.  If the <TEXT_TO_TRANSLATE> section is empty or contains only whitespace, output the original text.
 
-            <CONTEXT>
-            {context}
-            </CONTEXT>
+        <CONTEXT>
+        {context}
+        </CONTEXT>
 
-            <TEXT_TO_TRANSLATE>
-            {text}
-            </TEXT_TO_TRANSLATE>
+        <TEXT_TO_TRANSLATE>
+        {text}
+        </TEXT_TO_TRANSLATE>
 
-            Your translation in {target_lang}:"""
+        Translation:"""
 
         generation_config = {
             "temperature": 0.2,  # Lowered for more deterministic output
