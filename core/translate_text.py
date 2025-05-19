@@ -15,13 +15,13 @@ from tenacity import (
 import google.api_core.exceptions
 import json
 from typing import Dict, List, Any, Optional, Tuple
-import google.generativeai as genai
+from google import genai
 import os
 from dotenv import load_dotenv
 # from csv_utils import *
 import csv
 from pathlib import Path
-from core.extract_contexts import *
+from extract_contexts import *
 load_dotenv()
 import threading
 import concurrent.futures
@@ -229,9 +229,8 @@ class GeminiRateLimiter:
         )
 
 def setup_gemini(api_key):
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(MODEL)
-    return model
+    client = genai.Client(api_key=api_key)
+    return client
 
 @retry(
     retry=retry_if_exception_type((
@@ -251,9 +250,10 @@ def setup_multiple_models():
     api_manager = ApiKeyManager()
     
     for i in range(1, 8):
-        api_key = os.getenv(f"{default_api_str}_{i}")
+        j = i % 3 # Currently have 3 API keys
+        api_key = os.getenv(f"{default_api_str}_{j}")
         if not api_key:
-            logger.warning(f"API key {default_api_str}_{i} not found, skipping.")
+            logger.warning(f"API key {default_api_str}_{j} not found, skipping.")
             continue
         try:
             model = setup_gemini(api_key)
@@ -313,10 +313,15 @@ def translate_with_gemini(model, text, rate_limiter, context):
             "HARM_CATEGORY_DANGEROUS_CONTENT": "BLOCK_NONE"
         }
         
-        response = model.generate_content(
-            prompt,
-            generation_config=generation_config,  
-            safety_settings=safety_settings
+        response = model.generate_text(
+            model=MODEL,
+            prompt=prompt,
+            temperature=generation_config["temperature"],
+            top_p=generation_config["top_p"],
+            top_k=generation_config.get("top_k"),
+            max_output_tokens=generation_config["max_output_tokens"],
+            stop_sequences=generation_config["stop_sequences"],
+            safety_settings=safety_settings,
         )
         
         if response and response.text:

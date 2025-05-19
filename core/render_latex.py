@@ -78,13 +78,12 @@ def add_selectable_latex_to_pdf(input_pdf, output_pdf, equation, x, y, page_num=
     finally:
         shutil.rmtree(temp_dir)
         
-# Example usage
-# add_selectable_latex_to_pdf(
-#     'sample.pdf', 
-#     'output_selectable.pdf', 
-#     r"I _ { 2 } ( x, y, z, w ) = \frac { - 4 z ^ { 2 } } { z ^ { 2 } - w ^ { 2 } } \int _ { 0 } ^ { \infty } u d u \left\{ \frac { B _ { 1 } ( - u ; x, y ) - B _ { 1 } ( - u ; 0, y ) } { x ^ { 2 } } \right\} ^ { 2 } \left( \frac { z ^ { 2 } } { u + z ^ { 2 } } - \frac { w ^ { 2 } } { u + w ^ { 2 } } \right)", 
-#     1,1,0, fontsize=10
-# )
+add_selectable_latex_to_pdf(
+    'sample.pdf', 
+    'output_selectable.pdf', 
+    r"I _ { 2 } ( x, y, z, w ) = \frac { - 4 z ^ { 2 } } { z ^ { 2 } - w ^ { 2 } } \int _ { 0 } ^ { \infty } u d u \left\{ \frac { B _ { 1 } ( - u ; x, y ) - B _ { 1 } ( - u ; 0, y ) } { x ^ { 2 } } \right\} ^ { 2 } \left( \frac { z ^ { 2 } } { u + z ^ { 2 } } - \frac { w ^ { 2 } } { u + w ^ { 2 } } \right)", 
+    1,1,0, fontsize=10
+)
 
 
 def overwrite_text_in_pdf(
