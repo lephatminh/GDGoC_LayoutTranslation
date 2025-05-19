@@ -3,6 +3,7 @@ import csv
 import json
 import fitz  # PyMuPDF
 import logging
+import os
 from pathlib import Path
 from typing import List, Dict
 
@@ -145,6 +146,9 @@ def process_single_pdf(
 
 
 def main():
+    for dir in["input", "output"]:
+        os.makedirs(dir, exist_ok=True)
+
     parser = argparse.ArgumentParser(
         description="Run OCR→layout→translate→viz pipeline, optionally per‐file."
     )

@@ -26,6 +26,8 @@
 - chi_tra_vert.traineddata: https://github.com/tesseract-ocr/tessdata/raw/main/chi_tra_vert.traineddata
 - chi_sim_vert.traineddata: https://github.com/tesseract-ocr/tessdata/raw/main/chi_sim_vert.traineddata
 
+4. Download Poppler
+conda install -c conda-forge poppler
 
 ## Non Deeplearning solution
 

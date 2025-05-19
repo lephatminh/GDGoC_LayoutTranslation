@@ -27,7 +27,7 @@ namespace PDFPigLayoutDetection
             string fileId = args[0];
 
             // now point at ../input/{fileId} instead of ../input
-            string pdfDir = Path.Combine("..", "input", fileId);
+            string pdfDir = Path.Combine("..", "input", Path.GetFileNameWithoutExtension(fileId));
             string outputCsv = Path.Combine("..", "output", "submission_contexts.csv");
 
             // ensure directories
