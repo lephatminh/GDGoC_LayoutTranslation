@@ -300,9 +300,9 @@ def translate_with_gemini(model, text, rate_limiter, context):
             Your translation in {target_lang}:"""
 
         generation_config = {
-            "temperature": 0.2,  # Lowered for more deterministic output
+            "temperature": 0.05,  # Lowered for more deterministic output
             "top_p": 0.85,
-            "top_k": 40,
+            "top_k": 45,
             "max_output_tokens": 1024,
             "stop_sequences": ["\n\n"]
         }
