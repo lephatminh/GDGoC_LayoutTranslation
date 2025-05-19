@@ -3,91 +3,97 @@ from translate_text import *
 import os 
 import logging
 import concurrent.futures
+from box import Box
+# from layout_detection import detect_and_crop_image
 
 logger = logging.getLogger(__name__)
 
-def extract_content_from_single_image(image_path: str, api_manager) -> str:
+def extract_content_from_single_image(
+    box: Box, 
+    image_dir: str, 
+    api_manager: ApiKeyManager
+) -> Box:
     """
-    Extract paragraphs (including inline math) and isolate math equations from the image to LaTeX format
-    Input: Path to the cropped image
-    Output: LaTeX format of the content of a single image
+    Given a Box (with .coords and .id) and the folder where its cropped image lives,
+    upload + run Gemini → fill box.content with the resulting LaTeX string.
     """
-    
+    image_path = os.path.join(image_dir, f"cropped_segment_{box.id}.png")
     client, rate_limiter, key_index = api_manager.get_next_available_model(max_wait_time=60)
-    content = None
     if client is None:
         logger.error(f"No API key available to process {image_path}")
-        return None
+        return box
 
     try:
         rate_limiter.wait_if_needed(0)
-        try:
-            image_file = client.files.upload(file=image_path)
-            logger.info(f"Image file uploaded: {image_file}")
-        except Exception as e:
-            logger.error(f"Error uploading image file: {e}")
-            exit() # Example: exit if upload fails
+        img_file = client.files.upload(file=image_path)
+        logger.info(f"Uploaded image {box.id}: {img_file.name}")
 
-
-        prompt_text = """You are a professional in data creation.
+        rate_limiter.wait_if_needed(0)
+        prompt = """You are a professional in data creation.
                 Extract the content in the image to LaTeX format (including the mathematical notation)
 
                 INSTRUCTIONS: Return the content starting from \begin{document} in LaTeX format, including the mathematical notation."""
+        resp = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=[img_file, prompt],
+        )
+        raw = resp.text or ""
+        # extract only the document body
+        start = raw.find(r"\begin{document}")
+        end   = raw.find(r"\end{document}") + len(r"\end{document}")
+        if 0 <= start < end:
+            box.content = raw[start:end]
+        else:
+            logger.warning(f"Box {box.id}: document markers not found.")
+            box.content = raw
 
-        try:
-            rate_limiter.wait_if_needed(0)
-            response = client.models.generate_content(
-                model="gemini-2.0-flash",
-                contents=[image_file, prompt_text],
-            )
+    except Exception as e:
+        logger.error(f"[Box {box.id}] error: {e}")
 
-            content = response.text
-
-        except Exception as e:
-            logger.error(f"Error generating content: {e}")
     finally:
         api_manager.mark_busy(key_index, False)
-    
-    return content
 
-def extract_content_from_multiple_images(image_dir: str, api_manager) -> List[str]:
-    """
-    Extract paragraphs (including inline math) and isolate math equations from the images to LaTeX format
-    Using multithreading to process multiple images concurrently
-    Input: Path to the folder containing cropped images
-    Output: LaTeX format of the content
-    """
+    return box
 
-    image_files = [os.path.join(image_dir, f) for f in os.listdir(image_dir) if os.path.isfile(os.path.join(image_dir, f))]
-    print(f"Found {len(image_files)} images in {image_dir}")
-    content_list = []
+
+def extract_content_from_multiple_images(
+    boxes: List[Box],
+    image_dir: str,
+    api_manager: ApiKeyManager
+) -> List[Box]:
+    """
+    Given a list of Boxes and the folder of their cropped images, run them all
+    in parallel and return back the same list with .content fields populated.
+    """
+    logger.info(f"Processing {len(boxes)} boxes in {image_dir}")
+    enriched: List[Box] = []
+
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
-        futures = []
-        for image_file in image_files:
-            futures.append(executor.submit(extract_content_from_single_image, image_file, api_manager))
-
-        for future in concurrent.futures.as_completed(futures):
+        futures = [
+            executor.submit(extract_content_from_single_image, box, image_dir, api_manager)
+            for box in boxes
+        ]
+        for fut in concurrent.futures.as_completed(futures):
             try:
-                content = future.result()
-                if content:
-                    content_list.append(content)
+                b = fut.result()
+                enriched.append(b)
             except Exception as e:
-                logger.error(f"Error processing image: {e}")
-    return content_list
+                logger.error(f"worker error: {e}")
 
+    return enriched
+# def main():
+#     api_manager = setup_multiple_models()
+#     # Iterate through the images in paragraph folder
+#     parent_dir = Path("../")
+#     image_folder = os.path.join(parent_dir, "paragraph")
+#     if not os.path.exists(image_folder):
+#         print(f"Image folder {image_folder} does not exist.")
+#         return
+#     # boxes = detect_and_crop_image(..., ...)
+#     pdf_content = extract_content_from_multiple_images(boxes, image_folder, api_manager)
+#     print(pdf_content)
 
-def main():
-    api_manager = setup_multiple_models()
-    # Iterate through the images in paragraph folder
-    parent_dir = Path("../")
-    image_folder = os.path.join(parent_dir, "paragraph")
-    if not os.path.exists(image_folder):
-        print(f"Image folder {image_folder} does not exist.")
-        return
-    pdf_content = extract_content_from_multiple_images(image_folder, api_manager)
-    print(pdf_content)
-
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
 
     
