@@ -176,9 +176,9 @@ def main():
     api_manager = setup_multiple_models()
     translation_cache: Dict[str, List] = {}
     cached_file = out_root / "translation_cache.json"
-    if cached_file.exists() and cached_file.stat().st_size > 0:
-        translation_cache = json.loads(cached_file.read_text(encoding="utf-8"))
-        logger.info(f"Loaded {len(translation_cache)} cached translations")
+    # if cached_file.exists() and cached_file.stat().st_size > 0:
+    #     translation_cache = json.loads(cached_file.read_text(encoding="utf-8"))
+    #     logger.info(f"Loaded {len(translation_cache)} cached translations")
 
     # 4) loop & process
     for pdf_path in pdf_paths:
