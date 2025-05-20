@@ -1,12 +1,14 @@
 
 from pathlib import Path
-from core.pdf_utils import convert_pdf_to_imgs
+from core.pdf_utils import *
 from core.detect_layout import detect_and_crop_image, get_model
 from core.translate_text import translate_document
 from core.extract_info import *
+from core.render_latex import *
 from dataclasses import asdict
 import json
 import argparse
+
 
 def main():
     parser = argparse.ArgumentParser(
@@ -28,7 +30,7 @@ def main():
     args = parser.parse_args()
 
     pdf_path: Path = args.input_dir
-    out_root: Path = args.output_dir
+    output_root: Path = args.output_dir
 
     if not pdf_path.exists() or pdf_path.suffix.lower() != ".pdf":
         parser.error(f"{pdf_path} does not exist or is not a .pdf")
@@ -50,14 +52,13 @@ def main():
     for img in imgs:
         img_name = img.stem
         file_id = img_name.split("_")[0]
-        # page_num = int(img_name.split("_")[-1])
-        page_num = int(img_name.rsplit("_", 1)[1])
+        page_num = int(img_name.split("_")[-1])
 
         # Create a subfolder for each image
-        img_output_dir = out_root / file_id
-        img_output_dir.mkdir(parents=True, exist_ok=True)
+        output_dir = output_root / file_id
+        output_dir.mkdir(parents=True, exist_ok=True)
 
-        para_cropped_dir = img_output_dir / "para_cropped"
+        para_cropped_dir = output_dir / "para_cropped"
         para_cropped_dir.mkdir(parents=True, exist_ok=True)
 
         # Detect and crop the image
@@ -72,10 +73,24 @@ def main():
 
         # Translate the content
         translated_boxes = translate_document(pdf_content, api_manager)
-        # Save the translated content to json file
-        json_file = img_output_dir / f"{img_name}_translated.json"
-        with json_file.open("w", encoding="utf-8") as f:
+
+            
+        doc = fitz.open(str(pdf_path))
+        pdf_size = (doc[0].rect.width, doc[0].rect.height)
+        dpi = 300
+        # Dump the translated boxes to a JSON file
+        with open(output_dir/f"{file_id}_translated_boxes.json", "w", encoding= "utf-8") as f:
             json.dump([asdict(box) for box in translated_boxes], f, indent=4, ensure_ascii=False)
+        for box in translated_boxes:
+            page = doc[box.page_num]
+            pix = page.get_pixmap(matrix=fitz.Matrix(dpi/72, dpi/72))
+            image_size = (pix.width, pix.height)
+            box.coords = scale_img_box_to_pdf_box(box.coords, image_size, pdf_size)
+            add_selectable_latex_to_pdf(pdf_path, output_dir/f"{file_id}.pdf", box.translation, box.coords[0],
+                                        box.coords[1], box.coords[2], box.coords[3], doc,box.page_num, 
+                                        get_font_size(box.coords, doc[box.page_num]))
+
+        doc.close()
         
 if __name__ == "__main__":
     main()
