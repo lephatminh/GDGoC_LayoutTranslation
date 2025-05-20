@@ -17,7 +17,7 @@ def extract_content_from_single_image(
     Given a Box (with .coords and .id) and the folder where its cropped image lives,
     upload + run Gemini → fill box.content with the resulting LaTeX string.
     """
-    image_path = os.path.join(image_dir, f"cropped_segment_{box.id}.png")
+    image_path = os.path.join(image_dir, f"cropped_segment_{box.id}_page_{box.page_num}.png")
     client, rate_limiter, key_index = api_manager.get_next_available_model(max_wait_time=60)
     if client is None:
         logger.error(f"No API key available to process {image_path}")
