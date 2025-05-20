@@ -1,9 +1,9 @@
 from google import genai
-from translate_text import *
+from core.translate_text import *
 import os 
 import logging
 import concurrent.futures
-from box import Box
+from core.box import Box
 # from layout_detection import detect_and_crop_image
 
 logger = logging.getLogger(__name__)

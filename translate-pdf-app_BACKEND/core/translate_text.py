@@ -22,7 +22,7 @@ from typing import List, Dict, Any
 from pathlib import Path
 from tqdm import tqdm
 from dotenv import load_dotenv
-from core.extract_contexts import *
+# from core.extract_contexts import *
 load_dotenv()
 
 logging.basicConfig(level=logging.INFO)
@@ -357,7 +357,7 @@ def translate_box(args):
     while retry_count < max_retries:
         try:
             # Get context for this box
-            context = get_contexts(box, pdfpig_boxes)
+            # context = get_contexts(box, pdfpig_boxes)
             context = " ".join(context) if context else "No context available"
 
             # Get an available model with a timeout

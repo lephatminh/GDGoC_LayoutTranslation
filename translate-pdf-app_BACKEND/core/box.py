@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from typing import Tuple, Optional
-from pathlib import Path
 
 @dataclass
 class Box:
@@ -12,3 +11,4 @@ class Box:
     coords: Tuple[float, float, float, float]
     content: Optional[str] = None
     translation: Optional[str] = None
+    page_num: Optional[int] = None
