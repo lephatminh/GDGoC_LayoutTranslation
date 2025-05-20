@@ -4,6 +4,7 @@ import os
 import logging
 import concurrent.futures
 from core.box import Box
+from core.api_manager import *
 # from layout_detection import detect_and_crop_image
 
 logger = logging.getLogger(__name__)
@@ -39,10 +40,11 @@ def extract_content_from_single_image(
         )
         raw = resp.text or ""
         # extract only the document body
-        start = raw.find(r"\begin{document}")
-        end   = raw.find(r"\end{document}") + len(r"\end{document}")
+        start = raw.find(r"\begin{document}") + len(r"\begin{document}")
+        end   = raw.find(r"\end{document}")
         if 0 <= start < end:
-            box.content = raw[start:end]
+            box.content = raw[start:end].strip()  # remove \n\n at the beginning and the end
+
         else:
             logger.warning(f"Box {box.id}: document markers not found.")
             box.content = raw

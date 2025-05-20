@@ -2,8 +2,10 @@
 from pathlib import Path
 from core.pdf_utils import convert_pdf_to_imgs
 from core.detect_layout import detect_and_crop_image, get_model
-from core.translate_text import *
+from core.translate_text import translate_document
 from core.extract_info import *
+from dataclasses import asdict
+import json
 import argparse
 
 def main():
@@ -67,6 +69,13 @@ def main():
         )
 
         pdf_content = extract_content_from_multiple_images(para_boxes, para_cropped_dir, api_manager)
+
+        # Translate the content
+        translated_boxes = translate_document(pdf_content, api_manager)
+        # Save the translated content to json file
+        json_file = img_output_dir / f"{img_name}_translated.json"
+        with json_file.open("w", encoding="utf-8") as f:
+            json.dump([asdict(box) for box in translated_boxes], f, indent=4, ensure_ascii=False)
         
 if __name__ == "__main__":
     main()

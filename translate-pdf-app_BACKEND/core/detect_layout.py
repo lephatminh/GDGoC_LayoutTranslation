@@ -2,7 +2,7 @@ from doclayout_yolo import YOLOv10
 from huggingface_hub import hf_hub_download
 from typing import List
 from PIL import Image
-from core.box import Box
+from core.box import *
 from functools import lru_cache
 import os
 
@@ -47,6 +47,7 @@ def detect_and_crop_image(image_path: str, output_dir: str, page_num: int, model
             cropped_img.save(output_file)
             boxes.append(Box(
                 id = i + 1,
+                label = class_id,
                 coords = (coords[0], coords[1], coords[2], coords[3]),
                 content = None,
                 translation = None,
