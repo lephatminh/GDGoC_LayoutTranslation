@@ -9,6 +9,7 @@ class Box:
     """
     
     id: int
+    label: int 
     coords: Tuple[float, float, float, float]
     content: Optional[str] = None
     translation: Optional[str] = None
