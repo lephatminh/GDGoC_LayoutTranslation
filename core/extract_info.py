@@ -4,6 +4,7 @@ import os
 import logging
 import concurrent.futures
 from box import Box
+from api_manager import *
 # from layout_detection import detect_and_crop_image
 
 logger = logging.getLogger(__name__)
