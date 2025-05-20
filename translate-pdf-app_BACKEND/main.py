@@ -7,6 +7,7 @@ from pathlib import Path
 from uuid import uuid4
 from dotenv import load_dotenv
 import shutil, logging, os, subprocess
+import sys
 
 # Load env vars
 load_dotenv()
@@ -72,11 +73,11 @@ async def upload_pdf(file: UploadFile = File(...)):
 	# shutil.copy(original_path, translated_path)
 	if os.name == "nt":
 		# Windows
-		runner = ["cmd", "/c", "run_pipeline.bat", str(original_path), str(translated_path)]
+		runner = [sys.executable, str(BASE_DIR / "pipeline.py"), str(original_path), str(translated_path)]
 
 	else:
 		# Unix-like (Linux, macOS)
-		runner = ["bash", "run_pipeline.sh", str(original_path), str(translated_path)]
+		runner = ["bash", "pipeline.py", str(original_path), str(translated_path)]
 
 	subprocess.run(
 		runner,
@@ -87,6 +88,9 @@ async def upload_pdf(file: UploadFile = File(...)):
 	logger.info(f"Stored original: {original_path}")
 	logger.info(f"Stored translated: {translated_path}")
 
+	# NOTE: this is a temporary solution
+	translated_path = shutil.copy(original_path, translated_path)
+	
 	return UploadResponse(
 		original=f"/files/input/{filename_stem}/{file.filename}",
 		translated=f"/files/output/{filename_stem}/{filename_stem}_translated.pdf"
