@@ -43,7 +43,11 @@ def convert_pdf_to_imgs(pdf_path: Path, output_folder: Path, dpi: int = 300, img
     # Calculate the zoom factor based on DPI (72 is the base DPI)
     zoom = dpi / 72
 
+    # Capture the original PDF size
+    # pdf_size = (pdf_document[0].rect.width, pdf_document[0].rect.height)
+
     # Convert each page to an image
+    # pil_sizes = []
     for page_num in range(len(pdf_document)):
         page = pdf_document.load_page(page_num)
 
@@ -55,6 +59,10 @@ def convert_pdf_to_imgs(pdf_path: Path, output_folder: Path, dpi: int = 300, img
 
         # Convert pixmap to PIL Image
         img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+
+        # Get the size of the image
+        # img_size = (pix.width, pix.height)
+        # pil_sizes.append(img_size)
 
         # Generate output filename
         output_file = os.path.join(

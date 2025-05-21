@@ -77,7 +77,7 @@ async def upload_pdf(file: UploadFile = File(...)):
 
 	else:
 		# Unix-like (Linux, macOS)
-		runner = ["bash", "pipeline.py", str(original_path), str(translated_path)]
+		runner = [sys.executable, str(BASE_DIR / "pipeline.py"), str(original_path), str(translated_path)]
 
 	subprocess.run(
 		runner,
@@ -93,5 +93,5 @@ async def upload_pdf(file: UploadFile = File(...)):
 	
 	return UploadResponse(
 		original=f"/files/input/{filename_stem}/{file.filename}",
-		translated=f"/files/output/{filename_stem}/{filename_stem}_translated.pdf"
+		translated=f"/files/output/{filename_stem}/{file.filename}"
 	)

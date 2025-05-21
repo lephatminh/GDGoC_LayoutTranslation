@@ -6,6 +6,7 @@ from core.translate_text import translate_document
 from core.extract_info import *
 from core.render_latex import *
 from dataclasses import asdict
+from core.pymupdf_draw_bb import draw_boxes_on_pdf
 import json
 import argparse
 
@@ -86,8 +87,8 @@ def main():
             pix = page.get_pixmap(matrix=fitz.Matrix(dpi/72, dpi/72))
             image_size = (pix.width, pix.height)
             box.coords = scale_img_box_to_pdf_box(box.coords, image_size, pdf_size)
-            add_selectable_latex_to_pdf(pdf_path, output_dir/f"{file_id}.pdf", box.translation, box.coords[0],
-                                        box.coords[1], box.coords[2], box.coords[3], doc,box.page_num, 
+            add_selectable_latex_to_pdf(pdf_path, output_dir/f"{file_id}.pdf", box.translation, 
+                                        box.coords[0], box.coords[1], box.coords[2], box.coords[3], doc,box.page_num, 
                                         get_font_size(box.coords, doc[box.page_num]))
 
         doc.close()

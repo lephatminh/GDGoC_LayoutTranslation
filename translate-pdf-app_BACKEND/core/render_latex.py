@@ -141,6 +141,7 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
             \documentclass{article}
             \usepackage{amsmath,amssymb}
             \usepackage{fontspec}
+            \usepackage[x11names]{xcolor}
             \setmainfont{DejaVu Serif}
             \pagestyle{empty}
             \begin{document}
@@ -153,7 +154,7 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
     try:
         # Step 2: Create a 'equation.tex' file from the LaTeX code
         latex_file = os.path.join(temp_dir, "equation.tex")
-        with open(latex_file, "w") as f:
+        with open(latex_file, "w", encoding="utf-8") as f:
             f.write(LaTex_format)
 
         # Step 3: Compile to create 'equation.pdf'

@@ -45,6 +45,7 @@ def detect_and_crop_image(image_path: str, output_dir: str, page_num: int, model
             cropped_img = img.crop(coords)
             output_file = os.path.join(output_dir, f"cropped_segment_{i}_page_{page_num}.png")
             cropped_img.save(output_file)
+
             boxes.append(Box(
                 id = i,
                 label = class_id,
