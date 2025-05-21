@@ -11,7 +11,7 @@ import logging
 import copy
 from PyPDF2 import PdfReader, PdfWriter, Transformation
 from pathlib import Path
-from typing import Optional, Tuple, List
+from core.box import Box
 
 logger = logging.getLogger(__name__)
 
@@ -91,10 +91,7 @@ def scale_pdf_properly(input_path, output_path, target_width=1025, target_height
 def add_selectable_latex_to_pdf(input_pdf: Path,
                                 output_pdf: Path,
                                 equation: str,
-                                x_left_target: float,
-                                y_left_target: float,
-                                x_right_target: float,
-                                y_right_target: float,
+                                box: Box,
                                 src_doc: fitz.Document,
                                 page_num=0,
                                 fontsize=12):
@@ -124,6 +121,10 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
     Output:
         New PDF with inserted LaTex rendered document, scaled to fit the target rectangle
     '''
+    x_left_target, y_left_target, x_right_target, y_right_target = box.coords
+
+    logger.info("Params: %s, %s, %d, %d, %d, %d", 
+                input_pdf, output_pdf, x_left_target, y_left_target, x_right_target, y_right_target)
     
     logger.info(f"Adding LaTeX to PDF: {fontsize}")
     
@@ -222,18 +223,18 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
             fill = (1,1,1),
             width = 0
         )
-        page.draw_rect(
-            fitz.Rect(x_left_target, y_left_target, x_right_target, y_right_target),
-            color=(1, 0, 0),    # red stroke
-            width=1,            # line thickness in points
-            fill=None           # no fill
-        )
+        # page.draw_rect(
+        #     fitz.Rect(x_left_target, y_left_target, x_right_target, y_right_target),
+        #     color=(1, 0, 0),    # red stroke
+        #     width=1,            # line thickness in points
+        #     fill=None           # no fill
+        # )
         # For visualize the scaling
         #page.draw_rect(target, color=(1, 0, 0), fill = (1,1,1) ,width=0.5)
         #eq_page.draw_rect(eq_rect, color=(0, 1, 0) ,width=0.5)
         page.show_pdf_page(target, eq_doc, 0, keep_proportion=False)
 
-        src_doc.save(str(output_pdf))
+        # src_doc.save(str(output_pdf))
         eq_doc.close()
 
     finally:

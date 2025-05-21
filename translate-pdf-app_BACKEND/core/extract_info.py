@@ -1,13 +1,15 @@
-from google import genai
-from core.translate_text import *
+from core.box import Box
+from core.api_manager import ApiKeyManager
+from typing import List
+from core.preprocess_text import normalize_spaced_text, clean_text
 import os 
 import logging
 import concurrent.futures
-from core.box import Box
-from core.api_manager import *
-# from layout_detection import detect_and_crop_image
+import fitz
+
 
 logger = logging.getLogger(__name__)
+
 
 def extract_content_from_single_image(
     box: Box, 
@@ -22,6 +24,9 @@ def extract_content_from_single_image(
     client, rate_limiter, key_index = api_manager.get_next_available_model(max_wait_time=60)
     if client is None:
         logger.error(f"No API key available to process {image_path}")
+        return box
+    if box.label == 5: # Skip table
+        logger.info(f"Skipping table box {box.id}")
         return box
 
     try:
@@ -84,19 +89,52 @@ def extract_content_from_multiple_images(
                 logger.error(f"worker error: {e}")
 
     return enriched
-# def main():
-#     api_manager = setup_multiple_models()
-#     # Iterate through the images in paragraph folder
-#     parent_dir = Path("../")
-#     image_folder = os.path.join(parent_dir, "paragraph")
-#     if not os.path.exists(image_folder):
-#         print(f"Image folder {image_folder} does not exist.")
-#         return
-#     # boxes = detect_and_crop_image(..., ...)
-#     pdf_content = extract_content_from_multiple_images(boxes, image_folder, api_manager)
-#     print(pdf_content)
 
-# if __name__ == "__main__":
-#     main()
 
-    
+def get_content_in_region(doc: fitz.Document, boxes: List[Box]) -> List[Box]:
+    '''
+    Extract content in the region (top_left and bottom_right) of a PDF, including text and image metadata.
+
+    Args:
+        pdf: Path to the PDF
+        x_left: X-coordinate of the top-left corner
+        y_left: Y-coordinate of the top-left corner
+        x_right: X-coordinate of the bottom-right corner
+        y_right: Y-coordinate of the bottom-right corner
+
+    Return:
+        List of Boxes containing text and image metadata
+        [Box(
+            id: set to -1
+            label: set to -1
+            coords: Tuple(x_left, y_left, x_right, y_right) - from OCR or image bounds
+            content: str - text or image metadata
+            translation: str - same as content
+            page_num: 0
+        )]
+    '''
+    results: List[Box] = []
+    for box in boxes:
+        page = doc[box.page_num]
+        x0, y0, x1, y1 = box.coords
+        rect = fitz.Rect(x0, y0, x1, y1)
+
+        # pull out all text spans in this region
+        for block in page.get_text("dict", clip=rect)["blocks"]:
+            if block["type"] == 0:
+                for line in block["lines"]:
+                    for span in line["spans"]:
+                        sx0, sy0, sx1, sy1 = span["bbox"]
+                        # simple overlap test
+                        content = clean_text(span["text"])
+                        content = normalize_spaced_text(content)
+                        results.append(Box(
+                            id=-1,
+                            label=box.label,
+                            coords=(sx0, sy0, sx1, sy1),
+                            content=content,
+                            translation=content,
+                            page_num=box.page_num
+                        ))
+        
+    return results
