@@ -70,7 +70,7 @@ async def upload_pdf(file: UploadFile = File(...)):
 	original_path = input_folder / file.filename
 	translated_path = output_folder
 
-	for path in [input_folder, output_folder]:
+	for path in [ORIGINAL_DIR, TRANSLATED_DIR, input_folder, output_folder]:
 		path.mkdir(parents=True, exist_ok=True)
 
 	with original_path.open("wb") as buffer:
