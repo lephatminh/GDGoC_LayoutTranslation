@@ -12,7 +12,6 @@ translate-pdf-app/
 │
 ├── translate-pdf-app_BACKEND/   # FastAPI + PDFPig + Tesseract + Ghostscript
 ├── translate-pdf-app_FRONTEND/  # React + Bootstrap, served by Nginx in production
-├── shared_pipeline/             # OCR / translation helpers (mounted into backend)
 ├── docker-compose.yml           # Brings up backend + frontend together
 └── README.md                    # You are here
 ```
