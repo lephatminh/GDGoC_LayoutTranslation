@@ -33,7 +33,7 @@ translate-pdf-app/
 > • Git
 
 ```bash
-git clone https://github.com/lephatminh/GDGoC_LayoutTranslation.git
+git clone https://github.com/YOUR‑ORG/translate-pdf-app.git
 cd translate-pdf-app
 docker compose up --build          # first run ~10 min (Tex + model download)
 ```
