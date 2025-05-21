@@ -30,9 +30,9 @@ cd translate-pdf-app
 docker compose up --build
 ```
 
-| URL | What you’ll see |
-|-----|-----------------|
-| <http://localhost:8000/docs> | Interactive Swagger for backend |
+| URL                          | What you’ll see                              |
+| ---------------------------- | -------------------------------------------- |
+| <http://localhost:8000/docs> | Interactive Swagger for backend              |
 | <http://localhost:5173>      | Frontend viewer (upload + side‑by‑side PDFs) |
 
 The first build compiles Ghostscript (~10 min). Subsequent runs are instant.
@@ -117,27 +117,27 @@ Edit **`docker-compose.yml`** to map local folders:
 services:
   backend:
     volumes:
-      - ./input:/app/input      # drop PDFs here
-      - ./output:/app/output    # translated files appear here
+      - ./input:/app/input # drop PDFs here
+      - ./output:/app/output # translated files appear here
 ```
 
 ---
 
 ## 🐳 Docker Cheat‑Sheet
 
-| Action | Command |
-|--------|---------|
-| Rebuild without cache | `docker compose build --no-cache` |
-| View logs | `docker compose logs -f backend` |
+| Action                | Command                            |
+| --------------------- | ---------------------------------- |
+| Rebuild without cache | `docker compose build --no-cache`  |
+| View logs             | `docker compose logs -f backend`   |
 | Enter container shell | `docker compose exec backend bash` |
-| Stop containers | `docker compose down` |
+| Stop containers       | `docker compose down`              |
 
 ---
 
 ## 🧩 Deployment Notes
 
-* **Reverse proxy** – point Nginx / Caddy / Traefik at port 8000 (backend) and 80 (frontend container).  
-* **CI/CD** – push images:
+- **Reverse proxy** – point Nginx / Caddy / Traefik at port 8000 (backend) and 80 (frontend container).
+- **CI/CD** – push images:
 
   ```bash
   docker tag translate-pdf-backend yourhub/translate-pdf:backend
@@ -145,21 +145,21 @@ services:
   docker push yourhub/translate-pdf:*        # push both tags
   ```
 
-* **Scaling** – the backend is stateless; run multiple replicas behind a load balancer.
+- **Scaling** – the backend is stateless; run multiple replicas behind a load balancer.
 
 ---
 
 ## 🆘 Troubleshooting
 
-| Symptom | Fix |
-|---------|-----|
+| Symptom                               | Fix                                                                                   |
+| ------------------------------------- | ------------------------------------------------------------------------------------- |
 | **“Cannot connect to Docker daemon”** | Start Docker Desktop OR add user to `docker` group (`sudo usermod -aG docker $USER`). |
-| **Port 8000/5173 in use** | Change the left side of `ports:` in `docker-compose.yml`. |
-| **Build fails compiling Ghostscript** | Give Docker more CPU/RAM (Settings → Resources). |
-| **Frontend shows CORS error** | Backend’s `.env` → set `FRONTEND_ORIGIN` to the URL you open in the browser. |
+| **Port 8000/5173 in use**             | Change the left side of `ports:` in `docker-compose.yml`.                             |
+| **Build fails compiling Ghostscript** | Give Docker more CPU/RAM (Settings → Resources).                                      |
+| **Frontend shows CORS error**         | Backend’s `.env` → set `FRONTEND_ORIGIN` to the URL you open in the browser.          |
 
 ---
 
 ## 📜 License
 
-MIT © 2025 Bao Dinh & Contributors
+MIT © STMT & Contributors
