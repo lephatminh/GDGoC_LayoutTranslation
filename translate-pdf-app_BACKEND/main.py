@@ -8,6 +8,8 @@ from uuid import uuid4
 from dotenv import load_dotenv
 import shutil, logging, os, subprocess
 
+
+
 # Load env vars
 load_dotenv()
 FRONTEND_ORIGIN = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
@@ -44,6 +46,11 @@ TRANSLATED_DIR = BASE_DIR / "output"
 app.mount("/files/input", StaticFiles(directory=ORIGINAL_DIR), name="input")
 app.mount("/files/output", StaticFiles(directory=TRANSLATED_DIR), name="output")
 
+# Health check
+@app.get("/health")
+def health():
+	return {"status": "ok"}
+
 # Response model
 class UploadResponse(BaseModel):
 	original: str
@@ -67,6 +74,7 @@ async def upload_pdf(file: UploadFile = File(...)):
 
 	with original_path.open("wb") as buffer:
 		shutil.copyfileobj(file.file, buffer)
+
 
 	# NOTE: apply run_pipeline.sh here to get translated PDF 
 	# shutil.copy(original_path, translated_path)

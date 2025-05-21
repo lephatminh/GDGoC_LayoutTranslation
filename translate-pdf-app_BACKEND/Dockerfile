@@ -1,35 +1,78 @@
-# ─── Stage 1: Build PDFPigLayoutDetection (.NET 6 SDK) ──────
+# ─── Stage 1: Build PDFPig (.NET SDK) ───────────────────────
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS pdfpig-build
 WORKDIR /src/PDFPigLayoutDetection
-COPY PDFPigLayoutDetection/*.csproj ./
-RUN dotnet restore
-COPY PDFPigLayoutDetection/. ./
-RUN dotnet publish -c Release -o /app/pdfpig
 
-# ─── Stage 2: Install Python deps & copy pipeline ────────────
-FROM python:3.11-slim AS py-build
+# Copy project files and DLLs
+COPY PDFPigLayoutDetection/*.csproj ./
+COPY bin ../bin
+COPY PDFPigLayoutDetection/. ./
+
+# Restore NuGet dependencies
+RUN dotnet restore
+
+# ─── Stage 2: Final Python + OCR + .NET SDK Image ───────────
+FROM python:3.11-slim AS final
 WORKDIR /app
-COPY translate-pdf-app_BACKEND/requirements.txt ./
+
+# Install OS dependencies and .NET SDK
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        apt-transport-https \
+        ca-certificates \
+        gnupg \
+        curl \
+        wget \
+        bash \
+		gcc \
+        make \
+        build-essential \
+        software-properties-common \
+        tesseract-ocr \
+        poppler-utils \
+        fontconfig \
+        libglib2.0-0 \
+        libgl1 && \
+    # Add Microsoft feed for .NET SDK
+    curl -sSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /etc/apt/trusted.gpg.d/microsoft.gpg && \
+    echo "deb [arch=amd64] https://packages.microsoft.com/debian/12/prod bookworm main" > /etc/apt/sources.list.d/microsoft.list && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends dotnet-sdk-6.0 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install Ghostscript 10.05.1
+RUN wget -q https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/ghostscript-10.05.1.tar.gz && \
+    tar -xzf ghostscript-10.05.1.tar.gz && \
+    cd ghostscript-10.05.1 && \
+    ./configure --prefix=/usr && \
+    make && \
+    make install && \
+    cd .. && \
+    rm -rf ghostscript-10.05.1 ghostscript-10.05.1.tar.gz
+
+# Download Tesseract language data
+RUN mkdir -p /usr/share/tesseract-ocr/4.00/tessdata && \
+    cd /usr/share/tesseract-ocr/4.00/tessdata && \
+    for lang in rus spa deu fra kor jpn vie eng chi_sim chi_tra chi_tra_vert chi_sim_vert; do \
+        wget -q https://github.com/tesseract-ocr/tessdata/raw/main/${lang}.traineddata; \
+    done
+
+# Install Python dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-COPY translate-pdf-app_BACKEND/main.py \
-     translate-pdf-app_BACKEND/run_pipeline.sh \
-     translate-pdf-app_BACKEND/config/ \
-     translate-pdf-app_BACKEND/core/ ./
+
+# Copy backend source
+COPY . .
+
+# Copy .NET build source and binaries
+COPY --from=pdfpig-build /src /src
+
+# Make shell script executable
 RUN chmod +x run_pipeline.sh
 
-# ─── Final image: .NET Runtime + Python ────────────────────
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS final
-WORKDIR /app
+# Create directories and set proper permissions
+RUN mkdir -p /app/input /app/output && \
+    chmod 777 /app/input /app/output
 
-# bring in the published PDFPig detector
-COPY --from=pdfpig-build /app/pdfpig ./PDFPigLayoutDetection
-
-# bring in the Python pipeline
-COPY --from=py-build /app ./
-
-# mount input/output so your FastAPI can read/write
-VOLUME ["/app/input","/app/output"]
-EXPOSE 8000
-
-# start your FastAPI backend
+# Entrypoint
 ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
