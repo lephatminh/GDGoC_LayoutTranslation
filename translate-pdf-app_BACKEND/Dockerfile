@@ -23,6 +23,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy code
 COPY . /app
 
+# Static folders
+RUN mkdir -p /app/input /app/output
+
 # Install Python dependencies
 RUN pip install --upgrade pip && \
 	pip install -r requirements.txt
