@@ -1,7 +1,14 @@
 # 📄 Translate‑PDF App
 
-A full‑stack project that **takes a PDF in one language and returns a translated, selectable‑text PDF**.  
-Everything runs in Docker—no local Python, Node, .NET, Ghostscript, or Tesseract installs required.
+Full‑stack web app that **accepts a PDF, detects its layout, translates text, and returns a new selectable‑text PDF**.  
+The project ships with two Dockerised services:
+
+| Service      | Tech                                                                                    |
+| ------------ | --------------------------------------------------------------------------------------- |
+| **Backend**  | Python 3.11 (FastAPI) · Tesseract OCR · DocLayout‑YOLO (pre‑cached) · XeLaTeX · Poppler |
+| **Frontend** | React 18 (Vite) · Bootstrap 5 · pdf.js viewer                                           |
+
+Everything is isolated—no local Python, Node, Tex or model downloads if you run via Docker Compose.
 
 ---
 
@@ -10,155 +17,156 @@ Everything runs in Docker—no local Python, Node, .NET, Ghostscript, or Tessera
 ```
 translate-pdf-app/
 │
-├── translate-pdf-app_BACKEND/   # FastAPI + PDFPig + Tesseract + Ghostscript
-├── translate-pdf-app_FRONTEND/  # React + Bootstrap, served by Nginx in production
-├── docker-compose.yml           # Brings up backend + frontend together
-└── README.md                    # You are here
+├── translate-pdf-app_BACKEND/     # FastAPI server (Dockerfile inside)
+├── translate-pdf-app_FRONTEND/    # React client
+├── shared_pipeline/               # Optional shared scripts
+├── docker-compose.yml             # Spins up both services together
+└── README.md                      # You are here
 ```
 
 ---
 
-## 🚀 Quick Start (Everything with Docker)
+## 🚀 1‑Command Quick Start (Docker Compose)
 
-> **Prerequisites**: Docker Desktop 23 + (includes Compose v2).  
-> Copy‑paste in PowerShell / Bash / Zsh:
+> **Prerequisites**  
+> • Docker Desktop 23 + (includes Compose v2)  
+> • Git
 
 ```bash
 git clone https://github.com/YOUR‑ORG/translate-pdf-app.git
 cd translate-pdf-app
-docker compose up --build
+docker compose up --build          # first run ~10 min (Tex + model download)
 ```
 
-| URL                          | What you’ll see                              |
-| ---------------------------- | -------------------------------------------- |
-| <http://localhost:8000/docs> | Interactive Swagger for backend              |
-| <http://localhost:5173>      | Frontend viewer (upload + side‑by‑side PDFs) |
-
-The first build compiles Ghostscript (~10 min). Subsequent runs are instant.
+| URL                          | What you get                            |
+| ---------------------------- | --------------------------------------- |
+| <http://localhost:8000/docs> | Interactive Swagger / Redoc for backend |
+| <http://localhost:5173>      | Frontend upload & side‑by‑side viewer   |
 
 ---
 
 ## ⚙️ Environment Variables
 
-### Backend (`translate-pdf-app_BACKEND/.env`)
+| File                                  | Purpose                          | Example                                  |
+| ------------------------------------- | -------------------------------- | ---------------------------------------- |
+| **`translate-pdf-app_BACKEND/.env`**  | Secrets, CORS domains            | `GEMINI_API_KEY=sk‑xxx`                  |
+| **`translate-pdf-app_FRONTEND/.env`** | Public vars (exposed to browser) | `VITE_BACKEND_URL=http://localhost:8000` |
 
-```
-# CORS origin the frontend uses
-FRONTEND_ORIGIN=http://localhost:5173
-# If you deploy the frontend elsewhere, set the public host here
-FRONTEND_HOST=http://localhost:5173
-# Optional: your OpenAI / Gemini keys, etc.
-# OPENAI_API_KEY=xxx
-```
-
-### Frontend (`translate-pdf-app_FRONTEND/.env`)
-
-```
-# Where the backend lives
-VITE_BACKEND_URL=http://localhost:8000
-```
-
-> **Tip:** Samples named `.env.example` are provided; copy → rename to `.env` and edit.
+> **Security**: Do **not** commit backend `.env`. Inject secrets in production via your hosting provider or CI pipeline.
 
 ---
 
-## 🛠️ Backend Server (Standalone Dev Mode)
+## 🛠️ Backend – Stand‑Alone Dev (No Docker)
 
-1. **Create venv & install deps**
-
-   ```bash
-   cd translate-pdf-app_BACKEND
-   python -m venv .venv && source .venv/bin/activate
-   pip install -r requirements.txt
-   ```
-
-2. **Install system tools** (Debian/Ubuntu):
-
-   ```bash
-   sudo apt update && sudo apt install tesseract-ocr poppler-utils ghostscript
-   ```
-
-3. **Run**:
-
-   ```bash
-   uvicorn main:app --reload --port 8000
-   ```
-
-   Browse <http://localhost:8000/docs> to test.
-
----
-
-## 💻 Frontend Server (Standalone Dev Mode)
-
-1. ```bash
-   cd translate-pdf-app_FRONTEND
-   npm install          # or pnpm / yarn
-   npm run dev          # Vite dev server, defaults to port 5173
-   ```
-
-2. Open <http://localhost:5173> – hot‑reload will pick up any code change.
-
-### Production Build
+### 1. System packages (Ubuntu/Debian)
 
 ```bash
-npm run build   # outputs static files to dist/
+sudo apt update && sudo apt install -y   texlive-xetex texlive-latex-base texlive-extra-utils   poppler-utils tesseract-ocr libgl1 libglib2.0-0
 ```
 
-These static files are copied into the Nginx image during `docker compose up --build`.
+### 2. Python env
+
+```bash
+cd translate-pdf-app_BACKEND
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 3. Download YOLO weights once (≈1 GB)
+
+```bash
+python - <<'PY'
+from huggingface_hub import hf_hub_download
+hf_hub_download(repo_id="juliozhao/DocLayout-YOLO-DocStructBench",
+                filename="doclayout_yolo_docstructbench_imgsz1024.pt")
+PY
+```
+
+### 4. Run server
+
+```bash
+uvicorn main:app --reload --port 8000
+```
+
+Browse <http://localhost:8000/docs>.
+
+---
+
+## 💻 Frontend – Local Dev
+
+```bash
+cd translate-pdf-app_FRONTEND
+npm install           # or pnpm / yarn
+npm run dev           # Vite dev server on :5173
+```
+
+Open <http://localhost:5173>. Hot reload works out of the box.
+
+### Production build
+
+```bash
+npm run build         # writes static files to dist/
+```
+
+The Dockerfile for `frontend` copies the `dist/` output into an Nginx image.
+
+---
+
+## 🐳 Running Services Individually with Docker
+
+### Build & run backend only
+
+```bash
+docker build -t translate-pdf-backend ./translate-pdf-app_BACKEND
+docker run -p 8000:8000 --env-file ./translate-pdf-app_BACKEND/.env translate-pdf-backend
+```
+
+### Build & run frontend only
+
+```bash
+docker build -t translate-pdf-frontend ./translate-pdf-app_FRONTEND
+docker run -p 5173:80 translate-pdf-frontend
+```
 
 ---
 
 ## 📂 Persisting PDFs (Optional)
 
-Edit **`docker-compose.yml`** to map local folders:
+Edit `docker-compose.yml`:
 
 ```yaml
 services:
   backend:
     volumes:
       - ./input:/app/input # drop PDFs here
-      - ./output:/app/output # translated files appear here
+      - ./output:/app/output # translated PDFs appear here
 ```
 
 ---
 
-## 🐳 Docker Cheat‑Sheet
+## 🧩 Deployment Notes
 
-| Action                | Command                            |
-| --------------------- | ---------------------------------- |
-| Rebuild without cache | `docker compose build --no-cache`  |
-| View logs             | `docker compose logs -f backend`   |
-| Enter container shell | `docker compose exec backend bash` |
-| Stop containers       | `docker compose down`              |
+1. **Set secrets** (`GEMINI_API_KEY`, etc.) in your host’s environment panel.
+2. Use the same `docker compose up -d` workflow or build & push images to your registry.
+3. Point your domain / reverse proxy to:
+   - port 80 (frontend)
+   - port 8000 (backend API for internal calls)
 
----
-
-## 🧩 Deployment Notes
-
-- **Reverse proxy** – point Nginx / Caddy / Traefik at port 8000 (backend) and 80 (frontend container).
-- **CI/CD** – push images:
-
-  ```bash
-  docker tag translate-pdf-backend yourhub/translate-pdf:backend
-  docker tag translate-pdf-frontend yourhub/translate-pdf:frontend
-  docker push yourhub/translate-pdf:*        # push both tags
-  ```
-
-- **Scaling** – the backend is stateless; run multiple replicas behind a load balancer.
+The backend is stateless; scale multiple replicas behind a load balancer.
 
 ---
 
 ## 🆘 Troubleshooting
 
-| Symptom                               | Fix                                                                                   |
-| ------------------------------------- | ------------------------------------------------------------------------------------- |
-| **“Cannot connect to Docker daemon”** | Start Docker Desktop OR add user to `docker` group (`sudo usermod -aG docker $USER`). |
-| **Port 8000/5173 in use**             | Change the left side of `ports:` in `docker-compose.yml`.                             |
-| **Build fails compiling Ghostscript** | Give Docker more CPU/RAM (Settings → Resources).                                      |
-| **Frontend shows CORS error**         | Backend’s `.env` → set `FRONTEND_ORIGIN` to the URL you open in the browser.          |
+| Symptom                     | Remedy                                                          |
+| --------------------------- | --------------------------------------------------------------- |
+| Build fails on TeX packages | Increase Docker memory / retry (network).                       |
+| CORS error in browser       | Check `VITE_BACKEND_URL` and backend `FRONTEND_ORIGIN`.         |
+| Ports already in use        | Adjust host port numbers in `docker-compose.yml`.               |
+| Large model download slow   | Pre‑download on host and mount into `/root/.cache/huggingface`. |
 
 ---
 
 ## 📜 License
 
-MIT © STMT & Contributors
+MIT © 2025 STMT & Contributors
