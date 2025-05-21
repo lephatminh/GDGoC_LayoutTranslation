@@ -49,8 +49,18 @@ docker compose up --build          # first run ~10 min (Tex + model download)
 
 | File                                  | Purpose                          | Example                                  |
 | ------------------------------------- | -------------------------------- | ---------------------------------------- |
-| **`translate-pdf-app_BACKEND/.env`**  | Secrets, CORS domains            | `GEMINI_API_KEY=sk‑xxx`                  |
+| **`translate-pdf-app_BACKEND/.env`**  | Secrets, CORS domains            | `GEMINI_API_KEY_0=sk‑xxx`                |
 | **`translate-pdf-app_FRONTEND/.env`** | Public vars (exposed to browser) | `VITE_BACKEND_URL=http://localhost:8000` |
+
+### 📌 Developer Notice
+
+Please open the file `translate-pdf-app_BACKEND/.env` and **fill in your real Gemini API keys** like this:
+
+```env
+GEMINI_API_KEY_0=sk-your-key-1
+GEMINI_API_KEY_1=sk-your-key-2
+GEMINI_API_KEY_2=sk-your-key-3
+```
 
 > **Security**: Do **not** commit backend `.env`. Inject secrets in production via your hosting provider or CI pipeline.
 
