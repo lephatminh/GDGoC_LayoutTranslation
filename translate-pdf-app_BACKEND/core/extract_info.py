@@ -33,7 +33,8 @@ def extract_content_from_single_image(
         prompt = """You are a professional in data creation.
                 Extract the content in the image to LaTeX format (including the mathematical notation)
 
-                INSTRUCTIONS: Return the content starting from \begin{document} in LaTeX format, including the mathematical notation."""
+                INSTRUCTIONS: Return the content starting from \begin{document} in LaTeX format, including the mathematical notation.
+                """
         resp = client.models.generate_content(
             model="gemini-2.0-flash",
             contents=[img_file, prompt],
@@ -43,7 +44,7 @@ def extract_content_from_single_image(
         start = raw.find(r"\begin{document}") + len(r"\begin{document}")
         end   = raw.find(r"\end{document}")
         if 0 <= start < end:
-            box.content = raw[start:end].strip()  # remove \n\n at the beginning and the end
+            box.content = raw[start:end].strip().replace('\n', '')
 
         else:
             logger.warning(f"Box {box.id}: document markers not found.")

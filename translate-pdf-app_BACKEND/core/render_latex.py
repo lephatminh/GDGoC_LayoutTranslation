@@ -124,8 +124,8 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
     Output:
         New PDF with inserted LaTex rendered document, scaled to fit the target rectangle
     '''
-    logger.info("Params: %s, %s, %d, %d, %d, %d", 
-                input_pdf, output_pdf, x_left_target, y_left_target, x_right_target, y_right_target)
+    
+    logger.info(f"Adding LaTeX to PDF: {fontsize}")
     
     # Step 0: Check for condition of left and right point
     if x_left_target > x_right_target:
@@ -142,6 +142,9 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
             \usepackage{amsmath,amssymb}
             \usepackage{fontspec}
             \usepackage[x11names]{xcolor}
+            \usepackage{bibentry}
+            \usepackage[hidelinks,breaklinks]{hyperref}
+            \usepackage{xurl}
             \setmainfont{DejaVu Serif}
             \pagestyle{empty}
             \begin{document}
@@ -202,13 +205,6 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
         # plt.show()
         # doc.close()
 
-        # Step 5: Insert the 'equation.pdf' into the 'input_pdf' with scaling
-
-        # Scale the PDF to match the target box
-        target_width =  x_right_target - x_left_target
-        target_height = y_right_target - y_left_target
-        scale_pdf_properly(eq_pdf, eq_pdf, target_width, target_height)
-
         eq_doc = fitz.open(eq_pdf)
         eq_page = eq_doc[0]
         eq_rect = eq_page.rect  # Natural size of the equation PDF
@@ -226,10 +222,16 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
             fill = (1,1,1),
             width = 0
         )
+        page.draw_rect(
+            fitz.Rect(x_left_target, y_left_target, x_right_target, y_right_target),
+            color=(1, 0, 0),    # red stroke
+            width=1,            # line thickness in points
+            fill=None           # no fill
+        )
         # For visualize the scaling
         #page.draw_rect(target, color=(1, 0, 0), fill = (1,1,1) ,width=0.5)
         #eq_page.draw_rect(eq_rect, color=(0, 1, 0) ,width=0.5)
-        page.show_pdf_page(target, eq_doc, 0, keep_proportion=True)
+        page.show_pdf_page(target, eq_doc, 0, keep_proportion=False)
 
         src_doc.save(str(output_pdf))
         eq_doc.close()

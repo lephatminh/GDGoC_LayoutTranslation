@@ -99,8 +99,8 @@ def get_font_size(coords: List[float], page: fitz.Page) -> float:
                     sizes.append(span["size"])
 
     if not sizes:
-        return 12.0
-    return sum(sizes) / len(sizes)
+        return 9.0
+    return min(sum(sizes) / len(sizes), 14)
 
 def scale_img_box_to_pdf_box(image_box, image_size, pdf_size):
     x1, y1, x2, y2 = image_box

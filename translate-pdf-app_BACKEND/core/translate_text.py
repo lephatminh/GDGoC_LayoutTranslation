@@ -33,7 +33,7 @@ def translate_with_gemini(model, text, rate_limiter):
         INSTRUCTIONS:
         1.  Translate ONLY the text enclosed within the <TEXT_TO_TRANSLATE>...</TEXT_TO_TRANSLATE> tags to {target_lang}.
         2.  Provide ONE single, accurate, and formal translation in {target_lang}.
-        3.  Preserve ALL original formatting. This includes inline math latex (enclosed by $$), bullet points, numbering, bolding, italics, underscore, monospace font
+        3.  Preserve ALL original formatting. This includes inline math latex (enclosed by $$), backslash escape, bullet points, numbering, bolding, italics, underscore, monospace font
         4.  Maintain the exact hierarchical structure and layout of the original text within <TEXT_TO_TRANSLATE>.
         5.  Output ONLY the translated text. Do NOT include any preambles, apologies, explanations, alternative translations, or any text other than the direct translation itself.
         6.  If the <TEXT_TO_TRANSLATE> section is empty or contains only whitespace, output the original text.
@@ -41,6 +41,9 @@ def translate_with_gemini(model, text, rate_limiter):
         EXAMPLE:
         Original: "where $B_1$ is the tensor coefficient function in the Passarino-Veltman's formalism"
         Translation: "trong đó $B_1$ là hàm hệ số tensor trong công thức Passarino-Veltman"
+        
+        Original: "The percentage of men who are married is 50\\\\\\%"
+        Translation: "Tỷ lệ nam giới đã kết hôn là 50\\\\\\%"
 
         <TEXT_TO_TRANSLATE>
         {text}

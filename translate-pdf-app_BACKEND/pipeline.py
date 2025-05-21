@@ -96,7 +96,6 @@ def run_pipeline(pdf_path: Path, output_root: Path):
         doc = fitz.open(str(pdf_path))
         pdf_size = (doc[0].rect.width, doc[0].rect.height)
         dpi = 300
-        # Dump the translated boxes to a JSON file
         with open(output_dir/f"{file_id}_translated_boxes.json", "w", encoding= "utf-8") as f:
             json.dump([asdict(box) for box in translated_boxes], f, indent=4, ensure_ascii=False)
         for box in translated_boxes:

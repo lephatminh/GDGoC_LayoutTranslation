@@ -5,6 +5,7 @@ from PIL import Image
 from core.box import *
 from functools import lru_cache
 import os
+import cv2
 
 @lru_cache(maxsize=1)
 def get_model() -> YOLOv10:
@@ -19,6 +20,8 @@ def get_model() -> YOLOv10:
         filename="doclayout_yolo_docstructbench_imgsz1024.pt"
     )
     return YOLOv10(model_file)
+
+
 
 def detect_and_crop_image(image_path: str, output_dir: str, page_num: int, model: YOLOv10) -> List[Box]:
     """
@@ -36,8 +39,12 @@ def detect_and_crop_image(image_path: str, output_dir: str, page_num: int, model
         device="cpu" # or "cuda:0" if you have a GPU
     )
     img = Image.open(image_path)
+    img_name = os.path.basename(image_path)
+    file_id = img_name.split("_")[0]
     boxes: List[Box] = []
     result = det_res[0].boxes
+    annotated_frame = det_res[0].plot(pil=True, line_width=5, font_size=20)
+    cv2.imwrite(f"output/visualization_{file_id}.jpg", annotated_frame)
     for i, box in enumerate(result):
         coords = box.xyxy.tolist()[0]
         class_id = int(box.cls.tolist()[0])
