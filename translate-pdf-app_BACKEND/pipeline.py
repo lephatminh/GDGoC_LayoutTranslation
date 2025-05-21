@@ -1,40 +1,61 @@
-
 from pathlib import Path
 from core.pdf_utils import *
-from core.detect_layout import detect_and_crop_image, get_model
-from core.translate_text import translate_document
-from core.extract_info import *
-from core.render_latex import *
-from dataclasses import asdict
-from core.pymupdf_draw_bb import draw_boxes_on_pdf
-import json
-import argparse
+from core.detect_layout       import detect_and_crop_image, get_model as _get_layout_model
+from core.translate_text      import translate_document, setup_multiple_models as _setup_multiple_models
+from core.extract_info         import extract_content_from_multiple_images
+from core.render_latex         import add_selectable_latex_to_pdf
+from core.pymupdf_draw_bb      import draw_boxes_on_pdf
+from dataclasses               import asdict
+import json, argparse, time, logging
+from functools                  import lru_cache
 
+logger = logging.getLogger(__name__)
 
-def main():
-    parser = argparse.ArgumentParser(
-        description="Convert a single PDF to images in its own folder."
-    )
+#––– Lazy singletons –––
+@lru_cache(maxsize=1)
+def get_api_manager():
+    logger.info("Initializing Gemini ApiKeyManager…")
+    start = time.time()
+    mgr = _setup_multiple_models()
+    logger.info(f"Gemini warmed up in {time.time()-start:.1f}s")
+    return mgr
 
-    parser.add_argument(
-        "input_dir", 
-        type=Path,
-        help="Path to the input PDF (e.g. input/{file_id}/{file_id}.pdf)"
-    )
+@lru_cache(maxsize=1)
+def get_layout_model():
+    logger.info("Downloading & loading DocLayout model…")
+    start = time.time()
+    mdl = _get_layout_model()
+    logger.info(f"DocLayout model ready in {time.time()-start:.1f}s")
+    return mdl
 
-    parser.add_argument(
-        "output_dir",
-        type=Path,
-        help="Path to the output directory (e.g. output/{file_id})"
-    )
+# first‐touch the models here (once per process)
+api_manager    = get_api_manager()
+doclayout_model= get_layout_model()
 
-    args = parser.parse_args()
+def run_pipeline(pdf_path: Path, output_root: Path):
+    # parser = argparse.ArgumentParser(
+    #     description="Convert a single PDF to images in its own folder."
+    # )
 
-    pdf_path: Path = args.input_dir
-    output_root: Path = args.output_dir
+    # parser.add_argument(
+    #     "input_dir", 
+    #     type=Path,
+    #     help="Path to the input PDF (e.g. input/{file_id}/{file_id}.pdf)"
+    # )
 
-    if not pdf_path.exists() or pdf_path.suffix.lower() != ".pdf":
-        parser.error(f"{pdf_path} does not exist or is not a .pdf")
+    # parser.add_argument(
+    #     "output_dir",
+    #     type=Path,
+    #     help="Path to the output directory (e.g. output/{file_id})"
+    # )
+
+    # args = parser.parse_args()
+
+    # pdf_path: Path = args.input_dir
+    # output_root: Path = args.output_dir
+
+    # if not pdf_path.exists() or pdf_path.suffix.lower() != ".pdf":
+    #     parser.error(f"{pdf_path} does not exist or is not a .pdf")
 
     imgs = convert_pdf_to_imgs(
         pdf_path=pdf_path,
@@ -44,10 +65,6 @@ def main():
     )
 
     imgs: list[Path] = [Path(p) for p in imgs]
-
-    # Set up
-    api_manager = setup_multiple_models()
-    doclayout_model = get_model()
 
     # Detect layout for each image in pdf_path.parent
     for img in imgs:
@@ -93,5 +110,5 @@ def main():
 
         doc.close()
         
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

@@ -17,6 +17,7 @@ from tenacity import (
     before_sleep_log,
     after_log,
 )
+from functools import lru_cache
 
 logger = logging.getLogger(__name__)
 
@@ -230,6 +231,7 @@ def setup_gemini(api_key):
     after=after_log(logger, logging.INFO)
 )
 
+@lru_cache(maxsize=1)
 def setup_multiple_models():
     """Setup multiple models with different configurations"""
     default_api_str = "GEMINI_API_KEY"

@@ -7,6 +7,7 @@ from pathlib import Path
 from uuid import uuid4
 from dotenv import load_dotenv
 import shutil, logging, os, subprocess
+from pipeline import run_pipeline
 import sys
 
 # Load env vars
@@ -56,7 +57,6 @@ async def upload_pdf(file: UploadFile = File(...)):
 		logger.warning(f"Blocked non-PDF upload: {file.filename}")
 		raise HTTPException(status_code=400, detail="Only PDF files are allowed.")
 
-	uid = uuid4().hex
 	filename_stem = Path(file.filename).stem
 	input_folder = ORIGINAL_DIR / filename_stem
 	output_folder = TRANSLATED_DIR
@@ -79,11 +79,13 @@ async def upload_pdf(file: UploadFile = File(...)):
 		# Unix-like (Linux, macOS)
 		runner = [sys.executable, str(BASE_DIR / "pipeline.py"), str(original_path), str(translated_path)]
 
-	subprocess.run(
-		runner,
-		cwd=str(BASE_DIR),
-		check=True
-	)
+	# subprocess.run(
+	# 	runner,
+	# 	cwd=str(BASE_DIR),
+	# 	check=True
+	# )
+
+	run_pipeline(original_path, output_folder)
 
 	logger.info(f"Stored original: {original_path}")
 	logger.info(f"Stored translated: {translated_path}")
