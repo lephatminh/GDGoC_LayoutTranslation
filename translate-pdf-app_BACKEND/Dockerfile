@@ -1,35 +1,41 @@
-# ─── Stage 1: Build PDFPigLayoutDetection (.NET 6 SDK) ──────
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS pdfpig-build
-WORKDIR /src/PDFPigLayoutDetection
-COPY PDFPigLayoutDetection/*.csproj ./
-RUN dotnet restore
-COPY PDFPigLayoutDetection/. ./
-RUN dotnet publish -c Release -o /app/pdfpig
+# ─── Stage: Final Backend Runtime ─────────────────────────────
+FROM python:3.11-slim
 
-# ─── Stage 2: Install Python deps & copy pipeline ────────────
-FROM python:3.11-slim AS py-build
-WORKDIR /app
-COPY translate-pdf-app_BACKEND/requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-COPY translate-pdf-app_BACKEND/main.py \
-     translate-pdf-app_BACKEND/run_pipeline.sh \
-     translate-pdf-app_BACKEND/config/ \
-     translate-pdf-app_BACKEND/core/ ./
-RUN chmod +x run_pipeline.sh
-
-# ─── Final image: .NET Runtime + Python ────────────────────
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS final
+# Set work directory
 WORKDIR /app
 
-# bring in the published PDFPig detector
-COPY --from=pdfpig-build /app/pdfpig ./PDFPigLayoutDetection
+# Install system packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+		texlive-xetex \
+		texlive-latex-base \
+		texlive-extra-utils \
+		fonts-dejavu \
+		wget \
+		curl \
+		git \
+		build-essential \
+		libgl1 \
+		libglib2.0-0 \
+		poppler-utils \
+	&& apt-get clean \
+	&& rm -rf /var/lib/apt/lists/*
 
-# bring in the Python pipeline
-COPY --from=py-build /app ./
+# Copy code
+COPY . /app
 
-# mount input/output so your FastAPI can read/write
-VOLUME ["/app/input","/app/output"]
+# Install Python dependencies
+RUN pip install --upgrade pip && \
+	pip install -r requirements.txt
+
+# ─── Pre-download YOLO model to Hugging Face cache ────────────
+ENV HF_HOME="/root/.cache/huggingface"
+RUN mkdir -p $HF_HOME && \
+	python3 -c "from huggingface_hub import hf_hub_download; hf_hub_download(repo_id='juliozhao/DocLayout-YOLO-DocStructBench', filename='doclayout_yolo_docstructbench_imgsz1024.pt')"
+
+# ─── Set environment variables for runtime ─────────────────────
+ENV PYTHONUNBUFFERED=1 \
+	UVICORN_CMD="uvicorn main:app --host 0.0.0.0 --port 8000"
+
+# ─── Expose port & start server ───────────────────────────────
 EXPOSE 8000
-
-# start your FastAPI backend
-ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "$UVICORN_CMD"]

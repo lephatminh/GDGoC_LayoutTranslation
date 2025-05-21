@@ -2,35 +2,43 @@ version: "3.9"
 
 services:
   backend:
+    image: translate-pdf-backend:v2
     build:
       context: ./translate-pdf-app_BACKEND
+      dockerfile: Dockerfile
+    container_name: translate-pdf-backend
     ports:
       - "8000:8000"
     env_file:
       - ./translate-pdf-app_BACKEND/.env
     read_only: true
-    volumes:
-      - server_data:/app/storage:rw # Persistent volume for storing uploaded/translated PDFs
     tmpfs:
-      - /tmp:rw,exec,size=256m # Temporary files
-      - /var/run:rw,noexec,nosuid # Runtime files (e.g., PID sockets)
+      - /tmp:rw,exec,size=256m # Temp file storage (e.g., LaTeX, pdfcrop)
+      - /var/run:rw,noexec,nosuid # Runtime files (e.g., PID, Unix sockets)
     restart: always
+    environment:
+      - FRONTEND_ORIGIN=http://localhost:5173
+      - FRONTEND_HOST=https://fe-08u9.onrender.com
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:8000/health || exit 1"]
+      test:
+        [
+          "CMD-SHELL",
+          "wget -qO- https://backend-app-98fp.onrender.com/health || exit 1",
+        ]
       interval: 10s
       timeout: 5s
       retries: 3
     security_opt:
-      - no-new-privileges:true # Prevent privilege escalation
+      - no-new-privileges:true
 
   frontend:
+    image: translate-pdf-frontend:v2
     build:
-      context: ./translate-pdf-app
+      context: ./translate-pdf-app_FRONTEND
+      dockerfile: Dockerfile
+    container_name: translate-pdf-frontend
     ports:
       - "5173:80"
     depends_on:
       - backend
     restart: always
-
-volumes:
-  server_data:
