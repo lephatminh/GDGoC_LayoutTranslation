@@ -44,6 +44,9 @@ BASE_DIR = Path(__file__).resolve().parent
 ORIGINAL_DIR = BASE_DIR / "input"
 TRANSLATED_DIR = BASE_DIR / "output"
 
+for path in [ORIGINAL_DIR, TRANSLATED_DIR]:
+	path.mkdir(parents=True, exist_ok=True)
+
 # Mount base directories (not subfolder)
 app.mount("/files/input", StaticFiles(directory=ORIGINAL_DIR), name="input")
 app.mount("/files/output", StaticFiles(directory=TRANSLATED_DIR), name="output")
@@ -70,7 +73,7 @@ async def upload_pdf(file: UploadFile = File(...)):
 	original_path = input_folder / file.filename
 	translated_path = output_folder
 
-	for path in [ORIGINAL_DIR, TRANSLATED_DIR, input_folder, output_folder]:
+	for path in [input_folder, output_folder]:
 		path.mkdir(parents=True, exist_ok=True)
 
 	with original_path.open("wb") as buffer:
