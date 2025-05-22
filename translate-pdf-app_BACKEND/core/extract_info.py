@@ -37,7 +37,7 @@ def extract_content_from_single_image(
         rate_limiter.wait_if_needed(0)
         prompt = """You are a LaTeX expert extracting text and mathematical notation from images.
 
-                INSTRUCTIONS: Convert the image content into a complete LaTeX document, starting with \begin{document}. Prioritize accurate representation of all mathematical expressions, symbols (including \&, \%, etc.), and formatting. Do not include any figure environments (`\begin{figure}...\end{figure}`) or image references. End with \end{document}. Return *only* the LaTeX code, no surrounding text.
+                INSTRUCTIONS: Convert the image content into a complete LaTeX document, starting with \begin{document}. Prioritize accurate representation of all mathematical expressions, symbols (including \&, \%, etc.), and formatting. Do not include any figure environments (e.g `\begin{figure}...\end{figure}`, '\includegraphics', etc.) or image references. End with \end{document}. Return *only* the LaTeX code, no surrounding text.
                 """
         resp = client.models.generate_content(
             model="gemini-2.0-flash",

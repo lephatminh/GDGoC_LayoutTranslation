@@ -46,7 +46,7 @@ def run_pipeline(pdf_path: Path, output_root: Path):
         img_format="png"
     )
 
-    imgs: list[Path] = [Path(p) for p in imgs]
+    imgs: List[Path] = [Path(p) for p in imgs]
 
     # Detect layout for each image in pdf_path.parent
     for img in imgs:
