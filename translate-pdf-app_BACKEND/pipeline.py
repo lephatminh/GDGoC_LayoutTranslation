@@ -13,6 +13,7 @@ import json, argparse, time, logging
 from functools                  import lru_cache
 from concurrent.futures        import ThreadPoolExecutor, as_completed
 import fitz  # PyMuPDF
+from threading import Lock
 logger = logging.getLogger(__name__)
 
 #––– Lazy singletons –––
@@ -75,12 +76,6 @@ def run_pipeline(pdf_path: Path, output_root: Path):
         # table_boxes = [b for b in raw_boxes if b.label == BoxLabel.TABLE]
         # para_boxes  = [b for b in raw_boxes if b.label != BoxLabel.TABLE]
 
-        # visual_pdf = output_dir / f"{file_id}_tables.pdf"
-        # draw_boxes_on_pdf(
-        #     pdf_path=pdf_path,
-        #     boxes=table_boxes,
-        #     output_path=visual_pdf,
-        # )
 
         # Extract content from table boxes
         doc = fitz.open(str(pdf_path))
@@ -109,39 +104,45 @@ def run_pipeline(pdf_path: Path, output_root: Path):
         # pdf_content.extend(table_content)
         # translated_boxes = translate_document(pdf_content, api_manager)
         translated_boxes: list[Box] = []
+        render_lock = Lock()
         with ThreadPoolExecutor(max_workers=8) as executor:
-        # kick off extraction for each cropped box
-            extract_futs = {
-                executor.submit(extract_content_from_single_image, box, para_cropped_dir, api_manager): box
-                for box in raw_boxes
-            }
+            def process_and_render(box: Box) -> Box:
+                # 1) scale coords from image → PDF
+                box.coords = scale_img_box_to_pdf_box(box.coords, image_size, pdf_size)
 
-            # as soon as one extraction is done, hand it off to translation
-            translate_futs = []
-            for ext_fut in as_completed(extract_futs):
-                box_with_content = ext_fut.result()
-                translate_futs.append(
-                    executor.submit(translate_single_box, box_with_content, api_manager)
-                )
+                # 2) extract raw content
+                if box.label == BoxLabel.TABLE:
+                    # for tables use region‐based extractor
+                    cells = get_content_in_region(doc, [box])
+                    # join all cell texts into one big string (or adjust as you wish)
+                    box.content = "\n".join(c.cell_text for c in cells)
+                else:
+                    # for paragraphs / formulas use your OCR/LaTeX extractor
+                    box = extract_content_from_single_image(box, para_cropped_dir, api_manager)
 
-            # collect translations
-            for tx_fut in as_completed(translate_futs):
-                translated_boxes.append(tx_fut.result())
-            # Translate the content
-        
+                # 3) translate whatever content we got
+                box = translate_single_box(box, api_manager)
 
-        # Dump the translated boxes to a JSON file
-        with open(output_dir/f"{file_id}_translated_boxes.json", "w", encoding= "utf-8") as f:
-            json.dump([asdict(box) for box in translated_boxes], f, indent=4, ensure_ascii=False)
+                # 4) render it back into the PDF under a lock
+                with render_lock:
+                    if box.label == BoxLabel.TABLE:
+                        insert_translated_table_text(doc, box, font_path)
+                    else:
+                        add_selectable_latex_to_pdf(
+                            pdf_path,
+                            output_dir / f"{file_id}.pdf",
+                            box.translation,
+                            box,
+                            doc,
+                            box.page_num,
+                            get_font_size(box.coords, doc[box.page_num]),
+                        )
 
-        for box in translated_boxes:
-            if box.label == BoxLabel.TABLE:
-                insert_translated_table_text(doc, box, font_path)
-                continue
-            box.coords = scale_img_box_to_pdf_box(box.coords, image_size, pdf_size)
-            add_selectable_latex_to_pdf(pdf_path, output_dir/f"{file_id}.pdf", box.translation, 
-                                        box, doc,box.page_num, 
-                                        get_font_size(box.coords, doc[box.page_num]))
+                return box
+            futures = [executor.submit(process_and_render, b) for b in raw_boxes]
+
+            for fut in as_completed(futures):
+                translated_boxes.append(fut.result())
 
         doc.save(output_dir/f"{file_id}.pdf")
         doc.close()
