@@ -101,36 +101,36 @@ def translate_single_box(box: Box, api_manager: ApiKeyManager) -> Box:
 
     return box
     
-def translate_document(
-    boxes: List[Box],
-    api_manager: ApiKeyManager,
-    max_workers: int = 6
-) -> List[Box]:
-    """
-    Translate a list of Box objects in parallel.
-    Each Box.content → Box.translation via Gemini.
-    """
-    if not boxes:
-        return []
+# def translate_document(
+#     boxes: List[Box],
+#     api_manager: ApiKeyManager,
+#     max_workers: int = 6
+# ) -> List[Box]:
+#     """
+#     Translate a list of Box objects in parallel.
+#     Each Box.content → Box.translation via Gemini.
+#     """
+#     if not boxes:
+#         return []
 
-    translated: List[Box] = []
-    logger.info(f"Translating {len(boxes)} boxes with {max_workers} workers")
+#     translated: List[Box] = []
+#     logger.info(f"Translating {len(boxes)} boxes with {max_workers} workers")
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-        future_to_box = {
-            executor.submit(translate_single_box, box, api_manager): box
-            for box in boxes
-        }
-        for future in tqdm(
-            concurrent.futures.as_completed(future_to_box),
-            total=len(future_to_box),
-            desc="Translating"
-        ):
-            box = future_to_box[future]
-            try:
-                result = future.result()
-                translated.append(result)
-            except Exception as e:
-                logger.error(f"Future error for box {box.id}: {e}")
+#     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+#         future_to_box = {
+#             executor.submit(translate_single_box, box, api_manager): box
+#             for box in boxes
+#         }
+#         for future in tqdm(
+#             concurrent.futures.as_completed(future_to_box),
+#             total=len(future_to_box),
+#             desc="Translating"
+#         ):
+#             box = future_to_box[future]
+#             try:
+#                 result = future.result()
+#                 translated.append(result)
+#             except Exception as e:
+#                 logger.error(f"Future error for box {box.id}: {e}")
 
-    return translated
+#     return translated

@@ -64,31 +64,31 @@ def extract_content_from_single_image(
     return box
 
 
-def extract_content_from_multiple_images(
-    boxes: List[Box],
-    image_dir: str,
-    api_manager: ApiKeyManager
-) -> List[Box]:
-    """
-    Given a list of Boxes and the folder of their cropped images, run them all
-    in parallel and return back the same list with .content fields populated.
-    """
-    logger.info(f"Processing {len(boxes)} boxes in {image_dir}")
-    enriched: List[Box] = []
+# def extract_content_from_multiple_images(
+#     boxes: List[Box],
+#     image_dir: str,
+#     api_manager: ApiKeyManager
+# ) -> List[Box]:
+#     """
+#     Given a list of Boxes and the folder of their cropped images, run them all
+#     in parallel and return back the same list with .content fields populated.
+#     """
+#     logger.info(f"Processing {len(boxes)} boxes in {image_dir}")
+#     enriched: List[Box] = []
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
-        futures = [
-            executor.submit(extract_content_from_single_image, box, image_dir, api_manager)
-            for box in boxes
-        ]
-        for fut in concurrent.futures.as_completed(futures):
-            try:
-                b = fut.result()
-                enriched.append(b)
-            except Exception as e:
-                logger.error(f"worker error: {e}")
+#     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+#         futures = [
+#             executor.submit(extract_content_from_single_image, box, image_dir, api_manager)
+#             for box in boxes
+#         ]
+#         for fut in concurrent.futures.as_completed(futures):
+#             try:
+#                 b = fut.result()
+#                 enriched.append(b)
+#             except Exception as e:
+#                 logger.error(f"worker error: {e}")
 
-    return enriched
+#     return enriched
 
 
 def get_content_in_region(doc: fitz.Document, boxes: List[Box]) -> List[Box]:

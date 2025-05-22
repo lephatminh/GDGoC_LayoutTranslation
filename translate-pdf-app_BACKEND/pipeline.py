@@ -1,17 +1,18 @@
 from pathlib import Path
 from core.pdf_utils import *
 from core.detect_layout       import detect_and_crop_image, get_model as _get_layout_model
-from core.translate_text      import translate_document, setup_multiple_models as _setup_multiple_models
-from core.extract_info         import extract_content_from_multiple_images, get_content_in_region
+from core.translate_text      import translate_single_box, setup_multiple_models as _setup_multiple_models
+from core.extract_info         import extract_content_from_single_image, get_content_in_region
 from core.render_latex         import add_selectable_latex_to_pdf
 from core.pymupdf_draw_bb      import draw_boxes_on_pdf
 from core.remove_overlapped     import remove_overlapped_boxes
 from core.insert_table_text     import insert_translated_table_text
 from dataclasses               import asdict
-from core.box                  import BoxLabel
+from core.box                  import BoxLabel, Box
 import json, argparse, time, logging
 from functools                  import lru_cache
-
+from concurrent.futures        import ThreadPoolExecutor, as_completed
+import fitz  # PyMuPDF
 logger = logging.getLogger(__name__)
 
 #––– Lazy singletons –––
@@ -71,15 +72,15 @@ def run_pipeline(pdf_path: Path, output_root: Path):
         raw_boxes = remove_overlapped_boxes(raw_boxes)
 
         # Separate para_boxes, table_boxes via box.label
-        table_boxes = [b for b in raw_boxes if b.label == BoxLabel.TABLE]
-        para_boxes  = [b for b in raw_boxes if b.label != BoxLabel.TABLE]
+        # table_boxes = [b for b in raw_boxes if b.label == BoxLabel.TABLE]
+        # para_boxes  = [b for b in raw_boxes if b.label != BoxLabel.TABLE]
 
-        visual_pdf = output_dir / f"{file_id}_tables.pdf"
-        draw_boxes_on_pdf(
-            pdf_path=pdf_path,
-            boxes=table_boxes,
-            output_path=visual_pdf,
-        )
+        # visual_pdf = output_dir / f"{file_id}_tables.pdf"
+        # draw_boxes_on_pdf(
+        #     pdf_path=pdf_path,
+        #     boxes=table_boxes,
+        #     output_path=visual_pdf,
+        # )
 
         # Extract content from table boxes
         doc = fitz.open(str(pdf_path))
@@ -91,24 +92,43 @@ def run_pipeline(pdf_path: Path, output_root: Path):
         pix = page.get_pixmap(matrix=fitz.Matrix(dpi/72, dpi/72))
         image_size = (pix.width, pix.height)
 
-        # scale the table‐box coords from image→PDF
-        for box in table_boxes:
-            box.coords = scale_img_box_to_pdf_box(
-                box.coords,      
-                image_size,      
-                pdf_size         
-            )
+        # # scale the table‐box coords from image→PDF
+        # for box in table_boxes:
+        #     box.coords = scale_img_box_to_pdf_box(
+        #         box.coords,      
+        #         image_size,      
+        #         pdf_size         
+        #     )
 
-        table_content =  get_content_in_region(doc, table_boxes)
+        # table_content =  get_content_in_region(doc, table_boxes)
 
-        # Extract content from the cropped images
-        pdf_content = extract_content_from_multiple_images(para_boxes, para_cropped_dir, api_manager)
+        # # Extract content from the cropped images
+        # pdf_content = extract_content_from_multiple_images(para_boxes, para_cropped_dir, api_manager)
 
-        # Append table content to pdf_content
-        pdf_content.extend(table_content)
+        # # Append table content to pdf_content
+        # pdf_content.extend(table_content)
+        # translated_boxes = translate_document(pdf_content, api_manager)
+        translated_boxes: list[Box] = []
+        with ThreadPoolExecutor(max_workers=8) as executor:
+        # kick off extraction for each cropped box
+            extract_futs = {
+                executor.submit(extract_content_from_single_image, box, para_cropped_dir, api_manager): box
+                for box in raw_boxes
+            }
 
-        # Translate the content
-        translated_boxes = translate_document(pdf_content, api_manager)
+            # as soon as one extraction is done, hand it off to translation
+            translate_futs = []
+            for ext_fut in as_completed(extract_futs):
+                box_with_content = ext_fut.result()
+                translate_futs.append(
+                    executor.submit(translate_single_box, box_with_content, api_manager)
+                )
+
+            # collect translations
+            for tx_fut in as_completed(translate_futs):
+                translated_boxes.append(tx_fut.result())
+            # Translate the content
+        
 
         # Dump the translated boxes to a JSON file
         with open(output_dir/f"{file_id}_translated_boxes.json", "w", encoding= "utf-8") as f:
@@ -125,3 +145,17 @@ def run_pipeline(pdf_path: Path, output_root: Path):
 
         doc.save(output_dir/f"{file_id}.pdf")
         doc.close()
+        
+def main():
+    parser = argparse.ArgumentParser(description="Translate PDF using Gemini API")
+    parser.add_argument("pdf_path", type=str, help="Path to the input PDF file")
+    parser.add_argument("output_root", type=str, help="Path to the output directory")
+    args = parser.parse_args()
+
+    pdf_path = Path(args.pdf_path)
+    output_root = Path(args.output_root)
+
+    run_pipeline(pdf_path, output_root)
+
+if __name__ == "__main__":
+    main()
