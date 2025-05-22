@@ -36,7 +36,7 @@ def get_layout_model():
 # first‐touch the models here (once per process)
 api_manager    = get_api_manager()
 doclayout_model= get_layout_model()
-font_path      = Path(__file__).parent / "font" / "Roboto.ttf"
+font_path      = Path(__file__).parent / "font" / "NotoSerif-Regular.ttf"
 
 def run_pipeline(pdf_path: Path, output_root: Path):
     imgs = convert_pdf_to_imgs(
@@ -72,12 +72,6 @@ def run_pipeline(pdf_path: Path, output_root: Path):
         # Remove overlapped boxes
         raw_boxes = remove_overlapped_boxes(raw_boxes)
 
-        # Separate para_boxes, table_boxes via box.label
-        # table_boxes = [b for b in raw_boxes if b.label == BoxLabel.TABLE]
-        # para_boxes  = [b for b in raw_boxes if b.label != BoxLabel.TABLE]
-
-
-        # Extract content from table boxes
         doc = fitz.open(str(pdf_path))
         pdf_size = (doc[0].rect.width, doc[0].rect.height)
         dpi = 300
@@ -87,66 +81,61 @@ def run_pipeline(pdf_path: Path, output_root: Path):
         pix = page.get_pixmap(matrix=fitz.Matrix(dpi/72, dpi/72))
         image_size = (pix.width, pix.height)
 
-        # # scale the table‐box coords from image→PDF
-        # for box in table_boxes:
-        #     box.coords = scale_img_box_to_pdf_box(
-        #         box.coords,      
-        #         image_size,      
-        #         pdf_size         
-        #     )
-
-        # table_content =  get_content_in_region(doc, table_boxes)
-
-        # # Extract content from the cropped images
-        # pdf_content = extract_content_from_multiple_images(para_boxes, para_cropped_dir, api_manager)
-
-        # # Append table content to pdf_content
-        # pdf_content.extend(table_content)
-        # translated_boxes = translate_document(pdf_content, api_manager)
-        translated_boxes: list[Box] = []
+        #  Render the translated version
+        translated_boxes: List[Box] = []
         render_lock = Lock()
         with ThreadPoolExecutor(max_workers=8) as executor:
-            def process_and_render(box: Box) -> Box:
+            def process_and_render(box: Box) -> List[Box]:
                 # 1) scale coords from image → PDF
                 box.coords = scale_img_box_to_pdf_box(box.coords, image_size, pdf_size)
 
+                pdf_boxes: List[Box] = []
+
                 # 2) extract raw content
                 if box.label == BoxLabel.TABLE:
-                    # for tables use region‐based extractor
-                    cells = get_content_in_region(doc, [box])
-                    # join all cell texts into one big string (or adjust as you wish)
-                    box.content = "\n".join(c.cell_text for c in cells)
+                    pdf_boxes = get_content_in_region(doc, [box])
+                    # calculate the average font size for table contents
+                    avg_font_size = get_avg_font_size_by_boxes(pdf_boxes, doc[box.page_num])
                 else:
-                    # for paragraphs / formulas use your OCR/LaTeX extractor
-                    box = extract_content_from_single_image(box, para_cropped_dir, api_manager)
+                    # for paragraphs / formulas use Gemini OCR/LaTeX extractor
+                    pdf_boxes = [extract_content_from_single_image(box, para_cropped_dir, api_manager)]
 
                 # 3) translate whatever content we got
-                box = translate_single_box(box, api_manager)
+                pdf_boxes = [translate_single_box(box, api_manager) for box in pdf_boxes]
 
-                # 4) render it back into the PDF under a lock
+                # 4) render pdf_boxes back into the PDF under a lock
                 with render_lock:
-                    if box.label == BoxLabel.TABLE:
-                        insert_translated_table_text(doc, box, font_path)
-                    else:
-                        add_selectable_latex_to_pdf(
-                            pdf_path,
-                            output_dir / f"{file_id}.pdf",
-                            box.translation,
-                            box,
-                            doc,
-                            box.page_num,
-                            get_font_size(box.coords, doc[box.page_num]),
-                        )
+                    for pdf_box in pdf_boxes:
+                        if pdf_box.label == BoxLabel.TABLE:
+                            insert_translated_table_text(doc, pdf_box, font_path, avg_font_size)
+                        else:
+                            add_selectable_latex_to_pdf(
+                                pdf_path,
+                                output_dir / f"{file_id}.pdf",
+                                pdf_box.translation,
+                                pdf_box,
+                                doc,
+                                pdf_box.page_num,
+                                get_avg_font_size_overlapped(pdf_box.coords, doc[pdf_box.page_num]),
+                            ) 
 
-                return box
-            futures = [executor.submit(process_and_render, b) for b in raw_boxes]
+                # Append pdf_boxes to json file
+                # with open(output_dir/f"{file_id}.json", "a", encoding="utf-8") as f:
+                #     json.dump([asdict(pdf_box)], f, indent=4, ensure_ascii=False)
+
+                return pdf_boxes
+            
+            futures = [executor.submit(process_and_render, box) for box in raw_boxes]
 
             for fut in as_completed(futures):
-                translated_boxes.append(fut.result())
+                translated_boxes.extend(fut.result())
 
         doc.save(output_dir/f"{file_id}.pdf")
         doc.close()
         
+        with open(output_dir/f"{file_id}.json", "w") as f:
+            json.dump([asdict(box) for box in translated_boxes], f, indent=4)
+
 def main():
     parser = argparse.ArgumentParser(description="Translate PDF using Gemini API")
     parser.add_argument("pdf_path", type=str, help="Path to the input PDF file")
@@ -158,5 +147,5 @@ def main():
 
     run_pipeline(pdf_path, output_root)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
