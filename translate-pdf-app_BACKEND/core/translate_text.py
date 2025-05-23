@@ -45,6 +45,12 @@ def translate_with_gemini(model, text, rate_limiter):
         Original: "The percentage of men who are married is 50\\\\\\%"
         Translation: "Tỷ lệ nam giới đã kết hôn là 50\\\\\\%"
 
+        Original: "\\begin{{verbatim}}\n#define MAX_TPC 4 // Threads per core (max SMT mode is S\n#define MAX_CPS 22\n \\end{{verbatim}}"
+        Translation: "\\begin{{verbatim}}\n#define MAX_TPC 4 // Số luồng tối đa trên mỗi lõi (chế độ SMT tối đa là S\n#define MAX_CPS 22\n \\end{{verbatim}}"
+
+        Original: "Article 37 Deleted.\n\n(医療法人台帳の記載事項)\n\n(Matters to state in medical corporation registers)\n\n第三十八条令第五条の十一第一項の医療法人台帳に記載しなければならない事項は\n次のとおりとする。\n\nArticle 38 (1) Matters which have to be stated in the medical corporation\nregister referred to in Article 5-11, paragraph (1) of the Order shall be as\nfollows:"
+        Translation: "Điều 37 Bị xóa.\n\n(医療法人台帳の記載事項)\n\n(Các mục cần ghi trong sổ đăng ký của tổ chức y tế)\n\n第三十八条令第五条の十一第一項の医療法人台帳に記載しなければならない事項は\n次のとおりとする。\n\nĐiều 38 (1) Các mục cần ghi trong sổ đăng ký của tổ chức y tế được đề cập\ntrong Điều 5-11, khoản (1) của Nghị định như sau:"
+
         <TEXT_TO_TRANSLATE>
         {text}
         </TEXT_TO_TRANSLATE>

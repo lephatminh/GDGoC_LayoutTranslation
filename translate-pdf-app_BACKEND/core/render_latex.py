@@ -152,6 +152,7 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
             \usepackage{bibentry}
             \usepackage[hidelinks,breaklinks]{hyperref}
             \usepackage{xurl}
+
             \setmainfont{DejaVu Serif}
 
             \sloppy 
@@ -167,7 +168,7 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
 
             \usepackage{natbib}
             \usepackage{unicode-math}
-            \setmathfont{Latin Modern Math} 
+            \setmathfont{Latin Modern Math}
 
             \pagestyle{empty}
             \begin{document}

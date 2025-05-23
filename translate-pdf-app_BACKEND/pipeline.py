@@ -137,8 +137,10 @@ def run_pipeline(pdf_path: Path, output_root: Path):
                             pdf_box.page_num, 
                             get_avg_font_size_overlapped(pdf_box.coords, doc[pdf_box.page_num]), 
                         ) 
- 
-                return pdf_boxes 
+
+            # with open(output_dir/f"{file_id}.json", "a", encoding="utf-8") as f: 
+            #     json.dump([asdict(box) for box in translated_boxes], f, indent=4, ensure_ascii=False, default=lambda o: str(o))  # convert Paths (and any other unknown) to string
+            return pdf_boxes 
             
         futures = [exe.submit(process_and_render, b) for b in all_boxes] 
 
@@ -150,10 +152,14 @@ def run_pipeline(pdf_path: Path, output_root: Path):
             _ = f.result(timeout=15) 
  
     doc.save(output_dir/f"{file_id}.pdf") 
-    doc.close() 
+    doc.close()
+
+    # convert_pdf_to_imgs(pdf_path=output_dir/f"{file_id}.pdf", 
+    #                            output_folder=output_dir, 
+    #                            dpi=300, img_format="png")  
         
-    with open(output_dir/f"{file_id}.json", "w", encoding="utf-8") as f: 
-        json.dump([asdict(box) for box in translated_boxes], f, indent=4, ensure_ascii=False, default=lambda o: str(o))  # convert Paths (and any other unknown) to string 
+    # with open(output_dir/f"{file_id}.json", "w", encoding="utf-8") as f: 
+    #     json.dump([asdict(box) for box in translated_boxes], f, indent=4, ensure_ascii=False, default=lambda o: str(o))  # convert Paths (and any other unknown) to string 
  
 def main(): 
     parser = argparse.ArgumentParser(description="Translate PDF using Gemini API") 
@@ -165,3 +171,6 @@ def main():
     output_root = Path(args.output_root) 
  
     run_pipeline(pdf_path, output_root) 
+
+# if __name__ == "__main__": 
+#     main()

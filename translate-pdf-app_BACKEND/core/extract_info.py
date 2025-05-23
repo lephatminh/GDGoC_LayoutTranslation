@@ -1,4 +1,4 @@
-from core.box import Box
+from core.box import Box, BoxLabel
 from core.api_manager import ApiKeyManager
 from typing import List
 from core.preprocess_text import normalize_spaced_text, clean_text
@@ -37,7 +37,7 @@ def extract_content_from_single_image(
         rate_limiter.wait_if_needed(0)
         prompt = """You are a LaTeX expert extracting text and mathematical notation from images.
 
-                INSTRUCTIONS: Convert the image content into a complete LaTeX document, starting with \begin{document}. Prioritize accurate representation of all mathematical expressions, symbols (including \&, \%, etc.), and formatting. Do not include any figure environments (e.g `\begin{figure}...\end{figure}`, '\includegraphics', etc.) or image references. End with \end{document}. Return *only* the LaTeX code, no surrounding text.
+                INSTRUCTIONS: Convert the image content into a complete LaTeX document, starting with \begin{document}. Prioritize accurate representation of all mathematical expressions, symbols (including \&, \%, \{, \} etc.), and formatting. Do not include any figure environments (e.g `\begin{figure}...\end{figure}`, '\includegraphics', etc.) or image references. End with \end{document}. Return *only* the LaTeX code, no surrounding text.
                 """
         resp = client.models.generate_content(
             model="gemini-2.0-flash",
@@ -48,7 +48,15 @@ def extract_content_from_single_image(
         start = raw.find(r"\begin{document}") + len(r"\begin{document}")
         end   = raw.find(r"\end{document}")
         if 0 <= start < end:
-            box.content = raw[start:end].strip().replace('\n', ' ')
+            # grab the body, normalize newlines for titles, then strip
+            segment = raw[start:end].strip()
+            if box.label == BoxLabel.TITLE:
+                segment = segment.replace("\n", " ")
+            elif (not r'\begin{verbatim}' in segment or not r'\end{verbatim}' in segment):
+                # if no verbatim, replace newlines with \\
+                segment = segment.replace("\n", r"\\")
+
+            box.content = segment.strip()
 
         else:
             logger.warning(f"Box {box.id}: document markers not found.")
