@@ -121,10 +121,15 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
     Output:
         New PDF with inserted LaTex rendered document, scaled to fit the target rectangle
     '''
+    translation = box.translation or ""
+    if not translation.strip():
+        # If the translated text is empty, skip this box
+        return
+
     x_left_target, y_left_target, x_right_target, y_right_target = box.coords
 
-    logger.info("Params: %s, %s, %d, %d, %d, %d", 
-                input_pdf, output_pdf, x_left_target, y_left_target, x_right_target, y_right_target)
+    logger.info("Params:  %d, %d, %d, %d, %d", 
+                box.label, x_left_target, y_left_target, x_right_target, y_right_target)
     
     logger.info(f"Adding LaTeX to PDF: {fontsize}")
     
@@ -147,6 +152,22 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
             \usepackage[hidelinks,breaklinks]{hyperref}
             \usepackage{xurl}
             \setmainfont{DejaVu Serif}
+
+            \sloppy 
+            \usepackage{longtable} 
+            \usepackage{bookmark} 
+            \usepackage{booktabs}      
+            \usepackage{array}         
+            \usepackage{tabularx}      
+            \usepackage{longtable}     
+            \usepackage{multirow}      
+            \renewcommand{\arraystretch}{1.2} 
+            \setlength{\tabcolsep}{8pt} 
+
+            \usepackage{natbib}
+            \usepackage{unicode-math}
+            \setmathfont{Latin Modern Math} 
+
             \pagestyle{empty}
             \begin{document}
             \fontsize{%dpt}{%.1fpt}\selectfont
@@ -165,7 +186,7 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
         try:
             subprocess.run(
                 ["xelatex", "-interaction=batchmode", "-output-directory", temp_dir, latex_file],
-                check=True,
+                check=False,
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
             )

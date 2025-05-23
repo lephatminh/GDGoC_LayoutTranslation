@@ -35,10 +35,9 @@ def extract_content_from_single_image(
         logger.info(f"Uploaded image {box.id}: {img_file.name}")
 
         rate_limiter.wait_if_needed(0)
-        prompt = """You are a professional in data creation.
-                Extract the content in the image to LaTeX format (including the mathematical notation)
+        prompt = """You are a LaTeX expert extracting text and mathematical notation from images.
 
-                INSTRUCTIONS: Return the content starting from \begin{document} in LaTeX format, including the mathematical notation.
+                INSTRUCTIONS: Convert the image content into a complete LaTeX document, starting with \begin{document}. Prioritize accurate representation of all mathematical expressions, symbols (including \&, \%, etc.), and formatting. Do not include any figure environments (e.g `\begin{figure}...\end{figure}`, '\includegraphics', etc.) or image references. End with \end{document}. Return *only* the LaTeX code, no surrounding text.
                 """
         resp = client.models.generate_content(
             model="gemini-2.0-flash",
@@ -64,31 +63,31 @@ def extract_content_from_single_image(
     return box
 
 
-def extract_content_from_multiple_images(
-    boxes: List[Box],
-    image_dir: str,
-    api_manager: ApiKeyManager
-) -> List[Box]:
-    """
-    Given a list of Boxes and the folder of their cropped images, run them all
-    in parallel and return back the same list with .content fields populated.
-    """
-    logger.info(f"Processing {len(boxes)} boxes in {image_dir}")
-    enriched: List[Box] = []
+# def extract_content_from_multiple_images(
+#     boxes: List[Box],
+#     image_dir: str,
+#     api_manager: ApiKeyManager
+# ) -> List[Box]:
+#     """
+#     Given a list of Boxes and the folder of their cropped images, run them all
+#     in parallel and return back the same list with .content fields populated.
+#     """
+#     logger.info(f"Processing {len(boxes)} boxes in {image_dir}")
+#     enriched: List[Box] = []
 
-    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
-        futures = [
-            executor.submit(extract_content_from_single_image, box, image_dir, api_manager)
-            for box in boxes
-        ]
-        for fut in concurrent.futures.as_completed(futures):
-            try:
-                b = fut.result()
-                enriched.append(b)
-            except Exception as e:
-                logger.error(f"worker error: {e}")
+#     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+#         futures = [
+#             executor.submit(extract_content_from_single_image, box, image_dir, api_manager)
+#             for box in boxes
+#         ]
+#         for fut in concurrent.futures.as_completed(futures):
+#             try:
+#                 b = fut.result()
+#                 enriched.append(b)
+#             except Exception as e:
+#                 logger.error(f"worker error: {e}")
 
-    return enriched
+#     return enriched
 
 
 def get_content_in_region(doc: fitz.Document, boxes: List[Box]) -> List[Box]:
@@ -126,6 +125,11 @@ def get_content_in_region(doc: fitz.Document, boxes: List[Box]) -> List[Box]:
                     for span in line["spans"]:
                         sx0, sy0, sx1, sy1 = span["bbox"]
                         # simple overlap test
+                        span["text"] = span["text"].strip()
+                        
+                        if not span["text"]:
+                            continue
+
                         content = clean_text(span["text"])
                         content = normalize_spaced_text(content)
                         results.append(Box(

@@ -1,6 +1,6 @@
 from core.box import Box
 from typing import List
-import logging
+from rtree import index
 
 def is_overlap(box1: Box, box2: Box) -> bool:
     """Check if two boxes overlap."""
@@ -18,24 +18,24 @@ def calculate_area(box: Box) -> float:
     return (x2 - x1) * (y2 - y1)
 
 def remove_overlapped_boxes(boxes: List[Box]) -> List[Box]:
-    """Remove boxes that are overlapped by others, keeping the one with larger area."""
-    n = len(boxes)
-    # Track boxes to keep (initially all)
-    keep = set(range(n))
+    """
+    Keep only the largest boxes in any overlapping cluster.
+    Runs in O(n log n) by sorting + R-tree queries.
+    """
+    # 1) sort boxes by descending area
+    sorted_boxes = sorted(boxes, key=calculate_area, reverse=True)
 
-    # Check each pair of boxes
-    for i in range(n):
-        for j in range(i+1,n):
-            if i in keep and j in keep and is_overlap(boxes[i], boxes[j]):
-                # If boxes overlap, remove the one with smaller area
-                area_i = calculate_area(boxes[i])
-                area_j = calculate_area(boxes[j])
-                if area_i <= area_j:
-                    keep.discard(i)  # Remove box i (smaller or equal area)
-                else:
-                    keep.discard(j)  # Remove box j (smaller area)
-                
-                logging.debug(f"Removed box {j} due to overlap with box {i}.")
+    # 2) build R-tree index
+    idx = index.Index()
+    kept: List[Box] = []
 
-    # Return the filtered list of non-overlapping boxes
-    return [boxes[i] for i in keep]
+    for i, box in enumerate(sorted_boxes):
+        x1, y1, x2, y2 = box.coords
+        # query any already-kept box that intersects this one
+        hits = list(idx.intersection((x1, y1, x2, y2)))
+        if not hits:
+            # no overlap → keep this box
+            kept.append(box)
+            idx.insert(len(kept)-1, (x1, y1, x2, y2))
+
+    return kept

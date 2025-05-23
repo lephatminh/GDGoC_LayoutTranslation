@@ -5,7 +5,8 @@ from core.box import Box
 
 def insert_translated_table_text(doc: fitz.Document,
                            table_box: Box,
-                           font_path: Path) -> None:
+                           font_path: Path,
+                           font_size: float = 12) -> None:
     """
     Insert translated text and math boxes into the original PDF.
 
@@ -41,22 +42,30 @@ def insert_translated_table_text(doc: fitz.Document,
     # This is for debug
     #page.draw_rect(rect, color=(0, 0,0), fill=(1, 1, 1))
 
-    # determine font size
-    font_size = 12
-
     text_width = meas_font.text_length(translated_text, fontsize=font_size)
-    while text_width > box_width and font_size > 1:
-        font_size -= 0.25
-        text_width = meas_font.text_length(translated_text, fontsize=font_size)
+
+    # # Adjust font size if the text is too wide for the box
+    # while text_width > box_width and font_size > 1:
+    #     font_size -= 0.25
+    #     text_width = meas_font.text_length(translated_text, fontsize=font_size)
+
+    # measure width of text at 1pt
+    base_width = meas_font.text_length(translated_text, fontsize=1)
+    # desired size = box_width / base_width
+    font_size = min(box_width / base_width, font_size)
+
+    # still enforce a minimum
+    font_size = max(font_size, 1.0)
     
     # center vertically
     line_height = (meas_font.ascender - meas_font.descender) / 1000 * font_size
     # baseline_y = y1 + (y2 - y1 - line_height) / 2 + line_height
+    # (x1, baseline_y) when inserting text
 
     # insert the translated text
-    page.insert_text((x1, y2),
+    page.insert_text((x1, y2 - 2),
                         translated_text,
-                        fontname='Roboto',
+                        fontname=str(font_path.stem),
                         fontsize=font_size,
                         fontfile=str(font_path),
                         color=(0, 0, 0),

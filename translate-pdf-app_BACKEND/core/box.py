@@ -30,3 +30,6 @@ class Box:
     content: Optional[str] = None
     translation: Optional[str] = None
     page_num: Optional[int] = None
+    _pdf_size: Optional[Tuple[float, float]] = None
+    _img_size: Optional[Tuple[float, float]] = None
+    _crop_dir: Optional[Path] = None

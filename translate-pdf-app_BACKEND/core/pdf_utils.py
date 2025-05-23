@@ -1,8 +1,9 @@
-import fitz
-import os
 from PIL import Image
 from pathlib import Path
 from typing import List
+from core.box import Box
+import fitz
+import os
 
 def split_pdf_to_pages(input_pdf_path: Path, output_root: Path) -> None:
     file_id = input_pdf_path.stem
@@ -80,7 +81,7 @@ def convert_pdf_to_imgs(pdf_path: Path, output_folder: Path, dpi: int = 300, img
 
     return output_files
 
-def get_font_size(coords: List[float], page: fitz.Page) -> float:
+def get_avg_font_size_overlapped(coords: List[float], page: fitz.Page) -> float:
     """
     Get the average font size of all text spans overlapping the given box.
     """
@@ -101,6 +102,24 @@ def get_font_size(coords: List[float], page: fitz.Page) -> float:
     if not sizes:
         return 9.0
     return min(sum(sizes) / len(sizes), 14)
+
+def get_avg_font_size_by_boxes(boxes: List[Box], page: fitz.Page) -> float:
+    """
+    Get the average font size of all text spans overlapping the given box.
+    """
+    sizes: List[float] = []
+    for box in boxes:
+        x0, y0, x1, y1 = box.coords
+        text_json = page.get_text("dict")
+        for block in text_json["blocks"]:
+            if block.get("type") != 0:  # only text blocks
+                continue
+            for line in block["lines"]:
+                for span in line["spans"]:
+                    sx0, sy0, sx1, sy1 = span["bbox"]
+                    sizes.append(span["size"])
+
+    return min(sum(sizes) / max(len(sizes), 1), 14.0)
 
 def scale_img_box_to_pdf_box(image_box, image_size, pdf_size):
     x1, y1, x2, y2 = image_box
