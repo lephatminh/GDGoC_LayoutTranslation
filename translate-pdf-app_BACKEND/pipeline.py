@@ -77,6 +77,12 @@ def run_pipeline(pdf_path: Path, output_root: Path):
             model=doclayout_model 
         ) 
         boxes = remove_overlapped_boxes(boxes) 
+
+        # draw_boxes_on_pdf(
+        #     pdf_path=pdf_path,
+        #     output_path=output_dir / f"{file_id}_boxes.pdf",
+        #     boxes=boxes,
+        # )
  
         pdf_size = (doc[0].rect.width, doc[0].rect.height) 
         dpi = 300 
@@ -146,8 +152,8 @@ def run_pipeline(pdf_path: Path, output_root: Path):
     doc.save(output_dir/f"{file_id}.pdf") 
     doc.close() 
         
-    with open(output_dir/f"{file_id}.json", "w") as f: 
-        json.dump([asdict(box) for box in translated_boxes], f, indent=4,  default=lambda o: str(o))  # convert Paths (and any other unknown) to string 
+    with open(output_dir/f"{file_id}.json", "w", encoding="utf-8") as f: 
+        json.dump([asdict(box) for box in translated_boxes], f, indent=4, ensure_ascii=False, default=lambda o: str(o))  # convert Paths (and any other unknown) to string 
  
 def main(): 
     parser = argparse.ArgumentParser(description="Translate PDF using Gemini API") 
