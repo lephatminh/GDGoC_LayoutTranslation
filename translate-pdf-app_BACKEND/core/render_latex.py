@@ -2,16 +2,17 @@
 # sudo apt update
 # sudo apt install texlive-latex-base texlive-extra-utils
 
-import fitz  # PyMuPDF
+from PyPDF2 import PdfReader, PdfWriter, Transformation
+from pathlib import Path
+from core.box import Box
+from core.box import BoxLabel
+import fitz  
 import subprocess
 import tempfile
 import os
 import shutil
 import logging
 import copy
-from PyPDF2 import PdfReader, PdfWriter, Transformation
-from pathlib import Path
-from core.box import Box
 
 logger = logging.getLogger(__name__)
 
@@ -90,27 +91,26 @@ def scale_pdf_properly(input_path, output_path, target_width=1025, target_height
 
 def add_selectable_latex_to_pdf(input_pdf: Path,
                                 output_pdf: Path,
-                                equation: str,
                                 box: Box,
                                 src_doc: fitz.Document,
                                 page_num=0,
                                 fontsize=12):
     '''
     This function is to:
-        1. Get the LaTex code from the equation
-        2. Create a 'equation.tex' file from the LaTex code
-        3. Create a respectively 'equation.pdf'
-        4. Do a PDF cropping for 'equation.pdf' (if success, else remain the same)
+        1. Get the LaTex code from the translation
+        2. Create a 'translation.tex' file from the LaTex code
+        3. Create a respectively 'translation.pdf'
+        4. Do a PDF cropping for 'translation.pdf' (if success, else remain the same)
         5. Scale the PDF to fit the target rectangle
         5.5 Remove the content in the target box first
-        6. Insert the scaled 'equation.pdf' into the 'input_pdf' at the
+        6. Insert the scaled 'translation.pdf' into the 'input_pdf' at the
            'x_left_target', 'y_left_target', 'x_right_target', 'y_right_target'
            to the 'input_pdf' PDF and save as 'output_pdf' PDF
 
     Args:
         input_pdf: str
         output_pdf: str
-        equation: str - Latex code of the paragraph or equation
+        translation: str - Latex code of the paragraph or equation
         x_left_target: float - x coord of top left point
         y_left_target: float - y coord of top left point
         x_right_target: float - x coord of bottom right point
@@ -141,7 +141,8 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
         raise ValueError("y_left_target must be smaller than y_right_target")
 
     # Step 1: Set up the LaTeX code based on type
-    LaTex_format = ''
+    if box.label == BoxLabel.TITLE:
+        translation = r"\begin{center}" + translation + r"\end{center}"
 
     LaTex_format = r"""
             \documentclass{article}
@@ -173,7 +174,7 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
             \fontsize{%dpt}{%.1fpt}\selectfont
             %s
             \end{document}
-            """ % (fontsize, fontsize * 1.2, equation)
+            """ % (fontsize, fontsize * 1.2, translation)
 
     temp_dir = tempfile.mkdtemp()
     try:
@@ -255,7 +256,6 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
         #eq_page.draw_rect(eq_rect, color=(0, 1, 0) ,width=0.5)
         page.show_pdf_page(target, eq_doc, 0, keep_proportion=False)
 
-        # src_doc.save(str(output_pdf))
         eq_doc.close()
 
     finally:

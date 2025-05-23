@@ -48,7 +48,7 @@ def extract_content_from_single_image(
         start = raw.find(r"\begin{document}") + len(r"\begin{document}")
         end   = raw.find(r"\end{document}")
         if 0 <= start < end:
-            box.content = raw[start:end].strip().replace('\n', '')
+            box.content = raw[start:end].strip().replace('\n', ' ')
 
         else:
             logger.warning(f"Box {box.id}: document markers not found.")

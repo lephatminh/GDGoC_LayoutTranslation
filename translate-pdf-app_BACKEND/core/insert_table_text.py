@@ -18,7 +18,7 @@ def insert_translated_table_text(doc: fitz.Document,
         font_path (str or Path): Path to the font file for rendering text.
     """
 
-    # also keep a simple Font object for measuring string widths
+    # Keep a simple Font object for measuring string widths
     meas_font = fitz.Font(fontfile=str(font_path))
     
     # Insert translated text
@@ -30,7 +30,6 @@ def insert_translated_table_text(doc: fitz.Document,
     translated_text = str(table_box.translation)
 
     if translated_text == "":
-        # If the translated text is empty, skip this box
         return
 
     # cover the original text area
@@ -42,9 +41,8 @@ def insert_translated_table_text(doc: fitz.Document,
     # This is for debug
     #page.draw_rect(rect, color=(0, 0,0), fill=(1, 1, 1))
 
-    text_width = meas_font.text_length(translated_text, fontsize=font_size)
-
     # # Adjust font size if the text is too wide for the box
+    # text_width = meas_font.text_length(translated_text, fontsize=font_size)
     # while text_width > box_width and font_size > 1:
     #     font_size -= 0.25
     #     text_width = meas_font.text_length(translated_text, fontsize=font_size)
@@ -58,11 +56,10 @@ def insert_translated_table_text(doc: fitz.Document,
     font_size = max(font_size, 1.0)
     
     # center vertically
-    line_height = (meas_font.ascender - meas_font.descender) / 1000 * font_size
+    # line_height = (meas_font.ascender - meas_font.descender) / 1000 * font_size
     # baseline_y = y1 + (y2 - y1 - line_height) / 2 + line_height
     # (x1, baseline_y) when inserting text
 
-    # insert the translated text
     page.insert_text((x1, y2 - 2),
                         translated_text,
                         fontname=str(font_path.stem),

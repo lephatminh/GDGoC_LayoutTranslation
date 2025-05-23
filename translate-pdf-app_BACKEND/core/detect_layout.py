@@ -48,7 +48,7 @@ def detect_and_crop_image(image_path: str, output_dir: str, page_num: int, model
     for i, box in enumerate(result):
         coords = box.xyxy.tolist()[0]
         class_id = int(box.cls.tolist()[0])
-        if class_id not in [2, 3, 9]:  # Exclude figures, tables, formula captions, and those abandoned :)
+        if class_id not in [2, 3, 9]:  # Exclude figures, formula captions, and those abandoned
             cropped_img = img.crop(coords)
             output_file = os.path.join(output_dir, f"cropped_segment_{i}_page_{page_num}.png")
             cropped_img.save(output_file)

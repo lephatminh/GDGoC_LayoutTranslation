@@ -1,5 +1,5 @@
 from pathlib import Path
-from core.pdf_utils import *
+from core.pdf_utils import convert_pdf_to_imgs, scale_img_box_to_pdf_box, get_avg_font_size_by_boxes, get_avg_font_size_overlapped
 from core.detect_layout       import detect_and_crop_image, get_model as _get_layout_model
 from core.translate_text      import translate_single_box, setup_multiple_models as _setup_multiple_models
 from core.extract_info         import extract_content_from_single_image, get_content_in_region
@@ -12,8 +12,9 @@ from core.box                  import BoxLabel, Box
 import json, argparse, time, logging
 from functools                  import lru_cache
 from concurrent.futures        import ThreadPoolExecutor, as_completed
-import fitz  # PyMuPDF
 from threading import Lock
+from typing import List
+import fitz  # PyMuPDF
 logger = logging.getLogger(__name__)
 
 #––– Lazy singletons –––
@@ -131,7 +132,6 @@ def run_pipeline(pdf_path: Path, output_root: Path):
                         add_selectable_latex_to_pdf( 
                             pdf_path, 
                             output_dir / f"{file_id}.pdf", 
-                            pdf_box.translation, 
                             pdf_box, 
                             doc, 
                             pdf_box.page_num, 
