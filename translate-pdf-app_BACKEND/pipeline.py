@@ -98,7 +98,7 @@ def run_pipeline(pdf_path: Path, output_root: Path):
         
         return boxes
     
-    max_workers = min(len(imgs), os.cpu_count() or 4)
+    max_workers = min(len(imgs) * 2, os.cpu_count() or 4)
     # will hold all boxes (across all pages) 
     all_boxes: List[Box] = []
 
@@ -112,8 +112,9 @@ def run_pipeline(pdf_path: Path, output_root: Path):
  
     num_keys    = api_manager.size()      # 11
     cpu         = os.cpu_count() or 1
-    max_workers = min(num_keys, cpu * 2)
+    max_workers = min(num_keys * 2, cpu)
     logger.info(f"Using {max_workers} workers (API keys: {num_keys}, CPU: {cpu})")
+    
     # 2) process them in parallel (extract→translate→render) 
     translated_boxes: List[Box] = [] 
     render_lock = Lock() 
@@ -149,11 +150,10 @@ def run_pipeline(pdf_path: Path, output_root: Path):
                             pdf_box, 
                             doc, 
                             pdf_box.page_num, 
-                            get_avg_font_size_overlapped(pdf_box.coords, doc[pdf_box.page_num]), 
+                            get_avg_font_size_overlapped(pdf_box.coords, doc[pdf_box.page_num]),
+                            debug=False, 
                         ) 
 
-            # with open(output_dir/f"{file_id}.json", "a", encoding="utf-8") as f: 
-            #     json.dump([asdict(box) for box in translated_boxes], f, indent=4, ensure_ascii=False, default=lambda o: str(o))  # convert Paths (and any other unknown) to string
             return pdf_boxes 
             
         futures = [exe.submit(process_and_render, b) for b in all_boxes] 

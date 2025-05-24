@@ -91,38 +91,91 @@ def scale_pdf_properly(input_path, output_path, target_width=1025, target_height
     print(f"Both page dimensions and content have been scaled. Saved to {output_path}")
 
 
+def crop_equation_pdf(input_pdf: str, output_pdf: str, margin=5):
+    """
+    Crop whitespace from a PDF file using pdfcrop.
+
+    Args:
+        input_pdf (str): Path to the input PDF file
+        output_pdf (str): Path where the cropped PDF will be saved
+        margin (int): Margin to add around the cropped content (default: 5 points)
+
+    Returns:
+        str: Path to the cropped PDF file
+    """
+    result = subprocess.run(
+        ["pdfcrop", "--margin", str(margin), input_pdf, output_pdf],
+        check=False, 
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    
+    # Check if pdfcrop succeeded AND actually created the file
+    if result.returncode == 0 and os.path.exists(output_pdf):
+        logger.info(f"pdfcrop succeeded: {output_pdf}")
+        return output_pdf
+    else:
+        logger.error(f"pdfcrop failed or did not create output file: {output_pdf}")
+        # Method 2: Fallback to PyMuPDF
+        if crop_pdf_to_content(input_pdf, output_pdf, margin):
+            return output_pdf
+        
+        # Method 3: Last resort - return original
+        logger.warning("All cropping methods failed; using original PDF")
+        return input_pdf
+
+
+def crop_pdf_to_content(input_pdf: str, output_pdf: str, margin: int = 5) -> bool:
+    """
+    Crop PDF to content bounds using PyMuPDF. More reliable than pdfcrop.
+    
+    Returns:
+        bool: True if successful, False otherwise
+    """
+    try:
+        doc = fitz.open(input_pdf)
+        page = doc[0]
+        
+        # Method 1: Use text blocks (best for text content)
+        blocks = page.get_text("blocks")
+        if blocks:
+            # Get bounding box of all text
+            bbox = fitz.Rect()
+            for block in blocks:
+                bbox |= fitz.Rect(block[:4])
+            
+            # Add margin
+            bbox = fitz.Rect(
+                bbox.x0 - margin, 
+                bbox.y0 - margin,
+                bbox.x1 + margin, 
+                bbox.y1 + margin
+            )
+            
+            # Ensure bbox is within page bounds
+            bbox &= page.rect
+            
+            # Apply crop
+            page.set_cropbox(bbox)
+            doc.save(output_pdf)
+            doc.close()
+            return True
+            
+    except Exception as e:
+        logger.error(f"PyMuPDF cropping failed: {e}")
+        return False
+    
+    return False
+
+
 def add_selectable_latex_to_pdf(input_pdf: Path,
                                 output_pdf: Path,
                                 box: Box,
                                 src_doc: fitz.Document,
                                 page_num=0,
-                                fontsize=12):
-    '''
-    This function is to:
-        1. Get the LaTex code from the translation
-        2. Create a 'translation.tex' file from the LaTex code
-        3. Create a respectively 'translation.pdf'
-        4. Do a PDF cropping for 'translation.pdf' (if success, else remain the same)
-        5. Scale the PDF to fit the target rectangle
-        5.5 Remove the content in the target box first
-        6. Insert the scaled 'translation.pdf' into the 'input_pdf' at the
-           'x_left_target', 'y_left_target', 'x_right_target', 'y_right_target'
-           to the 'input_pdf' PDF and save as 'output_pdf' PDF
-
-    Args:
-        input_pdf: str
-        output_pdf: str
-        translation: str - Latex code of the paragraph or equation
-        x_left_target: float - x coord of top left point
-        y_left_target: float - y coord of top left point
-        x_right_target: float - x coord of bottom right point
-        y_right_target: float - y coord of bottom right point
-        page_num: int - page number to insert into (0-based)
-        fontsize: int - font size
-
-    Output:
-        New PDF with inserted LaTex rendered document, scaled to fit the target rectangle
-    '''
+                                fontsize=12,
+                                debug=False):  # Add debug parameter
+    
     translation = box.translation or ""
     if not translation.strip():
         # If the translated text is empty, skip this box
@@ -148,39 +201,20 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
 
     LaTex_format = r"""
             \documentclass{article}
-            \usepackage{amsmath,amssymb}
+            \usepackage{amsmath}
+            \usepackage{amssymb}
             \usepackage{fontspec}
-            \usepackage{polyglossia}
+
             \usepackage[x11names]{xcolor}
             \usepackage{bibentry}
             \usepackage[hidelinks,breaklinks]{hyperref}
             \usepackage{xurl}
-            
-            \setdefaultlanguage{english}
-            \setotherlanguages{vietnamese,chinese-simplified,japanese,korean,arabic,russian,french,german,spanish,italian}
 
             \setmainfont{Noto Serif}[
                 BoldFont = Noto Serif Bold,
                 ItalicFont = Noto Serif Italic,
                 BoldItalicFont = Noto Serif Bold Italic
             ]
-
-            \newfontfamily\cjkfont{Noto Sans CJK SC}[Scale=0.9]
-            \newfontfamily\arabicfont{Noto Sans Arabic}[Scale=0.9]
-            \newfontfamily\vietnamesefont{Noto Serif}[Scale=1.0]
-            \newfontfamily\koreanfont{Noto Sans CJK KR}[Scale=0.9]
-            \newfontfamily\russianfont{Noto Serif}[Scale=1.0]
-
-            \newcommand{\vi}[1]{{\vietnamesefont\selectlanguage{vietnamese}#1\selectlanguage{english}}}
-            \newcommand{\zh}[1]{{\cjkfont #1}}
-            \newcommand{\ja}[1]{{\cjkfont #1}}
-            \newcommand{\ko}[1]{{\koreanfont #1}}
-            \newcommand{\ar}[1]{{\arabicfont #1}}
-            \newcommand{\ru}[1]{{\russianfont\selectlanguage{russian}#1\selectlanguage{english}}}
-            \newcommand{\fr}[1]{\selectlanguage{french}#1\selectlanguage{english}}
-            \newcommand{\de}[1]{\selectlanguage{german}#1\selectlanguage{english}}
-            \newcommand{\es}[1]{\selectlanguage{spanish}#1\selectlanguage{english}}
-            \newcommand{\it}[1]{\selectlanguage{italian}#1\selectlanguage{english}}
 
             \sloppy 
             \usepackage{longtable} 
@@ -198,13 +232,39 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
             \setmathfont{Latin Modern Math}
 
             \pagestyle{empty}
+
+            \newfontfamily\cjkfont{Noto Sans CJK SC}[Scale=0.9]
+            \newfontfamily\arabicfont{Noto Sans Arabic}[Scale=0.9]
+            \newfontfamily\vietnamesefont{Noto Serif}[Scale=1.0]
+            \newfontfamily\koreanfont{Noto Sans CJK KR}[Scale=0.9]
+            \newfontfamily\russianfont{Noto Serif}[Scale=1.0]
+
+            \newcommand{\vi}[1]{{\vietnamesefont\selectlanguage{vietnamese}#1}}
+            \newcommand{\zh}[1]{{\cjkfont #1}}
+            \newcommand{\ja}[1]{{\cjkfont #1}}
+            \newcommand{\ko}[1]{{\koreanfont #1}}
+            \newcommand{\ar}[1]{{\arabicfont #1}}
+            \newcommand{\ru}[1]{{\russianfont\selectlanguage{russian}#1}}
+            \newcommand{\fr}[1]{\selectlanguage{french}#1}
+            \newcommand{\de}[1]{\selectlanguage{german}#1}
+            \newcommand{\es}[1]{\selectlanguage{spanish}#1}
+            \newcommand{\ita}[1]{\selectlanguage{italian}#1}
+            
             \begin{document}
             \fontsize{%dpt}{%.1fpt}\selectfont
             %s
             \end{document}
             """ % (fontsize, fontsize * 1.2, translation)
 
-    temp_dir = tempfile.mkdtemp()
+    if debug:
+        # Use a predictable directory for debugging
+        debug_base = Path("./latex_debug")
+        debug_base.mkdir(exist_ok=True)
+        temp_dir = str(debug_base / f"box_{box.page_num}_{id(box)}")
+        os.makedirs(temp_dir, exist_ok=True)
+    else:
+        temp_dir = tempfile.mkdtemp()
+    
     try:
         # Step 2: Create a 'equation.tex' file from the LaTeX code
         latex_file = os.path.join(temp_dir, "equation.tex")
@@ -216,8 +276,9 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
             subprocess.run(
                 ["xelatex", "-interaction=batchmode", "-output-directory", temp_dir, latex_file],
                 check=False,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True
             )
         except subprocess.CalledProcessError as e:
             log_path = os.path.join(temp_dir, "equation.log")
@@ -225,23 +286,16 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
             if os.path.exists(log_path):
                 with open(log_path, errors="ignore") as lf:
                     log_tail = "".join(lf.readlines()[-30:])
-            raise RuntimeError(f"pdflatex failed ({e.returncode}). Last lines:\n{log_tail}")
+            raise RuntimeError(f"xelatex failed ({e.returncode}). Last lines:\n{log_tail}")
 
         # Step 4: Crop whitespace if pdfcrop is installed
         eq_pdf = os.path.join(temp_dir, "equation.pdf")
         cropped = os.path.join(temp_dir, "equation-crop.pdf")
-        try:
-            subprocess.run(
-                ["pdfcrop", "--margins", "5", eq_pdf, cropped],
-                check=False,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
-            eq_pdf = cropped
-        except FileNotFoundError:
-            logger.warning("pdfcrop not found; using uncropped equation.pdf")
-        except subprocess.CalledProcessError:
-            logger.warning("pdfcrop failed; using uncropped equation.pdf")
+        
+        if not os.path.exists(eq_pdf):
+            raise FileNotFoundError(f"Compiled PDF not found: {eq_pdf}")
+        
+        eq_pdf = crop_equation_pdf(eq_pdf, cropped, margin=5)
 
         # # Visualize the equation PDF for debugging
         # doc = fitz.open(eq_pdf)
@@ -287,4 +341,7 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
         eq_doc.close()
 
     finally:
-        shutil.rmtree(temp_dir)
+        if not debug:
+            shutil.rmtree(temp_dir)
+        else:
+            logger.info(f"Debug: Files preserved in {temp_dir}")

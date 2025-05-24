@@ -39,33 +39,103 @@ def extract_content_from_single_image(
 
         #         INSTRUCTIONS: Convert the image content into a complete LaTeX document, starting with \begin{document}. Prioritize accurate representation of all mathematical expressions, symbols (including \&, \%, \{, \} etc.), and formatting. Do not include any figure environments (e.g `\begin{figure}...\end{figure}`, '\includegraphics', etc.) or image references. End with \end{document}. Return *only* the LaTeX code, no surrounding text.
         #         """
-        prompt = """You are a LaTeX expert. Your task is to convert image content, which may include multiple languages, into a complete LaTeX document.
+        # prompt = """You are a LaTeX expert. Your task is to convert image content, which may include multiple languages, into a complete LaTeX document.
 
-                **Instructions:**
-                1.  Begin the output with `\begin{document}`.
-                2.  End the output with `\end{document}`.
-                3.  For non-English text, wrap it with the appropriate language command. Do NOT romanize or transliterate; preserve original Unicode characters.
-                    * Vietnamese: `\vi{text}`
-                    * Chinese: `\zh{text}`
-                    * Japanese: `\ja{text}`
-                    * Korean: `\ko{text}`
-                    * Arabic: `\ar{text}`
-                    * Russian: `\ru{text}`
-                    * French: `\fr{text}`
-                    * German: `\de{text}`
-                    * Spanish: `\es{text}`
-                    * Italian: `\it{text}`
-                    * English: Leave unwrapped.
-                4.  Prioritize accurate representation of all mathematical expressions, symbols (including \&, \%, \{, \} \&, etc.)
-                5.  Do NOT include any figure environments (e.g `\begin{figure}...\end{figure}`, '\includegraphics', etc.) or image references
+        #         **Instructions:**
+        #         1.  Begin the output with `\begin{document}`.
+        #         2.  End the output with `\end{document}`.
+        #         3.  For non-English text, wrap it with the appropriate language command. Do NOT romanize or transliterate; preserve original Unicode characters.
+        #             * Vietnamese: `\vi{text}`
+        #             * Chinese: `\zh{text}`
+        #             * Japanese: `\ja{text}`
+        #             * Korean: `\ko{text}`
+        #             * Arabic: `\ar{text}`
+        #             * Russian: `\ru{text}`
+        #             * French: `\fr{text}`
+        #             * German: `\de{text}`
+        #             * Spanish: `\es{text}`
+        #             * Italian: `\ita{text}`
+        #             * English: Leave unwrapped.
+        #         4.  Prioritize accurate representation of all mathematical expressions, symbols (including \&, \%, \{, \} \&, etc.)
+        #         5. Maintain the original formatting as much as possible. Make sure to have a white space after a newline (e.g '\n', etc.). If it's a plain paragraph text, do not add any extra line breaks or spaces.
+        #         6.  Do NOT include any figure environments (e.g `\begin{figure}...\end{figure}`, '\includegraphics', etc.) or image references
 
-                **Examples:**
-                * `Hello \vi{xin chào} world`
-                * `The equation \zh{方程式} is $E=mc^2$`
-                * `Title: \vi{Toán học} and \zh{数学} and Mathematics`
-                * `\ja{十}`
+        #         **Examples:**
+        #         * `Hello \vi{xin chào} world`
+        #         * `The equation \zh{方程式} is $E=mc^2$`
+        #         * `Title: \vi{Toán học} and \zh{数学} and Mathematics`
+        #         * `\ja{十}`
 
-                **Output ONLY the LaTeX code. No other text or explanations.**"""
+        #         **Output ONLY the LaTeX code from `\begin{document}` to `\end{document}`. No other text or explanations.**"""
+
+        prompt = r"""You are an expert at converting specific regions of a document image (identified by a tool like DocLayout) into LaTeX code. Your main job is to carefully change the text, math, and symbols from these document regions into correct LaTeX code that goes between '\begin{document}' and '\end{document}'. You must follow these rules exactly.
+
+        **About the Input Image:**
+        The input image you'll work with comes from one of these document parts, like a paragraph, a heading, or a caption. This text might contain various languages, mathematical formulas, and symbols.
+
+        **Main Rules for Creating LaTeX:**
+
+        1.  **Start and End Points:**
+            * Your LaTeX code MUST start with '\begin{document}'. Nothing before it.
+            * Your LaTeX code MUST end with '\end{document}'. Nothing after it.
+            * Only put LaTex code between '\begin{document}' and '\end{document}'. Don't add things like '\documentclass' or '\usepackage'.
+
+        2.  **Handling Different Languages:**
+            * For any text that is not English, wrap it with the correct language command (see list below). Keep the original letters and symbols exactly as they are. DO NOT change them to look like English letters (no romanizing or transliterating).
+                * Vietnamese: '\vi{text}'
+                * Chinese: '\zh{text}'
+                * Japanese: '\ja{text}'
+                * Korean: '\ko{text}'
+                * Arabic: '\ar{text}'
+                * Russian: '\ru{text}'
+                * French: '\fr{text}'
+                * German: '\de{text}'
+                * Spanish: '\es{text}'
+                * Italian: '\ita{text}'
+            * Do not wrap English text with any command.
+
+        3.  **Math and Special Characters:**
+            * Change all math into correct LaTeX math. For example, use '$...$' for math in a line of text. The most important thing is to get all symbols right.
+            * You MUST put a backslash ('\') before these special LaTeX characters to make them show up correctly:
+                * '&' becomes '\&'
+                * '%' becomes '\%'
+                * '$' becomes '\$'
+                * '#' becomes '\#'
+                * '_' becomes '\_'
+                * '{' becomes '\{'
+                * '}' becomes '\}'
+                * '~' becomes '\textasciitilde{}'
+                * '^' becomes '\textasciicircum{}'
+                * '\' (backslash itself) becomes '\textbackslash{}'
+
+        4.  **Keeping the Original Look:**
+            * Try your best to make the LaTeX output look like the original document part's layout (like where lines break and paragraphs start).
+            * Make sure to have a white space character after a newline (e.g '\n', etc.)
+            * For a plain paragraph text, don't add extra new lines or line breaks that weren't meant to be there
+
+        5.  **Things NOT to Include:**
+            * DO NOT use '\begin{figure}' or '\end{figure}'.
+            * DO NOT use '\includegraphics'.
+            * Don't refer to image files or try to put images in.
+
+        **Examples (Follow these carefully):**
+
+        * Input: 'Hello xin chào world'
+            Output: 'Hello \vi{xin chào} world'
+
+        * Input: 'The equation 方程式 is E=mc^2'
+            Output: 'The equation \zh{方程式} is $E=mc^2$'
+
+        * Input: 'Title: Toán học and 数学 and Mathematics. Cost is 100% & item #1 {special_item}.'
+            Output: 'Title: \vi{Toán học} and \zh{数学} and Mathematics. Cost is 100\% \& item \#1 \{special\_item\}.'
+
+        * Input: '十'
+            Output: '\ja{十}'
+
+        **Very Important Last Rule:**
+        Give back ONLY the LaTeX code that starts with '\begin{document}' and ends with '\end{document}'. Don't say anything else before or after it.
+        """
+
         resp = client.models.generate_content(
             model="gemini-2.0-flash",
             contents=[img_file, prompt],
