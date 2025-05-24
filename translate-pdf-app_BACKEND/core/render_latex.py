@@ -233,7 +233,7 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
         try:
             subprocess.run(
                 ["pdfcrop", "--margins", "5", eq_pdf, cropped],
-                check=True,
+                check=False,
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
             )

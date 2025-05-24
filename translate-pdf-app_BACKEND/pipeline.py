@@ -9,12 +9,12 @@ from core.remove_overlapped     import remove_overlapped_boxes
 from core.insert_table_text     import insert_translated_table_text
 from dataclasses               import asdict
 from core.box                  import BoxLabel, Box
-import json, argparse, time, logging
 from functools                  import lru_cache
 from concurrent.futures        import ThreadPoolExecutor, as_completed
 from threading import Lock
 from typing import List
 import fitz  # PyMuPDF
+import json, argparse, time, logging, os
 logger = logging.getLogger(__name__)
 
 #––– Lazy singletons –––
@@ -53,16 +53,13 @@ def run_pipeline(pdf_path: Path, output_root: Path):
     # 0) open input PDF once 
     doc = fitz.open(str(pdf_path)) 
  
-    # will hold all boxes (across all pages) 
-    all_boxes: List[Box] = [] 
- 
     # 1) for each page, detect & crop 
     imgs = convert_pdf_to_imgs(pdf_path=pdf_path, 
                                output_folder=pdf_path.parent, 
                                dpi=300, img_format="png") 
     
     doc = fitz.open(str(pdf_path)) 
-    for img_path in imgs: 
+    def process_page(img_path: str) -> List[Box]:
         img = Path(img_path) 
         page_num = int(img.stem.split("_")[-1]) 
  
@@ -98,12 +95,29 @@ def run_pipeline(pdf_path: Path, output_root: Path):
             b._pdf_size   = pdf_size 
             b._img_size   = image_size 
             b._crop_dir   = para_cropped_dir 
-        all_boxes.extend(boxes) 
+        
+        return boxes
+    
+    max_workers = min(len(imgs), os.cpu_count() or 4)
+    # will hold all boxes (across all pages) 
+    all_boxes: List[Box] = []
+
+    with ThreadPoolExecutor(max_workers=max_workers) as exe:
+        futures = {exe.submit(process_page, p): p for p in imgs}
+        for fut in as_completed(futures):
+            try:
+                all_boxes.extend(fut.result())
+            except Exception as e:
+                logger.error(f"page crop failed ({futures[fut]}): {e}")
  
+    num_keys    = api_manager.size()      # 11
+    cpu         = os.cpu_count() or 1
+    max_workers = min(num_keys, cpu * 2)
+    logger.info(f"Using {max_workers} workers (API keys: {num_keys}, CPU: {cpu})")
     # 2) process them in parallel (extract→translate→render) 
     translated_boxes: List[Box] = [] 
     render_lock = Lock() 
-    with ThreadPoolExecutor(max_workers=8) as exe: 
+    with ThreadPoolExecutor(max_workers=max_workers) as exe: 
         def process_and_render(box: Box) -> List[Box]: 
             # scale coords 
             box.coords = scale_img_box_to_pdf_box( 

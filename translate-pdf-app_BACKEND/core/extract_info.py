@@ -57,8 +57,7 @@ def extract_content_from_single_image(
                     * Italian: `\it{text}`
                     * English: Leave unwrapped.
                 4.  Prioritize accurate representation of all mathematical expressions, symbols (including \&, \%, \{, \} \&, etc.)
-                5.  Maintain the original formatting and structure as closely as possible.
-                6.  Do NOT include `figure` environments, `\includegraphics`, or any image references.
+                5.  Do NOT include any figure environments (e.g `\begin{figure}...\end{figure}`, '\includegraphics', etc.) or image references
 
                 **Examples:**
                 * `Hello \vi{xin chào} world`

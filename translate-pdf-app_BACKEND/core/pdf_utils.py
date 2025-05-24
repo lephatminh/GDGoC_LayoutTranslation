@@ -2,8 +2,10 @@ from PIL import Image
 from pathlib import Path
 from typing import List
 from core.box import Box
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import fitz
-import os
+import os, logging
+logger = logging.getLogger(__name__)
 
 def split_pdf_to_pages(input_pdf_path: Path, output_root: Path) -> None:
     file_id = input_pdf_path.stem
@@ -39,8 +41,6 @@ def convert_pdf_to_imgs(pdf_path: Path, output_folder: Path, dpi: int = 300, img
     # Open the PDF
     pdf_document = fitz.open(pdf_path)
 
-    output_files = []
-
     # Calculate the zoom factor based on DPI (72 is the base DPI)
     zoom = dpi / 72
 
@@ -49,7 +49,7 @@ def convert_pdf_to_imgs(pdf_path: Path, output_folder: Path, dpi: int = 300, img
 
     # Convert each page to an image
     # pil_sizes = []
-    for page_num in range(len(pdf_document)):
+    def _render_page(page_num: int) -> Path:
         page = pdf_document.load_page(page_num)
 
         # Create a matrix for rendering at higher resolution
@@ -65,17 +65,30 @@ def convert_pdf_to_imgs(pdf_path: Path, output_folder: Path, dpi: int = 300, img
         # img_size = (pix.width, pix.height)
         # pil_sizes.append(img_size)
 
-        # Generate output filename
-        output_file = os.path.join(
-            output_folder,
-            f"{os.path.splitext(os.path.basename(pdf_path))[0]}_page_{page_num}.{img_format}"
-        )
+        # Generate output 
+        output_file = output_folder / f"{pdf_path.stem}_page_{page_num}.{img_format}"
 
         # Save the image
         img.save(output_file)
-        output_files.append(output_file)
 
         print(f"Converted page {page_num + 1}/{len(pdf_document)}")
+
+        return Path(output_file)
+    
+    # limit workers to cpu count or number of pages
+    n_pages = pdf_document.page_count or 1
+    max_workers = min(os.cpu_count() or 1, n_pages)
+    output_files: List[Path] = [] 
+
+    with ThreadPoolExecutor(max_workers=max_workers) as exe:
+        future_to_page = {exe.submit(_render_page, i): i for i in range(n_pages)}
+        for fut in as_completed(future_to_page):
+            page = future_to_page[fut]
+            try:
+                path = fut.result()
+                output_files.append(path)
+            except Exception as e:
+                logger.error(f"Error rendering page {page}: {e}")
 
     pdf_document.close()
 

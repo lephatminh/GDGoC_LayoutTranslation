@@ -236,9 +236,10 @@ def setup_multiple_models():
     """Setup multiple models with different configurations"""
     default_api_str = "GEMINI_API_KEY"
     api_manager = ApiKeyManager()
-    
-    for i in range(1, 8):
-        j = i % 3 # Currently have 3 API keys
+
+    num_models = 11
+    for i in range(0, num_models):
+        j = i % num_models # Currently have 3 API keys
         api_key = os.getenv(f"{default_api_str}_{j}")
         if not api_key:
             logger.warning(f"API key {default_api_str}_{j} not found, skipping.")
