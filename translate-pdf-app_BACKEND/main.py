@@ -79,16 +79,13 @@ async def upload_pdf(file: UploadFile = File(...)):
 	with original_path.open("wb") as buffer:
 		shutil.copyfileobj(file.file, buffer)
 
+	# if os.name == "nt":
+	# 	# Windows
+	# 	runner = [sys.executable, str(BASE_DIR / "pipeline.py"), str(original_path), str(translated_path)]
 
-	# NOTE: apply run_pipeline.sh here to get translated PDF 
-	# shutil.copy(original_path, translated_path)
-	if os.name == "nt":
-		# Windows
-		runner = [sys.executable, str(BASE_DIR / "pipeline.py"), str(original_path), str(translated_path)]
-
-	else:
-		# Unix-like (Linux, macOS)
-		runner = [sys.executable, str(BASE_DIR / "pipeline.py"), str(original_path), str(translated_path)]
+	# else:
+	# 	# Unix-like (Linux, macOS)
+	# 	runner = [sys.executable, str(BASE_DIR / "pipeline.py"), str(original_path), str(translated_path)]
 
 	# subprocess.run(
 	# 	runner,
@@ -100,9 +97,6 @@ async def upload_pdf(file: UploadFile = File(...)):
 
 	logger.info(f"Stored original: {original_path}")
 	logger.info(f"Stored translated: {translated_path}")
-
-	# NOTE: this is a temporary solution
-	translated_path = shutil.copy(original_path, translated_path)
 	
 	return UploadResponse(
 		original=f"/files/input/{filename_stem}/{file.filename}",

@@ -1,6 +1,8 @@
 # Add these lines to the script file
 # sudo apt update
 # sudo apt install texlive-latex-base texlive-extra-utils
+# sudo apt install fonts-noto fonts-noto-cjk fonts-noto-extra fonts-dejavu
+# sudo apt install texlive-latex-extra  # for polyglossia package
 
 from PyPDF2 import PdfReader, PdfWriter, Transformation
 from pathlib import Path
@@ -148,12 +150,37 @@ def add_selectable_latex_to_pdf(input_pdf: Path,
             \documentclass{article}
             \usepackage{amsmath,amssymb}
             \usepackage{fontspec}
+            \usepackage{polyglossia}
             \usepackage[x11names]{xcolor}
             \usepackage{bibentry}
             \usepackage[hidelinks,breaklinks]{hyperref}
             \usepackage{xurl}
+            
+            \setdefaultlanguage{english}
+            \setotherlanguages{vietnamese,chinese-simplified,japanese,korean,arabic,russian,french,german,spanish,italian}
 
-            \setmainfont{DejaVu Serif}
+            \setmainfont{Noto Serif}[
+                BoldFont = Noto Serif Bold,
+                ItalicFont = Noto Serif Italic,
+                BoldItalicFont = Noto Serif Bold Italic
+            ]
+
+            \newfontfamily\cjkfont{Noto Sans CJK SC}[Scale=0.9]
+            \newfontfamily\arabicfont{Noto Sans Arabic}[Scale=0.9]
+            \newfontfamily\vietnamesefont{Noto Serif}[Scale=1.0]
+            \newfontfamily\koreanfont{Noto Sans CJK KR}[Scale=0.9]
+            \newfontfamily\russianfont{Noto Serif}[Scale=1.0]
+
+            \newcommand{\vi}[1]{{\vietnamesefont\selectlanguage{vietnamese}#1\selectlanguage{english}}}
+            \newcommand{\zh}[1]{{\cjkfont #1}}
+            \newcommand{\ja}[1]{{\cjkfont #1}}
+            \newcommand{\ko}[1]{{\koreanfont #1}}
+            \newcommand{\ar}[1]{{\arabicfont #1}}
+            \newcommand{\ru}[1]{{\russianfont\selectlanguage{russian}#1\selectlanguage{english}}}
+            \newcommand{\fr}[1]{\selectlanguage{french}#1\selectlanguage{english}}
+            \newcommand{\de}[1]{\selectlanguage{german}#1\selectlanguage{english}}
+            \newcommand{\es}[1]{\selectlanguage{spanish}#1\selectlanguage{english}}
+            \newcommand{\it}[1]{\selectlanguage{italian}#1\selectlanguage{english}}
 
             \sloppy 
             \usepackage{longtable} 

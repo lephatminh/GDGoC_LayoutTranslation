@@ -35,10 +35,38 @@ def extract_content_from_single_image(
         logger.info(f"Uploaded image {box.id}: {img_file.name}")
 
         rate_limiter.wait_if_needed(0)
-        prompt = """You are a LaTeX expert extracting text and mathematical notation from images.
+        # prompt = """You are a LaTeX expert extracting text and mathematical notation from images.
 
-                INSTRUCTIONS: Convert the image content into a complete LaTeX document, starting with \begin{document}. Prioritize accurate representation of all mathematical expressions, symbols (including \&, \%, \{, \} etc.), and formatting. Do not include any figure environments (e.g `\begin{figure}...\end{figure}`, '\includegraphics', etc.) or image references. End with \end{document}. Return *only* the LaTeX code, no surrounding text.
-                """
+        #         INSTRUCTIONS: Convert the image content into a complete LaTeX document, starting with \begin{document}. Prioritize accurate representation of all mathematical expressions, symbols (including \&, \%, \{, \} etc.), and formatting. Do not include any figure environments (e.g `\begin{figure}...\end{figure}`, '\includegraphics', etc.) or image references. End with \end{document}. Return *only* the LaTeX code, no surrounding text.
+        #         """
+        prompt = """You are a LaTeX expert. Your task is to convert image content, which may include multiple languages, into a complete LaTeX document.
+
+                **Instructions:**
+                1.  Begin the output with `\begin{document}`.
+                2.  End the output with `\end{document}`.
+                3.  For non-English text, wrap it with the appropriate language command. Do NOT romanize or transliterate; preserve original Unicode characters.
+                    * Vietnamese: `\vi{text}`
+                    * Chinese: `\zh{text}`
+                    * Japanese: `\ja{text}`
+                    * Korean: `\ko{text}`
+                    * Arabic: `\ar{text}`
+                    * Russian: `\ru{text}`
+                    * French: `\fr{text}`
+                    * German: `\de{text}`
+                    * Spanish: `\es{text}`
+                    * Italian: `\it{text}`
+                    * English: Leave unwrapped.
+                4.  Prioritize accurate representation of all mathematical expressions, symbols (including \&, \%, \{, \} \&, etc.)
+                5.  Maintain the original formatting and structure as closely as possible.
+                6.  Do NOT include `figure` environments, `\includegraphics`, or any image references.
+
+                **Examples:**
+                * `Hello \vi{xin chào} world`
+                * `The equation \zh{方程式} is $E=mc^2$`
+                * `Title: \vi{Toán học} and \zh{数学} and Mathematics`
+                * `\ja{十}`
+
+                **Output ONLY the LaTeX code. No other text or explanations.**"""
         resp = client.models.generate_content(
             model="gemini-2.0-flash",
             contents=[img_file, prompt],
