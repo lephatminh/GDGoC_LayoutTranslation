@@ -1,3 +1,5 @@
+**Star ⭐ this repository if VerbaDoc helps you translate documents efficiently!**
+
 # 📄 VerbaDoc - AI-Powered PDF Translation with Layout Preservation
 
 **Transform multilingual PDFs while preserving their exact layout, formatting, and mathematical expressions.**
@@ -20,11 +22,11 @@ VerbaDoc is a full-stack web application that intelligently detects document lay
 
 ## 🏗️ Architecture Overview
 
-| Component    | Technology Stack                                                                         |
-| ------------ | ---------------------------------------------------------------------------------------- |
-| **Frontend** | React 18 + TypeScript + Vite + Bootstrap 5 + React Router + PDF.js viewer              |
-| **Backend**  | Python 3.11 + FastAPI + PyMuPDF + DocLayout-YOLO + Google Gemini API + XeLaTeX + Poppler |
-| **AI Models** | DocLayout-YOLO (layout detection) + Google Gemini 2.0 Flash (OCR & translation)        |
+| Component     | Technology Stack                                                                         |
+| ------------- | ---------------------------------------------------------------------------------------- |
+| **Frontend**  | React 18 + TypeScript + Vite + Bootstrap 5 + React Router + PDF.js viewer                |
+| **Backend**   | Python 3.11 + FastAPI + PyMuPDF + DocLayout-YOLO + Google Gemini API + XeLaTeX + Poppler |
+| **AI Models** | DocLayout-YOLO (layout detection) + Google Gemini 2.0 Flash (OCR & translation)          |
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
@@ -73,6 +75,7 @@ translate-pdf-app/
 ## 🚀 Quick Start (Recommended)
 
 ### Prerequisites
+
 - **Docker Desktop 24.0+** (includes Docker Compose v2)
 - **Git** for cloning the repository
 - **Google Gemini API Keys** (get from [Google AI Studio](https://aistudio.google.com/))
@@ -89,11 +92,11 @@ docker compose up --build
 
 🎉 **That's it!** Your application will be available at:
 
-| Service   | URL                          | Purpose                                    |
-| --------- | ---------------------------- | ------------------------------------------ |
-| Frontend  | http://localhost:5173        | Upload PDFs and view translations          |
-| Backend   | http://localhost:8000        | API endpoints                              |
-| API Docs  | http://localhost:8000/docs   | Interactive Swagger documentation          |
+| Service  | URL                        | Purpose                           |
+| -------- | -------------------------- | --------------------------------- |
+| Frontend | http://localhost:5173      | Upload PDFs and view translations |
+| Backend  | http://localhost:8000      | API endpoints                     |
+| API Docs | http://localhost:8000/docs | Interactive Swagger documentation |
 
 > **⏱️ First Launch**: Initial build takes ~10-15 minutes due to TeX packages and AI model downloads (~1GB)
 
@@ -121,14 +124,14 @@ GEMINI_API_KEY_2=your_third_api_key_here           # Tertiary API key (optional)
 
 #### Variable Details
 
-| Variable | Required | Purpose | Example |
-|----------|----------|---------|---------|
-| `FRONTEND_ORIGIN` | ✅ Yes | Development CORS origin | `http://localhost:5173` |
-| `FRONTEND_HOST` | ✅ Yes | Production CORS origin | `https://myapp.vercel.app` |
-| `UPLOAD_FOLDER` | ❌ No | Storage directory name | `storage` (default) |
-| `GEMINI_API_KEY_0` | ✅ Yes | Primary Gemini API key | `AIzaSy...` |
-| `GEMINI_API_KEY_1` | ❌ No | Load balancing key #2 | `AIzaSy...` |
-| `GEMINI_API_KEY_2` | ❌ No | Load balancing key #3 | `AIzaSy...` |
+| Variable           | Required | Purpose                 | Example                    |
+| ------------------ | -------- | ----------------------- | -------------------------- |
+| `FRONTEND_ORIGIN`  | ✅ Yes   | Development CORS origin | `http://localhost:5173`    |
+| `FRONTEND_HOST`    | ✅ Yes   | Production CORS origin  | `https://myapp.vercel.app` |
+| `UPLOAD_FOLDER`    | ❌ No    | Storage directory name  | `storage` (default)        |
+| `GEMINI_API_KEY_0` | ✅ Yes   | Primary Gemini API key  | `AIzaSy...`                |
+| `GEMINI_API_KEY_1` | ❌ No    | Load balancing key #2   | `AIzaSy...`                |
+| `GEMINI_API_KEY_2` | ❌ No    | Load balancing key #3   | `AIzaSy...`                |
 
 > **🔑 Getting API Keys**: Visit [Google AI Studio](https://aistudio.google.com/) → Create API Key → Copy key value
 
@@ -147,6 +150,7 @@ VITE_BACKEND_URL=http://localhost:8000    # Backend API base URL
 ### Backend Development (Without Docker)
 
 #### System Dependencies (Ubuntu/Debian)
+
 ```bash
 sudo apt update && sudo apt install -y \
     texlive-xetex texlive-latex-base texlive-extra-utils \
@@ -155,6 +159,7 @@ sudo apt update && sudo apt install -y \
 ```
 
 #### Python Environment
+
 ```bash
 cd translate-pdf-app_BACKEND
 
@@ -170,6 +175,7 @@ pip install -r requirements.txt
 ```
 
 #### Pre-download AI Models
+
 ```bash
 python -c "
 from huggingface_hub import hf_hub_download
@@ -182,6 +188,7 @@ print('✅ DocLayout-YOLO model downloaded successfully')
 ```
 
 #### Run Development Server
+
 ```bash
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
@@ -203,6 +210,7 @@ npm run dev
 ```
 
 **Development URLs:**
+
 - Frontend: http://localhost:5173 (auto-reload on changes)
 - Backend: http://localhost:8000 (auto-reload on changes)
 
@@ -224,6 +232,7 @@ docker compose logs -f backend
 ### Individual Service Deployment
 
 #### Backend Only
+
 ```bash
 cd translate-pdf-app_BACKEND
 docker build -t verbaDoc-backend:latest .
@@ -235,6 +244,7 @@ docker run -d \
 ```
 
 #### Frontend Only
+
 ```bash
 cd translate-pdf-app_FRONTEND
 docker build -t verbaDoc-frontend:latest .
@@ -247,12 +257,14 @@ docker run -d \
 ### Cloud Platform Deployment
 
 #### Render.com
+
 1. Connect your GitHub repository
 2. Set environment variables in dashboard
 3. Deploy backend as Web Service (port 8000)
 4. Deploy frontend as Static Site
 
 #### Vercel + Railway
+
 1. Deploy frontend to Vercel
 2. Deploy backend to Railway
 3. Update CORS origins in environment variables
@@ -262,21 +274,25 @@ docker run -d \
 ## 📊 Processing Pipeline Details
 
 ### 1. Layout Detection
+
 - **Input**: PDF pages converted to high-resolution images (300 DPI)
 - **Model**: DocLayout-YOLO trained on DocStructBench dataset
 - **Output**: Bounding boxes for paragraphs, titles, tables, formulas, figures
 
 ### 2. Content Extraction
+
 - **Text Regions**: Direct text extraction using PyMuPDF
 - **Complex Regions**: Google Gemini 2.0 Flash OCR with LaTeX conversion
 - **Mathematical Formulas**: Preserved as LaTeX markup
 
 ### 3. Translation
+
 - **Engine**: Google Gemini 2.0 Flash with specialized prompts
 - **Features**: Context-aware translation, mathematical expression preservation
 - **Rate Limiting**: Intelligent API key rotation and request queuing
 
 ### 4. Reconstruction
+
 - **Text**: Direct insertion with font matching
 - **Formulas**: XeLaTeX compilation and PDF overlay
 - **Layout**: Exact coordinate-based positioning
@@ -287,13 +303,13 @@ docker run -d \
 
 ### Common Issues
 
-| Problem | Symptoms | Solutions |
-|---------|----------|-----------|
-| **CORS Errors** | Frontend can't reach backend | • Check `FRONTEND_ORIGIN` in `.env`<br>• Verify URLs match exactly<br>• Restart backend service |
-| **API Key Issues** | "No API key available" errors | • Verify Gemini API keys are valid<br>• Check key quotas in Google Cloud<br>• Add more keys for load balancing |
-| **Build Failures** | Docker build timeouts | • Increase Docker memory to 4GB+<br>• Use `--no-cache` flag<br>• Check internet connection |
-| **Port Conflicts** | "Port already in use" | • Change ports in `docker-compose.yml`<br>• Kill existing processes<br>• Use different port mapping |
-| **Translation Errors** | Incomplete or failed translations | • Check API key quotas<br>• Verify PDF file integrity<br>• Check backend logs |
+| Problem                | Symptoms                          | Solutions                                                                                                      |
+| ---------------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **CORS Errors**        | Frontend can't reach backend      | • Check `FRONTEND_ORIGIN` in `.env`<br>• Verify URLs match exactly<br>• Restart backend service                |
+| **API Key Issues**     | "No API key available" errors     | • Verify Gemini API keys are valid<br>• Check key quotas in Google Cloud<br>• Add more keys for load balancing |
+| **Build Failures**     | Docker build timeouts             | • Increase Docker memory to 4GB+<br>• Use `--no-cache` flag<br>• Check internet connection                     |
+| **Port Conflicts**     | "Port already in use"             | • Change ports in `docker-compose.yml`<br>• Kill existing processes<br>• Use different port mapping            |
+| **Translation Errors** | Incomplete or failed translations | • Check API key quotas<br>• Verify PDF file integrity<br>• Check backend logs                                  |
 
 ### Debug Commands
 
@@ -319,6 +335,7 @@ curl -X POST -F "file=@test.pdf" http://localhost:8000/upload-pdf/
 ### Performance Optimization
 
 #### For High-Volume Usage
+
 ```yaml
 # docker-compose.yml
 services:
@@ -333,6 +350,7 @@ services:
 ```
 
 #### Memory Usage
+
 - **Minimum**: 4GB RAM for basic operation
 - **Recommended**: 8GB RAM for production
 - **Storage**: 2GB for AI models + user files
@@ -342,12 +360,14 @@ services:
 ## 🧪 Testing
 
 ### Manual Testing
+
 1. Upload a multi-language PDF with tables and formulas
 2. Verify layout detection visualization
 3. Check translation accuracy
 4. Confirm PDF output maintains formatting
 
 ### API Testing
+
 ```bash
 # Health check
 curl http://localhost:8000/health
@@ -370,6 +390,7 @@ curl -X POST \
 5. **Open** a Pull Request
 
 ### Development Guidelines
+
 - Follow TypeScript best practices for frontend
 - Use Python type hints for backend
 - Add comprehensive error handling
@@ -389,7 +410,7 @@ MIT License © 2025 VerbaDoc Contributors
 
 - **DocLayout-YOLO**: Document layout detection model
 - **Google Gemini**: AI-powered OCR and translation
-- **PyMuPDF**: PDF processing and manipulation  
+- **PyMuPDF**: PDF processing and manipulation
 - **React & FastAPI**: Modern web framework foundation
 
 ---
@@ -399,5 +420,3 @@ MIT License © 2025 VerbaDoc Contributors
 - **Issues**: [GitHub Issues](https://github.com/your-repo/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/your-repo/discussions)
 - **Documentation**: This README + inline code comments
-
-**Star ⭐ this repository if VerbaDoc helps you translate documents efficiently!**
