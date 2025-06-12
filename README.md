@@ -396,13 +396,6 @@ curl -X POST \
 - Add comprehensive error handling
 - Update documentation for new features
 
----
-
-## 📜 License
-
-MIT License © 2025 VerbaDoc Contributors
-
-**Free for personal and commercial use** - See [LICENSE](LICENSE) file for details.
 
 ---
 
